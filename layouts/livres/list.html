@@ -1,0 +1,146 @@
+{{- define "main" }}
+
+<style>
+  @media screen and (max-width: 768px) {
+    .post-entry[style*="display: flex"] {
+      flex-direction: column !important;
+    }
+    .entry-cover[style*="width: 160px"] {
+      width: 100% !important;
+      max-width: 200px !important;
+      margin: 0 auto var(--gap) auto !important;
+    }
+  }
+</style>
+
+<header class="page-header">
+  {{- partial "breadcrumbs.html" . }}
+  <h1>
+    {{ .Title }}
+  </h1>
+  {{- if .Description }}
+  <div class="post-description">
+    {{ .Description | markdownify }}
+  </div>
+  {{- end }}
+</header>
+
+{{- if .Content }}
+<div class="post-content">
+  {{- if not (.Param "disableAnchoredHeadings") }}
+  {{- partial "anchored_headings.html" .Content -}}
+  {{- else }}{{ .Content }}{{ end }}
+</div>
+{{- end }}
+
+{{- /* Section Livres */}}
+{{- $livres := .RegularPages }}
+{{- $livres_publies := where $livres "Params.status" "publié" }}
+{{- $livres_a_venir := where $livres "Params.status" "à venir" }}
+
+{{- if or $livres_publies $livres_a_venir }}
+  {{- if $livres_publies }}
+  <h2 style="margin-top: calc(var(--gap) * 1.5); margin-bottom: var(--gap); font-size: 24px; font-weight: 600;">Publiés</h2>
+  {{- range $livres_publies }}
+  <article class="post-entry" style="display: flex; gap: var(--gap); align-items: flex-start;">
+    {{- if (and .Params.cover.image) }}
+    <figure class="entry-cover" style="flex-shrink: 0; width: 160px; margin: 0;">
+      {{- $coverImageName := .Params.cover.image }}
+      {{- $pageBundleCover := (.Resources.ByType "image").GetMatch (printf "*%s*" $coverImageName) }}
+      {{- $globalResourcesCover := (resources.ByType "image").GetMatch (printf "*%s*" $coverImageName) }}
+      {{- $globalResourcesGet := resources.Get (printf "livres/%s" $coverImageName) }}
+      {{- $cover := (or $pageBundleCover $globalResourcesCover $globalResourcesGet)}}
+      {{- $imgdl := "" }}
+      {{- if $cover -}}
+          {{- $imgdl = $cover.Permalink }}
+      {{- else }}
+          {{- $imgdl = (printf "/livres/%s" $coverImageName) | absURL }}
+      {{- end }}
+      <img loading="lazy" src="{{ $imgdl }}" alt="{{ .Params.cover.alt | default .Params.cover.caption | default .Title | plainify }}" style="width: 100%; height: auto; border-radius: 4px; display: block;">
+    </figure>
+    {{- end }}
+    <div style="flex: 1; min-width: 0;">
+      <header class="entry-header">
+        <h2 class="entry-hint-parent" style="gap: 12px; align-items: baseline;">
+          <a href="{{ .Permalink }}" style="color: inherit; text-decoration: none; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis;">{{ .Title }}</a>
+          {{- if .Params.annee }}
+          <span style="font-size: 14px; color: var(--secondary); font-weight: normal; white-space: nowrap; flex-shrink: 0;">{{ .Params.annee }}</span>
+          {{- end }}
+        </h2>
+      </header>
+      {{- if .Description }}
+      <div class="entry-content">
+        <p>{{ .Description | markdownify }}</p>
+      </div>
+      {{- else if .Summary }}
+      <div class="entry-content">
+        <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+      </div>
+      {{- end }}
+      {{- if .Params.isbn }}
+      <footer class="entry-footer">
+        <span>ISBN: {{ .Params.isbn }}</span>
+      </footer>
+      {{- end }}
+    </div>
+    <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+  </article>
+  {{- end }}
+  {{- end }}
+
+  {{- if $livres_a_venir }}
+  <h2 style="margin-top: calc(var(--gap) * 2); margin-bottom: var(--gap); font-size: 24px; font-weight: 600;">À venir</h2>
+  {{- range $livres_a_venir }}
+  <article class="post-entry" style="display: flex; gap: var(--gap); align-items: flex-start;">
+    {{- if (and .Params.cover.image) }}
+    <figure class="entry-cover" style="flex-shrink: 0; width: 160px; margin: 0;">
+      {{- $coverImageName := .Params.cover.image }}
+      {{- $pageBundleCover := (.Resources.ByType "image").GetMatch (printf "*%s*" $coverImageName) }}
+      {{- $globalResourcesCover := (resources.ByType "image").GetMatch (printf "*%s*" $coverImageName) }}
+      {{- $globalResourcesGet := resources.Get (printf "livres/%s" $coverImageName) }}
+      {{- $cover := (or $pageBundleCover $globalResourcesCover $globalResourcesGet)}}
+      {{- $imgdl := "" }}
+      {{- if $cover -}}
+          {{- $imgdl = $cover.Permalink }}
+      {{- else }}
+          {{- $imgdl = (printf "/livres/%s" $coverImageName) | absURL }}
+      {{- end }}
+      <img loading="lazy" src="{{ $imgdl }}" alt="{{ .Params.cover.alt | default .Params.cover.caption | default .Title | plainify }}" style="width: 100%; height: auto; border-radius: 4px; display: block;">
+    </figure>
+    {{- end }}
+    <div style="flex: 1; min-width: 0;">
+      <header class="entry-header">
+        <h2 class="entry-hint-parent" style="gap: 12px; align-items: baseline;">
+          {{- if .Permalink }}
+          <a href="{{ .Permalink }}" style="color: inherit; text-decoration: none; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis;">{{ .Title }}</a>
+          {{- else }}
+          <span style="flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis;">{{ .Title }}</span>
+          {{- end }}
+          {{- if .Params.annee }}
+          <span style="font-size: 14px; color: var(--secondary); font-weight: normal; white-space: nowrap; flex-shrink: 0;">{{ .Params.annee }}</span>
+          {{- end }}
+        </h2>
+      </header>
+      {{- if .Description }}
+      <div class="entry-content">
+        <p>{{ .Description | markdownify }}</p>
+      </div>
+      {{- else if .Summary }}
+      <div class="entry-content">
+        <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+      </div>
+      {{- end }}
+    </div>
+    {{- if .Permalink }}
+    <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+    {{- end }}
+  </article>
+  {{- end }}
+  {{- end }}
+{{- else }}
+<div class="post-content">
+  <p>Aucun livre disponible pour le moment.</p>
+</div>
+{{- end }}
+
+{{- end }}{{- /* end main */ -}}

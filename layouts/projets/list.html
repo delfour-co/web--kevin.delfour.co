@@ -1,0 +1,133 @@
+{{- define "main" }}
+
+<header class="page-header">
+  {{- partial "breadcrumbs.html" . }}
+  <h1>
+    {{ .Title }}
+  </h1>
+  {{- if .Description }}
+  <div class="post-description">
+    {{ .Description | markdownify }}
+  </div>
+  {{- end }}
+</header>
+
+{{- if .Content }}
+<div class="post-content">
+  {{- if not (.Param "disableAnchoredHeadings") }}
+  {{- partial "anchored_headings.html" .Content -}}
+  {{- else }}{{ .Content }}{{ end }}
+</div>
+{{- end }}
+
+{{- /* Section Projets GitHub */}}
+{{- $projets := .Params.projets | default slice }}
+{{- if $projets }}
+  {{- /* Grouper les projets par catégorie basée sur le langage principal */}}
+  {{- $categories := dict }}
+  {{- range $projets }}
+    {{- $cat := "Autres" }}
+    {{- if eq .langage "TypeScript" }}
+      {{- $cat = "Katas TypeScript" }}
+    {{- else if eq .langage "JavaScript" }}
+      {{- $cat = "Katas JavaScript" }}
+    {{- else if eq .langage "Python" }}
+      {{- $cat = "Katas Python" }}
+    {{- else if eq .langage "SCSS" }}
+      {{- $cat = "Applications Web" }}
+    {{- end }}
+    {{- $projets_cat := index $categories $cat | default slice }}
+    {{- $projets_cat = $projets_cat | append . }}
+    {{- $categories = merge $categories (dict $cat $projets_cat) }}
+  {{- end }}
+
+  {{- /* Ordre d'affichage des catégories */}}
+  {{- $ordre_categories := slice "Katas TypeScript" "Katas JavaScript" "Katas Python" "Applications Web" "Autres" }}
+  
+  {{- /* Afficher les projets par catégorie dans l'ordre défini */}}
+  {{- range $ordre_categories }}
+    {{- $projets_cat := index $categories . }}
+    {{- if $projets_cat }}
+    <h2 style="margin-top: calc(var(--gap) * 1.5); margin-bottom: var(--gap); font-size: 24px; font-weight: 600;">{{ . }}</h2>
+    {{- range $projets_cat }}
+    <article class="post-entry">
+      <header class="entry-header">
+        <h2 class="entry-hint-parent">
+          <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+            {{ .nom }}
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-left: 0.25rem; opacity: 0.6;">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+          {{- if .langage }}
+          <span style="font-size: 14px; color: var(--secondary); font-weight: normal;">{{ .langage }}</span>
+          {{- end }}
+        </h2>
+      </header>
+      {{- if .description }}
+      <div class="entry-content">
+        <p>{{ .description | markdownify }}</p>
+      </div>
+      {{- end }}
+      {{- if .technologies }}
+      <footer class="entry-footer">
+        {{- range $index, $tech := .technologies }}
+          {{- if $index }}&nbsp;·&nbsp;{{ end }}
+          <span>{{ $tech }}</span>
+        {{- end }}
+      </footer>
+      {{- end }}
+      <a class="entry-link" aria-label="project link to {{ .nom | plainify }}" href="{{ .url }}" target="_blank" rel="noopener noreferrer"></a>
+    </article>
+    {{- end }}
+    {{- end }}
+  {{- end }}
+  
+  {{- /* Afficher les catégories non listées dans l'ordre */}}
+  {{- range $cat, $projets_cat := $categories }}
+    {{- if not (in $ordre_categories $cat) }}
+    <h2 style="margin-top: calc(var(--gap) * 1.5); margin-bottom: var(--gap); font-size: 24px; font-weight: 600;">{{ $cat }}</h2>
+    {{- range $projets_cat }}
+    <article class="post-entry">
+      <header class="entry-header">
+        <h2 class="entry-hint-parent">
+          <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+            {{ .nom }}
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-left: 0.25rem; opacity: 0.6;">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+          {{- if .langage }}
+          <span style="font-size: 14px; color: var(--secondary); font-weight: normal;">{{ .langage }}</span>
+          {{- end }}
+        </h2>
+      </header>
+      {{- if .description }}
+      <div class="entry-content">
+        <p>{{ .description | markdownify }}</p>
+      </div>
+      {{- end }}
+      {{- if .technologies }}
+      <footer class="entry-footer">
+        {{- range $index, $tech := .technologies }}
+          {{- if $index }}&nbsp;·&nbsp;{{ end }}
+          <span>{{ $tech }}</span>
+        {{- end }}
+      </footer>
+      {{- end }}
+      <a class="entry-link" aria-label="project link to {{ .nom | plainify }}" href="{{ .url }}" target="_blank" rel="noopener noreferrer"></a>
+    </article>
+    {{- end }}
+    {{- end }}
+  {{- end }}
+{{- else }}
+<div class="post-content">
+  <p>Aucun projet disponible pour le moment.</p>
+</div>
+{{- end }}
+
+{{- end }}{{- /* end main */ -}}

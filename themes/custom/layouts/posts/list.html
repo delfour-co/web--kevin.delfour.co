@@ -1,0 +1,142 @@
+{{- define "main" }}
+
+<header class="page-header">
+  {{- partial "breadcrumbs.html" . }}
+  <h1>
+    {{ .Title | default "Tous les articles" }}
+    {{- if and (or (eq .Kind `term`) (eq .Kind `section`)) (.Param "ShowRssButtonInSectionTermList") }}
+    {{- with .OutputFormats.Get "rss" }}
+    <a href="{{ .RelPermalink }}" title="RSS" aria-label="RSS">
+      {{ partial "icon.html" (dict "name" "interface-essential/interface-essential-wifi-feed" "size" 23 "ariaHidden" true) }}
+    </a>
+    {{- end }}
+    {{- end }}
+  </h1>
+  {{- if .Description }}
+  <div class="post-description">
+    {{ .Description | markdownify }}
+  </div>
+  {{- else }}
+  <div class="post-description">
+    <p>Archive complète de tous les articles, triés par date de publication (plus récents en premier).</p>
+  </div>
+  {{- end }}
+</header>
+
+{{- if .Content }}
+<div class="post-content">
+  {{- if not (.Param "disableAnchoredHeadings") }}
+  {{- partial "anchored_headings.html" .Content -}}
+  {{- else }}{{ .Content }}{{ end }}
+</div>
+{{- end }}
+
+{{- /* Filtres par taxonomies */}}
+{{- $allPillars := site.Taxonomies.pillars }}
+{{- $allAudiences := site.Taxonomies.audiences }}
+{{- $currentPillar := .Params.pillar | default "" }}
+{{- $currentAudience := .Params.audience | default "" }}
+
+<nav class="filters" style="margin: var(--gap) 0; padding: var(--gap); background: var(--theme); border-radius: var(--radius);">
+  <h3 style="margin-top: 0; font-size: 1rem;">Filtrer par :</h3>
+  
+  <div style="display: flex; flex-wrap: wrap; gap: calc(var(--gap) / 2); margin-bottom: calc(var(--gap) / 2);">
+    <strong style="align-self: center;">Piliers :</strong>
+    <a href="/posts/" style="padding: 0.25rem 0.75rem; border-radius: var(--radius); background: {{ if not $currentPillar }}var(--code-bg){{ else }}transparent{{ end }}; text-decoration: none;">Tous</a>
+    {{- range $allPillars }}
+      {{- $pillarName := .Page.Title }}
+      {{- $pillarSlug := .Page.Data.Term }}
+      <a href="/posts/?pillar={{ $pillarSlug }}" style="padding: 0.25rem 0.75rem; border-radius: var(--radius); background: {{ if eq $currentPillar $pillarSlug }}var(--code-bg){{ else }}transparent{{ end }}; text-decoration: none;">{{ $pillarName }}</a>
+    {{- end }}
+  </div>
+  
+  <div style="display: flex; flex-wrap: wrap; gap: calc(var(--gap) / 2);">
+    <strong style="align-self: center;">Publics :</strong>
+    <a href="/posts/" style="padding: 0.25rem 0.75rem; border-radius: var(--radius); background: {{ if not $currentAudience }}var(--code-bg){{ else }}transparent{{ end }}; text-decoration: none;">Tous</a>
+    {{- range $allAudiences }}
+      {{- $audienceName := .Page.Title }}
+      {{- $audienceSlug := .Page.Data.Term }}
+      {{- $displayName := cond (eq $audienceSlug "cto") "CTO / leaders tech" (cond (eq $audienceSlug "jeunesse") "Jeunesse tech" $audienceName) }}
+      <a href="/posts/?audience={{ $audienceSlug }}" style="padding: 0.25rem 0.75rem; border-radius: var(--radius); background: {{ if eq $currentAudience $audienceSlug }}var(--code-bg){{ else }}transparent{{ end }}; text-decoration: none;">{{ $displayName }}</a>
+    {{- end }}
+  </div>
+</nav>
+
+{{- /* Récupérer les pages à afficher */}}
+{{- $pages := .RegularPages }}
+
+{{- /* Appliquer les filtres si présents dans les paramètres de requête */}}
+{{- /* Note: Hugo ne gère pas directement les query params, donc on utilise les paramètres de page ou on filtre côté template */}}
+{{- $filteredPages := $pages }}
+{{- if $currentPillar }}
+  {{- $filteredPages = where $filteredPages "Params.pillar" $currentPillar }}
+{{- end }}
+{{- if $currentAudience }}
+  {{- $filteredPages = where $filteredPages "Params.audience" $currentAudience }}
+{{- end }}
+
+{{- /* Trier par date décroissante */}}
+{{- $filteredPages = sort $filteredPages "Date" "desc" }}
+
+{{- /* Pagination */}}
+{{- $paginator := .Paginate $filteredPages }}
+
+{{- /* Afficher les articles */}}
+{{- range $index, $page := $paginator.Pages }}
+<article class="post-entry">
+  {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false }}
+  {{- partial "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) }}
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">
+      {{- .Title }}
+      {{- if .Draft }}
+      <span class="entry-hint" title="Draft">
+        {{ partial "icon.html" (dict "name" "interface-essential/interface-essential-pencil-edit-1" "size" 20 "ariaHidden" true) }}
+      </span>
+      {{- end }}
+    </h2>
+  </header>
+  {{- if (ne (.Param "hideSummary") true) }}
+  <div class="entry-content">
+    <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+  </div>
+  {{- end }}
+  {{- if not (.Param "hideMeta") }}
+  <footer class="entry-footer">
+    {{- partial "post_meta.html" . -}}
+    {{- with .Params.pillar }}
+      <span class="meta-pillar" style="margin-left: 0.5rem;">Pilier : <a href="/pillars/{{ . }}/">{{ . }}</a></span>
+    {{- end }}
+    {{- with .Params.audience }}
+      <span class="meta-audience" style="margin-left: 0.5rem;">Public : {{ if eq . "cto" }}CTO / leaders tech{{ else if eq . "jeunesse" }}Jeunesse tech{{ else }}{{ . }}{{ end }}</span>
+    {{- end }}
+  </footer>
+  {{- end }}
+  <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+</article>
+{{- end }}
+
+{{- if gt $paginator.TotalPages 1 }}
+<footer class="page-footer">
+  <nav class="pagination">
+    {{- if $paginator.HasPrev }}
+    <a class="prev" href="{{ $paginator.Prev.URL | absURL }}">
+      «&nbsp;{{ i18n "prev_page" }}&nbsp;
+      {{- if (.Param "ShowPageNums") }}
+      {{- sub $paginator.PageNumber 1 }}/{{ $paginator.TotalPages }}
+      {{- end }}
+    </a>
+    {{- end }}
+    {{- if $paginator.HasNext }}
+    <a class="next" href="{{ $paginator.Next.URL | absURL }}">
+      {{- i18n "next_page" }}&nbsp;
+      {{- if (.Param "ShowPageNums") }}
+      {{- add 1 $paginator.PageNumber }}/{{ $paginator.TotalPages }}
+      {{- end }}&nbsp;»
+    </a>
+    {{- end }}
+  </nav>
+</footer>
+{{- end }}
+
+{{- end }}{{- /* end main */ -}}

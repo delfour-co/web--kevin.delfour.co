@@ -1,0 +1,100 @@
+defaultContentLanguage: fr
+title: Kevin Delfour
+copyright: "© 2025 Kevin Delfour – All rights reserved – Blow on the cartridge 💾 if this site doesn't load"
+baseURL: https://kevin.delfour.co
+environment: production
+theme: custom
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+mainsections: ["posts", "guides-livres", "le-role-du-cto", "gouvernance-decision", "culture-management", "trouver-sa-place", "reflexions"]
+
+permalinks:
+  posts: /posts/:slug/
+
+taxonomies:
+  tag: "tags"
+  pillar: "pillars"
+  audience: "audiences"
+
+params:
+  ShowShareButtons: true
+  ShowReadingTime: true
+  ShowBreadCrumbs: true
+  ShowPostNavLinks: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: true
+  ShowAllPagesInArchive: true
+  ShowWordCount: true
+  
+  homeInfoParams:
+    Title: Donner des repères. Pas des leçons.
+    Content: Je donne des repères aux CTO et leaders tech pour mieux décider et mieux durer, et j'aide la nouvelle génération à trouver sa place sans se raconter d'histoires. Je m'appuie sur le terrain, des cadres clairs, et une culture du droit à l'erreur.
+  
+  assets:
+    favicon: "/favicon.ico"
+    favicon16x16: "/favicon-16x16.png"
+    favicon32x32: "/favicon-32x32.png"
+    apple_touch_icon: "/apple-touch-icon.png"
+    safari_pinned_tab: "/favicon.svg"
+
+  socialIcons:
+    - name: "Twitter"
+      url: "https://twitter.com/kevindelfour"
+    - name: "LinkedIn"
+      url: "https://linkedin.com/in/kevindelfour"
+    - name: "GitHub"
+      url: "https://github.com/kdelfour"
+
+menu:
+  main:
+    - identifier: start-here
+      name: Par où commencer ?
+      url: /start-here/
+      weight: 10
+    - identifier: le-role-du-cto
+      name: Le rôle du CTO
+      url: /le-role-du-cto/
+      weight: 20
+      params:
+        subtitle: "Comprendre ce que ce rôle implique vraiment, au-delà du titre."
+        group: "reperes"
+    - identifier: gouvernance-decision
+      name: Gouvernance & décision
+      url: /gouvernance-decision/
+      weight: 30
+      params:
+        subtitle: "Prendre des décisions qui tiennent la route dans le temps."
+        group: "reperes"
+    - identifier: culture-management
+      name: Culture & management
+      url: /culture-management/
+      weight: 40
+      params:
+        subtitle: "Construire une culture d'équipe qui fait grandir, pas qui épuise."
+        group: "reperes"
+    - identifier: trouver-sa-place
+      name: Trouver sa place
+      url: /trouver-sa-place/
+      weight: 50
+      params:
+        subtitle: "Des repères pour s'orienter sans se raconter d'histoires."
+        group: "reperes"
+    - identifier: guides-livres
+      name: Guides & livres
+      url: /guides-livres/
+      weight: 60
+    - identifier: about
+      name: À propos
+      url: /about/
+      weight: 70
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON

@@ -1,0 +1,245 @@
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: calc(var(--nav-width) + var(--gap) * 2);
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    line-height: var(--header-height);
+}
+
+.nav a {
+    display: block;
+}
+
+.logo,
+#menu {
+    display: flex;
+    margin: auto var(--gap);
+}
+
+.logo {
+    flex-wrap: inherit;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo a img, .logo a svg {
+    display: inline;
+    vertical-align: middle;
+    pointer-events: none;
+    transform: translate(0, -10%);
+    border-radius: 6px;
+    margin-inline-end: 0;
+}
+
+/* L'helper `partials/icon.html` encapsule le SVG dans <span class="icon"> */
+.logo a .icon {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+}
+
+button#theme-toggle,
+button#accessibility-toggle {
+    font-size: 26px;
+    margin: auto 4px;
+    padding: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+[data-theme="dark"] #moon {
+    display: none;
+}
+
+[data-theme="light"] #sun {
+    display: none;
+}
+
+#menu {
+    list-style: none;
+    word-break: keep-all;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+#menu li + li {
+    margin-inline-start: var(--gap);
+}
+
+#menu a {
+    font-size: 16px;
+}
+
+#menu .active {
+    font-weight: 500;
+    border-bottom: 2px solid currentColor;
+}
+
+.lang-switch li,
+.lang-switch ul {
+    display: inline-flex;
+    margin: auto 4px;
+}
+
+.lang-switch {
+    display: flex;
+    flex-wrap: inherit;
+}
+
+.lang-switch a {
+    margin: auto 3px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.logo-switches {
+    display: inline-flex;
+    flex-wrap: inherit;
+    align-items: center;
+    margin-inline-start: 8px;
+    margin-inline-end: auto;
+}
+
+/* Bouton hamburger */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    margin-inline-start: auto;
+    margin-inline-end: var(--gap);
+    color: var(--primary);
+    font-size: 24px;
+    line-height: 1;
+    position: relative;
+    width: 32px;
+    height: 32px;
+}
+
+.menu-toggle svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.2s ease;
+}
+
+.menu-toggle .close-icon {
+    opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] svg:not(.close-icon) {
+    opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] .close-icon {
+    opacity: 1;
+}
+
+/* Amélioration du menu pour mobile */
+@media screen and (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .logo {
+        width: 100%;
+        justify-content: flex-start;
+        margin-bottom: 0;
+    }
+
+    .logo-switches {
+        margin-inline-start: 12px;
+        margin-inline-end: auto;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-inline-end: var(--gap);
+    }
+
+    #menu {
+        width: 100%;
+        max-height: 0;
+        margin: 0;
+        padding: 0 var(--gap);
+        overflow: hidden;
+        flex-direction: column;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+        white-space: normal;
+        overflow-x: visible;
+    }
+
+    #menu.menu-open {
+        max-height: 500px;
+        padding: 16px var(--gap);
+    }
+
+    #menu li {
+        flex-shrink: 0;
+        width: 100%;
+        margin-inline-start: 0 !important;
+        margin-bottom: 8px;
+    }
+
+    #menu li:last-child {
+        margin-bottom: 0;
+    }
+
+    #menu a {
+        font-size: 16px;
+        padding: 12px 0;
+        display: block;
+        width: 100%;
+        white-space: normal;
+        border-bottom: 1px solid var(--border);
+    }
+
+    #menu li:last-child a {
+        border-bottom: none;
+    }
+
+    #menu a .active {
+        border-bottom: 2px solid currentColor;
+        padding-bottom: 2px;
+        display: inline-block;
+        margin-bottom: -1px;
+    }
+
+    /* Réduire la taille du logo sur mobile */
+    .logo a {
+        font-size: 20px;
+    }
+
+    /* Réduire la taille des boutons sur mobile */
+    button#theme-toggle,
+    button#accessibility-toggle {
+        font-size: 22px;
+        margin: auto 2px;
+    }
+}
+
+/* Pour les très petits écrans */
+@media screen and (max-width: 480px) {
+    #menu a {
+        font-size: 15px;
+        padding: 10px 0;
+    }
+
+    .logo a {
+        font-size: 18px;
+    }
+}

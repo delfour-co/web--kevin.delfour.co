@@ -1,0 +1,136 @@
+{{- define "main" }}
+
+{{- /* Hero section avec promesse */}}
+{{- with site.Params.homeInfoParams }}
+<article class="first-entry home-info">
+    <header class="entry-header">
+        <h1>{{ .Title | markdownify }}</h1>
+    </header>
+    <div class="entry-content">
+        {{ .Content | markdownify }}
+    </div>
+    <footer class="entry-footer">
+        {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
+    </footer>
+</article>
+{{- end }}
+
+{{- /* Section "Start here" - 3 parcours guidés */}}
+<section class="start-here" style="margin: calc(var(--gap) * 2) 0;">
+  <h2>Par où commencer</h2>
+  <p>Trois parcours pour trouver rapidement ce qui vous correspond.</p>
+  
+  <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--gap); margin-top: var(--gap);">
+    <article class="post-entry">
+      <header class="entry-header">
+        <h3><a href="/pillars/role-cto/">Je suis CTO ou je veux le devenir</a></h3>
+      </header>
+      <div class="entry-content">
+        <p>Clarifier le rôle, comprendre les différences avec Lead Dev/VP Eng, réussir sa prise de poste, recruter une équipe.</p>
+      </div>
+      <a class="entry-link" aria-label="Explorer Le rôle du CTO" href="/pillars/role-cto/"></a>
+    </article>
+
+    <article class="post-entry">
+      <header class="entry-header">
+        <h3><a href="/pillars/gouvernance-decision/">Je dois prendre des décisions techniques</a></h3>
+      </header>
+      <div class="entry-content">
+        <p>Architecture, dette technique, choix techniques, alignement tech/business, gouvernance partagée.</p>
+      </div>
+      <a class="entry-link" aria-label="Explorer Gouvernance & décision" href="/pillars/gouvernance-decision/"></a>
+    </article>
+
+    <article class="post-entry">
+      <header class="entry-header">
+        <h3><a href="/pillars/trouver-sa-place/">Je cherche ma place dans la tech</a></h3>
+      </header>
+      <div class="entry-content">
+        <p>Chemins de carrière, reconversion, développement de compétences, positionnement professionnel, premiers pas.</p>
+      </div>
+      <a class="entry-link" aria-label="Explorer Trouver sa place" href="/pillars/trouver-sa-place/"></a>
+    </article>
+  </div>
+</section>
+
+{{- /* Section 4 piliers (cards) */}}
+<section class="pillars" style="margin: calc(var(--gap) * 2) 0;">
+  <h2>Les quatre piliers</h2>
+  <p>Des repères organisés par thématique pour mieux naviguer.</p>
+  
+  <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--gap); margin-top: var(--gap);">
+    {{- $pillars := slice "role-cto" "gouvernance-decision" "culture-management" "trouver-sa-place" }}
+    {{- $pillarNames := dict "role-cto" "Le rôle du CTO" "gouvernance-decision" "Gouvernance & décision" "culture-management" "Culture & management" "trouver-sa-place" "Trouver sa place" }}
+    {{- $pillarDescs := dict "role-cto" "Clarifier le rôle, réussir sa prise de poste, recruter une équipe." "gouvernance-decision" "Architecture, dette technique, choix techniques, alignement tech/business." "culture-management" "Culture d'équipe, développement des talents, communication, gestion des conflits." "trouver-sa-place" "Chemins de carrière, reconversion, développement de compétences, positionnement professionnel." }}
+
+    {{- range $pillars }}
+      {{- $pillarPage := site.GetPage (printf "/pillars/%s" .) }}
+      {{- $name := index $pillarNames . }}
+      {{- $desc := index $pillarDescs . }}
+      <article class="post-entry">
+        <header class="entry-header">
+          <h3><a href="/pillars/{{ . }}/">{{ $name }}</a></h3>
+        </header>
+        <div class="entry-content">
+          <p>{{ $desc }}</p>
+        </div>
+        <a class="entry-link" aria-label="Explorer {{ $name }}" href="/pillars/{{ . }}/"></a>
+      </article>
+    {{- end }}
+  </div>
+</section>
+
+{{- /* Articles repères globaux (3 à 6 max) */}}
+{{- $featured := where site.RegularPages "Params.featured" true }}
+{{- $featured = where $featured "Section" "posts" }}
+{{- $featured = sort $featured "Params.weight" "asc" }}
+{{- $featured = first 6 $featured }}
+
+{{- if gt (len $featured) 0 }}
+<section class="featured-articles" style="margin: calc(var(--gap) * 2) 0;">
+  <h2>Articles repères</h2>
+  <p>Des points d'entrée stables pour prendre des repères. Ces articles restent pertinents indépendamment de leur date de publication.</p>
+  
+  <div class="post-entries" style="margin-top: var(--gap);">
+    {{- range $featured }}
+    <article class="post-entry">
+      {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false }}
+      {{- partial "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) }}
+      <header class="entry-header">
+        <h3 class="entry-hint-parent">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h3>
+      </header>
+      {{- if (ne (.Param "hideSummary") true) }}
+      <div class="entry-content">
+        <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+      </div>
+      {{- end }}
+      {{- if not (.Param "hideMeta") }}
+      <footer class="entry-footer">
+        {{- partial "post_meta.html" . -}}
+        {{- with .Params.pillar }}
+          <span class="meta-pillar">Pilier : <a href="/pillars/{{ . }}/">{{ . }}</a></span>
+        {{- end }}
+      </footer>
+      {{- end }}
+      <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+    </article>
+    {{- end }}
+  </div>
+  
+  <p style="margin-top: var(--gap);"><a href="/posts/">Voir tous les articles →</a></p>
+</section>
+{{- end }}
+
+{{- /* Bloc "Guides & livres" */}}
+{{- $guidesSection := site.GetPage "/guides-livres/" }}
+{{- if $guidesSection }}
+<section class="guides-books" style="margin: calc(var(--gap) * 2) 0;">
+  <h2>Guides & livres</h2>
+  <p>Des ressources approfondies pour aller plus loin.</p>
+  <p style="margin-top: var(--gap);"><a href="/guides-livres/">Explorer les guides et livres →</a></p>
+</section>
+{{- end }}
+
+{{- end }}{{- /* end main */ -}}

@@ -1,0 +1,24 @@
+/* Navigation hint banner */
+.navigation-hint {
+    background: var(--entry);
+    border-left: 3px solid var(--primary);
+    padding: 1rem 1.5rem;
+    margin: 0 auto var(--gap);
+    max-width: calc(var(--main-width) + var(--gap) * 2);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.navigation-hint p {
+    margin: 0;
+    color: var(--secondary);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .navigation-hint {
+        padding: 0.875rem 1rem;
+        font-size: 0.9rem;
+        margin: 0 var(--gap) var(--gap);
+    }
+}

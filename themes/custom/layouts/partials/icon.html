@@ -1,0 +1,53 @@
+{{- /*
+  Generic icon helper.
+
+  Usage examples:
+    {{ partial "icon.html" (dict "name" "weather/weather-moon" "class" "top-link-icon" "ariaHidden" true) }}
+    {{ partial "icon.html" (dict "name" .name "fallbackPartial" "svg.html" "fallbackCtx" .) }}
+
+  Params:
+    - name (string): icon path (relative to assets/icons) without extension, e.g. "logo/logo-twitter"
+    - class (string): extra class(es) on wrapper
+    - size (string|int): icon size in px (default 24); sets --icon-size on wrapper
+    - title (string): optional <title>
+    - ariaLabel (string): optional aria-label on wrapper
+    - ariaHidden (bool): if true, wrapper gets aria-hidden="true"
+    - fallbackPartial (string): optional partial to render if pixelart icon doesn't exist
+    - fallbackCtx (any): context passed to fallbackPartial (defaults to the current dict)
+*/ -}}
+
+{{- $nameRaw := (or .name .Name "") -}}
+{{- $name := (trim $nameRaw " ") -}}
+{{- $id := (or .id "") -}}
+{{- $class := (or .class "") -}}
+{{- $size := (or .size 24) -}}
+
+{{- $title := (or .title "") -}}
+{{- $ariaLabel := (or .ariaLabel "") -}}
+{{- $ariaHidden := (or .ariaHidden false) -}}
+
+{{- $iconAssetPath := (printf "icons/%s.svg" $name) -}}
+{{- $fallbackPartial := (or .fallbackPartial "") -}}
+{{- $fallbackCtx := (or .fallbackCtx .) -}}
+
+<span{{ if $id }} id="{{ $id }}"{{ end }} class="icon icon--pixel {{ $class }}" style="--icon-size: {{ $size }}px;"{{ if $ariaLabel }} aria-label="{{ $ariaLabel }}"{{ end }}{{ if $ariaHidden }} aria-hidden="true"{{ end }}>
+  {{- with resources.Get $iconAssetPath -}}
+    {{- $svg := .Content -}}
+    {{- /* Force theme-following colors (avoid lookaheads: RE2) */ -}}
+    {{- $svg = replaceRE "fill=\"#[0-9A-Fa-f]{3,8}\"" "fill=\"currentColor\"" $svg -}}
+    {{- $svg = replaceRE "fill=\"(black|white|#000000|#ffffff)\"" "fill=\"currentColor\"" $svg -}}
+    {{- $svg = replaceRE "stroke=\"#[0-9A-Fa-f]{3,8}\"" "stroke=\"currentColor\"" $svg -}}
+    {{- $svg = replaceRE "stroke=\"(black|white|#000000|#ffffff)\"" "stroke=\"currentColor\"" $svg -}}
+    {{- if $title -}}
+      {{- /* Inject a <title> if requested (basic, non-destructive) */ -}}
+      {{- $svg = replaceRE "<svg([^>]*)>" (printf "<svg$1><title>%s</title>" ($title | htmlEscape)) $svg 1 -}}
+    {{- end -}}
+    {{- $svg | safeHTML -}}
+  {{- else -}}
+    {{- if and $fallbackPartial (templates.Exists (printf "partials/%s" $fallbackPartial)) -}}
+      {{- partial $fallbackPartial $fallbackCtx -}}
+    {{- else -}}
+      {{- /* No-op: unknown icon */ -}}
+    {{- end -}}
+  {{- end -}}
+</span>

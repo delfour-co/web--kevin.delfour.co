@@ -1,0 +1,270 @@
+{{- define "main" }}
+
+<style>
+  @media screen and (max-width: 768px) {
+    .post-entry[style*="display: flex"] {
+      flex-direction: column !important;
+    }
+    .entry-cover[style*="width: 160px"] {
+      width: 100% !important;
+      max-width: 200px !important;
+      margin: 0 auto var(--gap) auto !important;
+    }
+  }
+  .table-of-contents {
+    background: var(--theme);
+    border-radius: 8px;
+    padding: 24px;
+    margin-top: calc(var(--gap) * 2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  .table-of-contents h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: var(--primary);
+  }
+  .table-of-contents-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .table-of-contents-list a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 5px;
+    color: var(--primary);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    background: transparent;
+  }
+  .table-of-contents-list a:hover {
+    background: var(--code-bg);
+    transform: translateX(4px);
+  }
+  .table-of-contents-list a .chapter-number {
+    color: var(--secondary);
+    font-size: 0.9em;
+    font-weight: 500;
+    min-width: 40px;
+    opacity: 0.7;
+  }
+  .table-of-contents-list a .chapter-title {
+    flex: 1;
+  }
+  .table-of-contents-list a .chapter-reading-time {
+    color: var(--secondary);
+    font-size: 0.85em;
+    text-align: right;
+    opacity: 0.7;
+  }
+</style>
+
+{{- /* Détecter si on est dans un livre individuel ou la page principale guides-livres */}}
+{{- $isBookPage := and (eq .Section "guides-livres") (ne .RelPermalink "/guides-livres/") }}
+
+{{- if $isBookPage }}
+  {{- /* Affichage pour une page de livre individuel avec table des matières */}}
+  <article class="post-single">
+    <header class="post-header">
+      {{ partial "breadcrumbs.html" . }}
+      <h1 class="post-title entry-hint-parent">
+        {{ .Title }}
+        {{- if .Draft }}
+        <span class="entry-hint" title="Draft">
+          <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
+            <path
+              d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+          </svg>
+        </span>
+        {{- end }}
+      </h1>
+      {{- if .Params.subtitle }}
+      <div class="post-description">
+        {{ .Params.subtitle }}
+      </div>
+      {{- else if .Description }}
+      <div class="post-description">
+        {{ .Description }}
+      </div>
+      {{- end }}
+    </header>
+
+    {{- if .Content }}
+    <div class="post-content">
+      {{- if not (.Param "disableAnchoredHeadings") }}
+      {{- partial "anchored_headings.html" .Content -}}
+      {{- else }}{{ .Content }}{{ end }}
+    </div>
+    {{- end }}
+
+    {{- /* Récupérer toutes les pages régulières du livre (chapitres) */}}
+    {{- $allPages := .RegularPagesRecursive }}
+    {{- if not $allPages }}
+      {{- $allPages = .RegularPages }}
+    {{- end }}
+
+    {{- /* Trier les pages : d'abord par poids, puis par chemin de fichier */}}
+    {{- $sortedPages := sort $allPages "Weight" "asc" }}
+    {{- $sortedPages = sort $sortedPages "File.Path" "asc" }}
+
+    {{- /* Calculer le temps de lecture total */}}
+    {{- $totalReadingTime := 0 }}
+    {{- range $sortedPages }}
+      {{- $totalReadingTime = add $totalReadingTime .ReadingTime }}
+    {{- end }}
+
+    {{- /* Afficher la table des matières */}}
+    {{- if gt (len $sortedPages) 0 }}
+    <div class="table-of-contents">
+      <h2>
+        Table des matières
+        {{- if gt $totalReadingTime 0 }}
+        {{- $hours := div $totalReadingTime 60 }}
+        {{- $minutes := mod $totalReadingTime 60 }}
+        <span style="font-size: 0.6em; font-weight: normal; color: var(--secondary); margin-left: 12px;">
+          (environ
+          {{- if gt $hours 0 }}
+            {{ $hours }}h
+            {{- if gt $minutes 0 }} {{ $minutes }}min{{ end }}
+          {{- else }}
+            {{ $minutes }}min
+          {{- end }}
+          de lecture en prenant son temps)
+        </span>
+        {{- end }}
+      </h2>
+      <ul class="table-of-contents-list">
+        {{- range $sortedPages }}
+        <li>
+          <a href="{{ .Permalink }}">
+            <span class="chapter-number">{{ .File.LogicalName | replaceRE "^([0-9.]+)-.*" "$1" }}</span>
+            <span class="chapter-title">{{ .Title }}</span>
+            {{- if gt .ReadingTime 0 }}
+            <span class="chapter-reading-time">{{ .ReadingTime }} {{ cond (eq .ReadingTime 1) "min" "min" }}</span>
+            {{- end }}
+          </a>
+        </li>
+        {{- end }}
+      </ul>
+    </div>
+
+    {{- /* Navigation vers le premier chapitre */}}
+    {{- $firstPage := index $sortedPages 0 }}
+    <nav class="paginav" style="margin-top: calc(var(--gap) * 2);">
+      <a class="next" href="{{ $firstPage.Permalink }}" style="width: 100%; text-align: center;">
+        <span class="title">Commencer la lecture »</span>
+        <br>
+        <span>{{ $firstPage.Title }}</span>
+      </a>
+    </nav>
+    {{- end }}
+  </article>
+{{- else }}
+  {{- /* Affichage pour la page principale /guides-livres/ */}}
+  <header class="page-header">
+    {{- partial "breadcrumbs.html" . }}
+    <h1>
+      {{ .Title }}
+    </h1>
+    {{- if .Description }}
+    <div class="post-description">
+      {{ .Description | markdownify }}
+    </div>
+    {{- end }}
+  </header>
+
+  {{- if .Content }}
+  <div class="post-content">
+    {{- if not (.Param "disableAnchoredHeadings") }}
+    {{- partial "anchored_headings.html" .Content -}}
+    {{- else }}{{ .Content }}{{ end }}
+  </div>
+  {{- end }}
+
+  {{- /* Afficher la liste des livres */}}
+  {{- $livres := .Sections }}
+  {{- if $livres }}
+    {{- range $livres }}
+      {{- /* Compter les chapitres */}}
+      {{- $chapitres := .RegularPagesRecursive | default .RegularPages }}
+      {{- $nbChapitres := len $chapitres }}
+
+      {{- /* Calculer le temps de lecture total */}}
+      {{- $totalReadingTime := 0 }}
+      {{- range $chapitres }}
+        {{- $totalReadingTime = add $totalReadingTime .ReadingTime }}
+      {{- end }}
+
+      {{- /* Chercher une image de couverture */}}
+      {{- $coverImage := "" }}
+      {{- if .Params.cover.image }}
+        {{- $coverImageName := .Params.cover.image }}
+        {{- $coverResource := .Resources.Get $coverImageName }}
+        {{- if $coverResource }}
+          {{- $coverImage = $coverResource.Permalink }}
+        {{- else }}
+          {{- $globalCover := resources.Get (printf "livres/%s" $coverImageName) }}
+          {{- if $globalCover }}
+            {{- $coverImage = $globalCover.Permalink }}
+          {{- else }}
+            {{- $coverImage = (printf "/livres/%s" $coverImageName) | absURL }}
+          {{- end }}
+        {{- end }}
+      {{- end }}
+
+    <article class="post-entry" style="display: flex; gap: var(--gap); align-items: flex-start; margin-bottom: var(--gap);">
+      {{- if $coverImage }}
+      <figure class="entry-cover" style="flex-shrink: 0; width: 160px; margin: 0;">
+        <img loading="lazy" src="{{ $coverImage }}" alt="{{ .Title | plainify }}" style="width: 100%; height: auto; border-radius: 4px; display: block;">
+      </figure>
+      {{- end }}
+      <div style="flex: 1; min-width: 0;">
+        <header class="entry-header">
+          <h2 class="entry-hint-parent" style="gap: 12px; align-items: baseline;">
+            <a href="{{ .Permalink }}" style="color: inherit; text-decoration: none; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis;">{{ .Title }}</a>
+          </h2>
+          {{- if .Params.subtitle }}
+          <div style="font-size: 0.9em; color: var(--secondary); margin-top: 4px;">
+            {{ .Params.subtitle }}
+          </div>
+          {{- end }}
+        </header>
+        {{- if .Description }}
+        <div class="entry-content">
+          <p>{{ .Description | markdownify | truncate 200 }}</p>
+        </div>
+        {{- end }}
+        <footer class="entry-footer" style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-top: 8px;">
+          {{- if gt $nbChapitres 0 }}
+          <span style="font-size: 13px; color: var(--secondary);">
+            {{ $nbChapitres }} {{ cond (eq $nbChapitres 1) "chapitre" "chapitres" }}
+          </span>
+          {{- end }}
+          {{- if gt $totalReadingTime 0 }}
+          {{- $hours := div $totalReadingTime 60 }}
+          {{- $minutes := mod $totalReadingTime 60 }}
+          <span style="font-size: 13px; color: var(--secondary);">
+            {{- if gt $hours 0 }}
+              {{ $hours }}h{{ if gt $minutes 0 }} {{ $minutes }}min{{ end }}
+            {{- else }}
+              {{ $minutes }} min
+            {{- end }}
+            de lecture
+          </span>
+          {{- end }}
+        </footer>
+      </div>
+      <a class="entry-link" aria-label="link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+    </article>
+    {{- end }}
+  {{- else }}
+  <div class="post-content">
+    <p>Aucun livre disponible pour le moment.</p>
+  </div>
+  {{- end }}
+
+{{- end }}{{- /* fin du else pour la page principale */ -}}
+{{- end }}{{- /* end main */ -}}

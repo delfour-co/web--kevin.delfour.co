@@ -1,0 +1,119 @@
+<div id="accessibility-overlay" aria-hidden="true" class="accessibility-overlay"></div>
+<div id="accessibility-panel" class="accessibility-panel" aria-hidden="true" role="dialog" aria-labelledby="accessibility-panel-title" aria-modal="true">
+    <div class="accessibility-panel-header">
+        <h2 id="accessibility-panel-title">Paramètres d'accessibilité</h2>
+        <button class="accessibility-panel-close" aria-label="Fermer le panneau d'accessibilité" title="Fermer (Échap)">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+
+    <div class="accessibility-control-group">
+        <label for="font-size-control">Taille de la police</label>
+        <div class="accessibility-button-group" id="font-size-control" role="group" aria-label="Taille de la police">
+            <button type="button" class="accessibility-button" data-accessibility="fontSize" data-value="small" aria-pressed="false">
+                Petit
+            </button>
+            <button type="button" class="accessibility-button" data-accessibility="fontSize" data-value="normal" aria-pressed="true">
+                Normal
+            </button>
+            <button type="button" class="accessibility-button" data-accessibility="fontSize" data-value="large" aria-pressed="false">
+                Grand
+            </button>
+        </div>
+    </div>
+
+    <div class="accessibility-control-group">
+        <label for="content-width-control">Largeur du contenu</label>
+        <div class="accessibility-button-group" id="content-width-control" role="group" aria-label="Largeur du contenu">
+            <button type="button" class="accessibility-button" data-accessibility="contentWidth" data-value="narrow" aria-pressed="false">
+                Étroit
+            </button>
+            <button type="button" class="accessibility-button" data-accessibility="contentWidth" data-value="normal" aria-pressed="true">
+                Normal
+            </button>
+            <button type="button" class="accessibility-button" data-accessibility="contentWidth" data-value="wide" aria-pressed="false">
+                Large
+            </button>
+        </div>
+    </div>
+
+    <div class="accessibility-control-group">
+        <label for="line-height-control">Interligne</label>
+        <div class="accessibility-button-group" id="line-height-control" role="group" aria-label="Interligne">
+            <button type="button" class="accessibility-button" data-accessibility="lineHeight" data-value="tight" aria-pressed="false">
+                Serré
+            </button>
+            <button type="button" class="accessibility-button" data-accessibility="lineHeight" data-value="normal" aria-pressed="true">
+                Normal
+            </button>
+            <button type="button" class="accessibility-button" data-accessibility="lineHeight" data-value="loose" aria-pressed="false">
+                Large
+            </button>
+        </div>
+    </div>
+
+    <div class="accessibility-control-group">
+        <label for="letter-spacing-control">Espacement des lettres</label>
+        <div class="accessibility-button-group" id="letter-spacing-control" role="group" aria-label="Espacement des lettres">
+            <button type="button" class="accessibility-button" data-accessibility="letterSpacing" data-value="tight" aria-pressed="false">
+                Serré
+            </button>
+            <button type="button" class="accessibility-button" data-accessibility="letterSpacing" data-value="normal" aria-pressed="true">
+                Normal
+            </button>
+            <button type="button" class="accessibility-button" data-accessibility="letterSpacing" data-value="wide" aria-pressed="false">
+                Large
+            </button>
+        </div>
+    </div>
+
+    <div class="accessibility-control-group">
+        <label for="word-spacing-control">Espacement des mots</label>
+        <div class="accessibility-button-group" id="word-spacing-control" role="group" aria-label="Espacement des mots">
+            <button type="button" class="accessibility-button" data-accessibility="wordSpacing" data-value="tight" aria-pressed="false">
+                Serré
+            </button>
+            <button type="button" class="accessibility-button" data-accessibility="wordSpacing" data-value="normal" aria-pressed="true">
+                Normal
+            </button>
+            <button type="button" class="accessibility-button" data-accessibility="wordSpacing" data-value="wide" aria-pressed="false">
+                Large
+            </button>
+        </div>
+    </div>
+
+    <div class="accessibility-control-group">
+        <div class="accessibility-toggle">
+            <label for="high-contrast-toggle">Contraste élevé</label>
+            <button type="button" 
+                    id="high-contrast-toggle"
+                    class="accessibility-toggle-switch" 
+                    data-accessibility="highContrast"
+                    role="switch"
+                    aria-checked="false"
+                    aria-label="Activer le contraste élevé">
+            </button>
+        </div>
+        <p class="control-description">Augmente le contraste des couleurs pour une meilleure lisibilité</p>
+    </div>
+
+    <div class="accessibility-control-group">
+        <div class="accessibility-toggle">
+            <label for="dyslexia-font-toggle">Police adaptée à la dyslexie</label>
+            <button type="button" 
+                    id="dyslexia-font-toggle"
+                    class="accessibility-toggle-switch" 
+                    data-accessibility="dyslexiaFont"
+                    role="switch"
+                    aria-checked="false"
+                    aria-label="Activer la police adaptée à la dyslexie">
+            </button>
+        </div>
+        <p class="control-description">Utilise une police spécialement conçue pour faciliter la lecture pour les personnes dyslexiques</p>
+    </div>
+
+    <button type="button" class="accessibility-reset" aria-label="Réinitialiser tous les paramètres d'accessibilité aux valeurs par défaut">
+        {{ partial "icon.html" (dict "name" "interface-essential/interface-essential-bin" "size" 16 "ariaHidden" true) }}
+        Réinitialiser les paramètres
+    </button>
+</div>

@@ -1,0 +1,308 @@
+/* Styles pour le panneau d'accessibilité */
+.accessibility-panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--entry);
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    min-width: 320px;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.accessibility-panel[aria-hidden="false"] {
+    display: flex;
+}
+
+.accessibility-panel[aria-hidden="false"] {
+    display: flex;
+}
+
+.accessibility-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
+}
+
+.accessibility-panel-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.accessibility-panel-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--primary);
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius);
+    transition: background-color 0.2s;
+}
+
+.accessibility-panel-close:hover,
+.accessibility-panel-close:focus {
+    background: var(--border);
+    outline: 2px solid var(--focus-visible-color);
+    outline-offset: 2px;
+}
+
+.accessibility-control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.accessibility-control-group label {
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--primary);
+}
+
+.accessibility-control-group .control-description {
+    font-size: 12px;
+    color: var(--secondary);
+    margin-top: -4px;
+}
+
+.accessibility-button-group {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.accessibility-button {
+    flex: 1;
+    min-width: 60px;
+    padding: 8px 12px;
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--primary);
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+.accessibility-button:hover {
+    background: var(--border);
+}
+
+.accessibility-button:focus {
+    outline: 2px solid var(--focus-visible-color);
+    outline-offset: 2px;
+}
+
+.accessibility-button.active {
+    background: var(--primary);
+    color: var(--theme);
+    border-color: var(--primary);
+    font-weight: 500;
+}
+
+.accessibility-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+}
+
+.accessibility-toggle-switch {
+    position: relative;
+    width: 48px;
+    height: 24px;
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.accessibility-toggle-switch.active {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.accessibility-toggle-switch::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 18px;
+    height: 18px;
+    background: var(--theme);
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+
+.accessibility-toggle-switch.active::after {
+    transform: translateX(24px);
+}
+
+.accessibility-toggle-switch:focus {
+    outline: 2px solid var(--focus-visible-color);
+    outline-offset: 2px;
+}
+
+.accessibility-reset {
+    margin-top: auto;
+    padding: 14px 16px;
+    background: var(--code-bg);
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--primary);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.accessibility-reset:hover,
+.accessibility-reset:focus {
+    background: var(--border);
+    border-color: var(--primary);
+    outline: 2px solid var(--focus-visible-color);
+    outline-offset: 2px;
+}
+
+.accessibility-reset:active {
+    transform: scale(0.98);
+}
+
+/* Bouton d'ouverture du panneau */
+#accessibility-toggle {
+    font-size: 26px;
+    margin: auto 4px;
+    background: none;
+    border: none;
+    color: var(--primary);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: var(--radius);
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#accessibility-toggle:hover,
+#accessibility-toggle:focus {
+    background: var(--border);
+    outline: 2px solid var(--focus-visible-color);
+    outline-offset: 2px;
+}
+
+#accessibility-toggle svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Application des variables d'accessibilité au contenu */
+/* Définir la taille de base sur html - cela affectera tous les rem et em */
+html {
+    font-size: calc(18px * var(--font-size-multiplier, 1));
+}
+
+body {
+    font-size: calc(18px * var(--font-size-multiplier, 1)) !important;
+    line-height: calc(1.6 * var(--line-height-multiplier, 1)) !important;
+    letter-spacing: calc((var(--letter-spacing-multiplier, 1) - 1) * 0.5px) !important;
+    word-spacing: calc((var(--word-spacing-multiplier, 1) - 1) * 2px) !important;
+}
+
+.main {
+    max-width: calc((var(--main-width) + var(--gap) * 2) * var(--content-width-multiplier, 1));
+}
+
+/* Application spécifique pour les éléments de contenu */
+/* Les titres (h1-h6) sont exclus car ils ont leurs propres tailles définies dans post-single.css, main.css, etc. */
+.post-content p,
+.post-content li,
+.post-content dd,
+.post-content dt,
+.post-content span:not(code):not(pre *):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6),
+.post-content div:not(pre):not(code):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6),
+.post-content a {
+    font-size: calc(1em * var(--font-size-multiplier, 1)) !important;
+    line-height: calc(1.6 * var(--line-height-multiplier, 1)) !important;
+    letter-spacing: calc((var(--letter-spacing-multiplier, 1) - 1) * 0.5px) !important;
+    word-spacing: calc((var(--word-spacing-multiplier, 1) - 1) * 2px) !important;
+}
+
+/* Application aux éléments de liste et autres contenus (sans les titres) */
+.entry-content:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6),
+.entry-footer,
+.post-meta,
+.breadcrumbs,
+p:not(.accessibility-panel p),
+li:not(.accessibility-panel li),
+dd,
+dt {
+    font-size: calc(1em * var(--font-size-multiplier, 1)) !important;
+    line-height: calc(1.6 * var(--line-height-multiplier, 1)) !important;
+    letter-spacing: calc((var(--letter-spacing-multiplier, 1) - 1) * 0.5px) !important;
+    word-spacing: calc((var(--word-spacing-multiplier, 1) - 1) * 2px) !important;
+}
+
+/* Indicateurs de focus améliorés */
+:root[data-focus-visible="true"] a:focus,
+:root[data-focus-visible="true"] button:focus,
+:root[data-focus-visible="true"] input:focus,
+:root[data-focus-visible="true"] textarea:focus,
+:root[data-focus-visible="true"] select:focus {
+    outline: var(--focus-visible-width) solid var(--focus-visible-color);
+    outline-offset: 2px;
+}
+
+/* Overlay pour fermer le panneau */
+.accessibility-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    display: none;
+}
+
+.accessibility-overlay[aria-hidden="false"] {
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .accessibility-panel {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100% - 20px);
+        max-width: calc(100% - 20px);
+        max-height: 85vh;
+    }
+}

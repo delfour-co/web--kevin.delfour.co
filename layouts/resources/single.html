@@ -1,0 +1,118 @@
+{{- define "main" }}
+
+<article class="post-single">
+  <header class="post-header">
+    {{ partial "breadcrumbs.html" . }}
+    <h1 class="post-title entry-hint-parent">
+      {{ .Title }}
+      {{- if .Draft }}
+      <span class="entry-hint" title="Draft">
+        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
+          <path
+            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+        </svg>
+      </span>
+      {{- end }}
+    </h1>
+    {{- if .Description }}
+    <div class="post-description">
+      {{ .Description }}
+    </div>
+    {{- end }}
+  </header>
+
+  {{- if .Content }}
+  <div class="post-content">
+    {{- if not (.Param "disableAnchoredHeadings") }}
+    {{- partial "anchored_headings.html" .Content -}}
+    {{- else }}{{ .Content }}{{ end }}
+  </div>
+  {{- end }}
+
+  {{- /* Navigation entre chapitres du livre */}}
+  {{- $currentSection := .CurrentSection }}
+  {{- $isIndexPage := eq .Kind "section" }}
+  
+  {{- if $currentSection }}
+    {{- /* Récupérer toutes les pages régulières du livre dans l'ordre */}}
+    {{- $allPages := $currentSection.RegularPagesRecursive }}
+    {{- if not $allPages }}
+      {{- $allPages = $currentSection.RegularPages }}
+    {{- end }}
+    
+    {{- /* Trier les pages : d'abord par poids, puis par chemin de fichier (qui respecte l'ordre naturel) */}}
+    {{- $sortedPages := sort $allPages "Weight" "asc" }}
+    {{- /* Le tri par File.Path devrait respecter l'ordre naturel avec les préfixes numériques */}}
+    {{- $sortedPages = sort $sortedPages "File.Path" "asc" }}
+    
+    {{- /* Trouver la page précédente et suivante */}}
+    {{- $prevPage := "" }}
+    {{- $nextPage := "" }}
+    
+    {{- if $isIndexPage }}
+      {{- /* Si on est sur la page _index.md, la page suivante est la première page régulière */}}
+      {{- if gt (len $sortedPages) 0 }}
+        {{- $nextPage = index $sortedPages 0 }}
+      {{- end }}
+    {{- else }}
+      {{- /* Sinon, chercher dans la liste des pages régulières */}}
+      {{- range $index, $page := $sortedPages }}
+        {{- if eq $page.RelPermalink $.RelPermalink }}
+          {{- if gt $index 0 }}
+            {{- $prevPage = index $sortedPages (sub $index 1) }}
+          {{- else }}
+            {{- /* Si c'est la première page, la page précédente est la page _index.md */}}
+            {{- $prevPage = $currentSection }}
+          {{- end }}
+          {{- if lt $index (sub (len $sortedPages) 1) }}
+            {{- $nextPage = index $sortedPages (add $index 1) }}
+          {{- end }}
+        {{- end }}
+      {{- end }}
+    {{- end }}
+    
+    {{- /* Toujours afficher la navigation si on est sur la page _index.md ou s'il y a des pages */}}
+    {{- if or $isIndexPage (or $prevPage $nextPage) }}
+    <nav class="paginav" style="margin-top: calc(var(--gap) * 2);">
+      {{- if $prevPage }}
+      <a class="prev" href="{{ $prevPage.Permalink }}">
+        <span class="title">« Chapitre précédent</span>
+        <br>
+        <span>{{ $prevPage.Title }}</span>
+      </a>
+      {{- end }}
+      {{- if $nextPage }}
+      <a class="next" href="{{ $nextPage.Permalink }}">
+        <span class="title">Chapitre suivant »</span>
+        <br>
+        <span>{{ $nextPage.Title }}</span>
+      </a>
+      {{- end }}
+    </nav>
+    {{- end }}
+    
+    {{- /* Lien vers la table des matières / page d'accueil du livre */}}
+    {{- $bookHome := $currentSection }}
+    {{- range $currentSection.RegularPages }}
+      {{- $filename := .File.LogicalName }}
+      {{- if or (hasPrefix $filename "00-Accueil") (hasPrefix $filename "00-accueil") }}
+        {{- $bookHome = . }}
+        {{- break }}
+      {{- end }}
+    {{- end }}
+    
+    <div style="text-align: center; margin-top: var(--gap);">
+      <a href="{{ $bookHome.Permalink }}" style="color: var(--secondary); text-decoration: none; font-size: 14px;">
+        ← Retour à la table des matières
+      </a>
+    </div>
+  {{- end }}
+
+  <footer class="post-footer">
+    {{- if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
+    {{- partial "share_icons.html" . -}}
+    {{- end }}
+  </footer>
+</article>
+
+{{- end }}{{/* end main */}}

@@ -1,0 +1,213 @@
+{{- if not (.Param "hideFooter") }}
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-text">
+            {{- if not site.Params.footer.hideCopyright }}
+                {{- if site.Copyright }}
+                {{- $copyright := site.Copyright | markdownify -}}
+                {{- $diskette := partial "icon.html" (dict "name" "interface-essential/interface-essential-floppy-disk" "size" 16 "class" "footer-diskette" "ariaHidden" true) -}}
+                {{- $copyright = replace $copyright "💾" $diskette -}}
+                <span>{{ $copyright | safeHTML }}</span>
+                {{- else }}
+                <span>&copy; {{ now.Year }} <a href="{{ "" | absLangURL }}">{{ site.Title }}</a></span>
+                {{- end }}
+                {{- print " · "}}
+            {{- end }}
+
+            {{- with site.Params.footer.text }}
+                {{ . | markdownify }}
+                {{- print " · "}}
+            {{- end }}
+
+            <span>
+                Powered by
+                <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> and 80's nostalgia ... not anymore.
+            </span>
+        </div>
+        <div id="wcb" class="carbonbadge wcb-d"></div>
+    </div>
+</footer>
+{{- end }}
+
+<script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
+
+{{- if (not site.Params.disableScrollToTop) }}
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    {{ partial "icon.html" (dict "name" "internet-network/internet-network-upload" "size" 18 "ariaHidden" true) }}
+</a>
+{{- end }}
+
+{{- partial "accessibility_panel.html" . }}
+{{- partial "extend_footer.html" . }}
+
+<script>
+    // Gestion du menu hamburger mobile
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    
+    if (menuToggle && menu) {
+        // Fonction pour fermer le menu
+        function closeMenu() {
+            menu.classList.remove('menu-open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+        
+        // Fonction pour ouvrir le menu
+        function openMenu() {
+            menu.classList.add('menu-open');
+            menuToggle.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Toggle du menu
+        menuToggle.addEventListener('click', function() {
+            if (menu.classList.contains('menu-open')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+        
+        // Fermer le menu quand on clique sur un lien
+        const menuLinks = menu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    closeMenu();
+                }
+            });
+        });
+        
+        // Fermer le menu si on clique en dehors
+        document.addEventListener('click', function(event) {
+            if (window.innerWidth <= 768 && 
+                menu.classList.contains('menu-open') &&
+                !menu.contains(event.target) &&
+                !menuToggle.contains(event.target)) {
+                closeMenu();
+            }
+        });
+        
+        // Fermer le menu au redimensionnement si on passe en desktop
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                closeMenu();
+            }
+        });
+        
+        // Sauvegarder la position de défilement pour desktop uniquement
+        if (window.innerWidth > 768) {
+            const scrollPosition = localStorage.getItem("menu-scroll-position");
+            if (scrollPosition) {
+                menu.scrollLeft = parseInt(scrollPosition, 10);
+            }
+            
+            menu.onscroll = function () {
+                localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+            }
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+
+{{- if (not site.Params.disableScrollToTop) }}
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+{{- end }}
+
+{{- if (not site.Params.disableThemeToggle) }}
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+{{- end }}
+
+{{- if (and (eq .Kind "page") (ne .Layout "archives") (ne .Layout "search") (.Param "ShowCodeCopyButtons")) }}
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '{{- i18n "code_copy" | default "copy" }}';
+
+        function copyingDone() {
+            copybutton.innerHTML = '{{- i18n "code_copied" | default "copied!" }}';
+            setTimeout(() => {
+                copybutton.innerHTML = '{{- i18n "code_copy" | default "copy" }}';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            // td containing LineNos
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            // table containing LineNos and code
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            // code blocks not having highlight as parent class
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+{{- end }}

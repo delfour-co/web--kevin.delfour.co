@@ -1,0 +1,49 @@
+# Fichiers générés par Hugo
+public/
+.hugo_build.lock
+
+# Cache et fichiers temporaires Hugo
+resources/_gen/
+.cache/
+
+# Fichiers système
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+
+# Fichiers d'éditeurs et IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Fichiers de logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Fichiers de dépendances (si vous utilisez npm/yarn)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Variables d'environnement
+.env
+.env.local
+.env.*.local
+
+# Fichiers temporaires
+*.tmp
+*.temp

@@ -1,0 +1,73 @@
+{{- $pageurl := .Permalink }}
+{{- $title := .Title }}
+
+{{- $.Scratch.Set "tags" ""}}
+
+{{- with .Params.Tags }}
+{{- $hashtags := newScratch}}
+{{- range . }}{{ $hashtags.Add "tags" (slice (replaceRE "(\\s)" "" . ))}}{{end}}
+{{- $.Scratch.Set "tags" (delimit ($hashtags.Get "tags") ",") }}
+{{- end -}}
+
+{{- $custom := false }}
+{{- $ShareButtons := (.Param "ShareButtons")}}
+{{- with $ShareButtons }}{{ $custom = true }}{{ end }}
+
+<ul class="share-buttons">
+    {{- if (or (cond ($custom) (in $ShareButtons "x") (true)) (cond ($custom) (in $ShareButtons "twitter") (true))) }}
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share {{ $title | plainify }} on x"
+            href="https://x.com/intent/tweet/?text={{ $title }}&amp;url={{ $pageurl }}&amp;hashtags={{- $.Scratch.Get "tags" -}}">
+            {{ partial "icon.html" (dict "name" "logo/logo-twitter" "size" 30 "ariaHidden" true) }}
+        </a>
+    </li>
+    {{- end }}
+    {{- if (cond ($custom) (in $ShareButtons "linkedin") (true)) }}
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share {{ $title | plainify }} on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ $pageurl }}&amp;title={{ $title }}&amp;summary={{ $title }}&amp;source={{ $pageurl }}">
+            {{ partial "icon.html" (dict "name" "logo/logo-linkedin" "size" 30 "ariaHidden" true) }}
+        </a>
+    </li>
+    {{- end }}
+    {{- if (cond ($custom) (in $ShareButtons "reddit") (true)) }}
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share {{ $title | plainify }} on reddit"
+            href="https://reddit.com/submit?url={{ $pageurl }}&title={{ $title }}">
+            {{ partial "icon.html" (dict "name" "interface-essential/interface-essential-share-1" "size" 30 "ariaHidden" true) }}
+        </a>
+    </li>
+    {{- end }}
+    {{- if (cond ($custom) (in $ShareButtons "facebook") (true)) }}
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share {{ $title | plainify }} on facebook"
+            href="https://facebook.com/sharer/sharer.php?u={{ $pageurl }}">
+            {{ partial "icon.html" (dict "name" "logo/logo-social-media-facebook-circle" "size" 30 "ariaHidden" true) }}
+        </a>
+    </li>
+    {{- end }}
+    {{- if (cond ($custom) (in $ShareButtons "whatsapp") (true)) }}
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share {{ $title | plainify }} on whatsapp"
+            href="https://api.whatsapp.com/send?text={{ $title }}%20-%20{{ $pageurl }}">
+            {{ partial "icon.html" (dict "name" "logo/logo-whatapp" "size" 30 "ariaHidden" true) }}
+        </a>
+    </li>
+    {{- end }}
+    {{- if (cond ($custom) (in $ShareButtons "telegram") (true)) }}
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share {{ $title | plainify }} on telegram"
+            href="https://telegram.me/share/url?text={{ $title }}&amp;url={{ $pageurl }}">
+            {{ partial "icon.html" (dict "name" "interface-essential/interface-essential-share-2" "size" 30 "ariaHidden" true) }}
+        </a>
+    </li>
+    {{- end }}
+    {{- if (cond ($custom) (in $ShareButtons "ycombinator") (true)) }}
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share {{ $title | plainify }} on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t={{ $title }}&u={{ $pageurl }}">
+            {{ partial "icon.html" (dict "name" "interface-essential/interface-essential-share-3" "size" 30 "ariaHidden" true) }}
+        </a>
+    </li>
+    {{- end }}
+</ul>

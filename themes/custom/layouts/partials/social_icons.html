@@ -1,0 +1,20 @@
+<div class="social-icons" {{ with .align}}align="{{.}}" {{- end }}>
+    {{- range site.Params.socialIcons }}
+    {{- $raw := (trim .name " " | lower) -}}
+    {{- $map := dict
+        "linkedin" "logo/logo-linkedin"
+        "twitter" "logo/logo-twitter"
+        "x" "logo/logo-twitter"
+        "facebook" "logo/logo-social-media-facebook-circle"
+        "whatsapp" "logo/logo-whatapp"
+        "mail" "email/email-envelope"
+        "email" "email/email-envelope"
+        "rss" "interface-essential/interface-essential-wifi-feed"
+      -}}
+    {{- $iconName := (index $map $raw | default .name) -}}
+    <a href="{{ trim .url " " | safeURL }}" target="_blank" rel="noopener noreferrer me"
+        title="{{ (.title | default .name) | title }}">
+        {{ partial "icon.html" (dict "name" $iconName "size" 24 "ariaHidden" true "fallbackPartial" "svg.html" "fallbackCtx" .) }}
+    </a>
+    {{- end }}
+</div>

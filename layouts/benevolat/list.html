@@ -1,0 +1,153 @@
+{{- define "main" }}
+
+<style>
+  .benevolat-entry {
+    display: flex;
+    gap: var(--gap);
+    align-items: flex-start;
+    margin-bottom: var(--gap);
+  }
+  
+  .benevolat-entry.no-cover {
+    /* Pas de changement nécessaire, le flex fonctionne bien sans cover */
+  }
+  
+  .benevolat-entry .entry-cover {
+    flex-shrink: 0;
+    width: 160px;
+    margin: 0;
+  }
+  
+  .benevolat-entry .entry-content-wrapper {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .benevolat-entry.no-cover .entry-content-wrapper {
+    width: 100%;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .benevolat-entry {
+      flex-direction: column !important;
+    }
+    .benevolat-entry .entry-cover {
+      width: 100% !important;
+      max-width: 200px !important;
+      margin: 0 auto var(--gap) auto !important;
+    }
+  }
+</style>
+
+<header class="page-header">
+  {{- partial "breadcrumbs.html" . }}
+  <h1>
+    {{ .Title }}
+  </h1>
+  {{- if .Description }}
+  <div class="post-description">
+    {{ .Description | markdownify }}
+  </div>
+  {{- end }}
+</header>
+
+{{- if .Content }}
+<div class="post-content">
+  {{- if not (.Param "disableAnchoredHeadings") }}
+  {{- partial "anchored_headings.html" .Content -}}
+  {{- else }}{{ .Content }}{{ end }}
+</div>
+{{- end }}
+
+{{- $pages := .RegularPages }}
+{{- $paginator := .Paginate $pages }}
+
+{{- range $index, $page := $paginator.Pages }}
+  {{- /* Chercher une image de couverture */}}
+  {{- $coverImage := "" }}
+  {{- $coverImageName := "" }}
+  
+  {{- /* 1. Vérifier les métadonnées de couverture dans le front matter */}}
+  {{- if $page.Params.cover.image }}
+    {{- $coverImageName = $page.Params.cover.image }}
+  {{- end }}
+  
+  {{- if $coverImageName }}
+    {{- /* Chercher l'image dans les ressources de la page (page bundle) */}}
+    {{- $coverResource := $page.Resources.Get $coverImageName }}
+    {{- if not $coverResource }}
+      {{- $matchedResources := $page.Resources.Match $coverImageName }}
+      {{- if $matchedResources }}
+        {{- $coverResource = index $matchedResources 0 }}
+      {{- end }}
+    {{- end }}
+    {{- if $coverResource }}
+      {{- $coverImage = $coverResource.Permalink }}
+    {{- else }}
+      {{- /* Chercher dans assets/benevolat/ */}}
+      {{- $globalCover := resources.Get (printf "benevolat/%s" $coverImageName) }}
+      {{- if $globalCover }}
+        {{- $coverImage = $globalCover.Permalink }}
+      {{- else }}
+        {{- /* Fallback vers le chemin relatif */}}
+        {{- $coverImage = (printf "/benevolat/%s" $coverImageName) | absURL }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+  
+  {{- $titre := $page.Title }}
+  {{- $description := $page.Description | default $page.Summary }}
+  {{- $lien := $page.Permalink }}
+  {{- $hasCover := ne $coverImage "" }}
+
+<article class="post-entry benevolat-entry{{ if not $hasCover }} no-cover{{ end }}">
+  {{- if $hasCover }}
+  <figure class="entry-cover">
+    <img loading="lazy" src="{{ $coverImage }}" alt="{{ $titre | plainify }}" style="width: 100%; height: auto; border-radius: 4px; display: block; object-fit: contain;">
+  </figure>
+  {{- end }}
+  <div class="entry-content-wrapper">
+    <header class="entry-header">
+      <h2 class="entry-hint-parent" style="gap: 12px; align-items: baseline;">
+        <a href="{{ $lien }}" style="color: inherit; text-decoration: none; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis;">{{ $titre }}</a>
+      </h2>
+    </header>
+    {{- if $description }}
+    <div class="entry-content">
+      <p>{{ $description | markdownify | truncate 200 }}</p>
+    </div>
+    {{- end }}
+    {{- if not ($page.Param "hideMeta") }}
+    <footer class="entry-footer" style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-top: 8px;">
+      {{- partial "post_meta.html" $page -}}
+    </footer>
+    {{- end }}
+  </div>
+  <a class="entry-link" aria-label="link to {{ $titre | plainify }}" href="{{ $lien }}"></a>
+</article>
+{{- end }}
+
+{{- if gt $paginator.TotalPages 1 }}
+<footer class="page-footer">
+  <nav class="pagination">
+    {{- if $paginator.HasPrev }}
+    <a class="prev" href="{{ $paginator.Prev.URL | absURL }}">
+      «&nbsp;{{ i18n "prev_page" }}&nbsp;
+      {{- if (.Param "ShowPageNums") }}
+      {{- sub $paginator.PageNumber 1 }}/{{ $paginator.TotalPages }}
+      {{- end }}
+    </a>
+    {{- end }}
+    {{- if $paginator.HasNext }}
+    <a class="next" href="{{ $paginator.Next.URL | absURL }}">
+      {{- i18n "next_page" }}&nbsp;
+      {{- if (.Param "ShowPageNums") }}
+      {{- add 1 $paginator.PageNumber }}/{{ $paginator.TotalPages }}
+      {{- end }}&nbsp;»
+    </a>
+    {{- end }}
+  </nav>
+</footer>
+{{- end }}
+
+{{- end }}{{- /* end main */ -}}

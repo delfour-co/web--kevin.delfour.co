@@ -1,0 +1,6 @@
+{{- if or .IsHome (in (slice "le-role-du-cto" "gouvernance-decision" "culture-management" "trouver-sa-place" "guides-livres") .Section) }}
+<div class="navigation-hint">
+  <p>Ce site est organisé par repères, pas par ordre chronologique.<br>
+  Tu peux explorer librement selon ta situation.</p>
+</div>
+{{- end }}
