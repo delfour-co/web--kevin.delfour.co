@@ -7,7 +7,7 @@ description: "CTO avec 17 ans d'expérience, basé à Lyon. Je donne des repère
 
 Je suis Kevin Delfour, CTO avec 17 ans d'expérience, basé à Lyon.
 
-Je donne des repères aux CTO et leaders tech pour mieux décider et mieux durer, et j'aide la nouvelle génération à trouver sa place sans se raconter d'histoires.
+Je partage mes repères aux CTO et leaders tech pour mieux décider et mieux durer, et j'aide la nouvelle génération à trouver sa place sans se raconter d'histoires.
 
 Je m'appuie sur le terrain, des cadres clairs, et une culture du droit à l'erreur.
 

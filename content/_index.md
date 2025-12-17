@@ -7,7 +7,7 @@ description: "Donner des repères. Pas des leçons."
 
 ## Donner des repères. Pas des leçons.
 
-Je donne des repères aux CTO et leaders tech pour mieux décider et mieux durer, et j'aide la nouvelle génération à trouver sa place sans se raconter d'histoires.
+Je n’ai pas la prétention de savoir ce qu’il vous faut. Mais je partage ici mes propres repères, en espérant qu’ils vous seront utiles.
 
 ---
 
