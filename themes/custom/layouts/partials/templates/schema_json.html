@@ -2,22 +2,47 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "{{- ( site.Params.schema.publisherType | default "Organization") | title -}}",
-  "name": {{ site.Title }},
-  "url": {{ site.Home.Permalink }},
-  "description": {{ site.Params.description | plainify | truncate 180 | safeHTML }},
+  "@type": "{{- ( site.Params.schema.publisherType | default "Person") | title -}}",
+  "name": {{ site.Title | jsonify }},
+  "url": {{ site.Home.Permalink | jsonify }},
+  "description": {{ (site.Params.description | default site.Params.homeInfoParams.Content) | plainify | truncate 180 | jsonify }},
   {{- if (eq site.Params.schema.publisherType "Person") }}
-  "image": {{ site.Params.assets.favicon | default "favicon.ico" | absURL }},
+  "image": {{ site.Params.assets.favicon | default "favicon.ico" | absURL | jsonify }},
+  {{- with site.Params.schema.jobTitle }}
+  "jobTitle": {{ . | jsonify }},
+  {{- end }}
+  {{- with site.Params.schema.knowsAbout }}
+  "knowsAbout": [
+    {{- range $i, $e := . }}{{ if $i }}, {{ end }}{{ $e | jsonify }}{{ end }}
+  ],
+  {{- end }}
   {{- else }}
-  "logo": {{ site.Params.assets.favicon | default "favicon.ico" | absURL }},
+  "logo": {{ site.Params.assets.favicon | default "favicon.ico" | absURL | jsonify }},
   {{- end }}
   "sameAs": [
     {{- if site.Params.schema.sameAs }}
-      {{ range $i, $e := site.Params.schema.sameAs }}{{ if $i }}, {{ end }}{{ trim $e " " }}{{ end }}
+      {{ range $i, $e := site.Params.schema.sameAs }}{{ if $i }}, {{ end }}{{ trim $e " " | jsonify }}{{ end }}
     {{- else}}
-      {{ range $i, $e := site.Params.SocialIcons }}{{ if $i }}, {{ end }}{{ trim $e.url " " | safeURL }}{{ end }}
+      {{ range $i, $e := site.Params.SocialIcons }}{{ if $i }}, {{ end }}{{ trim $e.url " " | jsonify }}{{ end }}
     {{- end}}
   ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": {{ site.Title | jsonify }},
+  "url": {{ site.Home.Permalink | jsonify }},
+  "description": {{ (site.Params.description | default site.Params.homeInfoParams.Content) | plainify | truncate 180 | jsonify }},
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": {{ printf "%ssearch/?q={search_term_string}" site.Home.Permalink | jsonify }}
+    },
+    "query-input": "required name=search_term_string"
+  }
 }
 </script>
 {{- else if (or .IsPage .IsSection) }}
@@ -59,67 +84,121 @@
   ]
 }
 </script>
+{{- if .IsSection }}
+{{/* CollectionPage Schema */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": {{ .Title | jsonify }},
+  "url": {{ .Permalink | jsonify }},
+  "description": {{ with .Description | plainify }}{{ . | jsonify }}{{ else }}{{ .Summary | plainify | jsonify }}{{ end }},
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": {{ len .RegularPages }},
+    "itemListElement": [
+      {{- range $index, $page := .RegularPages | first 20 }}
+      {{- if $index }}, {{ end }}
+      {
+        "@type": "ListItem",
+        "position": {{ add 1 $index }},
+        "item": {
+          "@type": "BlogPosting",
+          "headline": {{ $page.Title | jsonify }},
+          "url": {{ $page.Permalink | jsonify }}
+        }
+      }
+      {{- end }}
+    ]
+  }
+}
+</script>
+{{- end }}
 {{- if .IsPage }}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": {{ .Title | plainify}},
-  "name": "{{ .Title | plainify }}",
-  "description": {{ with .Description | plainify }}{{ . }}{{ else }}{{ .Summary | plainify  }}{{ end -}},
+  "headline": {{ .Title | plainify | jsonify }},
+  "name": {{ .Title | plainify | jsonify }},
+  "description": {{ with .Description | plainify }}{{ . | jsonify }}{{ else }}{{ .Summary | plainify | jsonify }}{{ end }},
   "keywords": [
     {{- if .Params.keywords }}
-    {{ range $i, $e := .Params.keywords }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}
+    {{ range $i, $e := .Params.keywords }}{{ if $i }}, {{ end }}{{ $e | jsonify }}{{ end }}
     {{- else }}
-    {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}
+    {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e | jsonify }}{{ end }}
     {{- end }}
   ],
-  "articleBody": {{ .Content | safeJS | htmlUnescape | plainify }},
-  "wordCount" : "{{ .WordCount }}",
-  "inLanguage": {{ .Language.Lang | default "en-us" }},
+  "articleBody": {{ .Content | safeJS | htmlUnescape | plainify | jsonify }},
+  "wordCount": {{ .WordCount }},
+  {{- $readingTime := .ReadingTime | default (div .WordCount 200) }}
+  "timeRequired": {{ printf "PT%dM" $readingTime | jsonify }},
+  "inLanguage": {{ printf "%s-%s" .Language.Lang (upper .Language.Lang) | default "fr-FR" | jsonify }},
+  {{- if .Section }}
+  "articleSection": {{ .Section | jsonify }},
+  {{- end }}
   {{ if .Params.cover.image -}}
   "image":
     {{- if (ne .Params.cover.relative true) -}}
-    {{ .Params.cover.image | absURL }},
+    {{ .Params.cover.image | absURL | jsonify }},
     {{- else -}}
-    {{ (path.Join .RelPermalink .Params.cover.image ) | absURL }},
+    {{ (path.Join .RelPermalink .Params.cover.image ) | absURL | jsonify }},
     {{- end}}
   {{- else }}
     {{- $images := partial "templates/_funcs/get-page-images" . -}}
     {{- with index $images 0 -}}
-  "image": {{ .Permalink }},
+  "image": {{ .Permalink | jsonify }},
     {{- end }}
-  {{- end -}}
-  "datePublished": {{ .PublishDate }},
-  "dateModified": {{ .Lastmod }},
-  {{- with (.Params.author | default site.Params.author) }}
-  "author":
-    {{- if (or (eq (printf "%T" .) "[]string") (eq (printf "%T" .) "[]interface {}")) -}}
-  [{{- range $i, $v := . -}}
-  {{- if $i }}, {{end -}}
-  {
-    "@type": "Person",
-    "name": {{ $v }}
-  }
-  {{- end }}],
-    {{- else -}}
-  {
-    "@type": "Person",
-    "name": {{ . }}
-  },
-    {{- end -}}
   {{- end }}
+  {{- $ISO8601 := "2006-01-02T15:04:05-07:00" }}
+  "datePublished": {{ .PublishDate.Format $ISO8601 | jsonify }},
+  "dateModified": {{ .Lastmod.Format $ISO8601 | jsonify }},
+  {{- $authorName := "" }}
+  {{- $authorJobTitle := "" }}
+  {{- $authorDescription := "" }}
+  {{- if .Params.author }}
+    {{- if eq (printf "%T" .Params.author) "string" }}
+      {{- $authorName = .Params.author }}
+    {{- else if eq (printf "%T" .Params.author) "map[string]interface {}" }}
+      {{- $authorName = .Params.author.name | default site.Params.author.name | default site.Title }}
+      {{- $authorJobTitle = .Params.author.jobTitle | default site.Params.author.jobTitle | default site.Params.schema.jobTitle }}
+      {{- $authorDescription = .Params.author.description | default site.Params.author.description }}
+    {{- end }}
+  {{- else }}
+    {{- $authorName = site.Params.author.name | default site.Title }}
+    {{- $authorJobTitle = site.Params.author.jobTitle | default site.Params.schema.jobTitle }}
+    {{- $authorDescription = site.Params.author.description }}
+  {{- end }}
+  "author": {
+    "@type": "Person",
+    "name": {{ $authorName | jsonify }}
+    {{- if $authorJobTitle }},
+    "jobTitle": {{ $authorJobTitle | jsonify }}
+    {{- end }}
+    {{- if $authorDescription }},
+    "description": {{ $authorDescription | jsonify }}
+    {{- end }}
+    {{- if site.Params.schema.sameAs }},
+    "sameAs": [
+      {{ range $i, $e := site.Params.schema.sameAs }}{{ if $i }}, {{ end }}{{ trim $e " " | jsonify }}{{ end }}
+    ]
+    {{- end }}
+  },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": {{ .Permalink | safeHTML }}
+    "@id": {{ .Permalink | jsonify }}
   },
   "publisher": {
-    "@type": "{{- ( site.Params.schema.publisherType | default "Organization") | title -}}",
-    "name": {{ site.Title }},
+    "@type": "{{- ( site.Params.schema.publisherType | default "Person") | title -}}",
+    "name": {{ site.Title | jsonify }},
+    {{- if (eq site.Params.schema.publisherType "Person") }}
+    "image": {{ site.Params.assets.favicon | default "favicon.ico" | absURL | jsonify }}
+    {{- else }}
     "logo": {
       "@type": "ImageObject",
-      "url": {{ site.Params.assets.favicon | default "favicon.ico" | absURL }}
+      "url": {{ site.Params.assets.favicon | default "favicon.ico" | absURL | jsonify }}
     }
+    {{- end }}
   }
 }
 </script>

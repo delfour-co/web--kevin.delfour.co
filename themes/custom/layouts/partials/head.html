@@ -8,7 +8,7 @@
 {{- end }}
 
 {{- /* Title */}}
-<title>{{ if .IsHome }}{{ else }}{{ if .Title }}{{ .Title }} | {{ end }}{{ end }}{{ site.Title }}</title>
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ if .Title }}{{ .Title }} | {{ end }}{{ site.Title }}{{ end }}</title>
 
 {{- /* Meta */}}
 {{- if .IsHome }}
@@ -18,10 +18,11 @@
     {{- range $i, $e := .Params.keywords }}{{ if $i }}, {{ end }}{{ $e }}{{ end }} {{- else }}
     {{- range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }} {{- end -}}">
 {{- end }}
-<meta name="description" content="{{- with .Description }}{{ . }}{{- else }}{{- if or .IsPage .IsSection}}
-    {{- .Summary | default (printf "%s - %s" .Title  site.Title) }}{{- else }}
-    {{- with site.Params.description }}{{ . }}{{- end }}{{- end }}{{- end -}}">
-<meta name="author" content="{{ (partial "author.html" . ) }}">
+<meta name="description" content="{{- with .Description }}{{ . | plainify | truncate 160 }}{{- else }}{{- if .IsHome }}
+    {{- with site.Params.description }}{{ . | plainify | truncate 160 }}{{- else }}{{ site.Params.homeInfoParams.Content | plainify | truncate 160 }}{{- end }}{{- else if or .IsPage .IsSection }}
+    {{- with .Summary }}{{ . | plainify | truncate 160 }}{{- else }}{{ printf "%s - %s" .Title site.Title | plainify | truncate 160 }}{{- end }}{{- else }}
+    {{- with site.Params.description }}{{ . | plainify | truncate 160 }}{{- end }}{{- end }}{{- end -}}">
+<meta name="author" content="{{- with (partial "author.html" .) }}{{ . }}{{- else }}{{ site.Params.author.name | default site.Title }}{{- end -}}">
 <link rel="canonical" href="{{ if .Params.canonicalURL -}} {{ trim .Params.canonicalURL " " }} {{- else -}} {{ .Permalink }} {{- end }}">
 {{- if site.Params.analytics.google.SiteVerificationTag }}
 <meta name="google-site-verification" content="{{ site.Params.analytics.google.SiteVerificationTag }}">
@@ -35,6 +36,10 @@
 {{- if site.Params.analytics.naver.SiteVerificationTag }}
 <meta name="naver-site-verification" content="{{ site.Params.analytics.naver.SiteVerificationTag }}">
 {{- end }}
+
+{{- /* Advanced Meta Tags */}}
+<meta name="format-detection" content="telephone=no">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 
 {{- /* Styles */}}
 

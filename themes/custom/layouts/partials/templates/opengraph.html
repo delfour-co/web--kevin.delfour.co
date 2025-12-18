@@ -12,9 +12,15 @@
   <meta property="og:description" content="{{ . }}">
 {{- end }}
 
-{{- with or .Params.locale site.Language.LanguageCode site.Language.Lang }}
-  <meta property="og:locale" content="{{ . }}">
+{{- $locale := "fr_FR" }}
+{{- if .Params.locale }}
+  {{- $locale = .Params.locale }}
+{{- else if site.Language.LanguageCode }}
+  {{- $locale = printf "%s_%s" site.Language.LanguageCode (upper site.Language.LanguageCode) }}
+{{- else if site.Language.Lang }}
+  {{- $locale = printf "%s_FR" site.Language.Lang }}
 {{- end }}
+<meta property="og:locale" content="{{ $locale }}">
 
 {{- if .IsPage }}
   <meta property="og:type" content="article">
@@ -36,15 +42,35 @@
 {{- end }}
 
 {{- if .Params.cover.image -}}
+  {{- $ogImage := "" }}
   {{- if (ne .Params.cover.relative true) }}
-    <meta property="og:image" content="{{ .Params.cover.image | absURL }}">
+    {{- $ogImage = .Params.cover.image | absURL }}
   {{- else}}
-    <meta property="og:image" content="{{ (path.Join .RelPermalink .Params.cover.image ) | absURL }}">
+    {{- $ogImage = (path.Join .RelPermalink .Params.cover.image ) | absURL }}
   {{- end}}
+  <meta property="og:image" content="{{ $ogImage }}">
+  {{- if .Params.cover.width }}
+  <meta property="og:image:width" content="{{ .Params.cover.width }}">
+  {{- else }}
+  <meta property="og:image:width" content="1200">
+  {{- end }}
+  {{- if .Params.cover.height }}
+  <meta property="og:image:height" content="{{ .Params.cover.height }}">
+  {{- else }}
+  <meta property="og:image:height" content="630">
+  {{- end }}
+  {{- with .Params.cover.alt }}
+  <meta property="og:image:alt" content="{{ . }}">
+  {{- else }}
+  <meta property="og:image:alt" content="{{ .Title }}">
+  {{- end }}
 {{- else }}
   {{- with partial "_funcs/get-page-images" . }}
-    {{- range . | first 6 }}
+    {{- range . | first 1 }}
       <meta property="og:image" content="{{ .Permalink }}">
+      <meta property="og:image:width" content="1200">
+      <meta property="og:image:height" content="630">
+      <meta property="og:image:alt" content="{{ $.Title }}">
     {{- end }}
   {{- end }}
 {{- end }}

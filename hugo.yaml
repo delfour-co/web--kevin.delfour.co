@@ -1,5 +1,6 @@
 defaultContentLanguage: fr
 title: Kevin Delfour
+description: "Je partage mes repères aux CTO et leaders tech pour mieux décider et mieux durer, et j'aide la nouvelle génération à trouver sa place sans se raconter d'histoires."
 copyright: "© 2025 Kevin Delfour – All rights reserved – Blow on the cartridge 💾 if this site doesn't load"
 baseURL: https://kevin.delfour.co
 environment: production
@@ -22,6 +23,9 @@ taxonomies:
   audience: "audiences"
 
 params:
+  description: "Je partage mes repères aux CTO et leaders tech pour mieux décider et mieux durer, et j'aide la nouvelle génération à trouver sa place sans se raconter d'histoires."
+  keywords: ["CTO", "leadership technique", "gouvernance", "décision", "culture", "management", "développement de carrière", "tech", "leadership", "développement"]
+  
   ShowShareButtons: true
   ShowReadingTime: true
   ShowBreadCrumbs: true
@@ -49,6 +53,27 @@ params:
       url: "https://linkedin.com/in/kevindelfour"
     - name: "GitHub"
       url: "https://github.com/kdelfour"
+  
+  social:
+    twitter: "@kevindelfour"
+  
+  schema:
+    publisherType: "Person"
+    sameAs:
+      - "https://twitter.com/kevindelfour"
+      - "https://linkedin.com/in/kevindelfour"
+      - "https://github.com/kdelfour"
+    jobTitle: "CTO"
+    knowsAbout:
+      - "Leadership technique"
+      - "Gouvernance et décision"
+      - "Culture et management"
+      - "Développement de carrière"
+  
+  author:
+    name: "Kevin Delfour"
+    jobTitle: "CTO"
+    description: "Je partage mes repères aux CTO et leaders tech pour mieux décider et mieux durer, et j'aide la nouvelle génération à trouver sa place sans se raconter d'histoires."
 
 menu:
   main:
