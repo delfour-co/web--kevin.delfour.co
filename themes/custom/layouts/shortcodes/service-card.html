@@ -1,0 +1,18 @@
+{{- /*
+  Service card shortcode with icon.
+  
+  Usage:
+    {{< service-card icon="business/business-products-cash-user-man-message" title="Consultation CTO" description="Session de 2h pour clarifier votre vision technique et vos choix stratégiques." >}}
+  
+  Params:
+    - icon (string): icon path (relative to assets/icons) without extension
+    - title (string): card title
+    - description (string): card description
+*/ -}}
+<div class="service-card" style="padding: var(--gap); background: var(--entry); border-radius: var(--radius); border: 1px solid var(--border); display: flex; flex-direction: column; gap: calc(var(--gap) / 2);">
+  <div style="color: var(--primary); font-size: 48px; line-height: 1;">
+    {{- partial "icon.html" (dict "name" (.Get "icon") "size" 48 "ariaHidden" true) -}}
+  </div>
+  <h3 style="margin: 0; font-size: 1.2em;">{{ .Get "title" }}</h3>
+  <p style="margin: 0; color: var(--secondary); font-size: 0.9em;">{{ .Get "description" }}</p>
+</div>

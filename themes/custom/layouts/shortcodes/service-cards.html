@@ -1,0 +1,89 @@
+{{- /*
+  Service cards shortcode - generates all four service cards with details.
+  
+  Usage:
+    {{< service-cards >}}
+*/ -}}
+<div class="service-cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--gap); margin: calc(var(--gap) * 2) 0;">
+  <div class="service-card" style="padding: var(--gap); background: var(--entry); border-radius: var(--radius); border: 1px solid var(--border); display: flex; flex-direction: column; gap: calc(var(--gap) / 2);">
+    <div style="color: var(--primary); font-size: 48px; line-height: 1;">
+      {{- partial "icon.html" (dict "name" "business/business-products-cash-user-man-message" "size" 48 "ariaHidden" true) -}}
+    </div>
+    <h3 style="margin: 0; font-size: 1.2em;">Consultation CTO</h3>
+    <p style="margin: 0; color: var(--secondary); font-size: 0.9em;">Session de 2h pour clarifier votre vision technique et vos choix stratégiques.</p>
+    <div style="margin-top: calc(var(--gap) / 2); padding-top: calc(var(--gap) / 2); border-top: 1px solid var(--border); font-size: 0.85em; color: var(--secondary);">
+      <p style="margin: 0.5em 0;"><strong>Pour qui :</strong> CTO en poste ou en transition</p>
+      <p style="margin: 0.5em 0;"><strong>Sujets abordés :</strong></p>
+      <ul style="margin: 0.5em 0; padding-left: 1.5em;">
+        <li>Vision technique et roadmap stratégique</li>
+        <li>Architecture et choix techniques</li>
+        <li>Gouvernance et processus de décision</li>
+        <li>Alignement tech et business</li>
+        <li>Gestion de la dette technique</li>
+      </ul>
+      <p style="margin: 0.5em 0;"><strong>Format :</strong> Session de 2h, en présentiel ou visio</p>
+      <p style="margin: 0.5em 0;"><strong>Livrables :</strong> Compte-rendu structuré avec recommandations concrètes</p>
+    </div>
+  </div>
+  
+  <div class="service-card" style="padding: var(--gap); background: var(--entry); border-radius: var(--radius); border: 1px solid var(--border); display: flex; flex-direction: column; gap: calc(var(--gap) / 2);">
+    <div style="color: var(--primary); font-size: 48px; line-height: 1;">
+      {{- partial "icon.html" (dict "name" "users/user-single-aim" "size" 48 "ariaHidden" true) -}}
+    </div>
+    <h3 style="margin: 0; font-size: 1.2em;">Coaching individuel</h3>
+    <p style="margin: 0; color: var(--secondary); font-size: 0.9em;">Sessions régulières pour développer votre leadership et votre carrière.</p>
+    <div style="margin-top: calc(var(--gap) / 2); padding-top: calc(var(--gap) / 2); border-top: 1px solid var(--border); font-size: 0.85em; color: var(--secondary);">
+      <p style="margin: 0.5em 0;"><strong>Pour qui :</strong> Leaders tech, développeurs seniors en transition</p>
+      <p style="margin: 0.5em 0;"><strong>Sujets abordés :</strong></p>
+      <ul style="margin: 0.5em 0; padding-left: 1.5em;">
+        <li>Transition vers un rôle de leadership</li>
+        <li>Développement de carrière</li>
+        <li>Gestion d'équipe et communication</li>
+        <li>Prise de décision et confiance en soi</li>
+        <li>Équilibre pro/perso et prévention du burnout</li>
+      </ul>
+      <p style="margin: 0.5em 0;"><strong>Format :</strong> Sessions de 1h30, régulières (mensuel recommandé)</p>
+      <p style="margin: 0.5em 0;"><strong>Approche :</strong> Écoute active, repères structurants, pas de leçons</p>
+    </div>
+  </div>
+  
+  <div class="service-card" style="padding: var(--gap); background: var(--entry); border-radius: var(--radius); border: 1px solid var(--border); display: flex; flex-direction: column; gap: calc(var(--gap) / 2);">
+    <div style="color: var(--primary); font-size: 48px; line-height: 1;">
+      {{- partial "icon.html" (dict "name" "users/multiple-user" "size" 48 "ariaHidden" true) -}}
+    </div>
+    <h3 style="margin: 0; font-size: 1.2em;">Ateliers d'équipe</h3>
+    <p style="margin: 0; color: var(--secondary); font-size: 0.9em;">Ateliers pratiques pour renforcer la culture et les processus de votre équipe.</p>
+    <div style="margin-top: calc(var(--gap) / 2); padding-top: calc(var(--gap) / 2); border-top: 1px solid var(--border); font-size: 0.85em; color: var(--secondary);">
+      <p style="margin: 0.5em 0;"><strong>Pour qui :</strong> Équipes tech (5-15 personnes)</p>
+      <p style="margin: 0.5em 0;"><strong>Sujets abordés :</strong></p>
+      <ul style="margin: 0.5em 0; padding-left: 1.5em;">
+        <li>Culture d'équipe et bienveillance</li>
+        <li>Code review et feedback constructif</li>
+        <li>Processus de décision technique</li>
+        <li>Gestion des conflits</li>
+        <li>Onboarding et intégration</li>
+      </ul>
+      <p style="margin: 0.5em 0;"><strong>Format :</strong> Atelier de 3h ou journée complète, en présentiel</p>
+      <p style="margin: 0.5em 0;"><strong>Approche :</strong> Pratique, participatif, basé sur vos cas concrets</p>
+    </div>
+  </div>
+  
+  <div class="service-card" style="padding: var(--gap); background: var(--entry); border-radius: var(--radius); border: 1px solid var(--border); display: flex; flex-direction: column; gap: calc(var(--gap) / 2);">
+    <div style="color: var(--primary); font-size: 48px; line-height: 1;">
+      {{- partial "icon.html" (dict "name" "coding-apps-websites/coding-apps-websites-conference" "size" 48 "ariaHidden" true) -}}
+    </div>
+    <h3 style="margin: 0; font-size: 1.2em;">Conférences et interventions</h3>
+    <p style="margin: 0; color: var(--secondary); font-size: 0.9em;">Interventions pour événements tech, meetups et entreprises.</p>
+    <div style="margin-top: calc(var(--gap) / 2); padding-top: calc(var(--gap) / 2); border-top: 1px solid var(--border); font-size: 0.85em; color: var(--secondary);">
+      <p style="margin: 0.5em 0;"><strong>Pour qui :</strong> Événements tech, meetups, entreprises</p>
+      <p style="margin: 0.5em 0;"><strong>Sujets :</strong></p>
+      <ul style="margin: 0.5em 0; padding-left: 1.5em;">
+        <li>Le rôle du CTO moderne</li>
+        <li>Gouvernance technique et décision</li>
+        <li>Culture d'équipe bienveillante</li>
+        <li>Trouver sa place dans la tech</li>
+      </ul>
+      <p style="margin: 0.5em 0;"><strong>Format :</strong> Conférence (30-60 min) ou intervention (2-3h)</p>
+    </div>
+  </div>
+</div>

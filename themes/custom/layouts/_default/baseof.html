@@ -32,7 +32,8 @@
 {{- else }}
 <body id="top"{{ if $pillarSlug }} data-pillar="{{ $pillarSlug }}"{{ end }}>
 {{- end }}
-    {{- if not .IsHome }}{{ partial "scroll_progress.html" . }}{{ end -}}
+    {{- $hideScrollProgress := or .IsHome (eq .RelPermalink "/travailler-avec-moi/") -}}
+    {{- if not $hideScrollProgress }}{{ partial "scroll_progress.html" . }}{{ end -}}
     {{ partialCached "header.html" . .Page -}}
     {{- partial "navigation_hint.html" . -}}
     <main class="main">

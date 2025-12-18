@@ -1,0 +1,19 @@
+{{- /*
+  Icon shortcode for use in markdown content.
+  
+  Usage:
+    {{< icon name="business/business-products-cash-user-man-message" size=48 ariaHidden=true >}}
+  
+  Params:
+    - name (string): icon path (relative to assets/icons) without extension
+    - class (string): extra class(es) on wrapper
+    - size (string|int): icon size in px (default 24)
+    - title (string): optional <title>
+    - ariaLabel (string): optional aria-label on wrapper
+    - ariaHidden (bool|string): if true or "true", wrapper gets aria-hidden="true"
+*/ -}}
+{{- $ariaHidden := false }}
+{{- if .Get "ariaHidden" }}
+  {{- $ariaHidden = or (eq (.Get "ariaHidden") true) (eq (.Get "ariaHidden") "true") }}
+{{- end }}
+{{- partial "icon.html" (dict "name" (.Get "name") "class" (.Get "class") "size" (.Get "size" | default 24) "title" (.Get "title") "ariaLabel" (.Get "ariaLabel") "ariaHidden" $ariaHidden) -}}
