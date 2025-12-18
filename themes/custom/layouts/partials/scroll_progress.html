@@ -1,0 +1,20 @@
+<div class="scroll-progress-container">
+  <div class="scroll-progress-bar">
+    <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    <div class="scroll-progress-icon">
+      {{- $iconPath := "icons/business/business-product-startup-2.svg" -}}
+      {{- $icon := resources.Get $iconPath -}}
+      {{- if $icon -}}
+        {{- $svg := $icon.Content -}}
+        {{- /* Remplacer le noir par du blanc pour meilleure visibilité */ -}}
+        {{- $svg = replaceRE "fill=\"#000000\"" "fill=\"#ffffff\"" $svg -}}
+        {{- $svg = replaceRE "fill=\"black\"" "fill=\"#ffffff\"" $svg -}}
+        {{- $svg = replaceRE "fill=\"#000\"" "fill=\"#ffffff\"" $svg -}}
+        {{- $svg | safeHTML -}}
+      {{- else -}}
+        {{- warnf "Icon not found: %s" $iconPath -}}
+      {{- end -}}
+    </div>
+  </div>
+  <div class="scroll-progress-percentage" id="scrollProgressPercentage">00%</div>
+</div>

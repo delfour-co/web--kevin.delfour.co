@@ -1,3 +1,100 @@
 {{- /* Footer custom content area start */ -}}
 {{- /*     Insert any custom code web-analytics, resources, etc. here */ -}}
+
+{{- /* Scroll Progress Bar JavaScript */ -}}
+<script>
+(function() {
+  'use strict';
+  
+  const scrollProgressFill = document.getElementById('scrollProgressFill');
+  const scrollProgressIcon = document.querySelector('.scroll-progress-icon');
+  const scrollProgressContainer = document.querySelector('.scroll-progress-container');
+  const scrollProgressPercentage = document.getElementById('scrollProgressPercentage');
+  
+  if (!scrollProgressFill || !scrollProgressIcon || !scrollProgressContainer || !scrollProgressPercentage) {
+    return;
+  }
+  
+  function updateScrollProgress() {
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // Calculer le pourcentage de scroll
+    const scrollableHeight = documentHeight - windowHeight;
+    const scrollPercentage = scrollableHeight > 0 
+      ? (scrollTop / scrollableHeight) * 100 
+      : 0;
+    
+    // Afficher/masquer la barre selon la position du scroll
+    // Masquer au début (0%) et à la fin (>= 99%)
+    const isAtStart = scrollTop < 10; // Seuil de 10px pour éviter les problèmes de précision
+    const isAtEnd = scrollPercentage >= 99;
+    
+    if (isAtStart || isAtEnd) {
+      scrollProgressContainer.classList.remove('visible');
+    } else {
+      scrollProgressContainer.classList.add('visible');
+    }
+    
+    const containerWidth = scrollProgressFill.parentElement.offsetWidth;
+    const iconWidth = scrollProgressIcon.offsetWidth;
+    const iconHalfWidth = iconWidth / 2;
+    
+    // Calculer la largeur maximale de la barre pour que l'icône reste visible
+    // À 100% de scroll, on veut que l'icône soit encore visible, donc on limite la barre
+    const maxBarWidth = containerWidth - iconHalfWidth;
+    const maxBarPercentage = (maxBarWidth / containerWidth) * 100;
+    
+    // Calculer le pourcentage réel de la barre (limitée pour garder l'icône visible)
+    const rawPercentage = Math.min(100, Math.max(0, scrollPercentage));
+    const barPercentage = Math.min(maxBarPercentage, rawPercentage);
+    
+    // Calculer la couleur de rouge à vert selon la progression
+    // 0% = rouge (255, 0, 0), 100% = vert (0, 255, 0)
+    const red = Math.round(255 * (1 - rawPercentage / 100));
+    const green = Math.round(255 * (rawPercentage / 100));
+    const borderRed = Math.round(200 * (1 - rawPercentage / 100));
+    const borderGreen = Math.round(200 * (rawPercentage / 100));
+    
+    // Mettre à jour la largeur et la couleur de la barre
+    scrollProgressFill.style.width = barPercentage + '%';
+    scrollProgressFill.style.backgroundColor = `rgba(${red}, ${green}, 0, 0.8)`;
+    scrollProgressFill.style.borderRightColor = `rgba(${borderRed}, ${borderGreen}, 0, 0.4)`;
+    
+    // Positionner l'icône à la fin de la barre de progression
+    // Quand on est à 100%, l'icône doit être positionnée pour rester visible
+    const fillWidth = (containerWidth * barPercentage) / 100;
+    const iconPosition = Math.min(fillWidth, containerWidth - iconHalfWidth);
+    scrollProgressIcon.style.left = Math.max(iconHalfWidth, iconPosition) + 'px';
+    
+    // Mettre à jour le pourcentage affiché
+    const displayPercentage = Math.round(rawPercentage);
+    scrollProgressPercentage.textContent = String(displayPercentage).padStart(2, '0') + '%';
+  }
+  
+  // Mettre à jour au scroll
+  let ticking = false;
+  function onScroll() {
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        updateScrollProgress();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+  
+  // Écouter les événements de scroll
+  window.addEventListener('scroll', onScroll, { passive: true });
+  
+  // Mettre à jour au chargement et au redimensionnement
+  window.addEventListener('load', updateScrollProgress);
+  window.addEventListener('resize', updateScrollProgress);
+  
+  // Mise à jour initiale
+  updateScrollProgress();
+})();
+</script>
+
 {{- /* Footer custom content area end */ -}}

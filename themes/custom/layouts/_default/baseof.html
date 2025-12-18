@@ -32,6 +32,7 @@
 {{- else }}
 <body id="top"{{ if $pillarSlug }} data-pillar="{{ $pillarSlug }}"{{ end }}>
 {{- end }}
+    {{- partial "scroll_progress.html" . -}}
     {{ partialCached "header.html" . .Page -}}
     {{- partial "navigation_hint.html" . -}}
     <main class="main">
