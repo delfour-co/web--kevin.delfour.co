@@ -182,6 +182,31 @@ git commit -m "Message"
 git push origin main
 ```
 
+### Format des messages de commit
+
+Les messages de commit suivent le format conventionnel avec préfixe :
+
+**Format :** `<type>: <description>`
+
+**Types disponibles :**
+- `feat:` — Nouvelle fonctionnalité
+- `fix:` — Correction de bug
+- `refactor:` — Refactoring de code
+- `chore:` — Tâches de maintenance (dépendances, config, etc.)
+- `docs:` — Documentation uniquement
+- `style:` — Formatage, style (pas de changement de code)
+- `perf:` — Amélioration de performance
+
+**Exemples :**
+```bash
+git commit -m "feat: ajout barre de progression de défilement"
+git commit -m "fix: correction largeur barre de progression"
+git commit -m "chore: mise à jour des dépendances"
+git commit -m "docs: ajout section format commit dans CLAUDE.md"
+```
+
+**Règle :** Toujours utiliser le format conventionnel pour maintenir la cohérence de l'historique git.
+
 ---
 
 ## Règles de contribution (NON NÉGOCIABLES)
