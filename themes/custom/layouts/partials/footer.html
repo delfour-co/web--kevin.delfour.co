@@ -1,13 +1,54 @@
 {{- if not (.Param "hideFooter") }}
 <footer class="footer">
     <div class="footer-content">
-        <div class="footer-links">
-            <a href="/benevolat/">Bénévolat</a>
-            <span>·</span>
-            <a href="/projets/">Projets</a>
-            <span>·</span>
-            <a href="/archives/">Archives</a>
-        </div>
+        <nav class="footer-links" aria-label="Navigation principale">
+            {{- $currentPage := . }}
+            {{- $menuItems := site.Menus.main }}
+            {{- $reperesItems := slice }}
+            {{- $otherItems := slice }}
+            {{- range $menuItems }}
+                {{- if eq .Params.group "reperes" }}
+                    {{- $reperesItems = $reperesItems | append . }}
+                {{- else }}
+                    {{- $otherItems = $otherItems | append . }}
+                {{- end }}
+            {{- end }}
+            {{- if $reperesItems }}
+            <div class="footer-links-group">
+                {{- range $index, $item := $reperesItems }}
+                    {{- if $index }}<span class="footer-separator" aria-hidden="true">·</span>{{- end }}
+                    {{- $itemURL := $item.URL | absLangURL }}
+                    {{- $currentURL := $currentPage.Permalink | absLangURL }}
+                    <a href="{{ $itemURL }}"{{ if or (eq $itemURL $currentURL) (hasPrefix $currentURL $itemURL) }} class="active"{{ end }}>{{ $item.Name }}</a>
+                {{- end }}
+            </div>
+            {{- end }}
+            {{- if and $reperesItems $otherItems }}
+            <span class="footer-separator footer-separator-large" aria-hidden="true">·</span>
+            {{- end }}
+            {{- if $otherItems }}
+            <div class="footer-links-group">
+                {{- range $index, $item := $otherItems }}
+                    {{- if $index }}<span class="footer-separator" aria-hidden="true">·</span>{{- end }}
+                    {{- $itemURL := $item.URL | absLangURL }}
+                    {{- $currentURL := $currentPage.Permalink | absLangURL }}
+                    <a href="{{ $itemURL }}"{{ if or (eq $itemURL $currentURL) (hasPrefix $currentURL $itemURL) }} class="active"{{ end }}>{{ $item.Name }}</a>
+                {{- end }}
+            </div>
+            {{- end }}
+            {{- if or $reperesItems $otherItems }}
+            <span class="footer-separator footer-separator-large" aria-hidden="true">·</span>
+            {{- end }}
+            <div class="footer-links-group">
+                {{- $additionalLinks := slice (dict "name" "Archives" "url" "/archives/") (dict "name" "Bénévolat" "url" "/benevolat/") (dict "name" "Projets" "url" "/projets/") }}
+                {{- range $index, $link := $additionalLinks }}
+                    {{- if $index }}<span class="footer-separator" aria-hidden="true">·</span>{{- end }}
+                    {{- $linkURL := $link.url | absLangURL }}
+                    {{- $currentURL := $currentPage.Permalink | absLangURL }}
+                    <a href="{{ $linkURL }}"{{ if or (eq $linkURL $currentURL) (hasPrefix $currentURL $linkURL) }} class="active"{{ end }}>{{ $link.name }}</a>
+                {{- end }}
+            </div>
+        </nav>
         <div class="footer-bottom">
             <div class="footer-text">
                 {{- if not site.Params.footer.hideCopyright }}
