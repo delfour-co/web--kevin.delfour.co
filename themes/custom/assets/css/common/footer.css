@@ -167,18 +167,22 @@
         align-items: center;
         justify-items: center;
         gap: calc(var(--gap) * 0.75);
+        display: flex;
+        flex-direction: column;
     }
 
     .footer-text {
         width: 100%;
         max-width: 100%;
         text-align: center;
+        order: 2;
     }
 
     #wcb.carbonbadge {
         align-self: center !important;
         width: auto !important;
         margin-top: 0 !important;
+        order: 1;
     }
 }
 
