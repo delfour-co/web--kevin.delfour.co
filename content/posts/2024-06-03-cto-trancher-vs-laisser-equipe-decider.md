@@ -124,6 +124,6 @@ Chaque décision tranchée → ADR. Cette documentation évite les débats récu
 
 ## Pour approfondir
 
-Le livre ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/) explore comment différents CTOs gèrent l'équilibre entre délégation et intervention.
+Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment différents CTOs gèrent l'équilibre entre délégation et intervention.
 
 Pour approfondir, tu peux aussi consulter l'article ["Autonomie des équipes"](/posts/autonomie-equipes-jusquou-comment/) ou les autres contenus du pilier ["Gouvernance & décision"](/gouvernance-decision/).

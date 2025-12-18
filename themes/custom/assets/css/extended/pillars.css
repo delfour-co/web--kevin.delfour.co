@@ -1,0 +1,464 @@
+/* ============================================
+   Styles pour les cartes de piliers
+   ============================================ */
+
+/* Grille avec alignement parfait */
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gap);
+    align-items: stretch;
+}
+
+/* Sur mobile, une seule colonne */
+@media (max-width: 768px) {
+    .pillars-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Uniformiser la hauteur des cartes */
+.pillars .grid {
+    align-items: stretch;
+}
+
+.pillars .post-entry {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 180px;
+}
+
+.pillars .entry-header {
+    flex-shrink: 0;
+}
+
+.pillars .entry-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.pillars .entry-content p {
+    margin: 0;
+    flex-grow: 1;
+}
+
+/* Code couleur pour chaque pilier */
+.pillar-entry--cto {
+    border-left: 4px solid rgb(59, 130, 246); /* Bleu */
+}
+
+.pillar-entry--cto:hover {
+    border-left-color: rgb(37, 99, 235);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.pillar-entry--gouvernance {
+    border-left: 4px solid rgb(168, 85, 247); /* Violet */
+}
+
+.pillar-entry--gouvernance:hover {
+    border-left-color: rgb(147, 51, 234);
+    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.15);
+}
+
+.pillar-entry--culture {
+    border-left: 4px solid rgb(34, 197, 94); /* Vert */
+}
+
+.pillar-entry--culture:hover {
+    border-left-color: rgb(22, 163, 74);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
+}
+
+.pillar-entry--place {
+    border-left: 4px solid rgb(251, 146, 60); /* Orange */
+}
+
+.pillar-entry--place:hover {
+    border-left-color: rgb(249, 115, 22);
+    box-shadow: 0 4px 12px rgba(251, 146, 60, 0.15);
+}
+
+/* Dark mode */
+:root[data-theme="dark"] .pillar-entry--cto {
+    border-left-color: rgb(96, 165, 250);
+}
+
+:root[data-theme="dark"] .pillar-entry--cto:hover {
+    box-shadow: 0 4px 12px rgba(96, 165, 250, 0.2);
+}
+
+:root[data-theme="dark"] .pillar-entry--gouvernance {
+    border-left-color: rgb(196, 181, 253);
+}
+
+:root[data-theme="dark"] .pillar-entry--gouvernance:hover {
+    box-shadow: 0 4px 12px rgba(196, 181, 253, 0.2);
+}
+
+:root[data-theme="dark"] .pillar-entry--culture {
+    border-left-color: rgb(74, 222, 128);
+}
+
+:root[data-theme="dark"] .pillar-entry--culture:hover {
+    box-shadow: 0 4px 12px rgba(74, 222, 128, 0.2);
+}
+
+:root[data-theme="dark"] .pillar-entry--place {
+    border-left-color: rgb(251, 191, 36);
+}
+
+:root[data-theme="dark"] .pillar-entry--place:hover {
+    box-shadow: 0 4px 12px rgba(251, 191, 36, 0.2);
+}
+
+/* Style de l'icône dans les piliers */
+.pillars .pillar-icon {
+    flex-shrink: 0;
+}
+
+/* ============================================
+   Icônes dans le menu de navigation
+   ============================================ */
+
+#menu .menu-icon {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55), 
+                opacity 0.2s ease,
+                color 0.2s ease;
+    position: relative;
+}
+
+#menu a:hover .menu-icon {
+    transform: scale(1.1) translateY(-2px);
+    opacity: 0.9;
+}
+
+#menu a:active .menu-icon {
+    transform: scale(0.95);
+}
+
+#menu .active .menu-icon {
+    opacity: 1;
+}
+
+/* Animation d'entrée pour les icônes (desktop uniquement) */
+@media screen and (min-width: 769px) {
+    #menu li .menu-icon {
+        animation: fadeInMenuIcon 0.4s ease forwards;
+    }
+
+    #menu li:nth-child(1) .menu-icon { animation-delay: 0.1s; }
+    #menu li:nth-child(2) .menu-icon { animation-delay: 0.15s; }
+    #menu li:nth-child(3) .menu-icon { animation-delay: 0.2s; }
+    #menu li:nth-child(4) .menu-icon { animation-delay: 0.25s; }
+    #menu li:nth-child(5) .menu-icon { animation-delay: 0.3s; }
+    #menu li:nth-child(6) .menu-icon { animation-delay: 0.35s; }
+    #menu li:nth-child(7) .menu-icon { animation-delay: 0.4s; }
+    #menu li:nth-child(8) .menu-icon { animation-delay: 0.45s; }
+
+    @keyframes fadeInMenuIcon {
+        from {
+            opacity: 0;
+            transform: translateY(-5px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Couleurs des icônes selon le pilier */
+#menu a[data-pillar="le-role-du-cto"] .menu-icon,
+#menu a[data-pillar="role-cto"] .menu-icon {
+    color: rgb(59, 130, 246);
+}
+
+#menu a[data-pillar="gouvernance-decision"] .menu-icon {
+    color: rgb(168, 85, 247);
+}
+
+#menu a[data-pillar="culture-management"] .menu-icon {
+    color: rgb(34, 197, 94);
+}
+
+#menu a[data-pillar="trouver-sa-place"] .menu-icon {
+    color: rgb(251, 146, 60);
+}
+
+/* Dark mode pour les icônes du menu */
+:root[data-theme="dark"] #menu a[data-pillar="le-role-du-cto"] .menu-icon,
+:root[data-theme="dark"] #menu a[data-pillar="role-cto"] .menu-icon {
+    color: rgb(96, 165, 250);
+}
+
+:root[data-theme="dark"] #menu a[data-pillar="gouvernance-decision"] .menu-icon {
+    color: rgb(196, 181, 253);
+}
+
+:root[data-theme="dark"] #menu a[data-pillar="culture-management"] .menu-icon {
+    color: rgb(74, 222, 128);
+}
+
+:root[data-theme="dark"] #menu a[data-pillar="trouver-sa-place"] .menu-icon {
+    color: rgb(251, 191, 36);
+}
+
+/* ============================================
+   Couleurs pour les menus de piliers
+   ============================================ */
+
+#menu a[data-pillar="le-role-du-cto"],
+#menu a[data-pillar="role-cto"] {
+    color: rgb(59, 130, 246);
+}
+
+#menu a[data-pillar="le-role-du-cto"]:hover,
+#menu a[data-pillar="role-cto"]:hover {
+    color: rgb(37, 99, 235);
+}
+
+#menu a[data-pillar="gouvernance-decision"] {
+    color: rgb(168, 85, 247);
+}
+
+#menu a[data-pillar="gouvernance-decision"]:hover {
+    color: rgb(147, 51, 234);
+}
+
+#menu a[data-pillar="culture-management"] {
+    color: rgb(34, 197, 94);
+}
+
+#menu a[data-pillar="culture-management"]:hover {
+    color: rgb(22, 163, 74);
+}
+
+#menu a[data-pillar="trouver-sa-place"] {
+    color: rgb(251, 146, 60);
+}
+
+#menu a[data-pillar="trouver-sa-place"]:hover {
+    color: rgb(249, 115, 22);
+}
+
+/* Dark mode pour les menus */
+:root[data-theme="dark"] #menu a[data-pillar="le-role-du-cto"],
+:root[data-theme="dark"] #menu a[data-pillar="role-cto"] {
+    color: rgb(96, 165, 250);
+}
+
+:root[data-theme="dark"] #menu a[data-pillar="gouvernance-decision"] {
+    color: rgb(196, 181, 253);
+}
+
+:root[data-theme="dark"] #menu a[data-pillar="culture-management"] {
+    color: rgb(74, 222, 128);
+}
+
+:root[data-theme="dark"] #menu a[data-pillar="trouver-sa-place"] {
+    color: rgb(251, 191, 36);
+}
+
+/* ============================================
+   Tags de piliers colorés dans les articles
+   ============================================ */
+
+.meta-pillar {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Style pour les tags de piliers dans le footer des articles individuels */
+.post-footer .meta-pillar {
+    margin-top: 0.5rem;
+}
+
+/* ============================================
+   Couleurs pour les filtres de piliers
+   ============================================ */
+
+.filter-pillar[data-pillar="le-role-du-cto"] {
+    color: rgb(59, 130, 246) !important;
+    border: 1px solid rgba(59, 130, 246, 0.3) !important;
+}
+
+.filter-pillar[data-pillar="le-role-du-cto"]:hover {
+    background: rgba(59, 130, 246, 0.1) !important;
+    border-color: rgb(59, 130, 246) !important;
+}
+
+.filter-pillar[data-pillar="gouvernance-decision"] {
+    color: rgb(168, 85, 247) !important;
+    border: 1px solid rgba(168, 85, 247, 0.3) !important;
+}
+
+.filter-pillar[data-pillar="gouvernance-decision"]:hover {
+    background: rgba(168, 85, 247, 0.1) !important;
+    border-color: rgb(168, 85, 247) !important;
+}
+
+.filter-pillar[data-pillar="culture-management"] {
+    color: rgb(34, 197, 94) !important;
+    border: 1px solid rgba(34, 197, 94, 0.3) !important;
+}
+
+.filter-pillar[data-pillar="culture-management"]:hover {
+    background: rgba(34, 197, 94, 0.1) !important;
+    border-color: rgb(34, 197, 94) !important;
+}
+
+.filter-pillar[data-pillar="trouver-sa-place"] {
+    color: rgb(251, 146, 60) !important;
+    border: 1px solid rgba(251, 146, 60, 0.3) !important;
+}
+
+.filter-pillar[data-pillar="trouver-sa-place"]:hover {
+    background: rgba(251, 146, 60, 0.1) !important;
+    border-color: rgb(251, 146, 60) !important;
+}
+
+/* Dark mode pour les filtres */
+:root[data-theme="dark"] .filter-pillar[data-pillar="le-role-du-cto"] {
+    color: rgb(96, 165, 250) !important;
+    border-color: rgba(96, 165, 250, 0.4) !important;
+}
+
+:root[data-theme="dark"] .filter-pillar[data-pillar="gouvernance-decision"] {
+    color: rgb(196, 181, 253) !important;
+    border-color: rgba(196, 181, 253, 0.4) !important;
+}
+
+:root[data-theme="dark"] .filter-pillar[data-pillar="culture-management"] {
+    color: rgb(74, 222, 128) !important;
+    border-color: rgba(74, 222, 128, 0.4) !important;
+}
+
+:root[data-theme="dark"] .filter-pillar[data-pillar="trouver-sa-place"] {
+    color: rgb(251, 191, 36) !important;
+    border-color: rgba(251, 191, 36, 0.4) !important;
+}
+
+.meta-pillar {
+    display: inline-block;
+}
+
+.meta-pillar a {
+    display: inline-block;
+    padding: 0.1rem 0.4rem;
+    border-radius: calc(var(--radius) * 0.75);
+    font-size: 0.65rem;
+    font-weight: 400;
+    text-decoration: none;
+    transition: var(--transition);
+    border: 1px solid transparent;
+    white-space: nowrap;
+    opacity: 0.7;
+}
+
+/* CTO - Bleu */
+.meta-pillar[data-pillar="le-role-du-cto"] a,
+.meta-pillar[data-pillar="role-cto"] a {
+    background: rgba(59, 130, 246, 0.08);
+    color: rgb(59, 130, 246);
+    border-color: rgba(59, 130, 246, 0.15);
+}
+
+.meta-pillar[data-pillar="le-role-du-cto"] a:hover,
+.meta-pillar[data-pillar="role-cto"] a:hover {
+    background: rgb(59, 130, 246);
+    color: white;
+    border-color: rgb(59, 130, 246);
+}
+
+/* Gouvernance - Violet */
+.meta-pillar[data-pillar="gouvernance-decision"] a {
+    background: rgba(168, 85, 247, 0.08);
+    color: rgb(168, 85, 247);
+    border-color: rgba(168, 85, 247, 0.15);
+}
+
+.meta-pillar[data-pillar="gouvernance-decision"] a:hover {
+    background: rgb(168, 85, 247);
+    color: white;
+    border-color: rgb(168, 85, 247);
+}
+
+/* Culture - Vert */
+.meta-pillar[data-pillar="culture-management"] a {
+    background: rgba(34, 197, 94, 0.08);
+    color: rgb(34, 197, 94);
+    border-color: rgba(34, 197, 94, 0.15);
+}
+
+.meta-pillar[data-pillar="culture-management"] a:hover {
+    background: rgb(34, 197, 94);
+    color: white;
+    border-color: rgb(34, 197, 94);
+}
+
+/* Place - Orange */
+.meta-pillar[data-pillar="trouver-sa-place"] a {
+    background: rgba(251, 146, 60, 0.08);
+    color: rgb(251, 146, 60);
+    border-color: rgba(251, 146, 60, 0.15);
+}
+
+.meta-pillar[data-pillar="trouver-sa-place"] a:hover {
+    background: rgb(251, 146, 60);
+    color: white;
+    border-color: rgb(251, 146, 60);
+}
+
+/* Dark mode pour les tags */
+:root[data-theme="dark"] .meta-pillar[data-pillar="le-role-du-cto"] a,
+:root[data-theme="dark"] .meta-pillar[data-pillar="role-cto"] a {
+    background: rgba(96, 165, 250, 0.1);
+    color: rgb(96, 165, 250);
+    border-color: rgba(96, 165, 250, 0.2);
+}
+
+:root[data-theme="dark"] .meta-pillar[data-pillar="le-role-du-cto"] a:hover,
+:root[data-theme="dark"] .meta-pillar[data-pillar="role-cto"] a:hover {
+    background: rgb(96, 165, 250);
+    color: var(--theme);
+}
+
+:root[data-theme="dark"] .meta-pillar[data-pillar="gouvernance-decision"] a {
+    background: rgba(196, 181, 253, 0.1);
+    color: rgb(196, 181, 253);
+    border-color: rgba(196, 181, 253, 0.2);
+}
+
+:root[data-theme="dark"] .meta-pillar[data-pillar="gouvernance-decision"] a:hover {
+    background: rgb(196, 181, 253);
+    color: var(--theme);
+}
+
+:root[data-theme="dark"] .meta-pillar[data-pillar="culture-management"] a {
+    background: rgba(74, 222, 128, 0.1);
+    color: rgb(74, 222, 128);
+    border-color: rgba(74, 222, 128, 0.2);
+}
+
+:root[data-theme="dark"] .meta-pillar[data-pillar="culture-management"] a:hover {
+    background: rgb(74, 222, 128);
+    color: var(--theme);
+}
+
+:root[data-theme="dark"] .meta-pillar[data-pillar="trouver-sa-place"] a {
+    background: rgba(251, 191, 36, 0.1);
+    color: rgb(251, 191, 36);
+    border-color: rgba(251, 191, 36, 0.2);
+}
+
+:root[data-theme="dark"] .meta-pillar[data-pillar="trouver-sa-place"] a:hover {
+    background: rgb(251, 191, 36);
+    color: var(--theme);
+}

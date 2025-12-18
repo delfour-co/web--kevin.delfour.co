@@ -26,7 +26,7 @@ audience: cto
 audiences:
 - cto
 ---
-*Article inspiré du chapitre "Le marché 2025" du livre ["En quête d'expérience"](/livres/en-quete-d-experience/).*
+*Article inspiré du chapitre "Le marché 2025" du livre ["En quête d'expérience"](/guides-livres/en-quete-d-experience-edition-2025/).*
 
 ## Dédramatisation
 
@@ -79,6 +79,6 @@ Si vous choisissez de rester dans votre métier actuel, assumez ce choix. Vous a
 
 ## Pour aller plus loin
 
-Le livre ["En quête d'expérience"](/livres/en-quete-d-experience/) explore ces nouveaux métiers en détail, avec des roadmaps concrètes et des retours d'expérience de professionnels qui ont réussi leur transition.
+Le livre ["En quête d'expérience"](/guides-livres/en-quete-d-experience-edition-2025/) explore ces nouveaux métiers en détail, avec des roadmaps concrètes et des retours d'expérience de professionnels qui ont réussi leur transition.
 
 Pour approfondir, tu peux aussi consulter les pages piliers du site ou les guides mis à disposition.

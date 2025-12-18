@@ -113,6 +113,6 @@ Ces débuts forgent ta trajectoire. Prends-les au sérieux, mais sans pression e
 
 ## Pour aller plus loin
 
-Le livre [\"Être ou ne pas être CTO\"](/livres/etre-ou-ne-pas-etre-cto/) contient des chapitres sur les débuts de carrière et comment naviguer les premières années.
+Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) contient des chapitres sur les débuts de carrière et comment naviguer les premières années.
 
 Tu peux aussi consulter l'article [\"Junior : ce qu'on attend vraiment de toi\"](/posts/junior-ce-quon-attend-vraiment/) ou les autres contenus du pilier [\"Trouver sa place\"](/trouver-sa-place/).

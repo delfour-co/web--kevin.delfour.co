@@ -300,21 +300,19 @@
           <p>{{ $description | markdownify | truncate 200 }}</p>
         </div>
         {{- end }}
-        <footer class="entry-footer" style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-top: 8px;">
+        <footer class="entry-footer">
+          {{- $metaItems := slice }}
           {{- if gt $nbChapitres 0 }}
-          <span style="font-size: 13px; color: var(--secondary);">
-            {{ $nbChapitres }} {{ cond (eq $nbChapitres 1) "chapitre" "chapitres" }}
-          </span>
+            {{- $metaItems = $metaItems | append (printf "<span>%d %s</span>" $nbChapitres (cond (eq $nbChapitres 1) "chapitre" "chapitres")) }}
           {{- end }}
           {{- if gt $sectionReadingTime 0 }}
-          <span style="font-size: 13px; color: var(--secondary);">
-            {{ $sectionReadingTime }} {{ cond (eq $sectionReadingTime 1) "minute" "minutes" }} de lecture
-          </span>
+            {{- $metaItems = $metaItems | append (printf "<span>%d %s de lecture</span>" $sectionReadingTime (cond (eq $sectionReadingTime 1) "minute" "minutes")) }}
           {{- end }}
           {{- if $lastModified }}
-          <span style="font-size: 13px; color: var(--secondary);">
-            Mis à jour le {{ $lastModified.Format "02/01/2006" }}
-          </span>
+            {{- $metaItems = $metaItems | append (printf "<span>Mis à jour le %s</span>" ($lastModified.Format "02/01/2006")) }}
+          {{- end }}
+          {{- if $metaItems }}
+            {{- delimit $metaItems "&nbsp;·&nbsp;" | safeHTML }}
           {{- end }}
         </footer>
       </div>

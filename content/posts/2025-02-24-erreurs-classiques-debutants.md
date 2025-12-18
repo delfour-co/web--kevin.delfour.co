@@ -112,6 +112,6 @@ La différence entre junior qui stagne et junior qui progresse n'est pas le tale
 
 ## Pour aller plus loin
 
-Le livre [\"Être ou ne pas être CTO\"](/livres/etre-ou-ne-pas-etre-cto/) explore comment transformer les erreurs en opportunités d'apprentissage à tous les niveaux.
+Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment transformer les erreurs en opportunités d'apprentissage à tous les niveaux.
 
 Tu peux aussi consulter l'article [\"Apprendre à apprendre en tech\"](/posts/apprendre-a-apprendre-tech/) ou les autres contenus du pilier [\"Trouver sa place\"](/trouver-sa-place/).

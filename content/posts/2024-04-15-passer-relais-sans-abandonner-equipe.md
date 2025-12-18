@@ -118,6 +118,6 @@ Pas tout documenter, mais documenter ce qui compte vraiment : décisions structu
 
 ## Pour approfondir
 
-Le livre ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/) explore différentes transitions de CTOs avec leurs erreurs et réussites.
+Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore différentes transitions de CTOs avec leurs erreurs et réussites.
 
 Pour approfondir, tu peux aussi consulter l'article ["Quand démissionner"](/posts/quand-demissionner-cto/) ou les autres contenus du pilier ["Le rôle du CTO"](/le-role-du-cto/).

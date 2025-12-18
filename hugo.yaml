@@ -11,7 +11,7 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 enableEmoji: true
-mainsections: ["posts", "guides-livres", "le-role-du-cto", "gouvernance-decision", "culture-management", "trouver-sa-place", "reflexions"]
+mainsections: ["posts", "guides-livres", "le-role-du-cto", "gouvernance-decision", "culture-management", "trouver-sa-place"]
 
 permalinks:
   posts: /posts/:slug/
@@ -33,7 +33,7 @@ params:
   
   homeInfoParams:
     Title: Donner des repères. Pas des leçons.
-    Content: Je donne des repères aux CTO et leaders tech pour mieux décider et mieux durer, et j'aide la nouvelle génération à trouver sa place sans se raconter d'histoires. Je m'appuie sur le terrain, des cadres clairs, et une culture du droit à l'erreur.
+    Content: Je partage mes repères aux CTO et leaders tech pour mieux décider et mieux durer, et j'aide la nouvelle génération à trouver sa place sans se raconter d'histoires. Je m'appuie sur le terrain, des cadres clairs, et une culture du droit à l'erreur.
   
   assets:
     favicon: "/favicon.ico"

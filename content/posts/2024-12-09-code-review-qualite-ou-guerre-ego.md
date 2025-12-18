@@ -115,6 +115,6 @@ Survey trimestriel : "Code review aide ou freine ?" 1-10. Score <7 = action corr
 
 ## Pour approfondir
 
-Le livre [\"Être ou ne pas être CTO\"](/livres/etre-ou-ne-pas-etre-cto/) explore comment créer des pratiques techniques qui renforcent la culture.
+Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment créer des pratiques techniques qui renforcent la culture.
 
 Pour approfondir, tu peux aussi consulter l'article [\"Feedback difficile\"](/posts/feedback-difficile-dire-verite-sans-detruire/) ou les autres contenus du pilier [\"Culture & management\"](/culture-management/).

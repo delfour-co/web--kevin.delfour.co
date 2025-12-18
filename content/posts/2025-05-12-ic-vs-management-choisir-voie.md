@@ -124,6 +124,6 @@ Ni IC ni management n'est "mieux". C'est une question de fit avec qui tu es.
 
 ## Pour aller plus loin
 
-Le livre [\"Être ou ne pas être CTO\"](/livres/etre-ou-ne-pas-etre-cto/) explore les différentes trajectoires et comment naviguer ces choix.
+Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore les différentes trajectoires et comment naviguer ces choix.
 
 Tu peux aussi consulter l'article [\"Devenir senior\"](/posts/devenir-senior-ce-qui-change/) ou les autres contenus du pilier [\"Trouver sa place\"](/trouver-sa-place/).

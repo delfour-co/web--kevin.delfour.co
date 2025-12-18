@@ -124,6 +124,6 @@ Post-mortems significatifs partagés en all-hands ou publiquement. Cette transpa
 
 ## Pour approfondir
 
-Le livre ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/) explore comment construire une culture blameless avec exemples de post-mortems réels.
+Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment construire une culture blameless avec exemples de post-mortems réels.
 
 Pour approfondir, tu peux aussi consulter l'article ["Communication de crise"](/posts/communication-crise-dire-verite-sans-paniquer/) ou les autres contenus du pilier ["Gouvernance & décision"](/gouvernance-decision/).

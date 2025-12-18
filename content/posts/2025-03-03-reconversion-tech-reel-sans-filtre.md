@@ -115,6 +115,6 @@ La tech n'est ni un eldorado ni une arnaque. C'est un secteur avec opportunités
 
 ## Pour aller plus loin
 
-Le livre [\"Être ou ne pas être CTO\"](/livres/etre-ou-ne-pas-etre-cto/) contient des témoignages de parcours atypiques et reconversions réussies.
+Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) contient des témoignages de parcours atypiques et reconversions réussies.
 
 Tu peux aussi consulter l'article [\"De non-tech à tech : ce qui change\"](/posts/non-tech-vers-tech-ce-qui-change/) ou les autres contenus du pilier [\"Trouver sa place\"](/trouver-sa-place/).

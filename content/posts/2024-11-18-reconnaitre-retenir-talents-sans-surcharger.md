@@ -117,6 +117,6 @@ Question systématique : "Charge OK ? Trop ? Où es-tu sur échelle burn-out 1-1
 
 ## Pour approfondir
 
-Le livre [\"Être ou ne pas être CTO\"](/livres/etre-ou-ne-pas-etre-cto/) explore comment créer une culture qui retient les talents sans les épuiser.
+Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment créer une culture qui retient les talents sans les épuiser.
 
 Pour approfondir, tu peux aussi consulter l'article [\"Signaux d'alarme du burn-out\"](/posts/signaux-alarme-burnout-cto/) ou les autres contenus du pilier [\"Culture & management\"](/culture-management/).

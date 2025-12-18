@@ -110,6 +110,6 @@ L'ageism existe. Mais beaucoup de boîtes s'en fichent et valorisent maturité. 
 
 ## Pour aller plus loin
 
-Le livre [\"Être ou ne pas être CTO\"](/livres/etre-ou-ne-pas-etre-cto/) contient des témoignages de parcours atypiques et reconversions tardives.
+Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) contient des témoignages de parcours atypiques et reconversions tardives.
 
 Tu peux aussi consulter l'article [\"Reconversion vers la tech\"](/posts/reconversion-tech-reel-sans-filtre/) ou les autres contenus du pilier [\"Trouver sa place\"](/trouver-sa-place/).

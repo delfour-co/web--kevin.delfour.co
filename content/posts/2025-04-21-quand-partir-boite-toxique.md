@@ -122,6 +122,6 @@ Rester dans un environnement toxique par inertie ou peur n'est pas courageux, c'
 
 ## Pour aller plus loin
 
-Le livre [\"Être ou ne pas être CTO\"](/livres/etre-ou-ne-pas-etre-cto/) explore comment naviguer les environnements difficiles et savoir quand partir.
+Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment naviguer les environnements difficiles et savoir quand partir.
 
 Tu peux aussi consulter l'article [\"Reconnaître une boîte toxique\"](/posts/reconnaitre-boite-toxique-avant-signer/) ou les autres contenus du pilier [\"Trouver sa place\"](/trouver-sa-place/).

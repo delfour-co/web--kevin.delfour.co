@@ -113,6 +113,6 @@ Si ton environnement ne te donne pas de feedback clair, tu peux le demander. Si 
 
 ## Pour aller plus loin
 
-Le livre [\"Être ou ne pas être CTO\"](/livres/etre-ou-ne-pas-etre-cto/) explore comment naviguer les attentes à chaque niveau de séniorité.
+Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment naviguer les attentes à chaque niveau de séniorité.
 
 Tu peux aussi consulter l'article [\"Syndrome de l'imposteur\"](/posts/syndrome-imposteur-reel-vs-fantasme/) ou les autres contenus du pilier [\"Trouver sa place\"](/trouver-sa-place/).

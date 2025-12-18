@@ -70,19 +70,28 @@
             </div>
             <button id="menu-toggle" class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
                 {{ partial "icon.html" (dict "name" "interface-essential/interface-essential-navigation-menu-1" "size" 24 "ariaHidden" true) }}
-                {{ partial "icon.html" (dict "name" "interface-essential/interface-essential-search-remove" "class" "close-icon" "size" 24 "ariaHidden" true) }}
+                {{ partial "icon.html" (dict "name" "interface-essential/interface-essential-close-x" "class" "close-icon" "size" 24 "ariaHidden" true) }}
             </button>
         </div>
         {{- $currentPage := . }}
+        {{- $pillarMapping := dict "le-role-du-cto" "le-role-du-cto" "gouvernance-decision" "gouvernance-decision" "culture-management" "culture-management" "trouver-sa-place" "trouver-sa-place" }}
+        {{- $menuIcons := dict "start-here" "interface-essential/interface-essential-navigation-right-circle-1" "le-role-du-cto" "coding-apps-websites/coding-apps-websites-dinosaur-error" "gouvernance-decision" "business/business-product-scale" "culture-management" "users/multiple-user" "trouver-sa-place" "map-navigation/map-navigation-compass-direction" "guides-livres" "content-files/content-files-open-book" "about" "interface-essential/interface-essential-information-circle-1" }}
         <ul id="menu">
             {{- range site.Menus.main }}
             {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) ) | absLangURL }}
             {{- $page_url:= $currentPage.Permalink | absLangURL }}
             {{- $is_search := eq (site.GetPage .KeyName).Layout `search` }}
+            {{- $pillarSlug := index $pillarMapping .Identifier }}
+            {{- $menuIcon := index $menuIcons .Identifier }}
             <li>
-                <a href="{{ .URL | absLangURL }}" title="{{ .Title | default .Name }} {{- cond $is_search (" (Alt + /)" | safeHTMLAttr) ("" | safeHTMLAttr ) }}"
-                {{- cond $is_search (" accesskey=/" | safeHTMLAttr) ("" | safeHTMLAttr ) }}>
-                    <span {{- if eq $menu_item_url $page_url }} class="active" {{- end }}>
+                <a href="{{ .URL | absLangURL }}" 
+                   title="{{ .Title | default .Name }} {{- cond $is_search (" (Alt + /)" | safeHTMLAttr) ("" | safeHTMLAttr ) }}"
+                   {{- cond $is_search (" accesskey=/" | safeHTMLAttr) ("" | safeHTMLAttr ) }}
+                   {{- if $pillarSlug }} data-pillar="{{ $pillarSlug }}"{{- end }}>
+                    <span {{- if eq $menu_item_url $page_url }} class="active" {{- end }} style="display: flex; align-items: center; gap: 8px;">
+                        {{- if $menuIcon }}
+                        {{- partial "icon.html" (dict "name" $menuIcon "class" "menu-icon" "size" 20 "ariaHidden" true) }}
+                        {{- end }}
                         {{- .Pre }}
                         {{- .Name -}}
                         {{ .Post -}}

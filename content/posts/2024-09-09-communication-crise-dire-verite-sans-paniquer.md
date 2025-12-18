@@ -117,6 +117,6 @@ Chaque incident >30 min : post-mortem interne + public (si pertinent). Cette tra
 
 ## Pour approfondir
 
-Le livre ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/) explore la gestion de crise avec des exemples réels de communication réussie et ratée.
+Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore la gestion de crise avec des exemples réels de communication réussie et ratée.
 
 Pour approfondir, tu peux aussi consulter les autres contenus du pilier ["Gouvernance & décision"](/gouvernance-decision/).

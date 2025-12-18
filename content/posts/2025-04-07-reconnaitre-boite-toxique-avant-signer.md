@@ -113,6 +113,6 @@ Accepter un environnement toxique par ignorance est une chose. L'accepter en ign
 
 ## Pour aller plus loin
 
-Le livre [\"Être ou ne pas être CTO\"](/livres/etre-ou-ne-pas-etre-cto/) explore les différentes cultures d'entreprise et comment les évaluer.
+Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore les différentes cultures d'entreprise et comment les évaluer.
 
 Tu peux aussi consulter l'article [\"Red flags en entretien\"](/posts/red-flags-entretien-ce-quon-ne-dit-pas/) ou les autres contenus du pilier [\"Trouver sa place\"](/trouver-sa-place/).

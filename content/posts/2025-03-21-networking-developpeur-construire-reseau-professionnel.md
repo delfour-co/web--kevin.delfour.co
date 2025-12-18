@@ -25,7 +25,7 @@ audience: jeunesse
 audiences:
 - jeunesse
 ---
-*Du livre ["En quête d'expérience"](/livres/en-quete-d-experience/), chapitre "Cultiver son réseau".*
+*Du livre ["En quête d'expérience"](/guides-livres/en-quete-d-experience-edition-2025/), chapitre "Cultiver son réseau".*
 
 ## Dédramatisation
 
@@ -84,6 +84,6 @@ Si vous choisissez de ne pas networker, assumez ce choix. Vous acceptez probable
 
 ## Pour aller plus loin
 
-Le livre ["En quête d'expérience"](/livres/en-quete-d-experience/) explore le networking en profondeur avec scripts, événements recommandés par ville, et stratégies online.
+Le livre ["En quête d'expérience"](/guides-livres/en-quete-d-experience-edition-2025/) explore le networking en profondeur avec scripts, événements recommandés par ville, et stratégies online.
 
 Pour approfondir, tu peux aussi consulter les pages piliers du site ou les guides mis à disposition.

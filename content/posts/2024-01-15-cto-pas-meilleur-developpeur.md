@@ -106,6 +106,6 @@ Créer une culture où passer de CTO à Principal Engineer n'est pas perçu comm
 
 ## Pour approfondir
 
-Le livre ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/) explore les différences entre les compétences techniques et les compétences de CTO, avec des témoignages de transitions réussies et ratées.
+Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore les différences entre les compétences techniques et les compétences de CTO, avec des témoignages de transitions réussies et ratées.
 
 Pour approfondir, tu peux aussi consulter l'article ["CTO vs Lead Dev vs VP Engineering : Comprendre les différences"](/posts/cto-vs-lead-dev-vp-engineering-differences-role/) ou les autres contenus du pilier ["Le rôle du CTO"](/le-role-du-cto/).

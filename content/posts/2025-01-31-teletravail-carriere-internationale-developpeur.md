@@ -25,7 +25,7 @@ audience: jeunesse
 audiences:
 - jeunesse
 ---
-*Cet article prolonge les réflexions du livre ["En quête d'expérience"](/livres/en-quete-d-experience/) sur les nouvelles opportunités du marché dev en 2025.*
+*Cet article prolonge les réflexions du livre ["En quête d'expérience"](/guides-livres/en-quete-d-experience-edition-2025/) sur les nouvelles opportunités du marché dev en 2025.*
 
 ## Dédramatisation
 
@@ -85,6 +85,6 @@ Si vous choisissez de rester local, assumez ce choix. Vous acceptez probablement
 
 ## Pour aller plus loin
 
-Pour explorer en profondeur les stratégies de carrière dev en 2025, consultez ["En quête d'expérience"](/livres/en-quete-d-experience/), qui couvre télétravail, négociation salariale, et positionnement sur le marché international.
+Pour explorer en profondeur les stratégies de carrière dev en 2025, consultez ["En quête d'expérience"](/guides-livres/en-quete-d-experience-edition-2025/), qui couvre télétravail, négociation salariale, et positionnement sur le marché international.
 
 Pour approfondir, tu peux aussi consulter les pages piliers du site ou les guides mis à disposition.

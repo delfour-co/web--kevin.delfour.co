@@ -113,6 +113,6 @@ Plan transition clair, responsabilités maintenues, départ célébré. Ce respe
 
 ## Pour approfondir
 
-Le livre [\"Être ou ne pas être CTO\"](/livres/etre-ou-ne-pas-etre-cto/) explore comment créer une culture où les départs sont gérés avec maturité.
+Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment créer une culture où les départs sont gérés avec maturité.
 
 Pour approfondir, tu peux aussi consulter l'article [\"Gérer les non-performances\"](/posts/gerer-non-performances-sans-culpabiliser/) ou les autres contenus du pilier [\"Culture & management\"](/culture-management/).

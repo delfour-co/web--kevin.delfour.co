@@ -26,7 +26,7 @@ audience: cto
 audiences:
 - cto
 ---
-*Analyse du livre ["En quête d'expérience"](/livres/en-quete-d-experience/), chapitre "Choisir son modèle".*
+*Analyse du livre ["En quête d'expérience"](/guides-livres/en-quete-d-experience-edition-2025/), chapitre "Choisir son modèle".*
 
 ## Dédramatisation
 
@@ -86,6 +86,6 @@ Si vous choisissez de rester salarié, assumez ce choix. Vous bénéficiez de s�
 
 ## Pour aller plus loin
 
-Le livre ["En quête d'expérience"](/livres/en-quete-d-experience/) détaille la transition freelance avec checklists légales, templates contrats, et simulation revenus.
+Le livre ["En quête d'expérience"](/guides-livres/en-quete-d-experience-edition-2025/) détaille la transition freelance avec checklists légales, templates contrats, et simulation revenus.
 
 Pour approfondir, tu peux aussi consulter les pages piliers du site ou les guides mis à disposition.

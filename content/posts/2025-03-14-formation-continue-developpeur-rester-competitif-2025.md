@@ -27,7 +27,7 @@ audiences:
 featured: true
 weight: 10
 ---
-*Stratégies du livre ["En quête d'expérience"](/livres/en-quete-d-experience/), chapitre "Apprendre en continu".*
+*Stratégies du livre ["En quête d'expérience"](/guides-livres/en-quete-d-experience-edition-2025/), chapitre "Apprendre en continu".*
 
 ## Dédramatisation
 
@@ -92,6 +92,6 @@ Si vous choisissez d'ignorer la formation continue, assumez ce choix. Vous devre
 
 ## Pour aller plus loin
 
-Le livre ["En quête d'expérience"](/livres/en-quete-d-experience/) propose des roadmaps d'apprentissage personnalisées et une liste de ressources triées par niveau et par domaine.
+Le livre ["En quête d'expérience"](/guides-livres/en-quete-d-experience-edition-2025/) propose des roadmaps d'apprentissage personnalisées et une liste de ressources triées par niveau et par domaine.
 
 Pour approfondir, tu peux aussi consulter les pages piliers du site ou les guides mis à disposition.

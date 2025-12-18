@@ -121,6 +121,6 @@ Pas besoin de "vraie" entreprise libérée. Autonomie large + hiérarchie légè
 
 ## Pour approfondir
 
-Le livre ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/) explore différents modèles d'organisation et leurs résultats réels.
+Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore différents modèles d'organisation et leurs résultats réels.
 
 Pour approfondir, tu peux aussi consulter l'article ["Autonomie des équipes"](/posts/autonomie-equipes-jusquou-comment/) ou les autres contenus du pilier ["Culture & management"](/culture-management/).

@@ -106,6 +106,6 @@ Arrêter de chercher à éliminer toute solitude. Certaines décisions resteront
 
 ## Pour approfondir
 
-Le livre ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/) explore en profondeur la solitude du rôle et comment différents CTOs la gèrent selon leur contexte.
+Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore en profondeur la solitude du rôle et comment différents CTOs la gèrent selon leur contexte.
 
 Pour approfondir, tu peux aussi consulter l'article ["Entre loyauté envers l'équipe et loyauté envers l'entreprise"](/posts/loyaute-equipe-vs-entreprise-cto/) ou les autres contenus du pilier ["Le rôle du CTO"](/le-role-du-cto/).

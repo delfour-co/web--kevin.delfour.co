@@ -176,14 +176,6 @@
     {{- end }}
   </header>
 
-  {{- if .Content }}
-  <div class="post-content">
-    {{- if not (.Param "disableAnchoredHeadings") }}
-    {{- partial "anchored_headings.html" .Content -}}
-    {{- else }}{{ .Content }}{{ end }}
-  </div>
-  {{- end }}
-
   {{- /* Afficher la liste des livres */}}
   {{- $livres := .Sections }}
   {{- if $livres }}
@@ -237,23 +229,27 @@
           <p>{{ .Description | markdownify | truncate 200 }}</p>
         </div>
         {{- end }}
-        <footer class="entry-footer" style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-top: 8px;">
+        <footer class="entry-footer">
+          {{- $metaItems := slice }}
           {{- if gt $nbChapitres 0 }}
-          <span style="font-size: 13px; color: var(--secondary);">
-            {{ $nbChapitres }} {{ cond (eq $nbChapitres 1) "chapitre" "chapitres" }}
-          </span>
+            {{- $metaItems = $metaItems | append (printf "<span>%d %s</span>" $nbChapitres (cond (eq $nbChapitres 1) "chapitre" "chapitres")) }}
           {{- end }}
           {{- if gt $totalReadingTime 0 }}
-          {{- $hours := div $totalReadingTime 60 }}
-          {{- $minutes := mod $totalReadingTime 60 }}
-          <span style="font-size: 13px; color: var(--secondary);">
+            {{- $hours := div $totalReadingTime 60 }}
+            {{- $minutes := mod $totalReadingTime 60 }}
+            {{- $readingTimeStr := "" }}
             {{- if gt $hours 0 }}
-              {{ $hours }}h{{ if gt $minutes 0 }} {{ $minutes }}min{{ end }}
+              {{- $readingTimeStr = printf "%dh" $hours }}
+              {{- if gt $minutes 0 }}
+                {{- $readingTimeStr = printf "%s %dmin" $readingTimeStr $minutes }}
+              {{- end }}
             {{- else }}
-              {{ $minutes }} min
+              {{- $readingTimeStr = printf "%d min" $minutes }}
             {{- end }}
-            de lecture
-          </span>
+            {{- $metaItems = $metaItems | append (printf "<span>%s de lecture</span>" $readingTimeStr) }}
+          {{- end }}
+          {{- if $metaItems }}
+            {{- delimit $metaItems "&nbsp;·&nbsp;" | safeHTML }}
           {{- end }}
         </footer>
       </div>
@@ -263,6 +259,14 @@
   {{- else }}
   <div class="post-content">
     <p>Aucun livre disponible pour le moment.</p>
+  </div>
+  {{- end }}
+
+  {{- if .Content }}
+  <div class="post-content">
+    {{- if not (.Param "disableAnchoredHeadings") }}
+    {{- partial "anchored_headings.html" .Content -}}
+    {{- else }}{{ .Content }}{{ end }}
   </div>
   {{- end }}
 

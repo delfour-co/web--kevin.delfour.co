@@ -110,6 +110,6 @@ Apprendre à apprendre est une compétence qui se développe. Les 6 premiers moi
 
 ## Pour aller plus loin
 
-Le livre [\"Être ou ne pas être CTO\"](/livres/etre-ou-ne-pas-etre-cto/) explore comment continuer à apprendre tout au long d'une carrière tech.
+Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment continuer à apprendre tout au long d'une carrière tech.
 
 Tu peux aussi consulter l'article [\"Erreurs classiques des débutants\"](/posts/erreurs-classiques-debutants/) ou les autres contenus du pilier [\"Trouver sa place\"](/trouver-sa-place/).

@@ -58,7 +58,7 @@
 {{- $class = "post-entry tag-entry" }}
 {{- end }}
 
-<article class="{{ $class }}">
+<article class="{{ $class }}" data-pillar="{{ with .Params.pillar }}{{ . }}{{ end }}">
   {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false }}
   {{- partial "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) }}
   <header class="entry-header">
@@ -109,5 +109,81 @@
 {{- end }}
 
 {{- end }}{{/* end profileMode */}}
+
+<style>
+/* Bordures colorées pour les articles selon leur pilier */
+.post-entry[data-pillar="le-role-du-cto"],
+.post-entry[data-pillar="role-cto"] {
+    border-left: 4px solid rgb(59, 130, 246);
+}
+
+.post-entry[data-pillar="le-role-du-cto"]:hover,
+.post-entry[data-pillar="role-cto"]:hover {
+    border-left-color: rgb(37, 99, 235);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.post-entry[data-pillar="gouvernance-decision"] {
+    border-left: 4px solid rgb(168, 85, 247);
+}
+
+.post-entry[data-pillar="gouvernance-decision"]:hover {
+    border-left-color: rgb(147, 51, 234);
+    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.15);
+}
+
+.post-entry[data-pillar="culture-management"] {
+    border-left: 4px solid rgb(34, 197, 94);
+}
+
+.post-entry[data-pillar="culture-management"]:hover {
+    border-left-color: rgb(22, 163, 74);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
+}
+
+.post-entry[data-pillar="trouver-sa-place"] {
+    border-left: 4px solid rgb(251, 146, 60);
+}
+
+.post-entry[data-pillar="trouver-sa-place"]:hover {
+    border-left-color: rgb(249, 115, 22);
+    box-shadow: 0 4px 12px rgba(251, 146, 60, 0.15);
+}
+
+/* Dark mode */
+:root[data-theme="dark"] .post-entry[data-pillar="le-role-du-cto"],
+:root[data-theme="dark"] .post-entry[data-pillar="role-cto"] {
+    border-left-color: rgb(96, 165, 250);
+}
+
+:root[data-theme="dark"] .post-entry[data-pillar="le-role-du-cto"]:hover,
+:root[data-theme="dark"] .post-entry[data-pillar="role-cto"]:hover {
+    box-shadow: 0 4px 12px rgba(96, 165, 250, 0.2);
+}
+
+:root[data-theme="dark"] .post-entry[data-pillar="gouvernance-decision"] {
+    border-left-color: rgb(196, 181, 253);
+}
+
+:root[data-theme="dark"] .post-entry[data-pillar="gouvernance-decision"]:hover {
+    box-shadow: 0 4px 12px rgba(196, 181, 253, 0.2);
+}
+
+:root[data-theme="dark"] .post-entry[data-pillar="culture-management"] {
+    border-left-color: rgb(74, 222, 128);
+}
+
+:root[data-theme="dark"] .post-entry[data-pillar="culture-management"]:hover {
+    box-shadow: 0 4px 12px rgba(74, 222, 128, 0.2);
+}
+
+:root[data-theme="dark"] .post-entry[data-pillar="trouver-sa-place"] {
+    border-left-color: rgb(251, 191, 36);
+}
+
+:root[data-theme="dark"] .post-entry[data-pillar="trouver-sa-place"]:hover {
+    box-shadow: 0 4px 12px rgba(251, 191, 36, 0.2);
+}
+</style>
 
 {{- end }}{{- /* end main */ -}}

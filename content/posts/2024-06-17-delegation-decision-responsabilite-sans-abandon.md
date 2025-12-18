@@ -109,6 +109,6 @@ Quand décision déléguée tourne mal, ne jamais blâmer le décideur. Assumer 
 
 ## Pour approfondir
 
-Le livre ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/) explore comment différents CTOs délèguent selon la maturité de leur organisation.
+Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment différents CTOs délèguent selon la maturité de leur organisation.
 
 Pour approfondir, tu peux aussi consulter l'article ["Autonomie des équipes"](/posts/autonomie-equipes-jusquou-comment/) ou les autres contenus du pilier ["Gouvernance & décision"](/gouvernance-decision/).

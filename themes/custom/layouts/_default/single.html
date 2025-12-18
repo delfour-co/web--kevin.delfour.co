@@ -1,6 +1,10 @@
 {{- define "main" }}
+{{- $pillarSlug := "" }}
+{{- with .Params.pillar }}
+  {{- $pillarSlug = cond (eq . "role-cto") "le-role-du-cto" . }}
+{{- end }}
 
-<article class="post-single">
+<article class="post-single"{{ if $pillarSlug }} data-pillar="{{ $pillarSlug }}"{{ end }}>
   <header class="post-header">
     {{ partial "breadcrumbs.html" . }}
     <h1 class="post-title entry-hint-parent">
@@ -19,6 +23,14 @@
     {{- if not (.Param "hideMeta") }}
     <div class="post-meta">
       {{- partial "post_meta.html" . -}}
+      {{- with .Params.pillar }}
+        {{- $pillarUrls := dict "le-role-du-cto" "/le-role-du-cto/" "role-cto" "/le-role-du-cto/" "gouvernance-decision" "/gouvernance-decision/" "culture-management" "/culture-management/" "trouver-sa-place" "/trouver-sa-place/" }}
+        {{- $pillarNames := dict "le-role-du-cto" "Le rôle du CTO" "role-cto" "Le rôle du CTO" "gouvernance-decision" "Gouvernance & décision" "culture-management" "Culture & management" "trouver-sa-place" "Trouver sa place" }}
+        {{- $pillarUrl := index $pillarUrls . | default (printf "/%s/" .) }}
+        {{- $pillarName := index $pillarNames . | default . }}
+        {{- $pillarSlug := cond (eq . "role-cto") "le-role-du-cto" . }}
+        <span class="meta-pillar" data-pillar="{{ $pillarSlug }}"><a href="{{ $pillarUrl }}">{{ $pillarName }}</a></span>
+      {{- end }}
       {{- partial "translation_list.html" . -}}
       {{- partial "edit_post.html" . -}}
       {{- partial "post_canonical.html" . -}}

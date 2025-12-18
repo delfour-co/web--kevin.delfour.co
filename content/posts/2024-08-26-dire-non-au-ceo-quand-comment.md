@@ -122,6 +122,6 @@ Quand enjeu critique, email récapitulatif : demande, risques, alternatives, dé
 
 ## Pour approfondir
 
-Le livre ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/) explore la relation CTO-CEO avec des exemples de "non" bien et mal gérés.
+Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore la relation CTO-CEO avec des exemples de "non" bien et mal gérés.
 
 Pour approfondir, tu peux aussi consulter l'article ["Dire non quand tous attendent oui"](/posts/dire-non-quand-tous-attendent-oui/) ou les autres contenus du pilier ["Gouvernance & décision"](/gouvernance-decision/).

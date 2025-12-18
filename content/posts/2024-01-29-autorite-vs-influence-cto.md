@@ -103,6 +103,6 @@ Observer : est-ce que l'équipe applique mes suggestions sans que je doive les i
 
 ## Pour approfondir
 
-Le livre ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/) explore comment construire son influence dans différents contextes organisationnels.
+Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment construire son influence dans différents contextes organisationnels.
 
 Pour approfondir, tu peux aussi consulter l'article sur ["Les premiers 90 jours comme CTO"](/posts/premiers-jours-cto-reussir-prise-de-poste/) ou les autres contenus du pilier ["Le rôle du CTO"](/le-role-du-cto/).

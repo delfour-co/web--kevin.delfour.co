@@ -111,6 +111,6 @@ Mettre en avant les décisions niveau 1-2 bien prises. Cette reconnaissance enco
 
 ## Pour approfondir
 
-Le livre ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/) explore différents frameworks de décision selon les contextes organisationnels.
+Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore différents frameworks de décision selon les contextes organisationnels.
 
 Pour approfondir, tu peux aussi consulter les autres articles du pilier ["Gouvernance & décision"](/gouvernance-decision/).

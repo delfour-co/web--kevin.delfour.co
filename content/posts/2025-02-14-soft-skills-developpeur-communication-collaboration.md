@@ -26,7 +26,7 @@ audience: cto
 audiences:
 - cto
 ---
-*Inspiré du chapitre "Les nouvelles attentes des recruteurs" du livre ["En quête d'expérience"](/livres/en-quete-d-experience/).*
+*Inspiré du chapitre "Les nouvelles attentes des recruteurs" du livre ["En quête d'expérience"](/guides-livres/en-quete-d-experience-edition-2025/).*
 
 ## Dédramatisation
 
@@ -91,6 +91,6 @@ Si vous choisissez de ne pas développer vos soft skills, assumez ce choix. Vous
 
 ## Pour aller plus loin
 
-Le livre ["En quête d'expérience"](/livres/en-quete-d-experience/) consacre un chapitre entier aux soft skills critiques en 2025, avec des exercices pratiques et des stratégies de développement.
+Le livre ["En quête d'expérience"](/guides-livres/en-quete-d-experience-edition-2025/) consacre un chapitre entier aux soft skills critiques en 2025, avec des exercices pratiques et des stratégies de développement.
 
 Pour approfondir, tu peux aussi consulter les pages piliers du site ou les guides mis à disposition.

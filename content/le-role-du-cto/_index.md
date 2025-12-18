@@ -1,63 +1,87 @@
 ---
 title: "Le rôle du CTO"
-description: "Comprendre ce que ce rôle implique vraiment, au-delà du titre."
+slug: "le-role-du-cto"
+type: "pillar"
 ---
 
-## Le rôle du CTO
+# Le rôle du CTO
 
-**Ce que porte un CTO, au-delà du titre**
+## Intention du pilier
 
-**Public principal :** CTO en poste, leaders tech, VP Engineering
-**Public concerné :** Développeurs seniors en transition
+Ce pilier regroupe des contenus qui explorent **ce que recouvre réellement le rôle de CTO**, au-delà du titre ou de la fiche de poste.
 
----
+Il s'adresse à celles et ceux qui portent (ou vont porter) une responsabilité technique et organisationnelle, et qui cherchent **des repères pour mieux décider et mieux durer**, sans méthode toute faite.
 
-### À qui s'adresse cette page
-
-Tu portes ou vises le rôle de CTO. Tu te demandes ce que ça implique vraiment, comment te positionner dans l'organisation, ou si Lead Dev / VP Engineering ne serait pas mieux pour toi. Cette page clarifie les responsabilités, les défis, et les chemins possibles.
+Ces contenus proposent des cadres de réflexion et des retours de terrain.  
+Ils n'ont pas vocation à dicter une manière de faire.
 
 ---
 
-### Par où commencer
+## À qui s'adresse ce pilier
 
-**Si tu découvres ce sujet :**
+### Principalement
+- CTO en poste
+- Head of Tech
+- Leaders techniques avec responsabilité transverse
 
-1. **[CTO vs Lead Dev vs VP Engineering : Comprendre les différences](/posts/cto-vs-lead-dev-vp-engineering-differences-role/)** — Fondamental (10 min)
-2. **[Premiers jours CTO : Réussir sa prise de poste](/posts/premiers-jours-cto-reussir-prise-de-poste/)** — Posture (15 min)
-3. **[Vision technique et roadmap CTO : Construire sa stratégie](/posts/vision-technique-roadmap-cto-strategy/)** — Terrain (20 min)
+### Secondairement
+- Tech Leads en transition
+- Profils techniques exposés à des décisions structurantes
 
-## Articles
+### Ce que ce pilier n'est pas
+- Un guide pour "devenir CTO"
+- Une méthode universelle
+- Une checklist de bonnes pratiques
 
-### Comprendre les rôles
+---
 
-- [CTO vs Lead Dev vs VP Engineering : Comprendre les différences pour choisir sa voie](/posts/cto-vs-lead-dev-vp-engineering-differences-role/)
+## Les grandes tensions du rôle
 
-### Les premiers pas
+Ce pilier aborde notamment les tensions suivantes :
 
+- responsabilité technique ↔ responsabilité organisationnelle
+- expertise ↔ posture de leader
+- loyauté envers l'équipe ↔ loyauté envers l'entreprise
+- autonomie ↔ cohérence collective
+- vision long terme ↔ urgences quotidiennes
+
+Ces tensions servent de **points de repère**, pas de grille d'évaluation.
+
+---
+
+## Où commencer
+
+Selon ta situation, voici différentes portes d'entrée.
+
+### Si tu découvres le rôle
+- [Ce que porte un CTO, même quand il ne décide pas](/posts/ce-que-porte-un-cto/)
+- [Pourquoi le CTO n'est pas "le meilleur développeur"](/posts/cto-pas-meilleur-developpeur/)
+
+### Si tu es déjà en poste
+- [Responsabilité technique vs responsabilité organisationnelle](/posts/responsabilite-technique-vs-organisationnelle/)
+- [Dire non quand tout le monde attend un oui](/posts/dire-non-quand-tous-attendent-oui/)
+
+### Si tu questionnes ta posture
+- [La solitude du CTO : mythe et réalité](/posts/solitude-cto-mythe-realite/)
+- [Ce que le rôle de CTO ne doit pas devenir](/posts/ce-que-role-cto-ne-doit-pas-devenir/)
+
+---
+
+## Derniers articles du pilier
+
+- [CTO vs Lead Dev vs VP Engineering : Comprendre les différences](/posts/cto-vs-lead-dev-vp-engineering-differences-role/)
 - [Premiers jours CTO : Réussir sa prise de poste](/posts/premiers-jours-cto-reussir-prise-de-poste/)
 - [Vision technique et roadmap CTO : Construire sa stratégie](/posts/vision-technique-roadmap-cto-strategy/)
 
-### Recruter et construire son équipe
+---
 
-- [Recruter une équipe technique : Stratégies de hiring pour CTO](/posts/recruter-equipe-technique-cto-hiring-strategies/)
+## Aller plus loin
+
+Tous les articles liés à ce pilier sont regroupés ici :
+
+→ [Voir tous les articles du pilier « Le rôle du CTO »](/posts/?pillar=le-role-du-cto)
 
 ---
 
-## Pour approfondir
-
-Le livre **[Être ou ne pas être CTO](/guides-livres/etre-ou-ne-pas-etre-cto/)** explore en profondeur ces sujets avec des témoignages de CTOs, des retours d'expérience, et des conseils pratiques.
-
-Tu trouveras aussi d'autres ressources dans **[Guides & livres](/guides-livres/)**.
-
----
-
-## Explorer les autres piliers
-
-- **[Gouvernance & décision](/gouvernance-decision/)** — Prendre des décisions qui tiennent la route dans le temps
-- **[Culture & management](/culture-management/)** — Construire une culture d'équipe qui fait grandir, pas qui épuise
-- **[Trouver sa place](/trouver-sa-place/)** — Des repères pour s'orienter sans se raconter d'histoires
-
----
-
-*Des repères pour comprendre ce rôle, pas des leçons. Basé sur 17 ans d'expérience.*
-
+*Cette page est une porte d'entrée.  
+Les articles permettent d'approfondir chaque sujet.*

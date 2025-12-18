@@ -110,6 +110,6 @@ Un mentor peut t'aider énormément. Mais il ne fera pas le travail à ta place.
 
 ## Pour aller plus loin
 
-Le livre [\"Être ou ne pas être CTO\"](/livres/etre-ou-ne-pas-etre-cto/) explore le rôle du mentorat à différentes étapes de carrière.
+Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore le rôle du mentorat à différentes étapes de carrière.
 
 Tu peux aussi consulter l'article [\"Apprendre à apprendre en tech\"](/posts/apprendre-a-apprendre-tech/) ou les autres contenus du pilier [\"Trouver sa place\"](/trouver-sa-place/).

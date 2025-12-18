@@ -17,7 +17,7 @@ ShowToc: true
 TocOpen: false
 ---
 
-*Inspiré du livre ["En quête d'expérience"](/livres/en-quete-d-experience/), chapitre "Pivoter intelligent".*
+*Inspiré du livre ["En quête d'expérience"](/guides-livres/en-quete-d-experience-edition-2025/), chapitre "Pivoter intelligent".*
 
 ## Dédramatisation
 
@@ -83,6 +83,6 @@ Si vous choisissez de rester dans votre domaine actuel, assumez ce choix. Il n'y
 
 ## Pour aller plus loin
 
-Le livre ["En quête d'expérience"](/livres/en-quete-d-experience/) couvre les transitions en détail, avec des roadmaps et des retours d'expérience de développeurs qui ont réussi leur transition.
+Le livre ["En quête d'expérience"](/guides-livres/en-quete-d-experience-edition-2025/) couvre les transitions en détail, avec des roadmaps et des retours d'expérience de développeurs qui ont réussi leur transition.
 
 Pour approfondir, tu peux aussi consulter les pages piliers du site ou les guides mis à disposition.

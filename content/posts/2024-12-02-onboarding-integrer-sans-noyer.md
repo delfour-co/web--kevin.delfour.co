@@ -117,6 +117,6 @@ Calendrier pré-rempli, questions structurées. Ces points détectent friction t
 
 ## Pour approfondir
 
-Le livre [\"Être ou ne pas être CTO\"](/livres/etre-ou-ne-pas-etre-cto/) explore comment créer des processus d'intégration qui retiennent les talents.
+Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment créer des processus d'intégration qui retiennent les talents.
 
 Pour approfondir, tu peux aussi consulter l'article [\"Former sans infantiliser\"](/posts/former-sans-infantiliser/) ou les autres contenus du pilier [\"Culture & management\"](/culture-management/).

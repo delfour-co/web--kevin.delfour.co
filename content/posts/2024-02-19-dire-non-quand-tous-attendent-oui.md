@@ -107,6 +107,6 @@ Plutôt que de dire non de manière ad hoc, créer un framework de décision par
 
 ## Pour approfondir
 
-Le livre ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/) explore comment différents CTOs gèrent la tension entre pression business et responsabilité technique.
+Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment différents CTOs gèrent la tension entre pression business et responsabilité technique.
 
 Pour approfondir, tu peux aussi consulter l'article sur ["La dette technique"](/posts/dette-technique-cto-gestion-compromis-strategies/) ou les autres contenus du pilier ["Le rôle du CTO"](/le-role-du-cto/).

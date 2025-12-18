@@ -1,134 +1,17 @@
-{{- define "main" }}
-
-<header class="page-header">
-  {{- partial "breadcrumbs.html" . }}
-  <h1>
-    {{ .Title }}
-    {{- if and (or (eq .Kind `term`) (eq .Kind `section`)) (.Param "ShowRssButtonInSectionTermList") }}
-    {{- with .OutputFormats.Get "rss" }}
-    <a href="{{ .RelPermalink }}" title="RSS" aria-label="RSS">
-      {{ partial "icon.html" (dict "name" "interface-essential/interface-essential-wifi-feed" "size" 23 "ariaHidden" true) }}
-    </a>
-    {{- end }}
-    {{- end }}
-  </h1>
-  {{- if .Description }}
-  <div class="post-description">
-    {{ .Description | markdownify }}
-  </div>
-  {{- end }}
-</header>
-
-{{- if .Content }}
-<div class="post-content">
-  {{- if not (.Param "disableAnchoredHeadings") }}
-  {{- partial "anchored_headings.html" .Content -}}
-  {{- else }}{{ .Content }}{{ end }}
-</div>
-{{- end }}
-
-{{- /* Récupérer tous les articles de ce pilier */}}
-{{- $allPosts := where site.RegularPages "Section" "posts" }}
+{{- /* Redirection vers les sections correspondantes */ -}}
+{{- $pillarMapping := dict "role-cto" "/le-role-du-cto/" "le-role-du-cto" "/le-role-du-cto/" "gouvernance-decision" "/gouvernance-decision/" "culture-management" "/culture-management/" "trouver-sa-place" "/trouver-sa-place/" }}
 {{- $pillarValue := .Data.Term }}
-{{- /* Chercher les articles avec pillars (taxonomie Hugo) ou pillar (compatibilité) */}}
-{{- $pillarPages := where $allPosts "Params.pillars" "intersect" (slice $pillarValue) }}
-{{- $pillarPagesCompat := where $allPosts "Params.pillar" $pillarValue }}
-{{- $pillarPages = union $pillarPages $pillarPagesCompat }}
-
-{{- /* Articles repères pour "Par où commencer" */}}
-{{- $featured := where $pillarPages "Params.featured" true }}
-{{- $featured = sort $featured "Params.weight" "asc" }}
-{{- $featured = first 3 $featured }}
-
-{{- /* Articles non repères pour "Pour approfondir" */}}
-{{- $more := where $pillarPages "Params.featured" "ne" true }}
-{{- $more = sort $more "Date" "desc" }}
-{{- $more = first 12 $more }}
-
-{{- /* Déterminer le public principal */}}
-{{- $audiences := slice }}
-{{- range $pillarPages }}
-  {{- if .Params.audience }}
-    {{- $audiences = $audiences | append .Params.audience }}
-  {{- end }}
-{{- end }}
-{{- $mainAudience := index ($audiences | uniq) 0 }}
-
-{{- if $mainAudience }}
-<div class="post-content" style="margin-bottom: var(--gap);">
-  <p><strong>Public principal :</strong> {{ if eq $mainAudience "cto" }}CTO / leaders tech{{ else if eq $mainAudience "jeunesse" }}Jeunesse tech{{ else }}{{ $mainAudience }}{{ end }}</p>
-</div>
-{{- end }}
-
-{{- /* Section "Par où commencer" */}}
-{{- if gt (len $featured) 0 }}
-<section class="start-here" style="margin: calc(var(--gap) * 2) 0;">
-  <h2>Par où commencer</h2>
-  <p>Trois articles repères pour entrer dans ce pilier. Ces articles restent pertinents indépendamment de leur date de publication.</p>
-  
-  <div class="post-entries" style="margin-top: var(--gap);">
-    {{- range $featured }}
-    <article class="post-entry">
-      {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false }}
-      {{- partial "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) }}
-      <header class="entry-header">
-        <h3 class="entry-hint-parent">
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </h3>
-      </header>
-      {{- if (ne (.Param "hideSummary") true) }}
-      <div class="entry-content">
-        <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
-      </div>
-      {{- end }}
-      {{- if not (.Param "hideMeta") }}
-      <footer class="entry-footer">
-        {{- partial "post_meta.html" . -}}
-      </footer>
-      {{- end }}
-      <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
-    </article>
-    {{- end }}
-  </div>
-</section>
-{{- end }}
-
-{{- /* Section "Pour approfondir" */}}
-{{- if gt (len $more) 0 }}
-<section class="more-articles" style="margin: calc(var(--gap) * 2) 0;">
-  <h2>Pour approfondir</h2>
-  <p>D'autres articles sur ce pilier, triés par date de publication (plus récents en premier).</p>
-  
-  <div class="post-entries" style="margin-top: var(--gap);">
-    {{- range $more }}
-    <article class="post-entry">
-      {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false }}
-      {{- partial "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) }}
-      <header class="entry-header">
-        <h3 class="entry-hint-parent">
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </h3>
-      </header>
-      {{- if (ne (.Param "hideSummary") true) }}
-      <div class="entry-content">
-        <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
-      </div>
-      {{- end }}
-      {{- if not (.Param "hideMeta") }}
-      <footer class="entry-footer">
-        {{- partial "post_meta.html" . -}}
-      </footer>
-      {{- end }}
-      <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
-    </article>
-    {{- end }}
-  </div>
-</section>
-{{- end }}
-
-{{- /* Lien vers tous les articles du pilier */}}
-<div class="post-content" style="margin-top: calc(var(--gap) * 2);">
-  <p><a href="/posts/?pillar={{ $pillarValue }}">Voir tous les articles de ce pilier →</a></p>
-</div>
-
-{{- end }}{{- /* end main */ -}}
+{{- $redirectUrl := index $pillarMapping $pillarValue | default "/" }}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="0; url={{ $redirectUrl }}">
+    <link rel="canonical" href="{{ $redirectUrl }}">
+    <title>Redirection...</title>
+</head>
+<body>
+    <p>Redirection vers <a href="{{ $redirectUrl }}">{{ $redirectUrl }}</a>...</p>
+    <script>window.location.replace("{{ $redirectUrl }}");</script>
+</body>
+</html>

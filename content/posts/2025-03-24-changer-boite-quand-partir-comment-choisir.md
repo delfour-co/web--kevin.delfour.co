@@ -114,6 +114,6 @@ Ni rester par peur, ni partir impulsivement. Décider consciemment.
 
 ## Pour aller plus loin
 
-Le livre [\"Être ou ne pas être CTO\"](/livres/etre-ou-ne-pas-etre-cto/) explore les transitions de carrière et comment naviguer les changements de boîte.
+Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore les transitions de carrière et comment naviguer les changements de boîte.
 
 Tu peux aussi consulter l'article [\"Reconnaître une boîte toxique\"](/posts/reconnaitre-boite-toxique-avant-signer/) ou les autres contenus du pilier [\"Trouver sa place\"](/trouver-sa-place/).

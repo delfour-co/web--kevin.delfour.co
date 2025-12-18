@@ -15,42 +15,11 @@
 </article>
 {{- end }}
 
-{{- /* Section "Start here" - 3 parcours guidés */}}
+{{- /* Section "Par où commencer" - Lien vers le guide */}}
 <section class="start-here" style="margin: calc(var(--gap) * 2) 0;">
   <h2>Par où commencer</h2>
-  <p>Trois parcours pour trouver rapidement ce qui vous correspond.</p>
-  
-  <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--gap); margin-top: var(--gap);">
-    <article class="post-entry">
-      <header class="entry-header">
-        <h3><a href="/pillars/role-cto/">Je suis CTO ou je veux le devenir</a></h3>
-      </header>
-      <div class="entry-content">
-        <p>Clarifier le rôle, comprendre les différences avec Lead Dev/VP Eng, réussir sa prise de poste, recruter une équipe.</p>
-      </div>
-      <a class="entry-link" aria-label="Explorer Le rôle du CTO" href="/pillars/role-cto/"></a>
-    </article>
-
-    <article class="post-entry">
-      <header class="entry-header">
-        <h3><a href="/pillars/gouvernance-decision/">Je dois prendre des décisions techniques</a></h3>
-      </header>
-      <div class="entry-content">
-        <p>Architecture, dette technique, choix techniques, alignement tech/business, gouvernance partagée.</p>
-      </div>
-      <a class="entry-link" aria-label="Explorer Gouvernance & décision" href="/pillars/gouvernance-decision/"></a>
-    </article>
-
-    <article class="post-entry">
-      <header class="entry-header">
-        <h3><a href="/pillars/trouver-sa-place/">Je cherche ma place dans la tech</a></h3>
-      </header>
-      <div class="entry-content">
-        <p>Chemins de carrière, reconversion, développement de compétences, positionnement professionnel, premiers pas.</p>
-      </div>
-      <a class="entry-link" aria-label="Explorer Trouver sa place" href="/pillars/trouver-sa-place/"></a>
-    </article>
-  </div>
+  <p>Des itinéraires de lecture selon votre profil pour trouver rapidement les repères dont vous avez besoin.</p>
+  <p style="margin-top: var(--gap);"><a href="/start-here/">Explorer le guide de démarrage →</a></p>
 </section>
 
 {{- /* Section 4 piliers (cards) */}}
@@ -58,23 +27,32 @@
   <h2>Les quatre piliers</h2>
   <p>Des repères organisés par thématique pour mieux naviguer.</p>
   
-  <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--gap); margin-top: var(--gap);">
-    {{- $pillars := slice "role-cto" "gouvernance-decision" "culture-management" "trouver-sa-place" }}
-    {{- $pillarNames := dict "role-cto" "Le rôle du CTO" "gouvernance-decision" "Gouvernance & décision" "culture-management" "Culture & management" "trouver-sa-place" "Trouver sa place" }}
-    {{- $pillarDescs := dict "role-cto" "Clarifier le rôle, réussir sa prise de poste, recruter une équipe." "gouvernance-decision" "Architecture, dette technique, choix techniques, alignement tech/business." "culture-management" "Culture d'équipe, développement des talents, communication, gestion des conflits." "trouver-sa-place" "Chemins de carrière, reconversion, développement de compétences, positionnement professionnel." }}
+  <div class="grid pillars-grid" style="margin-top: var(--gap);">
+    {{- $pillars := slice "le-role-du-cto" "gouvernance-decision" "culture-management" "trouver-sa-place" }}
+    {{- $pillarNames := dict "le-role-du-cto" "Le rôle du CTO" "gouvernance-decision" "Gouvernance & décision" "culture-management" "Culture & management" "trouver-sa-place" "Trouver sa place" }}
+    {{- $pillarDescs := dict "le-role-du-cto" "Ce que recouvre réellement le rôle de CTO, au-delà du titre." "gouvernance-decision" "Comment prendre des décisions techniques qui tiennent la route dans le temps." "culture-management" "Comment construire une culture d'équipe qui fait grandir, pas qui épuise." "trouver-sa-place" "Comment s'orienter dans la tech sans se raconter d'histoires." }}
+    {{- $pillarIcons := dict "le-role-du-cto" "coding-apps-websites/coding-apps-websites-dinosaur-error" "gouvernance-decision" "business/business-product-scale" "culture-management" "users/multiple-user" "trouver-sa-place" "map-navigation/map-navigation-compass-direction" }}
+    {{- $pillarClasses := dict "le-role-du-cto" "pillar-entry--cto" "gouvernance-decision" "pillar-entry--gouvernance" "culture-management" "pillar-entry--culture" "trouver-sa-place" "pillar-entry--place" }}
 
     {{- range $pillars }}
-      {{- $pillarPage := site.GetPage (printf "/pillars/%s" .) }}
+      {{- $pillarPage := site.GetPage (printf "/%s" .) }}
       {{- $name := index $pillarNames . }}
       {{- $desc := index $pillarDescs . }}
-      <article class="post-entry">
+      {{- $icon := index $pillarIcons . }}
+      {{- $pillarClass := index $pillarClasses . }}
+      <article class="post-entry {{ $pillarClass }}">
         <header class="entry-header">
-          <h3><a href="/pillars/{{ . }}/">{{ $name }}</a></h3>
+          <h3 style="display: flex; align-items: center; gap: 12px;">
+            {{- if $icon }}
+            {{- partial "icon.html" (dict "name" $icon "class" "pillar-icon" "size" 32 "ariaHidden" true) }}
+            {{- end }}
+            <a href="/{{ . }}/">{{ $name }}</a>
+          </h3>
         </header>
         <div class="entry-content">
           <p>{{ $desc }}</p>
         </div>
-        <a class="entry-link" aria-label="Explorer {{ $name }}" href="/pillars/{{ . }}/"></a>
+        <a class="entry-link" aria-label="Explorer {{ $name }}" href="/{{ . }}/"></a>
       </article>
     {{- end }}
   </div>
@@ -93,7 +71,7 @@
   
   <div class="post-entries" style="margin-top: var(--gap);">
     {{- range $featured }}
-    <article class="post-entry">
+    <article class="post-entry" data-pillar="{{ with .Params.pillar }}{{ . }}{{ end }}">
       {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false }}
       {{- partial "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) }}
       <header class="entry-header">
@@ -108,9 +86,18 @@
       {{- end }}
       {{- if not (.Param "hideMeta") }}
       <footer class="entry-footer">
-        {{- partial "post_meta.html" . -}}
+        {{- $metaContent := partial "post_meta.html" . -}}
+        {{- if $metaContent }}
+          {{ $metaContent | safeHTML }}
+        {{- end }}
         {{- with .Params.pillar }}
-          <span class="meta-pillar">Pilier : <a href="/pillars/{{ . }}/">{{ . }}</a></span>
+          {{- $pillarUrls := dict "le-role-du-cto" "/le-role-du-cto/" "role-cto" "/le-role-du-cto/" "gouvernance-decision" "/gouvernance-decision/" "culture-management" "/culture-management/" "trouver-sa-place" "/trouver-sa-place/" }}
+          {{- $pillarNames := dict "le-role-du-cto" "Le rôle du CTO" "role-cto" "Le rôle du CTO" "gouvernance-decision" "Gouvernance & décision" "culture-management" "Culture & management" "trouver-sa-place" "Trouver sa place" }}
+          {{- $pillarUrl := index $pillarUrls . | default (printf "/%s/" .) }}
+          {{- $pillarName := index $pillarNames . | default . }}
+          {{- $pillarSlug := cond (eq . "role-cto") "le-role-du-cto" . }}
+          {{- if $metaContent }}<span>&nbsp;·&nbsp;</span>{{- end }}
+          <span class="meta-pillar" data-pillar="{{ $pillarSlug }}"><a href="{{ $pillarUrl }}">{{ $pillarName }}</a></span>
         {{- end }}
       </footer>
       {{- end }}
@@ -132,5 +119,91 @@
   <p style="margin-top: var(--gap);"><a href="/guides-livres/">Explorer les guides et livres →</a></p>
 </section>
 {{- end }}
+
+{{- /* Bloc "Accompagnement personnalisé" */}}
+{{- $workWithMePage := site.GetPage "/travailler-avec-moi/" }}
+{{- if $workWithMePage }}
+<section class="work-with-me" style="margin: calc(var(--gap) * 2) 0;">
+  <h2>Accompagnement personnalisé</h2>
+  <p>Vous cherchez un accompagnement personnalisé ? Consultation CTO, coaching individuel, ateliers d'équipe, conférences.</p>
+  <p style="margin-top: var(--gap);"><a href="/travailler-avec-moi/">Travailler avec moi →</a></p>
+</section>
+{{- end }}
+
+<style>
+/* Bordures colorées pour les articles selon leur pilier */
+.post-entry[data-pillar="le-role-du-cto"],
+.post-entry[data-pillar="role-cto"] {
+    border-left: 4px solid rgb(59, 130, 246);
+}
+
+.post-entry[data-pillar="le-role-du-cto"]:hover,
+.post-entry[data-pillar="role-cto"]:hover {
+    border-left-color: rgb(37, 99, 235);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.post-entry[data-pillar="gouvernance-decision"] {
+    border-left: 4px solid rgb(168, 85, 247);
+}
+
+.post-entry[data-pillar="gouvernance-decision"]:hover {
+    border-left-color: rgb(147, 51, 234);
+    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.15);
+}
+
+.post-entry[data-pillar="culture-management"] {
+    border-left: 4px solid rgb(34, 197, 94);
+}
+
+.post-entry[data-pillar="culture-management"]:hover {
+    border-left-color: rgb(22, 163, 74);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
+}
+
+.post-entry[data-pillar="trouver-sa-place"] {
+    border-left: 4px solid rgb(251, 146, 60);
+}
+
+.post-entry[data-pillar="trouver-sa-place"]:hover {
+    border-left-color: rgb(249, 115, 22);
+    box-shadow: 0 4px 12px rgba(251, 146, 60, 0.15);
+}
+
+/* Dark mode */
+:root[data-theme="dark"] .post-entry[data-pillar="le-role-du-cto"],
+:root[data-theme="dark"] .post-entry[data-pillar="role-cto"] {
+    border-left-color: rgb(96, 165, 250);
+}
+
+:root[data-theme="dark"] .post-entry[data-pillar="le-role-du-cto"]:hover,
+:root[data-theme="dark"] .post-entry[data-pillar="role-cto"]:hover {
+    box-shadow: 0 4px 12px rgba(96, 165, 250, 0.2);
+}
+
+:root[data-theme="dark"] .post-entry[data-pillar="gouvernance-decision"] {
+    border-left-color: rgb(196, 181, 253);
+}
+
+:root[data-theme="dark"] .post-entry[data-pillar="gouvernance-decision"]:hover {
+    box-shadow: 0 4px 12px rgba(196, 181, 253, 0.2);
+}
+
+:root[data-theme="dark"] .post-entry[data-pillar="culture-management"] {
+    border-left-color: rgb(74, 222, 128);
+}
+
+:root[data-theme="dark"] .post-entry[data-pillar="culture-management"]:hover {
+    box-shadow: 0 4px 12px rgba(74, 222, 128, 0.2);
+}
+
+:root[data-theme="dark"] .post-entry[data-pillar="trouver-sa-place"] {
+    border-left-color: rgb(251, 191, 36);
+}
+
+:root[data-theme="dark"] .post-entry[data-pillar="trouver-sa-place"]:hover {
+    box-shadow: 0 4px 12px rgba(251, 191, 36, 0.2);
+}
+</style>
 
 {{- end }}{{- /* end main */ -}}

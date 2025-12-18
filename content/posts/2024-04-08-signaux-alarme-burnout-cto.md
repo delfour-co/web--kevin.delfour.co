@@ -116,6 +116,6 @@ Les vacances ne suffisent pas si la situation de fond est insoutenable. Identifi
 
 ## Pour approfondir
 
-Le livre ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/) explore le burn-out avec des témoignages de CTOs qui l'ont vécu et comment ils s'en sont sortis.
+Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore le burn-out avec des témoignages de CTOs qui l'ont vécu et comment ils s'en sont sortis.
 
 Pour approfondir, tu peux aussi consulter l'article ["Quand démissionner"](/posts/quand-demissionner-cto/) ou les autres contenus du pilier ["Le rôle du CTO"](/le-role-du-cto/).

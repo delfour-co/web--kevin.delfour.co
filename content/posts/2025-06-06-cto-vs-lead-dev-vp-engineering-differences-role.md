@@ -17,7 +17,7 @@ ShowToc: true
 TocOpen: false
 ---
 
-*Article basé sur le livre ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/), chapitre "Le rôle de CTO démystifié".*
+*Article basé sur le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/), chapitre "Le rôle de CTO démystifié".*
 
 ## Situation réelle
 
@@ -104,6 +104,6 @@ Lead Dev, VP Engineering, CTO : ce ne sont pas des étapes d'une même échelle,
 
 ## Pour approfondir
 
-Le livre ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/) explore ces rôles en profondeur avec témoignages de CTOs, VPs, et Lead Devs sur leurs parcours et leurs choix de carrière.
+Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore ces rôles en profondeur avec témoignages de CTOs, VPs, et Lead Devs sur leurs parcours et leurs choix de carrière.
 
 Pour approfondir, tu peux aussi consulter les pages piliers du site ou les guides mis à disposition.

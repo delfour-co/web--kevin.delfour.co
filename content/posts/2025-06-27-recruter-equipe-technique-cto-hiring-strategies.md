@@ -25,7 +25,7 @@ audience: cto
 audiences:
 - cto
 ---
-*Stratégies tirées de ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/), chapitre "Construire l'équipe technique".*
+*Stratégies tirées de ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/), chapitre "Construire l'équipe technique".*
 
 ## Situation réelle
 
@@ -115,6 +115,6 @@ Ne pas attendre que les développeurs partent pour adresser les causes. Mettre e
 
 ## Pour approfondir
 
-Le livre ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/) détaille le design organisationnel, les templates d'interview, les benchmarks de compensation, et les stratégies de rétention avec des cas réels.
+Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) détaille le design organisationnel, les templates d'interview, les benchmarks de compensation, et les stratégies de rétention avec des cas réels.
 
 Pour approfondir, tu peux aussi consulter les pages piliers du site ou les guides mis à disposition.

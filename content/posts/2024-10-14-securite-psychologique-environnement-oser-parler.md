@@ -116,6 +116,6 @@ All-hands : "Merci à X d'avoir signalé ce risque, ça nous a évité un incide
 
 ## Pour approfondir
 
-Le livre ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/) explore comment créer et maintenir la sécurité psychologique dans différents contextes.
+Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment créer et maintenir la sécurité psychologique dans différents contextes.
 
 Pour approfondir, tu peux aussi consulter l'article ["Droit à l'erreur"](/posts/droit-erreur-rendre-reel-pas-cosmetique/) ou les autres contenus du pilier ["Culture & management"](/culture-management/).

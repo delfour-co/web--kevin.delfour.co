@@ -116,6 +116,6 @@ Simuler les coûts tokens avant de livrer en production. Cette anticipation évi
 
 ## Pour approfondir
 
-Le livre ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/) explore comment différents CTOs abordent l'IA dans leur organisation.
+Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment différents CTOs abordent l'IA dans leur organisation.
 
 Pour approfondir, tu peux aussi consulter l'article ["IA générative et productivité développeur"](/posts/ia-generative-et-productivite-developpeur/) ou les autres contenus du pilier ["Le rôle du CTO"](/le-role-du-cto/).

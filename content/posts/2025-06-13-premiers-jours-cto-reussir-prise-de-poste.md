@@ -27,7 +27,7 @@ audiences:
 featured: true
 weight: 2
 ---
-*Article basé sur le livre ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/).*
+*Article basé sur le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/).*
 
 ## Situation réelle
 
@@ -112,6 +112,6 @@ Admettre ouvertement les zones d'ombre plutôt que de faire semblant de tout com
 
 ## Pour approfondir
 
-Le livre ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/) explore en profondeur les enjeux de la prise de poste, avec des témoignages de CTOs sur leurs premiers 90 jours et les leçons qu'ils en ont tirées.
+Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore en profondeur les enjeux de la prise de poste, avec des témoignages de CTOs sur leurs premiers 90 jours et les leçons qu'ils en ont tirées.
 
 Pour approfondir, tu peux aussi consulter les pages piliers du site ou les guides mis à disposition.

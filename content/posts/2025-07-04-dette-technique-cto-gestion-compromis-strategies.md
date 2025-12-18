@@ -17,7 +17,7 @@ ShowToc: true
 TocOpen: false
 ---
 
-*Stratégies du livre ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/), chapitre "Gérer la dette technique".*
+*Stratégies du livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/), chapitre "Gérer la dette technique".*
 
 ## Situation réelle
 
@@ -107,6 +107,6 @@ Quand vous prenez une dette stratégique intentionnelle, la documenter explicite
 
 ## Pour approfondir
 
-Le livre ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/) inclut des cas réels de gestion de dette technique, avec des exemples concrets de migrations réussies et d'erreurs à éviter.
+Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) inclut des cas réels de gestion de dette technique, avec des exemples concrets de migrations réussies et d'erreurs à éviter.
 
 Pour approfondir, tu peux aussi consulter les pages piliers du site ou les guides mis à disposition.

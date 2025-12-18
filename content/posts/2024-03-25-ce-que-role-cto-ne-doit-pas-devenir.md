@@ -120,6 +120,6 @@ Avant 30-40 personnes, Staff Engineer ou Engineering Manager sont souvent plus h
 
 ## Pour approfondir
 
-Le livre ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/) explore ces dérives avec des témoignages de CTOs qui ont vécu ces situations.
+Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore ces dérives avec des témoignages de CTOs qui ont vécu ces situations.
 
 Pour approfondir, tu peux aussi consulter l'article ["CTO vs Lead Dev vs VP Engineering"](/posts/cto-vs-lead-dev-vp-engineering-differences-role/) ou les autres contenus du pilier ["Le rôle du CTO"](/le-role-du-cto/).

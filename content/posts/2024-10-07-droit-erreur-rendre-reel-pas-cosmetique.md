@@ -115,6 +115,6 @@ Discussion franche avec RH : erreurs ne doivent PAS affecter éval sauf Type 3 r
 
 ## Pour approfondir
 
-Le livre ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/) explore comment créer une vraie culture d'apprentissage par l'erreur.
+Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment créer une vraie culture d'apprentissage par l'erreur.
 
 Pour approfondir, tu peux aussi consulter l'article ["Post-mortem blameless"](/posts/postmortem-sans-blame-apprendre-sans-punir/) ou les autres contenus du pilier ["Culture & management"](/culture-management/).

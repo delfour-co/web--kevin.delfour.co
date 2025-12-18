@@ -106,6 +106,6 @@ Le syndrome de l'imposteur n'est pas un problème à "résoudre", c'est un compa
 
 ## Pour aller plus loin
 
-Le livre [\"Être ou ne pas être CTO\"](/livres/etre-ou-ne-pas-etre-cto/) explore comment même les CTOs expérimentés gèrent ce syndrome.
+Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment même les CTOs expérimentés gèrent ce syndrome.
 
 Tu peux aussi consulter l'article [\"Premiers pas en tech\"](/posts/premiers-pas-tech-dedramatiser/) ou les autres contenus du pilier [\"Trouver sa place\"](/trouver-sa-place/).

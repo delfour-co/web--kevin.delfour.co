@@ -27,7 +27,7 @@ audiences:
 featured: true
 weight: 10
 ---
-*Inspiré des stratégies du livre ["En quête d'expérience"](/livres/en-quete-d-experience/), chapitre "Maximiser sa rémunération".*
+*Inspiré des stratégies du livre ["En quête d'expérience"](/guides-livres/en-quete-d-experience-edition-2025/), chapitre "Maximiser sa rémunération".*
 
 ## Dédramatisation
 
@@ -84,6 +84,6 @@ Si vous choisissez de ne pas négocier, assumez ce choix. Vous acceptez probable
 
 ## Pour aller plus loin
 
-Le livre ["En quête d'expérience"](/livres/en-quete-d-experience/) inclut des scripts complets de négociation et des stratégies avancées pour maximiser votre rémunération.
+Le livre ["En quête d'expérience"](/guides-livres/en-quete-d-experience-edition-2025/) inclut des scripts complets de négociation et des stratégies avancées pour maximiser votre rémunération.
 
 Pour approfondir, tu peux aussi consulter les pages piliers du site ou les guides mis à disposition.

@@ -2,23 +2,10 @@
 
 <header class="page-header">
   {{- partial "breadcrumbs.html" . }}
-  <h1>
-    {{ .Title | default "Tous les articles" }}
-    {{- if and (or (eq .Kind `term`) (eq .Kind `section`)) (.Param "ShowRssButtonInSectionTermList") }}
-    {{- with .OutputFormats.Get "rss" }}
-    <a href="{{ .RelPermalink }}" title="RSS" aria-label="RSS">
-      {{ partial "icon.html" (dict "name" "interface-essential/interface-essential-wifi-feed" "size" 23 "ariaHidden" true) }}
-    </a>
-    {{- end }}
-    {{- end }}
-  </h1>
+  <h1>{{ .Title }}</h1>
   {{- if .Description }}
   <div class="post-description">
     {{ .Description | markdownify }}
-  </div>
-  {{- else }}
-  <div class="post-description">
-    <p>Archive complète de tous les articles, triés par date de publication (plus récents en premier).</p>
   </div>
   {{- end }}
 </header>
@@ -31,67 +18,47 @@
 </div>
 {{- end }}
 
-{{- /* Filtres par taxonomies */}}
-{{- $allPillars := site.Taxonomies.pillars }}
-{{- $allAudiences := site.Taxonomies.audiences }}
-{{- $currentPillar := .Params.pillar | default "" }}
-{{- $currentAudience := .Params.audience | default "" }}
-
-<nav class="filters" style="margin: var(--gap) 0; padding: var(--gap); background: var(--theme); border-radius: var(--radius);">
-  <h3 style="margin-top: 0; font-size: 1rem;">Filtrer par :</h3>
-  
-  <div style="display: flex; flex-wrap: wrap; gap: calc(var(--gap) / 2); margin-bottom: calc(var(--gap) / 2);">
-    <strong style="align-self: center;">Piliers :</strong>
-    <a href="/posts/" style="padding: 0.25rem 0.75rem; border-radius: var(--radius); background: {{ if not $currentPillar }}var(--code-bg){{ else }}transparent{{ end }}; text-decoration: none;">Tous</a>
-    {{- range $allPillars }}
-      {{- $pillarName := .Page.Title }}
-      {{- $pillarSlug := .Page.Data.Term }}
-      <a href="/posts/?pillar={{ $pillarSlug }}" style="padding: 0.25rem 0.75rem; border-radius: var(--radius); background: {{ if eq $currentPillar $pillarSlug }}var(--code-bg){{ else }}transparent{{ end }}; text-decoration: none;">{{ $pillarName }}</a>
-    {{- end }}
+{{- /* Filtres */ -}}
+<div class="filters" style="margin-bottom: calc(var(--gap) * 1.5); padding: 20px; background: var(--entry); border: 1px solid var(--border); border-radius: 8px;">
+  <div>
+    <strong style="display: block; margin-bottom: 12px;">Filtrer par pilier :</strong>
+    <div class="filter-buttons pillar-filters" style="display: flex; flex-wrap: wrap; gap: 8px;">
+      <button class="filter-button active" data-filter="all" style="padding: 8px 16px; background: var(--primary); color: var(--theme); border: none; border-radius: 6px; cursor: pointer; font-weight: 500; transition: var(--transition);">
+        Tous
+      </button>
+      <button class="filter-button filter-pillar" data-filter="role-cto" data-pillar="le-role-du-cto" style="padding: 8px 16px; background: var(--code-bg); color: var(--primary); border: 1px solid var(--border); border-radius: 6px; cursor: pointer; transition: var(--transition);">
+        Le rôle du CTO
+      </button>
+      <button class="filter-button filter-pillar" data-filter="gouvernance-decision" data-pillar="gouvernance-decision" style="padding: 8px 16px; background: var(--code-bg); color: var(--primary); border: 1px solid var(--border); border-radius: 6px; cursor: pointer; transition: var(--transition);">
+        Gouvernance & décision
+      </button>
+      <button class="filter-button filter-pillar" data-filter="culture-management" data-pillar="culture-management" style="padding: 8px 16px; background: var(--code-bg); color: var(--primary); border: 1px solid var(--border); border-radius: 6px; cursor: pointer; transition: var(--transition);">
+        Culture & management
+      </button>
+      <button class="filter-button filter-pillar" data-filter="trouver-sa-place" data-pillar="trouver-sa-place" style="padding: 8px 16px; background: var(--code-bg); color: var(--primary); border: 1px solid var(--border); border-radius: 6px; cursor: pointer; transition: var(--transition);">
+        Trouver sa place
+      </button>
+    </div>
   </div>
-  
-  <div style="display: flex; flex-wrap: wrap; gap: calc(var(--gap) / 2);">
-    <strong style="align-self: center;">Publics :</strong>
-    <a href="/posts/" style="padding: 0.25rem 0.75rem; border-radius: var(--radius); background: {{ if not $currentAudience }}var(--code-bg){{ else }}transparent{{ end }}; text-decoration: none;">Tous</a>
-    {{- range $allAudiences }}
-      {{- $audienceName := .Page.Title }}
-      {{- $audienceSlug := .Page.Data.Term }}
-      {{- $displayName := cond (eq $audienceSlug "cto") "CTO / leaders tech" (cond (eq $audienceSlug "jeunesse") "Jeunesse tech" $audienceName) }}
-      <a href="/posts/?audience={{ $audienceSlug }}" style="padding: 0.25rem 0.75rem; border-radius: var(--radius); background: {{ if eq $currentAudience $audienceSlug }}var(--code-bg){{ else }}transparent{{ end }}; text-decoration: none;">{{ $displayName }}</a>
-    {{- end }}
-  </div>
-</nav>
 
-{{- /* Récupérer les pages à afficher */}}
+  <div id="filter-count" style="margin-top: 16px; color: var(--secondary); font-size: 14px;"></div>
+</div>
+
+{{- /* Liste des articles */ -}}
+<div id="posts-container">
 {{- $pages := .RegularPages }}
-
-{{- /* Appliquer les filtres si présents dans les paramètres de requête */}}
-{{- /* Note: Hugo ne gère pas directement les query params, donc on utilise les paramètres de page ou on filtre côté template */}}
-{{- $filteredPages := $pages }}
-{{- if $currentPillar }}
-  {{- $filteredPages = where $filteredPages "Params.pillar" $currentPillar }}
-{{- end }}
-{{- if $currentAudience }}
-  {{- $filteredPages = where $filteredPages "Params.audience" $currentAudience }}
-{{- end }}
-
-{{- /* Trier par date décroissante */}}
-{{- $filteredPages = sort $filteredPages "Date" "desc" }}
-
-{{- /* Pagination */}}
-{{- $paginator := .Paginate $filteredPages }}
-
-{{- /* Afficher les articles */}}
-{{- range $index, $page := $paginator.Pages }}
-<article class="post-entry">
+{{- range $pages }}
+<article class="post-entry" data-pillar="{{ with .Params.pillar }}{{ . }}{{ end }}">
   {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false }}
   {{- partial "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) }}
   <header class="entry-header">
     <h2 class="entry-hint-parent">
-      {{- .Title }}
+      {{ .Title }}
       {{- if .Draft }}
       <span class="entry-hint" title="Draft">
-        {{ partial "icon.html" (dict "name" "interface-essential/interface-essential-pencil-edit-1" "size" 20 "ariaHidden" true) }}
+        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" fill="currentColor">
+          <path d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+        </svg>
       </span>
       {{- end }}
     </h2>
@@ -103,40 +70,337 @@
   {{- end }}
   {{- if not (.Param "hideMeta") }}
   <footer class="entry-footer">
-    {{- partial "post_meta.html" . -}}
-    {{- with .Params.pillar }}
-      <span class="meta-pillar" style="margin-left: 0.5rem;">Pilier : <a href="/pillars/{{ . }}/">{{ . }}</a></span>
+    {{- $metaContent := partial "post_meta.html" . -}}
+    {{- if $metaContent }}
+      {{ $metaContent | safeHTML }}
     {{- end }}
-    {{- with .Params.audience }}
-      <span class="meta-audience" style="margin-left: 0.5rem;">Public : {{ if eq . "cto" }}CTO / leaders tech{{ else if eq . "jeunesse" }}Jeunesse tech{{ else }}{{ . }}{{ end }}</span>
+    {{- with .Params.pillar }}
+      {{- $pillarUrls := dict "le-role-du-cto" "/le-role-du-cto/" "role-cto" "/le-role-du-cto/" "gouvernance-decision" "/gouvernance-decision/" "culture-management" "/culture-management/" "trouver-sa-place" "/trouver-sa-place/" }}
+      {{- $pillarNames := dict "le-role-du-cto" "Le rôle du CTO" "role-cto" "Le rôle du CTO" "gouvernance-decision" "Gouvernance & décision" "culture-management" "Culture & management" "trouver-sa-place" "Trouver sa place" }}
+      {{- $pillarUrl := index $pillarUrls . | default (printf "/%s/" .) }}
+      {{- $pillarName := index $pillarNames . | default . }}
+      {{- $pillarSlug := cond (eq . "role-cto") "le-role-du-cto" . }}
+      {{- if $metaContent }}<span>&nbsp;·&nbsp;</span>{{- end }}
+      <span class="meta-pillar" data-pillar="{{ $pillarSlug }}"><a href="{{ $pillarUrl }}">{{ $pillarName }}</a></span>
     {{- end }}
   </footer>
   {{- end }}
   <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
 </article>
 {{- end }}
+</div>
 
-{{- if gt $paginator.TotalPages 1 }}
-<footer class="page-footer">
-  <nav class="pagination">
-    {{- if $paginator.HasPrev }}
-    <a class="prev" href="{{ $paginator.Prev.URL | absURL }}">
-      «&nbsp;{{ i18n "prev_page" }}&nbsp;
-      {{- if (.Param "ShowPageNums") }}
-      {{- sub $paginator.PageNumber 1 }}/{{ $paginator.TotalPages }}
-      {{- end }}
-    </a>
-    {{- end }}
-    {{- if $paginator.HasNext }}
-    <a class="next" href="{{ $paginator.Next.URL | absURL }}">
-      {{- i18n "next_page" }}&nbsp;
-      {{- if (.Param "ShowPageNums") }}
-      {{- add 1 $paginator.PageNumber }}/{{ $paginator.TotalPages }}
-      {{- end }}&nbsp;»
-    </a>
-    {{- end }}
-  </nav>
-</footer>
-{{- end }}
+{{- /* Script de filtrage */ -}}
+<script>
+(function() {
+  const filterButtons = document.querySelectorAll('.filter-button');
+  const posts = document.querySelectorAll('.post-entry');
+  const filterCount = document.getElementById('filter-count');
+
+  let activePillar = 'all';
+
+  function updateCount() {
+    const visiblePosts = document.querySelectorAll('.post-entry:not([style*="display: none"])');
+    const total = posts.length;
+    const visible = visiblePosts.length;
+
+    if (activePillar === 'all') {
+      filterCount.textContent = `${total} articles`;
+    } else {
+      filterCount.textContent = `${visible} article${visible > 1 ? 's' : ''} sur ${total}`;
+    }
+  }
+
+  function applyFilters() {
+    // Mapping des filtres vers les slugs de piliers
+    const pillarMapping = {
+      'role-cto': 'le-role-du-cto',
+      'gouvernance-decision': 'gouvernance-decision',
+      'culture-management': 'culture-management',
+      'trouver-sa-place': 'trouver-sa-place'
+    };
+
+    // Ajouter une classe pour l'animation
+    const container = document.getElementById('posts-container');
+    if (container) {
+      container.style.opacity = '0.5';
+      container.style.transform = 'translateY(10px)';
+    }
+
+    // Utiliser requestAnimationFrame pour une animation fluide
+    requestAnimationFrame(() => {
+      posts.forEach((post, index) => {
+        const postPillar = post.getAttribute('data-pillar') || '';
+        const normalizedPillar = pillarMapping[postPillar] || postPillar;
+        const normalizedFilter = pillarMapping[activePillar] || activePillar;
+
+        if (activePillar === 'all' || normalizedPillar === normalizedFilter || postPillar === activePillar) {
+          // Animation d'entrée avec délai progressif
+          setTimeout(() => {
+            post.style.display = '';
+            post.style.opacity = '0';
+            post.style.transform = 'translateY(20px)';
+            
+            requestAnimationFrame(() => {
+              post.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+              post.style.opacity = '1';
+              post.style.transform = 'translateY(0)';
+            });
+          }, index * 30); // Délai progressif de 30ms par élément
+        } else {
+          // Animation de sortie
+          post.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
+          post.style.opacity = '0';
+          post.style.transform = 'scale(0.95)';
+          
+          setTimeout(() => {
+            post.style.display = 'none';
+          }, 200);
+        }
+      });
+
+      // Restaurer l'opacité du container
+      setTimeout(() => {
+        if (container) {
+          container.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+          container.style.opacity = '1';
+          container.style.transform = 'translateY(0)';
+        }
+      }, 100);
+    });
+
+    // Mettre à jour le compteur avec animation
+    setTimeout(() => {
+      updateCount();
+      if (filterCount) {
+        filterCount.style.opacity = '0';
+        filterCount.style.transform = 'translateY(-5px)';
+        requestAnimationFrame(() => {
+          filterCount.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+          filterCount.style.opacity = '1';
+          filterCount.style.transform = 'translateY(0)';
+        });
+      }
+    }, 150);
+  }
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const filter = this.getAttribute('data-filter');
+
+      // Animation du bouton cliqué
+      this.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        this.style.transform = 'scale(1.05)';
+        setTimeout(() => {
+          this.style.transform = 'scale(1)';
+        }, 150);
+      }, 100);
+
+      activePillar = filter;
+
+      // Réinitialiser tous les boutons avec animation
+      document.querySelectorAll('.filter-button').forEach(btn => {
+        btn.classList.remove('active');
+        btn.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+        const btnPillar = btn.getAttribute('data-pillar');
+        if (btnPillar) {
+          // Réinitialiser les styles pour les boutons de piliers
+          btn.style.background = 'var(--code-bg)';
+          btn.style.border = '1px solid';
+        } else {
+          // Réinitialiser pour le bouton "Tous"
+          btn.style.background = 'var(--code-bg)';
+          btn.style.color = 'var(--primary)';
+          btn.style.border = '1px solid var(--border)';
+        }
+      });
+
+      // Activer le bouton cliqué avec animation
+      this.classList.add('active');
+      this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+      
+      if (filter === 'all') {
+        this.style.background = 'var(--primary)';
+        this.style.color = 'var(--theme)';
+        this.style.border = 'none';
+      } else {
+        // Garder les couleurs du pilier même quand actif, juste rendre la bordure plus épaisse
+        const pillar = this.getAttribute('data-pillar');
+        if (pillar) {
+          this.style.border = '2px solid';
+          this.style.background = 'var(--code-bg)';
+        }
+      }
+
+      applyFilters();
+    });
+  });
+
+  // Initialiser le compteur
+  updateCount();
+})();
+</script>
+
+<style>
+.filter-button:hover {
+  background: var(--border) !important;
+}
+
+.filter-button.active:hover {
+  background: var(--primary) !important;
+}
+
+/* Couleurs pour les filtres de piliers */
+.filter-pillar[data-pillar="le-role-du-cto"] {
+  color: rgb(59, 130, 246) !important;
+  border-color: rgba(59, 130, 246, 0.3) !important;
+}
+
+.filter-pillar[data-pillar="le-role-du-cto"]:hover {
+  background: rgba(59, 130, 246, 0.1) !important;
+  border-color: rgb(59, 130, 246) !important;
+}
+
+.filter-pillar[data-pillar="gouvernance-decision"] {
+  color: rgb(168, 85, 247) !important;
+  border-color: rgba(168, 85, 247, 0.3) !important;
+}
+
+.filter-pillar[data-pillar="gouvernance-decision"]:hover {
+  background: rgba(168, 85, 247, 0.1) !important;
+  border-color: rgb(168, 85, 247) !important;
+}
+
+.filter-pillar[data-pillar="culture-management"] {
+  color: rgb(34, 197, 94) !important;
+  border-color: rgba(34, 197, 94, 0.3) !important;
+}
+
+.filter-pillar[data-pillar="culture-management"]:hover {
+  background: rgba(34, 197, 94, 0.1) !important;
+  border-color: rgb(34, 197, 94) !important;
+}
+
+.filter-pillar[data-pillar="trouver-sa-place"] {
+  color: rgb(251, 146, 60) !important;
+  border-color: rgba(251, 146, 60, 0.3) !important;
+}
+
+.filter-pillar[data-pillar="trouver-sa-place"]:hover {
+  background: rgba(251, 146, 60, 0.1) !important;
+  border-color: rgb(251, 146, 60) !important;
+}
+
+/* Dark mode pour les filtres */
+:root[data-theme="dark"] .filter-pillar[data-pillar="le-role-du-cto"] {
+  color: rgb(96, 165, 250) !important;
+  border-color: rgba(96, 165, 250, 0.4) !important;
+}
+
+:root[data-theme="dark"] .filter-pillar[data-pillar="gouvernance-decision"] {
+  color: rgb(196, 181, 253) !important;
+  border-color: rgba(196, 181, 253, 0.4) !important;
+}
+
+:root[data-theme="dark"] .filter-pillar[data-pillar="culture-management"] {
+  color: rgb(74, 222, 128) !important;
+  border-color: rgba(74, 222, 128, 0.4) !important;
+}
+
+:root[data-theme="dark"] .filter-pillar[data-pillar="trouver-sa-place"] {
+  color: rgb(251, 191, 36) !important;
+  border-color: rgba(251, 191, 36, 0.4) !important;
+}
+
+@media screen and (max-width: 768px) {
+  .filters {
+    padding: 16px !important;
+  }
+
+  .filter-buttons {
+    gap: 6px !important;
+  }
+
+  .filter-button {
+    padding: 6px 12px !important;
+    font-size: 14px !important;
+  }
+}
+
+/* Bordures colorées pour les articles selon leur pilier */
+.post-entry[data-pillar="le-role-du-cto"],
+.post-entry[data-pillar="role-cto"] {
+    border-left: 4px solid rgb(59, 130, 246);
+}
+
+.post-entry[data-pillar="le-role-du-cto"]:hover,
+.post-entry[data-pillar="role-cto"]:hover {
+    border-left-color: rgb(37, 99, 235);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.post-entry[data-pillar="gouvernance-decision"] {
+    border-left: 4px solid rgb(168, 85, 247);
+}
+
+.post-entry[data-pillar="gouvernance-decision"]:hover {
+    border-left-color: rgb(147, 51, 234);
+    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.15);
+}
+
+.post-entry[data-pillar="culture-management"] {
+    border-left: 4px solid rgb(34, 197, 94);
+}
+
+.post-entry[data-pillar="culture-management"]:hover {
+    border-left-color: rgb(22, 163, 74);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
+}
+
+.post-entry[data-pillar="trouver-sa-place"] {
+    border-left: 4px solid rgb(251, 146, 60);
+}
+
+.post-entry[data-pillar="trouver-sa-place"]:hover {
+    border-left-color: rgb(249, 115, 22);
+    box-shadow: 0 4px 12px rgba(251, 146, 60, 0.15);
+}
+
+/* Dark mode */
+:root[data-theme="dark"] .post-entry[data-pillar="le-role-du-cto"],
+:root[data-theme="dark"] .post-entry[data-pillar="role-cto"] {
+    border-left-color: rgb(96, 165, 250);
+}
+
+:root[data-theme="dark"] .post-entry[data-pillar="le-role-du-cto"]:hover,
+:root[data-theme="dark"] .post-entry[data-pillar="role-cto"]:hover {
+    box-shadow: 0 4px 12px rgba(96, 165, 250, 0.2);
+}
+
+:root[data-theme="dark"] .post-entry[data-pillar="gouvernance-decision"] {
+    border-left-color: rgb(196, 181, 253);
+}
+
+:root[data-theme="dark"] .post-entry[data-pillar="gouvernance-decision"]:hover {
+    box-shadow: 0 4px 12px rgba(196, 181, 253, 0.2);
+}
+
+:root[data-theme="dark"] .post-entry[data-pillar="culture-management"] {
+    border-left-color: rgb(74, 222, 128);
+}
+
+:root[data-theme="dark"] .post-entry[data-pillar="culture-management"]:hover {
+    box-shadow: 0 4px 12px rgba(74, 222, 128, 0.2);
+}
+
+:root[data-theme="dark"] .post-entry[data-pillar="trouver-sa-place"] {
+    border-left-color: rgb(251, 191, 36);
+}
+
+:root[data-theme="dark"] .post-entry[data-pillar="trouver-sa-place"]:hover {
+    box-shadow: 0 4px 12px rgba(251, 191, 36, 0.2);
+}
+</style>
 
 {{- end }}{{- /* end main */ -}}

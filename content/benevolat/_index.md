@@ -3,6 +3,10 @@ title: "Bénévolat"
 description: "Depuis plusieurs années, je m'engage bénévolement auprès de différentes associations. Ces engagements sont pour moi une façon de donner du sens à mon expertise et de contribuer à des causes qui me tiennent à cœur."
 ---
 
+*Cette page fait partie des ressources complémentaires du site.*
+
+---
+
 ## Pourquoi le bénévolat ?
 
 Le bénévolat, c'est l'occasion de mettre mes compétences au service d'autres que mon employeur ou mes clients. C'est aussi une façon de rester connecté à la réalité du terrain, de rencontrer des personnes inspirantes, et de contribuer à des projets qui ont un impact réel.

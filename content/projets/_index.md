@@ -80,4 +80,8 @@ projets:
       - "Web"
 ---
 
+*Cette page fait partie des ressources complémentaires du site.*
+
+---
+
 Mes projets open source sur GitHub : katas de programmation, applications web et outils de développement.

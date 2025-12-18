@@ -115,6 +115,6 @@ Chaque investment dette : mesurer avant/après. "Sprint dette modules X : véloc
 
 ## Pour approfondir
 
-Le livre ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/) explore différentes stratégies de gestion de dette technique avec cas réels.
+Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore différentes stratégies de gestion de dette technique avec cas réels.
 
 Pour approfondir, tu peux aussi consulter l'article ["Dette technique : gérer sans bloquer"](/posts/dette-technique-cto-gestion-compromis-strategies/) ou les autres contenus du pilier ["Gouvernance & décision"](/gouvernance-decision/).

@@ -105,6 +105,6 @@ Si je ne suis pas sûr d'obtenir le temps pour la dette, ne pas le promettre. Si
 
 ## Pour approfondir
 
-Le livre ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/) explore comment différents CTOs naviguent cette double loyauté selon leur contexte organisationnel.
+Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment différents CTOs naviguent cette double loyauté selon leur contexte organisationnel.
 
 Pour approfondir, tu peux aussi consulter l'article ["Dire non quand tout le monde attend un oui"](/posts/dire-non-quand-tous-attendent-oui/) ou les autres contenus du pilier ["Le rôle du CTO"](/le-role-du-cto/).

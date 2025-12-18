@@ -110,6 +110,6 @@ Ton expérience antérieure est un atout. La tech n'efface pas ce que tu as appr
 
 ## Pour aller plus loin
 
-Le livre [\"Être ou ne pas être CTO\"](/livres/etre-ou-ne-pas-etre-cto/) explore les différentes cultures tech et comment s'y adapter.
+Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore les différentes cultures tech et comment s'y adapter.
 
 Tu peux aussi consulter l'article [\"Reconversion vers la tech\"](/posts/reconversion-tech-reel-sans-filtre/) ou les autres contenus du pilier [\"Trouver sa place\"](/trouver-sa-place/).

@@ -74,7 +74,7 @@
       {{- if .technologies }}
       <footer class="entry-footer">
         {{- range $index, $tech := .technologies }}
-          {{- if $index }}&nbsp;·&nbsp;{{ end }}
+          {{- if $index }}<span>&nbsp;·&nbsp;</span>{{ end }}
           <span>{{ $tech }}</span>
         {{- end }}
       </footer>
@@ -114,7 +114,7 @@
       {{- if .technologies }}
       <footer class="entry-footer">
         {{- range $index, $tech := .technologies }}
-          {{- if $index }}&nbsp;·&nbsp;{{ end }}
+          {{- if $index }}<span>&nbsp;·&nbsp;</span>{{ end }}
           <span>{{ $tech }}</span>
         {{- end }}
       </footer>

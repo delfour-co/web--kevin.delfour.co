@@ -27,7 +27,7 @@ audiences:
 featured: true
 weight: 4
 ---
-*Basé sur ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/), chapitre "Définir la stratégie technique".*
+*Basé sur ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/), chapitre "Définir la stratégie technique".*
 
 ## Situation réelle
 
@@ -117,6 +117,6 @@ Reconnaître que la vision doit s'adapter au stade de l'organisation. Une startu
 
 ## Pour approfondir
 
-Le livre ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/) explore la stratégie technique en profondeur, avec des templates, des cas réels, et des interviews de CTOs sur leur processus de définition de vision.
+Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore la stratégie technique en profondeur, avec des templates, des cas réels, et des interviews de CTOs sur leur processus de définition de vision.
 
 Pour approfondir, tu peux aussi consulter les pages piliers du site ou les guides mis à disposition.

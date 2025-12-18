@@ -108,6 +108,6 @@ Démissionner quand je le décide, pas quand je suis épuisé. Cette timing perm
 
 ## Pour approfondir
 
-Le livre ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/) explore les transitions de rôle avec des témoignages de CTOs qui ont quitté au bon moment et d'autres qui sont restés trop longtemps.
+Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore les transitions de rôle avec des témoignages de CTOs qui ont quitté au bon moment et d'autres qui sont restés trop longtemps.
 
 Pour approfondir, tu peux aussi consulter l'article ["Les signaux d'alarme d'un CTO en burn-out"](/posts/signaux-alarme-burnout-cto/) ou les autres contenus du pilier ["Le rôle du CTO"](/le-role-du-cto/).

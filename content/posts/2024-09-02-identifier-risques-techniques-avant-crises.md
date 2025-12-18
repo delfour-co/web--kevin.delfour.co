@@ -117,6 +117,6 @@ Security + architecture, pas juste quand problème. Ces audits révèlent angles
 
 ## Pour approfondir
 
-Le livre ["Être ou ne pas être CTO"](/livres/etre-ou-ne-pas-etre-cto/) explore comment construire des systèmes d'alerte précoce efficaces.
+Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment construire des systèmes d'alerte précoce efficaces.
 
 Pour approfondir, tu peux aussi consulter les autres contenus du pilier ["Gouvernance & décision"](/gouvernance-decision/).

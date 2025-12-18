@@ -26,7 +26,7 @@ audience: jeunesse
 audiences:
 - jeunesse
 ---
-*Stratégies issues de ["En quête d'expérience"](/livres/en-quete-d-experience/), chapitre "Construire sa réputation".*
+*Stratégies issues de ["En quête d'expérience"](/guides-livres/en-quete-d-experience-edition-2025/), chapitre "Construire sa réputation".*
 
 ## Dédramatisation
 
@@ -87,6 +87,6 @@ Si vous choisissez de ne pas avoir de portfolio, assumez ce choix. Vous devrez p
 
 ## Pour aller plus loin
 
-Le livre ["En quête d'expérience"](/livres/en-quete-d-experience/) détaille des stratégies complètes de personal branding, avec des exemples concrets et des retours d'expérience de développeurs qui ont construit leur portfolio.
+Le livre ["En quête d'expérience"](/guides-livres/en-quete-d-experience-edition-2025/) détaille des stratégies complètes de personal branding, avec des exemples concrets et des retours d'expérience de développeurs qui ont construit leur portfolio.
 
 Pour approfondir, tu peux aussi consulter les pages piliers du site ou les guides mis à disposition.
