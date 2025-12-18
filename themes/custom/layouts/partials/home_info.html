@@ -1,7 +1,10 @@
 {{- with site.Params.homeInfoParams }}
 <article class="first-entry home-info">
     <header class="entry-header">
-        <h1>{{ .Title | markdownify }}</h1>
+        <div class="entry-header-wrapper">
+            {{ partial "icon.html" (dict "name" "music-audio/music-headphones-human" "class" "home-info-icon" "size" 72 "ariaHidden" true) }}
+            <h1>{{ .Title | markdownify }}</h1>
+        </div>
     </header>
     <div class="entry-content">
         {{ .Content | markdownify }}

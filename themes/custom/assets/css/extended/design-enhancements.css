@@ -126,10 +126,11 @@ a {
 .entry-footer {
     color: var(--secondary);
     font-size: calc(0.7em * var(--font-size-multiplier,1)) !important;
-    margin-top: 6px;
+    margin-top: 0px;
+    padding-top: 0px;
     display: flex;
     gap: 4px;
-    align-items: center;
+    align-items: flex-end;
     opacity: 0.5;
     line-height: 1.3;
 }
