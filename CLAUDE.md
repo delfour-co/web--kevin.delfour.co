@@ -42,7 +42,8 @@ Ce fichier sert de référence pour les assistants IA travaillant sur ce projet.
 ├── themes/custom/               # Thème custom
 ├── hugo.yaml                     # Configuration Hugo
 ├── LIGNE_EDITORIALE.md          # Ligne éditoriale (référence absolue)
-└── CLAUDE.md                    # Ce fichier
+├── CLAUDE.md                    # Ce fichier
+└── .claude/                     # Kit éditorial (templates, prompts, guides)
 ```
 
 ---
@@ -69,63 +70,17 @@ Le site est structuré autour de 4 piliers (voir `LIGNE_EDITORIALE.md`) :
 
 Chaque page pilier suit cette structure (NON NÉGOCIABLE) :
 
-```markdown
----
-title: "[Titre du pilier]"
-description: "[Micro-description courte]"
----
+**Référence complète :** `.claude/PILLAR_TEMPLATE.md`
 
-## [Titre du pilier]
+Structure minimale :
+- Intention (1-2 paragraphes max)
+- À qui s'adresse (principalement / secondairement / ce que ce n'est pas)
+- Grandes tensions (4 à 6 tensions structurantes)
+- Où commencer (6-8 liens max, organisés par situations)
+- Derniers articles (3-5 maximum)
+- Aller plus loin (lien vers /posts)
 
-**[Accroche courte]**
-
-**Public principal :** [audience 1]
-**Public concerné :** [audience 2]
-
----
-
-### À qui s'adresse cette page
-
-[2-3 lignes concrètes sur les situations où ce pilier aide]
-
----
-
-### Par où commencer
-
-**Si tu découvres ce sujet :**
-
-1. **[Article 1]** — Fondamental (temps)
-2. **[Article 2]** — Posture (temps)
-3. **[Article 3]** — Terrain (temps)
-
-## Articles
-
-### [Thème 1]
-- [Article...]
-
-### [Thème 2]
-- [Article...]
-
----
-
-## Pour approfondir
-
-[Livre recommandé + lien]
-
-[Autres ressources]
-
----
-
-## Explorer les autres piliers
-
-- **[Pilier 1]** — [micro-description]
-- **[Pilier 2]** — [micro-description]
-- **[Pilier 3]** — [micro-description]
-
----
-
-*[Signature personnalisée selon le pilier]. Basé sur 17 ans d'expérience.*
-```
+**Règle d'or :** Une page pilier est une **carte**, pas un article. Elle oriente, elle ne développe pas.
 
 ---
 
@@ -171,6 +126,11 @@ Si la réponse est non → ne pas faire.
 ```
 
 Les 4 piliers centraux ont un attribut `group: "reperes"` et des micro-descriptions dans `hugo.yaml`.
+
+**Modèle de navigation :** `.claude/NAVIGATION_MODEL.md`
+- Un pilier = UNE page de référence (carte)
+- Les articles sont rattachés via sous-chemin `/pilier/posts/article`
+- Relation pilier ↔ article : carte ↔ territoire
 
 ---
 
@@ -271,6 +231,10 @@ Si une seule réponse est "non" → ne pas faire.
 
 ## Structure d'un nouvel article
 
+**Templates complets disponibles :**
+- `.claude/ARTICLE_TEMPLATE_CTO.md` — Structure canonique pour articles CTO
+- `.claude/ARTICLE_TEMPLATE_JEUNESSE.md` — Structure canonique pour articles jeunesse tech
+
 ### Front matter minimal
 
 ```yaml
@@ -285,29 +249,39 @@ tags: ["tag1", "tag2"]
 ---
 ```
 
-### Structure recommandée (CTO)
+### Structure canonique (CTO)
 
 1. Situation réelle
-2. Faux problème
-3. Vrai enjeu du rôle
-4. Cadre de décision (3 à 5 principes)
+2. Le faux problème
+3. Le vrai enjeu du rôle
+4. Cadre de décision (3 à 5 principes max)
 5. Retour terrain
 6. Erreurs fréquentes
 7. Si c'était à refaire
-8. Pour approfondir
+8. Pour approfondir (liens internes uniquement)
 
-### Structure recommandée (Jeunesse tech)
+**Chaque article doit renvoyer vers sa page pilier.**
+
+### Structure canonique (Jeunesse tech)
 
 1. Dédramatisation
 2. Le réel (sans filtre)
 3. Repères clairs
 4. Erreurs classiques
 5. Message de responsabilité
-6. Pour aller plus loin
+6. Pour aller plus loin (liens internes uniquement)
+
+**Chaque article doit renvoyer vers sa page pilier.**
 
 ---
 
 ## Historique des modifications majeures
+
+- **2025-01-XX** : Création du kit éditorial `.claude/`
+  - Templates pour piliers et articles
+  - Prompts de refactoring et création
+  - Checklists de publication
+  - Guide de ton et ligne éditoriale validée
 
 - **2025-12-16** : Retouche UX — Amélioration continuité cognitive menu → piliers
   - Ajout bandeau de navigation
@@ -334,10 +308,11 @@ tags: ["tag1", "tag2"]
 
 ### Avant toute intervention
 
-1. Lire `LIGNE_EDITORIALE.md` en entier
+1. Lire `LIGNE_EDITORIALE.md` en entier (ou `.claude/LINE_EDITORIALE.md`)
 2. Lire ce fichier (`CLAUDE.md`)
-3. Identifier les frictions réelles (pas supposées)
-4. Proposer uniquement le strict nécessaire
+3. Consulter les templates pertinents dans `.claude/` si création/refactoring
+4. Identifier les frictions réelles (pas supposées)
+5. Proposer uniquement le strict nécessaire
 
 ### En cas de doute
 
@@ -357,9 +332,41 @@ Se demander régulièrement :
 
 ---
 
+## Kit éditorial (.claude/)
+
+Le dossier `.claude/` contient les ressources de référence pour maintenir la cohérence du site :
+
+### Documents de référence
+- **`LINE_EDITORIALE.md`** — Ligne éditoriale complète (version validée)
+- **`TONE_GUIDE.md`** — Guide de ton et formulations
+- **`NAVIGATION_MODEL.md`** — Modèle de navigation (piliers → articles)
+
+### Templates
+- **`PILLAR_TEMPLATE.md`** — Template pour pages piliers
+- **`ARTICLE_TEMPLATE_CTO.md`** — Template pour articles CTO
+- **`ARTICLE_TEMPLATE_JEUNESSE.md`** — Template pour articles jeunesse tech
+
+### Prompts de travail
+- **`PROMPT_PILLAR_REFACTOR.md`** — Refactorer une page pilier
+- **`PROMPT_BATCH_REFACTOR_ARTICLES.md`** — Refactorer un lot d'articles
+- **`PROMPT_CREATE_PILLAR_CORPUS.md`** — Créer un corpus complet pour un pilier
+- **`PROMPT_UNIFY_SITE.md`** — Unifier le site (fin du "double univers")
+
+### Checklists & maintenance
+- **`CHECKLIST_PUBLICATION.md`** — Checklist avant publication (2 minutes)
+- **`MAINTENANCE_LINKS.md`** — Audit et corrections des liens internes
+
+### Documentation
+- **`README.md`** — Vue d'ensemble du kit éditorial
+
+**Règle :** Avant toute création ou refactoring majeur, consulter les templates et prompts correspondants dans `.claude/`.
+
+---
+
 ## Ressources complémentaires
 
-- **Ligne éditoriale complète :** `LIGNE_EDITORIALE.md`
+- **Ligne éditoriale complète :** `LIGNE_EDITORIALE.md` (et `.claude/LINE_EDITORIALE.md`)
+- **Kit éditorial :** `.claude/` (templates, prompts, guides)
 - **Configuration Hugo :** `hugo.yaml`
 - **Page d'accueil :** `content/_index.md`
 - **Guide de démarrage :** `content/start-here.md`
