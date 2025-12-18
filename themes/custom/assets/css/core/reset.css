@@ -118,3 +118,13 @@ img {
     display: block;
     max-width: 100%;
 }
+
+/* Prévenir les débordements horizontaux sur mobile */
+@media screen and (max-width: 768px) {
+    html,
+    body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100%;
+    }
+}
