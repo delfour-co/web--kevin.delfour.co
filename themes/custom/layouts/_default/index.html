@@ -44,16 +44,22 @@
       {{- $icon := index $pillarIcons . }}
       {{- $pillarClass := index $pillarClasses . }}
       <article class="post-entry {{ $pillarClass }}">
-        <header class="entry-header">
-          <h3 style="display: flex; align-items: center; gap: 12px;">
-            {{- if $icon }}
-            {{- partial "icon.html" (dict "name" $icon "class" "pillar-icon" "size" 32 "ariaHidden" true) }}
-            {{- end }}
-            <a href="/{{ . }}/">{{ $name }}</a>
-          </h3>
-        </header>
-        <div class="entry-content">
-          <p>{{ $desc }}</p>
+        <div class="pillar-content-wrapper">
+          {{- if $icon }}
+          <div class="pillar-icon-wrapper">
+            {{- partial "icon.html" (dict "name" $icon "class" "pillar-icon" "size" 48 "ariaHidden" true) }}
+          </div>
+          {{- end }}
+          <div class="pillar-text-wrapper">
+            <header class="entry-header">
+              <h3>
+                <a href="/{{ . }}/">{{ $name }}</a>
+              </h3>
+            </header>
+            <div class="entry-content">
+              <p>{{ $desc }}</p>
+            </div>
+          </div>
         </div>
         <a class="entry-link" aria-label="Explorer {{ $name }}" href="/{{ . }}/"></a>
       </article>

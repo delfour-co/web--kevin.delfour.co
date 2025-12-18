@@ -29,6 +29,27 @@
     min-height: 180px;
 }
 
+/* Wrapper pour la mise en page icône à gauche / contenu à droite */
+.pillars .pillar-content-wrapper {
+    display: flex;
+    gap: 20px;
+    flex-grow: 1;
+}
+
+.pillars .pillar-icon-wrapper {
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 4px;
+}
+
+.pillars .pillar-text-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
 .pillars .entry-header {
     flex-shrink: 0;
 }
@@ -118,6 +139,7 @@
 /* Style de l'icône dans les piliers */
 .pillars .pillar-icon {
     flex-shrink: 0;
+    --icon-size: 48px;
 }
 
 /* ============================================
