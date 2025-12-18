@@ -3,13 +3,14 @@
 .scroll-progress-container {
   position: fixed;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
   z-index: 9999;
   width: 100%;
-  max-width: calc(var(--main-width) + var(--gap) * 2);
-  margin: var(--gap);
-  padding-right: 8px;
+  max-width: calc((var(--main-width) + var(--gap) * 2) * var(--content-width-multiplier, 1));
+  margin: 0 auto var(--gap) auto;
+  padding: 0 var(--gap);
+  padding-right: calc(var(--gap) + 8px);
   box-sizing: border-box;
   opacity: 0;
   visibility: hidden;
