@@ -28,7 +28,14 @@ audiences:
 
 Je me souviens encore de ma première rencontre avec Astro. "C'est déjà rapide par défaut", me disait-on. Et c'est vrai ! Mais après avoir optimisé plusieurs sites en production, je peux vous affirmer qu'Astro recèle encore de nombreux secrets de performance.
 
-Ce que j'ai observé : Astro est déjà rapide par défaut, mais il existe encore des opportunités d'optimisation significatives. Après application de toutes ces optimisations sur un site e-commerce récent, nous avons obtenu : Score Lighthouse 98/100 en performance, First Contentful Paint 0.8s, Largest Contentful Paint 0.9s, Time to Interactive 0.8s, Cumulative Layout Shift 0.02.
+Ce que j'ai observé : Astro est déjà rapide par défaut, mais il existe encore des opportunités d'optimisation significatives. Après application de toutes ces optimisations sur un site e-commerce récent, nous avons obtenu :
+
+**Métriques de performance**
+- Score Lighthouse : 98/100
+- First Contentful Paint : 0.8s
+- Largest Contentful Paint : 0.9s
+- Time to Interactive : 0.8s
+- Cumulative Layout Shift : 0.02
 
 Avec le recul, j'ai constaté que ces techniques permettent de passer de sites "rapides" à des sites "très-rapides". L'optimisation d'un site Astro est un voyage passionnant qui peut mener à des résultats exceptionnels.
 
@@ -42,24 +49,53 @@ Un autre faux problème : penser qu'il faut tout optimiser d'un coup. En réalit
 
 Le vrai enjeu est de comprendre comment optimiser un site Astro pour obtenir des performances exceptionnelles :
 
-**Les optimisations fondamentales** : Ce que j'ai observé : la configuration de base optimisée apporte plusieurs avantages : chunking intelligent du code, préchargement optimisé des modules, gestion efficace des dépendances, nommage optimisé pour le cache. Cette configuration améliore significativement les performances.
+**Les optimisations fondamentales** : Ce que j'ai observé : la configuration de base optimisée apporte plusieurs avantages :
+- Chunking intelligent du code
+- Préchargement optimisé des modules
+- Gestion efficace des dépendances
+- Nommage optimisé pour le cache
+
+Cette configuration améliore significativement les performances.
 
 **Les optimisations du cache** : Ce que j'ai appris : une stratégie de cache adaptée selon le type de contenu améliore les performances. Stratégie de cache pour les articles de blog (public, max-age=3600), cache d'API avec stale-while-revalidate (public, max-age=60, stale-while-revalidate=600). Cette approche réduit la charge serveur et améliore l'expérience utilisateur.
 
-**Les tests de performance** : Ce que j'ai constaté : une suite de tests de performance permet de vérifier les temps de chargement critiques, analyser Lighthouse des performances et de l'accessibilité, mesurer les métriques Web Vitals et interactions utilisateur, vérifier la taille des ressources et types de fichiers, détecter les erreurs JavaScript. Cette approche maintient la qualité et détecte les régressions.
+**Les tests de performance** : Ce que j'ai constaté : une suite de tests de performance permet de :
+- Vérifier les temps de chargement critiques
+- Analyser Lighthouse des performances et de l'accessibilité
+- Mesurer les métriques Web Vitals et interactions utilisateur
+- Vérifier la taille des ressources et types de fichiers
+- Détecter les erreurs JavaScript
+
+Cette approche maintient la qualité et détecte les régressions.
 
 ## Cadre de décision
 
 Voici les principes qui m'ont aidé à optimiser un site Astro :
 
-**1. Configuration de base optimisée plutôt que configuration par défaut**  
-Chunking intelligent du code, préchargement optimisé des modules, gestion efficace des dépendances, nommage optimisé pour le cache. Ce que j'ai observé : cette configuration améliore significativement les performances et facilite la mise en cache.
+**1. Configuration de base optimisée plutôt que configuration par défaut**
+- Chunking intelligent du code
+- Préchargement optimisé des modules
+- Gestion efficace des dépendances
+- Nommage optimisé pour le cache
 
-**2. Stratégie de cache adaptée selon contenu plutôt qu'uniforme**  
-Stratégie de cache pour les articles de blog (public, max-age=3600), cache d'API avec stale-while-revalidate (public, max-age=60, stale-while-revalidate=600). Ce que j'ai appris : cette approche réduit la charge serveur et améliore l'expérience utilisateur.
+Ce que j'ai observé : cette configuration améliore significativement les performances et facilite la mise en cache.
 
-**3. Tests de performance automatisés plutôt que tests manuels**  
-Suite de tests de performance : vérification des temps de chargement critiques, analyse Lighthouse des performances et de l'accessibilité, métriques Web Vitals et interactions utilisateur, taille des ressources et types de fichiers, logs du navigateur et erreurs JavaScript. Ce que j'ai constaté : cette approche maintient la qualité et détecte les régressions.
+**2. Stratégie de cache adaptée selon contenu plutôt qu'uniforme**
+- Articles de blog : `public, max-age=3600`
+- Cache d'API : `public, max-age=60, stale-while-revalidate=600`
+
+Ce que j'ai appris : cette approche réduit la charge serveur et améliore l'expérience utilisateur.
+
+**3. Tests de performance automatisés plutôt que tests manuels**
+
+Suite de tests de performance :
+- Vérification des temps de chargement critiques
+- Analyse Lighthouse des performances et de l'accessibilité
+- Métriques Web Vitals et interactions utilisateur
+- Taille des ressources et types de fichiers
+- Logs du navigateur et erreurs JavaScript
+
+Ce que j'ai constaté : cette approche maintient la qualité et détecte les régressions.
 
 **4. Mesurer avant d'optimiser plutôt que optimiser aveuglément**  
 Utiliser les outils de monitoring pour identifier les vrais goulots d'étranglement. Ce que j'ai observé : cette approche permet de prioriser les optimisations selon leur impact réel.
@@ -69,7 +105,14 @@ Ne pas faire tout d'un coup. Commencer par les optimisations qui auront le plus 
 
 ## Retour terrain
 
-Ce que j'ai observé dans les sites optimisés : après application de toutes ces optimisations sur un site e-commerce récent, nous avons obtenu : Score Lighthouse 98/100 en performance, First Contentful Paint 0.8s, Largest Contentful Paint 0.9s, Time to Interactive 0.8s, Cumulative Layout Shift 0.02.
+Ce que j'ai observé dans les sites optimisés : après application de toutes ces optimisations sur un site e-commerce récent, nous avons obtenu :
+
+**Résultats mesurés**
+- Score Lighthouse : 98/100 en performance
+- First Contentful Paint : 0.8s
+- Largest Contentful Paint : 0.9s
+- Time to Interactive : 0.8s
+- Cumulative Layout Shift : 0.02
 
 Avec le recul, j'ai constaté que ces techniques permettent de passer de sites "rapides" à des sites "très-rapides". L'optimisation d'un site Astro est un voyage passionnant qui peut mener à des résultats exceptionnels.
 
@@ -97,8 +140,27 @@ Avec le recul, j'aurais automatisé les tests de performance dès le départ. Ce
 
 ## Pour approfondir
 
-Pour approfondir, tu peux explorer les optimisations fondamentales (configuration de base, chunking intelligent, préchargement modules), les stratégies de cache (cache adapté selon contenu, stale-while-revalidate), les tests de performance (Lighthouse, Web Vitals, métriques critiques), et les pratiques de mesure (monitoring, identification goulots d'étranglement, optimisation progressive).
+Pour approfondir, tu peux explorer plusieurs domaines :
+
+**Optimisations fondamentales**
+- Configuration de base
+- Chunking intelligent
+- Préchargement modules
+
+**Stratégies de cache**
+- Cache adapté selon contenu
+- Stale-while-revalidate
+
+**Tests de performance**
+- Lighthouse
+- Web Vitals
+- Métriques critiques
+
+**Pratiques de mesure**
+- Monitoring
+- Identification goulots d'étranglement
+- Optimisation progressive
 
 Une manière de voir les choses : la performance n'est pas un état final mais un processus continu. Ce que j'ai observé : l'optimisation d'un site Astro est un voyage passionnant qui peut mener à des résultats exceptionnels. Les techniques présentées sont le fruit de nombreuses expériences en production et continuent d'évoluer avec chaque nouveau projet.
 
-Pour approfondir, tu peux aussi consulter les pages piliers du site ou les guides mis à disposition.
+Pour approfondir, tu peux aussi consulter la page pilier ["Gouvernance & décision"](/gouvernance-decision/) ou les guides mis à disposition.

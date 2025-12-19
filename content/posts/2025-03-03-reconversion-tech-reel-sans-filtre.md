@@ -35,27 +35,112 @@ Le vrai enjeu est de comprendre ce qui t'attend vraiment :
 
 **Les 3 vérités sur la reconversion tech** :
 
-**Vérité 1 - Tu seras junior (vraiment)** : **Réalité:** peu importe ton âge ou expérience antérieure, en dev tu commences junior. **Conséquence:** salaire junior (30-40k souvent, pas 50-60k), responsabilités junior, encadrement nécessaire. Timeline : 2-3 ans minimum pour atteindre niveau confirmé/senior. Piège marketing : "Salaire de 50k+ garanti après bootcamp." **Message:** possible après plusieurs années, pas 6 mois.
+**Vérité 1 - Tu seras junior (vraiment)**
 
-**Vérité 2 - Le premier job est le plus dur à décrocher** : **Réalité:** paradoxe "junior avec expérience". Beaucoup d'entreprises veulent juniors pas chers AVEC expérience. **Conséquence:** 50-150 candidatures avant premier oui est fréquent. Accepter stage/alternance peut être nécessaire. Timeline : 3-9 mois de recherche n'est pas rare. Piège marketing : "100% employabilité garantie." **Message:** embauche arrive, mais demande persévérance.
+Réalité : Peu importe ton âge ou ton expérience antérieure, en dev tu commences junior.
 
-**Vérité 3 - L'apprentissage ne s'arrête jamais** : **Réalité:** bootcamp donne bases, le vrai apprentissage commence après en poste. Tech évolue : apprendre en continu est obligatoire. **Conséquence:** si tu aimes pas apprendre constamment, la tech va te frustrer. Timeline : toute ta carrière. **Piège:** penser qu'après la formation, tu "sais". **Message:** la formation initiale est 10% du chemin.
+Conséquences concrètes :
+- Salaire junior (30-40k souvent, pas 50-60k)
+- Responsabilités de junior
+- Encadrement nécessaire
+
+Timeline : 2-3 ans minimum pour atteindre le niveau confirmé/senior.
+
+Piège marketing : "Salaire de 50k+ garanti après bootcamp."
+
+Message : C'est possible après plusieurs années, pas après 6 mois.
+
+**Vérité 2 - Le premier job est le plus dur à décrocher**
+
+Réalité : Le paradoxe du "junior avec expérience". Beaucoup d'entreprises veulent des juniors pas chers AVEC de l'expérience.
+
+Conséquences concrètes :
+- 50-150 candidatures avant le premier oui est fréquent
+- Accepter un stage/alternance peut être nécessaire
+
+Timeline : 3-9 mois de recherche n'est pas rare.
+
+Piège marketing : "100% d'employabilité garantie."
+
+Message : L'embauche arrive, mais demande de la persévérance.
+
+**Vérité 3 - L'apprentissage ne s'arrête jamais**
+
+Réalité : Le bootcamp donne les bases, le vrai apprentissage commence après en poste. La tech évolue : apprendre en continu est obligatoire.
+
+Conséquences concrètes :
+- Si tu n'aimes pas apprendre constamment, la tech va te frustrer
+
+Timeline : Toute ta carrière.
+
+Piège : Penser qu'après la formation, tu "sais".
+
+Message : La formation initiale représente 10% du chemin.
 
 **Ce qui aide vraiment dans une reconversion** :
 
-**Atout 1 - Expérience professionnelle antérieure** : Valeur : tu connais les codes du travail (deadlines, communication, collaboration). Softskills transférables : rigueur, autonomie, communication. Exemple : reconversion depuis commerce → excellente communication client. Différenciation : à compétences tech égales, expérience professionnelle fait la différence.
+**Atout 1 - Expérience professionnelle antérieure**
 
-**Atout 2 - Maturité et clarté sur motivations** : Valeur : tu as choisi ce métier après réflexion, pas "par défaut". **Conséquence:** résilience face aux difficultés, moins de démission précoce. Différenciation : employeurs apprécient motivation claire vs junior qui ne sait pas pourquoi il est là.
+Valeur : Tu connais les codes du travail (deadlines, communication, collaboration).
 
-**Atout 3 - Réseau et capacité à apprendre seul** : Valeur : savoir chercher info, se débloquer, réseau professionnel existant. **Conséquence:** accès au marché caché, autonomie appréciée. Exemple : reconversion via réseau → premier job via ancien collègue.
+Softskills transférables :
+- Rigueur
+- Autonomie
+- Communication
+
+Exemple : Reconversion depuis le commerce → excellente communication client.
+
+Différenciation : À compétences tech égales, l'expérience professionnelle fait la différence.
+
+**Atout 2 - Maturité et clarté sur les motivations**
+
+Valeur : Tu as choisi ce métier après réflexion, pas "par défaut".
+
+Conséquences :
+- Résilience face aux difficultés
+- Moins de démission précoce
+
+Différenciation : Les employeurs apprécient une motivation claire vs un junior qui ne sait pas pourquoi il est là.
+
+**Atout 3 - Réseau et capacité à apprendre seul**
+
+Valeur : Savoir chercher l'info, se débloquer, réseau professionnel existant.
+
+Conséquences :
+- Accès au marché caché
+- Autonomie appréciée
+
+Exemple : Reconversion via réseau → premier job via ancien collègue.
 
 **Ce qui freine dans une reconversion** :
 
-**Frein 1 - Attentes salariales décalées** : **Piège:** "J'avais 45k avant, je veux au moins ça." **Réalité:** junior dev = 30-40k souvent, même à 35 ans. **Conséquence:** refuser offres junior → pas d'expérience → cercle vicieux. **Correction:** accepter baisse temporaire, rattraper en 2-3 ans.
+**Frein 1 - Attentes salariales décalées**
 
-**Frein 2 - Syndrome de l'imposteur amplifié** : Contexte : être junior à 30-40 ans quand collègues ont ton âge mais sont seniors. **Conséquence:** doute amplifié, peur du jugement. **Correction:** normaliser, tout le monde passe par là, l'âge n'est pas un problème.
+Piège : "J'avais 45k avant, je veux au moins ça."
 
-**Frein 3 - Sous-estimer investissement temps** : **Piège:** penser que bootcamp suffit, pas de pratique perso nécessaire. **Réalité:** réussir demande 10-20h/semaine perso en plus pendant 6-12 mois. **Conséquence:** échec si pas investi. **Correction:** se préparer à investissement important.
+Réalité : Junior dev = 30-40k souvent, même à 35 ans.
+
+Conséquence : Refuser les offres junior → pas d'expérience → cercle vicieux.
+
+Correction : Accepter une baisse temporaire, rattraper en 2-3 ans.
+
+**Frein 2 - Syndrome de l'imposteur amplifié**
+
+Contexte : Être junior à 30-40 ans quand tes collègues ont ton âge mais sont seniors.
+
+Conséquence : Doute amplifié, peur du jugement.
+
+Correction : Normaliser, tout le monde passe par là, l'âge n'est pas un problème.
+
+**Frein 3 - Sous-estimer l'investissement temps**
+
+Piège : Penser que le bootcamp suffit, pas de pratique perso nécessaire.
+
+Réalité : Réussir demande 10-20h/semaine en perso en plus pendant 6-12 mois.
+
+Conséquence : Échec si pas assez investi.
+
+Correction : Se préparer à un investissement important.
 
 ## Cadre de décision
 

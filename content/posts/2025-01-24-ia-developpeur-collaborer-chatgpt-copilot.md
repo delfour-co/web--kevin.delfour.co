@@ -100,10 +100,49 @@ Avec le recul, j'aurais maintenu mes skills de base dès le départ. Ce que j'ai
 
 ## Pour approfondir
 
-Pour approfondir, tu peux explorer les pratiques de prompt engineering (prompts structurés, contexte, requirements), les stratégies d'utilisation IA (assistant vs pilote, connaître limites, review systématique), les compétences 2025 (architecture et design, comprendre business, code review quality, security awareness, communication, problem solving), et les préparations futures (IA agents autonomes, pair programming IA, no-code/low-code++).
+Pour approfondir, tu peux explorer plusieurs domaines :
 
-Une manière de voir les choses : l'IA ne va pas remplacer les développeurs. Elle va remplacer les développeurs qui n'utilisent pas l'IA. Ce que j'ai observé : le nouveau normal (2025) est 40% du code généré par IA, 100% du code reviewed par humain, Developer = Architect + Reviewer + Problem Solver.
+**Pratiques de prompt engineering**
+- Prompts structurés
+- Contexte
+- Requirements
 
-Compétences qui deviennent critiques : architecture et design, comprendre le business, code review quality, security awareness, communication (avec IA et humains), problem solving (pas solution finding). Compétences qui deviennent obsolètes : syntax parfaite (Copilot la connaît), mémoriser APIs (ChatGPT les explique), copier-coller StackOverflow (IA le fait mieux).
+**Stratégies d'utilisation IA**
+- Assistant vs pilote
+- Connaître les limites
+- Review systématique
 
-Pour approfondir, tu peux aussi consulter les pages piliers du site ou les guides mis à disposition.
+**Compétences 2025**
+- Architecture et design
+- Comprendre le business
+- Code review quality
+- Security awareness
+- Communication
+- Problem solving
+
+**Préparations futures**
+- IA agents autonomes
+- Pair programming IA
+- No-code/low-code++
+
+Une manière de voir les choses : l'IA ne va pas remplacer les développeurs. Elle va remplacer les développeurs qui n'utilisent pas l'IA.
+
+Ce que j'ai observé : le nouveau normal (2025) est :
+- 40% du code généré par IA
+- 100% du code reviewed par humain
+- Developer = Architect + Reviewer + Problem Solver
+
+Compétences qui deviennent critiques :
+- Architecture et design
+- Comprendre le business
+- Code review quality
+- Security awareness
+- Communication (avec IA et humains)
+- Problem solving (pas solution finding)
+
+Compétences qui deviennent obsolètes :
+- Syntax parfaite (Copilot la connaît)
+- Mémoriser APIs (ChatGPT les explique)
+- Copier-coller StackOverflow (IA le fait mieux)
+
+Pour approfondir, tu peux aussi consulter la page pilier ["Trouver sa place"](/trouver-sa-place/) ou les guides mis à disposition.

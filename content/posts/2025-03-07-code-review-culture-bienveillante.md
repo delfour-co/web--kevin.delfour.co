@@ -99,8 +99,26 @@ Avec le recul, j'aurais adapté le style de review selon l'expérience dès le d
 
 ## Pour approfondir
 
-Pour approfondir, tu peux explorer les pratiques de feedback constructif (templates commentaires bienveillants, formulation qui fait la différence), les stratégies de priorisation (matrice de criticité, ratios équilibrés), les processus de review efficaces (checklist PR, approche multi-passes, outils d'aide), et les approches de mentoring (adaptation selon expérience, partage de connaissance, learning reviews).
+Pour approfondir, tu peux explorer plusieurs domaines :
+
+**Pratiques de feedback constructif**
+- Templates commentaires bienveillants
+- Formulation qui fait la différence
+
+**Stratégies de priorisation**
+- Matrice de criticité
+- Ratios équilibrés
+
+**Processus de review efficaces**
+- Checklist PR
+- Approche multi-passes
+- Outils d'aide
+
+**Approches de mentoring**
+- Adaptation selon expérience
+- Partage de connaissance
+- Learning reviews
 
 Une manière de voir les choses : la transformation culturelle prend du temps, mais chaque commentaire bienveillant, chaque explication pédagogique, chaque encouragement contribue à construire une équipe plus forte et plus épanouie. Ce que j'ai observé : l'objectif n'est pas d'avoir des reviews parfaites, mais des reviews qui font grandir chaque membre de l'équipe.
 
-Pour approfondir, tu peux aussi consulter les pages piliers du site ou les guides mis à disposition.
+Pour approfondir, tu peux aussi consulter la page pilier ["Culture & management"](/culture-management/) ou les guides mis à disposition.

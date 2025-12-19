@@ -35,25 +35,103 @@ Le vrai enjeu est de comprendre les attentes réelles et de t'y calibrer :
 
 **Ce qu'on attend VRAIMENT d'un junior** :
 
-**Attente 1 - Capacité d'apprentissage > Connaissance actuelle** : **Réalité:** personne n'attend que tu saches déjà tout. **Attente:** apprendre rapidement, poser bonnes questions, appliquer feedback. Signe positif : erreur faite une fois, pas répétée. Montrer comment tu apprends compte plus que ce que tu sais déjà. Indicateur de succès : progression visible mois après mois.
+**Attente 1 - Capacité d'apprentissage > Connaissance actuelle**
 
-**Attente 2 - Autonomie progressive** : Mois 1-3 : beaucoup de questions, beaucoup de support = normal. Mois 4-6 : questions plus rares, autonomie sur tâches simples = attendu. Mois 7-12 : autonomie sur scope défini, questions sur complexe = objectif. Signe positif : tu débloques seul des situations qui te bloquaient avant. Indicateur de succès : besoin de support diminue progressivement.
+Réalité : Personne n'attend que tu saches déjà tout.
 
-**Attente 3 - Communication proactive** : **Réalité:** "Je bloque depuis 2 jours" découvert par hasard = problème. "Je bloque depuis 30min sur X, j'ai essayé Y, aide ?" = professionnel. **Attente:** signaler blocages rapidement, tenir informé sur avancement, demander clarifications. Signe positif : manager jamais surpris par un retard ou problème. Indicateur de succès : confiance de l'équipe en ta communication.
+Ce qu'on attend :
+- Apprendre rapidement
+- Poser les bonnes questions
+- Appliquer le feedback
 
-**Attente 4 - Rigueur sur les bases** : **Réalité:** code parfait pas attendu, mais bases oui. **Attente:** tests écrits, code review demandée, conventions respectées, commit messages clairs. Signe positif : PR mergées sans 15 allers-retours sur les bases. Indicateur de succès : quality gate respectés sans rappel constant.
+Signe positif : Erreur faite une fois, pas répétée. Montrer comment tu apprends compte plus que ce que tu sais déjà.
 
-**Attente 5 - Attitude constructive** : **Réalité:** frustrations et doutes sont normaux. **Attente:** attitude solution (pas juste plainte), feedback donné constructivement, volonté d'améliorer. Signe positif : "J'ai ce problème, voici 2 idées de solution, qu'en penses-tu ?" Indicateur de succès : équipe apprécie travailler avec toi.
+Indicateur de succès : Progression visible mois après mois.
+
+**Attente 2 - Autonomie progressive**
+
+Timeline attendue :
+- **Mois 1-3** : Beaucoup de questions, beaucoup de support = normal
+- **Mois 4-6** : Questions plus rares, autonomie sur tâches simples = attendu
+- **Mois 7-12** : Autonomie sur scope défini, questions sur le complexe = objectif
+
+Signe positif : Tu débloques seul des situations qui te bloquaient avant.
+
+Indicateur de succès : Besoin de support diminue progressivement.
+
+**Attente 3 - Communication proactive**
+
+Réalité : "Je bloque depuis 2 jours" découvert par hasard = problème. "Je bloque depuis 30min sur X, j'ai essayé Y, aide ?" = professionnel.
+
+Ce qu'on attend :
+- Signaler les blocages rapidement
+- Tenir informé sur l'avancement
+- Demander des clarifications
+
+Signe positif : Manager jamais surpris par un retard ou un problème.
+
+Indicateur de succès : Confiance de l'équipe en ta communication.
+
+**Attente 4 - Rigueur sur les bases**
+
+Réalité : Code parfait pas attendu, mais les bases oui.
+
+Ce qu'on attend :
+- Tests écrits
+- Code review demandée
+- Conventions respectées
+- Commit messages clairs
+
+Signe positif : PR mergées sans 15 allers-retours sur les bases.
+
+Indicateur de succès : Quality gates respectés sans rappel constant.
+
+**Attente 5 - Attitude constructive**
+
+Réalité : Frustrations et doutes sont normaux.
+
+Ce qu'on attend :
+- Attitude solution (pas juste plainte)
+- Feedback donné constructivement
+- Volonté d'améliorer
+
+Signe positif : "J'ai ce problème, voici 2 idées de solution, qu'en penses-tu ?"
+
+Indicateur de succès : L'équipe apprécie travailler avec toi.
 
 **Ce qu'on n'attend PAS (contrairement à ce que tu penses)** :
 
-**Pas attendu 1 - Vélocité de senior** : Mythe : livrer aussi vite qu'un senior dès mois 3. **Réalité:** 3-5× plus lent les 6 premiers mois est normal. **Message:** on évalue progression, pas vitesse absolue.
+**Pas attendu 1 - Vélocité de senior**
 
-**Pas attendu 2 - Zéro question** : Mythe : poser des questions montre incompétence. **Réalité:** questions intelligentes après avoir cherché montrent professionnalisme. **Message:** on préfère 10 questions pertinentes que 2 jours de blocage silencieux.
+Mythe : Livrer aussi vite qu'un senior dès mois 3.
 
-**Pas attendu 3 - Code parfait du premier coup** : Mythe : code doit être parfait dès première version. **Réalité:** iterations en code review sont normales et attendues. **Message:** code review sert à ça, c'est un outil d'apprentissage.
+Réalité : 3-5× plus lent les 6 premiers mois est normal.
 
-**Pas attendu 4 - Expertise technique immédiate** : Mythe : maîtriser toute la stack en 3 mois. **Réalité:** 6-12 mois pour être à l'aise est standard. **Message:** focus sur progression, pas maîtrise immédiate.
+Message : On évalue ta progression, pas ta vitesse absolue.
+
+**Pas attendu 2 - Zéro question**
+
+Mythe : Poser des questions montre ton incompétence.
+
+Réalité : Questions intelligentes après avoir cherché montrent du professionnalisme.
+
+Message : On préfère 10 questions pertinentes que 2 jours de blocage silencieux.
+
+**Pas attendu 3 - Code parfait du premier coup**
+
+Mythe : Le code doit être parfait dès la première version.
+
+Réalité : Les iterations en code review sont normales et attendues.
+
+Message : La code review sert à ça, c'est un outil d'apprentissage.
+
+**Pas attendu 4 - Expertise technique immédiate**
+
+Mythe : Maîtriser toute la stack en 3 mois.
+
+Réalité : 6-12 mois pour être à l'aise est standard.
+
+Message : Focus sur ta progression, pas sur une maîtrise immédiate.
 
 ## Cadre de décision
 

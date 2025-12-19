@@ -41,17 +41,56 @@ Le vrai enjeu est de structurer sa pensée pour décider sous pression sans tomb
 
 **Le framework 24h pour décisions stratégiques** :
 
-**H0-H2 : Clarifier le problème** : Quelle est vraiment la décision à prendre ? Pourquoi maintenant ? Qu'est-ce qui change si on décide demain vs dans 1 semaine ? (Souvent, l'urgence est négociable)
+**H0-H2 : Clarifier le problème**
 
-**H2-H6 : Identifier les options** : Brainstorm rapide, 3-5 options maximum. Pour chaque option : impact business, coût, risque, réversibilité.
+Questions clés :
+- Quelle est vraiment la décision à prendre ?
+- Pourquoi maintenant ?
+- Qu'est-ce qui change si on décide demain vs dans 1 semaine ?
 
-**H6-H12 : Consulter les experts** : 30 min avec 2-3 personnes clés. Pas pour consensus, mais pour angles morts. **Questions:** "Qu'est-ce que je rate ?", "Quel risque je sous-estime ?"
+Note : Souvent, l'urgence est négociable.
 
-**H12-H18 : Analyser avec critères** : Matrice simple : Impact (1-10) × Faisabilité (1-10) × Alignement stratégique (1-10). Score par option. Pas parfait mais structure.
+**H2-H6 : Identifier les options**
 
-**H18-H22 : Décider** : Choisir l'option. Documenter : la décision, le raisonnement, les critères, les risques identifiés. ADR minimal.
+Brainstorm rapide, 3-5 options maximum.
 
-**H22-H24 : Préparer la communication** : Comment annoncer, à qui, avec quel message. Anticiper les questions.
+Pour chaque option évaluer :
+- Impact business
+- Coût
+- Risque
+- Réversibilité
+
+**H6-H12 : Consulter les experts**
+
+30 min avec 2-3 personnes clés. Pas pour le consensus, mais pour identifier les angles morts.
+
+Questions à poser :
+- "Qu'est-ce que je rate ?"
+- "Quel risque je sous-estime ?"
+
+**H12-H18 : Analyser avec critères**
+
+Matrice simple : Impact (1-10) × Faisabilité (1-10) × Alignement stratégique (1-10).
+
+Calculer le score par option. Pas parfait mais ça structure.
+
+**H18-H22 : Décider**
+
+Choisir l'option.
+
+Documenter (ADR minimal) :
+- La décision
+- Le raisonnement
+- Les critères
+- Les risques identifiés
+
+**H22-H24 : Préparer la communication**
+
+Définir :
+- Comment annoncer
+- À qui
+- Avec quel message
+- Anticiper les questions
 
 ## Cadre de décision
 

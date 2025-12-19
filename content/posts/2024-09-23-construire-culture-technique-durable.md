@@ -35,17 +35,89 @@ Le vrai enjeu est de définir et incarner les principes qui guideront l'équipe 
 
 **Les 6 piliers d'une culture technique durable** :
 
-**Pilier 1 - Excellence sans perfectionnisme** : Principe : viser la qualité sans bloquer la livraison. Manifestation : code reviews exigeantes mais constructives, standards clairs mais pragmatiques, refactoring continu vs big bang rewrite. Comportements observables : on livre régulièrement, la qualité s'améliore progressivement, pas de features bloquées 3 semaines pour "perfection".
+**Pilier 1 - Excellence sans perfectionnisme**
 
-**Pilier 2 - Apprentissage continu** : Principe : erreur = opportunité d'apprentissage. Manifestation : post-mortems blameless, temps dédié formation (10-20%), partage connaissances ritualisé. Comportements : on parle ouvertement des erreurs, on documente apprentissages, pas de culture héroïque.
+Principe : Viser la qualité sans bloquer la livraison.
 
-**Pilier 3 - Autonomie responsable** : Principe : confiance par défaut, accountability explicite. Manifestation : framework décision clair, délégation large, suivi transparent. Comportements : équipes décident sans attendre validation, assument résultats, escaladent quand nécessaire.
+Manifestations concrètes :
+- Code reviews exigeantes mais constructives
+- Standards clairs mais pragmatiques
+- Refactoring continu vs big bang rewrite
 
-**Pilier 4 - Collaboration > compétition** : Principe : succès collectif > succès individuel. Manifestation : pair programming, code reviews collaboratives, partage credit. Comportements : on aide plutôt qu'on critique, succès célébrés collectivement, pas de héros solitaires.
+Comportements observables :
+- On livre régulièrement
+- La qualité s'améliore progressivement
+- Pas de features bloquées 3 semaines pour "perfection"
 
-**Pilier 5 - Pragmatisme technique** : Principe : résoudre problèmes business, pas faire de la tech pour la tech. Manifestation : choix techniques justifiés par valeur business, compromis assumés, pas de over-engineering. Comportements : on challenge "pourquoi cette techno ?", on mesure impact, on assume dette intentionnelle.
+**Pilier 2 - Apprentissage continu**
 
-**Pilier 6 - Durabilité humaine** : Principe : marathon, pas sprint. Manifestation : pas de crunch culture, équilibre pro-perso respecté, burn-out détecté et géré. Comportements : on finit à 18h, pas de héros surmenés, turnover faible.
+Principe : Erreur = opportunité d'apprentissage.
+
+Manifestations concrètes :
+- Post-mortems blameless
+- Temps dédié formation (10-20%)
+- Partage de connaissances ritualisé
+
+Comportements observables :
+- On parle ouvertement des erreurs
+- On documente les apprentissages
+- Pas de culture héroïque
+
+**Pilier 3 - Autonomie responsable**
+
+Principe : Confiance par défaut, accountability explicite.
+
+Manifestations concrètes :
+- Framework de décision clair
+- Délégation large
+- Suivi transparent
+
+Comportements observables :
+- Équipes décident sans attendre validation
+- Assument les résultats
+- Escaladent quand nécessaire
+
+**Pilier 4 - Collaboration > compétition**
+
+Principe : Succès collectif > succès individuel.
+
+Manifestations concrètes :
+- Pair programming
+- Code reviews collaboratives
+- Partage du credit
+
+Comportements observables :
+- On aide plutôt qu'on critique
+- Succès célébrés collectivement
+- Pas de héros solitaires
+
+**Pilier 5 - Pragmatisme technique**
+
+Principe : Résoudre des problèmes business, pas faire de la tech pour la tech.
+
+Manifestations concrètes :
+- Choix techniques justifiés par valeur business
+- Compromis assumés
+- Pas de over-engineering
+
+Comportements observables :
+- On challenge "pourquoi cette techno ?"
+- On mesure l'impact
+- On assume la dette intentionnelle
+
+**Pilier 6 - Durabilité humaine**
+
+Principe : Marathon, pas sprint.
+
+Manifestations concrètes :
+- Pas de crunch culture
+- Équilibre pro-perso respecté
+- Burn-out détecté et géré
+
+Comportements observables :
+- On finit à 18h
+- Pas de héros surmenés
+- Turnover faible
 
 ## Cadre de décision
 

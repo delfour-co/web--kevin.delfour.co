@@ -96,8 +96,31 @@ Avec le recul, j'aurais cultivé une culture de responsabilité plutôt que d'an
 
 ## Pour approfondir
 
-Pour approfondir, tu peux explorer les pratiques open source (transparence, revue par les pairs, documentation, tests), les stratégies de transition vers l'open source (projets pilotes, ouverture progressive, communauté), et les bénéfices organisationnels (culture de responsabilité, innovation, recrutement).
+Pour approfondir, tu peux explorer plusieurs domaines :
 
-Une manière de voir les choses : passer à l'open source, ce n'est pas juste une question de technologie, c'est un changement d'état d'esprit. Ce que j'ai observé : c'est accepter de rendre des comptes à une communauté, de sortir de sa zone de confort et de viser l'excellence. Imaginez une organisation où les pratiques de développement internes s'alignent sur les standards open source : transparence des décisions, documentation partagée, revue systématique par les pairs. Vous obtiendriez non seulement une meilleure qualité logicielle, mais aussi une culture organisationnelle tournée vers la collaboration et l'innovation.
+**Pratiques open source**
+- Transparence du code et des décisions
+- Revue par les pairs globale
+- Documentation complète
+- Tests automatisés
 
-Pour approfondir, tu peux aussi consulter les pages piliers du site ou les guides mis à disposition.
+**Stratégies de transition vers l'open source**
+- Projets pilotes
+- Ouverture progressive
+- Construction de communauté
+
+**Bénéfices organisationnels**
+- Culture de responsabilité
+- Innovation collective
+- Amélioration du recrutement
+
+Une manière de voir les choses : passer à l'open source, ce n'est pas juste une question de technologie, c'est un changement d'état d'esprit. Ce que j'ai observé : c'est accepter de rendre des comptes à une communauté, de sortir de sa zone de confort et de viser l'excellence.
+
+Imaginez une organisation où les pratiques de développement internes s'alignent sur les standards open source :
+- Transparence des décisions
+- Documentation partagée
+- Revue systématique par les pairs
+
+Vous obtiendriez non seulement une meilleure qualité logicielle, mais aussi une culture organisationnelle tournée vers la collaboration et l'innovation.
+
+Pour approfondir, tu peux aussi consulter la page pilier ["Gouvernance & décision"](/gouvernance-decision/) ou les guides mis à disposition.

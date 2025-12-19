@@ -52,20 +52,51 @@ Le vrai enjeu est de comprendre comment transformer un projet interne en projet 
 
 Voici les principes qui m'ont aidé à transformer un projet interne en projet open source réussi :
 
-**1. Préparation approfondie plutôt que mise en ligne rapide**  
-Avant toute chose, un nettoyage en profondeur s'impose : suppression des informations sensibles (tokens, mots de passe, URLs internes), vérification des droits de propriété intellectuelle, documentation des dépendances et de leurs licences, révision des commentaires pour supprimer toute référence interne. Ce que j'ai observé : cette préparation évite les problèmes légaux et de sécurité.
+**1. Préparation approfondie plutôt que mise en ligne rapide**
+Avant toute chose, un nettoyage en profondeur s'impose :
+- Suppression des informations sensibles (tokens, mots de passe, URLs internes)
+- Vérification des droits de propriété intellectuelle
+- Documentation des dépendances et de leurs licences
+- Révision des commentaires pour supprimer toute référence interne
 
-**2. Aspects légaux et conformité dès le début plutôt qu'après**  
-Choisir la licence appropriée (MIT, Apache, GPL...), vérifier la compatibilité avec les licences des dépendances, obtenir l'accord des parties prenantes (direction, équipes juridiques), établir un CLA (Contributor License Agreement) si nécessaire. Ce que j'ai appris : cette préparation légale évite les problèmes futurs.
+Ce que j'ai observé : cette préparation évite les problèmes légaux et de sécurité.
 
-**3. Documentation complète plutôt que minimale**  
-README.md détaillé avec installation, configuration et utilisation, guide de contribution (CONTRIBUTING.md), Code of Conduct pour établir les règles de la communauté, templates pour les issues et pull requests, documentation technique approfondie (API, architecture...). Ce que j'ai constaté : cette documentation facilite l'adoption et les contributions.
+**2. Aspects légaux et conformité dès le début plutôt qu'après**
+- Choisir la licence appropriée (MIT, Apache, GPL...)
+- Vérifier la compatibilité avec les licences des dépendances
+- Obtenir l'accord des parties prenantes (direction, équipes juridiques)
+- Établir un CLA (Contributor License Agreement) si nécessaire
 
-**4. Infrastructure technique solide plutôt que basique**  
-Intégration continue (CI/CD), tests automatisés accessibles aux contributeurs, environnement de développement reproductible, outils d'analyse de code et de qualité. Ce que j'ai observé : cette infrastructure facilite les contributions et maintient la qualité.
+Ce que j'ai appris : cette préparation légale évite les problèmes futurs.
 
-**5. Animation communautaire active plutôt que passive**  
-Définir la vision et les objectifs du projet, établir une roadmap publique, communiquer régulièrement sur les avancées, être transparent sur les décisions, répondre rapidement aux issues et pull requests, organiser des sessions de contribution, reconnaître et valoriser les contributeurs, maintenir une présence active sur les canaux de communication. Ce que j'ai appris : cette animation communautaire maintient l'engagement et facilite la croissance.
+**3. Documentation complète plutôt que minimale**
+- README.md détaillé avec installation, configuration et utilisation
+- Guide de contribution (CONTRIBUTING.md)
+- Code of Conduct pour établir les règles de la communauté
+- Templates pour les issues et pull requests
+- Documentation technique approfondie (API, architecture...)
+
+Ce que j'ai constaté : cette documentation facilite l'adoption et les contributions.
+
+**4. Infrastructure technique solide plutôt que basique**
+- Intégration continue (CI/CD)
+- Tests automatisés accessibles aux contributeurs
+- Environnement de développement reproductible
+- Outils d'analyse de code et de qualité
+
+Ce que j'ai observé : cette infrastructure facilite les contributions et maintient la qualité.
+
+**5. Animation communautaire active plutôt que passive**
+- Définir la vision et les objectifs du projet
+- Établir une roadmap publique
+- Communiquer régulièrement sur les avancées
+- Être transparent sur les décisions
+- Répondre rapidement aux issues et pull requests
+- Organiser des sessions de contribution
+- Reconnaître et valoriser les contributeurs
+- Maintenir une présence active sur les canaux de communication
+
+Ce que j'ai appris : cette animation communautaire maintient l'engagement et facilite la croissance.
 
 ## Retour terrain
 
@@ -97,8 +128,28 @@ Avec le recul, j'aurais animé la communauté activement plutôt que passivement
 
 ## Pour approfondir
 
-Pour approfondir, tu peux explorer les pratiques de préparation (audit du code, aspects légaux, documentation), les infrastructures techniques (CI/CD, tests automatisés, environnement de développement), les stratégies d'animation communautaire (communication, gouvernance, reconnaissance), et les métriques de succès (contributions externes, adoption, engagement).
+Pour approfondir, tu peux explorer plusieurs domaines :
+
+**Pratiques de préparation**
+- Audit du code et nettoyage
+- Aspects légaux et licences
+- Documentation complète
+
+**Infrastructures techniques**
+- CI/CD
+- Tests automatisés
+- Environnement de développement reproductible
+
+**Stratégies d'animation communautaire**
+- Communication régulière
+- Gouvernance claire
+- Reconnaissance des contributeurs
+
+**Métriques de succès**
+- Contributions externes
+- Adoption par d'autres projets
+- Engagement de la communauté
 
 Une manière de voir les choses : l'open source n'est pas une destination, c'est un voyage continu d'apprentissage et de partage. Ce que j'ai observé : le passage en open source est une opportunité unique de participer à l'écosystème global du logiciel libre et de créer de la valeur collective.
 
-Pour approfondir, tu peux aussi consulter les pages piliers du site ou les guides mis à disposition.
+Pour approfondir, tu peux aussi consulter la page pilier ["Gouvernance & décision"](/gouvernance-decision/) ou les guides mis à disposition.

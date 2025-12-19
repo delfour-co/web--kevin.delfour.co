@@ -34,19 +34,61 @@ Le vrai enjeu est de reconnaître ces décisions et de les prendre avant qu'elle
 
 **Les 7 décisions que personne ne veut prendre** :
 
-**1. Arrêter un projet raté** : Situation : projet en échec depuis 6 mois, tout le monde le sait, personne ne dit stop. Pourquoi c'est dur : reconnaître l'échec, sunken cost fallacy, décevoir les porteurs. Coût de l'évitement : 6 mois de plus gaspillés, dette qui explose.
+**1. Arrêter un projet raté**
 
-**2. Gérer une non-performance** : Situation : personne qui ne livre pas depuis des mois. Pourquoi c'est dur : empathie, peur du conflit, espoir que ça s'améliore. Coût de l'évitement : reste de l'équipe démotivé, vélocité globale baissée, turnover des bons.
+Situation : Projet en échec depuis 6 mois, tout le monde le sait, personne ne dit stop.
 
-**3. Dire non au CEO** : Situation : CEO veut feature impossible dans timeline. Pourquoi c'est dur : rapport hiérarchique, peur de décevoir, pression. Coût de l'évitement : promesse impossible, échec public, crédibilité détruite.
+Pourquoi c'est dur : Reconnaître l'échec, sunken cost fallacy, décevoir les porteurs.
 
-**4. Abandonner une techno legacy** : Situation : stack obsolète, tout le monde sait qu'il faut migrer. Pourquoi c'est dur : coût énorme, risque, pas de valeur business visible. Coût de l'évitement : dette qui grandit, recruter devient impossible, vélocité s'effondre.
+Coût de l'évitement : 6 mois de plus gaspillés, dette qui explose.
 
-**5. Restructurer l'équipe** : Situation : organisation qui ne scale pas, silos, inefficacité. Pourquoi c'est dur : bouleverser les habitudes, gérer résistances. Coût de l'évitement : inefficacité grandissante, frustration, départs.
+**2. Gérer une non-performance**
 
-**6. Couper un partenariat raté** : Situation : prestataire qui ne livre pas, relation dégradée. Pourquoi c'est dur : contrat, relations, peur du vide. Coût de l'évitement : continuer à payer pour de la non-qualité.
+Situation : Personne qui ne livre pas depuis des mois.
 
-**7. Admettre son erreur publiquement** : Situation : décision passée qui était mauvaise. Pourquoi c'est dur : ego, peur de perdre crédibilité. Coût de l'évitement : persister dans l'erreur, perdre plus de crédibilité.
+Pourquoi c'est dur : Empathie, peur du conflit, espoir que ça s'améliore.
+
+Coût de l'évitement : Reste de l'équipe démotivé, vélocité globale baissée, turnover des bons.
+
+**3. Dire non au CEO**
+
+Situation : CEO veut une feature impossible dans la timeline.
+
+Pourquoi c'est dur : Rapport hiérarchique, peur de décevoir, pression.
+
+Coût de l'évitement : Promesse impossible, échec public, crédibilité détruite.
+
+**4. Abandonner une techno legacy**
+
+Situation : Stack obsolète, tout le monde sait qu'il faut migrer.
+
+Pourquoi c'est dur : Coût énorme, risque, pas de valeur business visible.
+
+Coût de l'évitement : Dette qui grandit, recruter devient impossible, vélocité s'effondre.
+
+**5. Restructurer l'équipe**
+
+Situation : Organisation qui ne scale pas, silos, inefficacité.
+
+Pourquoi c'est dur : Bouleverser les habitudes, gérer les résistances.
+
+Coût de l'évitement : Inefficacité grandissante, frustration, départs.
+
+**6. Couper un partenariat raté**
+
+Situation : Prestataire qui ne livre pas, relation dégradée.
+
+Pourquoi c'est dur : Contrat, relations, peur du vide.
+
+Coût de l'évitement : Continuer à payer pour de la non-qualité.
+
+**7. Admettre son erreur publiquement**
+
+Situation : Décision passée qui était mauvaise.
+
+Pourquoi c'est dur : Ego, peur de perdre sa crédibilité.
+
+Coût de l'évitement : Persister dans l'erreur, perdre encore plus de crédibilité.
 
 ## Cadre de décision
 

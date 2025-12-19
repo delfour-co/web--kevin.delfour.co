@@ -34,9 +34,40 @@ Le vrai enjeu est de créer un onboarding qui intègre sans submerger :
 
 **Les 3 phases de l'onboarding (90 jours)** :
 
-**Phase 1 - Semaine 1 : Bases et premiers contacts (J1-J7)** : Objectifs : environnement de travail opérationnel, contexte minimal compris, premières relations créées. Activités : setup technique (ordi, accès), rencontres clés (manager, équipe directe, buddy), contexte entreprise/produit (1h présentation, pas 200 slides). Premier micro-projet (2-3 jours max, succès garanti). Piège à éviter : surcharge d'infos, 47 réunions, zéro temps de digestion.
+**Phase 1 - Semaine 1 : Bases et premiers contacts (J1-J7)**
 
-**Phase 2 - Mois 1 : Apprentissage actif (J8-J30)** : Objectifs : comprendre produit/architecture, premiers commits mergés, relations élargies. Activités : onboarding technique progressif (architecture, stack, processus), petites tâches réelles (bugs, features simples), pair programming avec plusieurs personnes, one-on-ones avec stakeholders clés. Piège à éviter : tâches critiques trop tôt, attendre qu'il comprenne tout avant de livrer.
+Objectifs :
+- Environnement de travail opérationnel
+- Contexte minimal compris
+- Premières relations créées
+
+Activités :
+- Setup technique (ordi, accès)
+- Rencontres clés (manager, équipe directe, buddy)
+- Contexte entreprise/produit (1h présentation, pas 200 slides)
+- Premier micro-projet (2-3 jours max, succès garanti)
+
+Piège à éviter :
+- Surcharge d'infos
+- 47 réunions
+- Zéro temps de digestion
+
+**Phase 2 - Mois 1 : Apprentissage actif (J8-J30)**
+
+Objectifs :
+- Comprendre produit/architecture
+- Premiers commits mergés
+- Relations élargies
+
+Activités :
+- Onboarding technique progressif (architecture, stack, processus)
+- Petites tâches réelles (bugs, features simples)
+- Pair programming avec plusieurs personnes
+- One-on-ones avec stakeholders clés
+
+Piège à éviter :
+- Tâches critiques trop tôt
+- Attendre qu'il comprenne tout avant de livrer
 
 **Phase 3 - Mois 2-3 : Autonomie progressive (J31-J90)** : Objectifs : autonome sur scope défini, intégré dans équipe, comprend dynamiques. Activités : features de taille moyenne en autonomie croissante, participation rituels (standups, retros, reviews), début de contribution process/culture. Piège à éviter : laisser sans feedback, supposer que tout va bien.
 

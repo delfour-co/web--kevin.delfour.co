@@ -98,8 +98,31 @@ Avec le recul, j'aurais intégré la sécurité dans chaque décision technique,
 
 ## Pour approfondir
 
-Pour approfondir, tu peux explorer les frameworks de threat modeling (STRIDE, DREAD, PASTA), les outils DevSecOps (Semgrep, Snyk, Trivy, Checkov), les standards de chiffrement (AES-256-GCM, Argon2id), les solutions de monitoring (ELK Stack, SIEM modernes), et les réglementations (RGPD, OWASP Top 10).
+Pour approfondir, tu peux explorer plusieurs domaines :
+
+**Frameworks de threat modeling**
+- STRIDE
+- DREAD
+- PASTA
+
+**Outils DevSecOps**
+- Semgrep
+- Snyk
+- Trivy
+- Checkov
+
+**Standards de chiffrement**
+- AES-256-GCM
+- Argon2id
+
+**Solutions de monitoring**
+- ELK Stack
+- SIEM modernes
+
+**Réglementations**
+- RGPD
+- OWASP Top 10
 
 Une manière de voir les choses : la sécurité n'est pas une destination, c'est un voyage continu. Ce que j'ai observé : les équipes qui adoptent cette mentalité développent une résilience naturelle face aux menaces.
 
-Pour approfondir, tu peux aussi consulter les pages piliers du site ou les guides mis à disposition.
+Pour approfondir, tu peux aussi consulter la page pilier ["Gouvernance & décision"](/gouvernance-decision/) ou les guides mis à disposition.

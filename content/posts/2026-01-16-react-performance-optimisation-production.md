@@ -102,10 +102,33 @@ Avec le recul, j'aurais virtualisé les listes longues dès le début. Ce que j'
 
 ## Pour approfondir
 
-Pour approfondir, tu peux explorer les techniques de code splitting (dynamic imports, route-based splitting), les stratégies de memoization (React.memo, useMemo, useCallback), les approches de virtualization (react-window, react-virtual), les pratiques de lazy loading (images, composants), et les optimisations de state management (colocation, contexts optimisés).
+Pour approfondir, tu peux explorer plusieurs domaines :
+
+**Techniques de code splitting**
+- Dynamic imports
+- Route-based splitting
+
+**Stratégies de memoization**
+- React.memo
+- useMemo
+- useCallback
+
+**Approches de virtualization**
+- react-window
+- react-virtual
+
+**Pratiques de lazy loading**
+- Images
+- Composants
+
+**Optimisations de state management**
+- Colocation
+- Contexts optimisés
 
 Une manière de voir les choses : l'objectif n'est pas d'optimiser tout, mais d'identifier les 3 composants les plus coûteux à optimiser. Ce que j'ai observé : toutes les optimisations ne sont pas nécessaires partout. Il faut mesurer avant d'optimiser et utiliser React DevTools Profiler pour identifier les composants les plus coûteux.
 
 Prochaine étape : lance React DevTools Profiler sur ton app et identifie les 3 composants les plus coûteux à optimiser.
+
+Pour approfondir, tu peux aussi consulter la page pilier ["Gouvernance & décision"](/gouvernance-decision/) ou les guides mis à disposition.
 
 Pour approfondir, tu peux aussi consulter les pages piliers du site ou les guides mis à disposition.

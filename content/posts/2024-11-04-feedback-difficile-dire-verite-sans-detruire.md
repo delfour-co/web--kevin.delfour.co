@@ -34,25 +34,81 @@ Le vrai enjeu est de dire la vérité de manière à ce qu'elle soit entendue, p
 
 **Les 4 types de feedback difficile** :
 
-**Type 1 - Performance insuffisante** : Contexte : résultats en-deçà des attentes malgré efforts. Exemple : développeur ne livre pas la qualité attendue depuis 3 mois. Enjeu : comprendre pourquoi (compétence ? charge ? clarté attentes ?), donner cadre clair amélioration. **Piège:** généraliser ("Tu codes mal") au lieu de préciser ("Ces 3 pull requests ont ces problèmes spécifiques").
+**Type 1 - Performance insuffisante**
 
-**Type 2 - Comportement toxique** : Contexte : attitude qui nuit à l'équipe (sarcasme, non-collaboration, mépris). Exemple : dev senior méprisant avec juniors. Enjeu : stopper comportement rapidement, clarifier non-négociables. **Piège:** tolérer parce que "performant techniquement".
+Contexte : Résultats en-deçà des attentes malgré les efforts.
 
-**Type 3 - Décision contestée** : Contexte : choix technique ou organisationnel fortement remis en question. Exemple : choix architecture critiqué par équipe. Enjeu : expliquer pourquoi, écouter objections, ajuster si nécessaire ou tenir position. **Piège:** défensivité ou autoritarisme.
+Exemple : Développeur ne livre pas la qualité attendue depuis 3 mois.
 
-**Type 4 - Limitation de progression** : Contexte : personne veut promo/évolution mais niveau pas atteint. Exemple : dev veut devenir senior mais manque compétences. Enjeu : clarifier gap précisément, donner roadmap concrète. **Piège:** faux espoir ou vague ("travaille ta communication").
+Enjeu : Comprendre pourquoi (compétence ? charge ? clarté des attentes ?), donner un cadre clair d'amélioration.
+
+Piège : Généraliser ("Tu codes mal") au lieu de préciser ("Ces 3 pull requests ont ces problèmes spécifiques").
+
+**Type 2 - Comportement toxique**
+
+Contexte : Attitude qui nuit à l'équipe (sarcasme, non-collaboration, mépris).
+
+Exemple : Dev senior méprisant avec les juniors.
+
+Enjeu : Stopper le comportement rapidement, clarifier les non-négociables.
+
+Piège : Tolérer parce que "performant techniquement".
+
+**Type 3 - Décision contestée**
+
+Contexte : Choix technique ou organisationnel fortement remis en question.
+
+Exemple : Choix d'architecture critiqué par l'équipe.
+
+Enjeu : Expliquer pourquoi, écouter les objections, ajuster si nécessaire ou tenir sa position.
+
+Piège : Défensivité ou autoritarisme.
+
+**Type 4 - Limitation de progression**
+
+Contexte : La personne veut une promo/évolution mais le niveau n'est pas atteint.
+
+Exemple : Dev veut devenir senior mais manque de compétences.
+
+Enjeu : Clarifier le gap précisément, donner une roadmap concrète.
+
+Piège : Faux espoir ou conseil vague ("travaille ta communication").
 
 **Les 5 principes du feedback difficile** :
 
-**Principe 1 - Rapidité** : Feedback donné max 1 semaine après observation. Pas attendre review annuelle. Cette rapidité évite accumulation et permet correction.
+**Principe 1 - Rapidité**
 
-**Principe 2 - Précision** : Pas "ton code est moyen", mais "ces 3 PRs ont ces problèmes spécifiques : [exemples concrets]". Cette précision rend feedback actionnable.
+Feedback donné max 1 semaine après observation. Pas attendre la review annuelle.
 
-**Principe 3 - Séparation personne/comportement** : "Ce comportement pose problème" (pas "Tu es problématique"). "Ce code a ces défauts" (pas "Tu codes mal"). Cette séparation préserve dignité.
+Cette rapidité évite l'accumulation et permet la correction.
 
-**Principe 4 - Support concret** : Feedback + plan d'action + support. "Voici le problème + voici ce qui doit changer + voici comment je t'aide". Cette combinaison montre intention constructive.
+**Principe 2 - Précision**
 
-**Principe 5 - Suivi régulier** : Feedback difficile → check-in 1 semaine + 2 semaines + 1 mois. Ce suivi montre engagement et permet ajustement.
+Pas "ton code est moyen", mais "ces 3 PRs ont ces problèmes spécifiques : [exemples concrets]".
+
+Cette précision rend le feedback actionnable.
+
+**Principe 3 - Séparation personne/comportement**
+
+"Ce comportement pose problème" (pas "Tu es problématique").
+
+"Ce code a ces défauts" (pas "Tu codes mal").
+
+Cette séparation préserve la dignité.
+
+**Principe 4 - Support concret**
+
+Feedback + plan d'action + support.
+
+"Voici le problème + voici ce qui doit changer + voici comment je t'aide".
+
+Cette combinaison montre l'intention constructive.
+
+**Principe 5 - Suivi régulier**
+
+Feedback difficile → check-in à 1 semaine + 2 semaines + 1 mois.
+
+Ce suivi montre l'engagement et permet l'ajustement.
 
 ## Cadre de décision
 

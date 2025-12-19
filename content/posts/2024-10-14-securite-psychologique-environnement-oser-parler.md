@@ -35,13 +35,37 @@ Le vrai enjeu est de créer les conditions où chacun ose partager vérité, dou
 
 **Les 4 piliers de la sécurité psychologique** :
 
-**Pilier 1 - On peut poser des questions sans être jugé** : Signal positif : "C'est peut-être une question bête, mais..." accepté et valorisé. Signal négatif : "T'as pas compris ça ? C'est évident." Résultat si absent : questions non posées, malentendus, erreurs.
+**Pilier 1 - On peut poser des questions sans être jugé**
 
-**Pilier 2 - On peut admettre une erreur sans être puni** : Signal positif : "J'ai fait une erreur, voici ce qui s'est passé" suivi de "Merci de l'avoir signalé". Signal négatif : erreur → blame ou sarcasme. Résultat si absent : erreurs cachées, incidents non détectés.
+Signal positif : "C'est peut-être une question bête, mais..." accepté et valorisé.
 
-**Pilier 3 - On peut être en désaccord sans conséquence négative** : Signal positif : junior challenge architecture senior, débat constructif. Signal négatif : désaccord perçu comme insubordination. Résultat si absent : groupthink, mauvaises décisions non challengées.
+Signal négatif : "T'as pas compris ça ? C'est évident."
 
-**Pilier 4 - On peut prendre des risques calculés sans peur** : Signal positif : POC échoue, apprentissage célébré. Signal négatif : échec = carrière impactée. Résultat si absent : paralysie, zéro innovation.
+Résultat si absent : Questions non posées, malentendus, erreurs.
+
+**Pilier 2 - On peut admettre une erreur sans être puni**
+
+Signal positif : "J'ai fait une erreur, voici ce qui s'est passé" suivi de "Merci de l'avoir signalé".
+
+Signal négatif : Erreur → blame ou sarcasme.
+
+Résultat si absent : Erreurs cachées, incidents non détectés.
+
+**Pilier 3 - On peut être en désaccord sans conséquence négative**
+
+Signal positif : Junior challenge architecture senior, débat constructif.
+
+Signal négatif : Désaccord perçu comme insubordination.
+
+Résultat si absent : Groupthink, mauvaises décisions non challengées.
+
+**Pilier 4 - On peut prendre des risques calculés sans peur**
+
+Signal positif : POC échoue, apprentissage célébré.
+
+Signal négatif : Échec = carrière impactée.
+
+Résultat si absent : Paralysie, zéro innovation.
 
 **Comment mesurer la sécurité psychologique** :
 

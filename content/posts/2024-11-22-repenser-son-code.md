@@ -31,7 +31,12 @@ Il y a peu, je me suis retrouvé face à une réalité qui fait mal à tout dév
 
 Ce que j'ai observé : j'avais opté pour une stack que je considérais comme moderne et efficace : Nuxt avec Nuxt UI Pro. Rapidité de développement ? Oui. Performance environnementale ? Non. Cette approche rapide et « clé en main » se révélait finalement coûteuse en termes de ressources.
 
-Avec le recul, j'ai constaté que cette approche avait son revers : beaucoup de code généré par défaut, des dépendances non optimisées pour les besoins réels du site, scripts lourds qui ajoutaient un poids conséquent à chaque page, mauvaise gestion des médias avec images et ressources non adaptées à leurs affichages.
+Avec le recul, j'ai constaté que cette approche avait son revers :
+
+- Beaucoup de code généré par défaut
+- Des dépendances non optimisées pour les besoins réels du site
+- Scripts lourds qui ajoutaient un poids conséquent à chaque page
+- Mauvaise gestion des médias avec images et ressources non adaptées à leurs affichages
 
 ## Le faux problème
 
@@ -43,7 +48,14 @@ Un autre faux problème : penser qu'il faut choisir entre rapidité de développ
 
 Le vrai enjeu est de comprendre comment réduire l'impact carbone sans sacrifier la qualité :
 
-**Le poids inutile des frameworks "tout-en-un"** : Ce que j'ai observé : beaucoup de code généré par défaut, des dépendances non optimisées pour les besoins réels du site, scripts lourds qui ajoutent un poids conséquent à chaque page, mauvaise gestion des médias avec images et ressources non adaptées à leurs affichages. Cette approche rapide et « clé en main » se révèle finalement coûteuse en termes de ressources.
+**Le poids inutile des frameworks "tout-en-un"** : Ce que j'ai observé : cette approche rapide et « clé en main » se révèle finalement coûteuse en termes de ressources.
+
+Principaux problèmes identifiés :
+
+- Beaucoup de code généré par défaut
+- Des dépendances non optimisées pour les besoins réels du site
+- Scripts lourds qui ajoutent un poids conséquent à chaque page
+- Mauvaise gestion des médias avec images et ressources non adaptées à leurs affichages
 
 **La transition vers des solutions plus légères** : Ce que j'ai appris : plutôt que de retoucher un projet qui repose sur des bases déjà lourdes, faire table rase peut être plus efficace. Astro s'est imposé comme une alternative prometteuse. Ce framework, conçu pour des sites statiques, privilégie la génération de contenu léger et optimise le rendu en supprimant le JavaScript inutile.
 

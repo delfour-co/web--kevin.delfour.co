@@ -34,23 +34,74 @@ Le vrai enjeu est de créer les conditions où l'erreur devient opportunité d'a
 
 **Les 3 types d'erreurs** :
 
-**Type 1 - Erreur de bonne foi** : Contexte : décision raisonnable avec infos disponibles, exécution correcte, résultat imprévu. Exemple : techno choisie s'avère mauvaise après 3 mois. Réponse attendue : post-mortem blameless, apprentissage documenté, pivot rapide. Réponse toxique : "Pourquoi t'as choisi ça ?"
+**Type 1 - Erreur de bonne foi**
 
-**Type 2 - Erreur de négligence** : Contexte : processus existant non suivi, warnings ignorés, raccourcis dangereux. Exemple : deploy prod sans tests malgré process. Réponse attendue : comprendre pourquoi process non suivi (urgence ? pression ?), corriger cause systémique. Réponse toxique : blame individu sans regarder pression système.
+Contexte : Décision raisonnable avec les infos disponibles, exécution correcte, résultat imprévu.
 
-**Type 3 - Erreur répétée** : Contexte : même erreur 3× malgré post-mortems. Exemple : même bug réintroduit 3 fois. Réponse attendue : chercher pourquoi apprentissage n'a pas pris (process ? formation ?). Réponse toxique : "Tu ne comprends rien ?"
+Exemple : Techno choisie qui s'avère mauvaise après 3 mois.
+
+Réponse attendue : Post-mortem blameless, apprentissage documenté, pivot rapide.
+
+Réponse toxique : "Pourquoi t'as choisi ça ?"
+
+**Type 2 - Erreur de négligence**
+
+Contexte : Processus existant non suivi, warnings ignorés, raccourcis dangereux.
+
+Exemple : Deploy en prod sans tests malgré le process.
+
+Réponse attendue : Comprendre pourquoi le process n'a pas été suivi (urgence ? pression ?), corriger la cause systémique.
+
+Réponse toxique : Blâmer l'individu sans regarder la pression système.
+
+**Type 3 - Erreur répétée**
+
+Contexte : Même erreur 3× malgré les post-mortems.
+
+Exemple : Même bug réintroduit 3 fois.
+
+Réponse attendue : Chercher pourquoi l'apprentissage n'a pas pris (process ? formation ?).
+
+Réponse toxique : "Tu ne comprends rien ?"
 
 **Ce qui rend le droit à l'erreur réel** :
 
-**Élément 1 - Leadership qui partage ses erreurs** : CTO partage publiquement (all-hands, retros) : erreurs faites, impact, apprentissages. Cette vulnérabilité modélise comportement attendu.
+**Élément 1 - Leadership qui partage ses erreurs**
 
-**Élément 2 - Post-mortems systématiques et blameless** : Chaque erreur significative → post-mortem obligatoire. Focus système, pas personne. Actions concrètes, pas blame.
+Le CTO partage publiquement (all-hands, retros) :
+- Erreurs faites
+- Impact
+- Apprentissages
 
-**Élément 3 - Célébration de la détection** : Remercier qui détecte/signale erreur. "Merci d'avoir trouvé ce bug avant prod." Cette reconnaissance encourage transparence.
+Cette vulnérabilité modélise le comportement attendu.
 
-**Élément 4 - Pas de punition cachée** : Erreur ne doit pas affecter éval uation, promo, ou bonus (sauf Type 3 répétée). Vérifier que RH est alignée.
+**Élément 2 - Post-mortems systématiques et blameless**
 
-**Élément 5 - Budget d'erreur explicite** : "On accepte X% échec sur innovation, Y incidents/trimestre sur prod." Cette tolérance explicite déculpabilise.
+Chaque erreur significative → post-mortem obligatoire.
+
+Principes :
+- Focus système, pas personne
+- Actions concrètes, pas blame
+
+**Élément 3 - Célébration de la détection**
+
+Remercier qui détecte/signale une erreur.
+
+Exemple : "Merci d'avoir trouvé ce bug avant prod."
+
+Cette reconnaissance encourage la transparence.
+
+**Élément 4 - Pas de punition cachée**
+
+L'erreur ne doit pas affecter l'évaluation, la promo, ou le bonus (sauf Type 3 répétée).
+
+Vérifier que les RH sont alignées.
+
+**Élément 5 - Budget d'erreur explicite**
+
+Définir clairement : "On accepte X% d'échec sur l'innovation, Y incidents/trimestre sur prod."
+
+Cette tolérance explicite déculpabilise.
 
 ## Cadre de décision
 

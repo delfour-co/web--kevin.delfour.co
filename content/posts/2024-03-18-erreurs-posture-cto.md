@@ -33,9 +33,44 @@ Un autre faux problème : penser que ces erreurs révèlent une incompétence. E
 
 Le vrai enjeu est de reconnaître ces patterns tôt et de les corriger avant qu'ils créent des dégâts :
 
-**Erreur #1 : Rester dans le code (40-60% du temps)** : Symptôme : le CTO livre des features, fait toutes les code reviews critiques, intervient sur les hotfixes. Cause : difficulté à lâcher la satisfaction immédiate du code. ****Impact :** ** bottleneck, décisions stratégiques négligées, équipe dépendante. **Correction:** accepter que le rôle a changé, déléguer réellement, bloquer temps stratégique.
+**Erreur #1 : Rester dans le code (40-60% du temps)**
 
-**Erreur #2 : Vouloir avoir raison plutôt que trouver la solution** : Symptôme : débats techniques interminables, refus d'admettre une erreur, imposer sa vision. Cause : crédibilité technique perçue comme liée à l'infaillibilité. ****Impact :** ** résistance de l'équipe, mauvaises décisions maintenues, perte de talents. **Correction:** valoriser la lucidité sur l'ego, accepter d'avoir tort publiquement.
+Symptôme :
+- Le CTO livre des features
+- Fait toutes les code reviews critiques
+- Intervient sur les hotfixes
+
+Cause :
+- Difficulté à lâcher la satisfaction immédiate du code
+
+**Impact :**
+- Bottleneck
+- Décisions stratégiques négligées
+- Équipe dépendante
+
+**Correction :**
+- Accepter que le rôle a changé
+- Déléguer réellement
+- Bloquer du temps stratégique
+
+**Erreur #2 : Vouloir avoir raison plutôt que trouver la solution**
+
+Symptôme :
+- Débats techniques interminables
+- Refus d'admettre une erreur
+- Imposer sa vision
+
+Cause :
+- Crédibilité technique perçue comme liée à l'infaillibilité
+
+**Impact :**
+- Résistance de l'équipe
+- Mauvaises décisions maintenues
+- Perte de talents
+
+**Correction :**
+- Valoriser la lucidité sur l'ego
+- Accepter d'avoir tort publiquement
 
 **Erreur #3 : Optimiser pour l'élégance technique au détriment du business** : Symptôme : refactorisations massives, standards extrêmement élevés, rejet des compromis. Cause : identité technique forte, difficultés à accepter la "dette stratégique". ****Impact :** ** vélocité faible, frustration business, déconnexion de la réalité. **Correction:** comprendre que la meilleure solution technique n'est pas toujours la bonne solution business.
 

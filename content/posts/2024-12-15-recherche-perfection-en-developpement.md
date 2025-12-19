@@ -55,20 +55,54 @@ Le vrai enjeu est de comprendre comment trouver le juste équilibre entre excell
 
 Voici les principes qui m'ont aidé à trouver le juste équilibre :
 
-**1. Prioriser la valeur métier plutôt que perfection technique**  
-Évaluer systématiquement la valeur métier vs le coût technique. Définir le minimum viable en termes de valeur ajoutée, pas de fonctionnalités. Mettre en place des boucles de retour courtes avec les utilisateurs. Ce que j'ai observé : cette approche réduit les délais de livraison et améliore la satisfaction des utilisateurs. Indicateurs de succès : taux d'utilisation des fonctionnalités développées, satisfaction des utilisateurs, réduction des tickets de support, temps de mise sur le marché.
+**1. Prioriser la valeur métier plutôt que perfection technique**
+- Évaluer systématiquement la valeur métier vs le coût technique
+- Définir le minimum viable en termes de valeur ajoutée, pas de fonctionnalités
+- Mettre en place des boucles de retour courtes avec les utilisateurs
 
-**2. Dette technique maîtrisée plutôt que perfection absolue**  
-Documenter consciemment la dette technique acceptée. Planifier les remboursements dans les sprints suivants. Prioriser la dette qui impacte directement les utilisateurs. Ce que j'ai constaté : cette approche permet de respecter les délais tout en maintenant la qualité à long terme.
+Ce que j'ai observé : cette approche réduit les délais de livraison et améliore la satisfaction des utilisateurs.
 
-**3. Architecture évolutive plutôt que solution parfaite**  
-Concevoir pour le présent avec une vision du futur. Identifier les points de flexibilité critiques. Documenter les décisions d'architecture (ADR - Architecture Decision Records). Ce que j'ai appris : cette approche réduit la complexification inutile et facilite les évolutions futures.
+Indicateurs de succès :
+- Taux d'utilisation des fonctionnalités développées
+- Satisfaction des utilisateurs
+- Réduction des tickets de support
+- Temps de mise sur le marché
 
-**4. Qualité intégrée plutôt que qualité ajoutée après**  
-Tests automatisés ciblés sur les scénarios critiques. Revues de code focalisées sur la maintenabilité. Monitoring orienté expérience utilisateur. Ce que j'ai observé : cette approche réduit les bugs en production et améliore la satisfaction des utilisateurs.
+**2. Dette technique maîtrisée plutôt que perfection absolue**
+- Documenter consciemment la dette technique acceptée
+- Planifier les remboursements dans les sprints suivants
+- Prioriser la dette qui impacte directement les utilisateurs
 
-**5. Compromis éclairé selon contexte plutôt que règles absolues**  
-Critères de décision : impact sur l'expérience utilisateur, coût de maintenance à long terme, flexibilité pour les évolutions futures, contraintes de temps et de ressources. Exemples de compromis intelligents : choisir une solution simple mais évolutive, automatiser uniquement les tests à forte valeur ajoutée, accepter une dette technique temporaire pour respecter un délai critique. Ce que j'ai appris : cette approche permet de créer de la valeur tout en maintenant la qualité.
+Ce que j'ai constaté : cette approche permet de respecter les délais tout en maintenant la qualité à long terme.
+
+**3. Architecture évolutive plutôt que solution parfaite**
+- Concevoir pour le présent avec une vision du futur
+- Identifier les points de flexibilité critiques
+- Documenter les décisions d'architecture (ADR - Architecture Decision Records)
+
+Ce que j'ai appris : cette approche réduit la complexification inutile et facilite les évolutions futures.
+
+**4. Qualité intégrée plutôt que qualité ajoutée après**
+- Tests automatisés ciblés sur les scénarios critiques
+- Revues de code focalisées sur la maintenabilité
+- Monitoring orienté expérience utilisateur
+
+Ce que j'ai observé : cette approche réduit les bugs en production et améliore la satisfaction des utilisateurs.
+
+**5. Compromis éclairé selon contexte plutôt que règles absolues**
+
+Critères de décision :
+- Impact sur l'expérience utilisateur
+- Coût de maintenance à long terme
+- Flexibilité pour les évolutions futures
+- Contraintes de temps et de ressources
+
+Exemples de compromis intelligents :
+- Choisir une solution simple mais évolutive
+- Automatiser uniquement les tests à forte valeur ajoutée
+- Accepter une dette technique temporaire pour respecter un délai critique
+
+Ce que j'ai appris : cette approche permet de créer de la valeur tout en maintenant la qualité.
 
 ## Retour terrain
 
@@ -100,10 +134,29 @@ Avec le recul, j'aurais fait des compromis éclairés selon le contexte plutôt 
 
 ## Pour approfondir
 
-Pour approfondir, tu peux explorer les pratiques de collaboration avec les experts métier (sessions d'immersion, prototypage rapide, revues régulières), les méthodologies pragmatiques (analyse d'impact, MVP orienté valeur, feedback précoce), et les stratégies d'amélioration continue (dette technique maîtrisée, architecture évolutive, qualité intégrée).
+Pour approfondir, tu peux explorer plusieurs domaines :
+
+**Pratiques de collaboration avec les experts métier**
+- Sessions d'immersion
+- Prototypage rapide
+- Revues régulières
+
+**Méthodologies pragmatiques**
+- Analyse d'impact
+- MVP orienté valeur
+- Feedback précoce
+
+**Stratégies d'amélioration continue**
+- Dette technique maîtrisée
+- Architecture évolutive
+- Qualité intégrée
 
 Une manière de voir les choses : la quête de la perfection technique ne doit pas devenir une fin en soi. Ce que j'ai observé : notre véritable objectif est de créer de la valeur pour nos utilisateurs, ce qui nécessite un équilibre subtil entre excellence technique et compréhension métier.
 
-Questions à se poser régulièrement : cette optimisation technique apporte-t-elle une réelle valeur aux utilisateurs ? Ai-je suffisamment écouté et compris les besoins métier ? Mes choix techniques facilitent-ils ou compliquent-ils la vie des utilisateurs ? La solution proposée est-elle proportionnée au problème à résoudre ?
+Questions à se poser régulièrement :
+- Cette optimisation technique apporte-t-elle une réelle valeur aux utilisateurs ?
+- Ai-je suffisamment écouté et compris les besoins métier ?
+- Mes choix techniques facilitent-ils ou compliquent-ils la vie des utilisateurs ?
+- La solution proposée est-elle proportionnée au problème à résoudre ?
 
-Pour approfondir, tu peux aussi consulter les pages piliers du site ou les guides mis à disposition.
+Pour approfondir, tu peux aussi consulter la page pilier ["Gouvernance & décision"](/gouvernance-decision/) ou les guides mis à disposition.

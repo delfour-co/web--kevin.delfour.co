@@ -35,18 +35,61 @@ Le vrai enjeu est de créer un cadre de décision qui donne de l'autonomie tout 
 
 **Les 4 niveaux de décision** :
 
-**Niveau 1 - Décision individuelle** : Développeur seul décide, aucune validation nécessaire. Exemples : naming variables, structure fichiers d'un composant, choix algorithme local, librairie utilitaire (<1000 downloads/semaine). ****Impact :** ** limité à un composant, réversible en <1 jour.
+**Niveau 1 - Décision individuelle**
 
-**Niveau 2 - Décision d'équipe** : Tech Lead + équipe décident, pas besoin CTO. Exemples : architecture feature spécifique, choix framework UI pour un projet, patterns code équipe, processus reviews équipe. ****Impact :** ** limité à une équipe, réversible en <1 semaine.
+Qui décide : Développeur seul, aucune validation nécessaire.
 
-**Niveau 3 - Décision transverse** : CTO ou Staff+ décide après consultation. Exemples : architecture globale, choix base de données, stratégie déploiement, standards cross-équipes. ****Impact :** ** multiple équipes, réversible en 1-3 mois.
+Exemples :
+- Naming de variables
+- Structure de fichiers d'un composant
+- Choix d'algorithme local
+- Librairie utilitaire (<1000 downloads/semaine)
 
-**Niveau 4 - Décision structurante** : CTO + CEO décident, souvent avec board. Exemples : migration cloud majeure, rewrite complet, build vs buy stratégique, pivot technique. ****Impact :** ** toute l'organisation, difficile à réverser.
+Impact : Limité à un composant, réversible en <1 jour.
 
-**Le framework de classification** : Pour chaque décision, se demander :
-- ****Impact :** ** combien d'équipes affectées ?
-- Réversibilité : coût de revenir en arrière ?
-- Risque : que se passe-t-il si mauvais choix ?
+**Niveau 2 - Décision d'équipe**
+
+Qui décide : Tech Lead + équipe, pas besoin du CTO.
+
+Exemples :
+- Architecture d'une feature spécifique
+- Choix de framework UI pour un projet
+- Patterns de code de l'équipe
+- Processus de reviews de l'équipe
+
+Impact : Limité à une équipe, réversible en <1 semaine.
+
+**Niveau 3 - Décision transverse**
+
+Qui décide : CTO ou Staff+ après consultation.
+
+Exemples :
+- Architecture globale
+- Choix de base de données
+- Stratégie de déploiement
+- Standards cross-équipes
+
+Impact : Multiple équipes, réversible en 1-3 mois.
+
+**Niveau 4 - Décision structurante**
+
+Qui décide : CTO + CEO, souvent avec le board.
+
+Exemples :
+- Migration cloud majeure
+- Rewrite complet
+- Build vs buy stratégique
+- Pivot technique
+
+Impact : Toute l'organisation, difficile à réverser.
+
+**Le framework de classification**
+
+Pour chaque décision, se demander :
+
+- **Impact** : Combien d'équipes affectées ?
+- **Réversibilité** : Quel est le coût de revenir en arrière ?
+- **Risque** : Que se passe-t-il si mauvais choix ?
 
 ## Cadre de décision
 

@@ -34,11 +34,66 @@ Le vrai enjeu est de faire de la code review un outil d'amélioration continue s
 
 **Les 3 dérives de la code review** :
 
-**Dérive 1 - Le terrain d'ego** : Signaux : commentaires méprisants, ton condescendant, critique de la personne (pas du code). Exemples : "T'as vraiment codé ça ?", "Un dev senior ferait jamais ça", "C'est évident, non ?" ****Impact :** ** peur de soumettre PR, créativité tuée, culture toxique. Cause racine : insécurité du reviewer, absence de guidelines comportement.
+**Dérive 1 - Le terrain d'ego**
 
-**Dérive 2 - Le blocage systématique** : Signaux : reviewer demande perfection absolue, bloque pour des détails mineurs, change avis entre reviews. Exemples : "Cette variable devrait s'appeler X pas Y", "Refactor tout avant merge", demandes contradictoires. ****Impact :** ** vélocité effondrée, frustration massive, évitement du reviewer. Cause racine : perfectionnisme, absence de définition "good enough".
+Signaux :
+- Commentaires méprisants
+- Ton condescendant
+- Critique de la personne (pas du code)
 
-**Dérive 3 - Le rubber stamp** : Signaux : LGTM systématique sans vraie lecture, approbation en 30 secondes sur 500 lignes. Impact court terme : vélocité élevée. Impact long terme : qualité dégradée, bugs en prod, dette technique. Cause racine : surcharge, manque de temps, désengagement.
+Exemples :
+- "T'as vraiment codé ça ?"
+- "Un dev senior ferait jamais ça"
+- "C'est évident, non ?"
+
+**Impact :**
+- Peur de soumettre PR
+- Créativité tuée
+- Culture toxique
+
+Cause racine :
+- Insécurité du reviewer
+- Absence de guidelines comportement
+
+**Dérive 2 - Le blocage systématique**
+
+Signaux :
+- Reviewer demande perfection absolue
+- Bloque pour des détails mineurs
+- Change avis entre reviews
+
+Exemples :
+- "Cette variable devrait s'appeler X pas Y"
+- "Refactor tout avant merge"
+- Demandes contradictoires
+
+**Impact :**
+- Vélocité effondrée
+- Frustration massive
+- Évitement du reviewer
+
+Cause racine :
+- Perfectionnisme
+- Absence de définition "good enough"
+
+**Dérive 3 - Le rubber stamp**
+
+Signaux :
+- LGTM systématique sans vraie lecture
+- Approbation en 30 secondes sur 500 lignes
+
+Impact court terme :
+- Vélocité élevée
+
+Impact long terme :
+- Qualité dégradée
+- Bugs en prod
+- Dette technique
+
+Cause racine :
+- Surcharge
+- Manque de temps
+- Désengagement
 
 **Les 5 principes d'une code review saine** :
 

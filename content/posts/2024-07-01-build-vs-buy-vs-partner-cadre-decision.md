@@ -34,23 +34,83 @@ Le vrai enjeu est de structurer la décision avec des critères objectifs :
 
 **Les 3 options expliquées** :
 
-**Build (construire en interne)** : Avantages : contrôle total, différenciation possible, pas de dépendance externe, données en interne. Inconvénients : temps de dev, coût développement + maintenance, compétences à avoir, risque de sous-estimer.
+**Build (construire en interne)**
 
-**Buy (acheter SaaS/licence)** : Avantages : rapidité (jours vs mois), maintenance externalisée, features matures, expertise du vendor. Inconvénients : coût récurrent, dépendance vendor, personnalisation limitée, risque lock-in.
+Avantages :
+- Contrôle total
+- Différenciation possible
+- Pas de dépendance externe
+- Données en interne
 
-**Partner (s'associer)** : Avantages : mutualisation coûts, expertise partagée, réseau/distribution. Inconvénients : gouvernance complexe, alignement stratégique nécessaire, risque relationnel, partage de valeur.
+Inconvénients :
+- Temps de développement
+- Coût développement + maintenance
+- Compétences à avoir en interne
+- Risque de sous-estimer la complexité
+
+**Buy (acheter SaaS/licence)**
+
+Avantages :
+- Rapidité (jours vs mois)
+- Maintenance externalisée
+- Features matures
+- Expertise du vendor
+
+Inconvénients :
+- Coût récurrent
+- Dépendance au vendor
+- Personnalisation limitée
+- Risque de lock-in
+
+**Partner (s'associer)**
+
+Avantages :
+- Mutualisation des coûts
+- Expertise partagée
+- Accès réseau/distribution
+
+Inconvénients :
+- Gouvernance complexe
+- Alignement stratégique nécessaire
+- Risque relationnel
+- Partage de la valeur
 
 **Le framework de décision** :
 
-**Critère 1 - Différenciation** : Est-ce un avantage compétitif pour nous ? Core business → Build. Commodity → Buy. Nouveau marché → Partner.
+**Critère 1 - Différenciation**
 
-**Critère 2 - Complexité** : Simple et mature → Buy. Complexe et spécifique → Build. Très complexe et hors expertise → Partner.
+Est-ce un avantage compétitif pour nous ?
+- Core business → Build
+- Commodity → Buy
+- Nouveau marché → Partner
 
-**Critère 3 - TCO 3 ans** : Coût build : dev initial + maintenance (souvent sous-estimé ×2). Coût buy : licences × 36 mois + intégration. Coût partner : investissement + sharing.
+**Critère 2 - Complexité**
 
-**Critère 4 - Time to market** : Besoin immédiat → Buy. Peut attendre 3-6 mois → Build. Expérimentation → Partner (test de marché).
+Quel niveau de complexité et de spécificité ?
+- Simple et mature → Buy
+- Complexe et spécifique → Build
+- Très complexe et hors expertise → Partner
 
-**Critère 5 - Compétences** : Expertise en interne → Build possible. Pas d'expertise → Buy ou Partner. Compétence stratégique à développer → Build comme investissement.
+**Critère 3 - TCO 3 ans**
+
+Coût total de possession sur 3 ans :
+- **Coût Build** : Dev initial + maintenance (souvent sous-estimé ×2)
+- **Coût Buy** : Licences × 36 mois + intégration
+- **Coût Partner** : Investissement + revenue sharing
+
+**Critère 4 - Time to market**
+
+Quelle urgence ?
+- Besoin immédiat → Buy
+- Peut attendre 3-6 mois → Build
+- Expérimentation → Partner (test de marché)
+
+**Critère 5 - Compétences**
+
+Avons-nous l'expertise nécessaire ?
+- Expertise en interne → Build possible
+- Pas d'expertise → Buy ou Partner
+- Compétence stratégique à développer → Build comme investissement
 
 ## Cadre de décision
 

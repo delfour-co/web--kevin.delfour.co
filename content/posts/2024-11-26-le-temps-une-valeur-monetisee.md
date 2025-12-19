@@ -94,8 +94,23 @@ Avec le recul, j'aurais mesuré l'impact réel des pratiques de qualité plutôt
 
 ## Pour approfondir
 
-Pour approfondir, tu peux explorer les pratiques de qualité (refactoring continu, test-driven development, documentation collaborative), les stratégies de gestion du temps (timeboxing, prioritisation, délais réalistes), et les approches de mesure d'impact (métriques qualité, coûts de correction, satisfaction équipes).
+Pour approfondir, tu peux explorer plusieurs domaines :
+
+**Pratiques de qualité**
+- Refactoring continu
+- Test-driven development (TDD)
+- Documentation collaborative
+
+**Stratégies de gestion du temps**
+- Timeboxing
+- Prioritisation
+- Délais réalistes
+
+**Approches de mesure d'impact**
+- Métriques qualité
+- Coûts de correction
+- Satisfaction équipes
 
 Une manière de voir les choses : la qualité n'est pas un luxe, c'est un investissement. Ce que j'ai observé : les équipes qui adoptent cette mentalité développent une culture de qualité partagée et améliorent leur vélocité à long terme.
 
-Pour approfondir, tu peux aussi consulter les pages piliers du site ou les guides mis à disposition.
+Pour approfondir, tu peux aussi consulter la page pilier ["Culture & management"](/culture-management/) ou les guides mis à disposition.

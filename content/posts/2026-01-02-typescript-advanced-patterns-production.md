@@ -102,10 +102,40 @@ Avec le recul, j'aurais utilisé des type guards dès le départ plutôt que des
 
 ## Pour approfondir
 
-Pour approfondir, tu peux explorer les patterns de discriminated unions (type safety runtime, API responses), les stratégies de branded types (IDs distincts, validation), les pratiques d'utility types (built-in, custom, mapped types), les approches de type guards (basiques, complexes, validation), et les techniques de template literal types (routes API, types conditionnels).
+Pour approfondir, tu peux explorer plusieurs domaines :
 
-Une manière de voir les choses : TypeScript avancé utilise le système de types pour sécurité (éviter les bugs à la compilation), documentation (types = doc auto), productivité (autocomplétion intelligente), et refactoring (changements sûrs). Ce que j'ai observé : l'objectif n'est pas d'utiliser tous les patterns avancés dès le début, mais d'identifier les endroits où ces patterns apportent le plus de valeur.
+**Patterns de discriminated unions**
+- Type safety runtime
+- API responses
+
+**Stratégies de branded types**
+- IDs distincts
+- Validation
+
+**Pratiques d'utility types**
+- Built-in
+- Custom
+- Mapped types
+
+**Approches de type guards**
+- Basiques
+- Complexes
+- Validation
+
+**Techniques de template literal types**
+- Routes API
+- Types conditionnels
+
+Une manière de voir les choses : TypeScript avancé utilise le système de types pour :
+- Sécurité (éviter les bugs à la compilation)
+- Documentation (types = doc auto)
+- Productivité (autocomplétion intelligente)
+- Refactoring (changements sûrs)
+
+Ce que j'ai observé : l'objectif n'est pas d'utiliser tous les patterns avancés dès le début, mais d'identifier les endroits où ces patterns apportent le plus de valeur.
 
 Prochaine étape : identifier 3 endroits dans le code où `any` est utilisé et les remplacer par des types précis avec ces patterns.
+
+Pour approfondir, tu peux aussi consulter la page pilier ["Gouvernance & décision"](/gouvernance-decision/) ou les guides mis à disposition.
 
 Pour approfondir, tu peux aussi consulter les pages piliers du site ou les guides mis à disposition.

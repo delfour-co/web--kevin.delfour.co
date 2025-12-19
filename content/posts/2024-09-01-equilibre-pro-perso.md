@@ -96,8 +96,23 @@ Avec le recul, j'aurais visé l'harmonie plutôt qu'un équilibre strict. Ce que
 
 ## Pour approfondir
 
-Pour approfondir, tu peux explorer les pratiques d'autonomie et de confiance (gestion du temps, priorités, flexibilité), les approches de transparence et communication (communication ouverte, contraintes partagées, besoins exprimés), et les stratégies de responsabilité partagée (collaboration, adaptation, soutien mutuel).
+Pour approfondir, tu peux explorer plusieurs domaines :
+
+**Pratiques d'autonomie et de confiance**
+- Gestion du temps
+- Définition des priorités
+- Flexibilité organisationnelle
+
+**Approches de transparence et communication**
+- Communication ouverte sur les contraintes
+- Partage des besoins
+- Expression des attentes mutuelles
+
+**Stratégies de responsabilité partagée**
+- Collaboration d'équipe
+- Adaptation aux imprévus
+- Soutien mutuel
 
 Une manière de voir les choses : plutôt que de chercher un équilibre souvent impossible à atteindre, viser l'harmonie permet de naviguer plus sereinement entre nos différentes aspirations. Ce que j'ai observé : cette approche crée un environnement où chacun peut s'épanouir pleinement.
 
-Pour approfondir, tu peux aussi consulter les pages piliers du site ou les guides mis à disposition.
+Pour approfondir, tu peux aussi consulter la page pilier ["Culture & management"](/culture-management/) ou les guides mis à disposition.
