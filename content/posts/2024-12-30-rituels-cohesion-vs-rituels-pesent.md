@@ -34,23 +34,23 @@ Le vrai enjeu est de distinguer rituels qui servent de ceux qui pèsent :
 
 **Les 4 rituels qui créent de la valeur** :
 
-**Rituel 1 - Standup discipliné (15min max)** : Format : 15min max, debout, 3 questions (fait hier, fait aujourd'hui, bloqué ?). Valeur : synchronisation rapide, détection blocages, cohésion quotidienne. Pièges à éviter : transformer en reporting détaillé (→ 45min), résoudre problèmes dans standup (→ parking lot), accepter retards/absences répétés. Fréquence : quotidien.
+**Rituel 1 - Standup discipliné (15min max)** : **Format:** 15min max, debout, 3 questions (fait hier, fait aujourd'hui, bloqué ?). Valeur : synchronisation rapide, détection blocages, cohésion quotidienne. Pièges à éviter : transformer en reporting détaillé (→ 45min), résoudre problèmes dans standup (→ parking lot), accepter retards/absences répétés. **Fréquence:** quotidien.
 
-**Rituel 2 - Retro efficace (60-90min max)** : Format : 60-90min, facilitateur neutre, 3 sections (bien, améliorer, actions). Valeur : amélioration continue, espace parole, cohésion. Pièges à éviter : pas d'actions concrètes (→ thérapie de groupe), mêmes problèmes jamais résolus, pas de suivi actions précédentes. Fréquence : bi-hebdo ou mensuel.
+**Rituel 2 - Retro efficace (60-90min max)** : **Format:** 60-90min, facilitateur neutre, 3 sections (bien, améliorer, actions). Valeur : amélioration continue, espace parole, cohésion. Pièges à éviter : pas d'actions concrètes (→ thérapie de groupe), mêmes problèmes jamais résolus, pas de suivi actions précédentes. **Fréquence:** bi-hebdo ou mensuel.
 
-**Rituel 3 - One-on-one manager-dev (30min hebdo)** : Format : 30min hebdo, agenda co-construit, espace safe. Valeur : détection problèmes tôt, feedback régulier, relation de confiance. Pièges à éviter : annuler régulièrement, transformer en reporting projet, monopoliser la parole (manager parle 80%). Fréquence : hebdomadaire.
+**Rituel 3 - One-on-one manager-dev (30min hebdo)** : **Format:** 30min hebdo, agenda co-construit, espace safe. Valeur : détection problèmes tôt, feedback régulier, relation de confiance. Pièges à éviter : annuler régulièrement, transformer en reporting projet, monopoliser la parole (manager parle 80%). **Fréquence:** hebdomadaire.
 
-**Rituel 4 - Tech talk interne (1h mensuel)** : Format : 1h, dev partage apprentissage/outil/pattern, Q&A. Valeur : partage connaissance, valorisation expertise, culture apprentissage. Pièges à éviter : toujours mêmes speakers, sujets déconnectés du quotidien, pas de temps dédié préparation. Fréquence : mensuel ou bi-mensuel.
+**Rituel 4 - Tech talk interne (1h mensuel)** : **Format:** 1h, dev partage apprentissage/outil/pattern, Q&A. Valeur : partage connaissance, valorisation expertise, culture apprentissage. Pièges à éviter : toujours mêmes speakers, sujets déconnectés du quotidien, pas de temps dédié préparation. **Fréquence:** mensuel ou bi-mensuel.
 
 **Les 4 rituels qui pèsent** :
 
-**Anti-rituel 1 - Standup reporting (>30min)** : Signes : chacun détaille tout ce qu'il a fait, 45-60min, devient rapport au manager. Coût : 5h/semaine équipe de 6, désengagement, frustration. Correction : discipline 15min, parking lot, focus blocages.
+**Anti-rituel 1 - Standup reporting (>30min)** : Signes : chacun détaille tout ce qu'il a fait, 45-60min, devient rapport au manager. Coût : 5h/semaine équipe de 6, désengagement, frustration. **Correction:** discipline 15min, parking lot, focus blocages.
 
-**Anti-rituel 2 - Retro sans actions** : Signes : discussions intéressantes mais zéro action concrète, mêmes problèmes chaque fois. Coût : cynisme ("à quoi ça sert ?"), désengagement. Correction : max 3 actions par retro, assignées, suivies.
+**Anti-rituel 2 - Retro sans actions** : Signes : discussions intéressantes mais zéro action concrète, mêmes problèmes chaque fois. Coût : cynisme ("à quoi ça sert ?"), désengagement. **Correction:** max 3 actions par retro, assignées, suivies.
 
-**Anti-rituel 3 - Réunions statut multiples** : Signes : 3-4 réunions/semaine pour donner même statut à différentes personnes. Coût : 6-10h/semaine, interruption flow, frustration massive. Correction : statut asynchrone (écrit), sync uniquement décisions.
+**Anti-rituel 3 - Réunions statut multiples** : Signes : 3-4 réunions/semaine pour donner même statut à différentes personnes. Coût : 6-10h/semaine, interruption flow, frustration massive. **Correction:** statut asynchrone (écrit), sync uniquement décisions.
 
-**Anti-rituel 4 - Cérémonies cargo cult** : Signes : rituels copiés d'ailleurs sans comprendre pourquoi, exécutés mécaniquement. Exemple : sprint planning 4h alors qu'équipe fait du kanban. Coût : temps perdu, pas de valeur créée. Correction : question "pourquoi ce rituel ?" avant adoption.
+**Anti-rituel 4 - Cérémonies cargo cult** : Signes : rituels copiés d'ailleurs sans comprendre pourquoi, exécutés mécaniquement. Exemple : sprint planning 4h alors qu'équipe fait du kanban. Coût : temps perdu, pas de valeur créée. **Correction:** question "pourquoi ce rituel ?" avant adoption.
 
 ## Cadre de décision
 
@@ -60,7 +60,7 @@ Voici comment j'évalue et optimise les rituels :
 Lister tous rituels : fréquence, durée, participants. Calculer charge totale. Cette visibilité choque souvent.
 
 **2. Test de valeur par rituel**
-Questions : quel problème résout-il ? Que se passerait-il si supprimé ? Crée cohésion ou bureaucratie ? Si réponse floue, challenger.
+**Questions:** quel problème résout-il ? Que se passerait-il si supprimé ? Crée cohésion ou bureaucratie ? Si réponse floue, challenger.
 
 **3. Règle du 20% max**
 Temps rituels max 20% temps travail (8h/semaine pour 40h). Au-delà, réduire. Cette limite protège temps de faire.
@@ -75,27 +75,27 @@ Chaque trimestre : audit rituels, survey équipe ("utile ? 1-10"), ajuster. Cett
 
 Ce que j'ai observé dans différentes organisations :
 
-**La surcharge rituels** : 18h réunions/semaine. Standup 45min, 3 réunions statut, planning 4h, review 3h, retro 2h, multiples syncs. **Résultat :**  22h restantes pour coder, vélocité effondrée, burn-out.
+**La surcharge rituels** : 18h réunions/semaine. Standup 45min, 3 réunions statut, planning 4h, review 3h, retro 2h, multiples syncs. **Résultat:**  22h restantes pour coder, vélocité effondrée, burn-out.
 
-**L'optimisation drastique** : Audit révèle 15h rituels/semaine. Actions : standup strict 15min, statut asynchrone (supprime 3 réunions), retro 60min max avec actions obligatoires. **Résultat :**  7h rituels/semaine, vélocité ×1.5, satisfaction équipe.
+**L'optimisation drastique** : Audit révèle 15h rituels/semaine. Actions : standup strict 15min, statut asynchrone (supprime 3 réunions), retro 60min max avec actions obligatoires. **Résultat:**  7h rituels/semaine, vélocité ×1.5, satisfaction équipe.
 
-**L'exemple du standup** : Standup dérive à 45min, reporting détaillé. Correction : timer visible, debout, "parking lot" pour discussions longues. 2 semaines : standup 12min, efficace. **Résultat :**  équipe récupère 2.5h/semaine.
+**L'exemple du standup** : Standup dérive à 45min, reporting détaillé. **Correction:** timer visible, debout, "parking lot" pour discussions longues. 2 semaines : standup 12min, efficace. **Résultat:**  équipe récupère 2.5h/semaine.
 
-**Le one-on-one qui sauve** : Dev performance baisse. One-on-one hebdo révèle burn-out précoce. Intervention rapide. **Résultat :**  problème résolu avant crise. Sans rituel one-on-one : détection tardive, départ.
+**Le one-on-one qui sauve** : Dev performance baisse. One-on-one hebdo révèle burn-out précoce. Intervention rapide. **Résultat:**  problème résolu avant crise. Sans rituel one-on-one : détection tardive, départ.
 
 ## Erreurs fréquentes
 
 **Accumuler sans supprimer**
-Ajouter nouveaux rituels sans jamais retirer anciens. **Résultat :**  20h réunions/semaine.
+Ajouter nouveaux rituels sans jamais retirer anciens. **Résultat:**  20h réunions/semaine.
 
 **Pas de discipline d'exécution**
-Standup sans timer, retro sans actions. **Résultat :**  dérive durée, perte de valeur.
+Standup sans timer, retro sans actions. **Résultat:**  dérive durée, perte de valeur.
 
 **Cargo cult**
-Copier rituels sans comprendre pourquoi. **Résultat :**  bureaucratie sans bénéfice.
+Copier rituels sans comprendre pourquoi. **Résultat:**  bureaucratie sans bénéfice.
 
 **Annuler rituels high-value**
-One-on-ones annulés régulièrement ("pas urgent"). **Résultat :**  problèmes détectés trop tard.
+One-on-ones annulés régulièrement ("pas urgent"). **Résultat:**  problèmes détectés trop tard.
 
 ## Si c'était à refaire
 

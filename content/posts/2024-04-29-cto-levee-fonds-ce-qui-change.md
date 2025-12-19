@@ -91,27 +91,27 @@ Apprendre à parler business : KPIs tech, ROI, risques, timeline. Le board ne co
 
 Ce que j'ai observé dans différentes levées :
 
-**Le CTO qui ne scale pas** : Levée 5M, tentative de tout gérer seul, refuse de recruter des managers. **Résultat :**  bottleneck total à 25 personnes, turnover élevé, CEO frustré, replacement du CTO après 12 mois.
+**Le CTO qui ne scale pas** : Levée 5M, tentative de tout gérer seul, refuse de recruter des managers. **Résultat:**  bottleneck total à 25 personnes, turnover élevé, CEO frustré, replacement du CTO après 12 mois.
 
-**La préparation qui sauve** : Levée 10M, recrutement immédiat d'un VP Eng et 3 Tech Leads, structuration claire. **Résultat :**  passage de 12 à 45 personnes en 18 mois, vélocité maintenue, board satisfait.
+**La préparation qui sauve** : Levée 10M, recrutement immédiat d'un VP Eng et 3 Tech Leads, structuration claire. **Résultat:**  passage de 12 à 45 personnes en 18 mois, vélocité maintenue, board satisfait.
 
 **La dette technique qui explose** : Ignorée en pré-levée ("on verra après"), elle paralyse le scaling. Impossible de recruter sur du code legacy, vélocité qui s'effondre. Résolution : 6 mois de refonte forcée.
 
-**Le recrutement raté** : Recruter 20 juniors en 3 mois sans seniors pour encadrer. **Résultat :**  chaos, qualité en chute libre, turnover 50% la première année.
+**Le recrutement raté** : Recruter 20 juniors en 3 mois sans seniors pour encadrer. **Résultat:**  chaos, qualité en chute libre, turnover 50% la première année.
 
 ## Erreurs fréquentes
 
 **Vouloir tout gérer seul**
-Refuser de recruter des managers, garder tous les direct reports. **Résultat :**  bottleneck, burn-out, échec du scaling.
+Refuser de recruter des managers, garder tous les direct reports. **Résultat:**  bottleneck, burn-out, échec du scaling.
 
 **Recruter trop de juniors**
-Embaucher 20 juniors sans assez de seniors pour encadrer. **Résultat :**  chaos, qualité faible, vélocité qui baisse au lieu d'augmenter.
+Embaucher 20 juniors sans assez de seniors pour encadrer. **Résultat:**  chaos, qualité faible, vélocité qui baisse au lieu d'augmenter.
 
 **Ignorer la dette technique**
-Reporter la dette à "plus tard" alors que c'est le moment de l'adresser (avant que l'équipe double). **Résultat :**  paralysie progressive.
+Reporter la dette à "plus tard" alors que c'est le moment de l'adresser (avant que l'équipe double). **Résultat:**  paralysie progressive.
 
 **Ne pas s'adapter au nouveau rôle**
-Continuer à fonctionner comme avant la levée. **Résultat :**  inadéquation avec les attentes, remplacement probable.
+Continuer à fonctionner comme avant la levée. **Résultat:**  inadéquation avec les attentes, remplacement probable.
 
 ## Si c'était à refaire
 

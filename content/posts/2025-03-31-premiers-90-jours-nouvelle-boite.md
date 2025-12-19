@@ -42,19 +42,19 @@ Le vrai enjeu est de poser de bonnes fondations sans te griller :
 
 **Les 7 règles d'or des 90 premiers jours** :
 
-**Règle 1 - Écouter avant de parler** : Pratique : observer 2-4 semaines avant critiquer. Chercher à comprendre POURQUOI les choses sont comme elles sont. Bénéfice : éviter propositions naïves type "pourquoi vous faites pas X ?" alors que X a été essayé et a échoué. Message : humilité initiale crée crédibilité future.
+**Règle 1 - Écouter avant de parler** : **Pratique:** observer 2-4 semaines avant critiquer. Chercher à comprendre POURQUOI les choses sont comme elles sont. **Bénéfice:** éviter propositions naïves type "pourquoi vous faites pas X ?" alors que X a été essayé et a échoué. **Message:** humilité initiale crée crédibilité future.
 
-**Règle 2 - Poser beaucoup de questions** : Pratique : questions sur contexte, histoire, décisions passées. Approche : "Je suis nouveau, j'essaie de comprendre : pourquoi vous avez choisi cette archi ?" Bénéfice : apprentissage accéléré, montrer intérêt, créer liens. Message : période de grâce où questions massives sont attendues.
+**Règle 2 - Poser beaucoup de questions** : **Pratique:** questions sur contexte, histoire, décisions passées. Approche : "Je suis nouveau, j'essaie de comprendre : pourquoi vous avez choisi cette archi ?" **Bénéfice:** apprentissage accéléré, montrer intérêt, créer liens. **Message:** période de grâce où questions massives sont attendues.
 
-**Règle 3 - Quick wins visibles** : Pratique : chercher petites améliorations (doc, bugs, DX). Livrer vite pour montrer valeur. Bénéfice : confiance équipe, sentiment d'utilité, momentum positif. Exemple : première semaine corriger 3 bugs + améliorer doc onboarding. Message : action rapide mais calibrée.
+**Règle 3 - Quick wins visibles** : **Pratique:** chercher petites améliorations (doc, bugs, DX). Livrer vite pour montrer valeur. **Bénéfice:** confiance équipe, sentiment d'utilité, momentum positif. Exemple : première semaine corriger 3 bugs + améliorer doc onboarding. **Message:** action rapide mais calibrée.
 
-**Règle 4 - Créer relations 1-1** : Pratique : café/déj 1-1 avec équipe et stakeholders. Comprendre qui fait quoi, contexte, priorités. Bénéfice : réseau interne, compréhension dynamiques, alliés futurs. Timing : premiers 30 jours. Message : investir dans relations paie long terme.
+**Règle 4 - Créer relations 1-1** : **Pratique:** café/déj 1-1 avec équipe et stakeholders. Comprendre qui fait quoi, contexte, priorités. **Bénéfice:** réseau interne, compréhension dynamiques, alliés futurs. Timing : premiers 30 jours. **Message:** investir dans relations paie long terme.
 
-**Règle 5 - Comprendre culture implicite** : Pratique : observer codes non-écrits (horaires, communication, décisions, qui a vraiment le pouvoir). Questions : "Comment on prend les décisions ici ?" "Qui influence quoi ?" Bénéfice : naviguer politique sans faux pas. Message : culture réelle ≠ culture affichée.
+**Règle 5 - Comprendre culture implicite** : **Pratique:** observer codes non-écrits (horaires, communication, décisions, qui a vraiment le pouvoir). **Questions:** "Comment on prend les décisions ici ?" "Qui influence quoi ?" **Bénéfice:** naviguer politique sans faux pas. **Message:** culture réelle ≠ culture affichée.
 
-**Règle 6 - Demander feedback tôt et souvent** : Pratique : one-on-one manager J15, J30, J60. Question : "Comment je m'en sors ? Où m'améliorer ?" Bénéfice : ajustements rapides, pas de surprises à J90. Message : feedback précoce évite dérapage.
+**Règle 6 - Demander feedback tôt et souvent** : **Pratique:** one-on-one manager J15, J30, J60. Question : "Comment je m'en sors ? Où m'améliorer ?" **Bénéfice:** ajustements rapides, pas de surprises à J90. **Message:** feedback précoce évite dérapage.
 
-**Règle 7 - Documenter ce que tu apprends** : Pratique : notes sur archi, processus, qui fait quoi. Partager (wiki, doc) pour futurs nouveaux. Bénéfice : ancre apprentissage, aide équipe, montrer proactivité. Message : contribution utile même en apprenant.
+**Règle 7 - Documenter ce que tu apprends** : **Pratique:** notes sur archi, processus, qui fait quoi. Partager (wiki, doc) pour futurs nouveaux. **Bénéfice:** ancre apprentissage, aide équipe, montrer proactivité. **Message:** contribution utile même en apprenant.
 
 ## Cadre de décision
 
@@ -73,33 +73,33 @@ Actions : features normales, participation rituels, propositions mineures. Objec
 Actions : features complexes, ownership, propositions réfléchies. Objectif : membre à part entière.
 
 **5. Checkpoints réguliers**
-Timing : J15, J30, J60, J90. Format : one-on-one manager, feedback bidirectionnel. Objectif : ajuster trajectoire.
+Timing : J15, J30, J60, J90. **Format:** one-on-one manager, feedback bidirectionnel. Objectif : ajuster trajectoire.
 
 ## Retour terrain
 
 Ce que j'ai observé chez différents profils :
 
-**Le nouveau arrogant** : Arrive, J3 critique processus existants, propose refonte complète sans comprendre contexte. Équipe se braque. 6 mois : toujours « le nouveau qui sait tout », relations tendues. Message : humilité initiale est critique.
+**Le nouveau arrogant** : Arrive, J3 critique processus existants, propose refonte complète sans comprendre contexte. Équipe se braque. 6 mois : toujours « le nouveau qui sait tout », relations tendues. **Message:** humilité initiale est critique.
 
-**Le nouveau qui écoute** : Arrive, 3 semaines d'observation et questions. Comprend pourquoi c'est comme ça. Mois 2 : propose amélioration avec contexte. Équipe réceptive. 6 mois : influent, respecté. Message : comprendre avant changer.
+**Le nouveau qui écoute** : Arrive, 3 semaines d'observation et questions. Comprend pourquoi c'est comme ça. Mois 2 : propose amélioration avec contexte. Équipe réceptive. 6 mois : influent, respecté. **Message:** comprendre avant changer.
 
-**L'exemple du quick win** : Nouveau dev, J5 : corrige bug qui traînait + améliore doc onboarding. Équipe : « Oh nice, merci ! » Momentum positif créé. Message : action rapide mais utile ouvre portes.
+**L'exemple du quick win** : Nouveau dev, J5 : corrige bug qui traînait + améliore doc onboarding. Équipe : « Oh nice, merci ! » Momentum positif créé. **Message:** action rapide mais utile ouvre portes.
 
-**Le piège de l'isolement** : Nouveau dev, focus 100% code, zéro 1-1, zéro pause café. 3 mois : compétent mais isolé, pas compris dynamiques. Friction évitables. Message : relations comptent autant que code.
+**Le piège de l'isolement** : Nouveau dev, focus 100% code, zéro 1-1, zéro pause café. 3 mois : compétent mais isolé, pas compris dynamiques. Friction évitables. **Message:** relations comptent autant que code.
 
 ## Erreurs fréquentes (et comment les éviter)
 
 **Erreur 1 - Critiquer avant de comprendre**
-Piège : "Pourquoi vous faites pas X ?" sans savoir que X a été essayé et a échoué. Réalité : paraît naïf. Correction : comprendre contexte, puis proposer.
+**Piège:** "Pourquoi vous faites pas X ?" sans savoir que X a été essayé et a échoué. **Réalité:** paraît naïf. **Correction:** comprendre contexte, puis proposer.
 
 **Erreur 2 - Ne pas créer relations**
-Piège : focus 100% technique, ignorer l'humain. Réalité : relations critiques pour naviguer. Correction : investir temps 1-1s, pauses café.
+**Piège:** focus 100% technique, ignorer l'humain. **Réalité:** relations critiques pour naviguer. **Correction:** investir temps 1-1s, pauses café.
 
 **Erreur 3 - Trop attendre pour contribuer**
-Piège : "Je vais attendre de tout comprendre avant de livrer." Réalité : impossible et frustrant. Correction : quick wins précoces.
+**Piège:** "Je vais attendre de tout comprendre avant de livrer." **Réalité:** impossible et frustrant. **Correction:** quick wins précoces.
 
 **Erreur 4 - Ignorer feedback**
-Piège : manager donne feedback J30, ignoré. **Résultat :**  problème persiste, frustration. Correction : appliquer feedback rapidement.
+**Piège:** manager donne feedback J30, ignoré. **Résultat:**  problème persiste, frustration. **Correction:** appliquer feedback rapidement.
 
 ## Message de responsabilité
 

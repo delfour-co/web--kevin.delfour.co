@@ -52,7 +52,7 @@ Voici une manière de voir les choses pour développer vos soft skills :
 
 **Les 5 soft skills critiques** : Communication claire, empathie (avec users ET collègues), écoute active, gestion de conflit, leadership technique (sans être manager). Vous n'êtes pas obligé de maîtriser toutes ces compétences immédiatement, mais chacune contribue à votre valeur sur le marché.
 
-**Communication claire** : Structurer vos messages (impact, cause, action, timeline) plutôt que de dire "ça marche pas". Exemple : "API /users retourne 500 depuis 14h30. ****Impact :** ** Signup bloqué (30 users affectés). Cause probable : DB migration mal appliquée. Action : Rollback en cours (ETA 15min). Post-mortem : Demain 10h." Cette structure aide vos collègues à comprendre rapidement la situation.
+**Communication claire** : Structurer vos messages (impact, cause, action, timeline) plutôt que de dire "ça marche pas". Exemple : "API /users retourne 500 depuis 14h30. ****Impact :** ** Signup bloqué (30 users affectés). Cause probable : DB migration mal appliquée. **Action:** Rollback en cours (ETA 15min). Post-mortem : Demain 10h." Cette structure aide vos collègues à comprendre rapidement la situation.
 
 **Empathie** : Penser aux users et aux collègues dans votre code et vos interactions. Code avec validation et messages d'erreur clairs plutôt que code qui crash silencieusement. Interactions constructives plutôt que critiques personnelles. Cette empathie améliore la qualité de votre travail et vos relations professionnelles.
 
@@ -67,19 +67,19 @@ Voici une manière de voir les choses pour développer vos soft skills :
 ## Erreurs classiques
 
 **Penser que les soft skills sont innées**  
-Croire que vous êtes "mauvais en communication" et que c'est génétique. **Résultat :**  abandon, pas d'amélioration. Les soft skills sont des compétences qui se développent avec la pratique, comme les hard skills.
+Croire que vous êtes "mauvais en communication" et que c'est génétique. **Résultat:**  abandon, pas d'amélioration. Les soft skills sont des compétences qui se développent avec la pratique, comme les hard skills.
 
 **Négliger les soft skills complètement**  
-Se concentrer uniquement sur le code, ignorer la communication et la collaboration. **Résultat :**  carrière qui stagne, moins d'opportunités, salaire inférieur. Le marché valorise la collaboration, pas seulement le code.
+Se concentrer uniquement sur le code, ignorer la communication et la collaboration. **Résultat:**  carrière qui stagne, moins d'opportunités, salaire inférieur. Le marché valorise la collaboration, pas seulement le code.
 
 **Vouloir tout développer d'un coup**  
-Essayer de maîtriser toutes les soft skills simultanément. **Résultat :**  épuisement, abandon, pas d'amélioration réelle. Mieux vaut identifier votre soft skill la plus faible et la développer progressivement.
+Essayer de maîtriser toutes les soft skills simultanément. **Résultat:**  épuisement, abandon, pas d'amélioration réelle. Mieux vaut identifier votre soft skill la plus faible et la développer progressivement.
 
 **Confondre soft skills et extraversion**  
-Penser que les soft skills nécessitent d'être extraverti ou charismatique. **Résultat :**  découragement si vous êtes introverti. Les soft skills techniques (communication claire, empathie, écoute active) sont différentes des soft skills sociales générales.
+Penser que les soft skills nécessitent d'être extraverti ou charismatique. **Résultat:**  découragement si vous êtes introverti. Les soft skills techniques (communication claire, empathie, écoute active) sont différentes des soft skills sociales générales.
 
 **Ne pas demander de feedback**  
-Développer vos soft skills sans demander de feedback. **Résultat :**  vous ne savez pas si vous progressez, vous répétez peut-être les mêmes erreurs. Demander régulièrement du feedback à vos collègues et managers.
+Développer vos soft skills sans demander de feedback. **Résultat:**  vous ne savez pas si vous progressez, vous répétez peut-être les mêmes erreurs. Demander régulièrement du feedback à vos collègues et managers.
 
 ## Message de responsabilité
 

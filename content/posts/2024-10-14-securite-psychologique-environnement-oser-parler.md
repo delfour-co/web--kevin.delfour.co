@@ -51,6 +51,7 @@ Le vrai enjeu est de créer les conditions où chacun ose partager vérité, dou
 **Question 4** : "Les membres de l'équipe acceptent-ils les différences ?" (1-10)
 
 Score >7/10 en moyenne = sécurité psychologique saine.
+
 Score <5/10 = problème critique à adresser.
 
 ## Cadre de décision
@@ -76,9 +77,9 @@ Sarcasme, moquerie, blame public = tolérance zéro. Ces comportements détruise
 
 Ce que j'ai observé dans différentes organisations :
 
-**L'absence de sécurité psychologique** : Erreur → blame. Désaccord → "c'est moi qui décide". Questions → "t'as pas compris ?". **Résultat :**  silence, erreurs cachées, incidents, turnover 40%.
+**L'absence de sécurité psychologique** : Erreur → blame. Désaccord → "c'est moi qui décide". Questions → "t'as pas compris ?". **Résultat:**  silence, erreurs cachées, incidents, turnover 40%.
 
-**La sécurité psychologique qui transforme** : CTO modélise vulnérabilité. Junior signale bug critique, remercié publiquement. Débats techniques animés mais respectueux. **Résultat :**  problèmes remontent tôt, qualité élevée, turnover <10%.
+**La sécurité psychologique qui transforme** : CTO modélise vulnérabilité. Junior signale bug critique, remercié publiquement. Débats techniques animés mais respectueux. **Résultat:**  problèmes remontent tôt, qualité élevée, turnover <10%.
 
 **L'exemple de modélisation** : CTO all-hands : "Je suis pas sûr de cette décision, j'ai ces doutes, j'aimerais vos inputs." Cette vulnérabilité change dynamique : équipe ose partager doutes aussi.
 
@@ -87,16 +88,16 @@ Ce que j'ai observé dans différentes organisations :
 ## Erreurs fréquentes
 
 **Blâmer le messager**
-Problème signalé → "Pourquoi tu me dis ça maintenant ?" **Résultat :**  plus personne ne signale, problèmes explosent.
+Problème signalé → "Pourquoi tu me dis ça maintenant ?" **Résultat:**  plus personne ne signale, problèmes explosent.
 
 **Tolérer comportements toxiques**
-Dev senior sarcastique avec juniors. Pas sanctionné car "performant". **Résultat :**  juniors se taisent, culture toxique.
+Dev senior sarcastique avec juniors. Pas sanctionné car "performant". **Résultat:**  juniors se taisent, culture toxique.
 
 **Ne pas modéliser vulnérabilité**
-CTO maintient façade de contrôle total. **Résultat :**  équipe pense qu'elle doit faire pareil, pas de doutes partagés.
+CTO maintient façade de contrôle total. **Résultat:**  équipe pense qu'elle doit faire pareil, pas de doutes partagés.
 
 **Ne jamais mesurer**
-Supposer que sécurité psychologique est bonne. **Résultat :**  découverte tardive quand turnover explose.
+Supposer que sécurité psychologique est bonne. **Résultat:**  découverte tardive quand turnover explose.
 
 ## Si c'était à refaire
 

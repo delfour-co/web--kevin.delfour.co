@@ -46,11 +46,11 @@ Le vrai enjeu est de comprendre ce qui change pour t'adapter rapidement :
 
 **Ce qui ne change PAS (et que tu peux utiliser)** :
 
-**Constant 1 - Professionnalisme de base** : Réalité : deadlines, communication claire, collaboration, rigueur sont valorisés partout. Ton atout : tu connais ces codes, contrairement à junior 23 ans premier job. Exemple : tenir engagement, communiquer blocage, documenter travail. Message : ton expérience professionnelle a de la valeur.
+**Constant 1 - Professionnalisme de base** : **Réalité:** deadlines, communication claire, collaboration, rigueur sont valorisés partout. Ton atout : tu connais ces codes, contrairement à junior 23 ans premier job. Exemple : tenir engagement, communiquer blocage, documenter travail. **Message:** ton expérience professionnelle a de la valeur.
 
-**Constant 2 - Soft skills** : Réalité : communication, gestion conflit, empathie, travail d'équipe sont critiques partout. Ton atout : ces compétences se transfèrent directement. Exemple : reconversion ex-commerce → excellente écoute client, communication claire. Message : soft skills différencient à compétences tech égales.
+**Constant 2 - Soft skills** : **Réalité:** communication, gestion conflit, empathie, travail d'équipe sont critiques partout. Ton atout : ces compétences se transfèrent directement. Exemple : reconversion ex-commerce → excellente écoute client, communication claire. **Message:** soft skills différencient à compétences tech égales.
 
-**Constant 3 - Gestion de projet basique** : Réalité : découper tâches, estimer, prioriser, livrer sont universels. Ton atout : tu as probablement déjà fait ça ailleurs. Adaptation : apprendre vocabulaire tech (sprint, backlog) mais concepts similaires.
+**Constant 3 - Gestion de projet basique** : **Réalité:** découper tâches, estimer, prioriser, livrer sont universels. Ton atout : tu as probablement déjà fait ça ailleurs. Adaptation : apprendre vocabulaire tech (sprint, backlog) mais concepts similaires.
 
 ## Cadre de décision
 
@@ -75,27 +75,27 @@ Observer : qui est valorisé ? Promu ? Qui part ? Heures réelles travaillées ?
 
 Ce que j'ai observé chez des reconversions :
 
-**La transition difficile** : Ex-finance, habitué codes formels. Arrive en startup tech, tout le monde en jean-baskets, tutoiement, stand-up debout. Malaise initial. Essaie d'imposer ses codes (vouvoiement, formalisme). **Résultat :**  perçu comme rigide, intégration lente.
+**La transition difficile** : Ex-finance, habitué codes formels. Arrive en startup tech, tout le monde en jean-baskets, tutoiement, stand-up debout. Malaise initial. Essaie d'imposer ses codes (vouvoiement, formalisme). **Résultat:**  perçu comme rigide, intégration lente.
 
-**La transition fluide** : Ex-commerce, bonne communication client. Arrive en tech, observe codes (tutoiement, casual), adopte rapidement. Utilise soft skills (écoute, clarté) pour se différencier malgré junior tech. **Résultat :**  intégration rapide, valorisé pour compétences transférables.
+**La transition fluide** : Ex-commerce, bonne communication client. Arrive en tech, observe codes (tutoiement, casual), adopte rapidement. Utilise soft skills (écoute, clarté) pour se différencier malgré junior tech. **Résultat:**  intégration rapide, valorisé pour compétences transférables.
 
-**L'exemple des outils** : Reconversion 35 ans, jamais utilisé Git/Slack. Premier mois : formation perso intense sur outils. Mois 2 : à l'aise. Message : outils s'apprennent, ne pas avoir peur.
+**L'exemple des outils** : Reconversion 35 ans, jamais utilisé Git/Slack. Premier mois : formation perso intense sur outils. Mois 2 : à l'aise. **Message:** outils s'apprennent, ne pas avoir peur.
 
-**Le choc culturel positif** : Ex-admin, culture blâme. Arrive en tech saine, post-mortem blameless. Libération : "Je peux dire que j'ai fait une erreur sans être puni." **Résultat :**  épanouissement, créativité.
+**Le choc culturel positif** : Ex-admin, culture blâme. Arrive en tech saine, post-mortem blameless. Libération : "Je peux dire que j'ai fait une erreur sans être puni." **Résultat:**  épanouissement, créativité.
 
 ## Erreurs fréquentes (et comment les éviter)
 
 **Erreur 1 - Plaquer anciens codes sans adaptation**
-Piège : "Dans mon ancien job on faisait comme ça, donc ici aussi." Réalité : codes différents, adaptation nécessaire. Correction : observer, adopter codes locaux.
+**Piège:** "Dans mon ancien job on faisait comme ça, donc ici aussi." **Réalité:** codes différents, adaptation nécessaire. **Correction:** observer, adopter codes locaux.
 
 **Erreur 2 - Minimiser son background**
-Piège : "Je suis junior tech donc mon expérience avant ne compte pas." Réalité : soft skills et professionnalisme valent beaucoup. Correction : valoriser expérience antérieure.
+**Piège:** "Je suis junior tech donc mon expérience avant ne compte pas." **Réalité:** soft skills et professionnalisme valent beaucoup. **Correction:** valoriser expérience antérieure.
 
 **Erreur 3 - Résister au changement**
-Piège : "Pourquoi vous faites comme ça ? C'est bizarre." Jugement avant compréhension. Réalité : différent ≠ mauvais. Correction : comprendre pourquoi avant de critiquer.
+**Piège:** "Pourquoi vous faites comme ça ? C'est bizarre." Jugement avant compréhension. **Réalité:** différent ≠ mauvais. **Correction:** comprendre pourquoi avant de critiquer.
 
 **Erreur 4 - Ne pas poser questions culturelles**
-Piège : deviner codes, faire faux pas. Réalité : poser questions culturelles est normal et apprécié. Correction : demander explicitement les codes.
+**Piège:** deviner codes, faire faux pas. **Réalité:** poser questions culturelles est normal et apprécié. **Correction:** demander explicitement les codes.
 
 ## Message de responsabilité
 

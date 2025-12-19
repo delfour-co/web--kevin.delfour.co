@@ -44,20 +44,29 @@ Le vrai enjeu est de détecter les signaux et intervenir avant la crise :
 
 **Signaux comportementaux** :
 1. Retards/absences inhabituels (personne ponctuelle devient irrégulière)
+
 2. Isolement social (évite pauses café, déjeuners, échanges informels)
+
 3. Irritabilité ou réactions émotionnelles disproportionnées
+
 4. Cynisme croissant ("à quoi bon", "ça sert à rien")
 
 **Signaux de performance** :
 5. Baisse qualité travail (erreurs inhabituelles, code dégradé)
+
 6. Vélocité en chute (tâches simples prennent 3× plus longtemps)
+
 7. Procrastination sur tâches autrefois faciles
+
 8. Difficulté terminer ce qui est commencé
 
 **Signaux physiques/verbaux** :
 9. Fatigue exprimée répétitivement ("je suis crevé")
+
 10. Plaintes somatiques (maux de tête, dos, estomac fréquents)
+
 11. Heures excessives répétées (>50h/semaine pendant >4 semaines)
+
 12. Commentaires sur "tenir le coup" ou "plus pour longtemps"
 
 ## Cadre de décision
@@ -83,27 +92,27 @@ Si plusieurs personnes en burn-out : problème systémique (charge, culture, man
 
 Ce que j'ai observé dans différentes situations :
 
-**La détection tardive** : Dev top performeur. Signaux stade 1-2 ignorés pendant 6 mois (fatigue, irritabilité, baisse qualité). Stade 3 : arrêt 4 mois, démission. **Résultat :**  perte talent, 6 mois chaos projet.
+**La détection tardive** : Dev top performeur. Signaux stade 1-2 ignorés pendant 6 mois (fatigue, irritabilité, baisse qualité). Stade 3 : arrêt 4 mois, démission. **Résultat:**  perte talent, 6 mois chaos projet.
 
-**La détection qui sauve** : One-on-one révèle : "Niveau énergie 3/10, je dors mal, je suis irritable." Signaux stade 1. Actions immédiates : 2 semaines congés + réduction charge 30% pendant 2 mois + réassignation projet stressant. **Résultat :**  récupération complète en 6 semaines, personne reste.
+**La détection qui sauve** : One-on-one révèle : "Niveau énergie 3/10, je dors mal, je suis irritable." Signaux stade 1. Actions immédiates : 2 semaines congés + réduction charge 30% pendant 2 mois + réassignation projet stressant. **Résultat:**  récupération complète en 6 semaines, personne reste.
 
-**L'exemple des métriques** : Tracking discret révèle : Alice fait 55-60h/semaine depuis 8 semaines. Intervention avant qu'elle s'effondre : "J'observe charge excessive, c'est insoutenable. On réorganise." **Résultat :**  burn-out évité.
+**L'exemple des métriques** : Tracking discret révèle : Alice fait 55-60h/semaine depuis 8 semaines. Intervention avant qu'elle s'effondre : "J'observe charge excessive, c'est insoutenable. On réorganise." **Résultat:**  burn-out évité.
 
-**Le problème systémique** : 3 burn-outs en 6 mois. Analyse révèle : culture crunch, deadlines impossibles, reconnaissance insuffisante. Actions : revoir roadmap, embaucher 2 personnes, arrêter valoriser surmenage. **Résultat :**  stabilisation, pas de nouveau burn-out 18 mois suivants.
+**Le problème systémique** : 3 burn-outs en 6 mois. Analyse révèle : culture crunch, deadlines impossibles, reconnaissance insuffisante. Actions : revoir roadmap, embaucher 2 personnes, arrêter valoriser surmenage. **Résultat:**  stabilisation, pas de nouveau burn-out 18 mois suivants.
 
 ## Erreurs fréquentes
 
 **Ignorer signaux stade 1**
-"Il est juste fatigué, ça va passer." **Résultat :**  stade 1 → stade 2 → stade 3.
+"Il est juste fatigué, ça va passer." **Résultat:**  stade 1 → stade 2 → stade 3.
 
 **Intervention trop timide**
-Stade 2 détecté mais réponse : "Prends un jour de congés." **Résultat :**  insuffisant, dégradation continue.
+Stade 2 détecté mais réponse : "Prends un jour de congés." **Résultat:**  insuffisant, dégradation continue.
 
 **Blâmer l'individu**
-"Il doit mieux gérer son stress." **Résultat :**  culpabilisation, pas de résolution, aggravation.
+"Il doit mieux gérer son stress." **Résultat:**  culpabilisation, pas de résolution, aggravation.
 
 **Ne pas adresser causes**
-Traiter symptômes (repos) sans changer structure (charge, culture). **Résultat :**  récidive garantie.
+Traiter symptômes (repos) sans changer structure (charge, culture). **Résultat:**  récidive garantie.
 
 ## Si c'était à refaire
 

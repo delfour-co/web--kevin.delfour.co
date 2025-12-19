@@ -68,19 +68,19 @@ Voici une manière de voir les choses pour apprendre efficacement :
 ## Erreurs classiques
 
 **Essayer de tout apprendre**  
-Suivre chaque nouveau framework qui sort, essayer de maîtriser toutes les technologies simultanément. **Résultat :**  épuisement, abandon, pas d'amélioration réelle. Mieux vaut apprendre stratégiquement ce qui fait avancer votre carrière.
+Suivre chaque nouveau framework qui sort, essayer de maîtriser toutes les technologies simultanément. **Résultat:**  épuisement, abandon, pas d'amélioration réelle. Mieux vaut apprendre stratégiquement ce qui fait avancer votre carrière.
 
 **Ignorer les fondamentaux**  
-Se concentrer uniquement sur les technologies à la mode, ignorer les fondamentaux (algorithms, architecture, design patterns). **Résultat :**  compétences superficielles qui deviennent obsolètes rapidement. Mieux vaut maîtriser les fondamentaux qui restent pertinents.
+Se concentrer uniquement sur les technologies à la mode, ignorer les fondamentaux (algorithms, architecture, design patterns). **Résultat:**  compétences superficielles qui deviennent obsolètes rapidement. Mieux vaut maîtriser les fondamentaux qui restent pertinents.
 
 **Suivre la hype passagère**  
-Apprendre chaque nouvelle technologie "révolutionnaire" sans vérifier l'adoption réelle. **Résultat :**  temps perdu sur des technologies qui ne survivent pas. Mieux vaut attendre et voir si l'adoption réelle se confirme.
+Apprendre chaque nouvelle technologie "révolutionnaire" sans vérifier l'adoption réelle. **Résultat:**  temps perdu sur des technologies qui ne survivent pas. Mieux vaut attendre et voir si l'adoption réelle se confirme.
 
 **Ne pas mesurer la progression**  
-Apprendre sans mesurer la progression réelle. **Résultat :**  vous ne savez pas si vous progressez, vous répétez peut-être les mêmes erreurs. Mieux vaut mesurer : projects completed, blog posts written, contributions open-source, certifications.
+Apprendre sans mesurer la progression réelle. **Résultat:**  vous ne savez pas si vous progressez, vous répétez peut-être les mêmes erreurs. Mieux vaut mesurer : projects completed, blog posts written, contributions open-source, certifications.
 
 **Ignorer complètement la formation continue**  
-Se concentrer uniquement sur le travail actuel, ignorer la formation continue. **Résultat :**  compétences qui deviennent obsolètes, carrière qui stagne. Mieux vaut investir 5-7h/semaine dans la formation continue.
+Se concentrer uniquement sur le travail actuel, ignorer la formation continue. **Résultat:**  compétences qui deviennent obsolètes, carrière qui stagne. Mieux vaut investir 5-7h/semaine dans la formation continue.
 
 ## Message de responsabilité
 

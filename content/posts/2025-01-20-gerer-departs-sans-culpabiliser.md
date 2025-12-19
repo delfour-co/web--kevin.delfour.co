@@ -44,11 +44,11 @@ Le vrai enjeu est de gérer la transition avec lucidité et respect pour toutes 
 
 **Les 3 phases de gestion d'un départ** :
 
-**Phase 1 - L'annonce (J0)** : Réaction : écouter calmement, comprendre raisons, remercier pour transparence. Émotions : reconnaître déception mais pas culpabiliser. Immédiat : discuter préavis, transition, communication équipe. Piège : réaction émotionnelle (colère, culpabilisation, contre-offre désespérée).
+**Phase 1 - L'annonce (J0)** : Réaction : écouter calmement, comprendre raisons, remercier pour transparence. Émotions : reconnaître déception mais pas culpabiliser. Immédiat : discuter préavis, transition, communication équipe. **Piège:** réaction émotionnelle (colère, culpabilisation, contre-offre désespérée).
 
-**Phase 2 - La transition (préavis)** : Documentation : connaissance critique transférée, code documenté. Formation : backup formé sur responsabilités clés. Communication : équipe informée avec respect, plan transition partagé. Relation : maintenir professionnalisme et respect mutuel. Piège : mise au placard, fuite de connaissance, toxicité.
+**Phase 2 - La transition (préavis)** : Documentation : connaissance critique transférée, code documenté. Formation : backup formé sur responsabilités clés. Communication : équipe informée avec respect, plan transition partagé. Relation : maintenir professionnalisme et respect mutuel. **Piège:** mise au placard, fuite de connaissance, toxicité.
 
-**Phase 3 - L'après (post-départ)** : Exit interview : comprendre vraies raisons, apprendre pour futurs. Analyse : pattern si multiples départs, correction si besoin. Relation : maintenir porte ouverte, recommandations honnêtes. Alumni : réseau d'anciens peut être atout (recrutement, business). Piège : brûler les ponts, ne rien apprendre.
+**Phase 3 - L'après (post-départ)** : Exit interview : comprendre vraies raisons, apprendre pour futurs. Analyse : pattern si multiples départs, correction si besoin. Relation : maintenir porte ouverte, recommandations honnêtes. Alumni : réseau d'anciens peut être atout (recrutement, business). **Piège:** brûler les ponts, ne rien apprendre.
 
 ## Cadre de décision
 
@@ -58,7 +58,7 @@ Voici comment je gère les départs :
 Respirer. Pas de réaction émotionnelle. Écouter, comprendre, remercier transparence. Cette maturité donne ton.
 
 **2. Décider : retenir ou faciliter**
-Questions : problème réel et adressable ? Contre-offre change vraiment quelque chose ? Ou départ inévitable/sain ? Cette lucidité évite erreurs.
+**Questions:** problème réel et adressable ? Contre-offre change vraiment quelque chose ? Ou départ inévitable/sain ? Cette lucidité évite erreurs.
 
 **3. Plan transition structuré**
 Checklist : documentation, formation backup, communication équipe, passation projets. Ce plan évite chaos.
@@ -73,27 +73,27 @@ Si 3+ départs même raison en 6 mois : problème systémique. Action corrective
 
 Ce que j'ai observé dans différentes situations :
 
-**Le départ toxique** : Alice démissionne. Manager réaction : colère, culpabilisation, mise au placard pendant préavis. **Résultat :**  équipe choquée, culture de peur, 2 départs supplémentaires dans le mois.
+**Le départ toxique** : Alice démissionne. Manager réaction : colère, culpabilisation, mise au placard pendant préavis. **Résultat:**  équipe choquée, culture de peur, 2 départs supplémentaires dans le mois.
 
-**Le départ bien géré** : Bob annonce départ. CTO : "Merci pour ces 3 ans, je comprends, comment on fait une belle transition ?" 1 mois préavis bien utilisé : doc complète, 2 backups formés, équipe informée avec respect. Départ en all-hands avec célébration. **Résultat :**  équipe rassurée, Bob recommande boîte, revient 2 ans plus tard.
+**Le départ bien géré** : Bob annonce départ. CTO : "Merci pour ces 3 ans, je comprends, comment on fait une belle transition ?" 1 mois préavis bien utilisé : doc complète, 2 backups formés, équipe informée avec respect. Départ en all-hands avec célébration. **Résultat:**  équipe rassurée, Bob recommande boîte, revient 2 ans plus tard.
 
-**L'exemple de l'exit interview** : 3 départs en 4 mois, motif similaire : "Pas d'évolution possible." Exit interviews révèlent : grille de progression floue, pas de plan carrière. Actions : création framework carrière, discussion évolution trimestrielle. **Résultat :**  départs s'arrêtent, rétention améliore.
+**L'exemple de l'exit interview** : 3 départs en 4 mois, motif similaire : "Pas d'évolution possible." Exit interviews révèlent : grille de progression floue, pas de plan carrière. Actions : création framework carrière, discussion évolution trimestrielle. **Résultat:**  départs s'arrêtent, rétention améliore.
 
-**Le pattern ignoré** : 5 départs en 6 mois, tous citent même manager toxique. RH et CTO ignorent pattern. **Résultat :**  3 départs supplémentaires, équipe détruite, manager finalement séparé (trop tard).
+**Le pattern ignoré** : 5 départs en 6 mois, tous citent même manager toxique. RH et CTO ignorent pattern. **Résultat:**  3 départs supplémentaires, équipe détruite, manager finalement séparé (trop tard).
 
 ## Erreurs fréquentes
 
 **Réaction émotionnelle**
-Colère, culpabilisation, panique visible. **Résultat :**  relation détruite, équipe apeurée.
+Colère, culpabilisation, panique visible. **Résultat:**  relation détruite, équipe apeurée.
 
 **Contre-offre automatique**
-Monter salaire sans adresser vraie raison. **Résultat :**  personne part 6 mois plus tard quand même, précédent créé.
+Monter salaire sans adresser vraie raison. **Résultat:**  personne part 6 mois plus tard quand même, précédent créé.
 
 **Mise au placard pendant préavis**
-Isoler, retirer responsabilités. **Résultat :**  perte de connaissance, message toxique à équipe.
+Isoler, retirer responsabilités. **Résultat:**  perte de connaissance, message toxique à équipe.
 
 **Ne rien apprendre**
-Pas d'exit interview ou ignorer feedback. **Résultat :**  mêmes erreurs répétées.
+Pas d'exit interview ou ignorer feedback. **Résultat:**  mêmes erreurs répétées.
 
 ## Si c'était à refaire
 

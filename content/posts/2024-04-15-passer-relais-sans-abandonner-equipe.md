@@ -78,27 +78,27 @@ Voici comment je prépare une transition responsable :
 
 Ce que j'ai observé dans différentes transitions :
 
-**La transition brutale** : CTO annonce son départ avec préavis minimum. Pas de documentation, pas de transition. **Résultat :**  chaos organisationnel, équipe déstabilisée, projets bloqués, sentiment d'abandon.
+**La transition brutale** : CTO annonce son départ avec préavis minimum. Pas de documentation, pas de transition. **Résultat:**  chaos organisationnel, équipe déstabilisée, projets bloqués, sentiment d'abandon.
 
-**La transition culpabilisante** : CTO annonce son départ en expliquant tout ce qui ne va pas dans l'organisation. **Résultat :**  équipe démoralisée, bridges brûlés, réputation ternie.
+**La transition culpabilisante** : CTO annonce son départ en expliquant tout ce qui ne va pas dans l'organisation. **Résultat:**  équipe démoralisée, bridges brûlés, réputation ternie.
 
-**La transition professionnelle** : CTO anticipe 3 mois, prépare documentation, forme successeur, communique clairement. **Résultat :**  transition fluide, équipe rassurée, départ respecté.
+**La transition professionnelle** : CTO anticipe 3 mois, prépare documentation, forme successeur, communique clairement. **Résultat:**  transition fluide, équipe rassurée, départ respecté.
 
 **La disponibilité post-départ** : Offrir 1-2 mois de disponibilité limitée (2-3h/mois) pour questions urgentes. Cette continuité rassure l'équipe et facilite la transition du successeur.
 
 ## Erreurs fréquentes
 
 **Démission brutale**
-Annoncer son départ avec préavis minimum sans préparation. **Résultat :**  chaos, sentiment d'abandon, réputation ternie.
+Annoncer son départ avec préavis minimum sans préparation. **Résultat:**  chaos, sentiment d'abandon, réputation ternie.
 
 **Sur-préparation paralysante**
-Attendre "le bon moment" qui n'arrive jamais. **Résultat :**  rester trop longtemps dans une situation insoutenable.
+Attendre "le bon moment" qui n'arrive jamais. **Résultat:**  rester trop longtemps dans une situation insoutenable.
 
 **Tout documenter parfaitement**
-Vouloir documenter chaque décision avant de partir. **Résultat :**  burnbout pendant la transition, départ retardé indéfiniment.
+Vouloir documenter chaque décision avant de partir. **Résultat:**  burnbout pendant la transition, départ retardé indéfiniment.
 
 **Rester trop impliqué post-départ**
-Continuer à prendre des décisions après être parti. **Résultat :**  le successeur ne peut pas prendre son rôle, l'équipe reste dépendante.
+Continuer à prendre des décisions après être parti. **Résultat:**  le successeur ne peut pas prendre son rôle, l'équipe reste dépendante.
 
 ## Si c'était à refaire
 

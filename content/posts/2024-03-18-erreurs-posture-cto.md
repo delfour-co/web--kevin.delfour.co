@@ -33,17 +33,17 @@ Un autre faux problème : penser que ces erreurs révèlent une incompétence. E
 
 Le vrai enjeu est de reconnaître ces patterns tôt et de les corriger avant qu'ils créent des dégâts :
 
-**Erreur #1 : Rester dans le code (40-60% du temps)** : Symptôme : le CTO livre des features, fait toutes les code reviews critiques, intervient sur les hotfixes. Cause : difficulté à lâcher la satisfaction immédiate du code. ****Impact :** ** bottleneck, décisions stratégiques négligées, équipe dépendante. Correction : accepter que le rôle a changé, déléguer réellement, bloquer temps stratégique.
+**Erreur #1 : Rester dans le code (40-60% du temps)** : Symptôme : le CTO livre des features, fait toutes les code reviews critiques, intervient sur les hotfixes. Cause : difficulté à lâcher la satisfaction immédiate du code. ****Impact :** ** bottleneck, décisions stratégiques négligées, équipe dépendante. **Correction:** accepter que le rôle a changé, déléguer réellement, bloquer temps stratégique.
 
-**Erreur #2 : Vouloir avoir raison plutôt que trouver la solution** : Symptôme : débats techniques interminables, refus d'admettre une erreur, imposer sa vision. Cause : crédibilité technique perçue comme liée à l'infaillibilité. ****Impact :** ** résistance de l'équipe, mauvaises décisions maintenues, perte de talents. Correction : valoriser la lucidité sur l'ego, accepter d'avoir tort publiquement.
+**Erreur #2 : Vouloir avoir raison plutôt que trouver la solution** : Symptôme : débats techniques interminables, refus d'admettre une erreur, imposer sa vision. Cause : crédibilité technique perçue comme liée à l'infaillibilité. ****Impact :** ** résistance de l'équipe, mauvaises décisions maintenues, perte de talents. **Correction:** valoriser la lucidité sur l'ego, accepter d'avoir tort publiquement.
 
-**Erreur #3 : Optimiser pour l'élégance technique au détriment du business** : Symptôme : refactorisations massives, standards extrêmement élevés, rejet des compromis. Cause : identité technique forte, difficultés à accepter la "dette stratégique". ****Impact :** ** vélocité faible, frustration business, déconnexion de la réalité. Correction : comprendre que la meilleure solution technique n'est pas toujours la bonne solution business.
+**Erreur #3 : Optimiser pour l'élégance technique au détriment du business** : Symptôme : refactorisations massives, standards extrêmement élevés, rejet des compromis. Cause : identité technique forte, difficultés à accepter la "dette stratégique". ****Impact :** ** vélocité faible, frustration business, déconnexion de la réalité. **Correction:** comprendre que la meilleure solution technique n'est pas toujours la bonne solution business.
 
-**Erreur #4 : Ne jamais dire non** : Symptôme : accepter toutes les demandes, toutes les timelines, tous les scopes. Cause : peur de décevoir, difficulté à gérer les conflits. ****Impact :** ** dette technique explosive, promesses non tenues, burn-out équipe. Correction : apprendre à dire non avec alternatives, construire un cadre de décision partagé.
+**Erreur #4 : Ne jamais dire non** : Symptôme : accepter toutes les demandes, toutes les timelines, tous les scopes. Cause : peur de décevoir, difficulté à gérer les conflits. ****Impact :** ** dette technique explosive, promesses non tenues, burn-out équipe. **Correction:** apprendre à dire non avec alternatives, construire un cadre de décision partagé.
 
-**Erreur #5 : Microgérer les décisions techniques** : Symptôme : valider chaque choix technique, imposer ses préférences, ne pas faire confiance. Cause : difficulté à déléguer, peur de perte de contrôle. ****Impact :** ** équipe déresponsabilisée, ralentissement, turnover des talents. Correction : créer un cadre de décision, faire confiance, intervenir uniquement sur décisions structurantes.
+**Erreur #5 : Microgérer les décisions techniques** : Symptôme : valider chaque choix technique, imposer ses préférences, ne pas faire confiance. Cause : difficulté à déléguer, peur de perte de contrôle. ****Impact :** ** équipe déresponsabilisée, ralentissement, turnover des talents. **Correction:** créer un cadre de décision, faire confiance, intervenir uniquement sur décisions structurantes.
 
-**Erreur #6 : Ignorer la dimension humaine** : Symptôme : focus uniquement sur la tech, ignorance des signaux de burn-out, manque d'empathie. Cause : croyance que "la tech parle d'elle-même". ****Impact :** ** turnover élevé, perte de talents, culture toxique. Correction : investir autant dans les personnes que dans l'architecture.
+**Erreur #6 : Ignorer la dimension humaine** : Symptôme : focus uniquement sur la tech, ignorance des signaux de burn-out, manque d'empathie. Cause : croyance que "la tech parle d'elle-même". ****Impact :** ** turnover élevé, perte de talents, culture toxique. **Correction:** investir autant dans les personnes que dans l'architecture.
 
 ## Cadre de décision
 
@@ -68,27 +68,27 @@ Documenter mes décisions importantes et revisiter après 3-6 mois. Lesquelles �
 
 Ce que j'ai observé dans différentes organisations :
 
-**Le CTO technique brillant qui détruit** : Excellence technique indéniable, mais reste dans le code 60% du temps, impose des standards impossibles, ne délègue pas. **Résultat :**  vélocité divisée par 2, turnover élevé, business frustré.
+**Le CTO technique brillant qui détruit** : Excellence technique indéniable, mais reste dans le code 60% du temps, impose des standards impossibles, ne délègue pas. **Résultat:**  vélocité divisée par 2, turnover élevé, business frustré.
 
-**Le CTO qui dit toujours oui** : Sympath ique, veut que tout le monde soit content. Accepte tous les délais, tous les scopes. **Résultat :**  dette technique explosive après 18 mois, équipe épuisée, promesses impossibles à tenir.
+**Le CTO qui dit toujours oui** : Sympath ique, veut que tout le monde soit content. Accepte tous les délais, tous les scopes. **Résultat:**  dette technique explosive après 18 mois, équipe épuisée, promesses impossibles à tenir.
 
-**Le CTO qui micromanage** : Valide chaque décision, impose chaque détail. **Résultat :**  équipe déresponsabilisée, les bons partent, ceux qui restent attendent qu'on leur dise quoi faire.
+**Le CTO qui micromanage** : Valide chaque décision, impose chaque détail. **Résultat:**  équipe déresponsabilisée, les bons partent, ceux qui restent attendent qu'on leur dise quoi faire.
 
-**Le CTO qui évolue** : Reconnaît ses erreurs, demande du feedback, ajuste sa posture. Pas parfait, mais lucide. **Résultat :**  amélioration continue, respect de l'équipe, impact durable.
+**Le CTO qui évolue** : Reconnaît ses erreurs, demande du feedback, ajuste sa posture. Pas parfait, mais lucide. **Résultat:**  amélioration continue, respect de l'équipe, impact durable.
 
 ## Erreurs fréquentes
 
 **Ne pas reconnaître ses propres patterns**
-Croire qu'on est différent, que ces erreurs n'arrivent qu'aux autres. **Résultat :**  répétition des mêmes erreurs sans correction.
+Croire qu'on est différent, que ces erreurs n'arrivent qu'aux autres. **Résultat:**  répétition des mêmes erreurs sans correction.
 
 **Corriger trop brutalement**
-Passer de "je code 60%" à "je ne code plus jamais" du jour au lendemain. **Résultat :**  perte de crédibilité technique, équipe désorientée.
+Passer de "je code 60%" à "je ne code plus jamais" du jour au lendemain. **Résultat:**  perte de crédibilité technique, équipe désorientée.
 
 **Ne pas demander de feedback**
-Attendre que les problèmes explosent avant de réaliser qu'on a un problème de posture. **Résultat :**  correction tardive, dégâts déjà importants.
+Attendre que les problèmes explosent avant de réaliser qu'on a un problème de posture. **Résultat:**  correction tardive, dégâts déjà importants.
 
 **Vouloir être parfait**
-Croire qu'on peut éliminer toutes ces erreurs immédiatement. **Résultat :**  frustration, auto-flagellation improductive. Mieux vaut amélioration progressive.
+Croire qu'on peut éliminer toutes ces erreurs immédiatement. **Résultat:**  frustration, auto-flagellation improductive. Mieux vaut amélioration progressive.
 
 ## Si c'était à refaire
 

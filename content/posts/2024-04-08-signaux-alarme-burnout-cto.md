@@ -76,9 +76,9 @@ Fatigue normale : récupération avec une semaine de vacances. Burn-out : les va
 
 Ce que j'ai observé chez moi et d'autres CTOs :
 
-**Le burn-out qui détruit** : 18 mois de signaux ignorés ("après la levée ça ira mieux", "après le lancement ça ira mieux"). **Résultat :**  effondrement complet, 6 mois d'arrêt, récupération difficile, perte de confiance durable.
+**Le burn-out qui détruit** : 18 mois de signaux ignorés ("après la levée ça ira mieux", "après le lancement ça ira mieux"). **Résultat:**  effondrement complet, 6 mois d'arrêt, récupération difficile, perte de confiance durable.
 
-**L'intervention précoce qui sauve** : Signaux phase 1 identifiés, 2 semaines de congés, réorganisation du rôle (VP Eng recruté), retour avec capacité restaurée. **Résultat :**  burn-out évité, impact durable.
+**L'intervention précoce qui sauve** : Signaux phase 1 identifiés, 2 semaines de congés, réorganisation du rôle (VP Eng recruté), retour avec capacité restaurée. **Résultat:**  burn-out évité, impact durable.
 
 **Les signaux qu'on rationalise** : "C'est normal d'être fatigué, je suis CTO", "Tout le monde est stressé en startup", "Après ce sprint ça ira mieux". Ces rationalisations permettent de tenir... jusqu'à l'effondrement.
 
@@ -87,16 +87,16 @@ Ce que j'ai observé chez moi et d'autres CTOs :
 ## Erreurs fréquentes
 
 **Minimiser les signaux**
-"C'est juste de la fatigue, ça va passer." **Résultat :**  progression vers burn-out complet sans intervention.
+"C'est juste de la fatigue, ça va passer." **Résultat:**  progression vers burn-out complet sans intervention.
 
 **Attendre "le bon moment" pour agir**
-"Après ce projet je me reposerai." **Résultat :**  le "bon moment" n'arrive jamais, les projets s'enchaînent.
+"Après ce projet je me reposerai." **Résultat:**  le "bon moment" n'arrive jamais, les projets s'enchaînent.
 
 **Confondre burn-out et faiblesse**
-Croire que c'est un problème personnel à résoudre seul. **Résultat :**  pas de support, dégradation continue.
+Croire que c'est un problème personnel à résoudre seul. **Résultat:**  pas de support, dégradation continue.
 
 **Ne pas modifier la situation**
-Prendre des vacances mais revenir dans la même situation. **Résultat :**  récupération temporaire, rechute garantie.
+Prendre des vacances mais revenir dans la même situation. **Résultat:**  récupération temporaire, rechute garantie.
 
 ## Si c'était à refaire
 

@@ -34,15 +34,15 @@ Le vrai enjeu est de reconnaître les signaux qui indiquent qu'il est temps d'in
 
 **Les 5 signaux d'alarme** :
 
-**Signal 1 - Vélocité en chute** : Observation : temps moyen feature ×2 vs il y a 6 mois, estimations constamment dépassées. Seuil critique : vélocité -30% sur 2 sprints. Action : investir 30-40% capacité sur dette pendant 2-3 sprints.
+**Signal 1 - Vélocité en chute** : Observation : temps moyen feature ×2 vs il y a 6 mois, estimations constamment dépassées. Seuil critique : vélocité -30% sur 2 sprints. **Action:** investir 30-40% capacité sur dette pendant 2-3 sprints.
 
-**Signal 2 - Bugs et incidents récurrents** : Observation : même types de bugs reviennent, incidents production fréquents. Seuil critique : >2 incidents/mois, bug rate +50%. Action : sprint dédié stabilité + refonte zones fragiles.
+**Signal 2 - Bugs et incidents récurrents** : Observation : même types de bugs reviennent, incidents production fréquents. Seuil critique : >2 incidents/mois, bug rate +50%. **Action:** sprint dédié stabilité + refonte zones fragiles.
 
-**Signal 3 - Difficulté à onboarder** : Observation : nouveaux devs prennent 3+ mois pour être autonomes, code "legacy" incompréhensible. Seuil critique : temps onboarding ×2 vs objectif. Action : documentation + refonte modules critiques.
+**Signal 3 - Difficulté à onboarder** : Observation : nouveaux devs prennent 3+ mois pour être autonomes, code "legacy" incompréhensible. Seuil critique : temps onboarding ×2 vs objectif. **Action:** documentation + refonte modules critiques.
 
-**Signal 4 - Résistance à développer** : Observation : équipe évite certaines zones, features contournent des modules "legacy". Seuil critique : >20% codebase "no-go zones". Action : refonte progressive zones critiques.
+**Signal 4 - Résistance à développer** : Observation : équipe évite certaines zones, features contournent des modules "legacy". Seuil critique : >20% codebase "no-go zones". **Action:** refonte progressive zones critiques.
 
-**Signal 5 - Turnover technique** : Observation : devs seniors partent en citant "tech stack obsolète" ou "dette ingérable". Seuil critique : >2 départs en 6 mois pour raisons techniques. Action : plan remboursement agressif + communication transparente.
+**Signal 5 - Turnover technique** : Observation : devs seniors partent en citant "tech stack obsolète" ou "dette ingérable". Seuil critique : >2 départs en 6 mois pour raisons techniques. **Action:** plan remboursement agressif + communication transparente.
 
 **Les 3 stratégies de remboursement** :
 
@@ -77,7 +77,7 @@ Ce que j'ai observé dans différentes situations :
 
 **Reporter indéfiniment** : "Pas maintenant, après la release." 18 mois plus tard : vélocité divisée par 3, refonte forcée, 9 mois perdus, coût ×10.
 
-**Le sprint dédié qui sauve** : Vélocité en chute, bugs récurrents. 2 sprints 100% dette sur modules critiques. **Résultat :**  vélocité +60%, bug rate -70%, équipe remotivée.
+**Le sprint dédié qui sauve** : Vélocité en chute, bugs récurrents. 2 sprints 100% dette sur modules critiques. **Résultat:**  vélocité +60%, bug rate -70%, équipe remotivée.
 
 **L'approche continue** : 20% capacité permanente sur dette. 12 mois plus tard : vélocité stable, code quality en amélioration continue, zéro refonte nécessaire.
 
@@ -86,13 +86,13 @@ Ce que j'ai observé dans différentes situations :
 ## Erreurs fréquentes
 
 **Reporter jusqu'à la crise**
-"Après cette release." La release suivante : "après celle-là aussi." **Résultat :**  dette qui explose, refonte forcée, coût ×10.
+"Après cette release." La release suivante : "après celle-là aussi." **Résultat:**  dette qui explose, refonte forcée, coût ×10.
 
 **Big bang rewrite**
-"On refait tout proprement pendant 9 mois." **Résultat :**  taux échec 80%, business frustré, souvent abandon.
+"On refait tout proprement pendant 9 mois." **Résultat:**  taux échec 80%, business frustré, souvent abandon.
 
 **Rembourser sans mesurer**
-Investir dans la dette sans mesurer l'impact. **Résultat :**  impossible de justifier futurs investissements, perte de crédibilité.
+Investir dans la dette sans mesurer l'impact. **Résultat:**  impossible de justifier futurs investissements, perte de crédibilité.
 
 **Ne pas communiquer en termes business**
 "Code plus clean." Le CEO s'en fout. Mieux : "Vélocité +40%, moins de bugs, ROI 6 mois."

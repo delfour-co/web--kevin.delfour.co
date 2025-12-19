@@ -74,7 +74,8 @@ Ce que j'ai observé dans différentes équipes :
 
 **Ce qui fonctionne** : Transparence avec discernement (partager ce qui aide équipe pas ce qui stresse) construit confiance sans créer anxiété. Fréquence adaptée au message (urgent immédiat, important 24h, informatif hebdomadaire, routine asynchrone) évite sur-communication sans information et sous-communication décisions importantes. Clarté avant tout (structure message clair QUOI POURQUOI IMPACT ACTION QUESTIONS) facilite compréhension action. Communication en crise (communiquer souvent même sans nouvelles, template crise) maintient confiance réduit anxiété.
 
-**Ce qui bloque** : Sur-communication sans information (réunion quotidienne "On continue comme hier"). **Résultat :**  aucune valeur ajoutée, perte temps, frustration. Sous-communication sur décisions importantes (décision prise en haut équipe l'apprend par rumeur). **Résultat :**  perte confiance, frustration, rumeurs. Communication unidirectionnelle (manager parle équipe écoute). **Résultat :**  pas échange, pas feedback, frustration.
+**Ce qui bloque** : Sur-communication sans information (réunion quotidienne "On continue comme hier"). **Résultat:**  aucune valeur ajoutée, perte temps, frustration. Sous-communication sur décisions importantes (décision prise en haut équipe l'apprend par rumeur). **Résultat:**  perte confiance, frustration, rumeurs. Communication unidirectionnelle (manager parle équipe écoute). **Résultat:**  pas échange, pas feedback, frustration.
+
 
 **Gérer les rumeurs** : Principe transparence proactive > réaction aux rumeurs. Quand rumeur apparaît (vérifier faits, communiquer rapidement même si info partielle, partager ce qu'on sait et ce qu'on ne sait pas, donner timeline plus d'info). Exemple ("J'ai entendu rumeurs licenciements. Voici ce que je sais : pas plan licenciement actuellement, entreprise croissance, si ça changeait vous seriez premiers informés, je vous tiens au courant dès que j'ai plus d'info" plutôt que laisser rumeurs circuler).
 
@@ -83,16 +84,16 @@ Ce que j'ai observé dans différentes équipes :
 ## Erreurs fréquentes
 
 **Sur-communication sans information**  
-Réunion quotidienne "On continue comme hier" sans valeur ajoutée. **Résultat :**  perte temps, frustration, équipe qui décroche. Mieux vaut fréquence adaptée au message (urgent immédiat, important 24h, informatif hebdomadaire, routine asynchrone).
+Réunion quotidienne "On continue comme hier" sans valeur ajoutée. **Résultat:**  perte temps, frustration, équipe qui décroche. Mieux vaut fréquence adaptée au message (urgent immédiat, important 24h, informatif hebdomadaire, routine asynchrone).
 
 **Sous-communication sur décisions importantes**  
-Décision prise en haut équipe l'apprend par rumeur. **Résultat :**  perte confiance, frustration, rumeurs. Mieux vaut communiquer décisions importantes immédiatement (réunion + doc) avec contexte et impact.
+Décision prise en haut équipe l'apprend par rumeur. **Résultat:**  perte confiance, frustration, rumeurs. Mieux vaut communiquer décisions importantes immédiatement (réunion + doc) avec contexte et impact.
 
 **Communication unidirectionnelle**  
-Manager parle équipe écoute sans échange ni feedback. **Résultat :**  pas échange, pas feedback, frustration. Mieux vaut communication bidirectionnelle (écoute plus que parole, temps questions, feedback régulier).
+Manager parle équipe écoute sans échange ni feedback. **Résultat:**  pas échange, pas feedback, frustration. Mieux vaut communication bidirectionnelle (écoute plus que parole, temps questions, feedback régulier).
 
 **Pas de transparence avec discernement**  
-Tout communiquer ou rien communiquer. **Résultat :**  soit anxiété créée, soit perte confiance. Mieux vaut transparence avec discernement (partager ce qui aide équipe pas ce qui stresse).
+Tout communiquer ou rien communiquer. **Résultat:**  soit anxiété créée, soit perte confiance. Mieux vaut transparence avec discernement (partager ce qui aide équipe pas ce qui stresse).
 
 ## Si c'était à refaire
 

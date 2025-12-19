@@ -30,9 +30,13 @@ audiences:
 
 **Top 5 erreurs en production :**
 1. **Images trop grosses** : +300% temps déploiement
+
 2. **Secrets en clair** : Risque sécurité critique
+
 3. **Ressources non limitées** : OOM kills, instabilité
+
 4. **Health checks manquants** : Détection problèmes tardive
+
 5. **Logs non centralisés** : Debugging impossible
 
 ## 1. Docker : Images optimisées
@@ -42,8 +46,11 @@ audiences:
 ```dockerfile
 # ❌ Image de 2.5GB
 FROM node:18
+
 COPY . .
+
 RUN npm install
+
 CMD ["node", "index.js"]
 
 ```
@@ -60,16 +67,24 @@ CMD ["node", "index.js"]
 # ✅ Image finale de 150MB
 # Stage 1 : Build
 FROM node:18-alpine AS builder
+
 WORKDIR /app
+
 COPY package*.json ./
+
 RUN npm ci --only=production
 
 # Stage 2 : Runtime
 FROM node:18-alpine
+
 WORKDIR /app
+
 COPY --from=builder /app/node_modules ./node_modules
+
 COPY . .
+
 USER node
+
 CMD ["node", "index.js"]
 
 ```
@@ -84,14 +99,18 @@ FROM node:18-alpine AS builder
 
 # Layer caching optimisé
 COPY package*.json ./
+
 RUN npm ci --only=production && \
+
     npm cache clean --force
 
 FROM node:18-alpine
+
 WORKDIR /app
 
 # Copie seulement nécessaire
 COPY --from=builder /app/node_modules ./node_modules
+
 COPY --chown=node:node . .
 
 # Non-root user
@@ -99,9 +118,11 @@ USER node
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=3s \
+
   CMD node healthcheck.js
 
 EXPOSE 3000
+
 CMD ["node", "index.js"]
 
 ```
@@ -120,8 +141,11 @@ CMD ["node", "index.js"]
 ```yaml
 # ❌ Pas de limites = Instabilité
 apiVersion: v1
+
 kind: Pod
+
 spec:
+
   containers:
   - name: app
     image: myapp:latest
@@ -140,17 +164,27 @@ spec:
 ```yaml
 # ✅ Ressources définies
 apiVersion: v1
+
 kind: Pod
+
 spec:
+
   containers:
   - name: app
     image: myapp:latest
+
     resources:
+
       requests:
+
         memory: "256Mi"
+
         cpu: "250m"
+
       limits:
+
         memory: "512Mi"
+
         cpu: "500m"
 
 ```
@@ -163,23 +197,31 @@ spec:
 
 **Méthode :**
 1. Mesurer en dev/staging
+
 2. Ajouter 20% buffer
+
 3. Ajuster selon métriques prod
 
 ```bash
 # Mesurer utilisation réelle
 kubectl top pod myapp-pod
 
-# **Résultat :**  # NAME          CPU(cores)   MEMORY(bytes)
+# **Résultat:**  # NAME          CPU(cores)   MEMORY(bytes)
 # myapp-pod     180m         320Mi
 
 # Configuration :
 resources:
+
   requests:
+
     cpu: "200m"    # 180m + 10% buffer
+
     memory: "384Mi" # 320Mi + 20% buffer
+
   limits:
+
     cpu: "400m"    # 2x request
+
     memory: "512Mi" # 1.5x request
 
 ```
@@ -191,8 +233,11 @@ resources:
 ```yaml
 # ❌ Secrets en clair dans le code
 apiVersion: v1
+
 kind: Pod
+
 spec:
+
   containers:
   - name: app
     env:
@@ -206,23 +251,35 @@ spec:
 ```yaml
 # ✅ Secret créé séparément
 apiVersion: v1
+
 kind: Secret
+
 metadata:
+
   name: db-credentials
+
 type: Opaque
+
 stringData:
+
   password: super-secret-123
 ---
 apiVersion: v1
+
 kind: Pod
+
 spec:
+
   containers:
   - name: app
     env:
     - name: DB_PASSWORD
       valueFrom:
+
         secretKeyRef:
+
           name: db-credentials
+
           key: password
 
 ```
@@ -232,18 +289,29 @@ spec:
 ```yaml
 # Avec External Secrets Operator
 apiVersion: external-secrets.io/v1beta1
+
 kind: ExternalSecret
+
 metadata:
+
   name: db-credentials
+
 spec:
+
   secretStoreRef:
+
     name: aws-secrets-manager
+
     kind: SecretStore
+
   target:
+
     name: db-credentials
+
   data:
   - secretKey: password
     remoteRef:
+
       key: prod/db/password
 
 ```
@@ -253,28 +321,43 @@ spec:
 ```yaml
 # ✅ RBAC minimal
 apiVersion: rbac.authorization.k8s.io/v1
+
 kind: Role
+
 metadata:
+
   name: app-deployer
+
 rules:
 - apiGroups: [""]
   resources: ["pods"]
+
   verbs: ["get", "list"]
 - apiGroups: ["apps"]
   resources: ["deployments"]
+
   verbs: ["get", "list", "create", "update"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
+
 kind: RoleBinding
+
 metadata:
+
   name: app-deployer-binding
+
 subjects:
 - kind: User
   name: developer
+
   apiGroup: rbac.authorization.k8s.io
+
 roleRef:
+
   kind: Role
+
   name: app-deployer
+
   apiGroup: rbac.authorization.k8s.io
 
 ```
@@ -286,18 +369,29 @@ roleRef:
 ```yaml
 # ✅ Liveness probe
 apiVersion: v1
+
 kind: Pod
+
 spec:
+
   containers:
   - name: app
     image: myapp:latest
+
     livenessProbe:
+
       httpGet:
+
         path: /health
+
         port: 3000
+
       initialDelaySeconds: 30
+
       periodSeconds: 10
+
       timeoutSeconds: 3
+
       failureThreshold: 3
 
 ```
@@ -311,12 +405,19 @@ spec:
 ```yaml
 # ✅ Readiness probe
 readinessProbe:
+
   httpGet:
+
     path: /ready
+
     port: 3000
+
   initialDelaySeconds: 5
+
   periodSeconds: 5
+
   timeoutSeconds: 2
+
   failureThreshold: 2
 
 ```
@@ -330,12 +431,19 @@ readinessProbe:
 ```yaml
 # ✅ Startup probe pour apps lentes
 startupProbe:
+
   httpGet:
+
     path: /health
+
     port: 3000
+
   initialDelaySeconds: 0
+
   periodSeconds: 10
+
   timeoutSeconds: 3
+
   failureThreshold: 30  # 5 min max
 
 ```
@@ -351,18 +459,31 @@ startupProbe:
 ```yaml
 # ✅ Rolling update (par défaut)
 apiVersion: apps/v1
+
 kind: Deployment
+
 metadata:
+
   name: myapp
+
 spec:
+
   replicas: 3
+
   strategy:
+
     type: RollingUpdate
+
     rollingUpdate:
+
       maxSurge: 1        # +1 pod pendant update
+
       maxUnavailable: 0  # 0 pod down pendant update
+
   template:
+
     spec:
+
       containers:
       - name: app
         image: myapp:v2
@@ -379,43 +500,71 @@ spec:
 ```yaml
 # Blue deployment (actuel)
 apiVersion: apps/v1
+
 kind: Deployment
+
 metadata:
+
   name: myapp-blue
+
 spec:
+
   replicas: 3
+
   template:
+
     metadata:
+
       labels:
+
         version: blue
+
     spec:
+
       containers:
       - name: app
         image: myapp:v1
 ---
 # Green deployment (nouveau)
 apiVersion: apps/v1
+
 kind: Deployment
+
 metadata:
+
   name: myapp-green
+
 spec:
+
   replicas: 3
+
   template:
+
     metadata:
+
       labels:
+
         version: green
+
     spec:
+
       containers:
       - name: app
         image: myapp:v2
 ---
 # Service bascule vers green
 apiVersion: v1
+
 kind: Service
+
 metadata:
+
   name: myapp
+
 spec:
+
   selector:
+
     version: green  # Bascule vers green
 
 ```
@@ -432,11 +581,15 @@ spec:
 ```yaml
 # ✅ Exporter métriques
 apiVersion: v1
+
 kind: Pod
+
 spec:
+
   containers:
   - name: app
     image: myapp:latest
+
     ports:
     - containerPort: 3000
       name: http
@@ -445,16 +598,25 @@ spec:
 ---
 # ServiceMonitor pour Prometheus
 apiVersion: monitoring.coreos.com/v1
+
 kind: ServiceMonitor
+
 metadata:
+
   name: myapp-metrics
+
 spec:
+
   selector:
+
     matchLabels:
+
       app: myapp
+
   endpoints:
   - port: metrics
     path: /metrics
+
     interval: 30s
 
 ```
@@ -464,16 +626,21 @@ spec:
 ```yaml
 # ✅ Sidecar pour logs
 apiVersion: v1
+
 kind: Pod
+
 spec:
+
   containers:
   - name: app
     image: myapp:latest
   - name: log-collector
     image: fluent/fluent-bit:latest
+
     volumeMounts:
     - name: logs
       mountPath: /var/log/app
+
     env:
     - name: LOG_OUTPUT
       value: "elasticsearch"
@@ -487,14 +654,21 @@ spec:
 ```yaml
 # ✅ Injection sidecar pour tracing
 apiVersion: v1
+
 kind: Pod
+
 metadata:
+
   annotations:
+
     sidecar.istio.io/inject: "true"
+
 spec:
+
   containers:
   - name: app
     image: myapp:latest
+
     env:
     - name: JAEGER_AGENT_HOST
       value: "localhost"
@@ -510,28 +684,47 @@ spec:
 ```yaml
 # ✅ Autoscaling basé sur CPU
 apiVersion: autoscaling/v2
+
 kind: HorizontalPodAutoscaler
+
 metadata:
+
   name: myapp-hpa
+
 spec:
+
   scaleTargetRef:
+
     apiVersion: apps/v1
+
     kind: Deployment
+
     name: myapp
+
   minReplicas: 2
+
   maxReplicas: 10
+
   metrics:
   - type: Resource
     resource:
+
       name: cpu
+
       target:
+
         type: Utilization
+
         averageUtilization: 70
   - type: Resource
     resource:
+
       name: memory
+
       target:
+
         type: Utilization
+
         averageUtilization: 80
 
 ```
@@ -546,15 +739,25 @@ spec:
 ```yaml
 # ✅ Ajustement automatique des ressources
 apiVersion: autoscaling.k8s.io/v1
+
 kind: VerticalPodAutoscaler
+
 metadata:
+
   name: myapp-vpa
+
 spec:
+
   targetRef:
+
     apiVersion: apps/v1
+
     kind: Deployment
+
     name: myapp
+
   updatePolicy:
+
     updateMode: "Auto"  # ou "Off", "Initial", "Recreate"
 
 ```

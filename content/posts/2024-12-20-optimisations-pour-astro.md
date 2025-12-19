@@ -23,9 +23,6 @@ audience: cto
 audiences:
 - cto
 ---
-🔹 Article #73
-Pilier éditorial : Architecture & Technique
-Public principal : Public A (CTO / tech leaders)
 
 ## Situation réelle
 

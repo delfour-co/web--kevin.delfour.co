@@ -70,27 +70,27 @@ Survey trimestriel : "Culture vécue vs affichée ?". Ces données révèlent é
 
 Ce que j'ai observé dans différentes organisations :
 
-**La culture par accident** : Pas de principes définis, culture émerge aléatoirement. **Résultat :**  incohérence, frustration quand recrutement, impossible de scaler.
+**La culture par accident** : Pas de principes définis, culture émerge aléatoirement. **Résultat:**  incohérence, frustration quand recrutement, impossible de scaler.
 
-**Les valeurs mur** : 15 valeurs affichées, zéro incarnation. "Innovation" affiché mais erreur punie. **Résultat :**  cynisme, perte de sens.
+**Les valeurs mur** : 15 valeurs affichées, zéro incarnation. "Innovation" affiché mais erreur punie. **Résultat:**  cynisme, perte de sens.
 
-**La culture qui dure** : 5 principes clairs, ritualisés, incarnés par leadership. Exemple : "Droit à l'erreur" → post-mortems blameless systématiques, CTO partage ses erreurs publiquement. **Résultat :**  culture forte qui survit turnover, nouvelles recrues s'alignent rapidement.
+**La culture qui dure** : 5 principes clairs, ritualisés, incarnés par leadership. Exemple : "Droit à l'erreur" → post-mortems blameless systématiques, CTO partage ses erreurs publiquement. **Résultat:**  culture forte qui survit turnover, nouvelles recrues s'alignent rapidement.
 
-**L'exemple concret** : Principe "Autonomie responsable". Rituels : framework décision Type 1/Type 2, ADR obligatoires décisions structurantes, review OKRs trimestriels. Incarnation : CTO délègue décisions Type 2, assume résultats décisions déléguées. **Résultat :**  85% décisions prises sans CTO, ownership fort, vélocité élevée.
+**L'exemple concret** : Principe "Autonomie responsable". Rituels : framework décision Type 1/Type 2, ADR obligatoires décisions structurantes, review OKRs trimestriels. Incarnation : CTO délègue décisions Type 2, assume résultats décisions déléguées. **Résultat:**  85% décisions prises sans CTO, ownership fort, vélocité élevée.
 
 ## Erreurs fréquentes
 
 **Multiplier les valeurs**
-15 valeurs vagues sur le mur. **Résultat :**  personne ne s'en souvient, aucun impact comportemental.
+15 valeurs vagues sur le mur. **Résultat:**  personne ne s'en souvient, aucun impact comportemental.
 
 **Ne pas incarner**
-Prôner excellence mais merger code sans tests. **Résultat :**  cynisme, "faites ce que je dis, pas ce que je fais".
+Prôner excellence mais merger code sans tests. **Résultat:**  cynisme, "faites ce que je dis, pas ce que je fais".
 
 **Pas de rituels**
-Principes affichés mais zéro traduction concrète. **Résultat :**  culture reste théorique, jamais vécue.
+Principes affichés mais zéro traduction concrète. **Résultat:**  culture reste théorique, jamais vécue.
 
 **Culture uniformité**
-Chercher des clones culturels plutôt que culture fit. **Résultat :**  perte de diversité, groupthink, stagnation.
+Chercher des clones culturels plutôt que culture fit. **Résultat:**  perte de diversité, groupthink, stagnation.
 
 ## Si c'était à refaire
 

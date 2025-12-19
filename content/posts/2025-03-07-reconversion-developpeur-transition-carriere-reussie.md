@@ -59,19 +59,19 @@ Quand vous cherchez un emploi, positionnez-vous comme mid-level, pas comme junio
 ## Erreurs classiques
 
 **Quitter son job avant d'avoir les compétences**  
-Démissionner pour se former à temps plein. **Résultat :**  pression financière, stress, peut-être abandon. Mieux vaut upskill pendant que vous êtes salarié, puis chercher un nouveau poste une fois prêt.
+Démissionner pour se former à temps plein. **Résultat:**  pression financière, stress, peut-être abandon. Mieux vaut upskill pendant que vous êtes salarié, puis chercher un nouveau poste une fois prêt.
 
 **Accepter un salaire junior**  
-Accepter -40% de salaire "parce que je suis nouveau dans ce domaine". **Résultat :**  dévalorisation de votre expérience, difficultés financières, frustration. Mieux vaut négocier mid-level (-10 à -15% max) en mettant en avant vos compétences transférables.
+Accepter -40% de salaire "parce que je suis nouveau dans ce domaine". **Résultat:**  dévalorisation de votre expérience, difficultés financières, frustration. Mieux vaut négocier mid-level (-10 à -15% max) en mettant en avant vos compétences transférables.
 
 **Transition trop radicale**  
-Passer de Java à Design sans transition progressive. **Résultat :**  gap trop important, difficultés à combler, peut-être échec. Mieux vaut une transition progressive : Java → Node.js → Full-Stack, par exemple.
+Passer de Java à Design sans transition progressive. **Résultat:**  gap trop important, difficultés à combler, peut-être échec. Mieux vaut une transition progressive : Java → Node.js → Full-Stack, par exemple.
 
 **Vouloir tout apprendre d'un coup**  
-Essayer de maîtriser toutes les technologies du nouveau domaine immédiatement. **Résultat :**  épuisement, abandon, découragement. Mieux vaut apprendre progressivement, en se concentrant sur les fondamentaux d'abord.
+Essayer de maîtriser toutes les technologies du nouveau domaine immédiatement. **Résultat:**  épuisement, abandon, découragement. Mieux vaut apprendre progressivement, en se concentrant sur les fondamentaux d'abord.
 
 **Ignorer les compétences transférables**  
-Penser que tout doit être réappris, ignorer ce que vous savez déjà faire. **Résultat :**  dévalorisation de votre expérience, positionnement comme junior alors que vous êtes mid-level. Mieux vaut identifier et mettre en avant vos compétences transférables.
+Penser que tout doit être réappris, ignorer ce que vous savez déjà faire. **Résultat:**  dévalorisation de votre expérience, positionnement comme junior alors que vous êtes mid-level. Mieux vaut identifier et mettre en avant vos compétences transférables.
 
 ## Message de responsabilité
 

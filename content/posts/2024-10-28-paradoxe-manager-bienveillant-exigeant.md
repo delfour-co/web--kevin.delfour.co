@@ -42,13 +42,13 @@ Le vrai enjeu est de comprendre comment concilier les deux :
 
 **Les 4 quadrants** :
 
-**Q1 - Faible bienveillance + Faible exigence** : Caractéristiques : désengagement, laisser-faire, pas de feedback. **Résultat :**  médiocrité, frustration talents, stagnation.
+**Q1 - Faible bienveillance + Faible exigence** : Caractéristiques : désengagement, laisser-faire, pas de feedback. **Résultat:**  médiocrité, frustration talents, stagnation.
 
-**Q2 - Forte bienveillance + Faible exigence** : Caractéristiques : gentillesse, pas de challenge, complaisance. **Résultat :**  confort à court terme, stagnation, pas de croissance.
+**Q2 - Forte bienveillance + Faible exigence** : Caractéristiques : gentillesse, pas de challenge, complaisance. **Résultat:**  confort à court terme, stagnation, pas de croissance.
 
-**Q3 - Faible bienveillance + Forte exigence** : Caractéristiques : résultats à tout prix, pression toxique, pas de support. **Résultat :**  burnout, turnover, résultats court terme puis effondrement.
+**Q3 - Faible bienveillance + Forte exigence** : Caractéristiques : résultats à tout prix, pression toxique, pas de support. **Résultat:**  burnout, turnover, résultats court terme puis effondrement.
 
-**Q4 - Forte bienveillance + Forte exigence (target)** : Caractéristiques : support ET challenge, feedback régulier, standards élevés, respect personnes. **Résultat :**  croissance durable, performance élevée, rétention talents.
+**Q4 - Forte bienveillance + Forte exigence (target)** : Caractéristiques : support ET challenge, feedback régulier, standards élevés, respect personnes. **Résultat:**  croissance durable, performance élevée, rétention talents.
 
 ## Cadre de décision
 
@@ -73,27 +73,27 @@ Survey équipe : "Manager me challenge ?" (exigence), "Manager me supporte ?" (b
 
 Ce que j'ai observé dans différents styles :
 
-**Le manager gentil mais mou** : Bienveillance forte, exigence faible. Tout le monde l'aime, personne ne progresse. **Résultat :**  talents frustrés partent, médiocrité s'installe.
+**Le manager gentil mais mou** : Bienveillance forte, exigence faible. Tout le monde l'aime, personne ne progresse. **Résultat:**  talents frustrés partent, médiocrité s'installe.
 
-**Le manager exigeant mais toxique** : Exigence forte, bienveillance faible. Résultats court terme, burn-out, turnover 50%/an. **Résultat :**  coûts énormes, réputation ternie.
+**Le manager exigeant mais toxique** : Exigence forte, bienveillance faible. Résultats court terme, burn-out, turnover 50%/an. **Résultat:**  coûts énormes, réputation ternie.
 
-**Le manager qui combine** : Standards élevés clairement communiqués, feedback régulier et constructif, support actif croissance, respect personnes. **Résultat :**  équipe performe, grandit, reste, s'épanouit.
+**Le manager qui combine** : Standards élevés clairement communiqués, feedback régulier et constructif, support actif croissance, respect personnes. **Résultat:**  équipe performe, grandit, reste, s'épanouit.
 
 **L'exemple concret** : Développeur ne livre pas qualité attendue. Manager bienveillant + exigeant : "Ce code ne respecte pas nos standards (exigence). Regardons ensemble pourquoi et comment t'aider (bienveillance). Voici ce qui doit changer d'ici 2 semaines (exigence). Je suis dispo 2h cette semaine pour t'aider (bienveillance)."
 
 ## Erreurs fréquentes
 
 **Confondre bienveillance et complaisance**
-Ne jamais critiquer pour "ne pas blesser". **Résultat :**  médiocrité acceptée, talents frustrés, équipe stagne.
+Ne jamais critiquer pour "ne pas blesser". **Résultat:**  médiocrité acceptée, talents frustrés, équipe stagne.
 
 **Exigence sans support**
-Demander l'excellence sans donner moyens. **Résultat :**  frustration, burn-out, "on demande l'impossible".
+Demander l'excellence sans donner moyens. **Résultat:**  frustration, burn-out, "on demande l'impossible".
 
 **Feedback sandwich systématique**
-"C'est bien, MAIS voici le problème, mais sinon c'est bien." **Résultat :**  message dilué, personne ne sait ce qui doit vraiment changer.
+"C'est bien, MAIS voici le problème, mais sinon c'est bien." **Résultat:**  message dilué, personne ne sait ce qui doit vraiment changer.
 
 **Attendre review annuelle**
-Pas de feedback pendant 11 mois, puis surprises en review. **Résultat :**  sentiment injustice, pas de chance corriger.
+Pas de feedback pendant 11 mois, puis surprises en review. **Résultat:**  sentiment injustice, pas de chance corriger.
 
 ## Si c'était à refaire
 

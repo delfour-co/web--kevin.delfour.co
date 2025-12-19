@@ -61,19 +61,19 @@ Voici une manière de voir les choses pour maintenir l'efficacité en remote :
 ## Erreurs classiques
 
 **Pas de structure de journée**  
-Travailler sans time blocking, sans routine, sans frontières. **Résultat :**  journées qui s'étirent, difficulté à décrocher, mélange vie pro/perso, procrastination. Mieux vaut structurer sa journée avec time blocking et rituels de transition.
+Travailler sans time blocking, sans routine, sans frontières. **Résultat:**  journées qui s'étirent, difficulté à décrocher, mélange vie pro/perso, procrastination. Mieux vaut structurer sa journée avec time blocking et rituels de transition.
 
 **Communication synchrone excessive**  
-Réunionite aigüe, Slack 24/7, everything is urgent. **Résultat :**  fragmentation attention, pas de deep work, burnout. Mieux vaut communication asynchrone efficace avec response time SLA et documentation obligatoire.
+Réunionite aigüe, Slack 24/7, everything is urgent. **Résultat:**  fragmentation attention, pas de deep work, burnout. Mieux vaut communication asynchrone efficace avec response time SLA et documentation obligatoire.
 
 **Pas de frontières vie pro/perso**  
-Répondre messages pro après 20h, travailler weekend "juste 30 minutes", pas de rituels transition. **Résultat :**  burnout, fatigue chronique, équilibre rompu. Mieux vaut rituels transition clairs et frontières fermes.
+Répondre messages pro après 20h, travailler weekend "juste 30 minutes", pas de rituels transition. **Résultat:**  burnout, fatigue chronique, équilibre rompu. Mieux vaut rituels transition clairs et frontières fermes.
 
 **Isolation sociale**  
-Pas d'interactions informelles, pas de réseau professionnel, pas de mentorat. **Résultat :**  isolement, démotivation, carrière qui stagne. Mieux vaut maintenir interactions informelles et réseau professionnel à distance.
+Pas d'interactions informelles, pas de réseau professionnel, pas de mentorat. **Résultat:**  isolement, démotivation, carrière qui stagne. Mieux vaut maintenir interactions informelles et réseau professionnel à distance.
 
 **Ne pas mesurer son efficacité**  
-Travailler sans métriques personnelles, sans ajustements réguliers. **Résultat :**  vous ne savez pas si vous progressez, vous répétez peut-être les mêmes erreurs. Mieux vaut mesurer : deep work hours, features completed, learning time, overwork days, vacation days, stress level.
+Travailler sans métriques personnelles, sans ajustements réguliers. **Résultat:**  vous ne savez pas si vous progressez, vous répétez peut-être les mêmes erreurs. Mieux vaut mesurer : deep work hours, features completed, learning time, overwork days, vacation days, stress level.
 
 ## Message de responsabilité
 

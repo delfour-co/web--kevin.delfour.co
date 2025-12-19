@@ -58,16 +58,16 @@ Voici une manière de voir les choses pour pratiquer le pair programming efficac
 ## Erreurs classiques
 
 **Pair programming pour tout**  
-Faire pair programming pour tasks répétitives/routine, corrections mineures/cosmétiques, configuration environnements. **Résultat :**  gaspillage temps, frustration. Mieux vaut choisir quand pair programming fait sens (code critique/complexe, onboarding nouveaux, spike technique, debugging complexe, architecture majeure).
+Faire pair programming pour tasks répétitives/routine, corrections mineures/cosmétiques, configuration environnements. **Résultat:**  gaspillage temps, frustration. Mieux vaut choisir quand pair programming fait sens (code critique/complexe, onboarding nouveaux, spike technique, debugging complexe, architecture majeure).
 
 **Pas de structure session**  
-Pair programming sans objectif clair, sans estimation durée, sans protocoles communication. **Résultat :**  sessions improductives, frustration. Mieux vaut structure session (début 5 min objectif clair estimation durée, pendant signaux verbaux pratiques bienveillantes, fin 5 min commit push progrès what went well what could improve).
+Pair programming sans objectif clair, sans estimation durée, sans protocoles communication. **Résultat:**  sessions improductives, frustration. Mieux vaut structure session (début 5 min objectif clair estimation durée, pendant signaux verbaux pratiques bienveillantes, fin 5 min commit push progrès what went well what could improve).
 
 **Ignorer frictions courantes**  
-Différences niveau technique non gérées, fatigue surcharge cognitive ignorée. **Résultat :**  sessions frustrantes, abandon. Mieux vaut gérer frictions (senior_junior mentoring intégré, fatigue duration limits breaks cognitive load reduction).
+Différences niveau technique non gérées, fatigue surcharge cognitive ignorée. **Résultat:**  sessions frustrantes, abandon. Mieux vaut gérer frictions (senior_junior mentoring intégré, fatigue duration limits breaks cognitive load reduction).
 
 **Ne pas mesurer efficacité**  
-Pair programming sans métriques qualité productivité satisfaction. **Résultat :**  vous ne savez pas si pair programming fonctionne, vous ne pouvez pas ajuster. Mieux vaut mesurer (defect density, code review efficiency, knowledge distribution, cycle time, developer satisfaction).
+Pair programming sans métriques qualité productivité satisfaction. **Résultat:**  vous ne savez pas si pair programming fonctionne, vous ne pouvez pas ajuster. Mieux vaut mesurer (defect density, code review efficiency, knowledge distribution, cycle time, developer satisfaction).
 
 ## Message de responsabilité
 

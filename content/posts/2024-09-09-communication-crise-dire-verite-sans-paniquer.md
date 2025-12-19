@@ -34,13 +34,13 @@ Le vrai enjeu est de gérer plusieurs audiences simultanément avec des besoins 
 
 **Les 4 audiences en crise** :
 
-**Audience 1 - L'équipe technique** : Besoin : direction claire, pas de panique, support. Message : "Voici ce qu'on sait, voici le plan, vous gérez cette partie, je gère la communication externe." Fréquence : updates toutes les 30-60 min en pleine crise.
+**Audience 1 - L'équipe technique** : Besoin : direction claire, pas de panique, support. **Message:** "Voici ce qu'on sait, voici le plan, vous gérez cette partie, je gère la communication externe." **Fréquence:** updates toutes les 30-60 min en pleine crise.
 
-**Audience 2 - Le CEO / Management** : Besoin : facts, impact business, ETA, plan. Message : "Incident X affecte Y clients, cause probable Z, ETA résolution H+N, actions en cours." Fréquence : update toutes les 2h ou quand changement majeur.
+**Audience 2 - Le CEO / Management** : Besoin : facts, impact business, ETA, plan. **Message:** "Incident X affecte Y clients, cause probable Z, ETA résolution H+N, actions en cours." **Fréquence:** update toutes les 2h ou quand changement majeur.
 
-**Audience 3 - Les clients** : Besoin : reconnaissance problème, transparence impact, ETA. Message : "Nous sommes conscients de l'incident. X% clients affectés. Équipe mobilisée. ETA H+N." Fréquence : status page updated toutes les heures.
+**Audience 3 - Les clients** : Besoin : reconnaissance problème, transparence impact, ETA. **Message:** "Nous sommes conscients de l'incident. X% clients affectés. Équipe mobilisée. ETA H+N." **Fréquence:** status page updated toutes les heures.
 
-**Audience 4 - Le board** : Besoin : gravité, impact business, actions, leçons. Message : Post-crise, pas pendant. Post-mortem complet avec causes, impact, actions, prévention. Timing : 3-5 jours après résolution.
+**Audience 4 - Le board** : Besoin : gravité, impact business, actions, leçons. **Message:** Post-crise, pas pendant. Post-mortem complet avec causes, impact, actions, prévention. Timing : 3-5 jours après résolution.
 
 **Le framework de communication** :
 
@@ -65,7 +65,7 @@ Incident commander (résolution), Communication lead (externe), Tech lead (équi
 **3. Les 3 règles de communication**
 - Vérité : dire ce qu'on sait, admettre ce qu'on ne sait pas
 - Calme : pas de panique dans le message, factuel
-- Action : toujours dire ce qu'on fait, pas juste le problème
+- **Action:** toujours dire ce qu'on fait, pas juste le problème
 
 **4. Fréquence par audience**
 Équipe : 30-60 min. CEO : 2h. Clients : 1h (status page). Board : post-crise uniquement.
@@ -77,27 +77,27 @@ Incident commander (résolution), Communication lead (externe), Tech lead (équi
 
 Ce que j'ai observé dans différentes crises :
 
-**La panique communiquée** : CTO stressé en réunion : "C'est la catastrophe, tout est cassé, je ne sais pas quoi faire." **Résultat :**  panique généralisée, équipe paralysée, clients paniqués.
+**La panique communiquée** : CTO stressé en réunion : "C'est la catastrophe, tout est cassé, je ne sais pas quoi faire." **Résultat:**  panique généralisée, équipe paralysée, clients paniqués.
 
-**Le mensonge qui détruit** : CTO minimise : "Petit incident, 5 min." 3h plus tard toujours down. **Résultat :**  crédibilité détruite, CEO furieux, clients betrayed.
+**Le mensonge qui détruit** : CTO minimise : "Petit incident, 5 min." 3h plus tard toujours down. **Résultat:**  crédibilité détruite, CEO furieux, clients betrayed.
 
-**La communication calm & clear** : Incident majeur. CTO au CEO : "Production down, 60% clients impactés, cause identifiée, fix en cours, ETA 2h." Updates toutes les 2h. Résolution en 2h15. Post-mortem 5 jours après. **Résultat :**  confiance maintenue, clients rassurés.
+**La communication calm & clear** : Incident majeur. CTO au CEO : "Production down, 60% clients impactés, cause identifiée, fix en cours, ETA 2h." Updates toutes les 2h. Résolution en 2h15. Post-mortem 5 jours après. **Résultat:**  confiance maintenue, clients rassurés.
 
 **L'exemple concret** : DB crash, 100% prod down. H0.5 : "Incident confirmé, DB primaire down, basculement secondaire en cours." H2 : "Failover réussi, prod up, investigating cause." H4 : "Root cause identifiée (disk full), actions prévention documentées." J+5 : post-mortem public.
 
 ## Erreurs fréquentes
 
 **Pas de préparation**
-Découvrir pendant crise qu'il faut écrire template. **Résultat :**  temps perdu, messages incohérents.
+Découvrir pendant crise qu'il faut écrire template. **Résultat:**  temps perdu, messages incohérents.
 
 **Sur-promettre l'ETA**
-"Résolu dans 30 min" par optimisme. 3h plus tard toujours en cours. **Résultat :**  crédibilité détruite.
+"Résolu dans 30 min" par optimisme. 3h plus tard toujours en cours. **Résultat:**  crédibilité détruite.
 
 **Communication floue**
-"Problème technique en cours." **Résultat :**  customers imaginent le pire, rumeurs, frustration.
+"Problème technique en cours." **Résultat:**  customers imaginent le pire, rumeurs, frustration.
 
 **Pas de post-mortem**
-Résoudre et passer à autre chose. **Résultat :**  même incident se répète, aucun apprentissage.
+Résoudre et passer à autre chose. **Résultat:**  même incident se répète, aucun apprentissage.
 
 ## Si c'était à refaire
 

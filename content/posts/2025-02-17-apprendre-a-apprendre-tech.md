@@ -34,23 +34,23 @@ Le vrai enjeu est de développer une méthode d'apprentissage efficace et durabl
 
 **Les 3 niveaux d'apprentissage** :
 
-**Niveau 1 - Connaissance superficielle (tutorial hell)** : Pratique : suivre tutoriels, copier-coller code, "ça marche" sans comprendre pourquoi. Sentiment : impression de progresser rapidement. Réalité : connaissances fragiles, oubliées en 2 semaines, inapplicables hors contexte exact du tuto. Piège : rester à ce niveau, accumuler tutorials sans ancrer. Utilité : première exposition à un concept, mais insuffisant seul.
+**Niveau 1 - Connaissance superficielle (tutorial hell)** : **Pratique:** suivre tutoriels, copier-coller code, "ça marche" sans comprendre pourquoi. Sentiment : impression de progresser rapidement. **Réalité:** connaissances fragiles, oubliées en 2 semaines, inapplicables hors contexte exact du tuto. **Piège:** rester à ce niveau, accumuler tutorials sans ancrer. Utilité : première exposition à un concept, mais insuffisant seul.
 
-**Niveau 2 - Compréhension pratique (hands-on)** : Pratique : construire quelque chose de réel (même petit), rencontrer vrais problèmes, chercher solutions, debugger. Sentiment : plus lent, plus frustrant, mais apprentissage ancré. Réalité : compréhension profonde, transférable, durable. Objectif : passer à ce niveau rapidement. Utilité : ce qui crée vraie compétence.
+**Niveau 2 - Compréhension pratique (hands-on)** : **Pratique:** construire quelque chose de réel (même petit), rencontrer vrais problèmes, chercher solutions, debugger. Sentiment : plus lent, plus frustrant, mais apprentissage ancré. **Réalité:** compréhension profonde, transférable, durable. Objectif : passer à ce niveau rapidement. Utilité : ce qui crée vraie compétence.
 
-**Niveau 3 - Maîtrise (teaching & production)** : Pratique : utiliser en production sous pression, enseigner/expliquer à d'autres, contribuer à l'outil/framework. Sentiment : confiance, capacité d'improviser, débugger sans doc. Réalité : expertise, rare et précieuse. Timeline : prend années sur un domaine. Utilité : différenciation, valeur élevée.
+**Niveau 3 - Maîtrise (teaching & production)** : **Pratique:** utiliser en production sous pression, enseigner/expliquer à d'autres, contribuer à l'outil/framework. Sentiment : confiance, capacité d'improviser, débugger sans doc. **Réalité:** expertise, rare et précieuse. Timeline : prend années sur un domaine. Utilité : différenciation, valeur élevée.
 
 **Les 5 principes d'apprentissage efficace** :
 
-**Principe 1 - Apprendre par projet, pas par accumulation** : Mauvaise approche : "Je vais apprendre React, puis Node, puis PostgreSQL, puis..." Bonne approche : "Je vais construire ce petit projet qui nécessite React + Node + PostgreSQL." Bénéfice : apprentissage contextualisé, motivé par besoin réel, ancré. **Résultat :**  compréhension profonde vs connaissance superficielle.
+**Principe 1 - Apprendre par projet, pas par accumulation** : Mauvaise approche : "Je vais apprendre React, puis Node, puis PostgreSQL, puis..." Bonne approche : "Je vais construire ce petit projet qui nécessite React + Node + PostgreSQL." **Bénéfice:** apprentissage contextualisé, motivé par besoin réel, ancré. **Résultat:**  compréhension profonde vs connaissance superficielle.
 
-**Principe 2 - Comprendre les fondamentaux avant les outils** : Exemple : apprendre HTTP/REST avant Express, SQL avant ORM, JS avant React. Bénéfice : les outils changent, fondamentaux restent. Maîtriser fondamentaux permet d'apprendre n'importe quel outil rapidement. **Résultat :**  adaptabilité, pas dépendance à un outil.
+**Principe 2 - Comprendre les fondamentaux avant les outils** : Exemple : apprendre HTTP/REST avant Express, SQL avant ORM, JS avant React. **Bénéfice:** les outils changent, fondamentaux restent. Maîtriser fondamentaux permet d'apprendre n'importe quel outil rapidement. **Résultat:**  adaptabilité, pas dépendance à un outil.
 
-**Principe 3 - Pratiquer délibérément les points faibles** : Pratique : identifier ce qui te bloque (ex: async en JS), faire exercices ciblés dessus, pas éviter. Bénéfice : progression sur vrais blocages, pas confort sur ce qu'on sait déjà. **Résultat :**  croissance réelle vs illusion de progression.
+**Principe 3 - Pratiquer délibérément les points faibles** : **Pratique:** identifier ce qui te bloque (ex: async en JS), faire exercices ciblés dessus, pas éviter. **Bénéfice:** progression sur vrais blocages, pas confort sur ce qu'on sait déjà. **Résultat:**  croissance réelle vs illusion de progression.
 
-**Principe 4 - Enseigner pour ancrer** : Pratique : expliquer à collègue, écrire doc/article, mentorer junior. Bénéfice : enseigner force à clarifier compréhension, révèle zones floues. Citation : "Si tu ne peux pas l'expliquer simplement, tu ne le comprends pas assez bien." **Résultat :**  compréhension approfondie.
+**Principe 4 - Enseigner pour ancrer** : **Pratique:** expliquer à collègue, écrire doc/article, mentorer junior. **Bénéfice:** enseigner force à clarifier compréhension, révèle zones floues. Citation : "Si tu ne peux pas l'expliquer simplement, tu ne le comprends pas assez bien." **Résultat:**  compréhension approfondie.
 
-**Principe 5 - Espacer et répéter** : Pratique : revenir sur concept après 1 jour, 1 semaine, 1 mois (spaced repetition). Éviter : bourrage intensif puis jamais revoir. Bénéfice : ancrage mémoire long terme. **Résultat :**  rétention durable vs oubli rapide.
+**Principe 5 - Espacer et répéter** : **Pratique:** revenir sur concept après 1 jour, 1 semaine, 1 mois (spaced repetition). Éviter : bourrage intensif puis jamais revoir. **Bénéfice:** ancrage mémoire long terme. **Résultat:**  rétention durable vs oubli rapide.
 
 ## Cadre de décision
 
@@ -77,25 +77,25 @@ Ce que j'ai observé chez différents profils :
 
 **Le tutorial hell** : Suit 15 cours en ligne, accumule certificats, impression de beaucoup apprendre. 6 mois plus tard : incapable de construire quelque chose seul, connaissances évaporées. Réalisation : accumulation ≠ apprentissage.
 
-**L'apprentissage ancré** : Décide de construire clone simplifié de Twitter. Apprend React en construisant UI, Node en construisant API, PostgreSQL pour data. Bloque, cherche, résout. 3 mois : projet fonctionnel, compréhension profonde, confiance. Message : projet > tutorials.
+**L'apprentissage ancré** : Décide de construire clone simplifié de Twitter. Apprend React en construisant UI, Node en construisant API, PostgreSQL pour data. Bloque, cherche, résout. 3 mois : projet fonctionnel, compréhension profonde, confiance. **Message:** projet > tutorials.
 
-**L'exemple du fondamental** : Junior apprend frameworks (Express, React) sans comprendre HTTP, async, DOM. Bloque constamment sur "magie" du framework. Senior lui fait apprendre HTTP raw, async JS, DOM vanilla. Retour aux frameworks : tout devient clair. Message : fondamentaux avant outils.
+**L'exemple du fondamental** : Junior apprend frameworks (Express, React) sans comprendre HTTP, async, DOM. Bloque constamment sur "magie" du framework. Senior lui fait apprendre HTTP raw, async JS, DOM vanilla. Retour aux frameworks : tout devient clair. **Message:** fondamentaux avant outils.
 
-**La répétition espacée** : Apprend concept, l'utilise tout de suite (J+1), refait exercice 1 semaine plus tard, ré-utilise dans autre contexte 1 mois plus tard. **Résultat :**  ancrage solide. Vs apprendre intensif puis jamais revoir : oubli rapide.
+**La répétition espacée** : Apprend concept, l'utilise tout de suite (J+1), refait exercice 1 semaine plus tard, ré-utilise dans autre contexte 1 mois plus tard. **Résultat:**  ancrage solide. Vs apprendre intensif puis jamais revoir : oubli rapide.
 
 ## Erreurs fréquentes (et comment les éviter)
 
 **Erreur 1 - Tutorial hell**
-Piège : accumuler cours/tutorials sans jamais construire quelque chose. Réalité : construire ancre, consommer ne suffit pas. Correction : 1 tuto court → construire projet → repeat.
+**Piège:** accumuler cours/tutorials sans jamais construire quelque chose. **Réalité:** construire ancre, consommer ne suffit pas. **Correction:** 1 tuto court → construire projet → repeat.
 
 **Erreur 2 - Vouloir tout savoir avant de commencer**
-Piège : "Je vais d'abord tout apprendre sur React avant de coder." Réalité : on apprend en faisant, pas avant. Correction : bases minimales → construire → apprendre en bloquant.
+**Piège:** "Je vais d'abord tout apprendre sur React avant de coder." **Réalité:** on apprend en faisant, pas avant. **Correction:** bases minimales → construire → apprendre en bloquant.
 
 **Erreur 3 - Zapper les fondamentaux**
-Piège : direct aux frameworks sans comprendre ce qu'ils abstraient. Réalité : comprendre HTTP aide pour Express, comprendre JS aide pour React. Correction : investir temps sur fondamentaux.
+**Piège:** direct aux frameworks sans comprendre ce qu'ils abstraient. **Réalité:** comprendre HTTP aide pour Express, comprendre JS aide pour React. **Correction:** investir temps sur fondamentaux.
 
 **Erreur 4 - Apprendre passivement**
-Piège : regarder vidéos, lire docs sans jamais coder. Réalité : le cerveau apprend par pratique active. Correction : coder en même temps que tu apprends.
+**Piège:** regarder vidéos, lire docs sans jamais coder. **Réalité:** le cerveau apprend par pratique active. **Correction:** coder en même temps que tu apprends.
 
 ## Message de responsabilité
 

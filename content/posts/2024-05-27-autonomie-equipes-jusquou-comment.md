@@ -69,27 +69,27 @@ Quand l'équipe veut sortir du cadre (cercle 2), processus d'escalation simple :
 
 Ce que j'ai observé dans différentes organisations :
 
-**L'autonomie totale qui dérape** : "Chaque équipe décide tout." **Résultat :**  8 équipes, 5 langages, 4 clouds, aucune synergie, coût de maintenance +300%, impossible de bouger les gens entre équipes.
+**L'autonomie totale qui dérape** : "Chaque équipe décide tout." **Résultat:**  8 équipes, 5 langages, 4 clouds, aucune synergie, coût de maintenance +300%, impossible de bouger les gens entre équipes.
 
-**Le contrôle total qui paralyse** : Toute décision validée par le CTO. **Résultat :**  200+ décisions/mois qui remontent, bottleneck massif, talents qui partent, innovation morte.
+**Le contrôle total qui paralyse** : Toute décision validée par le CTO. **Résultat:**  200+ décisions/mois qui remontent, bottleneck massif, talents qui partent, innovation morte.
 
-**L'autonomie cadrée qui marche** : Cercle 1 (30% décisions) totalement autonome, cercle 2 (60%) autonome dans contraintes, cercle 3 (10%) centralisé. **Résultat :**  vélocité élevée, cohérence maintenue, innovation possible.
+**L'autonomie cadrée qui marche** : Cercle 1 (30% décisions) totalement autonome, cercle 2 (60%) autonome dans contraintes, cercle 3 (10%) centralisé. **Résultat:**  vélocité élevée, cohérence maintenue, innovation possible.
 
 **L'évolution de l'autonomie** : À 10 personnes, cercle 3 quasi vide (peu de contraintes). À 50 personnes, cercle 3 grandit (cohérence nécessaire). À 200, cercle 3 significatif mais cercle 1 protégé.
 
 ## Erreurs fréquentes
 
 **Autonomie sans cadre**
-"Faites comme vous voulez." **Résultat :**  incohérence, duplication, coûts explosifs, impossible de collaborer entre équipes.
+"Faites comme vous voulez." **Résultat:**  incohérence, duplication, coûts explosifs, impossible de collaborer entre équipes.
 
 **Tout centraliser**
-Toute décision remonte au CTO "pour cohérence". **Résultat :**  bottleneck, frustration, départs, innovation tuée.
+Toute décision remonte au CTO "pour cohérence". **Résultat:**  bottleneck, frustration, départs, innovation tuée.
 
 **Cadre non explicite**
-Les frontières de l'autonomie restent implicites. **Résultat :**  équipes qui testent les limites, frustration quand décisions sont overridées.
+Les frontières de l'autonomie restent implicites. **Résultat:**  équipes qui testent les limites, frustration quand décisions sont overridées.
 
 **Ne jamais réviser**
-Framework défini une fois, jamais ajusté. **Résultat :**  inadéquation progressive (trop ou pas assez d'autonomie selon les cas).
+Framework défini une fois, jamais ajusté. **Résultat:**  inadéquation progressive (trop ou pas assez d'autonomie selon les cas).
 
 ## Si c'était à refaire
 

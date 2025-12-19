@@ -45,7 +45,7 @@ Le vrai enjeu est de structurer sa pensée pour décider sous pression sans tomb
 
 **H2-H6 : Identifier les options** : Brainstorm rapide, 3-5 options maximum. Pour chaque option : impact business, coût, risque, réversibilité.
 
-**H6-H12 : Consulter les experts** : 30 min avec 2-3 personnes clés. Pas pour consensus, mais pour angles morts. Questions : "Qu'est-ce que je rate ?", "Quel risque je sous-estime ?"
+**H6-H12 : Consulter les experts** : 30 min avec 2-3 personnes clés. Pas pour consensus, mais pour angles morts. **Questions:** "Qu'est-ce que je rate ?", "Quel risque je sous-estime ?"
 
 **H12-H18 : Analyser avec critères** : Matrice simple : Impact (1-10) × Faisabilité (1-10) × Alignement stratégique (1-10). Score par option. Pas parfait mais structure.
 
@@ -76,7 +76,7 @@ Même en urgence, ADR minimal : contexte, options, décision, critères, risques
 
 Ce que j'ai observé dans différentes situations :
 
-**La vraie urgence** : Faille sécurité critique, besoin de décision en 2h sur l'architecture de fix. Framework 24h compressé en 2h : options, consultation rapide, décision, doc. **Résultat :**  fix efficace, pas de régression.
+**La vraie urgence** : Faille sécurité critique, besoin de décision en 2h sur l'architecture de fix. Framework 24h compressé en 2h : options, consultation rapide, décision, doc. **Résultat:**  fix efficace, pas de régression.
 
 **La fausse urgence** : CEO veut décision "demain" sur migration cloud. Challenge : "Pourquoi demain ?" Réponse : "Pour board dans 3 jours." Négociation : "Je te donne une réponse préliminaire demain, décision finale dans 5 jours." Accord, meilleure décision.
 
@@ -87,16 +87,16 @@ Ce que j'ai observé dans différentes situations :
 ## Erreurs fréquentes
 
 **Accepter l'urgence sans la challenger**
-Prendre pour acquis que "c'est vraiment urgent". **Résultat :**  décision précipitée alors que 48h de plus auraient changé la donne.
+Prendre pour acquis que "c'est vraiment urgent". **Résultat:**  décision précipitée alors que 48h de plus auraient changé la donne.
 
 **Décider seul sous pression**
-"Pas le temps de consulter." **Résultat :**  angles morts massifs, décision qui rate un risque évident pour d'autres.
+"Pas le temps de consulter." **Résultat:**  angles morts massifs, décision qui rate un risque évident pour d'autres.
 
 **Ne pas documenter**
-"Pas le temps d'écrire." **Résultat :**  contexte perdu, décision incomprise 3 mois plus tard, débat qui revient.
+"Pas le temps d'écrire." **Résultat:**  contexte perdu, décision incomprise 3 mois plus tard, débat qui revient.
 
 **Premature commitment**
-S'accrocher à la première idée sans considérer d'alternatives. **Résultat :**  décision suboptimale, regrets.
+S'accrocher à la première idée sans considérer d'alternatives. **Résultat:**  décision suboptimale, regrets.
 
 ## Si c'était à refaire
 

@@ -31,7 +31,7 @@ weight: 10
 
 Code review : rituel quotidien qui peut faire progresser l'équipe... ou créer de la frustration. Cette situation n'est pas une fatalité. Un code review efficace peut être un accelerator : knowledge sharing, quality improvement, team cohesion.
 
-Ce que j'ai observé : beaucoup de code reviews sont frustrantes. Pour l'auteur (09h00 crée PR, 16h30 pas review, lendemain 14h enfin review, 16h00 corrige commentaires, lendemain 11h 2ème review nouveaux comments, 5 jours merger 200 lignes). Pour le reviewer (PR à reviewer 1500 lignes "Où commencer ?" "Trop gros comprendre" "Approve en diagonale"). **Résultat :**  vélocité ralentie, frustration deux côtés, quality compromise. Un code review efficace nécessite small PRs <400 lignes, fast feedback <24h, constructive comments, celebrate good code.
+Ce que j'ai observé : beaucoup de code reviews sont frustrantes. Pour l'auteur (09h00 crée PR, 16h30 pas review, lendemain 14h enfin review, 16h00 corrige commentaires, lendemain 11h 2ème review nouveaux comments, 5 jours merger 200 lignes). Pour le reviewer (PR à reviewer 1500 lignes "Où commencer ?" "Trop gros comprendre" "Approve en diagonale"). **Résultat:**  vélocité ralentie, frustration deux côtés, quality compromise. Un code review efficace nécessite small PRs <400 lignes, fast feedback <24h, constructive comments, celebrate good code.
 
 ## Le faux problème
 
@@ -43,7 +43,7 @@ Un autre faux problème : penser que le code review doit être uniquement négat
 
 Le vrai enjeu est de comprendre comment faire du code review un accelerator plutôt qu'un goulot :
 
-**Le problème : Code Review frustrantes** : Pour l'auteur (09h00 crée PR, 16h30 pas review, lendemain 14h enfin review, 16h00 corrige commentaires, lendemain 11h 2ème review nouveaux comments, 5 jours merger 200 lignes). Pour le reviewer (PR à reviewer 1500 lignes "Où commencer ?" "Trop gros comprendre" "Approve en diagonale"). **Résultat :**  vélocité ralentie, frustration deux côtés, quality compromise.
+**Le problème : Code Review frustrantes** : Pour l'auteur (09h00 crée PR, 16h30 pas review, lendemain 14h enfin review, 16h00 corrige commentaires, lendemain 11h 2ème review nouveaux comments, 5 jours merger 200 lignes). Pour le reviewer (PR à reviewer 1500 lignes "Où commencer ?" "Trop gros comprendre" "Approve en diagonale"). **Résultat:**  vélocité ralentie, frustration deux côtés, quality compromise.
 
 **Principes fondamentaux** : Code review ≠ Code perfection ("Ce code améliore-t-il codebase ?" plutôt que "Ce code doit être parfait"). Bienveillance par défaut ("Je pense qu'on pourrait améliorer X parce que Y" plutôt que "Ce code est nul"). Automatiser ce qui peut l'être (ne pas commenter formatting Prettier Black, linting ESLint Ruff, types TypeScript mypy, security basic Snyk Dependabot, commenter architecture logic bugs performance maintainability).
 
@@ -76,7 +76,8 @@ Ce que j'ai observé dans différentes équipes :
 
 **Ce qui fonctionne** : Code review ≠ Code perfection ("Ce code améliore-t-il codebase ?" focus vrais problèmes merge 1 jour itération continue). Bienveillance par défaut ("Je pense qu'on pourrait améliorer X parce que Y" plutôt que "Ce code est nul"). Automatiser ce qui peut l'être (formatting linting types security automatiques, commenter architecture logic bugs performance maintainability). Small PRs <400 lignes (optimal <400, acceptable <800, too big >800 split). Fast feedback <24h (first response <4h, full review <24h, approval <48h).
 
-**Ce qui bloque** : Code review = Code perfection ("Ce code doit être parfait avant merge" → 47 commentaires naming → PR bloquée 1 semaine). **Résultat :**  frustration, vélocité ralentie. PRs trop grosses (1500 lignes "Où commencer ?" "Trop gros comprendre" "Approve en diagonale"). **Résultat :**  review faible, quality compromise. Pas de SLA review (pas de first response, pas de full review deadline). **Résultat :**  PRs qui traînent, frustration.
+**Ce qui bloque** : Code review = Code perfection ("Ce code doit être parfait avant merge" → 47 commentaires naming → PR bloquée 1 semaine). **Résultat:**  frustration, vélocité ralentie. PRs trop grosses (1500 lignes "Où commencer ?" "Trop gros comprendre" "Approve en diagonale"). **Résultat:**  review faible, quality compromise. Pas de SLA review (pas de first response, pas de full review deadline). **Résultat:**  PRs qui traînent, frustration.
+
 
 **Les métriques code review efficace** : Time to First Review médian 3.2h target <4h, Time to Merge médian 18h target <24h, PR Size médian 280 lignes target <400, Review Comments per PR médian 4 healthy discussion, Approval Rate First Review 45% not too high not too low. Red flags (Time to first review >48h → reviewers surchargés désengagés, PR size médian >600 lignes → PRs trop grosses encourager split, Comments per PR >20 → process review trop nitpicky, Approval rate first review >90% → rubber stamping pas vraie review).
 
@@ -85,16 +86,16 @@ Ce que j'ai observé dans différentes équipes :
 ## Erreurs fréquentes
 
 **Code review = Code perfection**  
-"Ce code doit être parfait avant merge" → 47 commentaires naming → PR bloquée 1 semaine. **Résultat :**  frustration, vélocité ralentie. Mieux vaut "Ce code améliore-t-il codebase ?" focus vrais problèmes merge 1 jour itération continue.
+"Ce code doit être parfait avant merge" → 47 commentaires naming → PR bloquée 1 semaine. **Résultat:**  frustration, vélocité ralentie. Mieux vaut "Ce code améliore-t-il codebase ?" focus vrais problèmes merge 1 jour itération continue.
 
 **PRs trop grosses**  
-PR à reviewer 1500 lignes "Où commencer ?" "Trop gros comprendre" "Approve en diagonale". **Résultat :**  review faible, quality compromise. Mieux vaut small PRs <400 lignes optimal <400 acceptable <800 too big >800 split.
+PR à reviewer 1500 lignes "Où commencer ?" "Trop gros comprendre" "Approve en diagonale". **Résultat:**  review faible, quality compromise. Mieux vaut small PRs <400 lignes optimal <400 acceptable <800 too big >800 split.
 
 **Pas de SLA review**  
-Pas de first response, pas de full review deadline. **Résultat :**  PRs qui traînent, frustration. Mieux vaut SLA review (first response <4h, full review <24h, approval <48h) enforce avec automation.
+Pas de first response, pas de full review deadline. **Résultat:**  PRs qui traînent, frustration. Mieux vaut SLA review (first response <4h, full review <24h, approval <48h) enforce avec automation.
 
 **Bienveillance absente**  
-"Ce code est nul" "Pourquoi t'as fait ça ?" "C'est évident qu'il faut faire autrement". **Résultat :**  démotivation, peur échec, culture peur. Mieux vaut bienveillance par défaut ("Je pense qu'on pourrait améliorer X parce que Y" "As-tu considéré approche Z ?" "Je ne comprends pas cette partie peux-tu expliquer ?").
+"Ce code est nul" "Pourquoi t'as fait ça ?" "C'est évident qu'il faut faire autrement". **Résultat:**  démotivation, peur échec, culture peur. Mieux vaut bienveillance par défaut ("Je pense qu'on pourrait améliorer X parce que Y" "As-tu considéré approche Z ?" "Je ne comprends pas cette partie peux-tu expliquer ?").
 
 ## Si c'était à refaire
 

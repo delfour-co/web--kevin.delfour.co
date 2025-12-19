@@ -88,23 +88,23 @@ Ce que j'ai observé dans différentes décisions :
 
 **Le buy qui limite** : Pris Salesforce pour CRM, customisation impossible pour cas spécifiques. Lock-in progressif, dépendance totale. Leçon : quand c'est différenciant, Build peut avoir du sens.
 
-**Le partner qui marche** : S'associer avec un acteur logistique pour nouvelle offre. Mutualisation expertise, accès marché, partage risque. **Résultat :**  succès partagé, ROI rapide.
+**Le partner qui marche** : S'associer avec un acteur logistique pour nouvelle offre. Mutualisation expertise, accès marché, partage risque. **Résultat:**  succès partagé, ROI rapide.
 
-**La transition Build→Buy** : Construit système de monitoring custom. Maintenance 30% temps équipe. Migration vers Datadog. **Résultat :**  -70% coût, features meilleures, équipe focus sur différenciation.
+**La transition Build→Buy** : Construit système de monitoring custom. Maintenance 30% temps équipe. Migration vers Datadog. **Résultat:**  -70% coût, features meilleures, équipe focus sur différenciation.
 
 ## Erreurs fréquentes
 
 **Build par ego technique**
-"On est capables de le faire." Oui, mais est-ce qu'on devrait ? **Résultat :**  temps et argent gaspillés sur du non-différenciant.
+"On est capables de le faire." Oui, mais est-ce qu'on devrait ? **Résultat:**  temps et argent gaspillés sur du non-différenciant.
 
 **Buy sans évaluer TCO**
-Prendre SaaS sans calculer coût sur 3 ans. **Résultat :**  surprise à 300k€/an alors qu'on pensait 50k€/an.
+Prendre SaaS sans calculer coût sur 3 ans. **Résultat:**  surprise à 300k€/an alors qu'on pensait 50k€/an.
 
 **Partner sans gouvernance claire**
-S'associer sans définir qui décide quoi. **Résultat :**  blocages, désalignement, échec du partenariat.
+S'associer sans définir qui décide quoi. **Résultat:**  blocages, désalignement, échec du partenariat.
 
 **Sous-estimer le coût du Build**
-Oublier la maintenance (souvent 20-30% du coût initial par an). **Résultat :**  TCO réel × 2-3 vs estimé.
+Oublier la maintenance (souvent 20-30% du coût initial par an). **Résultat:**  TCO réel × 2-3 vs estimé.
 
 ## Si c'était à refaire
 

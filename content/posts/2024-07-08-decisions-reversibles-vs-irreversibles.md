@@ -46,7 +46,9 @@ Processus adapté : Décision rapide (heures/jours), Consultation limitée (équ
 
 **Le test de réversibilité** : 3 questions pour classifier :
 1. Combien de temps pour revenir en arrière ? (<1 semaine = Type 2)
+
 2. Combien d'équipes impactées ? (>2 équipes = Type 1)
+
 3. Crée-t-on des dépendances fortes ? (oui = Type 1)
 
 ## Cadre de décision
@@ -72,27 +74,27 @@ Une décision Type 2 qui s'avère mauvaise ? On inverse rapidement. Le coût est
 
 Ce que j'ai observé dans différentes organisations :
 
-**Tout traiter en Type 1** : Chaque décision passe par validation CTO, analyse de 2 semaines, POC. **Résultat :**  paralysie, vélocité divisée par 5, talents frustrés qui partent.
+**Tout traiter en Type 1** : Chaque décision passe par validation CTO, analyse de 2 semaines, POC. **Résultat:**  paralysie, vélocité divisée par 5, talents frustrés qui partent.
 
-**Tout traiter en Type 2** : "Tentez, on verra." **Résultat :**  migration cloud lancée sans analyse (Type 1 traité en Type 2), échec coûteux, 6 mois perdus.
+**Tout traiter en Type 2** : "Tentez, on verra." **Résultat:**  migration cloud lancée sans analyse (Type 1 traité en Type 2), échec coûteux, 6 mois perdus.
 
-**La distinction qui accélère** : Type 2 décidées en 48h par l'équipe. Type 1 analysées 2-4 semaines avec CTO. **Résultat :**  85% décisions en Type 2, vélocité ×3, qualité Type 1 maintenue.
+**La distinction qui accélère** : Type 2 décidées en 48h par l'équipe. Type 1 analysées 2-4 semaines avec CTO. **Résultat:**  85% décisions en Type 2, vélocité ×3, qualité Type 1 maintenue.
 
 **L'erreur Type 2 bien gérée** : Framework UI choisi (Type 2), s'avère mauvais après 2 semaines. Changé en 3 jours. Coût : 2 semaines de travail. Acceptable. Apprentissage : quels critères pour le prochain choix.
 
 ## Erreurs fréquentes
 
 **Classifier en Type 1 par défaut**
-"Dans le doute, on analyse à fond." **Résultat :**  paralysie, analyse de 2 semaines pour décisions réversibles.
+"Dans le doute, on analyse à fond." **Résultat:**  paralysie, analyse de 2 semaines pour décisions réversibles.
 
 **Sous-estimer l'irréversibilité**
-Traiter migration cloud (Type 1) comme changement de librairie (Type 2). **Résultat :**  décision précipitée, lock-in coûteux.
+Traiter migration cloud (Type 1) comme changement de librairie (Type 2). **Résultat:**  décision précipitée, lock-in coûteux.
 
 **Ne pas documenter la classification**
-Décider sans dire "c'est Type 1 ou 2". **Résultat :**  incohérence processus, débats sur "pourquoi cette décision a pris 2 semaines vs celle-là 2 jours".
+Décider sans dire "c'est Type 1 ou 2". **Résultat:**  incohérence processus, débats sur "pourquoi cette décision a pris 2 semaines vs celle-là 2 jours".
 
 **Punir les erreurs Type 2**
-Blâmer quelqu'un pour une décision Type 2 qui s'avère mauvaise. **Résultat :**  personne n'ose plus décider, retour à la paralysie.
+Blâmer quelqu'un pour une décision Type 2 qui s'avère mauvaise. **Résultat:**  personne n'ose plus décider, retour à la paralysie.
 
 ## Si c'était à refaire
 

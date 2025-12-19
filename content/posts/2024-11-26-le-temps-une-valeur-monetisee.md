@@ -20,9 +20,6 @@ audience: cto
 audiences:
 - cto
 ---
-🔹 Article #65
-Pilier éditorial : Leadership & Management
-Public principal : Public A (CTO / tech leaders)
 
 ## Situation réelle
 

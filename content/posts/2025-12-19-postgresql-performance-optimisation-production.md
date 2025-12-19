@@ -33,9 +33,13 @@ Ce que j'ai observé : les optimisations PostgreSQL les plus impactantes sont so
 **Top 5 optimisations par ROI :**
 
 1. **Index manquants** : -80% query time, 5 min de travail
+
 2. **VACUUM/ANALYZE** : -60% fragmentation, automatisable
+
 3. **Connection pooling** : -70% overhead connexions (PgBouncer)
+
 4. **Query rewriting** : -50% load DB, refactor requêtes
+
 5. **Partitioning** : -90% scan time pour tables >10M rows
 
 Ces optimisations simples ont un impact énorme sur les performances.
@@ -81,10 +85,15 @@ Identifier index manquants :
 
 ```sql
 SELECT schemaname, tablename, attname, n_distinct, correlation 
+
 FROM pg_stats 
+
 WHERE schemaname = 'public' 
+
   AND n_distinct > 100 
+
   AND correlation < 0.1 
+
 ORDER BY n_distinct DESC;
 
 ```
@@ -95,8 +104,11 @@ ORDER BY n_distinct DESC;
 
 ```sql
 SELECT * FROM orders 
+
 WHERE user_id = 12345 
+
   AND created_at > '2025-01-01' 
+
 ORDER BY created_at DESC;
 ```
 
@@ -106,6 +118,7 @@ Index manquant sur `user_id`, `created_at`
 
 ```sql
 CREATE INDEX idx_orders_user_created 
+
 ON orders (user_id, created_at DESC);
 
 ```
@@ -120,6 +133,7 @@ ON orders (user_id, created_at DESC);
 
 ```sql
 CREATE INDEX idx_bad ON orders (created_at, user_id) 
+
 WHERE user_id = X AND created_at > Y;
 
 ```
@@ -130,6 +144,7 @@ WHERE user_id = X AND created_at > Y;
 
 ```sql
 CREATE INDEX idx_good ON orders (user_id, created_at) 
+
 WHERE user_id = X AND created_at > Y;
 
 ```
@@ -142,7 +157,9 @@ Index seulement données récentes (90% queries) :
 
 ```sql
 CREATE INDEX idx_orders_recent 
+
 ON orders (user_id, created_at DESC) 
+
 WHERE created_at > NOW() - INTERVAL '1 year';
 
 ```
@@ -169,11 +186,17 @@ Configuration automatique dans `postgresql.conf` :
 
 ```conf
 autovacuum = on
+
 autovacuum_max_workers = 3
+
 autovacuum_naptime = 1min
+
 autovacuum_vacuum_threshold = 50
+
 autovacuum_analyze_threshold = 50
+
 autovacuum_vacuum_scale_factor = 0.2
+
 autovacuum_analyze_scale_factor = 0.1
 
 ```
@@ -188,9 +211,13 @@ Cette maintenance automatique évite la fragmentation.
 
 ```conf
 pool_mode = transaction
+
 max_client_conn = 1000
+
 default_pool_size = 25
+
 reserve_pool_size = 5
+
 reserve_pool_timeout = 3.5
 
 ```
@@ -234,13 +261,21 @@ SELECT COUNT(*) FROM orders WHERE user_id = 123;
 
 ```sql
 SELECT * FROM users 
+
 WHERE (
+
   SELECT COUNT(*) 
+
   FROM (
+
     SELECT * FROM orders 
+
     WHERE user_id = users.id 
+
     LIMIT 10
+
   ) sub
+
 ) > 10;
 
 ```
@@ -253,9 +288,13 @@ WHERE (
 
 ```sql
 SELECT * FROM users 
+
 WHERE (
+
   SELECT COUNT(*) FROM orders 
+
   WHERE orders.user_id = users.id
+
 ) > 10;
 
 ```
@@ -264,14 +303,23 @@ WHERE (
 
 ```sql
 SELECT * FROM users 
+
 WHERE EXISTS (
+
   SELECT 1 FROM orders 
+
   WHERE orders.user_id = users.id 
+
   LIMIT 11
+
 ) 
+
 AND (
+
   SELECT COUNT(*) FROM orders 
+
   WHERE orders.user_id = users.id
+
 ) > 10;
 
 ```
@@ -295,10 +343,15 @@ Table parent :
 
 ```sql
 CREATE TABLE orders (
+
   id BIGSERIAL,
+
   user_id BIGINT,
+
   created_at TIMESTAMP,
+
   amount DECIMAL
+
 ) PARTITION BY RANGE (created_at);
 
 ```
@@ -307,11 +360,15 @@ Partitions mensuelles :
 
 ```sql
 CREATE TABLE orders_2025_01 
+
 PARTITION OF orders 
+
 FOR VALUES FROM '2025-01-01' TO '2025-02-01';
 
 CREATE TABLE orders_2025_02 
+
 PARTITION OF orders 
+
 FOR VALUES FROM '2025-02-01' TO '2025-03-01';
 
 ```
@@ -320,11 +377,12 @@ Index sur partition :
 
 ```sql
 CREATE INDEX idx_orders_2025_01_user 
+
 ON orders_2025_01 (user_id);
 
 ```
 
-**Résultat :**  - Query sur 1 mois scanne 1 partition au lieu toute table
+**Résultat:**  - Query sur 1 mois scanne 1 partition au lieu toute table
 - **Gain :** -95% scan time
 - Maintenance VACUUM sur 1 partition = rapide
 
@@ -334,24 +392,41 @@ Fonction créer partitions automatiquement :
 
 ```sql
 CREATE OR REPLACE FUNCTION create_monthly_partition(
+
   table_name TEXT,
+
   start_date DATE
+
 ) RETURNS VOID AS $$
+
 DECLARE
+
   partition_name TEXT;
+
   end_date DATE;
+
 BEGIN
+
   partition_name := table_name || '_' || TO_CHAR(start_date, 'YYYY_MM');
+
   end_date := start_date + INTERVAL '1 month';
   
   EXECUTE format(
+
     'CREATE TABLE IF NOT EXISTS %I PARTITION OF %I FOR VALUES FROM %L TO %L',
+
     partition_name,
+
     table_name,
+
     start_date,
+
     end_date
+
   );
+
 END;
+
 $$ LANGUAGE plpgsql;
 
 ```
@@ -368,10 +443,15 @@ Identifier index manquants :
 
 ```sql
 SELECT schemaname, tablename, attname, n_distinct, correlation 
+
 FROM pg_stats 
+
 WHERE schemaname = 'public' 
+
   AND n_distinct > 100 
+
   AND correlation < 0.1 
+
 ORDER BY n_distinct DESC;
 
 ```
@@ -383,6 +463,7 @@ Cas réel :
 
 ```sql
 CREATE INDEX idx_orders_user_created 
+
 ON orders (user_id, created_at DESC);
 
 ```
@@ -404,7 +485,9 @@ CREATE INDEX idx_good ON orders (user_id, created_at);
 
 ```sql
 CREATE INDEX idx_orders_recent 
+
 ON orders (user_id, created_at DESC) 
+
 WHERE created_at > NOW() - INTERVAL '1 year';
 
 ```
@@ -431,11 +514,17 @@ Configuration automatique dans `postgresql.conf` :
 
 ```conf
 autovacuum = on
+
 autovacuum_max_workers = 3
+
 autovacuum_naptime = 1min
+
 autovacuum_vacuum_threshold = 50
+
 autovacuum_analyze_threshold = 50
+
 autovacuum_vacuum_scale_factor = 0.2
+
 autovacuum_analyze_scale_factor = 0.1
 
 ```
@@ -450,9 +539,13 @@ Cette maintenance automatique évite la fragmentation.
 
 ```conf
 pool_mode = transaction
+
 max_client_conn = 1000
+
 default_pool_size = 25
+
 reserve_pool_size = 5
+
 reserve_pool_timeout = 3.5
 
 ```
@@ -503,7 +596,9 @@ Partitions mensuelles :
 
 ```sql
 CREATE TABLE orders_2025_01 
+
 PARTITION OF orders 
+
 FOR VALUES FROM '2025-01-01' TO '2025-02-01';
 
 ```
@@ -515,7 +610,7 @@ CREATE INDEX idx_orders_2025_01_user ON orders_2025_01 (user_id);
 
 ```
 
-**Résultat :**  - Query sur 1 mois scanne 1 partition au lieu toute table
+**Résultat:**  - Query sur 1 mois scanne 1 partition au lieu toute table
 - **Gain :** -95% scan time
 - Maintenance VACUUM sur 1 partition = rapide
 
@@ -523,8 +618,11 @@ Partitioning automatique : fonction créer partitions automatiquement
 
 ```sql
 CREATE OR REPLACE FUNCTION create_monthly_partition(
+
   table_name TEXT,
+
   start_date DATE
+
 );
 
 ```
@@ -554,6 +652,7 @@ Impact énorme.
 
 **Connection pooling** :
 - PgBouncer configuration : `pool_mode = transaction`, `max_client_conn = 1000`, `default_pool_size = 25`
+
 - **Gain :** -70% overhead connexions
 
 **Query rewriting** :
@@ -574,7 +673,7 @@ Impact énorme.
 **Pas d'index manquants**
 
 - Requêtes lentes sans index approprié
-- **Résultat :**  queries lentes 2.3s, performance dégradée
+- **Résultat:**  queries lentes 2.3s, performance dégradée
 - **Mieux vaut :** identifier index manquants `CREATE INDEX idx_orders_user_created`
 - **Gain :** -98% query time
 
@@ -583,7 +682,7 @@ Impact énorme.
 - Tables gonflées (bloat) : +300% taille disque
 - Queries lentes : +200% scan time
 - Locks prolongés
-- **Résultat :**  performance dégradée, locks fréquents
+- **Résultat:**  performance dégradée, locks fréquents
 - **Mieux vaut :** VACUUM régulier avec configuration automatique autovacuum configuré
 
 **Checklist optimisation**
@@ -619,7 +718,7 @@ Cette checklist facilite l'adoption progressive.
 **Pas d'index manquants**
 
 - Requêtes lentes sans index approprié
-- **Résultat :**  queries lentes 2.3s, performance dégradée
+- **Résultat:**  queries lentes 2.3s, performance dégradée
 - **Mieux vaut :** identifier index manquants `CREATE INDEX idx_orders_user_created`
 - **Gain :** -98% query time
 
@@ -628,13 +727,13 @@ Cette checklist facilite l'adoption progressive.
 - Tables gonflées (bloat) : +300% taille disque
 - Queries lentes : +200% scan time
 - Locks prolongés
-- **Résultat :**  performance dégradée, locks fréquents
+- **Résultat:**  performance dégradée, locks fréquents
 - **Mieux vaut :** VACUUM régulier avec configuration automatique autovacuum configuré
 
 **Pas de connection pooling**
 
 - Overhead connexions élevé
-- **Résultat :**  performance dégradée, connexions saturées
+- **Résultat:**  performance dégradée, connexions saturées
 - **Mieux vaut :** Connection pooling avec PgBouncer
   - Configuration : `pool_mode = transaction`, `max_client_conn = 1000`, `default_pool_size = 25`
 - **Gain :** -70% overhead connexions
@@ -643,7 +742,7 @@ Cette checklist facilite l'adoption progressive.
 
 - `SELECT *` scanne toutes colonnes
 - `COUNT` scanne toutes rows
-- **Résultat :**  load DB élevé, performance dégradée
+- **Résultat:**  load DB élevé, performance dégradée
 - **Mieux vaut :** Query rewriting
   - Pattern 1 : Éviter SELECT *
   - Pattern 2 : LIMIT dans sous-requête
@@ -660,10 +759,13 @@ Plutôt que découvrir index manquants après coup, mettre en place index manqua
 
 ```sql
 SELECT schemaname, tablename, attname, n_distinct, correlation 
+
 FROM pg_stats 
+
 WHERE n_distinct > 100 AND correlation < 0.1;
 
 CREATE INDEX idx_orders_user_created 
+
 ON orders (user_id, created_at DESC);
 
 ```
@@ -678,7 +780,9 @@ Plutôt que VACUUM manuel, mettre en place VACUUM automatique dès le début dan
 
 ```conf
 autovacuum = on
+
 autovacuum_max_workers = 3
+
 autovacuum_naptime = 1min
 
 ```
@@ -691,7 +795,9 @@ Plutôt que connexions directes, mettre en place connection pooling dès le déb
 
 ```conf
 pool_mode = transaction
+
 max_client_conn = 1000
+
 default_pool_size = 25
 
 ```

@@ -18,7 +18,7 @@ TocOpen: false
 
 ## Situation réelle
 
-"On va devenir une entreprise libérée, plus de hiérarchie !" Cette annonce enthousiaste cache souvent une incompréhension de ce que ça implique réellement. **Résultat :**  chaos, frustration, retour en arrière.
+"On va devenir une entreprise libérée, plus de hiérarchie !" Cette annonce enthousiaste cache souvent une incompréhension de ce que ça implique réellement. **Résultat:**  chaos, frustration, retour en arrière.
 
 Ce que j'ai observé : l'entreprise libérée n'est ni une utopie ni une arnaque. C'est un modèle exigeant qui fonctionne dans certains contextes et échoue dans d'autres.
 
@@ -63,7 +63,7 @@ Le vrai enjeu est de comprendre ce qui marche, ce qui ne marche pas, et dans que
 Voici comment j'évalue si ça fait sens :
 
 **1. Auto-évaluation maturité**
-Questions : équipe capable décisions complexes ? Culture feedback forte ? Confiance élevée ? Si 3× oui, envisageable. Si 2× non, prématuré.
+**Questions:** équipe capable décisions complexes ? Culture feedback forte ? Confiance élevée ? Si 3× oui, envisageable. Si 2× non, prématuré.
 
 **2. Commencer petit et progressif**
 Pas "big bang libération". Commencer par 1 équipe pilote, 6 mois, apprendre, ajuster, étendre si succès.
@@ -81,27 +81,27 @@ Certaines personnes préfèrent structure claire et directive. C'est OK. Forcer 
 
 Ce que j'ai observé dans différentes tentatives :
 
-**L'échec big bang** : "À partir de demain, plus de managers, vous décidez." **Résultat :**  chaos, paralysie, conflits, retour hiérarchie 6 mois plus tard.
+**L'échec big bang** : "À partir de demain, plus de managers, vous décidez." **Résultat:**  chaos, paralysie, conflits, retour hiérarchie 6 mois plus tard.
 
 **Le succès progressif** : Une équipe pilote, framework décision Type 1/Type 2, 6 mois test. Succès → extension progressive. 2 ans : 5 équipes auto-organisées, managers deviennent facilitateurs.
 
-**L'holacracie qui pèse** : Adoption holacracie complète. 15h/mois réunions gouvernance, complexité processus. **Résultat :**  équipe épuisée par process, retour modèle plus simple.
+**L'holacracie qui pèse** : Adoption holacracie complète. 15h/mois réunions gouvernance, complexité processus. **Résultat:**  équipe épuisée par process, retour modèle plus simple.
 
-**Le hybrid qui marche** : Autonomie large (Type 2 décisions), hiérarchie légère (CTO + Tech Leads), framework clair. **Résultat :**  vélocité haute, satisfaction élevée, scalable.
+**Le hybrid qui marche** : Autonomie large (Type 2 décisions), hiérarchie légère (CTO + Tech Leads), framework clair. **Résultat:**  vélocité haute, satisfaction élevée, scalable.
 
 ## Erreurs fréquentes
 
 **Big bang sans préparation**
-"Demain on est libérés !" **Résultat :**  chaos, absence de structure alternative.
+"Demain on est libérés !" **Résultat:**  chaos, absence de structure alternative.
 
 **Copier un modèle sans adaptation**
-Appliquer holacracie "by the book" sans adapter au contexte. **Résultat :**  rigidité, frustration.
+Appliquer holacracie "by the book" sans adapter au contexte. **Résultat:**  rigidité, frustration.
 
 **Pas de framework décision**
-"Décidez entre vous." **Résultat :**  paralysie ou anarchie selon personnalités.
+"Décidez entre vous." **Résultat:**  paralysie ou anarchie selon personnalités.
 
 **Forcer tout le monde**
-Imposer auto-organisation à qui préfère structure claire. **Résultat :**  frustration, départs.
+Imposer auto-organisation à qui préfère structure claire. **Résultat:**  frustration, départs.
 
 ## Si c'était à refaire
 

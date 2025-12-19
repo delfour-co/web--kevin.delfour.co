@@ -60,19 +60,19 @@ Voici une manière de voir les choses pour construire votre réseau authentiquem
 ## Erreurs classiques
 
 **Approche transactionnelle**  
-"Bonjour, tu recrutes ?" ou pitch CV en 2 minutes. **Résultat :**  réputation négative, réseau qui se ferme. Mieux vaut give first, start conversation pas transaction.
+"Bonjour, tu recrutes ?" ou pitch CV en 2 minutes. **Résultat:**  réputation négative, réseau qui se ferme. Mieux vaut give first, start conversation pas transaction.
 
 **Small talk forcé**  
-Conversations superficielles sans intérêt authentique. **Résultat :**  relations faibles, pas de connexion réelle. Mieux vaut authentic interest, "Tu bosses sur quoi en ce moment ?" [Listen genuinely].
+Conversations superficielles sans intérêt authentique. **Résultat:**  relations faibles, pas de connexion réelle. Mieux vaut authentic interest, "Tu bosses sur quoi en ce moment ?" [Listen genuinely].
 
 **Pas de follow-up**  
-Rencontrer quelqu'un puis disparaître. **Résultat :**  relation one-time, pas de réseau durable. Mieux vaut follow-up sous 48h (LinkedIn connect message personnalisé, email si discussion intéressante, share resource mentionné).
+Rencontrer quelqu'un puis disparaître. **Résultat:**  relation one-time, pas de réseau durable. Mieux vaut follow-up sous 48h (LinkedIn connect message personnalisé, email si discussion intéressante, share resource mentionné).
 
 **Ask favors sans donner**  
-Demander des faveurs sans avoir donné de valeur avant. **Résultat :**  réputation négative, réseau qui se ferme. Mieux vaut give first, construire relation avant de demander.
+Demander des faveurs sans avoir donné de valeur avant. **Résultat:**  réputation négative, réseau qui se ferme. Mieux vaut give first, construire relation avant de demander.
 
 **Collect cartes like Pokémon**  
-Collecter contacts sans construire relations. **Résultat :**  réseau large mais faible, pas d'opportunités réelles. Mieux vaut 5-10 contacts qualité/an plutôt que 100 contacts faibles.
+Collecter contacts sans construire relations. **Résultat:**  réseau large mais faible, pas d'opportunités réelles. Mieux vaut 5-10 contacts qualité/an plutôt que 100 contacts faibles.
 
 ## Message de responsabilité
 

@@ -34,11 +34,11 @@ Le vrai enjeu est de comprendre où l'âge joue (en bien ou en mal) et comment n
 
 **Où l'âge peut être un désavantage** :
 
-**Contexte 1 - Startups très jeunes (SV culture)** : Profil : startup early-stage, équipe 22-28 ans, culture "young & hungry". Risque : biais ageiste (parfois inconscient), culture de surmenage ("pas d'enfants = plus disponible"). Réalité : discrimination existe mais est illégale. Ne devrait pas exister mais existe. Stratégie : cibler startups plus matures (série B+) ou scale-ups, où équipes plus diverses.
+**Contexte 1 - Startups très jeunes (SV culture)** : Profil : startup early-stage, équipe 22-28 ans, culture "young & hungry". Risque : biais ageiste (parfois inconscient), culture de surmenage ("pas d'enfants = plus disponible"). **Réalité:** discrimination existe mais est illégale. Ne devrait pas exister mais existe. Stratégie : cibler startups plus matures (série B+) ou scale-ups, où équipes plus diverses.
 
-**Contexte 2 - Salaire junior avec charges senior** : Problème : reconversion à 35-40 ans = salaire junior (30-40k) mais charges de vie senior (crédit, enfants). Réalité : pas discrimination, juste économie. Tu es junior, donc payé junior. Stratégie : anticiper baisse temporaire, prévoir 2-3 ans pour rattraper salaire antérieur.
+**Contexte 2 - Salaire junior avec charges senior** : Problème : reconversion à 35-40 ans = salaire junior (30-40k) mais charges de vie senior (crédit, enfants). **Réalité:** pas discrimination, juste économie. Tu es junior, donc payé junior. Stratégie : anticiper baisse temporaire, prévoir 2-3 ans pour rattraper salaire antérieur.
 
-**Contexte 3 - Perception "moins malléable"** : Biais : "Plus vieux = plus rigide, moins adaptable." Réalité : faux en général, mais perception existe chez certains recruteurs. Stratégie : démontrer adaptabilité concrètement (projets divers, apprentissage rapide).
+**Contexte 3 - Perception "moins malléable"** : Biais : "Plus vieux = plus rigide, moins adaptable." **Réalité:** faux en général, mais perception existe chez certains recruteurs. Stratégie : démontrer adaptabilité concrètement (projets divers, apprentissage rapide).
 
 **Où l'âge est un avantage** :
 
@@ -46,18 +46,18 @@ Le vrai enjeu est de comprendre où l'âge joue (en bien ou en mal) et comment n
 
 **Contexte 2 - Soft skills développées** : Atout : années d'expérience = soft skills (empathie, communication, leadership informel). Utilité : critique en équipe, souvent sous-estimé par juniors. Exemple : reconversion ex-enseignant → excellent pédagogue, facilite knowledge sharing. Valorisation : équipes matures qui valorisent collaboration.
 
-**Contexte 3 - Stabilité et engagement** : Perception : reconversion à 35 ans après réflexion > junior 23 ans qui ne sait pas quoi faire. Réalité : moins de risque de rotation rapide, investissement long terme. Valorisation : entreprises qui veulent stabilité, pas turnover.
+**Contexte 3 - Stabilité et engagement** : Perception : reconversion à 35 ans après réflexion > junior 23 ans qui ne sait pas quoi faire. **Réalité:** moins de risque de rotation rapide, investissement long terme. Valorisation : entreprises qui veulent stabilité, pas turnover.
 
 **Où l'âge est neutre** :
 
-**Contexte - Boîtes matures et internationales** : Profil : scale-ups, grandes tech, consultants, remote-first internationales. Réalité : équipes diverses en âge (25-50 ans), culture professionnelle. Focus : compétences et fit culturel, pas âge. Exemple : beaucoup de reconversions 30-40 ans dans ces structures.
+**Contexte - Boîtes matures et internationales** : Profil : scale-ups, grandes tech, consultants, remote-first internationales. **Réalité:** équipes diverses en âge (25-50 ans), culture professionnelle. Focus : compétences et fit culturel, pas âge. Exemple : beaucoup de reconversions 30-40 ans dans ces structures.
 
 ## Cadre de décision
 
 Voici comment naviguer la question de l'âge :
 
 **1. Auto-évaluation honnête**
-Questions : Quels contextes éviter (startups ultra-jeunes) ? Quels atouts mettre en avant (maturité, soft skills) ? Quelle baisse salaire temporaire acceptable ? Cette clarté guide choix.
+**Questions:** Quels contextes éviter (startups ultra-jeunes) ? Quels atouts mettre en avant (maturité, soft skills) ? Quelle baisse salaire temporaire acceptable ? Cette clarté guide choix.
 
 **2. Cibler environnements adaptés**
 Stratégie : scale-ups, boîtes matures, remote international, consultants. Éviter : early-stage startups culture "bro", boîtes avec équipes uniquement 22-26 ans. Ce ciblage maximise chances.
@@ -66,7 +66,7 @@ Stratégie : scale-ups, boîtes matures, remote international, consultants. Évi
 CV/entretien : mettre en avant soft skills, maturité, contexte métier si pertinent. Pas cacher âge/background, l'assumer et en faire atout. Cette stratégie attire bons fits.
 
 **4. Démontrer adaptabilité concrètement**
-Portfolio : projets divers, technologies variées, apprentissage rapide. Message : "J'apprends vite, je m'adapte." Cette preuve contre biais "rigidité".
+Portfolio : projets divers, technologies variées, apprentissage rapide. **Message:** "J'apprends vite, je m'adapte." Cette preuve contre biais "rigidité".
 
 **5. Réseau et marché caché**
 Stratégie : utiliser réseau professionnel existant, market caché (30-40% des jobs). Avantage : contourner filtres ageistes des ATS/RH. Ce canal plus humain.
@@ -75,27 +75,27 @@ Stratégie : utiliser réseau professionnel existant, market caché (30-40% des 
 
 Ce que j'ai observé chez différents profils :
 
-**La discrimination réelle** : Reconversion 42 ans, candidature startup early-stage très jeune. Feedback off-record : "Culturellement pas le bon fit." Code pour "trop vieux". Réalité : ageism existe, illégal mais réel. Stratégie : cibler autres structures.
+**La discrimination réelle** : Reconversion 42 ans, candidature startup early-stage très jeune. Feedback off-record : "Culturellement pas le bon fit." Code pour "trop vieux". **Réalité:** ageism existe, illégal mais réel. Stratégie : cibler autres structures.
 
-**L'avantage assumé** : Reconversion 38 ans, ex-commerce. Entretien scale-up : met en avant 10 ans expérience client, soft skills, professionnalisme. Recruté précisément pour ça : "On veut équilibrer équipe très junior." Message : bon fit valorise maturité.
+**L'avantage assumé** : Reconversion 38 ans, ex-commerce. Entretien scale-up : met en avant 10 ans expérience client, soft skills, professionnalisme. Recruté précisément pour ça : "On veut équilibrer équipe très junior." **Message:** bon fit valorise maturité.
 
-**L'âge neutre** : Reconversion 33 ans, cabinet conseil. Portfolio solide, compétences démontrées. Entretiens : zéro mention âge, focus pure compétences. **Résultat :**  embauché sans que l'âge soit facteur. Message : beaucoup de boîtes s'en foutent vraiment.
+**L'âge neutre** : Reconversion 33 ans, cabinet conseil. Portfolio solide, compétences démontrées. Entretiens : zéro mention âge, focus pure compétences. **Résultat:**  embauché sans que l'âge soit facteur. **Message:** beaucoup de boîtes s'en foutent vraiment.
 
-**L'exemple du salaire** : Reconversion 36 ans, ancien salaire 48k. Premier job dev : 34k (baisse). 18 mois : 42k. 3 ans : 54k. Message : baisse temporaire, rattrapage rapide si tu progresses.
+**L'exemple du salaire** : Reconversion 36 ans, ancien salaire 48k. Premier job dev : 34k (baisse). 18 mois : 42k. 3 ans : 54k. **Message:** baisse temporaire, rattrapage rapide si tu progresses.
 
 ## Erreurs fréquentes (et comment les éviter)
 
 **Erreur 1 - Cacher ton âge/background**
-Piège : mentir sur CV, cacher expérience antérieure. Réalité : découverte = perte de confiance. Mieux : assumer et valoriser. Correction : transparence et transformation en atout.
+**Piège:** mentir sur CV, cacher expérience antérieure. **Réalité:** découverte = perte de confiance. Mieux : assumer et valoriser. **Correction:** transparence et transformation en atout.
 
 **Erreur 2 - Cibler mauvais environnements**
-Piège : startups early-stage culture très jeune en étant 40 ans. Réalité : fit culturel difficile, ageism possible. Correction : cibler structures plus matures.
+**Piège:** startups early-stage culture très jeune en étant 40 ans. **Réalité:** fit culturel difficile, ageism possible. **Correction:** cibler structures plus matures.
 
 **Erreur 3 - Complexe d'âge**
-Piège : "Je suis trop vieux, ils vont me juger." Auto-sabotage. Réalité : si tu projettes doute, ça transparaît. Correction : assumer ton parcours avec confiance.
+**Piège:** "Je suis trop vieux, ils vont me juger." Auto-sabotage. **Réalité:** si tu projettes doute, ça transparaît. **Correction:** assumer ton parcours avec confiance.
 
 **Erreur 4 - Ignorer avantages**
-Piège : voir que désavantages. Réalité : maturité, soft skills, réseau sont atouts réels. Correction : les valoriser activement.
+**Piège:** voir que désavantages. **Réalité:** maturité, soft skills, réseau sont atouts réels. **Correction:** les valoriser activement.
 
 ## Message de responsabilité
 

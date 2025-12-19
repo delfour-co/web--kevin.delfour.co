@@ -72,25 +72,26 @@ Ce que j'ai observé dans différents contextes :
 
 **Ce qui fonctionne** : Un monolithe modulaire bien structuré avec des domaines métier clairement séparés, des interfaces bien définies entre modules, un système de feature flags granulaire, une suite de tests robuste. Cette structure permet de livrer rapidement (3 mois avec une équipe de 4 développeurs) tout en gardant la possibilité d'extraire progressivement.
 
-**Ce qui bloque** : Forcer des microservices trop tôt sans avoir les équipes autonomes nécessaires. **Résultat :**  complexité opérationnelle ingérable, équipes qui se bloquent mutuellement, vélocité qui diminue. Mieux vaut commencer simple et évoluer progressivement.
+**Ce qui bloque** : Forcer des microservices trop tôt sans avoir les équipes autonomes nécessaires. **Résultat:**  complexité opérationnelle ingérable, équipes qui se bloquent mutuellement, vélocité qui diminue. Mieux vaut commencer simple et évoluer progressivement.
 
-**Les erreurs fréquentes** : Choisir microservices pour "être moderne" sans comprendre les défis opérationnels. **Résultat :**  complexité ingérable, équipes qui souffrent, vélocité qui diminue. Choisir monolithe par défaut sans considérer les besoins réels de scalabilité. **Résultat :**  limitations techniques qui bloquent la croissance.
+
+**Les erreurs fréquentes** : Choisir microservices pour "être moderne" sans comprendre les défis opérationnels. **Résultat:**  complexité ingérable, équipes qui souffrent, vélocité qui diminue. Choisir monolithe par défaut sans considérer les besoins réels de scalabilité. **Résultat:**  limitations techniques qui bloquent la croissance.
 
 **L'approche hybride** : Démarrer avec un monolithe modulaire, identifier les modules qui bénéficieraient d'une extraction (autonomie, scalabilité différente, technologie spécialisée), extraire progressivement en commençant par les plus autonomes, maintenir un core monolithique pour les fonctionnalités transverses. Cette approche progressive permet d'évaluer les bénéfices à chaque étape.
 
 ## Erreurs fréquentes
 
 **Choisir par idéologie plutôt que par contexte**  
-Choisir microservices parce que "c'est moderne" ou monolithe parce que "c'est simple" sans comprendre le contexte réel. **Résultat :**  choix qui ne correspond pas aux besoins réels, problèmes opérationnels ou limitations techniques. Mieux vaut analyser le contexte (taille équipe, contraintes techniques, contexte organisationnel) avant de choisir.
+Choisir microservices parce que "c'est moderne" ou monolithe parce que "c'est simple" sans comprendre le contexte réel. **Résultat:**  choix qui ne correspond pas aux besoins réels, problèmes opérationnels ou limitations techniques. Mieux vaut analyser le contexte (taille équipe, contraintes techniques, contexte organisationnel) avant de choisir.
 
 **Forcer une architecture trop tôt**  
-Forcer des microservices trop tôt sans avoir les équipes autonomes nécessaires. **Résultat :**  complexité opérationnelle ingérable, équipes qui se bloquent mutuellement, vélocité qui diminue. Mieux vaut commencer simple (monolithe modulaire) et évoluer progressivement.
+Forcer des microservices trop tôt sans avoir les équipes autonomes nécessaires. **Résultat:**  complexité opérationnelle ingérable, équipes qui se bloquent mutuellement, vélocité qui diminue. Mieux vaut commencer simple (monolithe modulaire) et évoluer progressivement.
 
 **Ignorer la loi de Conway**  
 Forcer une architecture qui ne correspond pas à l'organisation. Si vos équipes travaillent étroitement ensemble, forcer une séparation via des microservices peut créer plus de friction que de valeur. Mieux vaut adapter l'architecture à l'organisation, pas l'inverse.
 
 **Ne pas mesurer l'impact réel**  
-Choisir une architecture sans mesurer l'impact réel sur la productivité et la satisfaction. **Résultat :**  vous ne savez pas si votre choix était le bon, vous ne pouvez pas ajuster. Mieux vaut mesurer : time to deploy, MTTR, developer velocity, bug rate, customer satisfaction.
+Choisir une architecture sans mesurer l'impact réel sur la productivité et la satisfaction. **Résultat:**  vous ne savez pas si votre choix était le bon, vous ne pouvez pas ajuster. Mieux vaut mesurer : time to deploy, MTTR, developer velocity, bug rate, customer satisfaction.
 
 ## Si c'était à refaire
 

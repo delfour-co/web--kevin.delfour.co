@@ -52,11 +52,11 @@ Le vrai enjeu est de comprendre ce que chaque voie implique vraiment :
 
 **Les 3 mauvaises raisons de devenir manager** :
 
-**Mauvaise raison 1 - "C'est la seule évolution"** : Mythe : IC = plafond après senior. Réalité : track IC existe (staff, principal) avec impact et salaire comparables. Conséquence : devenir manager par défaut → malheur + mauvais manager.
+**Mauvaise raison 1 - "C'est la seule évolution"** : Mythe : IC = plafond après senior. **Réalité:** track IC existe (staff, principal) avec impact et salaire comparables. **Conséquence:** devenir manager par défaut → malheur + mauvais manager.
 
-**Mauvaise raison 2 - "Plus de salaire"** : Mythe : managers gagnent plus. Réalité : à niveaux équivalents (staff ~ manager), salaires comparables. Conséquence : choisir pour argent → job que tu détestes.
+**Mauvaise raison 2 - "Plus de salaire"** : Mythe : managers gagnent plus. **Réalité:** à niveaux équivalents (staff ~ manager), salaires comparables. **Conséquence:** choisir pour argent → job que tu détestes.
 
-**Mauvaise raison 3 - "Prestige/pouvoir"** : Mythe : manager = pouvoir, respect. Réalité : bon IC staff/principal a autant d'influence, parfois plus (expertise > autorité). Conséquence : management pour mauvaises raisons = toxicité.
+**Mauvaise raison 3 - "Prestige/pouvoir"** : Mythe : manager = pouvoir, respect. **Réalité:** bon IC staff/principal a autant d'influence, parfois plus (expertise > autorité). **Conséquence:** management pour mauvaises raisons = toxicité.
 
 **Les 3 bonnes raisons de devenir manager** :
 
@@ -71,45 +71,45 @@ Le vrai enjeu est de comprendre ce que chaque voie implique vraiment :
 Voici comment choisir :
 
 **1. Auto-évaluation honnête**
-Questions : Qu'est-ce qui m'énergise ? Code ou développement personnes ? Deep work ou interactions ? Feedback immédiat ou long terme ? Ces réponses révèlent fit naturel.
+**Questions:** Qu'est-ce qui m'énergise ? Code ou développement personnes ? Deep work ou interactions ? Feedback immédiat ou long terme ? Ces réponses révèlent fit naturel.
 
 **2. Essayer sans engagement total**
 Actions : mentorer intensément 3-6 mois, ou prendre interim tech lead 3 mois. Observer si ça donne énergie ou la draine. Cet essai évite erreur coûteuse.
 
 **3. Parler à ICs et managers avancés**
-Pratique : interviewer staff engineer ET engineering manager. Questions : quotidien réel, satisfactions, frustrations. Ces témoignages révèlent réalité.
+**Pratique:** interviewer staff engineer ET engineering manager. **Questions:** quotidien réel, satisfactions, frustrations. Ces témoignages révèlent réalité.
 
 **4. Accepter que choix n'est pas irréversible**
-Réalité : tu peux essayer management et revenir IC (ou inverse). Coût existe (time, learning curve) mais pas prison. Cette flexibilité réduit peur.
+**Réalité:** tu peux essayer management et revenir IC (ou inverse). Coût existe (time, learning curve) mais pas prison. Cette flexibilité réduit peur.
 
 **5. Évaluer context organisationnel**
-Questions : Track IC existe dans ma boîte ? Staff/Principal possibles ? Progression IC claire ? Si non, choix est biaisé (management seule option visible).
+**Questions:** Track IC existe dans ma boîte ? Staff/Principal possibles ? Progression IC claire ? Si non, choix est biaisé (management seule option visible).
 
 ## Retour terrain
 
 Ce que j'ai observé chez différents profils :
 
-**Le manager malheureux** : Senior dev excellent, devient manager car "évolution logique". 2 ans : malheureux (déteste meetings, politique, évaluations), code lui manque. Retour IC avec soulagement. Message : manager par défaut = recette malheur.
+**Le manager malheureux** : Senior dev excellent, devient manager car "évolution logique". 2 ans : malheureux (déteste meetings, politique, évaluations), code lui manque. Retour IC avec soulagement. **Message:** manager par défaut = recette malheur.
 
-**L'IC épanoui** : Senior dev refuse management, devient staff engineer. Impact technique massif, mentoring, architecture. Épanoui, salaire équivalent manager. Message : IC track est voie légitime.
+**L'IC épanoui** : Senior dev refuse management, devient staff engineer. Impact technique massif, mentoring, architecture. Épanoui, salaire équivalent manager. **Message:** IC track est voie légitime.
 
-**Le manager naturel** : Senior dev qui mentorait déjà intensément. Devient manager : s'épanouit, aime coaching, naviguer politique pour aider équipe. Message : si mentoring énergise, management peut être bon fit.
+**Le manager naturel** : Senior dev qui mentorait déjà intensément. Devient manager : s'épanouit, aime coaching, naviguer politique pour aider équipe. **Message:** si mentoring énergise, management peut être bon fit.
 
-**L'essai qui éclaire** : Mid-level prend interim tech lead 4 mois. Découvre : déteste meetings constantes, miss deep work. Décision : rester IC. **Résultat :**  clarté sans engagement long terme. Message : essayer révèle réalité vs fantasme.
+**L'essai qui éclaire** : Mid-level prend interim tech lead 4 mois. Découvre : déteste meetings constantes, miss deep work. Décision : rester IC. **Résultat:**  clarté sans engagement long terme. **Message:** essayer révèle réalité vs fantasme.
 
 ## Erreurs fréquentes (et comment les éviter)
 
 **Erreur 1 - Choisir par défaut**
-Piège : "Je suis senior, je deviens manager." Réalité : IC track existe. Correction : évaluer vraiment les deux options.
+**Piège:** "Je suis senior, je deviens manager." **Réalité:** IC track existe. **Correction:** évaluer vraiment les deux options.
 
 **Erreur 2 - Sous-estimer différence**
-Piège : "Manager c'est juste organiser l'équipe + coder un peu." Réalité : 70-80% humain, peu de code. Correction : interviewer managers sur quotidien réel.
+**Piège:** "Manager c'est juste organiser l'équipe + coder un peu." **Réalité:** 70-80% humain, peu de code. **Correction:** interviewer managers sur quotidien réel.
 
 **Erreur 3 - Penser que c'est irréversible**
-Piège : "Si je choisis IC, plus jamais manager." Réalité : changements possibles, même si coûteux. Correction : essayer sans terreur.
+**Piège:** "Si je choisis IC, plus jamais manager." **Réalité:** changements possibles, même si coûteux. **Correction:** essayer sans terreur.
 
 **Erreur 4 - Ignorer context organisationnel**
-Piège : choisir IC dans boîte sans track IC. **Résultat :**  plafond de verre. Correction : évaluer si track IC existe et est valorisé.
+**Piège:** choisir IC dans boîte sans track IC. **Résultat:**  plafond de verre. **Correction:** évaluer si track IC existe et est valorisé.
 
 ## Message de responsabilité
 

@@ -83,7 +83,7 @@ Ce que j'ai observé dans différentes prises de poste :
 ## Erreurs fréquentes
 
 **Tout changer trop vite**  
-Arriver et annoncer une refonte complète dans les premières semaines. L'équipe se sent dévalorisée, le business voit ses priorités remises en question. **Résultat :**  résistance généralisée et perte de crédibilité.
+Arriver et annoncer une refonte complète dans les premières semaines. L'équipe se sent dévalorisée, le business voit ses priorités remises en question. **Résultat:**  résistance généralisée et perte de crédibilité.
 
 **Rester dans le code**  
 Passer 60% de son temps à coder pour prouver sa valeur technique. Les décisions stratégiques s'accumulent, l'équipe attend vos arbitrages, vous devenez un bottleneck. Votre rôle a changé : vous devez multiplier l'impact de l'équipe, pas ajouter votre propre production de code.

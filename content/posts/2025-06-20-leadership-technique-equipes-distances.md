@@ -27,7 +27,7 @@ audiences:
 ---
 ## Situation réelle
 
-Le remote a cassé tous les repères du leadership technique. Plus de discussions de couloir, plus de tableau blanc improvisé. **Résultat :**  73% des Tech Leads que j'accompagne galèrent les 6 premiers mois. Mais ceux qui maîtrisent les nouveaux leviers obtiennent des équipes 40% plus productives que les équipes co-localisées.
+Le remote a cassé tous les repères du leadership technique. Plus de discussions de couloir, plus de tableau blanc improvisé. **Résultat:**  73% des Tech Leads que j'accompagne galèrent les 6 premiers mois. Mais ceux qui maîtrisent les nouveaux leviers obtiennent des équipes 40% plus productives que les équipes co-localisées.
 
 Ce que j'ai observé : le remote management bien fait bat le présentiel sur tous les KPI business qui comptent. Delivery predictability +35%, innovation rate +50%, talent retention +40%, cost per developer -25%. Mais cet avantage ne vient pas automatiquement. Il nécessite un investissement initial et une adaptation des pratiques de management.
 
@@ -58,7 +58,7 @@ Voici les principes qui m'ont aidé à maximiser la performance d'équipes remot
 Working Agreement : core hours 4h/jour minimum, response time SLA (Urgent <1h, Normal <4h, Low <24h), calendar blocking 2 blocs de 2h deep work/jour, status transparency. Code Quality Standards : PR review time <24h médian, test coverage >80% nouveau code, documentation README+ADRs mandatory, pairing time minimum 2h/semaine/dev. Budget enforcement : outils monitoring €100/mois, code quality gates €200/dev/mois, process coaching €5K si dérive.
 
 **3. Mentoring : l'investissement formation qui scale**  
-Programme structuré : coût €20K/an équipe 10 devs, retour +40% progression skill, +60% retention, -50% time-to-productivity. Format : sessions 1:1 1h/semaine, code mentoring PR reviews éducatives, architecture walkthrough 2h/mois, project ownership projets gradués. Métriques : skill gap closure -2 niveaux/6 mois, autonomy growth -50% questions répétitives, knowledge sharing chaque mentoré forme 1 autre dev/trimestre, career progression promotion 18 mois vs 30 mois historique.
+Programme structuré : coût €20K/an équipe 10 devs, retour +40% progression skill, +60% retention, -50% time-to-productivity. **Format:** sessions 1:1 1h/semaine, code mentoring PR reviews éducatives, architecture walkthrough 2h/mois, project ownership projets gradués. Métriques : skill gap closure -2 niveaux/6 mois, autonomy growth -50% questions répétitives, knowledge sharing chaque mentoré forme 1 autre dev/trimestre, career progression promotion 18 mois vs 30 mois historique.
 
 **4. Outcomes : les KPI qui prédisent la performance**  
 Dashboard CTO : Feature delivery rate targets/sprint hits >90%, Time to market idée→prod <8 semaines, Customer satisfaction support tickets -30% post-release, Revenue per developer €200K+ B2B, €150K+ B2C. Team Health : Engagement score >8/10 mensuel, Voluntary turnover <10%/an, Skills progression level up visible 6 mois, Innovation index 2+ initiatives internes/trimestre.
@@ -74,21 +74,21 @@ Ce que j'ai observé dans différentes équipes remote :
 
 **Ce qui bloque** : Micromanagement digital (status reports quotidiens, surveillance Slack) → -35% productivité, 80% risque départ. Communication overflow (>15 réunions/semaine, Slack 24/7) → -2h deep work/jour, burnout 6 mois. Decision bottleneck (toute décision passe par lead) → -40% velocity, frustration. Context starvation (équipe ne comprend pas priorités) → features inutiles, tech debt explosive.
 
-**Les erreurs fréquentes** : Appliquer pratiques présentiel au remote sans adaptation. **Résultat :**  équipe qui souffre, productivité qui diminue, turnover élevé. Ne pas investir dans formation management remote. **Résultat :**  managers qui galèrent, équipe qui souffre. Ignorer les métriques de performance. **Résultat :**  vous ne savez pas si ça fonctionne, vous ne pouvez pas ajuster.
+**Les erreurs fréquentes** : Appliquer pratiques présentiel au remote sans adaptation. **Résultat:**  équipe qui souffre, productivité qui diminue, turnover élevé. Ne pas investir dans formation management remote. **Résultat:**  managers qui galèrent, équipe qui souffre. Ignorer les métriques de performance. **Résultat:**  vous ne savez pas si ça fonctionne, vous ne pouvez pas ajuster.
 
 ## Erreurs fréquentes
 
 **Micromanagement digital**  
-Status reports quotidiens, surveillance des statuts Slack, micro-deadlines. **Résultat :**  -35% productivité, 80% risque départ sous 6 mois. Mieux vaut autonomie avec expectations claires et feedback régulier.
+Status reports quotidiens, surveillance des statuts Slack, micro-deadlines. **Résultat:**  -35% productivité, 80% risque départ sous 6 mois. Mieux vaut autonomie avec expectations claires et feedback régulier.
 
 **Communication overflow**  
->15 réunions/semaine, Slack 24/7, everything is urgent. **Résultat :**  -2h deep work/jour, burnout à 6 mois. Mieux vaut process async-first avec réunions ciblées et respect des deep work blocks.
+>15 réunions/semaine, Slack 24/7, everything is urgent. **Résultat:**  -2h deep work/jour, burnout à 6 mois. Mieux vaut process async-first avec réunions ciblées et respect des deep work blocks.
 
 **Decision bottleneck**  
-Toute décision technique passe par le lead, équipe bloquée en son absence. **Résultat :**  -40% velocity, frustration massive des seniors. Mieux vaut empowerment avec matrice de décisions claire (individual, pair/squad, team consensus, leadership reserved).
+Toute décision technique passe par le lead, équipe bloquée en son absence. **Résultat:**  -40% velocity, frustration massive des seniors. Mieux vaut empowerment avec matrice de décisions claire (individual, pair/squad, team consensus, leadership reserved).
 
 **Context starvation**  
-Équipe ne comprend pas les priorités business, décisions dans le vide. **Résultat :**  features inutiles, tech debt explosive, démotivation. Mieux vaut transparence accrue avec ADR streamlinés et dashboard équipe accessible 24/7.
+Équipe ne comprend pas les priorités business, décisions dans le vide. **Résultat:**  features inutiles, tech debt explosive, démotivation. Mieux vaut transparence accrue avec ADR streamlinés et dashboard équipe accessible 24/7.
 
 ## Si c'était à refaire
 

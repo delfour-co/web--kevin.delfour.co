@@ -83,19 +83,19 @@ Ce que j'ai observé dans différentes organisations :
 ## Erreurs fréquentes
 
 **Recruter pour les skills uniquement**  
-"Il code super bien" ne suffit pas. **Résultat :**  dynamiques toxiques, turnover élevé, équipe qui souffre. Mieux vaut skills + culture fit + values alignment pour une performance à long terme.
+"Il code super bien" ne suffit pas. **Résultat:**  dynamiques toxiques, turnover élevé, équipe qui souffre. Mieux vaut skills + culture fit + values alignment pour une performance à long terme.
 
 **Overhiring**  
-"On recrute 20 devs en 6 mois" sans structure adaptée. **Résultat :**  cauchemar d'onboarding, culture diluée, processus qui s'effondrent. Mieux vaut un recrutement soutenable (2-3/trimestre max early stage) qui préserve la qualité de l'onboarding et la culture.
+"On recrute 20 devs en 6 mois" sans structure adaptée. **Résultat:**  cauchemar d'onboarding, culture diluée, processus qui s'effondrent. Mieux vaut un recrutement soutenable (2-3/trimestre max early stage) qui préserve la qualité de l'onboarding et la culture.
 
 **Recruter "like me"**  
-Équipe homogène (même école, même profil). **Résultat :**  groupthink, manque de perspectives, innovation limitée. Mieux vaut de la diversité (backgrounds, expériences, skills) qui apporte des perspectives variées et améliore l'innovation.
+Équipe homogène (même école, même profil). **Résultat:**  groupthink, manque de perspectives, innovation limitée. Mieux vaut de la diversité (backgrounds, expériences, skills) qui apporte des perspectives variées et améliore l'innovation.
 
 **Processus de recrutement trop lent**  
-Processus qui prend >1 mois. **Résultat :**  perte des meilleurs candidats qui acceptent d'autres offres. Mieux vaut un processus rapide (<2 semaines total) qui ne fait pas perdre les meilleurs talents.
+Processus qui prend >1 mois. **Résultat:**  perte des meilleurs candidats qui acceptent d'autres offres. Mieux vaut un processus rapide (<2 semaines total) qui ne fait pas perdre les meilleurs talents.
 
 **Onboarding improvisé**  
-Pas de structure d'onboarding claire. **Résultat :**  autonomie retardée, turnover élevé, frustration de l'équipe. Mieux vaut un onboarding structuré (30-60-90 jours) avec feedback régulier qui accélère l'autonomie.
+Pas de structure d'onboarding claire. **Résultat:**  autonomie retardée, turnover élevé, frustration de l'équipe. Mieux vaut un onboarding structuré (30-60-90 jours) avec feedback régulier qui accélère l'autonomie.
 
 ## Si c'était à refaire
 

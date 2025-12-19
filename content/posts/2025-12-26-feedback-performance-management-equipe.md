@@ -31,7 +31,7 @@ weight: 10
 
 "Tu as bien fait, mais..." Le feedback mal donné démotive plus qu'il n'aide. Cette situation n'est pas une fatalité. Le feedback efficace peut construire une culture de croissance plutôt qu'une culture de peur.
 
-Ce que j'ai observé : beaucoup de managers donnent du feedback uniquement négatif ("Ton code a des bugs", "Ta PR n'est pas bonne", "Tu es en retard") ou vague ("C'est bien", "Tu peux mieux faire", "Continue comme ça"). **Résultat :**  démotivation, peur de l'échec, pas d'action concrète possible. Le feedback efficace est régulier, spécifique, équilibré, actionnable. Règle d'or : le feedback doit faire grandir, pas seulement corriger.
+Ce que j'ai observé : beaucoup de managers donnent du feedback uniquement négatif ("Ton code a des bugs", "Ta PR n'est pas bonne", "Tu es en retard") ou vague ("C'est bien", "Tu peux mieux faire", "Continue comme ça"). **Résultat:**  démotivation, peur de l'échec, pas d'action concrète possible. Le feedback efficace est régulier, spécifique, équilibré, actionnable. Règle d'or : le feedback doit faire grandir, pas seulement corriger.
 
 ## Le faux problème
 
@@ -76,23 +76,24 @@ Ce que j'ai observé dans différentes équipes :
 
 **Ce qui fonctionne** : Framework SBI (Situation Quand et où, Behavior Ce qui s'est passé factuel, Impact Conséquence positif ou négatif) structure feedback et le rend spécifique actionnable. Équilibre 5 feedbacks positifs pour 1 négatif encourage prise risques mesurés maintient motivation. Feedback continu quotidien plutôt qu'uniquement formel permet ajuster rapidement éviter accumulation problèmes. Évaluations 360° vision complète réduit biais développe culture feedback identifie patterns.
 
-**Ce qui bloque** : Feedback uniquement négatif ("Ton code a des bugs", "Ta PR n'est pas bonne", "Tu es en retard"). **Résultat :**  démotivation, peur échec, culture peur. Feedback vague ("C'est bien", "Tu peux mieux faire", "Continue comme ça"). **Résultat :**  pas d'action concrète possible, frustration. Feedback en public négatif (réunion équipe "X a fait erreur cassé prod"). **Résultat :**  humiliation, perte confiance, culture peur.
+**Ce qui bloque** : Feedback uniquement négatif ("Ton code a des bugs", "Ta PR n'est pas bonne", "Tu es en retard"). **Résultat:**  démotivation, peur échec, culture peur. Feedback vague ("C'est bien", "Tu peux mieux faire", "Continue comme ça"). **Résultat:**  pas d'action concrète possible, frustration. Feedback en public négatif (réunion équipe "X a fait erreur cassé prod"). **Résultat:**  humiliation, perte confiance, culture peur.
+
 
 **Les métriques feedback efficace** : Fréquence feedback (nombre feedbacks donnés/semaine/manager, objectif >5 feedbacks/semaine/équipier). Ratio positif/négatif (feedbacks positifs/feedbacks négatifs, objectif >5:1). Satisfaction équipe (survey "Je reçois feedback utile régulièrement", objectif >7/10). Action après feedback (% feedbacks suivis actions concrètes, objectif >80%). Ces métriques permettent de mesurer l'impact et d'ajuster si nécessaire.
 
 ## Erreurs fréquentes
 
 **Feedback uniquement négatif**  
-"Ton code a des bugs", "Ta PR n'est pas bonne", "Tu es en retard". **Résultat :**  démotivation, peur échec, culture peur. Mieux vaut équilibre 5 feedbacks positifs pour 1 négatif.
+"Ton code a des bugs", "Ta PR n'est pas bonne", "Tu es en retard". **Résultat:**  démotivation, peur échec, culture peur. Mieux vaut équilibre 5 feedbacks positifs pour 1 négatif.
 
 **Feedback vague**  
-"C'est bien", "Tu peux mieux faire", "Continue comme ça". **Résultat :**  pas d'action concrète possible, frustration. Mieux vaut framework SBI (Situation, Behavior, Impact) spécifique actionnable.
+"C'est bien", "Tu peux mieux faire", "Continue comme ça". **Résultat:**  pas d'action concrète possible, frustration. Mieux vaut framework SBI (Situation, Behavior, Impact) spécifique actionnable.
 
 **Feedback uniquement formel**  
-Feedback uniquement lors évaluations trimestrielles/semestrielles. **Résultat :**  accumulation problèmes, ajustements tardifs. Mieux vaut feedback continu quotidien (immédiat régulier informel, 1-on-1 hebdomadaire, feedback après événements).
+Feedback uniquement lors évaluations trimestrielles/semestrielles. **Résultat:**  accumulation problèmes, ajustements tardifs. Mieux vaut feedback continu quotidien (immédiat régulier informel, 1-on-1 hebdomadaire, feedback après événements).
 
 **Feedback en public négatif**  
-Réunion équipe "X a fait erreur cassé prod". **Résultat :**  humiliation, perte confiance, culture peur. Mieux vaut feedback négatif en privé, feedback positif en public.
+Réunion équipe "X a fait erreur cassé prod". **Résultat:**  humiliation, perte confiance, culture peur. Mieux vaut feedback négatif en privé, feedback positif en public.
 
 ## Si c'était à refaire
 

@@ -71,23 +71,24 @@ Ce que j'ai observé dans différentes plateformes data :
 
 **Ce qui fonctionne** : Commencer batch moderne (Architecture "boring" batch moderne Coûts infrastructure ~4k€/mois Complexité opérationnelle 0.8 FTE Time-to-market 2-3 semaines SLA 99.9%) plutôt que Lambda/Kappa (Architecture Lambda classique Coûts infrastructure ~15k€/mois Complexité opérationnelle 2 FTE Time-to-market 3-4 semaines SLA 99.5%, Architecture Kappa pure stream Coûts infrastructure ~8k€/mois Complexité opérationnelle 1.2 FTE Time-to-market 1-2 semaines SLA 99.8%) optimise coûts complexité. Data Platform centralisée plutôt que Data Mesh si <500 personnes (Data Platform centralisée moderne Setup initial 6 mois ROI Mois 8, Data Mesh "full" Setup initial 18 mois ROI Mois 24) optimise ROI. Orchestration selon volume pipelines (<50 pipelines Cloud native functions, 50-200 pipelines Prefect Cloud, >200 pipelines Airflow managed) optimise coûts complexité.
 
-**Ce qui bloque** : Over-engineering précoce (Architecture Lambda/Kappa dès début sans besoins réels). **Résultat :**  coûts élevés, complexité opérationnelle ingérable, ROI négatif. Mieux vaut commencer batch moderne évoluer selon besoins. Data Mesh trop tôt (Data Mesh "full" sans 200+ data consumers 50+ use cases daily). **Résultat :**  setup initial 18 mois, coûts récurrents élevés, ROI tardif. Mieux vaut Data Platform centralisée moderne si <500 personnes.
+**Ce qui bloque** : Over-engineering précoce (Architecture Lambda/Kappa dès début sans besoins réels). **Résultat:**  coûts élevés, complexité opérationnelle ingérable, ROI négatif. Mieux vaut commencer batch moderne évoluer selon besoins. Data Mesh trop tôt (Data Mesh "full" sans 200+ data consumers 50+ use cases daily). **Résultat:**  setup initial 18 mois, coûts récurrents élevés, ROI tardif. Mieux vaut Data Platform centralisée moderne si <500 personnes.
+
 
 **ROI data platform** : Coûts totaux par maturité (Startup 0-20M€ revenue Coût mensuel 2-5k€ ROI 6-12 mois, Scale-up 20-100M€ revenue Coût mensuel 8-15k€ ROI 8-15 mois, Enterprise >100M€ revenue Coût mensuel 25-50k€ ROI 12-24 mois). Métriques business (Time-to-insight Self-service platform 2-4 heures vs Manuel 2-4 semaines Business impact 10x faster decisions, Data-driven decisions Avec platform 70-80% vs Sans platform 20% Revenue impact +15-25% growth rate, Operational efficiency Automated reporting -60% analyst time Self-service analytics -40% data requests Cost optimization insights 5-15% OPEX reduction). Ce ROI justifie l'investissement.
 
 ## Erreurs fréquentes
 
 **Over-engineering précoce**  
-Architecture Lambda/Kappa dès début sans besoins réels. **Résultat :**  coûts élevés, complexité opérationnelle ingérable, ROI négatif. Mieux vaut commencer batch moderne évoluer selon besoins.
+Architecture Lambda/Kappa dès début sans besoins réels. **Résultat:**  coûts élevés, complexité opérationnelle ingérable, ROI négatif. Mieux vaut commencer batch moderne évoluer selon besoins.
 
 **Data Mesh trop tôt**  
-Data Mesh "full" sans 200+ data consumers 50+ use cases daily. **Résultat :**  setup initial 18 mois, coûts récurrents élevés, ROI tardif. Mieux vaut Data Platform centralisée moderne si <500 personnes.
+Data Mesh "full" sans 200+ data consumers 50+ use cases daily. **Résultat:**  setup initial 18 mois, coûts récurrents élevés, ROI tardif. Mieux vaut Data Platform centralisée moderne si <500 personnes.
 
 **Négliger gouvernance**  
-80% projets data échouent gouvernance. **Résultat :**  données incohérentes, confiance perdue, ROI négatif. Mieux vaut gouvernance dès début (Gouvernance 0.5 FTE Data Platform centralisée vs 2 FTE Data Mesh).
+80% projets data échouent gouvernance. **Résultat:**  données incohérentes, confiance perdue, ROI négatif. Mieux vaut gouvernance dès début (Gouvernance 0.5 FTE Data Platform centralisée vs 2 FTE Data Mesh).
 
 **Sous-estimer coûts ops**  
-Comptez 40% budget opérationnel. **Résultat :**  budget dépassé, plateforme non maintenue. Mieux vaut prévoir coûts ops dès début (Infrastructure + Operations + Monitoring).
+Comptez 40% budget opérationnel. **Résultat:**  budget dépassé, plateforme non maintenue. Mieux vaut prévoir coûts ops dès début (Infrastructure + Operations + Monitoring).
 
 ## Si c'était à refaire
 

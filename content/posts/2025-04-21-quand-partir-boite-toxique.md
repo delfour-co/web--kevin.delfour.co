@@ -44,7 +44,7 @@ Le vrai enjeu est de reconnaître la toxicité et de partir avant dégâts irré
 
 **Signe 5 - Burn-out imminent ou installé** : Symptômes : épuisement profond, cynisme, détachement complet, plus aucune motivation, pleurs fréquents. Seuil critique : si 3+ symptômes depuis >1 mois. Décision : urgence santé, partir même sans plan B solide.
 
-**Signe 6 - Culture du surmenage non-négociable** : Réalité : 55-60h/semaine normalisées, crunch permanent, pression culpabilisante si 40h, burn-out banalisé. Seuil critique : si refus de changer malgré feedback. Décision : insoutenable long terme, partir.
+**Signe 6 - Culture du surmenage non-négociable** : **Réalité:** 55-60h/semaine normalisées, crunch permanent, pression culpabilisante si 40h, burn-out banalisé. Seuil critique : si refus de changer malgré feedback. Décision : insoutenable long terme, partir.
 
 **Signe 7 - Valeurs incompatibles** : Exemples : produit/mission éthiquement problématique pour toi, valeurs affichées vs vécues écart massif, pratiques illégales/limites. Seuil critique : si incompatibilité fondamentale non-résolvable. Décision : désalignement détruit motivation, partir.
 
@@ -69,7 +69,7 @@ Le vrai enjeu est de reconnaître la toxicité et de partir avant dégâts irré
 Voici comment décider et exécuter :
 
 **1. Diagnostic honnête gravité**
-Questions : Santé affectée ? Compétences dégradent ? Tentatives amélioration échouent ? Ces réponses guident urgence.
+**Questions:** Santé affectée ? Compétences dégradent ? Tentatives amélioration échouent ? Ces réponses guident urgence.
 
 **2. Tentative amélioration (sauf si danger)**
 Actions : feedback manager, escalade RH si nécessaire, demande changement équipe interne. Timeline : 1-3 mois max. Si échec, confirmation que partir est seule option.
@@ -87,27 +87,27 @@ Même si furieux : préavis, transition correcte, pas de pont brûlé. Cette mat
 
 Ce que j'ai observé chez différents profils :
 
-**Le départ salvateur** : Dev dans boîte toxique (blâme, 60h/semaine, burn-out). Santé mentale détruite. Partie sans autre job après 9 mois. 2 mois chômage, récupération. Job suivant sain. 1 an plus tard : "Meilleure décision de ma vie." Message : santé > job toxique.
+**Le départ salvateur** : Dev dans boîte toxique (blâme, 60h/semaine, burn-out). Santé mentale détruite. Partie sans autre job après 9 mois. 2 mois chômage, récupération. Job suivant sain. 1 an plus tard : "Meilleure décision de ma vie." **Message:** santé > job toxique.
 
-**Le piège de rester** : Dev reste 3 ans boîte toxique par peur ("et si je trouve pas mieux ?"). Burn-out sévère, compétences obsolètes, confiance détruite. Quand part enfin : 6 mois reconstruction, difficulté retrouver. Message : rester trop longtemps coûte plus cher que partir.
+**Le piège de rester** : Dev reste 3 ans boîte toxique par peur ("et si je trouve pas mieux ?"). Burn-out sévère, compétences obsolètes, confiance détruite. Quand part enfin : 6 mois reconstruction, difficulté retrouver. **Message:** rester trop longtemps coûte plus cher que partir.
 
-**L'exemple de la tentative** : Dev malheureux, avant partir : escalade RH, demande changement équipe. Refusé. Confirmation : problème systémique. Recherche et départ 3 mois plus tard, serein. Message : tentative avant départ donne paix intérieure.
+**L'exemple de la tentative** : Dev malheureux, avant partir : escalade RH, demande changement équipe. Refusé. Confirmation : problème systémique. Recherche et départ 3 mois plus tard, serein. **Message:** tentative avant départ donne paix intérieure.
 
-**Le départ sans plan B** : Dev harcèlement moral, santé danger. Démission sans autre job. Économies 4 mois. Chômage 2 mois, retrouve job sain. **Résultat :**  santé préservée, trajectoire relancée. Message : parfois partir sans plan B est moins risqué que rester.
+**Le départ sans plan B** : Dev harcèlement moral, santé danger. Démission sans autre job. Économies 4 mois. Chômage 2 mois, retrouve job sain. **Résultat:**  santé préservée, trajectoire relancée. **Message:** parfois partir sans plan B est moins risqué que rester.
 
 ## Erreurs fréquentes (et comment les éviter)
 
 **Erreur 1 - Rester par peur**
-Piège : "Et si je trouve pas mieux ? Et si c'est pareil ailleurs ?" Paralysie. Réalité : environnements sains existent, rester détruit. Correction : chercher activement, quitter l'inconnu.
+**Piège:** "Et si je trouve pas mieux ? Et si c'est pareil ailleurs ?" Paralysie. **Réalité:** environnements sains existent, rester détruit. **Correction:** chercher activement, quitter l'inconnu.
 
 **Erreur 2 - Partir impulsivement sans plan**
-Piège : "Je démissionne demain !" sans économies ni plan. Réalité : stress financier peut être pire. Correction : préparer 1-3 mois sauf urgence santé.
+**Piège:** "Je démissionne demain !" sans économies ni plan. **Réalité:** stress financier peut être pire. **Correction:** préparer 1-3 mois sauf urgence santé.
 
 **Erreur 3 - Répéter erreur suivante**
-Piège : fuir toxique vers autre toxique faute d'évaluation. Réalité : pattern se répète. Correction : évaluer sérieusement culture prochaine boîte.
+**Piège:** fuir toxique vers autre toxique faute d'évaluation. **Réalité:** pattern se répète. **Correction:** évaluer sérieusement culture prochaine boîte.
 
 **Erreur 4 - Brûler les ponts**
-Piège : départ en clash, mauvaise transition. Réalité : réputation suit, la tech est petite. Correction : professionnalisme même en partant.
+**Piège:** départ en clash, mauvaise transition. **Réalité:** réputation suit, la tech est petite. **Correction:** professionnalisme même en partant.
 
 ## Message de responsabilité
 

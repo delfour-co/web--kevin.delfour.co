@@ -71,20 +71,21 @@ Ce que j'ai observé dans différents projets :
 
 **Ce qui fonctionne** : Terraform équipe infra/ops multi-cloud écosystème mature (Forces Écosystème mature 4000+ providers officiels State management robuste Import ressources existantes, Utilisez Terraform si Équipe majoritairement Ops/infra Multi-cloud complexe Écosystème modules mature requis Compétences HCL déjà présentes) justifie Terraform. Pulumi équipe développeurs forte infra complexe tests unitaires (Forces Type safety TypeScript Python Go IDE support Tests unitaires réels Abstraction complexe Infra dynamique basée API Policy as Code intégré Secrets encryptés natifs, Utilisez Pulumi si Équipe développeurs forte Infra complexe logique métier Besoin tests unitaires poussés TypeScript/Python/Go déjà mastered) justifie Pulumi. Approche hybride possible (Core Infra Terraform VPC IAM Stabilité Terraform base App Infra Pulumi App-specific Flexibilité Pulumi apps) peut être pertinente selon contexte.
 
-**Ce qui bloque** : Terraform pour équipe développeurs forte (Équipe développeurs forte Infra complexe logique métier Besoin tests unitaires poussés TypeScript/Python/Go déjà mastered). **Résultat :**  HCL limité, tests difficiles, productivité réduite. Mieux vaut Pulumi équipe développeurs forte (Type safety TypeScript Python Go IDE support Tests unitaires réels Abstraction complexe Infra dynamique basée API Policy as Code intégré). Pulumi pour équipe infra/ops (Équipe majoritairement Ops/infra Multi-cloud complexe Écosystème modules mature requis Compétences HCL déjà présentes). **Résultat :**  courbe apprentissage élevée, écosystème moins mature. Mieux vaut Terraform équipe infra/ops (Écosystème mature 4000+ providers officiels State management robuste Import ressources existantes).
+**Ce qui bloque** : Terraform pour équipe développeurs forte (Équipe développeurs forte Infra complexe logique métier Besoin tests unitaires poussés TypeScript/Python/Go déjà mastered). **Résultat:**  HCL limité, tests difficiles, productivité réduite. Mieux vaut Pulumi équipe développeurs forte (Type safety TypeScript Python Go IDE support Tests unitaires réels Abstraction complexe Infra dynamique basée API Policy as Code intégré). Pulumi pour équipe infra/ops (Équipe majoritairement Ops/infra Multi-cloud complexe Écosystème modules mature requis Compétences HCL déjà présentes). **Résultat:**  courbe apprentissage élevée, écosystème moins mature. Mieux vaut Terraform équipe infra/ops (Écosystème mature 4000+ providers officiels State management robuste Import ressources existantes).
+
 
 **Cas d'usage réels** : Cas 1 Startup tech 50 devs (Choix Pulumi TypeScript Résultat Onboarding dev 1 jour vs 1 semaine Terraform Tests infra 85% coverage Bugs infra -60%). Cas 2 Grande entreprise 200+ ingénieurs (Choix Terraform Résultat Modules réutilisables 40+ projets Gouvernance centralisée Coût maîtrisé). Cas 3 SaaS B2B infra par client (Choix Pulumi Raison Infra multi-tenant complexe Logique métier infra Besoin générer config dynamiquement). Ces cas montrent quand chaque outil fait sens.
 
 ## Erreurs fréquentes
 
 **Terraform pour équipe développeurs forte**  
-Équipe développeurs forte Infra complexe logique métier Besoin tests unitaires poussés TypeScript/Python/Go déjà mastered. **Résultat :**  HCL limité, tests difficiles, productivité réduite. Mieux vaut Pulumi équipe développeurs forte (Type safety TypeScript Python Go IDE support Tests unitaires réels Abstraction complexe Infra dynamique basée API Policy as Code intégré).
+Équipe développeurs forte Infra complexe logique métier Besoin tests unitaires poussés TypeScript/Python/Go déjà mastered. **Résultat:**  HCL limité, tests difficiles, productivité réduite. Mieux vaut Pulumi équipe développeurs forte (Type safety TypeScript Python Go IDE support Tests unitaires réels Abstraction complexe Infra dynamique basée API Policy as Code intégré).
 
 **Pulumi pour équipe infra/ops**  
-Équipe majoritairement Ops/infra Multi-cloud complexe Écosystème modules mature requis Compétences HCL déjà présentes. **Résultat :**  courbe apprentissage élevée, écosystème moins mature. Mieux vaut Terraform équipe infra/ops (Écosystème mature 4000+ providers officiels State management robuste Import ressources existantes).
+Équipe majoritairement Ops/infra Multi-cloud complexe Écosystème modules mature requis Compétences HCL déjà présentes. **Résultat:**  courbe apprentissage élevée, écosystème moins mature. Mieux vaut Terraform équipe infra/ops (Écosystème mature 4000+ providers officiels State management robuste Import ressources existantes).
 
 **Choix sans POC**  
-Choisir Terraform ou Pulumi sans POC. **Résultat :**  choix non optimal, productivité réduite. Mieux vaut faire POC 1 feature simple Mesurer vitesse dev bugs satisfaction équipe Décider avec vraie data.
+Choisir Terraform ou Pulumi sans POC. **Résultat:**  choix non optimal, productivité réduite. Mieux vaut faire POC 1 feature simple Mesurer vitesse dev bugs satisfaction équipe Décider avec vraie data.
 
 ## Si c'était à refaire
 

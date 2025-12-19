@@ -73,23 +73,24 @@ Ce que j'ai observé dans différents projets :
 
 **Ce qui fonctionne** : Adapter pyramide au contexte (Projet API/Backend E2E 5% Integration 30% Unit Tests 65%, Application Frontend E2E 15% Integration 25% Unit Tests 60%, Startup croissance rapide E2E Critical 10% Happy Path Tests 40% Core Logic Tests 50%) maximise impact selon contexte. Commencer par tests qui ont plus d'impact (Critical Business Logic, Tests intégration interactions critiques, Tests E2E parcours critiques) maximise impact effort minimal. Mocking stratégique (À mocker Services externes Database queries Système fichiers Time/Date, À ne pas mocker Logique métier interne Database en test intégration, Patterns mocking efficaces Mock partiel vraies données test) équilibre isolation réalisme. Environnement test fondation invisible (Base données test Configuration Jest Environnement test propre Base test isolée Migrations automatiques Nettoyer entre chaque test Données base communes, Données test cohérentes Factory pattern UserFactory.build UserFactory.create) facilite maintenance fiabilité.
 
-**Ce qui bloque** : 100% couverture goal (diminishing returns -40% dev velocity pour gain marginal). **Résultat :**  qualité excessive au détriment vélocité, projet paralysé. Mieux vaut adapter pyramide au contexte et commencer par tests qui ont plus d'impact. Tests instables (dépendance ordre exécution état partagé entre tests). **Résultat :**  tests flaky, confiance réduite, maintenance difficile. Mieux vaut isolation complète chaque test indépendant.
+**Ce qui bloque** : 100% couverture goal (diminishing returns -40% dev velocity pour gain marginal). **Résultat:**  qualité excessive au détriment vélocité, projet paralysé. Mieux vaut adapter pyramide au contexte et commencer par tests qui ont plus d'impact. Tests instables (dépendance ordre exécution état partagé entre tests). **Résultat:**  tests flaky, confiance réduite, maintenance difficile. Mieux vaut isolation complète chaque test indépendant.
+
 
 **Mesurer efficacité tests** : Métriques qui comptent vraiment (Au-delà couverture Vitesse exécution averageTestTime, Fiabilité flakyTestsRatio, Efficacité bugsFoundByTests bugsMissedByTests, Maintenance testsUpdatedPerFeature). Dashboard qualité (Intégration CI suivi qualité coverage statements 80 branches 75 functions 80 lines 80, performance maxTestDuration 300 maxSlowTests 5, reliability maxFlakyTests 2 successRate 95). Ces métriques permettent de voir si tests fonctionnent et d'ajuster si nécessaire.
 
 ## Erreurs fréquentes
 
 **100% couverture goal**  
-Diminishing returns -40% dev velocity pour gain marginal. **Résultat :**  qualité excessive au détriment vélocité, projet paralysé. Mieux vaut adapter pyramide au contexte et commencer par tests qui ont plus d'impact.
+Diminishing returns -40% dev velocity pour gain marginal. **Résultat:**  qualité excessive au détriment vélocité, projet paralysé. Mieux vaut adapter pyramide au contexte et commencer par tests qui ont plus d'impact.
 
 **Tests instables**  
-Dépendance ordre exécution état partagé entre tests. **Résultat :**  tests flaky, confiance réduite, maintenance difficile. Mieux vaut isolation complète chaque test indépendant.
+Dépendance ordre exécution état partagé entre tests. **Résultat:**  tests flaky, confiance réduite, maintenance difficile. Mieux vaut isolation complète chaque test indépendant.
 
 **Mocking excessif**  
-Mocker logique métier interne ou database en test intégration. **Résultat :**  tests non réalistes, bugs non détectés. Mieux vaut mocking stratégique (À mocker Services externes Database queries Système fichiers Time/Date, À ne pas mocker Logique métier interne Database en test intégration).
+Mocker logique métier interne ou database en test intégration. **Résultat:**  tests non réalistes, bugs non détectés. Mieux vaut mocking stratégique (À mocker Services externes Database queries Système fichiers Time/Date, À ne pas mocker Logique métier interne Database en test intégration).
 
 **Pas d'environnement test fondation**  
-Tests sans environnement test propre base test isolée migrations automatiques nettoyage entre tests. **Résultat :**  tests instables, maintenance difficile. Mieux vaut environnement test fondation invisible (Base données test Configuration Jest Environnement test propre Base test isolée Migrations automatiques Nettoyer entre chaque test Données base communes).
+Tests sans environnement test propre base test isolée migrations automatiques nettoyage entre tests. **Résultat:**  tests instables, maintenance difficile. Mieux vaut environnement test fondation invisible (Base données test Configuration Jest Environnement test propre Base test isolée Migrations automatiques Nettoyer entre chaque test Données base communes).
 
 ## Si c'était à refaire
 

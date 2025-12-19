@@ -43,10 +43,15 @@ Ne PAS utiliser pour : décisions mineures, décisions urgentes (<48h), sujets n
 
 **Structure RFC type** :
 1. Contexte : quel problème on résout, pourquoi maintenant
+
 2. Options considérées : 3-5 options avec pros/cons chacune
+
 3. Recommandation : option préférée avec justification
+
 4. Risques identifiés : ce qui peut mal tourner
+
 5. Plan d'implémentation : étapes, timeline, rollback
+
 6. Ouverture commentaires : période (3-7 jours), qui doit reviewer
 
 **Processus RFC** :
@@ -80,27 +85,27 @@ RFC devient un ADR quand approuvée. Archive le contexte, les options, le raison
 
 Ce que j'ai observé dans différentes organisations :
 
-**L'absence de processus** : Décisions architecturales prises dans des meetings ad hoc ou Slack threads. **Résultat :**  contexte perdu, personnes clés pas consultées, décisions sous-optimales.
+**L'absence de processus** : Décisions architecturales prises dans des meetings ad hoc ou Slack threads. **Résultat:**  contexte perdu, personnes clés pas consultées, décisions sous-optimales.
 
-**Le processus bureaucratique** : RFC obligatoire pour tout, 15 pages, 6 reviewers requis, 3 semaines. **Résultat :**  paralysie, contournement du processus.
+**Le processus bureaucratique** : RFC obligatoire pour tout, 15 pages, 6 reviewers requis, 3 semaines. **Résultat:**  paralysie, contournement du processus.
 
-**Le processus qui marche** : RFC pour décisions Type 1, template 2-3 pages, 5 jours review, décideur clair. **Résultat :**  qualité améliorée, contexte documenté, vélocité maintenue.
+**Le processus qui marche** : RFC pour décisions Type 1, template 2-3 pages, 5 jours review, décideur clair. **Résultat:**  qualité améliorée, contexte documenté, vélocité maintenue.
 
-**L'exemple concret** : RFC "Migration PostgreSQL → MongoDB". Auteur : Tech Lead DB. Contenu : contexte (pourquoi changer), 3 options (Postgres optimisé, Mongo, Cassandra), recommandation (Mongo), risques (migration coûteuse), plan. Commentaires : 12 personnes, feedbacks intégrés. Décision : CTO approuve Mongo. Timeline : 6 jours. **Résultat :**  décision de qualité, buy-in collectif, doc pour futur.
+**L'exemple concret** : RFC "Migration PostgreSQL → MongoDB". Auteur : Tech Lead DB. Contenu : contexte (pourquoi changer), 3 options (Postgres optimisé, Mongo, Cassandra), recommandation (Mongo), risques (migration coûteuse), plan. Commentaires : 12 personnes, feedbacks intégrés. Décision : CTO approuve Mongo. Timeline : 6 jours. **Résultat:**  décision de qualité, buy-in collectif, doc pour futur.
 
 ## Erreurs fréquentes
 
 **RFC pour tout**
-Utiliser RFC même pour décisions mineures. **Résultat :**  bureaucratie, frustration, contournements.
+Utiliser RFC même pour décisions mineures. **Résultat:**  bureaucratie, frustration, contournements.
 
 **Pas de timebox**
-Laisser commentaires ouverts "jusqu'à ce qu'on converge". **Résultat :**  débat sans fin, paralysie.
+Laisser commentaires ouverts "jusqu'à ce qu'on converge". **Résultat:**  débat sans fin, paralysie.
 
 **Consensus obligatoire**
-Attendre que tout le monde soit d'accord. **Résultat :**  paralysie, ou décision diluée pour satisfaire tout le monde.
+Attendre que tout le monde soit d'accord. **Résultat:**  paralysie, ou décision diluée pour satisfaire tout le monde.
 
 **Pas de décideur clair**
-"On verra selon les commentaires qui décide." **Résultat :**  confusion, frustration, débat sans conclusion.
+"On verra selon les commentaires qui décide." **Résultat:**  confusion, frustration, débat sans conclusion.
 
 ## Si c'était à refaire
 

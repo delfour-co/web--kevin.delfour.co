@@ -63,11 +63,11 @@ Plus je délègue les décisions à l'équipe, plus je libère du temps pour con
 
 Ce que j'ai observé dans différentes organisations :
 
-**Le CTO autoritaire** : Impose ses décisions sans explication. **Résultat :**  application minimale des directives, résistance passive, turnover des meilleurs éléments qui ne veulent pas être traités comme des exécutants. L'autorité sans influence crée de la conformité, pas de l'adhésion.
+**Le CTO autoritaire** : Impose ses décisions sans explication. **Résultat:**  application minimale des directives, résistance passive, turnover des meilleurs éléments qui ne veulent pas être traités comme des exécutants. L'autorité sans influence crée de la conformité, pas de l'adhésion.
 
-**Le CTO influent** : Partage sa vision, écoute les retours, ajuste quand pertinent, explique ses choix. **Résultat :**  l'équipe porte les décisions, propose des améliorations, reste engagée. L'influence transforme les directives en projets collectifs.
+**Le CTO influent** : Partage sa vision, écoute les retours, ajuste quand pertinent, explique ses choix. **Résultat:**  l'équipe porte les décisions, propose des améliorations, reste engagée. L'influence transforme les directives en projets collectifs.
 
-**La transition difficile** : Un excellent développeur promu CTO tente d'utiliser son expertise technique comme source d'autorité ("J'ai 15 ans d'expérience, donc vous devez me faire confiance"). **Résultat :**  l'équipe se braque, l'expertise devient un mur plutôt qu'un pont.
+**La transition difficile** : Un excellent développeur promu CTO tente d'utiliser son expertise technique comme source d'autorité ("J'ai 15 ans d'expérience, donc vous devez me faire confiance"). **Résultat:**  l'équipe se braque, l'expertise devient un mur plutôt qu'un pont.
 
 **L'influence qui survit au départ** : Un CTO quitte l'organisation mais ses principes restent appliqués pendant des années. C'est le signe d'une influence profonde : les décisions ont été comprises et adoptées, pas juste obéies.
 
@@ -77,10 +77,10 @@ Ce que j'ai observé dans différentes organisations :
 Croire que le titre de CTO donne automatiquement de la crédibilité. En réalité, la crédibilité se construit par la compétence démontrée et la cohérence dans le temps.
 
 **Utiliser l'autorité par défaut**
-Imposer des décisions sans explication parce que "c'est plus rapide". **Résultat :**  gain de temps à court terme, perte d'adhésion à long terme, résistance passive.
+Imposer des décisions sans explication parce que "c'est plus rapide". **Résultat:**  gain de temps à court terme, perte d'adhésion à long terme, résistance passive.
 
 **Ne jamais utiliser l'autorité**
-Chercher le consensus à tout prix, même quand une décision urgente est nécessaire. **Résultat :**  paralysie décisionnelle, frustration de l'équipe qui attend un arbitrage.
+Chercher le consensus à tout prix, même quand une décision urgente est nécessaire. **Résultat:**  paralysie décisionnelle, frustration de l'équipe qui attend un arbitrage.
 
 **Incohérence entre paroles et actes**
 Prôner la qualité mais merger du code non testé en urgence. Chaque incohérence détruit l'influence construite. L'équipe suit ce que vous faites, pas ce que vous dites.

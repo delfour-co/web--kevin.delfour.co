@@ -53,13 +53,13 @@ Voici une manière de voir les choses pour débuter dans le Software Craftsmansh
 ## Erreurs classiques
 
 **Perfectionnisme paralysant**  
-Refactoriser tout d'un coup. **Résultat :**  paralysie, pas de progression. Mieux vaut améliorer progressivement feature par feature. Règle Boy Scout : "Laissez code plus propre que vous ne l'avez trouvé". Même petite amélioration compte.
+Refactoriser tout d'un coup. **Résultat:**  paralysie, pas de progression. Mieux vaut améliorer progressivement feature par feature. Règle Boy Scout : "Laissez code plus propre que vous ne l'avez trouvé". Même petite amélioration compte.
 
 **Over-engineering**  
-Appliquer tous design patterns d'un coup. **Résultat :**  code trop compliqué, maintenance difficile. Mieux vaut commencer simple et complexifier seulement quand nécessaire. "OrderProcessorFactory" trop compliqué pour commencer, mieux vaut "processOrder(order)" simple qui fonctionne.
+Appliquer tous design patterns d'un coup. **Résultat:**  code trop compliqué, maintenance difficile. Mieux vaut commencer simple et complexifier seulement quand nécessaire. "OrderProcessorFactory" trop compliqué pour commencer, mieux vaut "processOrder(order)" simple qui fonctionne.
 
 **Ignorer le contexte**  
-Appliquer mêmes standards tous projets. **Résultat :**  standards inadaptés, frustration. Mieux vaut adapter standards contexte projet. Prototype rapide n'a pas mêmes exigences que système critique.
+Appliquer mêmes standards tous projets. **Résultat:**  standards inadaptés, frustration. Mieux vaut adapter standards contexte projet. Prototype rapide n'a pas mêmes exigences que système critique.
 
 ## Message de responsabilité
 

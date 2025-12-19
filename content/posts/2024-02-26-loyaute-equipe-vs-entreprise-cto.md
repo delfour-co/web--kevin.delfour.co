@@ -38,7 +38,7 @@ Le vrai enjeu est de naviguer cette double loyauté sans basculer systématiquem
 
 **Le piège de la surprotection** : Un CTO trop protecteur de son équipe crée une bulle déconnectée de la réalité business. L'équipe optimise pour l'élégance technique pendant que l'entreprise brûle ses ressources sans valeur livrée.
 
-**Le piège de la pression descendante** : Un CTO qui répercute toute la pression business sur l'équipe sans filtrer. **Résultat :**  burn-out, turnover, perte de qualité, vélocité qui s'effondre.
+**Le piège de la pression descendante** : Un CTO qui répercute toute la pression business sur l'équipe sans filtrer. **Résultat:**  burn-out, turnover, perte de qualité, vélocité qui s'effondre.
 
 **La vraie loyauté : dire la vérité aux deux** : Être loyal à l'équipe, c'est parfois leur dire que la refonte n'est pas prioritaire business. Être loyal à l'entreprise, c'est parfois dire au CEO que cette timeline mènera à un échec.
 
@@ -65,27 +65,27 @@ Quand je choisis de prioriser le business sur la tech (ou l'inverse), l'assumer 
 
 Ce que j'ai observé dans différentes organisations :
 
-**Le CTO "buddy de l'équipe"** : Protège l'équipe de toute pression, dit non à toutes les demandes business irréalistes. **Résultat :**  l'équipe est heureuse mais délivre peu, le business perd confiance, le CTO est écarté des décisions stratégiques.
+**Le CTO "buddy de l'équipe"** : Protège l'équipe de toute pression, dit non à toutes les demandes business irréalistes. **Résultat:**  l'équipe est heureuse mais délivre peu, le business perd confiance, le CTO est écarté des décisions stratégiques.
 
-**Le CTO "courroie de transmission"** : Répercute toute la pression business sans filtrer. "Le CEO veut 10 features en 2 semaines, débrouillez-vous." **Résultat :**  burn-out, turnover, perte de qualité, vélocité qui s'effondre.
+**Le CTO "courroie de transmission"** : Répercute toute la pression business sans filtrer. "Le CEO veut 10 features en 2 semaines, débrouillez-vous." **Résultat:**  burn-out, turnover, perte de qualité, vélocité qui s'effondre.
 
-**L'équilibre observable** : Partager les contraintes business à l'équipe, partager les limites techniques au CEO. Arbitrer explicitement avec un cadre connu. **Résultat :**  tensions gérées, pas éliminées, mais avec une compréhension mutuelle.
+**L'équilibre observable** : Partager les contraintes business à l'équipe, partager les limites techniques au CEO. Arbitrer explicitement avec un cadre connu. **Résultat:**  tensions gérées, pas éliminées, mais avec une compréhension mutuelle.
 
 **La loyauté qui trahit** : Un CTO qui promet au CEO que l'équipe peut livrer en sachant que c'est impossible. Ou qui promet à l'équipe que la dette sera traitée en sachant que le business ne suivra pas. Les deux créent de la défiance à terme.
 
 ## Erreurs fréquentes
 
 **Choisir systématiquement un camp**
-Toujours protéger l'équipe au détriment du business, ou toujours prioriser le business au détriment de l'équipe. **Résultat :**  perte de crédibilité auprès de l'autre partie.
+Toujours protéger l'équipe au détriment du business, ou toujours prioriser le business au détriment de l'équipe. **Résultat:**  perte de crédibilité auprès de l'autre partie.
 
 **Cacher les tensions**
-Ne pas partager les contraintes business à l'équipe, ou ne pas partager les limites techniques au CEO. **Résultat :**  décisions prises sans contexte complet, frustrations mutuelles.
+Ne pas partager les contraintes business à l'équipe, ou ne pas partager les limites techniques au CEO. **Résultat:**  décisions prises sans contexte complet, frustrations mutuelles.
 
 **Promettre l'impossible**
 Dire oui au CEO en sachant que l'équipe ne pourra pas livrer, ou promettre à l'équipe qu'on aura du temps pour la dette en sachant que le business ne suivra pas. Ces promesses détruisent la confiance.
 
 **Éviter les décisions difficiles**
-Reporter les arbitrages douloureux en espérant qu'une solution miracle émergera. **Résultat :**  les tensions s'accumulent et explosent de manière plus coûteuse.
+Reporter les arbitrages douloureux en espérant qu'une solution miracle émergera. **Résultat:**  les tensions s'accumulent et explosent de manière plus coûteuse.
 
 ## Si c'était à refaire
 

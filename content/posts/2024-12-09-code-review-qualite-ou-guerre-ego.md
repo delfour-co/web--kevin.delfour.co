@@ -75,27 +75,27 @@ Métriques : temps moyen review, nombre iterations, % PRs bloquées >48h. Survey
 
 Ce que j'ai observé dans différentes organisations :
 
-**La review toxique** : Dev senior commente avec mépris. "Ce code est nul." Pas de suggestion constructive. Junior terrorisé, arrête de proposer idées. **Résultat :**  innovation tuée, turnover junior élevé.
+**La review toxique** : Dev senior commente avec mépris. "Ce code est nul." Pas de suggestion constructive. Junior terrorisé, arrête de proposer idées. **Résultat:**  innovation tuée, turnover junior élevé.
 
-**Le perfectionnisme bloquant** : Reviewer demande refactor complet pour chaque PR. 5-8 allers-retours. Vélocité divisée par 3. **Résultat :**  frustration massive, devs évitent ce reviewer, silos se créent.
+**Le perfectionnisme bloquant** : Reviewer demande refactor complet pour chaque PR. 5-8 allers-retours. Vélocité divisée par 3. **Résultat:**  frustration massive, devs évitent ce reviewer, silos se créent.
 
-**La review qui éduque** : PR soumise. Commentaire : "Cette approche risque un race condition ici [lien article]. Alternative : [suggestion code]. Qu'en penses-tu ?" → Discussion constructive. **Résultat :**  bug évité, junior apprend, relation renforcée.
+**La review qui éduque** : PR soumise. Commentaire : "Cette approche risque un race condition ici [lien article]. Alternative : [suggestion code]. Qu'en penses-tu ?" → Discussion constructive. **Résultat:**  bug évité, junior apprend, relation renforcée.
 
-**L'exemple des guidelines** : Guidelines écrites : ton respectueux obligatoire, critiquer code pas personne, distinguer blocker ("🚫") vs suggestion ("💡"). Premier commentaire méprisant → manager intervient. **Résultat :**  culture review saine en 2 mois.
+**L'exemple des guidelines** : Guidelines écrites : ton respectueux obligatoire, critiquer code pas personne, distinguer blocker ("🚫") vs suggestion ("💡"). Premier commentaire méprisant → manager intervient. **Résultat:**  culture review saine en 2 mois.
 
 ## Erreurs fréquentes
 
 **Pas de guidelines comportement**
-Guidelines uniquement techniques, rien sur ton et approche. **Résultat :**  dérives ego tolérées.
+Guidelines uniquement techniques, rien sur ton et approche. **Résultat:**  dérives ego tolérées.
 
 **Taille PRs illimitée**
-PRs de 2000 lignes. **Résultat :**  reviews superficielles ou bloquées des jours.
+PRs de 2000 lignes. **Résultat:**  reviews superficielles ou bloquées des jours.
 
 **Perfectionnisme non-calibré**
-Bloquer pour des détails mineurs. **Résultat :**  vélocité effondrée, frustration.
+Bloquer pour des détails mineurs. **Résultat:**  vélocité effondrée, frustration.
 
 **Ne jamais reconnaître le positif**
-Uniquement critiquer. **Résultat :**  code review perçue comme punition.
+Uniquement critiquer. **Résultat:**  code review perçue comme punition.
 
 ## Si c'était à refaire
 

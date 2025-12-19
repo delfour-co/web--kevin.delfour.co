@@ -34,13 +34,13 @@ Le vrai enjeu est de dire la vérité de manière à ce qu'elle soit entendue, p
 
 **Les 4 types de feedback difficile** :
 
-**Type 1 - Performance insuffisante** : Contexte : résultats en-deçà des attentes malgré efforts. Exemple : développeur ne livre pas la qualité attendue depuis 3 mois. Enjeu : comprendre pourquoi (compétence ? charge ? clarté attentes ?), donner cadre clair amélioration. Piège : généraliser ("Tu codes mal") au lieu de préciser ("Ces 3 pull requests ont ces problèmes spécifiques").
+**Type 1 - Performance insuffisante** : Contexte : résultats en-deçà des attentes malgré efforts. Exemple : développeur ne livre pas la qualité attendue depuis 3 mois. Enjeu : comprendre pourquoi (compétence ? charge ? clarté attentes ?), donner cadre clair amélioration. **Piège:** généraliser ("Tu codes mal") au lieu de préciser ("Ces 3 pull requests ont ces problèmes spécifiques").
 
-**Type 2 - Comportement toxique** : Contexte : attitude qui nuit à l'équipe (sarcasme, non-collaboration, mépris). Exemple : dev senior méprisant avec juniors. Enjeu : stopper comportement rapidement, clarifier non-négociables. Piège : tolérer parce que "performant techniquement".
+**Type 2 - Comportement toxique** : Contexte : attitude qui nuit à l'équipe (sarcasme, non-collaboration, mépris). Exemple : dev senior méprisant avec juniors. Enjeu : stopper comportement rapidement, clarifier non-négociables. **Piège:** tolérer parce que "performant techniquement".
 
-**Type 3 - Décision contestée** : Contexte : choix technique ou organisationnel fortement remis en question. Exemple : choix architecture critiqué par équipe. Enjeu : expliquer pourquoi, écouter objections, ajuster si nécessaire ou tenir position. Piège : défensivité ou autoritarisme.
+**Type 3 - Décision contestée** : Contexte : choix technique ou organisationnel fortement remis en question. Exemple : choix architecture critiqué par équipe. Enjeu : expliquer pourquoi, écouter objections, ajuster si nécessaire ou tenir position. **Piège:** défensivité ou autoritarisme.
 
-**Type 4 - Limitation de progression** : Contexte : personne veut promo/évolution mais niveau pas atteint. Exemple : dev veut devenir senior mais manque compétences. Enjeu : clarifier gap précisément, donner roadmap concrète. Piège : faux espoir ou vague ("travaille ta communication").
+**Type 4 - Limitation de progression** : Contexte : personne veut promo/évolution mais niveau pas atteint. Exemple : dev veut devenir senior mais manque compétences. Enjeu : clarifier gap précisément, donner roadmap concrète. **Piège:** faux espoir ou vague ("travaille ta communication").
 
 **Les 5 principes du feedback difficile** :
 
@@ -59,7 +59,7 @@ Le vrai enjeu est de dire la vérité de manière à ce qu'elle soit entendue, p
 Voici comment je structure le feedback difficile :
 
 **1. Préparer le feedback (avant la conversation)**
-Questions : quel comportement/résultat précis ? Quel impact sur équipe/projet ? Quelle attente claire ? Quel support possible ? Cette préparation évite improvisation.
+**Questions:** quel comportement/résultat précis ? Quel impact sur équipe/projet ? Quelle attente claire ? Quel support possible ? Cette préparation évite improvisation.
 
 **2. Créer contexte safe**
 One-on-one privé, pas public. Temps suffisant (45-60min). Pas de distractions. Ce contexte permet conversation vraie.
@@ -77,27 +77,27 @@ Check-in réguliers, support actif, ajustements si nécessaire. Ce suivi transfo
 
 Ce que j'ai observé dans différentes situations :
 
-**Le feedback évité** : Manager évite conversation difficile pendant 6 mois. Accumulation. Explosion. **Résultat :**  développeur surpris, relation détruite, départ.
+**Le feedback évité** : Manager évite conversation difficile pendant 6 mois. Accumulation. Explosion. **Résultat:**  développeur surpris, relation détruite, départ.
 
-**Le feedback brutal** : "Ton code est nul, ça doit changer." Pas de précision, pas de support. **Résultat :**  démotivation, défensivité, pas d'amélioration.
+**Le feedback brutal** : "Ton code est nul, ça doit changer." Pas de précision, pas de support. **Résultat:**  démotivation, défensivité, pas d'amélioration.
 
-**Le feedback bien fait** : "J'ai observé ces 3 problèmes précis dans ton code ces 3 dernières semaines [exemples]. Ça impacte la qualité et ralentit l'équipe. Parlons-en : qu'est-ce qui se passe ?" → Écoute. "Voici ce qui doit changer d'ici 3 semaines. Je te propose 2h de pair programming/semaine pour t'aider. On se revoit chaque lundi." **Résultat :**  amélioration visible en 2 semaines, relation préservée.
+**Le feedback bien fait** : "J'ai observé ces 3 problèmes précis dans ton code ces 3 dernières semaines [exemples]. Ça impacte la qualité et ralentit l'équipe. Parlons-en : qu'est-ce qui se passe ?" → Écoute. "Voici ce qui doit changer d'ici 3 semaines. Je te propose 2h de pair programming/semaine pour t'aider. On se revoit chaque lundi." **Résultat:**  amélioration visible en 2 semaines, relation préservée.
 
-**L'exemple du comportement toxique** : Dev senior sarcastique avec juniors. Feedback : "J'ai observé 3 situations où tu as été méprisant [exemples précis]. C'est non-négociable : ce comportement doit cesser immédiatement. Si ça se reproduit, on passe en warning formel." **Résultat :**  comportement change ou séparation rapide. Dans les deux cas, équipe protégée.
+**L'exemple du comportement toxique** : Dev senior sarcastique avec juniors. Feedback : "J'ai observé 3 situations où tu as été méprisant [exemples précis]. C'est non-négociable : ce comportement doit cesser immédiatement. Si ça se reproduit, on passe en warning formel." **Résultat:**  comportement change ou séparation rapide. Dans les deux cas, équipe protégée.
 
 ## Erreurs fréquentes
 
 **Sandwich de feedback**
-"C'est bien, MAIS voici le gros problème, mais sinon c'est cool." **Résultat :**  message dilué, personne ne sait ce qui doit vraiment changer.
+"C'est bien, MAIS voici le gros problème, mais sinon c'est cool." **Résultat:**  message dilué, personne ne sait ce qui doit vraiment changer.
 
 **Généralités vagues**
-"Tu dois améliorer ta communication." **Résultat :**  personne ne sait quoi faire concrètement.
+"Tu dois améliorer ta communication." **Résultat:**  personne ne sait quoi faire concrètement.
 
 **Éviter trop longtemps**
-Attendre 6 mois avant de dire. **Résultat :**  problème amplifié, solution plus difficile, surprise et frustration.
+Attendre 6 mois avant de dire. **Résultat:**  problème amplifié, solution plus difficile, surprise et frustration.
 
 **Donner feedback sans écouter**
-Monologue sans comprendre contexte. **Résultat :**  causes réelles non adressées, amélioration impossible.
+Monologue sans comprendre contexte. **Résultat:**  causes réelles non adressées, amélioration impossible.
 
 ## Si c'était à refaire
 

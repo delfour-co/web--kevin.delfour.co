@@ -80,7 +80,7 @@ Ce que j'ai observé dans différentes APIs :
 - Métrique succès : "Ça marche sans bugs"
 - Documentation : Générée automatiquement depuis code
 - Versioning : Breaking changes acceptables si justifiés techniquement
-- **Résultat :** taux adoption faible, time-to-market élevé, satisfaction développeur faible
+- **Résultat:** taux adoption faible, time-to-market élevé, satisfaction développeur faible
 - **Mieux vaut :** Vision produit développeur
 
 **Pas de framework DELIGHT**
@@ -92,7 +92,7 @@ Ce que j'ai observé dans différentes APIs :
 - Pas Great error messages
 - Pas Helpful tooling
 - Pas Testable and reliable
-- **Résultat :** DX faible, adoption faible
+- **Résultat:** DX faible, adoption faible
 - **Mieux vaut :** Le framework DELIGHT DX exceptionnelle (D Discoverable E Easy to get started L Logical and predictable I Integrated documentation G Great error messages H Helpful tooling T Testable and reliable GitHub applique ce framework depuis 2019)
 
 **ROI tangible investir DX** : Analyses 200+ APIs B2B montrent impacts business directs (Acquisition +340% taux adoption vs approche technique classique Time-to-market -67% délai intégration partenaires/clients Support -78% volume tickets -43% coût support FTE Recommandations +67% recommandations organiques Developer NPS >50 Retention +89% retention développeur 12 mois). Investissement recommandé (Leaders secteur allouent 15-25% budget engineering initiatives DX Budget type API B2B Documentation interactive 2-3 FTE 6 mois SDKs officiels 1 FTE permanent langage prioritaire Tooling CLI 1 FTE 3 mois Status page monitoring 0.5 FTE setup + outils SaaS Métriques DX Integration analytics existants + dashboard). Ce ROI justifie l'investissement.
@@ -106,7 +106,7 @@ Ce que j'ai observé dans différentes APIs :
 - Métrique succès : "Ça marche sans bugs"
 - Documentation : Générée automatiquement depuis code
 - Versioning : Breaking changes acceptables si justifiés techniquement
-- **Résultat :** taux adoption faible, time-to-market élevé, satisfaction développeur faible
+- **Résultat:** taux adoption faible, time-to-market élevé, satisfaction développeur faible
 - **Mieux vaut :** Vision produit développeur (Objectif Résoudre problèmes concrets développeurs utilisateurs Driver design Use cases workflows développeurs Métriques succès Time-to-first-success <15 minutes satisfaction développeur >4.5/5 taux adoption mensuel Documentation Conçue apprentissage découverte Versioning Rétrocompatibilité prioritaire migrations guidées timeline claire)
 
 **Pas de framework DELIGHT**
@@ -118,7 +118,7 @@ Ce que j'ai observé dans différentes APIs :
 - Pas Great error messages
 - Pas Helpful tooling
 - Pas Testable and reliable
-- **Résultat :** DX faible, adoption faible
+- **Résultat:** DX faible, adoption faible
 - **Mieux vaut :** Le framework DELIGHT DX exceptionnelle (D Discoverable E Easy to get started L Logical and predictable I Integrated documentation G Great error messages H Helpful tooling T Testable and reliable GitHub applique ce framework depuis 2019)
 
 **Pas de métriques DX**
@@ -131,7 +131,7 @@ Ce que j'ai observé dans différentes APIs :
 - Pas Developer NPS
 - Pas Error rate by endpoint
 - Pas SDK crash rate
-- **Résultat :** impossible améliorer ce qu'on mesure pas
+- **Résultat:** impossible améliorer ce qu'on mesure pas
 - **Mieux vaut :** Métriques DX qui comptent vraiment (Métriques acquisition Time-to-first-success Documentation bounce rate Signup completion rate Métriques engagement API calls per developer Feature adoption rate Documentation engagement Métriques satisfaction Developer NPS Support satisfaction Métriques qualité Error rate by endpoint SDK crash rate Breaking change impact ROI métriques DX améliorer métriques génère ROI mesurable)
 
 ## Si c'était à refaire

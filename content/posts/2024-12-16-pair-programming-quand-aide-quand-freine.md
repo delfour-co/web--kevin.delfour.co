@@ -34,13 +34,13 @@ Le vrai enjeu est de comprendre quand le pair programming aide et quand il frein
 
 **Les 4 situations où ça aide** :
 
-**Situation 1 - Onboarding et transfert de connaissance** : Contexte : nouveau développeur, domaine complexe à comprendre. Pourquoi ça marche : apprentissage accéléré, questions en temps réel, contexte transmis. Durée optimale : 2-4h par jour pendant 2-4 semaines, puis décroissance. Piège : prolonger trop longtemps, créer dépendance.
+**Situation 1 - Onboarding et transfert de connaissance** : Contexte : nouveau développeur, domaine complexe à comprendre. Pourquoi ça marche : apprentissage accéléré, questions en temps réel, contexte transmis. Durée optimale : 2-4h par jour pendant 2-4 semaines, puis décroissance. **Piège:** prolonger trop longtemps, créer dépendance.
 
-**Situation 2 - Problème complexe et bloquant** : Contexte : bug critique non résolu depuis 2 jours, architecture complexe à designer. Pourquoi ça marche : deux cerveaux > un, déblocage rapide, décisions meilleures. Durée optimale : 2-6h intensives jusqu'à déblocage. Piège : utiliser pour tout, y compris tâches simples.
+**Situation 2 - Problème complexe et bloquant** : Contexte : bug critique non résolu depuis 2 jours, architecture complexe à designer. Pourquoi ça marche : deux cerveaux > un, déblocage rapide, décisions meilleures. Durée optimale : 2-6h intensives jusqu'à déblocage. **Piège:** utiliser pour tout, y compris tâches simples.
 
-**Situation 3 - Code critique (sécurité, finance, etc.)** : Contexte : code manipulant données sensibles, argent, sécurité. Pourquoi ça marche : réduction drastique erreurs, review en temps réel. Durée optimale : sessions courtes (1-2h) sur parties critiques uniquement. Piège : appliquer à tout le code, pas juste le critique.
+**Situation 3 - Code critique (sécurité, finance, etc.)** : Contexte : code manipulant données sensibles, argent, sécurité. Pourquoi ça marche : réduction drastique erreurs, review en temps réel. Durée optimale : sessions courtes (1-2h) sur parties critiques uniquement. **Piège:** appliquer à tout le code, pas juste le critique.
 
-**Situation 4 - Montée en compétence ciblée** : Contexte : dev veut apprendre techno/pattern spécifique. Pourquoi ça marche : apprentissage pratique immédiat, feedback direct. Durée optimale : 2-3 sessions de 2h sur sujet défini. Piège : remplacer formation structurée par pair ad hoc.
+**Situation 4 - Montée en compétence ciblée** : Contexte : dev veut apprendre techno/pattern spécifique. Pourquoi ça marche : apprentissage pratique immédiat, feedback direct. Durée optimale : 2-3 sessions de 2h sur sujet défini. **Piège:** remplacer formation structurée par pair ad hoc.
 
 **Les 4 situations où ça freine** :
 
@@ -57,7 +57,7 @@ Le vrai enjeu est de comprendre quand le pair programming aide et quand il frein
 Voici comment je décide quand utiliser le pair programming :
 
 **1. Critères de décision**
-Questions : complexité élevée ? Connaissance à transmettre ? Code critique ? Si oui à 1+, considérer pair. Si non à tous, probablement solo.
+**Questions:** complexité élevée ? Connaissance à transmettre ? Code critique ? Si oui à 1+, considérer pair. Si non à tous, probablement solo.
 
 **2. Format adapté au contexte**
 Onboarding : 2-4h/jour, 2-4 semaines. Problème complexe : sessions intensives 2-6h jusqu'à résolution. Code critique : 1-2h sur parties sensibles. Formation : 2-3 sessions ciblées. Routine : solo.
@@ -75,27 +75,27 @@ Encourager, pas imposer. Certains excellent solo. Respecter différences. Cette 
 
 Ce que j'ai observé dans différentes organisations :
 
-**Le pair dogmatique** : "Tout le code en pair, tout le temps." 6 mois : vélocité divisée par 2, équipe épuisée, talents partent ("pas de temps pour réfléchir"). **Résultat :**  abandon complet du pair après.
+**Le pair dogmatique** : "Tout le code en pair, tout le temps." 6 mois : vélocité divisée par 2, équipe épuisée, talents partent ("pas de temps pour réfléchir"). **Résultat:**  abandon complet du pair après.
 
-**Le pair ciblé** : Pair utilisé pour : onboarding (2 semaines), code critique (sécurité, paiement), problèmes bloqués >1 jour. Reste en solo. **Résultat :**  qualité élevée, vélocité préservée, satisfaction équipe.
+**Le pair ciblé** : Pair utilisé pour : onboarding (2 semaines), code critique (sécurité, paiement), problèmes bloqués >1 jour. Reste en solo. **Résultat:**  qualité élevée, vélocité préservée, satisfaction équipe.
 
-**L'exemple de l'onboarding** : Nouveau dev : semaine 1-2 pair 3h/jour avec buddy. Semaine 3-4 pair 1h/jour. Mois 2+ : pair ponctuel sur demande. **Résultat :**  autonomie rapide sans submersion.
+**L'exemple de l'onboarding** : Nouveau dev : semaine 1-2 pair 3h/jour avec buddy. Semaine 3-4 pair 1h/jour. Mois 2+ : pair ponctuel sur demande. **Résultat:**  autonomie rapide sans submersion.
 
-**Le piège de la compatibilité** : Pair imposée entre dev senior dominant et junior intimidé. Junior ne contribue plus, devient "spectateur". **Résultat :**  frustration, pas d'apprentissage. Changement de binôme résout problème.
+**Le piège de la compatibilité** : Pair imposée entre dev senior dominant et junior intimidé. Junior ne contribue plus, devient "spectateur". **Résultat:**  frustration, pas d'apprentissage. Changement de binôme résout problème.
 
 ## Erreurs fréquentes
 
 **Pair systématique sur tout**
-Dogme "tout en pair". **Résultat :**  épuisement, vélocité effondrée, frustration.
+Dogme "tout en pair". **Résultat:**  épuisement, vélocité effondrée, frustration.
 
 **Sessions trop longues**
-Pair 8h/jour pendant semaines. **Résultat :**  burn-out cognitif, inefficacité.
+Pair 8h/jour pendant semaines. **Résultat:**  burn-out cognitif, inefficacité.
 
 **Pas de rotation driver/navigator**
-Un code, l'autre regarde passivement. **Résultat :**  désengagement du navigateur, pas de bénéfice collaboration.
+Un code, l'autre regarde passivement. **Résultat:**  désengagement du navigateur, pas de bénéfice collaboration.
 
 **Ignorer incompatibilités**
-Forcer paires qui ne fonctionnent pas. **Résultat :**  toxicité, inefficacité.
+Forcer paires qui ne fonctionnent pas. **Résultat:**  toxicité, inefficacité.
 
 ## Si c'était à refaire
 

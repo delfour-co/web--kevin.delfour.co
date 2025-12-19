@@ -46,9 +46,13 @@ Le vrai enjeu est de savoir quand et comment dire non pour protéger à la fois 
 
 **Framework "Non, mais"** :
 1. Reconnaître l'enjeu business : "Je comprends pourquoi c'est critique"
+
 2. Expliquer le problème technique : "Voici pourquoi ce délai n'est pas réaliste"
+
 3. Proposer 3 alternatives : A (rapide-et-sale), B (équilibré), C (robuste-et-long)
+
 4. Recommander : "Je recommande B parce que..."
+
 5. Laisser CEO choisir : "Qu'est-ce qui fait le plus sens pour vous ?"
 
 **Les 3 niveaux d'alternatives** :
@@ -84,7 +88,7 @@ Ce que j'ai observé dans différentes situations :
 
 **Le oui systématique qui détruit** : CTO qui ne dit jamais non. Promesses impossibles, échecs répétés, crédibilité perdue, replacement.
 
-**Le non brutal qui isole** : "Impossible." Sans explication ni alternative. **Résultat :**  CEO contourne le CTO, décisions prises sans tech, isolement progressif.
+**Le non brutal qui isole** : "Impossible." Sans explication ni alternative. **Résultat:**  CEO contourne le CTO, décisions prises sans tech, isolement progressif.
 
 **Le "non, mais" qui renforce** : "Timeline 1 semaine impossible. Options : démo simulée en 3 jours, ou feature v1 en 2 semaines. Je recommande démo." CEO choisit démo, succès, confiance renforcée.
 
@@ -93,16 +97,16 @@ Ce que j'ai observé dans différentes situations :
 ## Erreurs fréquentes
 
 **Ne jamais dire non**
-Accepter toutes les demandes. **Résultat :**  promesses impossibles, échecs, crédibilité détruite, burn-out.
+Accepter toutes les demandes. **Résultat:**  promesses impossibles, échecs, crédibilité détruite, burn-out.
 
 **Dire non sans alternative**
-"Impossible" sans proposer d'options. **Résultat :**  CEO frustré, contournement, relation détériorée.
+"Impossible" sans proposer d'options. **Résultat:**  CEO frustré, contournement, relation détériorée.
 
 **Argumenter uniquement technique**
 "L'architecture ne permet pas." CEO s'en fout. Mieux : "Cette approche créerait dette qui ralentirait delivery 40% pendant 6 mois."
 
 **Ne pas documenter quand CEO insiste**
-CEO insiste malgré warnings. Pas de trace écrite. **Résultat :**  échec, CTO blâmé, "tu aurais dû dire non plus fort".
+CEO insiste malgré warnings. Pas de trace écrite. **Résultat:**  échec, CTO blâmé, "tu aurais dû dire non plus fort".
 
 ## Si c'était à refaire
 
@@ -118,7 +122,7 @@ Framework A/B/C pour toute demande significative. Cette structure rend le "non, 
 Quand enjeu critique, email récapitulatif : demande, risques, alternatives, décision. Cette trace protège et clarifie.
 
 **Mesurer et partager les résultats**
-"Q2 : j'ai dit non à feature X, proposé alternative Y. **Résultat :**  livrée avec succès, zéro dette." Cette visibilité justifie futurs non.
+"Q2 : j'ai dit non à feature X, proposé alternative Y. **Résultat:**  livrée avec succès, zéro dette." Cette visibilité justifie futurs non.
 
 ## Pour approfondir
 

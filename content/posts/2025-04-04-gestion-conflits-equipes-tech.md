@@ -72,23 +72,24 @@ Ce que j'ai observé dans différentes équipes :
 
 **Ce qui fonctionne** : Decision framework exit débats infinis (Type 1 réversibles 24h max, Type 2 irréversibles 1 semaine spike/POC, Escalation 3 étapes pas plus) ROI 6 semaines débat à 3 jours décision structurée. Code review guidelines (Focus architecture logic bugs performance maintainability, Bienveillance par défaut, Propose don't impose, Celebrate good code) -70% tension +40% qualité. Médiation interpersonnelle (pauseAndBreathe, reflectiveListening, findCommonGround, speakerListener, separatePositionsFromInterests) résout 80% conflits sans escalation. Mesurer santé équipe (KPIs hard conflict frequency resolution velocity review cycle health, KPIs soft psychological safety conflict confidence ROI tracking) permet voir tendances ajuster rapidement.
 
-**Ce qui bloque** : Débats techniques sans fin (architecture, choix stack, standards code). **Résultat :**  15-20h/sprint perdues discussions, vélocité divisée par 2. Mieux vaut decision framework Type 1/Type 2 avec escalation 3 étapes. Guerres d'ego code review (commentaires agressifs nitpicking obsessionnel). **Résultat :**  PRs passent 1-2 cycles à 5-7 cycles, frustration massive. Mieux vaut guidelines tone + review analytics focus architecture bienveillance propose don't impose. Silos rétention information (knowledge hoarding résistance partage). **Résultat :**  bus factor 1 composants critiques, équipe fragile. Mieux vaut documentation obligatoire + pair programming rotatif.
+**Ce qui bloque** : Débats techniques sans fin (architecture, choix stack, standards code). **Résultat:**  15-20h/sprint perdues discussions, vélocité divisée par 2. Mieux vaut decision framework Type 1/Type 2 avec escalation 3 étapes. Guerres d'ego code review (commentaires agressifs nitpicking obsessionnel). **Résultat:**  PRs passent 1-2 cycles à 5-7 cycles, frustration massive. Mieux vaut guidelines tone + review analytics focus architecture bienveillance propose don't impose. Silos rétention information (knowledge hoarding résistance partage). **Résultat:**  bus factor 1 composants critiques, équipe fragile. Mieux vaut documentation obligatoire + pair programming rotatif.
+
 
 **Les métriques santé équipe** : KPIs hard automatized tracking (Conflict frequency target <2 escalated conflicts/month équipe 8, Resolution velocity target <5 days depuis detection, Review cycle health target <2.5 review cycles/PR moyenne). KPIs soft monthly pulse (Psychological safety gauge >7/10 average, Conflict confidence score benchmark 8.2/10, ROI tracking dashboard Investment 2h/week manager time Return early detection 5x faster resolution Bottom line +25% team velocity sustained). Ces métriques permettent de voir les tendances et d'ajuster rapidement.
 
 ## Erreurs fréquentes
 
 **Débats techniques sans fin**  
-Débats architecture, choix stack, standards code sans decision framework. **Résultat :**  15-20h/sprint perdues discussions, vélocité divisée par 2. Mieux vaut decision framework Type 1 réversibles 24h max Type 2 irréversibles 1 semaine spike/POC avec escalation 3 étapes.
+Débats architecture, choix stack, standards code sans decision framework. **Résultat:**  15-20h/sprint perdues discussions, vélocité divisée par 2. Mieux vaut decision framework Type 1 réversibles 24h max Type 2 irréversibles 1 semaine spike/POC avec escalation 3 étapes.
 
 **Guerres d'ego code review**  
-Commentaires agressifs nitpicking obsessionnel sans guidelines tone. **Résultat :**  PRs passent 1-2 cycles à 5-7 cycles, frustration massive. Mieux vaut guidelines tone + review analytics focus architecture bienveillance propose don't impose celebrate good code.
+Commentaires agressifs nitpicking obsessionnel sans guidelines tone. **Résultat:**  PRs passent 1-2 cycles à 5-7 cycles, frustration massive. Mieux vaut guidelines tone + review analytics focus architecture bienveillance propose don't impose celebrate good code.
 
 **Silos rétention information**  
-Knowledge hoarding résistance partage sans documentation obligatoire. **Résultat :**  bus factor 1 composants critiques, équipe fragile. Mieux vaut documentation obligatoire + pair programming rotatif.
+Knowledge hoarding résistance partage sans documentation obligatoire. **Résultat:**  bus factor 1 composants critiques, équipe fragile. Mieux vaut documentation obligatoire + pair programming rotatif.
 
 **Pas de early warning**  
-Découvrir conflits quand ils explosent plutôt que détecter avant. **Résultat :**  intervention tardive, coûts élevés. Mieux vaut dashboard santé équipe métriques automation (PR review cycles, Review time, Participation meetings) + métriques humaines pulse hebdomadaire (Moral score, Collaboration rating, Psychological safety).
+Découvrir conflits quand ils explosent plutôt que détecter avant. **Résultat:**  intervention tardive, coûts élevés. Mieux vaut dashboard santé équipe métriques automation (PR review cycles, Review time, Participation meetings) + métriques humaines pulse hebdomadaire (Moral score, Collaboration rating, Psychological safety).
 
 ## Si c'était à refaire
 

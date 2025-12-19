@@ -28,7 +28,7 @@ audiences:
 
 Pourquoi cette décision a été prise ? Qui l'a validée ? La documentation ne le dit pas... ou elle est obsolète. Cette situation n'est pas une fatalité. Les ADR et RFC résolvent ce problème de façon élégante.
 
-Ce que j'ai observé : beaucoup d'équipes ont une documentation morte. Symptômes classiques (README.md last updated 2 years ago "We use microservices..." mais personne ne sait pourquoi microservices quelles alternatives considérées qui a décidé). **Résultat :**  décisions refaites plusieurs fois, contexte perdu, nouveaux arrivants perdus. Avec ADR/RFC, documentation vivante : toujours à jour archives immutables, contexte préservé, décisions traçables. Métriques adoption mesurée (Avant ADR/RFC décisions documentées 10% "Pourquoi ?" répondu rarement onboarding nouveau 2 semaines, Après ADR/RFC décisions documentées 95% "Pourquoi ?" dans ADR toujours onboarding nouveau 3 jours).
+Ce que j'ai observé : beaucoup d'équipes ont une documentation morte. Symptômes classiques (README.md last updated 2 years ago "We use microservices..." mais personne ne sait pourquoi microservices quelles alternatives considérées qui a décidé). **Résultat:**  décisions refaites plusieurs fois, contexte perdu, nouveaux arrivants perdus. Avec ADR/RFC, documentation vivante : toujours à jour archives immutables, contexte préservé, décisions traçables. Métriques adoption mesurée (Avant ADR/RFC décisions documentées 10% "Pourquoi ?" répondu rarement onboarding nouveau 2 semaines, Après ADR/RFC décisions documentées 95% "Pourquoi ?" dans ADR toujours onboarding nouveau 3 jours).
 
 ## Le faux problème
 
@@ -40,7 +40,7 @@ Un autre faux problème : penser qu'il faut modifier un ADR existant pour change
 
 Le vrai enjeu est de comprendre comment transformer la documentation morte en documentation vivante :
 
-**Le problème : Documentation morte** : Symptômes classiques (README.md last updated 2 years ago "We use microservices..." mais personne ne sait pourquoi microservices quelles alternatives considérées qui a décidé). **Résultat :**  décisions refaites plusieurs fois, contexte perdu, nouveaux arrivants perdus. Cette documentation morte coûte cher : décisions refaites plusieurs fois, contexte perdu, onboarding nouveau 2 semaines.
+**Le problème : Documentation morte** : Symptômes classiques (README.md last updated 2 years ago "We use microservices..." mais personne ne sait pourquoi microservices quelles alternatives considérées qui a décidé). **Résultat:**  décisions refaites plusieurs fois, contexte perdu, nouveaux arrivants perdus. Cette documentation morte coûte cher : décisions refaites plusieurs fois, contexte perdu, onboarding nouveau 2 semaines.
 
 **ADR Architecture Decision Records** : Qu'est-ce qu'un ADR (Document léger capture UNE décision architecture). Structure (Status Accepted, Context nous avons besoin stocker données utilisateur relations complexes volume attendu 100k users, Decision nous utiliserons PostgreSQL base données principale, Consequences Positive ACID garanti Relations SQL naturelles Écosystème mature Negative Scaling vertical principalement Pas optimal time-series data). Template ADR (ADR-XXX Titre court décision Date YYYY-MM-DD Status Proposed Accepted Deprecated Superseded Deciders @alice @bob Context Quel problème essayons-nous résoudre Quelles contraintes Decision Quelle solution avons-nous choisi Alternatives Considered Option A Pros Cons Option B Pros Cons Consequences Positive Negative Risks). Cette structure capture l'essentiel sans surcharge.
 
@@ -71,23 +71,24 @@ Ce que j'ai observé dans différentes équipes :
 
 **Ce qui fonctionne** : ADR court 2 pages + link vers RFC pour détails plutôt qu'ADR trop long 50 pages qui devient obsolète rapidement. RFC proposition en discussion document détaillé processus validation (Phase 1 Draft 1-3 jours, Phase 2 Review 1 semaine, Phase 3 Decision Meeting 1h, Phase 4 Accepted → ADR). ADR immutable history créer nouveau ADR qui supersede ancien ADR plutôt que modifier ancien ADR. Où stocker Repo Git recommandé versionné avec code pull requests review historique Git complet. Métriques succès adoption mesurée (Décisions documentées 95% "Pourquoi ?" dans ADR toujours Onboarding nouveau 3 jours, Qualité décisions Nombre fois où on re-fait décision 0/an Décisions basées data 85%).
 
-**Ce qui bloque** : Documentation morte (README.md last updated 2 years ago "We use microservices..." mais personne ne sait pourquoi quelles alternatives considérées qui a décidé). **Résultat :**  décisions refaites plusieurs fois, contexte perdu, nouveaux arrivants perdus, onboarding nouveau 2 semaines. Mieux vaut ADR/RFC documentation vivante toujours à jour archives immutables contexte préservé décisions traçables. ADR trop longs (ADR-001 Use PostgreSQL 50 pages). **Résultat :**  devient obsolète rapidement, pas maintenu. Mieux vaut ADR court 2 pages + link vers RFC pour détails. Pas d'ownership (Deciders Team). **Résultat :**  personne ne sait qui a décidé, traçabilité perdue. Mieux vaut Deciders @alice-tech-lead @bob-cto. Modifier ancien ADR (Éditer ADR-003 pour changer décision). **Résultat :**  casse traçabilité, historique perdu. Mieux vaut créer ADR-015 qui supersede ADR-003.
+**Ce qui bloque** : Documentation morte (README.md last updated 2 years ago "We use microservices..." mais personne ne sait pourquoi quelles alternatives considérées qui a décidé). **Résultat:**  décisions refaites plusieurs fois, contexte perdu, nouveaux arrivants perdus, onboarding nouveau 2 semaines. Mieux vaut ADR/RFC documentation vivante toujours à jour archives immutables contexte préservé décisions traçables. ADR trop longs (ADR-001 Use PostgreSQL 50 pages). **Résultat:**  devient obsolète rapidement, pas maintenu. Mieux vaut ADR court 2 pages + link vers RFC pour détails. Pas d'ownership (Deciders Team). **Résultat:**  personne ne sait qui a décidé, traçabilité perdue. Mieux vaut Deciders @alice-tech-lead @bob-cto. Modifier ancien ADR (Éditer ADR-003 pour changer décision). **Résultat:**  casse traçabilité, historique perdu. Mieux vaut créer ADR-015 qui supersede ADR-003.
+
 
 **Les métriques succès** : Adoption mesurée (Avant ADR/RFC décisions documentées 10% "Pourquoi ?" répondu rarement onboarding nouveau 2 semaines, Après ADR/RFC décisions documentées 95% "Pourquoi ?" dans ADR toujours onboarding nouveau 3 jours). Qualité décisions (Nombre fois où on re-fait décision Avant 4/an Après 0/an, Décisions basées data vs opinion Avant 30% Après 85%). Ces métriques permettent de voir si ADR/RFC fonctionnent et d'ajuster si nécessaire.
 
 ## Erreurs fréquentes
 
 **ADR trop longs**  
-ADR-001 Use PostgreSQL 50 pages. **Résultat :**  devient obsolète rapidement, pas maintenu. Mieux vaut ADR court 2 pages + link vers RFC pour détails.
+ADR-001 Use PostgreSQL 50 pages. **Résultat:**  devient obsolète rapidement, pas maintenu. Mieux vaut ADR court 2 pages + link vers RFC pour détails.
 
 **Pas d'ownership**  
-Deciders Team. **Résultat :**  personne ne sait qui a décidé, traçabilité perdue. Mieux vaut Deciders @alice-tech-lead @bob-cto.
+Deciders Team. **Résultat:**  personne ne sait qui a décidé, traçabilité perdue. Mieux vaut Deciders @alice-tech-lead @bob-cto.
 
 **Modifier ancien ADR**  
-Éditer ADR-003 pour changer décision. **Résultat :**  casse traçabilité, historique perdu. Mieux vaut créer ADR-015 qui supersede ADR-003. ADR = immutable history.
+Éditer ADR-003 pour changer décision. **Résultat:**  casse traçabilité, historique perdu. Mieux vaut créer ADR-015 qui supersede ADR-003. ADR = immutable history.
 
 **RFC sans deadline**  
-Status Draft depuis 6 mois. **Résultat :**  RFC qui traîne, décision jamais prise. Mieux vaut Deadline 2025-10-20 Si pas décision → Auto-reject.
+Status Draft depuis 6 mois. **Résultat:**  RFC qui traîne, décision jamais prise. Mieux vaut Deadline 2025-10-20 Si pas décision → Auto-reject.
 
 ## Si c'était à refaire
 

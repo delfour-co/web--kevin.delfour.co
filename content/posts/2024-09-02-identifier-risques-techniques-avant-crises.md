@@ -79,7 +79,7 @@ Ce que j'ai observé dans différentes organisations :
 
 **L'absence de système** : Risques découverts quand ils explosent. Incident DB : "On savait qu'elle ralentissait depuis 6 mois mais pas prioritaire." Coût : 200k€, 3 jours downtime.
 
-**Le système qui alerte** : Dashboard risques révèle : DB performance -40% sur 3 mois. Action : migration planning, exécutée avant crise. Coût : 30k€, zéro downtime.
+**Le système qui alerte** : Dashboard risques révèle : DB performance -40% sur 3 mois. **Action:** migration planning, exécutée avant crise. Coût : 30k€, zéro downtime.
 
 **Le signal humain qui sauve** : Dev junior signale en one-on-one : "Module auth me fait peur, code 8 ans, personne ne le touche." Investigation : CVE critique trouvée. Patch avant exploit. Breach évitée.
 
@@ -88,16 +88,16 @@ Ce que j'ai observé dans différentes organisations :
 ## Erreurs fréquentes
 
 **Ne rien surveiller**
-"On verra quand ça casse." **Résultat :**  crises en série, réaction permanente, coûts ×10.
+"On verra quand ça casse." **Résultat:**  crises en série, réaction permanente, coûts ×10.
 
 **Sur-monitorer**
-100 métriques, personne ne regarde. **Résultat :**  alerte fatigue, vrais risques noyés dans le bruit.
+100 métriques, personne ne regarde. **Résultat:**  alerte fatigue, vrais risques noyés dans le bruit.
 
 **Culture du blame**
-Punir qui signale risque. **Résultat :**  silence, risques cachés jusqu'à explosion.
+Punir qui signale risque. **Résultat:**  silence, risques cachés jusqu'à explosion.
 
 **Identifier sans agir**
-Liste risques sans plan d'action ni suivi. **Résultat :**  faux sentiment de contrôle, risques qui se concrétisent.
+Liste risques sans plan d'action ni suivi. **Résultat:**  faux sentiment de contrôle, risques qui se concrétisent.
 
 ## Si c'était à refaire
 

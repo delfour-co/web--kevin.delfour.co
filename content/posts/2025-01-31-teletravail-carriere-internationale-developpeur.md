@@ -64,16 +64,16 @@ Voici une manière de voir les choses pour profiter du remote international :
 ## Erreurs classiques
 
 **Ignorer le timezone**  
-Accepter remote job avec timezone impossible (Team San Francisco PST -9h Dev Lyon → Meetings 18h-22h → Burn out). **Résultat :**  burnout total, retour local job. Mieux vaut max 3-4h décalage supportable long-terme.
+Accepter remote job avec timezone impossible (Team San Francisco PST -9h Dev Lyon → Meetings 18h-22h → Burn out). **Résultat:**  burnout total, retour local job. Mieux vaut max 3-4h décalage supportable long-terme.
 
 **Pas de setup remote professionnel**  
-Canapé + laptop genoux, cuisine table, chambre lit visible background. **Résultat :**  paraître non-professionnel, pas taken seriously. Mieux vaut setup remote professionnel (bureau dédié, équipement qualité, background neutre/pro).
+Canapé + laptop genoux, cuisine table, chambre lit visible background. **Résultat:**  paraître non-professionnel, pas taken seriously. Mieux vaut setup remote professionnel (bureau dédié, équipement qualité, background neutre/pro).
 
 **Ignorer pièges administratifs**  
-Signer contrat sans clarifier fiscalité, visa, permis travail. **Résultat :**  problèmes fiscaux, légaux, complications. Mieux vaut check légal AVANT signer, comptable spécialisé si nécessaire.
+Signer contrat sans clarifier fiscalité, visa, permis travail. **Résultat:**  problèmes fiscaux, légaux, complications. Mieux vaut check légal AVANT signer, comptable spécialisé si nécessaire.
 
 **Pas de soft skills remote**  
-Communication écrite faible, pas d'autonomie, pas de proactivité. **Résultat :**  performance faible, équipe frustrée, remote qui échoue. Mieux vaut développer soft skills remote (communication écrite excellente, autonomie, proactivité).
+Communication écrite faible, pas d'autonomie, pas de proactivité. **Résultat:**  performance faible, équipe frustrée, remote qui échoue. Mieux vaut développer soft skills remote (communication écrite excellente, autonomie, proactivité).
 
 ## Message de responsabilité
 

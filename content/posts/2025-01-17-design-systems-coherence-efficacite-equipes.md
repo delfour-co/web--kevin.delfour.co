@@ -72,23 +72,24 @@ Ce que j'ai observé dans différents projets :
 
 **Ce qui fonctionne** : Commencer petit itérer (Phase 1 Audit standardisation inventaire existant, Phase 2 Construction progressive Tokens d'abord Composants atomiques Composants moléculaires Composants organismes Templates pages, Phase 3 Adoption gouvernance règles claires processus contribution) facilite adoption apprendre usage réel. Convaincre par valeur (réduction temps styling 60%, moins aller-retours design/dev 80%, accélération nouvelles features UI 40%, satisfaction équipe 90%) crée adhésion naturelle. Tokens fondation atomique (valeurs fondamentales système définir une seule fois référencer partout modifier valeur tokens met à jour interface automatiquement) facilite maintenance cohérence. Composants arsenal réutilisable avec composition (principe composition plutôt monolithiques simplicité composition valent mieux configuration) facilite réutilisation maintenance.
 
-**Ce qui bloque** : Design System parfait départ (essayer créer Design System parfait départ). **Résultat :**  sur-ingénierie, adoption difficile, échec probable. Mieux vaut commencer petit itérer apprendre usage réel. Adoption forcée (Design System pas adopté naturellement équipes imposer par autorité). **Résultat :**  résistance équipe, échec probable. Mieux vaut convaincre par valeur pas autorité. Sur-ingénierie (composant Button 47 props configurables pas bon composant). **Résultat :**  complexité excessive, maintenance difficile. Mieux vaut simplicité composition valent mieux configuration. Oubli maintenance (Design System comme produit ça se maintient ça évolue ça nécessite roadmap ressources dédiées). **Résultat :**  obsolescence rapide, abandon probable. Mieux vaut roadmap maintenance ressources dédiées.
+**Ce qui bloque** : Design System parfait départ (essayer créer Design System parfait départ). **Résultat:**  sur-ingénierie, adoption difficile, échec probable. Mieux vaut commencer petit itérer apprendre usage réel. Adoption forcée (Design System pas adopté naturellement équipes imposer par autorité). **Résultat:**  résistance équipe, échec probable. Mieux vaut convaincre par valeur pas autorité. Sur-ingénierie (composant Button 47 props configurables pas bon composant). **Résultat:**  complexité excessive, maintenance difficile. Mieux vaut simplicité composition valent mieux configuration. Oubli maintenance (Design System comme produit ça se maintient ça évolue ça nécessite roadmap ressources dédiées). **Résultat:**  obsolescence rapide, abandon probable. Mieux vaut roadmap maintenance ressources dédiées.
+
 
 **Les métriques succès** : Métriques techniques (réduction CSS moins duplication taille bundles, temps développement vélocité nouvelles features, consistance nombre incohérences visuelles reportées). Métriques humaines (satisfaction développeur moins friction plus focus métier, satisfaction designer cohérence préservée itérations facilitées, time to market accélération livraisons). Retour expérience quantifié projet récent (60% réduction temps passé styling, 80% moins aller-retours design/dev détails visuels, 40% accélération nouvelles features UI, 90% satisfaction équipe outil). Ces métriques permettent de mesurer l'impact et d'ajuster si nécessaire.
 
 ## Erreurs fréquentes
 
 **Design System parfait départ**  
-Essayer créer Design System parfait départ. **Résultat :**  sur-ingénierie, adoption difficile, échec probable. Mieux vaut commencer petit itérer apprendre usage réel.
+Essayer créer Design System parfait départ. **Résultat:**  sur-ingénierie, adoption difficile, échec probable. Mieux vaut commencer petit itérer apprendre usage réel.
 
 **Adoption forcée**  
-Design System pas adopté naturellement équipes imposer par autorité. **Résultat :**  résistance équipe, échec probable. Mieux vaut convaincre par valeur pas autorité (réduction temps styling 60%, moins aller-retours design/dev 80%, accélération nouvelles features UI 40%, satisfaction équipe 90%).
+Design System pas adopté naturellement équipes imposer par autorité. **Résultat:**  résistance équipe, échec probable. Mieux vaut convaincre par valeur pas autorité (réduction temps styling 60%, moins aller-retours design/dev 80%, accélération nouvelles features UI 40%, satisfaction équipe 90%).
 
 **Sur-ingénierie**  
-Composant Button 47 props configurables pas bon composant. **Résultat :**  complexité excessive, maintenance difficile. Mieux vaut simplicité composition valent mieux configuration.
+Composant Button 47 props configurables pas bon composant. **Résultat:**  complexité excessive, maintenance difficile. Mieux vaut simplicité composition valent mieux configuration.
 
 **Oubli maintenance**  
-Design System comme produit ça se maintient ça évolue ça nécessite roadmap ressources dédiées. **Résultat :**  obsolescence rapide, abandon probable. Mieux vaut roadmap maintenance ressources dédiées.
+Design System comme produit ça se maintient ça évolue ça nécessite roadmap ressources dédiées. **Résultat:**  obsolescence rapide, abandon probable. Mieux vaut roadmap maintenance ressources dédiées.
 
 ## Si c'était à refaire
 

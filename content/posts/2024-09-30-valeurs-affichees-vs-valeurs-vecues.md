@@ -18,7 +18,7 @@ TocOpen: false
 
 ## Situation réelle
 
-Valeur affichée : "Droit à l'erreur". Réalité : première erreur, développeur blâmé publiquement. Cet écart entre valeurs affichées et comportements réels détruit la crédibilité et crée du cynisme.
+Valeur affichée : "Droit à l'erreur". **Réalité:** première erreur, développeur blâmé publiquement. Cet écart entre valeurs affichées et comportements réels détruit la crédibilité et crée du cynisme.
 
 Ce que j'ai observé : toutes les organisations ont cet écart. La différence entre les bonnes et les mauvaises, c'est la volonté de le reconnaître et de le réduire.
 
@@ -34,15 +34,15 @@ Le vrai enjeu est de détecter les écarts et de les combler progressivement :
 
 **Les 5 écarts classiques** :
 
-**Écart 1 - "Innovation" vs "Ne rien casser"** : Affiché : "On encourage l'innovation, testez des choses." Vécu : "Pourquoi tu as cassé la prod ? Tu aurais dû être plus prudent." ****Impact :** ** personne n'innove, stagnation. Correction : définir sandbox innovation, feature flags, budget d'erreur explicite.
+**Écart 1 - "Innovation" vs "Ne rien casser"** : Affiché : "On encourage l'innovation, testez des choses." Vécu : "Pourquoi tu as cassé la prod ? Tu aurais dû être plus prudent." ****Impact :** ** personne n'innove, stagnation. **Correction:** définir sandbox innovation, feature flags, budget d'erreur explicite.
 
-**Écart 2 - "Autonomie" vs "Tout valider"** : Affiché : "Vous êtes autonomes, décidez." Vécu : "Pourquoi tu n'as pas demandé validation avant ?" ****Impact :** ** paralysie décisionnelle, attente systématique de validation. Correction : framework décision Type 1/Type 2, expliciter ce qui nécessite validation.
+**Écart 2 - "Autonomie" vs "Tout valider"** : Affiché : "Vous êtes autonomes, décidez." Vécu : "Pourquoi tu n'as pas demandé validation avant ?" ****Impact :** ** paralysie décisionnelle, attente systématique de validation. **Correction:** framework décision Type 1/Type 2, expliciter ce qui nécessite validation.
 
-**Écart 3 - "Droit à l'erreur" vs "Zéro erreur acceptée"** : Affiché : "On apprend des erreurs." Vécu : erreur = blame, pas de post-mortem blameless. ****Impact :** ** erreurs cachées, pas d'apprentissage. Correction : post-mortems systématiques blameless, CTO partage ses erreurs.
+**Écart 3 - "Droit à l'erreur" vs "Zéro erreur acceptée"** : Affiché : "On apprend des erreurs." Vécu : erreur = blame, pas de post-mortem blameless. ****Impact :** ** erreurs cachées, pas d'apprentissage. **Correction:** post-mortems systématiques blameless, CTO partage ses erreurs.
 
-**Écart 4 - "Équilibre pro-perso" vs "Héros surmenés"** : Affiché : "L'équilibre est important." Vécu : héros qui font 60h/semaine sont valorisés. ****Impact :** ** burn-out, turnover, culture toxique. Correction : arrêter de valoriser surmenage, mesurer heures réelles, intervenir si >45h.
+**Écart 4 - "Équilibre pro-perso" vs "Héros surmenés"** : Affiché : "L'équilibre est important." Vécu : héros qui font 60h/semaine sont valorisés. ****Impact :** ** burn-out, turnover, culture toxique. **Correction:** arrêter de valoriser surmenage, mesurer heures réelles, intervenir si >45h.
 
-**Écart 5 - "Collaboration" vs "Compétition interne"** : Affiché : "On travaille ensemble." Vécu : promo et reconnaissance sur performance individuelle uniquement. ****Impact :** ** silos, rétention info, guerre d'ego. Correction : évaluation incluant collaboration, célébrer succès collectifs.
+**Écart 5 - "Collaboration" vs "Compétition interne"** : Affiché : "On travaille ensemble." Vécu : promo et reconnaissance sur performance individuelle uniquement. ****Impact :** ** silos, rétention info, guerre d'ego. **Correction:** évaluation incluant collaboration, célébrer succès collectifs.
 
 **Comment détecter les écarts** :
 
@@ -75,27 +75,27 @@ Partager résultats survey, reconnaître écarts, annoncer actions. Cette transp
 
 Ce que j'ai observé dans différentes organisations :
 
-**Le déni des écarts** : "Nos valeurs sont vécues." Survey montre écart massif. Leadership nie. **Résultat :**  cynisme, turnover, culture toxique.
+**Le déni des écarts** : "Nos valeurs sont vécues." Survey montre écart massif. Leadership nie. **Résultat:**  cynisme, turnover, culture toxique.
 
-**La reconnaissance qui répare** : Survey révèle écart "autonomie". CEO all-hands : "Survey montre qu'on dit autonomie mais on micro-manage. Voici ce qu'on va changer." Actions concrètes. 6 mois plus tard, écart réduit 50%. **Résultat :**  confiance restaurée.
+**La reconnaissance qui répare** : Survey révèle écart "autonomie". CEO all-hands : "Survey montre qu'on dit autonomie mais on micro-manage. Voici ce qu'on va changer." Actions concrètes. 6 mois plus tard, écart réduit 50%. **Résultat:**  confiance restaurée.
 
-**L'exemple du "droit à l'erreur"** : Valeur affichée mais erreur = blame. Action : CTO partage en all-hands 3 erreurs majeures faites cette année et apprentissages. Post-mortems blameless systématiques. 6 mois : culture change, erreurs discutées ouvertement.
+**L'exemple du "droit à l'erreur"** : Valeur affichée mais erreur = blame. **Action:** CTO partage en all-hands 3 erreurs majeures faites cette année et apprentissages. Post-mortems blameless systématiques. 6 mois : culture change, erreurs discutées ouvertement.
 
-**Le piège des indicateurs** : Afficher "équilibre" mais mesurer uniquement output. **Résultat :**  surmenage invisible. Correction : tracker heures réelles, alerter si >45h, intervenir.
+**Le piège des indicateurs** : Afficher "équilibre" mais mesurer uniquement output. **Résultat:**  surmenage invisible. **Correction:** tracker heures réelles, alerter si >45h, intervenir.
 
 ## Erreurs fréquentes
 
 **Nier l'écart**
-"Nos valeurs sont parfaitement vécues." **Résultat :**  cynisme, personne ne croit plus aux valeurs.
+"Nos valeurs sont parfaitement vécues." **Résultat:**  cynisme, personne ne croit plus aux valeurs.
 
 **Multiplier les valeurs**
-20 valeurs affichées, impossible de toutes vivre. **Résultat :**  écarts partout, dilution totale.
+20 valeurs affichées, impossible de toutes vivre. **Résultat:**  écarts partout, dilution totale.
 
 **Ne pas mesurer**
-Pas de survey, pas de feedback. **Résultat :**  écarts invisibles jusqu'à crise (départs massifs).
+Pas de survey, pas de feedback. **Résultat:**  écarts invisibles jusqu'à crise (départs massifs).
 
 **Changer sans actions concrètes**
-"On va être plus bienveillants." **Résultat :**  rien ne change, frustration augmente.
+"On va être plus bienveillants." **Résultat:**  rien ne change, frustration augmente.
 
 ## Si c'était à refaire
 

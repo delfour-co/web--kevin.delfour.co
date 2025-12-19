@@ -38,11 +38,17 @@ Le vrai enjeu est de distinguer les difficultés normales des signaux d'alarme q
 
 **Les 7 signaux qui doivent alerter** :
 1. Impact nul : mes décisions ne changent rien, mes recommandations sont ignorées
+
 2. Valeurs incompatibles : l'organisation demande des choses contraires à mes valeurs
+
 3. Burn-out imminent : sommeil détruit, santé dégradée, relations personnelles affectées
+
 4. Perte de sens totale : je ne comprends plus pourquoi je fais ce métier
+
 5. Contexte toxique irréversible : culture toxique que je ne peux pas changer
+
 6. Inadéquation phase/compétences : l'organisation a besoin d'un profil différent
+
 7. Aucune évolution possible : j'ai tenté de corriger pendant 6-12 mois sans changement
 
 ## Cadre de décision
@@ -68,27 +74,27 @@ Partir quand on le décide (position de force) plutôt que quand on est épuisé
 
 Ce que j'ai observé dans différentes organisations :
 
-**Le CTO qui reste trop longtemps** : Signaux d'alarme depuis 18 mois, mais reste par loyauté. **Résultat :**  burn-out sévère, départ brutal, transition chaotique, récupération longue (6-12 mois).
+**Le CTO qui reste trop longtemps** : Signaux d'alarme depuis 18 mois, mais reste par loyauté. **Résultat:**  burn-out sévère, départ brutal, transition chaotique, récupération longue (6-12 mois).
 
-**Le CTO qui part au bon moment** : Identifie l'inadéquation (phase scale-up nécessite compétences org qu'il n'a pas), en discute avec CEO, trouve successeur, transition propre. **Résultat :**  départ respecté, récupération rapide, opportunité suivante plus alignée.
+**Le CTO qui part au bon moment** : Identifie l'inadéquation (phase scale-up nécessite compétences org qu'il n'a pas), en discute avec CEO, trouve successeur, transition propre. **Résultat:**  départ respecté, récupération rapide, opportunité suivante plus alignée.
 
-**Le CTO qui s'acharne** : Tente de corriger une culture toxique irréversible pendant 2 ans. **Résultat :**  épuisement total, perte de confiance en soi, difficultés à rebondir.
+**Le CTO qui s'acharne** : Tente de corriger une culture toxique irréversible pendant 2 ans. **Résultat:**  épuisement total, perte de confiance en soi, difficultés à rebondir.
 
 **Les signaux qu'on ignore** : "C'est juste une mauvaise période", "Ça va s'améliorer", "Je dois tenir pour l'équipe". Ces justifications retardent souvent une décision nécessaire.
 
 ## Erreurs fréquentes
 
 **Confondre loyauté et sacrifice**
-Rester dans un rôle toxique par loyauté envers l'équipe. **Résultat :**  destruction personnelle sans aider réellement l'équipe.
+Rester dans un rôle toxique par loyauté envers l'équipe. **Résultat:**  destruction personnelle sans aider réellement l'équipe.
 
 **Ne pas tenter de corriger**
-Partir dès la première difficulté sans tenter d'améliorer la situation. **Résultat :**  pattern de fuite qui se répète.
+Partir dès la première difficulté sans tenter d'améliorer la situation. **Résultat:**  pattern de fuite qui se répète.
 
 **Attendre le burn-out complet**
-Rester jusqu'à l'épuisement total avant de partir. **Résultat :**  transition chaotique, récupération longue, impact négatif sur carrière.
+Rester jusqu'à l'épuisement total avant de partir. **Résultat:**  transition chaotique, récupération longue, impact négatif sur carrière.
 
 **Ne pas préparer la transition**
-Partir brutalement sans préparer la suite. **Résultat :**  chaos pour l'organisation, culpabilité personnelle.
+Partir brutalement sans préparer la suite. **Résultat:**  chaos pour l'organisation, culpabilité personnelle.
 
 ## Si c'était à refaire
 

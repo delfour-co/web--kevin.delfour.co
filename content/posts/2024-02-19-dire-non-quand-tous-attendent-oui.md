@@ -47,6 +47,7 @@ Voici comment je décide quand dire non et comment le faire :
 **1. Les situations où je dis non**
 - Délais impossibles qui mèneraient à un échec ou un burn-out
 - Dette technique qui hypothèquerait la capacité future (coût de remboursement > 3× la valeur immédiate)
+
 - Compromis de sécurité inacceptables
 - Demandes qui créent une incohérence architecturale majeure
 - Surcharge d'une équipe déjà en limite
@@ -67,9 +68,9 @@ Un non dit au bon moment évite 3 mois de travail dans la mauvaise direction. Un
 
 Ce que j'ai observé dans différentes organisations :
 
-**Le oui systématique qui détruit** : Un CTO qui ne dit jamais non, accepte tous les délais, toutes les features. **Résultat :**  dette technique explosive, vélocité qui s'effondre après 18 mois, burn-out de l'équipe, perte de crédibilité quand les promesses ne sont plus tenables.
+**Le oui systématique qui détruit** : Un CTO qui ne dit jamais non, accepte tous les délais, toutes les features. **Résultat:**  dette technique explosive, vélocité qui s'effondre après 18 mois, burn-out de l'équipe, perte de crédibilité quand les promesses ne sont plus tenables.
 
-**Le non brutal qui isole** : Un CTO qui dit non sans explication ni alternative. "C'est impossible techniquement." **Résultat :**  le business contourne la tech, les décisions importantes sont prises sans lui, isolement progressif.
+**Le non brutal qui isole** : Un CTO qui dit non sans explication ni alternative. "C'est impossible techniquement." **Résultat:**  le business contourne la tech, les décisions importantes sont prises sans lui, isolement progressif.
 
 **Le non argumenté qui convainc** : "Cette timeline n'est pas réaliste. Voici pourquoi avec des données. Voici 3 options : réduire le scope de 50%, doubler le temps, ou accepter une dette qu'on remboursera en 3 mois. Laquelle préférez-vous ?" Cette approche transforme le non en décision collaborative.
 
@@ -78,13 +79,13 @@ Ce que j'ai observé dans différentes organisations :
 ## Erreurs fréquentes
 
 **Ne jamais dire non**
-Accepter toutes les demandes pour ne pas bloquer le business. **Résultat :**  dette technique explosive, vélocité qui s'effondre, équipe épuisée, promesses impossibles à tenir.
+Accepter toutes les demandes pour ne pas bloquer le business. **Résultat:**  dette technique explosive, vélocité qui s'effondre, équipe épuisée, promesses impossibles à tenir.
 
 **Dire non sans alternative**
-Refuser sans proposer d'options. **Résultat :**  le business voit le CTO comme un bloqueur, pas comme un partenaire. Contournement des décisions techniques.
+Refuser sans proposer d'options. **Résultat:**  le business voit le CTO comme un bloqueur, pas comme un partenaire. Contournement des décisions techniques.
 
 **Dire non trop tard**
-Attendre que tout le monde soit engagé avant d'exprimer des doutes. **Résultat :**  frustration massive, perception d'incompétence ("Pourquoi tu ne l'as pas dit plus tôt ?").
+Attendre que tout le monde soit engagé avant d'exprimer des doutes. **Résultat:**  frustration massive, perception d'incompétence ("Pourquoi tu ne l'as pas dit plus tôt ?").
 
 **Argumenter uniquement en termes techniques**
 "Cette architecture est mauvaise techniquement." Le business ne comprend pas, ne s'en soucie pas. Mieux vaut : "Cette approche nous ralentira de 40% dans 6 mois."

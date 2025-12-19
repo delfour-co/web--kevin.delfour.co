@@ -45,9 +45,13 @@ Le vrai enjeu est de développer les critères pour arbitrer selon les situation
 **Le framework de décision** :
 
 Questions à se poser :
+
 1. Quel est le risque si ça casse ? (Paiement qui casse = catastrophe, feature secondaire = ennui)
+
 2. Quelle est la durée de vie probable ? (MVP 1 mois = dette OK, core product = dette NOK)
+
 3. Quel est le coût de remboursement futur ? (×3 le coût initial ?)
+
 4. Y a-t-il une fenêtre temporelle critique ? (concurrence, événement, levée)
 
 ## Cadre de décision
@@ -59,7 +63,9 @@ Avant de commencer : "C'est un MVP, une feature standard, ou critique ?" Cette c
 
 **2. Standards par contexte**
 MVP : pas de tests automatisés, code review optionnelle, librairies whatever works.
+
 Standard : 70% test coverage, code review obligatoire, patterns cohérents.
+
 Critique : 90%+ coverage, double review, tests charge, monitoring.
 
 **3. Dette intentionnelle documentée**
@@ -75,27 +81,27 @@ Métriques : vélocité (story points/sprint), qualité (bug rate, incidents, de
 
 Ce que j'ai observé dans différentes situations :
 
-**Toujours optimiser (qualité >> vitesse)** : Équipe perfectionnniste, chaque feature prend 3× le temps. **Résultat :**  concurrence livre 3× plus vite, market timing raté, startup qui meurt avec du beau code.
+**Toujours optimiser (qualité >> vitesse)** : Équipe perfectionnniste, chaque feature prend 3× le temps. **Résultat:**  concurrence livre 3× plus vite, market timing raté, startup qui meurt avec du beau code.
 
-**Toujours rusher (vitesse >> qualité)** : Livrer vite sans jamais rembourser dette. **Résultat :**  après 18 mois, vélocité divisée par 3, bugs constants, refonte forcée.
+**Toujours rusher (vitesse >> qualité)** : Livrer vite sans jamais rembourser dette. **Résultat:**  après 18 mois, vélocité divisée par 3, bugs constants, refonte forcée.
 
-**L'arbitrage contextuel** : MVP en 3 semaines avec dette, validation marché positive, puis 2 sprints de refonte propre. **Résultat :**  rapidité validation + qualité durable.
+**L'arbitrage contextuel** : MVP en 3 semaines avec dette, validation marché positive, puis 2 sprints de refonte propre. **Résultat:**  rapidité validation + qualité durable.
 
 **La dette documentée** : Feature urgente livrée avec dette intentionnelle. ADR documente : "Dette prise pour deadline X, coût remboursement estimé 1 semaine, planning remboursement dans 2 sprints." 2 sprints plus tard : dette remboursée comme prévu.
 
 ## Erreurs fréquentes
 
 **Perfectionnisme systématique**
-"On ne livre que du code parfait." **Résultat :**  lenteur excessive, opportunités ratées, frustration business.
+"On ne livre que du code parfait." **Résultat:**  lenteur excessive, opportunités ratées, frustration business.
 
 **Rush permanent**
-"On verra plus tard pour la qualité." **Résultat :**  dette qui explose, vélocité qui s'effondre, refonte forcée.
+"On verra plus tard pour la qualité." **Résultat:**  dette qui explose, vélocité qui s'effondre, refonte forcée.
 
 **Dette non documentée**
-Prendre de la dette sans la documenter. **Résultat :**  oubli, dette qui s'accumule silencieusement, surprise 12 mois plus tard.
+Prendre de la dette sans la documenter. **Résultat:**  oubli, dette qui s'accumule silencieusement, surprise 12 mois plus tard.
 
 **Pas de capacité de remboursement**
-100% capacité sur features, 0% sur dette. **Résultat :**  dette qui grandit sans limite jusqu'à paralysie.
+100% capacité sur features, 0% sur dette. **Résultat:**  dette qui grandit sans limite jusqu'à paralysie.
 
 ## Si c'était à refaire
 

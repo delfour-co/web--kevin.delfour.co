@@ -28,9 +28,6 @@ audiences:
 featured: true
 weight: 5
 ---
-🔹 Article #79
-Pilier éditorial : Leadership & Management
-Public principal : Public A (CTO / tech leaders)
 
 ## Situation réelle
 

@@ -71,7 +71,7 @@ Le code que j'écris doit être particulièrement bien documenté car je ne sera
 
 Ce que j'ai observé dans différentes organisations :
 
-**Le CTO qui code trop (40-50%)** : Livr des features, fait les code reviews critiques, intervient sur les hotfixes. **Résultat :**  l'équipe attend ses reviews, les décisions stratégiques sont retardées, le CTO est épuisé, et l'organisation dépend de lui. C'est un excellent développeur qui fait mal son travail de CTO.
+**Le CTO qui code trop (40-50%)** : Livr des features, fait les code reviews critiques, intervient sur les hotfixes. **Résultat:**  l'équipe attend ses reviews, les décisions stratégiques sont retardées, le CTO est épuisé, et l'organisation dépend de lui. C'est un excellent développeur qui fait mal son travail de CTO.
 
 **Le CTO qui ne code jamais** : Perd progressivement sa crédibilité. Les débats techniques deviennent opaques, les estimations incompréhensibles, les décisions déconnectées de la réalité du terrain. L'équipe contourne ses arbitrages ou les applique sans conviction.
 
@@ -82,16 +82,16 @@ Ce que j'ai observé dans différentes organisations :
 ## Erreurs fréquentes
 
 **Coder pour se sentir utile**
-Retourner au code parce que les responsabilités stratégiques sont inconfortables ou donnent des résultats trop différés. **Résultat :**  négligence des vraies responsabilités du rôle.
+Retourner au code parce que les responsabilités stratégiques sont inconfortables ou donnent des résultats trop différés. **Résultat:**  négligence des vraies responsabilités du rôle.
 
 **Devenir le bottleneck technique**
-Coder sur des features critiques ou faire les code reviews importantes. **Résultat :**  l'équipe attend, la vélocité ralentit, la dépendance au CTO augmente.
+Coder sur des features critiques ou faire les code reviews importantes. **Résultat:**  l'équipe attend, la vélocité ralentit, la dépendance au CTO augmente.
 
 **Vouloir rester le meilleur**
-Refuser d'accepter que d'autres membres de l'équipe soient devenus meilleurs dans certains domaines. **Résultat :**  micro-management, frustration, perte de crédibilité.
+Refuser d'accepter que d'autres membres de l'équipe soient devenus meilleurs dans certains domaines. **Résultat:**  micro-management, frustration, perte de crédibilité.
 
 **Ne jamais coder**
-Perdre complètement le contact avec la réalité technique. **Résultat :**  décisions déconnectées, perte de crédibilité, incompréhension des débats de l'équipe.
+Perdre complètement le contact avec la réalité technique. **Résultat:**  décisions déconnectées, perte de crédibilité, incompréhension des débats de l'équipe.
 
 ## Si c'était à refaire
 

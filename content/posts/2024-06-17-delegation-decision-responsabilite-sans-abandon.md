@@ -69,27 +69,27 @@ Si je dois invalider une décision déléguée, expliquer pourquoi et ajuster le
 
 Ce que j'ai observé dans différentes situations :
 
-**La fausse délégation (micro-management)** : CTO dit "tu décides" mais override toutes les décisions ou demande validation pour chaque détail. **Résultat :**  frustration, perte de confiance, personne arrête de décider.
+**La fausse délégation (micro-management)** : CTO dit "tu décides" mais override toutes les décisions ou demande validation pour chaque détail. **Résultat:**  frustration, perte de confiance, personne arrête de décider.
 
-**L'abandon déguisé** : CTO délègue sans contexte ni cadre. "Débrouille-toi." **Résultat :**  décisions incohérentes, erreurs coûteuses, sentiment d'abandon.
+**L'abandon déguisé** : CTO délègue sans contexte ni cadre. "Débrouille-toi." **Résultat:**  décisions incohérentes, erreurs coûteuses, sentiment d'abandon.
 
-**La délégation progressive qui marche** : Tech Lead commence avec délégation validative (propose, CTO valide), puis consultative (décide après consultation), puis informative (décide et informe). **Résultat :**  compétences développées, confiance construite, CTO démultiplié.
+**La délégation progressive qui marche** : Tech Lead commence avec délégation validative (propose, CTO valide), puis consultative (décide après consultation), puis informative (décide et informe). **Résultat:**  compétences développées, confiance construite, CTO démultiplié.
 
-**L'accountability partagée** : Décision déléguée qui tourne mal. CTO ne blâme pas le Tech Lead, assume la responsabilité finale auprès du CEO, aide à corriger. **Résultat :**  confiance préservée, apprentissage collectif.
+**L'accountability partagée** : Décision déléguée qui tourne mal. CTO ne blâme pas le Tech Lead, assume la responsabilité finale auprès du CEO, aide à corriger. **Résultat:**  confiance préservée, apprentissage collectif.
 
 ## Erreurs fréquentes
 
 **Déléguer sans contexte**
-"Décide sur l'architecture." Sans contexte, contraintes, ou cadre. **Résultat :**  décision qui ne tient pas compte des enjeux réels.
+"Décide sur l'architecture." Sans contexte, contraintes, ou cadre. **Résultat:**  décision qui ne tient pas compte des enjeux réels.
 
 **Override sans expliquer**
-Invalider une décision déléguée sans explication. **Résultat :**  perte de confiance totale, personne arrête de décider.
+Invalider une décision déléguée sans explication. **Résultat:**  perte de confiance totale, personne arrête de décider.
 
 **Déléguer sa responsabilité**
-"C'est lui qui a décidé, pas moi." **Résultat :**  perte de crédibilité, personne déléguée sacrifiée.
+"C'est lui qui a décidé, pas moi." **Résultat:**  perte de crédibilité, personne déléguée sacrifiée.
 
 **Ne pas adapter le niveau de délégation**
-Même niveau pour tout le monde ou toutes les décisions. **Résultat :**  soit micro-management, soit risques non maîtrisés.
+Même niveau pour tout le monde ou toutes les décisions. **Résultat:**  soit micro-management, soit risques non maîtrisés.
 
 ## Si c'était à refaire
 
