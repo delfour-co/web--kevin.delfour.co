@@ -34,15 +34,15 @@ Le vrai enjeu est de comprendre ce qui change pour t'adapter rapidement :
 
 **Ce qui change (vraiment)** :
 
-**Changement 1 - Rythme et itérations** : Avant (ex: industrie, finance) : cycles longs, décisions lentes, changements rares. En tech : itérations rapides, pivots fréquents, "fail fast". Exemple concret : feature peut être écrite, testée, déployée, retirée en 1 semaine. Impact : il faut accepter l'incertitude et le changement constant. Adaptation : passer de "planifier 6 mois" à "livrer 2 semaines, ajuster".
+**Changement 1 - Rythme et itérations** : Avant (ex: industrie, finance) : cycles longs, décisions lentes, changements rares. En tech : itérations rapides, pivots fréquents, "fail fast". Exemple concret : feature peut être écrite, testée, déployée, retirée en 1 semaine. ****Impact :** ** il faut accepter l'incertitude et le changement constant. Adaptation : passer de "planifier 6 mois" à "livrer 2 semaines, ajuster".
 
-**Changement 2 - Hiérarchie et codes sociaux** : Avant (ex: banque, admin) : hiérarchie forte, vouvoiement, codes formels. En tech : hiérarchie plate (souvent), tutoiement quasi-systématique, dress code casual. Exemple concret : tutoyer son CTO dès J1, réunion en hoodie. Impact : peut être déstabilisant ou libérateur selon ton background. Adaptation : observer et adopter les codes de ta boîte rapidement.
+**Changement 2 - Hiérarchie et codes sociaux** : Avant (ex: banque, admin) : hiérarchie forte, vouvoiement, codes formels. En tech : hiérarchie plate (souvent), tutoiement quasi-systématique, dress code casual. Exemple concret : tutoyer son CTO dès J1, réunion en hoodie. ****Impact :** ** peut être déstabilisant ou libérateur selon ton background. Adaptation : observer et adopter les codes de ta boîte rapidement.
 
-**Changement 3 - Rapport à l'erreur** : Avant (ex: droit, médical) : erreur = grave, culture du blâme. En tech (saine) : erreur = opportunité d'apprentissage, post-mortems blameless. Exemple concret : bug prod → analyse sans chercher coupable. Impact : liberté d'expérimenter, mais attention aux environnements toxiques qui disent ça sans le faire. Adaptation : oser essayer, signaler erreurs rapidement.
+**Changement 3 - Rapport à l'erreur** : Avant (ex: droit, médical) : erreur = grave, culture du blâme. En tech (saine) : erreur = opportunité d'apprentissage, post-mortems blameless. Exemple concret : bug prod → analyse sans chercher coupable. ****Impact :** ** liberté d'expérimenter, mais attention aux environnements toxiques qui disent ça sans le faire. Adaptation : oser essayer, signaler erreurs rapidement.
 
-**Changement 4 - Relation au temps de travail** : Avant (ex: commerce, conseil) : présentéisme valorisé, heures visibles comptent. En tech (saine) : résultat compte, autonomie horaires (remote possible). Toxique : culture crunch, 60h/semaine normalisées. Impact : flexibilité possible MAIS aussi risque de surmenage. Adaptation : observer vraie culture (pas discours), poser limites.
+**Changement 4 - Relation au temps de travail** : Avant (ex: commerce, conseil) : présentéisme valorisé, heures visibles comptent. En tech (saine) : résultat compte, autonomie horaires (remote possible). Toxique : culture crunch, 60h/semaine normalisées. ****Impact :** ** flexibilité possible MAIS aussi risque de surmenage. Adaptation : observer vraie culture (pas discours), poser limites.
 
-**Changement 5 - Outils et communication** : Avant : email, réunions, téléphone. En tech : Slack/Teams omniprésent, GitHub/GitLab, documentation wiki, async privilegié. Exemple concret : question → Slack, pas email. Code → PR + review. Impact : flux de communication intense, notifications constantes. Adaptation : maîtriser outils rapidement, gérer notifications.
+**Changement 5 - Outils et communication** : Avant : email, réunions, téléphone. En tech : Slack/Teams omniprésent, GitHub/GitLab, documentation wiki, async privilegié. Exemple concret : question → Slack, pas email. Code → PR + review. ****Impact :** ** flux de communication intense, notifications constantes. Adaptation : maîtriser outils rapidement, gérer notifications.
 
 **Ce qui ne change PAS (et que tu peux utiliser)** :
 
@@ -75,13 +75,13 @@ Observer : qui est valorisé ? Promu ? Qui part ? Heures réelles travaillées ?
 
 Ce que j'ai observé chez des reconversions :
 
-**La transition difficile** : Ex-finance, habitué codes formels. Arrive en startup tech, tout le monde en jean-baskets, tutoiement, stand-up debout. Malaise initial. Essaie d'imposer ses codes (vouvoiement, formalisme). Résultat : perçu comme rigide, intégration lente.
+**La transition difficile** : Ex-finance, habitué codes formels. Arrive en startup tech, tout le monde en jean-baskets, tutoiement, stand-up debout. Malaise initial. Essaie d'imposer ses codes (vouvoiement, formalisme). **Résultat :**  perçu comme rigide, intégration lente.
 
-**La transition fluide** : Ex-commerce, bonne communication client. Arrive en tech, observe codes (tutoiement, casual), adopte rapidement. Utilise soft skills (écoute, clarté) pour se différencier malgré junior tech. Résultat : intégration rapide, valorisé pour compétences transférables.
+**La transition fluide** : Ex-commerce, bonne communication client. Arrive en tech, observe codes (tutoiement, casual), adopte rapidement. Utilise soft skills (écoute, clarté) pour se différencier malgré junior tech. **Résultat :**  intégration rapide, valorisé pour compétences transférables.
 
 **L'exemple des outils** : Reconversion 35 ans, jamais utilisé Git/Slack. Premier mois : formation perso intense sur outils. Mois 2 : à l'aise. Message : outils s'apprennent, ne pas avoir peur.
 
-**Le choc culturel positif** : Ex-admin, culture blâme. Arrive en tech saine, post-mortem blameless. Libération : "Je peux dire que j'ai fait une erreur sans être puni." Résultat : épanouissement, créativité.
+**Le choc culturel positif** : Ex-admin, culture blâme. Arrive en tech saine, post-mortem blameless. Libération : "Je peux dire que j'ai fait une erreur sans être puni." **Résultat :**  épanouissement, créativité.
 
 ## Erreurs fréquentes (et comment les éviter)
 

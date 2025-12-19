@@ -34,23 +34,23 @@ Le vrai enjeu est de faire de la code review un outil d'amélioration continue s
 
 **Les 3 dérives de la code review** :
 
-**Dérive 1 - Le terrain d'ego** : Signaux : commentaires méprisants, ton condescendant, critique de la personne (pas du code). Exemples : "T'as vraiment codé ça ?", "Un dev senior ferait jamais ça", "C'est évident, non ?" Impact : peur de soumettre PR, créativité tuée, culture toxique. Cause racine : insécurité du reviewer, absence de guidelines comportement.
+**Dérive 1 - Le terrain d'ego** : Signaux : commentaires méprisants, ton condescendant, critique de la personne (pas du code). Exemples : "T'as vraiment codé ça ?", "Un dev senior ferait jamais ça", "C'est évident, non ?" ****Impact :** ** peur de soumettre PR, créativité tuée, culture toxique. Cause racine : insécurité du reviewer, absence de guidelines comportement.
 
-**Dérive 2 - Le blocage systématique** : Signaux : reviewer demande perfection absolue, bloque pour des détails mineurs, change avis entre reviews. Exemples : "Cette variable devrait s'appeler X pas Y", "Refactor tout avant merge", demandes contradictoires. Impact : vélocité effondrée, frustration massive, évitement du reviewer. Cause racine : perfectionnisme, absence de définition "good enough".
+**Dérive 2 - Le blocage systématique** : Signaux : reviewer demande perfection absolue, bloque pour des détails mineurs, change avis entre reviews. Exemples : "Cette variable devrait s'appeler X pas Y", "Refactor tout avant merge", demandes contradictoires. ****Impact :** ** vélocité effondrée, frustration massive, évitement du reviewer. Cause racine : perfectionnisme, absence de définition "good enough".
 
 **Dérive 3 - Le rubber stamp** : Signaux : LGTM systématique sans vraie lecture, approbation en 30 secondes sur 500 lignes. Impact court terme : vélocité élevée. Impact long terme : qualité dégradée, bugs en prod, dette technique. Cause racine : surcharge, manque de temps, désengagement.
 
 **Les 5 principes d'une code review saine** :
 
-**Principe 1 - Critiquer le code, jamais la personne** : ✅ Bon : "Ce code a cette vulnérabilité [lien]. On pourrait faire X." ❌ Mauvais : "Tu n'as pas pensé à la sécurité ?" Impact : préserve dignité, focus sur amélioration.
+**Principe 1 - Critiquer le code, jamais la personne** : ✅ Bon : "Ce code a cette vulnérabilité [lien]. On pourrait faire X." ❌ Mauvais : "Tu n'as pas pensé à la sécurité ?" ****Impact :** ** préserve dignité, focus sur amélioration.
 
-**Principe 2 - Expliquer le pourquoi** : ✅ Bon : "Cette approche risque de créer une fuite mémoire parce que [raison]. Alternative : [suggestion]." ❌ Mauvais : "Change ça, c'est pas bon." Impact : éducation vs autorité.
+**Principe 2 - Expliquer le pourquoi** : ✅ Bon : "Cette approche risque de créer une fuite mémoire parce que [raison]. Alternative : [suggestion]." ❌ Mauvais : "Change ça, c'est pas bon." ****Impact :** ** éducation vs autorité.
 
-**Principe 3 - Distinguer blocker vs nice-to-have** : Blockers : bugs, vulnérabilités sécurité, violations standards critiques. Nice-to-have : refactoring, optimisations mineures, préférences styling. Convention : préfixer "nit:" ou "question:" pour non-bloquant. Impact : clarté sur ce qui doit changer vs ce qui peut attendre.
+**Principe 3 - Distinguer blocker vs nice-to-have** : Blockers : bugs, vulnérabilités sécurité, violations standards critiques. Nice-to-have : refactoring, optimisations mineures, préférences styling. Convention : préfixer "nit:" ou "question:" pour non-bloquant. ****Impact :** ** clarté sur ce qui doit changer vs ce qui peut attendre.
 
-**Principe 4 - Reconnaître ce qui est bien** : Pas seulement critiquer. Aussi : "Nice approche ici", "Bon test case". Impact : renforce positif, montre que review n'est pas juste critique.
+**Principe 4 - Reconnaître ce qui est bien** : Pas seulement critiquer. Aussi : "Nice approche ici", "Bon test case". ****Impact :** ** renforce positif, montre que review n'est pas juste critique.
 
-**Principe 5 - Limiter scope et durée** : Max 400 lignes par review (au-delà, efficacité s'effondre). Max 60 minutes. Target : 24h pour première réponse. Impact : qualité review, vélocité préservée.
+**Principe 5 - Limiter scope et durée** : Max 400 lignes par review (au-delà, efficacité s'effondre). Max 60 minutes. Target : 24h pour première réponse. ****Impact :** ** qualité review, vélocité préservée.
 
 ## Cadre de décision
 
@@ -75,27 +75,27 @@ Métriques : temps moyen review, nombre iterations, % PRs bloquées >48h. Survey
 
 Ce que j'ai observé dans différentes organisations :
 
-**La review toxique** : Dev senior commente avec mépris. "Ce code est nul." Pas de suggestion constructive. Junior terrorisé, arrête de proposer idées. Résultat : innovation tuée, turnover junior élevé.
+**La review toxique** : Dev senior commente avec mépris. "Ce code est nul." Pas de suggestion constructive. Junior terrorisé, arrête de proposer idées. **Résultat :**  innovation tuée, turnover junior élevé.
 
-**Le perfectionnisme bloquant** : Reviewer demande refactor complet pour chaque PR. 5-8 allers-retours. Vélocité divisée par 3. Résultat : frustration massive, devs évitent ce reviewer, silos se créent.
+**Le perfectionnisme bloquant** : Reviewer demande refactor complet pour chaque PR. 5-8 allers-retours. Vélocité divisée par 3. **Résultat :**  frustration massive, devs évitent ce reviewer, silos se créent.
 
-**La review qui éduque** : PR soumise. Commentaire : "Cette approche risque un race condition ici [lien article]. Alternative : [suggestion code]. Qu'en penses-tu ?" → Discussion constructive. Résultat : bug évité, junior apprend, relation renforcée.
+**La review qui éduque** : PR soumise. Commentaire : "Cette approche risque un race condition ici [lien article]. Alternative : [suggestion code]. Qu'en penses-tu ?" → Discussion constructive. **Résultat :**  bug évité, junior apprend, relation renforcée.
 
-**L'exemple des guidelines** : Guidelines écrites : ton respectueux obligatoire, critiquer code pas personne, distinguer blocker ("🚫") vs suggestion ("💡"). Premier commentaire méprisant → manager intervient. Résultat : culture review saine en 2 mois.
+**L'exemple des guidelines** : Guidelines écrites : ton respectueux obligatoire, critiquer code pas personne, distinguer blocker ("🚫") vs suggestion ("💡"). Premier commentaire méprisant → manager intervient. **Résultat :**  culture review saine en 2 mois.
 
 ## Erreurs fréquentes
 
 **Pas de guidelines comportement**
-Guidelines uniquement techniques, rien sur ton et approche. Résultat : dérives ego tolérées.
+Guidelines uniquement techniques, rien sur ton et approche. **Résultat :**  dérives ego tolérées.
 
 **Taille PRs illimitée**
-PRs de 2000 lignes. Résultat : reviews superficielles ou bloquées des jours.
+PRs de 2000 lignes. **Résultat :**  reviews superficielles ou bloquées des jours.
 
 **Perfectionnisme non-calibré**
-Bloquer pour des détails mineurs. Résultat : vélocité effondrée, frustration.
+Bloquer pour des détails mineurs. **Résultat :**  vélocité effondrée, frustration.
 
 **Ne jamais reconnaître le positif**
-Uniquement critiquer. Résultat : code review perçue comme punition.
+Uniquement critiquer. **Résultat :**  code review perçue comme punition.
 
 ## Si c'était à refaire
 

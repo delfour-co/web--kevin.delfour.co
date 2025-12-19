@@ -31,9 +31,9 @@ weight: 10
 
 ## Dédramatisation
 
-"Je suis payé 45k€, je vaux combien ?" Cette question, 80% des devs ne savent pas y répondre. Résultat : ils laissent 10-20k€/an sur la table. Mais ce n'est pas une fatalité. La négociation salariale n'est pas un combat, c'est une discussion professionnelle sur votre valeur.
+"Je suis payé 45k€, je vaux combien ?" Cette question, 80% des devs ne savent pas y répondre. **Résultat :**  ils laissent 10-20k€/an sur la table. Mais ce n'est pas une fatalité. La négociation salariale n'est pas un combat, c'est une discussion professionnelle sur votre valeur.
 
-Ce que j'ai observé : beaucoup de développeurs évitent la négociation par peur ou par manque de préparation. Ils acceptent la première offre ou n'osent pas demander d'augmentation. En réalité, la négociation est une compétence qui s'apprend. Avec préparation et technique, obtenir +20-30% est réaliste. Impact : +20% une fois = +200k€ sur carrière 30 ans.
+Ce que j'ai observé : beaucoup de développeurs évitent la négociation par peur ou par manque de préparation. Ils acceptent la première offre ou n'osent pas demander d'augmentation. En réalité, la négociation est une compétence qui s'apprend. Avec préparation et technique, obtenir +20-30% est réaliste. ****Impact :** ** +20% une fois = +200k€ sur carrière 30 ans.
 
 ## Le réel (sans filtre)
 
@@ -60,19 +60,19 @@ Voici une manière de voir les choses pour négocier efficacement :
 ## Erreurs classiques
 
 **Ne pas connaître sa valeur marché**  
-Accepter une offre sans connaître votre valeur marché. Résultat : vous laissez 10-20k€/an sur la table. Mieux vaut connaître votre valeur marché (Glassdoor/Levels.fyi, enquêtes salaires, network) avant de négocier.
+Accepter une offre sans connaître votre valeur marché. **Résultat :**  vous laissez 10-20k€/an sur la table. Mieux vaut connaître votre valeur marché (Glassdoor/Levels.fyi, enquêtes salaires, network) avant de négocier.
 
 **Accepter la première offre immédiatement**  
-Accepter la première offre sans négocier. Résultat : vous recevez probablement l'offre basse de la fourchette. Mieux vaut remercier, demander délai réflexion, préparer contre-offre.
+Accepter la première offre sans négocier. **Résultat :**  vous recevez probablement l'offre basse de la fourchette. Mieux vaut remercier, demander délai réflexion, préparer contre-offre.
 
 **Négocier uniquement le base salary**  
-Ignorer le package complet (bonus, equity, remote allowance, formation). Résultat : vous laissez 20-30% de valeur sur la table. Mieux vaut négocier le package complet.
+Ignorer le package complet (bonus, equity, remote allowance, formation). **Résultat :**  vous laissez 20-30% de valeur sur la table. Mieux vaut négocier le package complet.
 
 **Mauvais timing**  
-Demander augmentation en période difficile entreprise ou sans préparation. Résultat : refus probable, relation dégradée. Mieux vaut timing optimal (après réussite projet majeur, après évaluation performance positive, avant cycle budgétaire annuel).
+Demander augmentation en période difficile entreprise ou sans préparation. **Résultat :**  refus probable, relation dégradée. Mieux vaut timing optimal (après réussite projet majeur, après évaluation performance positive, avant cycle budgétaire annuel).
 
 **Ne pas préparer ses arguments**  
-Négocier sans arguments préparés (compétences spécifiques, résultats mesurables, valeur apportée, marché concurrentiel). Résultat : négociation faible, peu de chances de succès. Mieux vaut préparer vos arguments avant de négocier.
+Négocier sans arguments préparés (compétences spécifiques, résultats mesurables, valeur apportée, marché concurrentiel). **Résultat :**  négociation faible, peu de chances de succès. Mieux vaut préparer vos arguments avant de négocier.
 
 ## Message de responsabilité
 

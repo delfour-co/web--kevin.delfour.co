@@ -75,7 +75,7 @@ Ce que j'ai observé dans différentes scale-ups :
 
 **Ce qui fonctionne** : Séparation progressive des responsabilités par domaine plutôt que Big Bang refactoring. Observabilité proactive avec métriques business et techniques plutôt que réactivité pure. Documentation vivante et automatisée plutôt que documentation statique obsolète. Allocation régulière 20% temps technique plutôt que 100% features. Tests automatisés avec pyramide adaptée plutôt que tests manuels ou absence de tests.
 
-**Ce qui bloque** : Architecture "qui marche" maintenue trop longtemps sans évolution. Résultat : performance dégradée exponentiellement, déploiements risqués, équipe qui souffre. Absence d'observabilité. Résultat : problèmes découverts par utilisateurs, time-to-recovery élevé, image dégradée. Documentation obsolète ou inexistante. Résultat : onboarding parcours du combattant, connaissance concentrée, risque bus factor élevé.
+**Ce qui bloque** : Architecture "qui marche" maintenue trop longtemps sans évolution. **Résultat :**  performance dégradée exponentiellement, déploiements risqués, équipe qui souffre. Absence d'observabilité. **Résultat :**  problèmes découverts par utilisateurs, time-to-recovery élevé, image dégradée. Documentation obsolète ou inexistante. **Résultat :**  onboarding parcours du combattant, connaissance concentrée, risque bus factor élevé.
 
 **Les signaux d'alarme** : Performance dégradée de manière non-linéaire (100 utilisateurs → 200ms, 1 000 → 500ms, 5 000 → 3s, 10 000 → timeouts). Déploiements évités, surtout le vendredi. Onboarding nouveau développeur >3 semaines vs 2-3 jours au début. Problèmes découverts par utilisateurs plutôt que par monitoring. Ces signaux indiquent qu'il est temps d'investir dans les fondations.
 
@@ -84,19 +84,19 @@ Ce que j'ai observé dans différentes scale-ups :
 ## Erreurs fréquentes
 
 **Maintenir l'architecture "qui marche" trop longtemps**  
-Garder l'architecture simple qui fonctionnait à petite échelle sans l'évoluer. Résultat : performance dégradée exponentiellement, déploiements risqués, équipe qui souffre. Mieux vaut séparation progressive des responsabilités par domaine.
+Garder l'architecture simple qui fonctionnait à petite échelle sans l'évoluer. **Résultat :**  performance dégradée exponentiellement, déploiements risqués, équipe qui souffre. Mieux vaut séparation progressive des responsabilités par domaine.
 
 **Absence d'observabilité**  
-Découvrir les problèmes par les utilisateurs plutôt que par monitoring. Résultat : time-to-recovery élevé, image dégradée, coûts élevés. Mieux vaut observabilité proactive avec métriques business et techniques.
+Découvrir les problèmes par les utilisateurs plutôt que par monitoring. **Résultat :**  time-to-recovery élevé, image dégradée, coûts élevés. Mieux vaut observabilité proactive avec métriques business et techniques.
 
 **Documentation obsolète ou inexistante**  
-Documentation statique qui devient obsolète rapidement ou absence de documentation. Résultat : onboarding parcours du combattant, connaissance concentrée, risque bus factor élevé. Mieux vaut documentation vivante et automatisée (setup automatisé, ADR, troubleshooting FAQ).
+Documentation statique qui devient obsolète rapidement ou absence de documentation. **Résultat :**  onboarding parcours du combattant, connaissance concentrée, risque bus factor élevé. Mieux vaut documentation vivante et automatisée (setup automatisé, ADR, troubleshooting FAQ).
 
 **100% features, 0% technique**  
-Consacrer 100% du temps aux features sans investir dans les fondations. Résultat : accumulation problèmes, dette technique explosive, équipe qui souffre. Mieux vaut règle des 20% technique (refactoring préventif, dette technique, tooling, formation).
+Consacrer 100% du temps aux features sans investir dans les fondations. **Résultat :**  accumulation problèmes, dette technique explosive, équipe qui souffre. Mieux vaut règle des 20% technique (refactoring préventif, dette technique, tooling, formation).
 
 **Absence de tests automatisés**  
-Tests manuels ou absence de tests. Résultat : bugs en production, déploiements risqués, régressions fréquentes. Mieux vaut tests automatisés avec pyramide adaptée (E2E parcours critiques, intégration logique métier, unitaires fonctions pures).
+Tests manuels ou absence de tests. **Résultat :**  bugs en production, déploiements risqués, régressions fréquentes. Mieux vaut tests automatisés avec pyramide adaptée (E2E parcours critiques, intégration logique métier, unitaires fonctions pures).
 
 ## Si c'était à refaire
 

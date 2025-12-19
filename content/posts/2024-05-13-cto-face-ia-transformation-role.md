@@ -76,27 +76,27 @@ Certains sur-adoptent sans réfléchir, d'autres refusent. Le CTO doit créer un
 
 Ce que j'ai observé dans différentes organisations :
 
-**L'adoption anarchique** : Chaque dev utilise l'IA comme il veut, sans framework. Résultat : code incohérent, données sensibles exposées, coûts qui explosent.
+**L'adoption anarchique** : Chaque dev utilise l'IA comme il veut, sans framework. **Résultat :**  code incohérent, données sensibles exposées, coûts qui explosent.
 
-**Le refus total** : CTO qui interdit l'IA par peur des risques. Résultat : équipe frustrée, baisse de compétitivité, départs vers des organisations plus modernes.
+**Le refus total** : CTO qui interdit l'IA par peur des risques. **Résultat :**  équipe frustrée, baisse de compétitivité, départs vers des organisations plus modernes.
 
-**L'adoption encadrée** : Framework clair (quoi, comment, où), formation équipe, mesure d'impact. Résultat : gain de vélocité 25%, qualité maintenue, risques maîtrisés.
+**L'adoption encadrée** : Framework clair (quoi, comment, où), formation équipe, mesure d'impact. **Résultat :**  gain de vélocité 25%, qualité maintenue, risques maîtrisés.
 
-**Les surprises coûts** : Features IA livrées sans réfléchir aux coûts tokens. Résultat : factures qui passent de 100€/mois à 10k€/mois en production.
+**Les surprises coûts** : Features IA livrées sans réfléchir aux coûts tokens. **Résultat :**  factures qui passent de 100€/mois à 10k€/mois en production.
 
 ## Erreurs fréquentes
 
 **Ne rien faire**
-Ignorer l'IA en espérant que "c'est une mode". Résultat : équipe qui part vers des organisations plus modernes, perte de compétitivité.
+Ignorer l'IA en espérant que "c'est une mode". **Résultat :**  équipe qui part vers des organisations plus modernes, perte de compétitivité.
 
 **Adopter sans framework**
-Laisser chaque dev utiliser l'IA sans règles. Résultat : risques sécurité, coûts explosifs, qualité incohérente.
+Laisser chaque dev utiliser l'IA sans règles. **Résultat :**  risques sécurité, coûts explosifs, qualité incohérente.
 
 **Sur-promettre**
-Annoncer "on va tout automatiser avec l'IA". Résultat : déception, perte de crédibilité, projets abandonnés.
+Annoncer "on va tout automatiser avec l'IA". **Résultat :**  déception, perte de crédibilité, projets abandonnés.
 
 **Ne pas former l'équipe**
-Laisser l'équipe se débrouiller avec l'IA. Résultat : usage sub-optimal, peur du changement, résistance.
+Laisser l'équipe se débrouiller avec l'IA. **Résultat :**  usage sub-optimal, peur du changement, résistance.
 
 ## Si c'était à refaire
 

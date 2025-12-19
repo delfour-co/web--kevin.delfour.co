@@ -95,7 +95,7 @@ Ce que j'ai observé chez différents profils :
 
 **Le manager naturel** : Senior dev qui mentorait déjà intensément. Devient manager : s'épanouit, aime coaching, naviguer politique pour aider équipe. Message : si mentoring énergise, management peut être bon fit.
 
-**L'essai qui éclaire** : Mid-level prend interim tech lead 4 mois. Découvre : déteste meetings constantes, miss deep work. Décision : rester IC. Résultat : clarté sans engagement long terme. Message : essayer révèle réalité vs fantasme.
+**L'essai qui éclaire** : Mid-level prend interim tech lead 4 mois. Découvre : déteste meetings constantes, miss deep work. Décision : rester IC. **Résultat :**  clarté sans engagement long terme. Message : essayer révèle réalité vs fantasme.
 
 ## Erreurs fréquentes (et comment les éviter)
 
@@ -109,7 +109,7 @@ Piège : "Manager c'est juste organiser l'équipe + coder un peu." Réalité : 7
 Piège : "Si je choisis IC, plus jamais manager." Réalité : changements possibles, même si coûteux. Correction : essayer sans terreur.
 
 **Erreur 4 - Ignorer context organisationnel**
-Piège : choisir IC dans boîte sans track IC. Résultat : plafond de verre. Correction : évaluer si track IC existe et est valorisé.
+Piège : choisir IC dans boîte sans track IC. **Résultat :**  plafond de verre. Correction : évaluer si track IC existe et est valorisé.
 
 ## Message de responsabilité
 

@@ -34,25 +34,25 @@ Le vrai enjeu est de créer les conditions réelles de l'équilibre, pas juste e
 
 **Les 4 signes d'hypocrisie sur l'équilibre** :
 
-**Hypocrisie 1 - Dire/Faire contradictoire** : Discours : "Prenez soin de vous, déconnectez." Comportement : manager envoie Slack 22h-23h, weekend. Résultat : message reçu = "l'équilibre, c'est pour les autres." Impact : personne n'ose vraiment déconnecter, culture toxique.
+**Hypocrisie 1 - Dire/Faire contradictoire** : Discours : "Prenez soin de vous, déconnectez." Comportement : manager envoie Slack 22h-23h, weekend. **Résultat :**  message reçu = "l'équilibre, c'est pour les autres." ****Impact :** ** personne n'ose vraiment déconnecter, culture toxique.
 
-**Hypocrisie 2 - Valoriser le surmenage** : Discours : "L'équilibre est important." Comportement : promouvoir/célébrer qui fait 60h, commenter "dédication" de qui répond 23h. Résultat : course au surmenage pour être reconnu. Impact : burn-out normalisé.
+**Hypocrisie 2 - Valoriser le surmenage** : Discours : "L'équilibre est important." Comportement : promouvoir/célébrer qui fait 60h, commenter "dédication" de qui répond 23h. **Résultat :**  course au surmenage pour être reconnu. ****Impact :** ** burn-out normalisé.
 
-**Hypocrisie 3 - Charge impossible sans ressources** : Discours : "Gardez équilibre." Comportement : roadmap impossible en 40h, pas d'embauche, deadlines irréalistes. Résultat : équilibre structurellement impossible. Impact : cynisme, burn-out.
+**Hypocrisie 3 - Charge impossible sans ressources** : Discours : "Gardez équilibre." Comportement : roadmap impossible en 40h, pas d'embauche, deadlines irréalistes. **Résultat :**  équilibre structurellement impossible. ****Impact :** ** cynisme, burn-out.
 
-**Hypocrisie 4 - Culpabiliser la déconnexion** : Discours : "Déconnectez le soir." Comportement : commentaires passifs-agressifs sur qui part 18h, réunions 18h30. Résultat : culpabilité de respecter équilibre. Impact : présentéisme, inefficacité.
+**Hypocrisie 4 - Culpabiliser la déconnexion** : Discours : "Déconnectez le soir." Comportement : commentaires passifs-agressifs sur qui part 18h, réunions 18h30. **Résultat :**  culpabilité de respecter équilibre. ****Impact :** ** présentéisme, inefficacité.
 
 **Les 5 leviers pour rendre l'équilibre réel** :
 
-**Levier 1 - Leadership modélise** : CTO et managers : horaires raisonnables visibles, vacances prises complètement, pas de Slack soir/weekend (ou différé). Impact : permission tacite pour équipe de faire pareil. Message : "C'est OK de déconnecter."
+**Levier 1 - Leadership modélise** : CTO et managers : horaires raisonnables visibles, vacances prises complètement, pas de Slack soir/weekend (ou différé). ****Impact :** ** permission tacite pour équipe de faire pareil. Message : "C'est OK de déconnecter."
 
-**Levier 2 - Mesurer et intervenir** : Tracker heures réelles (auto-déclaré ou estimé). Si >45h pendant >3 semaines : conversation obligatoire. Impact : détection surcharge avant burn-out. Message : "On surveille et on agit."
+**Levier 2 - Mesurer et intervenir** : Tracker heures réelles (auto-déclaré ou estimé). Si >45h pendant >3 semaines : conversation obligatoire. ****Impact :** ** détection surcharge avant burn-out. Message : "On surveille et on agit."
 
-**Levier 3 - Valoriser efficacité, pas heures** : Célébrer qui livre en 35h bien organisées. Arrêter de célébrer héros 70h. Impact : change incitations, culture plus saine. Message : "Résultat compte, pas heures."
+**Levier 3 - Valoriser efficacité, pas heures** : Célébrer qui livre en 35h bien organisées. Arrêter de célébrer héros 70h. ****Impact :** ** change incitations, culture plus saine. Message : "Résultat compte, pas heures."
 
-**Levier 4 - Roadmap soutenable** : Planifier avec marge, embaucher si nécessaire, dire non aux deadlines impossibles. Impact : équilibre structurellement possible. Message : "On dimensionne charge correctement."
+**Levier 4 - Roadmap soutenable** : Planifier avec marge, embaucher si nécessaire, dire non aux deadlines impossibles. ****Impact :** ** équilibre structurellement possible. Message : "On dimensionne charge correctement."
 
-**Levier 5 - Vacances forcées** : Minimum 3 semaines/an obligatoires, déconnexion réelle (pas de Slack/email). Impact : récupération effective, soutenabilité long terme. Message : "Repos est non-négociable."
+**Levier 5 - Vacances forcées** : Minimum 3 semaines/an obligatoires, déconnexion réelle (pas de Slack/email). ****Impact :** ** récupération effective, soutenabilité long terme. Message : "Repos est non-négociable."
 
 ## Cadre de décision
 
@@ -77,27 +77,27 @@ Survey trimestriel : "Équilibre pro-perso 1-10 ?" Si <6, actions correctives. C
 
 Ce que j'ai observé dans différentes organisations :
 
-**L'hypocrisie toxique** : Affichage "équilibre important". Réalité : CTO Slack 23h, roadmap pour 60h/semaine, valorisation surmenage. Résultat : 40% turnover/an, burn-outs répétés, culture toxique.
+**L'hypocrisie toxique** : Affichage "équilibre important". Réalité : CTO Slack 23h, roadmap pour 60h/semaine, valorisation surmenage. **Résultat :**  40% turnover/an, burn-outs répétés, culture toxique.
 
-**La cohérence qui retient** : CTO modélise : part 18h visible, vacances 4 semaines/an déconnecté, pas de Slack soir. Roadmap dimensionnée pour 40h. Célébration efficacité pas heures. Résultat : turnover <10%, satisfaction élevée, performance durable.
+**La cohérence qui retient** : CTO modélise : part 18h visible, vacances 4 semaines/an déconnecté, pas de Slack soir. Roadmap dimensionnée pour 40h. Célébration efficacité pas heures. **Résultat :**  turnover <10%, satisfaction élevée, performance durable.
 
 **L'exemple de la modélisation** : CTO all-hands : "Je pars 18h, je déconnecte weekend, j'attends pareil de vous. Si je vous envoie Slack soir, c'est différé, ne répondez pas." Cette clarté donne permission.
 
-**L'intervention sur surcharge** : One-on-one révèle 55h/semaine depuis 4 semaines. Manager : "C'est insoutenable. Qu'est-ce qu'on arrête ou à qui on délègue ?" Réorganisation immédiate. Résultat : retour 42h, burn-out évité.
+**L'intervention sur surcharge** : One-on-one révèle 55h/semaine depuis 4 semaines. Manager : "C'est insoutenable. Qu'est-ce qu'on arrête ou à qui on délègue ?" Réorganisation immédiate. **Résultat :**  retour 42h, burn-out évité.
 
 ## Erreurs fréquentes
 
 **Afficher sans incarner**
-Valeur affichée mais leadership fait 60h et Slack 23h. Résultat : cynisme, culture du surmenage.
+Valeur affichée mais leadership fait 60h et Slack 23h. **Résultat :**  cynisme, culture du surmenage.
 
 **Valoriser les heures**
-Promouvoir/célébrer qui fait 60h. Résultat : course au surmenage, équilibre impossible.
+Promouvoir/célébrer qui fait 60h. **Résultat :**  course au surmenage, équilibre impossible.
 
 **Roadmap déconnectée de la capacité**
-Planifier pour 60h mais dire "gardez équilibre". Résultat : contradiction structurelle.
+Planifier pour 60h mais dire "gardez équilibre". **Résultat :**  contradiction structurelle.
 
 **Ne jamais mesurer**
-Supposer que équilibre est OK. Résultat : détection tardive lors burn-outs/départs.
+Supposer que équilibre est OK. **Résultat :**  détection tardive lors burn-outs/départs.
 
 ## Si c'était à refaire
 

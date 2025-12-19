@@ -93,7 +93,7 @@ Ce que j'ai observé chez différents profils :
 
 **L'exemple de la tentative** : Dev malheureux, avant partir : escalade RH, demande changement équipe. Refusé. Confirmation : problème systémique. Recherche et départ 3 mois plus tard, serein. Message : tentative avant départ donne paix intérieure.
 
-**Le départ sans plan B** : Dev harcèlement moral, santé danger. Démission sans autre job. Économies 4 mois. Chômage 2 mois, retrouve job sain. Résultat : santé préservée, trajectoire relancée. Message : parfois partir sans plan B est moins risqué que rester.
+**Le départ sans plan B** : Dev harcèlement moral, santé danger. Démission sans autre job. Économies 4 mois. Chômage 2 mois, retrouve job sain. **Résultat :**  santé préservée, trajectoire relancée. Message : parfois partir sans plan B est moins risqué que rester.
 
 ## Erreurs fréquentes (et comment les éviter)
 

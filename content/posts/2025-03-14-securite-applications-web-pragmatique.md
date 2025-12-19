@@ -71,23 +71,23 @@ Ce que j'ai observé dans différentes applications :
 
 **Ce qui fonctionne** : Évaluation risques priorisation par impact réel (Matrice risque/effort CRITIQUE Fix immédiat arrêt déploiements si nécessaire, ÉLEVÉ Fix semaine tests prioritaires, MODÉRÉ Fix sprint suivant, FAIBLE Amélioration continue pas urgent) maximise impact effort minimal. Protection données sensibles chiffrement adapté besoins (Très sensible aes-256-gcm PBKDF2, Modéré aes-256-cbc, Transit HTTPS + HSTS TLS 1.3) équilibre sécurité performance. Gestion secrets variables environnement sécurisées (Validation secrets démarrage ConfigValidator.validate required missing Vérifier longueur secrets) évite secrets hardcodés. Protection contre attaques communes (Injection Prepared statements ORM validations, XSS Content Security Policy Headers sécurité Sanitisation côté serveur, Rate limiting intelligent adaptatif selon contexte) équilibre sécurité expérience utilisateur.
 
-**Ce qui bloque** : Insouciance dangereuse (Pas de protection contre attaques communes). Résultat : vulnérabilités critiques, incidents sécurité fréquents. Mieux vaut protection contre attaques communes (Injection Prepared statements ORM validations, XSS Content Security Policy Headers sécurité Sanitisation côté serveur, Rate limiting intelligent). Paranoia paralysante (Tentative protection toutes attaques possibles). Résultat : sur-ingénierie, coûts élevés, développement ralenti. Mieux vaut évaluation risques priorisation par impact réel mesures proportionnées menaces réelles.
+**Ce qui bloque** : Insouciance dangereuse (Pas de protection contre attaques communes). **Résultat :**  vulnérabilités critiques, incidents sécurité fréquents. Mieux vaut protection contre attaques communes (Injection Prepared statements ORM validations, XSS Content Security Policy Headers sécurité Sanitisation côté serveur, Rate limiting intelligent). Paranoia paralysante (Tentative protection toutes attaques possibles). **Résultat :**  sur-ingénierie, coûts élevés, développement ralenti. Mieux vaut évaluation risques priorisation par impact réel mesures proportionnées menaces réelles.
 
 **Monitoring réponse incidents** : Système alertes sécurité (SecurityMonitor Middleware monitoring analyzeRequest detectSQLInjection detectXSSAttempt detectDirectoryTraversal detectBruteForce detectScraping handleSecurityThreat takeAutomatedAction) permet détecter répondre incidents rapidement. Cette approche équilibre sécurité et praticité.
 
 ## Erreurs fréquentes
 
 **Insouciance dangereuse**  
-Pas de protection contre attaques communes. Résultat : vulnérabilités critiques, incidents sécurité fréquents. Mieux vaut protection contre attaques communes (Injection Prepared statements ORM validations, XSS Content Security Policy Headers sécurité Sanitisation côté serveur, Rate limiting intelligent).
+Pas de protection contre attaques communes. **Résultat :**  vulnérabilités critiques, incidents sécurité fréquents. Mieux vaut protection contre attaques communes (Injection Prepared statements ORM validations, XSS Content Security Policy Headers sécurité Sanitisation côté serveur, Rate limiting intelligent).
 
 **Paranoia paralysante**  
-Tentative protection toutes attaques possibles. Résultat : sur-ingénierie, coûts élevés, développement ralenti. Mieux vaut évaluation risques priorisation par impact réel mesures proportionnées menaces réelles.
+Tentative protection toutes attaques possibles. **Résultat :**  sur-ingénierie, coûts élevés, développement ralenti. Mieux vaut évaluation risques priorisation par impact réel mesures proportionnées menaces réelles.
 
 **Secrets hardcodés**  
-Secrets dans code plutôt que variables environnement. Résultat : secrets exposés, incidents sécurité. Mieux vaut gestion secrets variables environnement sécurisées (Validation secrets démarrage ConfigValidator.validate required missing Vérifier longueur secrets).
+Secrets dans code plutôt que variables environnement. **Résultat :**  secrets exposés, incidents sécurité. Mieux vaut gestion secrets variables environnement sécurisées (Validation secrets démarrage ConfigValidator.validate required missing Vérifier longueur secrets).
 
 **Pas de monitoring sécurité**  
-Pas de détection activité suspecte. Résultat : incidents sécurité découverts tardivement, coûts élevés. Mieux vaut monitoring réponse incidents (Système alertes sécurité SecurityMonitor Middleware monitoring analyzeRequest handleSecurityThreat takeAutomatedAction).
+Pas de détection activité suspecte. **Résultat :**  incidents sécurité découverts tardivement, coûts élevés. Mieux vaut monitoring réponse incidents (Système alertes sécurité SecurityMonitor Middleware monitoring analyzeRequest handleSecurityThreat takeAutomatedAction).
 
 ## Si c'était à refaire
 

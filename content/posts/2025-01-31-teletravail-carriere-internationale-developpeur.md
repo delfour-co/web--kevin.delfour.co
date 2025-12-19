@@ -35,7 +35,7 @@ Ce que j'ai observé : le remote international peut booster votre carrière (sal
 
 ## Le réel (sans filtre)
 
-La nouvelle géographie du travail dev : 2019 (développeur à Lyon cherche job à Lyon, salaire marché Lyon 35-45k€, télétravail 1 jour/semaine si chanceux). 2025 (développeur à Lyon cherche job Europe/monde, salaire marché Berlin/London 55-75k€, full remote ou 4j/semaine remote). Impact : le marché s'est agrandi, mais la concurrence aussi.
+La nouvelle géographie du travail dev : 2019 (développeur à Lyon cherche job à Lyon, salaire marché Lyon 35-45k€, télétravail 1 jour/semaine si chanceux). 2025 (développeur à Lyon cherche job Europe/monde, salaire marché Berlin/London 55-75k€, full remote ou 4j/semaine remote). ****Impact :** ** le marché s'est agrandi, mais la concurrence aussi.
 
 **Les nouveaux hubs tech européens** : Tier 1 Salaires 70-100k€+ (London fintech paradise, Zurich crypto + banking, Amsterdam scale-ups actives, Berlin startup ecosystem). Tier 2 Salaires 55-75k€ (Paris corporate + startups, Munich BMW Siemens, Stockholm gaming + fintech, Dublin Google Meta). Tier 3 Salaires 40-60k€ (Barcelone qualité de vie, Lisbonne digital nomads, Prague emerging tech, Lyon/Toulouse France locale). Stratégie : vivre en Tier 3, travailler pour Tier 1.
 
@@ -64,16 +64,16 @@ Voici une manière de voir les choses pour profiter du remote international :
 ## Erreurs classiques
 
 **Ignorer le timezone**  
-Accepter remote job avec timezone impossible (Team San Francisco PST -9h Dev Lyon → Meetings 18h-22h → Burn out). Résultat : burnout total, retour local job. Mieux vaut max 3-4h décalage supportable long-terme.
+Accepter remote job avec timezone impossible (Team San Francisco PST -9h Dev Lyon → Meetings 18h-22h → Burn out). **Résultat :**  burnout total, retour local job. Mieux vaut max 3-4h décalage supportable long-terme.
 
 **Pas de setup remote professionnel**  
-Canapé + laptop genoux, cuisine table, chambre lit visible background. Résultat : paraître non-professionnel, pas taken seriously. Mieux vaut setup remote professionnel (bureau dédié, équipement qualité, background neutre/pro).
+Canapé + laptop genoux, cuisine table, chambre lit visible background. **Résultat :**  paraître non-professionnel, pas taken seriously. Mieux vaut setup remote professionnel (bureau dédié, équipement qualité, background neutre/pro).
 
 **Ignorer pièges administratifs**  
-Signer contrat sans clarifier fiscalité, visa, permis travail. Résultat : problèmes fiscaux, légaux, complications. Mieux vaut check légal AVANT signer, comptable spécialisé si nécessaire.
+Signer contrat sans clarifier fiscalité, visa, permis travail. **Résultat :**  problèmes fiscaux, légaux, complications. Mieux vaut check légal AVANT signer, comptable spécialisé si nécessaire.
 
 **Pas de soft skills remote**  
-Communication écrite faible, pas d'autonomie, pas de proactivité. Résultat : performance faible, équipe frustrée, remote qui échoue. Mieux vaut développer soft skills remote (communication écrite excellente, autonomie, proactivité).
+Communication écrite faible, pas d'autonomie, pas de proactivité. **Résultat :**  performance faible, équipe frustrée, remote qui échoue. Mieux vaut développer soft skills remote (communication écrite excellente, autonomie, proactivité).
 
 ## Message de responsabilité
 

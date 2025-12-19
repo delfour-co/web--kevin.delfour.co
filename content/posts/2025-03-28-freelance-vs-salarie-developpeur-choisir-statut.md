@@ -65,16 +65,16 @@ Voici une manière de voir les choses pour choisir votre statut :
 ## Erreurs classiques
 
 **Choisir freelance uniquement pour les revenus**  
-Ignorer les risques réels (pas de congés payés, pas de chômage, risque inter-contrats, administratif lourd, pression constante). Résultat : frustration, burnout, retour au salariat. Mieux vaut évaluer votre tolérance au risque et votre profil avant de choisir.
+Ignorer les risques réels (pas de congés payés, pas de chômage, risque inter-contrats, administratif lourd, pression constante). **Résultat :**  frustration, burnout, retour au salariat. Mieux vaut évaluer votre tolérance au risque et votre profil avant de choisir.
 
 **Rester salarié uniquement par sécurité**  
-Ignorer les avantages du freelance (flexibilité totale, choix missions, remote facile, autonomie). Résultat : frustration, carrière qui stagne, opportunités manquées. Mieux vaut considérer votre lifestyle et vos priorités avant de choisir.
+Ignorer les avantages du freelance (flexibilité totale, choix missions, remote facile, autonomie). **Résultat :**  frustration, carrière qui stagne, opportunités manquées. Mieux vaut considérer votre lifestyle et vos priorités avant de choisir.
 
 **Transition trop rapide**  
-Passer au freelance sans préparation (épargne, network, setup juridique, assurances). Résultat : stress financier, difficultés à trouver missions, retour au salariat. Mieux vaut transition progressive : préparation 3-6 mois, first mission 0-3 mois, stabilisation 6-12 mois.
+Passer au freelance sans préparation (épargne, network, setup juridique, assurances). **Résultat :**  stress financier, difficultés à trouver missions, retour au salariat. Mieux vaut transition progressive : préparation 3-6 mois, first mission 0-3 mois, stabilisation 6-12 mois.
 
 **Ne pas considérer l'option hybride**  
-Penser qu'il faut choisir entre freelance ou salarié, ignorer portage salarial. Résultat : choix binaire qui ne correspond peut-être pas à votre situation. Mieux vaut considérer toutes les options, y compris portage salarial comme compromis.
+Penser qu'il faut choisir entre freelance ou salarié, ignorer portage salarial. **Résultat :**  choix binaire qui ne correspond peut-être pas à votre situation. Mieux vaut considérer toutes les options, y compris portage salarial comme compromis.
 
 ## Message de responsabilité
 

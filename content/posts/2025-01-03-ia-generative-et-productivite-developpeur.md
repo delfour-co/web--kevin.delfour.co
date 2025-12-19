@@ -71,7 +71,7 @@ Ce que j'ai observé dans différentes équipes :
 
 **Ce qui fonctionne** : Cadre d'utilisation clair avec guidelines explicites (utilisation autorisée, déconseillée, validation obligatoire). Adoption progressive (commencer par boilerplate, puis debugging, puis documentation). Mesure impact réel (temps développement, taux bugs, qualité code, satisfaction équipe). Préservation compétences fondamentales (sessions code sans IA, lecture documentation, code reviews approfondies).
 
-**Ce qui bloque** : Adoption sans cadre d'utilisation. Résultat : dépendance cognitive, code homogène, risques sécurité. Ignorer compétences fondamentales. Résultat : atrophie réflexes recherche, perte contact bonnes pratiques. Ne pas mesurer impact réel. Résultat : vous ne savez pas si l'IA améliore réellement la productivité.
+**Ce qui bloque** : Adoption sans cadre d'utilisation. **Résultat :**  dépendance cognitive, code homogène, risques sécurité. Ignorer compétences fondamentales. **Résultat :**  atrophie réflexes recherche, perte contact bonnes pratiques. Ne pas mesurer impact réel. **Résultat :**  vous ne savez pas si l'IA améliore réellement la productivité.
 
 **Les gains mesurés** : Accélération tâches répétitives (génération boilerplate en secondes vs heures), pair programming permanent (exploration approches algorithmiques, debugging erreurs obscures), documentation automatique (commentaires JSDoc pertinents, explication code legacy). Ces gains sont réels mais nécessitent un usage ciblé et une validation systématique.
 
@@ -80,16 +80,16 @@ Ce que j'ai observé dans différentes équipes :
 ## Erreurs fréquentes
 
 **Adoption sans cadre d'utilisation**  
-Utiliser l'IA sans guidelines claires sur ce qui est autorisé, déconseillé, ou nécessite validation. Résultat : dépendance cognitive, code homogène, risques sécurité. Mieux vaut cadre d'utilisation clair avec guidelines explicites.
+Utiliser l'IA sans guidelines claires sur ce qui est autorisé, déconseillé, ou nécessite validation. **Résultat :**  dépendance cognitive, code homogène, risques sécurité. Mieux vaut cadre d'utilisation clair avec guidelines explicites.
 
 **Ignorer les compétences fondamentales**  
-Se reposer entièrement sur l'IA sans maintenir ses compétences fondamentales. Résultat : atrophie réflexes recherche, perte contact bonnes pratiques, dépendance totale. Mieux vaut sessions code sans IA, lecture documentation, code reviews approfondies.
+Se reposer entièrement sur l'IA sans maintenir ses compétences fondamentales. **Résultat :**  atrophie réflexes recherche, perte contact bonnes pratiques, dépendance totale. Mieux vaut sessions code sans IA, lecture documentation, code reviews approfondies.
 
 **Ne pas mesurer l'impact réel**  
-Utiliser l'IA sans mesurer l'impact réel sur productivité, qualité, satisfaction. Résultat : vous ne savez pas si l'IA améliore réellement ou crée plus de problèmes. Mieux vaut mesurer : temps développement, taux bugs, qualité code, satisfaction équipe.
+Utiliser l'IA sans mesurer l'impact réel sur productivité, qualité, satisfaction. **Résultat :**  vous ne savez pas si l'IA améliore réellement ou crée plus de problèmes. Mieux vaut mesurer : temps développement, taux bugs, qualité code, satisfaction équipe.
 
 **Adoption trop rapide**  
-Adopter l'IA complètement d'un coup sans apprentissage progressif. Résultat : erreurs coûteuses, dépendance trop rapide, perte compétences. Mieux vaut adoption progressive : commencer par boilerplate, puis debugging, puis documentation.
+Adopter l'IA complètement d'un coup sans apprentissage progressif. **Résultat :**  erreurs coûteuses, dépendance trop rapide, perte compétences. Mieux vaut adoption progressive : commencer par boilerplate, puis debugging, puis documentation.
 
 ## Si c'était à refaire
 

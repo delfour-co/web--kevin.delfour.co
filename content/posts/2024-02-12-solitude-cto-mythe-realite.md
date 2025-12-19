@@ -66,7 +66,7 @@ Certains arbitrages ne peuvent être partagés. Accepter cette réalité évite 
 
 Ce que j'ai observé dans différentes organisations :
 
-**La solitude qui détruit** : Un CTO qui ne partage jamais ses doutes, porte tout seul, maintient une façade de contrôle total. Résultat : burn-out silencieux, décisions qui se dégradent par manque de perspective, isolement progressif.
+**La solitude qui détruit** : Un CTO qui ne partage jamais ses doutes, porte tout seul, maintient une façade de contrôle total. **Résultat :**  burn-out silencieux, décisions qui se dégradent par manque de perspective, isolement progressif.
 
 **Les mécanismes de compensation toxiques** : Retourner au code pour échapper aux responsabilités solitaires, microgérer pour garder le contrôle, ou inverser et devenir trop distant. Ces comportements sont des signaux que la solitude n'est plus gérable.
 
@@ -77,13 +77,13 @@ Ce que j'ai observé dans différentes organisations :
 ## Erreurs fréquentes
 
 **Tout porter seul**
-Ne jamais partager ses doutes, ses incertitudes, ses questionnements. Maintenir une façade de contrôle total. Résultat : isolement progressif, perte de lucidité, burn-out.
+Ne jamais partager ses doutes, ses incertitudes, ses questionnements. Maintenir une façade de contrôle total. **Résultat :**  isolement progressif, perte de lucidité, burn-out.
 
 **Chercher du support là où il n'est pas**
-Attendre de l'équipe qu'elle comprenne les dilemmes stratégiques, ou du CEO qu'il comprenne les dilemmes techniques. Résultat : frustration mutuelle et sentiment d'incompréhension.
+Attendre de l'équipe qu'elle comprenne les dilemmes stratégiques, ou du CEO qu'il comprenne les dilemmes techniques. **Résultat :**  frustration mutuelle et sentiment d'incompréhension.
 
 **Fuir la solitude par le code**
-Retourner au code pour échapper aux responsabilités solitaires du rôle. Résultat : négligence des vraies responsabilités, fausse impression de productivité.
+Retourner au code pour échapper aux responsabilités solitaires du rôle. **Résultat :**  négligence des vraies responsabilités, fausse impression de productivité.
 
 **Confondre solitude et isolement**
 Penser que la solitude du rôle implique de n'avoir aucun confident. En réalité, construire un réseau de pairs réduit l'isolement sans nier la solitude structurelle.

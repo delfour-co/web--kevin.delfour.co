@@ -28,7 +28,7 @@ audiences:
 
 Déployer un vendredi soir ? Avec les Feature Flags, c'est possible. Cette situation n'est pas une fatalité. Les Feature Flags transforment le déploiement : avant (Deploy = stress, Rollback = 15-30min, Testing en prod = impossible), après (Deploy = routine, Rollback = 1 seconde, Testing en prod = safe).
 
-Ce que j'ai observé : beaucoup d'équipes ont un problème traditionnel. Déploiement = Release (git push → CI/CD → Deploy prod → 🤞 Si bug rollback complet → redéploy entier → 15-30 minutes downtime). Résultat : déploiements le mardi matin uniquement, freeze 2 jours avant weekend, stress maximum. Avec Feature Flags (git push → CI/CD → Deploy prod feature OFF → Test interne feature ON pour admins → Rollout 5% users → 100% users Si bug Toggle flag OFF instantané). Résultat : deploy n'importe quand, rollback <1 seconde, zero stress. Investissement minimal, impact maximum.
+Ce que j'ai observé : beaucoup d'équipes ont un problème traditionnel. Déploiement = Release (git push → CI/CD → Deploy prod → 🤞 Si bug rollback complet → redéploy entier → 15-30 minutes downtime). **Résultat :**  déploiements le mardi matin uniquement, freeze 2 jours avant weekend, stress maximum. Avec Feature Flags (git push → CI/CD → Deploy prod feature OFF → Test interne feature ON pour admins → Rollout 5% users → 100% users Si bug Toggle flag OFF instantané). **Résultat :**  deploy n'importe quand, rollback <1 seconde, zero stress. Investissement minimal, impact maximum.
 
 ## Le faux problème
 
@@ -40,9 +40,9 @@ Un autre faux problème : penser qu'il faut Feature Flags pour tout. En réalit�
 
 Le vrai enjeu est de comprendre comment découpler déploiement et release avec Feature Flags :
 
-**Le problème traditionnel** : Déploiement = Release (git push → CI/CD → Deploy prod → 🤞 Si bug rollback complet → redéploy entier → 15-30 minutes downtime). Résultat : déploiements le mardi matin uniquement, freeze 2 jours avant weekend, stress maximum. Ce problème coûte cher : déploiements limités, rollback lent, testing en prod impossible.
+**Le problème traditionnel** : Déploiement = Release (git push → CI/CD → Deploy prod → 🤞 Si bug rollback complet → redéploy entier → 15-30 minutes downtime). **Résultat :**  déploiements le mardi matin uniquement, freeze 2 jours avant weekend, stress maximum. Ce problème coûte cher : déploiements limités, rollback lent, testing en prod impossible.
 
-**Avec Feature Flags** : git push → CI/CD → Deploy prod feature OFF → Test interne feature ON pour admins → Rollout 5% users → 100% users Si bug Toggle flag OFF instantané. Résultat : deploy n'importe quand, rollback <1 seconde, zero stress. Ce découplage transforme le déploiement.
+**Avec Feature Flags** : git push → CI/CD → Deploy prod feature OFF → Test interne feature ON pour admins → Rollout 5% users → 100% users Si bug Toggle flag OFF instantané. **Résultat :**  deploy n'importe quand, rollback <1 seconde, zero stress. Ce découplage transforme le déploiement.
 
 **Types Feature Flags** : Release Flags temporaires (Nouvelle feature développement if featureFlags.isEnabled 'new-checkout-flow' return <NewCheckoutFlow /> return <OldCheckoutFlow /> Supprimer flag après rollout complet 2-4 semaines Usage Deploy code incomplet prod). Ops Flags permanents (Kill switch cas incident if featureFlags.isEnabled 'enable-recommendations' return await fetchRecommendations Coûteux return Fallback si service recommendations down Usage Circuit breakers kill switches). Experiment Flags A/B testing (A/B test pricing const variant featureFlags.getVariant 'pricing-test' Si variant === 'premium' return <PremiumPricing /> else if variant === 'standard' return <StandardPricing /> Usage Optimisation produit). Permission Flags (Features par tier abonnement Si user.tier === 'premium' && featureFlags.isEnabled 'advanced-analytics' return <AdvancedAnalytics /> Usage Monétisation beta testing).
 
@@ -73,23 +73,23 @@ Ce que j'ai observé dans différentes équipes :
 
 **Ce qui fonctionne** : Feature Flags découplent déploiement et release (git push → CI/CD → Deploy prod feature OFF → Test interne feature ON pour admins → Rollout 5% users → 100% users Si bug Toggle flag OFF instantané) transforme déploiement deploy n'importe quand rollback <1 seconde zero stress. Types Feature Flags selon usage (Release Flags temporaires Nouvelle feature développement, Ops Flags permanents Kill switch cas incident, Experiment Flags A/B testing Optimisation produit, Permission Flags Features par tier abonnement) maximise impact. Rollout progressif (Étape 1 Admins Jour 0 Étape 2 Équipe interne Jour 1-2 Étape 3 Beta users Jour 3-5 Étape 4 Canary Jour 6-10 Étape 5 Rollout progressif Jour 11-20 Étape 6 Cleanup Jour 30) réduit risques. Rollback instantané (Incident détecté 12:34 Deploy 12:42 Spike errors 12:43 Toggle flag OFF 12:43:05 Errors retour normale MTTR 5 secondes vs 15-30min rollback traditionnel, Automated rollback Monitoring auto-rollback Si metrics.errorRate >0.5 await featureFlags.disable await alert.page) réduit MTTR.
 
-**Ce qui bloque** : Déploiement = Release (git push → CI/CD → Deploy prod → 🤞 Si bug rollback complet redéploy entier 15-30 minutes downtime). Résultat : déploiements le mardi matin uniquement, freeze 2 jours avant weekend, stress maximum. Mieux vaut Feature Flags découplent déploiement et release (git push → CI/CD → Deploy prod feature OFF → Test interne feature ON pour admins → Rollout 5% users → 100% users Si bug Toggle flag OFF instantané). Trop de flags (Flags qui durent 6+ mois old-feature-from-2024 Debt technique). Résultat : dette technique accumulée, code complexe. Mieux vaut Cleanup automatique après 30 jours.
+**Ce qui bloque** : Déploiement = Release (git push → CI/CD → Deploy prod → 🤞 Si bug rollback complet redéploy entier 15-30 minutes downtime). **Résultat :**  déploiements le mardi matin uniquement, freeze 2 jours avant weekend, stress maximum. Mieux vaut Feature Flags découplent déploiement et release (git push → CI/CD → Deploy prod feature OFF → Test interne feature ON pour admins → Rollout 5% users → 100% users Si bug Toggle flag OFF instantané). Trop de flags (Flags qui durent 6+ mois old-feature-from-2024 Debt technique). **Résultat :**  dette technique accumulée, code complexe. Mieux vaut Cleanup automatique après 30 jours.
 
 **Coûts et ROI** : Solutions Feature Flags (LaunchDarkly SaaS $50-$100/utilisateur/mois Toutes features Support 24/7, Unleash Open Source Gratuit self-hosted Infrastructure $50-$200/mois Maintenance 0.2 ETP, Custom fait maison Dev 2-3 semaines Maintenance 0.1 ETP). ROI mesuré (Avant Feature Flags Incidents/mois 8 MTTR moyen 25 minutes Coût incidents ~$50k/an, Après Feature Flags Incidents/mois 2 MTTR moyen 30 secondes Économie ~$35k/an, ROI Payé 3 mois même LaunchDarkly). Ce ROI justifie l'investissement.
 
 ## Erreurs fréquentes
 
 **Trop de flags**  
-Flags qui durent 6+ mois old-feature-from-2024 Debt technique. Résultat : dette technique accumulée, code complexe. Mieux vaut Cleanup automatique après 30 jours.
+Flags qui durent 6+ mois old-feature-from-2024 Debt technique. **Résultat :**  dette technique accumulée, code complexe. Mieux vaut Cleanup automatique après 30 jours.
 
 **Nested flags**  
-Flags imbriqués cauchemar if featureFlags.isEnabled 'feature-a' if featureFlags.isEnabled 'feature-b' if featureFlags.isEnabled 'feature-c' Quelle combinaison testée ??? Résultat : combinaisons complexes, testing difficile. Mieux vaut 1 flag = 1 feature indépendante.
+Flags imbriqués cauchemar if featureFlags.isEnabled 'feature-a' if featureFlags.isEnabled 'feature-b' if featureFlags.isEnabled 'feature-c' Quelle combinaison testée ??? **Résultat :**  combinaisons complexes, testing difficile. Mieux vaut 1 flag = 1 feature indépendante.
 
 **Pas de fallback**  
-Si service Feature Flags down = app crash const isEnabled await featureFlags.isEnabled 'feature'. Résultat : app crash si service Feature Flags down. Mieux vaut Fallback si service down const isEnabled await featureFlags.isEnabled 'feature'.catch => false Safe default.
+Si service Feature Flags down = app crash const isEnabled await featureFlags.isEnabled 'feature'. **Résultat :**  app crash si service Feature Flags down. Mieux vaut Fallback si service down const isEnabled await featureFlags.isEnabled 'feature'.catch => false Safe default.
 
 **Feature Flags en database**  
-Query DB pour chaque check SELECT enabled FROM feature_flags WHERE name = 'feature'. Résultat : performance dégradée, latence élevée. Mieux vaut Cache en mémoire refresh périodique.
+Query DB pour chaque check SELECT enabled FROM feature_flags WHERE name = 'feature'. **Résultat :**  performance dégradée, latence élevée. Mieux vaut Cache en mémoire refresh périodique.
 
 ## Si c'était à refaire
 

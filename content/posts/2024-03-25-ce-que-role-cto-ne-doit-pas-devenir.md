@@ -33,22 +33,22 @@ Un autre faux problème : penser que ces dérives sont rares. En réalité, elle
 Le vrai enjeu est de reconnaître les dérives toxiques et de décider si elles sont corrigeables :
 
 **Dérive #1 : CTO = développeur senior avec un titre**
-Réalité : code 80% du temps, aucune responsabilité stratégique, aucun pouvoir décisionnel. Le titre sert à attirer ou retenir, pas à décrire le rôle réel. Impact : frustration mutuelle, aucun impact stratégique, perte de temps.
+Réalité : code 80% du temps, aucune responsabilité stratégique, aucun pouvoir décisionnel. Le titre sert à attirer ou retenir, pas à décrire le rôle réel. ****Impact :** ** frustration mutuelle, aucun impact stratégique, perte de temps.
 
 **Dérive #2 : CTO = fusible en cas d'échec technique**
-Réalité : aucun pouvoir de décision ni budget, mais responsable de tous les échecs techniques. Le titre sert à avoir un responsable à blâmer. Impact : position intenable, burn-out, départ rapide.
+Réalité : aucun pouvoir de décision ni budget, mais responsable de tous les échecs techniques. Le titre sert à avoir un responsable à blâmer. ****Impact :** ** position intenable, burn-out, départ rapide.
 
 **Dérive #3 : CTO = interface avec les développeurs**
-Réalité : le CEO ou le CPO prend toutes les décisions techniques, le CTO ne fait que transmettre et exécuter. Impact : rôle vidé de sens, perte de crédibilité, équipe désorientée.
+Réalité : le CEO ou le CPO prend toutes les décisions techniques, le CTO ne fait que transmettre et exécuter. ****Impact :** ** rôle vidé de sens, perte de crédibilité, équipe désorientée.
 
 **Dérive #4 : CTO = architecte isolé**
-Réalité : focus uniquement sur l'architecture idéale, déconnecté des contraintes business et des capacités de l'équipe. Impact : solutions non applicables, frustration du business, isolement progressif.
+Réalité : focus uniquement sur l'architecture idéale, déconnecté des contraintes business et des capacités de l'équipe. ****Impact :** ** solutions non applicables, frustration du business, isolement progressif.
 
 **Dérive #5 : CTO = pompier permanent**
-Réalité : passe tout son temps en mode urgence sans jamais pouvoir adresser les causes profondes. Impact : dette technique qui explose, équipe épuisée, aucune vision stratégique.
+Réalité : passe tout son temps en mode urgence sans jamais pouvoir adresser les causes profondes. ****Impact :** ** dette technique qui explose, équipe épuisée, aucune vision stratégique.
 
 **Dérive #6 : CTO = titre sans équipe**
-Réalité : "CTO" d'une équipe de 2 personnes ou d'une organisation sans tech réelle. Le titre sert à valoriser mais ne correspond à aucune réalité. Impact : CV gonflé, compétences non développées, difficultés futures.
+Réalité : "CTO" d'une équipe de 2 personnes ou d'une organisation sans tech réelle. Le titre sert à valoriser mais ne correspond à aucune réalité. ****Impact :** ** CV gonflé, compétences non développées, difficultés futures.
 
 ## Cadre de décision
 
@@ -91,16 +91,16 @@ Ce que j'ai observé dans différentes organisations :
 ## Erreurs fréquentes
 
 **Accepter le titre sans clarifier le rôle**
-Prendre le poste de CTO sans discuter concrètement des responsabilités, du pouvoir de décision, du budget. Résultat : découverte tardive que le titre ne correspond à aucune réalité.
+Prendre le poste de CTO sans discuter concrètement des responsabilités, du pouvoir de décision, du budget. **Résultat :**  découverte tardive que le titre ne correspond à aucune réalité.
 
 **Rester dans une dérive structurelle**
-Espérer que ça va s'améliorer alors que rien ne change après 12 mois. Résultat : compétences qui stagnent, crédibilité qui baisse, difficultés à retrouver un vrai rôle de CTO ailleurs.
+Espérer que ça va s'améliorer alors que rien ne change après 12 mois. **Résultat :**  compétences qui stagnent, crédibilité qui baisse, difficultés à retrouver un vrai rôle de CTO ailleurs.
 
 **Accepter toutes les dérives "parce que c'est une startup"**
-Utiliser le contexte startup pour justifier n'importe quelle dérive. Résultat : normalisation de dysfonctionnements qui ne devraient pas l'être.
+Utiliser le contexte startup pour justifier n'importe quelle dérive. **Résultat :**  normalisation de dysfonctionnements qui ne devraient pas l'être.
 
 **Ne pas documenter les tentatives de correction**
-Tenter de corriger sans documenter les échanges et décisions. Résultat : impossibilité de prouver qu'on a essayé si ça tourne mal.
+Tenter de corriger sans documenter les échanges et décisions. **Résultat :**  impossibilité de prouver qu'on a essayé si ça tourne mal.
 
 ## Si c'était à refaire
 

@@ -42,15 +42,15 @@ Le vrai enjeu est de développer une méthode d'apprentissage efficace et durabl
 
 **Les 5 principes d'apprentissage efficace** :
 
-**Principe 1 - Apprendre par projet, pas par accumulation** : Mauvaise approche : "Je vais apprendre React, puis Node, puis PostgreSQL, puis..." Bonne approche : "Je vais construire ce petit projet qui nécessite React + Node + PostgreSQL." Bénéfice : apprentissage contextualisé, motivé par besoin réel, ancré. Résultat : compréhension profonde vs connaissance superficielle.
+**Principe 1 - Apprendre par projet, pas par accumulation** : Mauvaise approche : "Je vais apprendre React, puis Node, puis PostgreSQL, puis..." Bonne approche : "Je vais construire ce petit projet qui nécessite React + Node + PostgreSQL." Bénéfice : apprentissage contextualisé, motivé par besoin réel, ancré. **Résultat :**  compréhension profonde vs connaissance superficielle.
 
-**Principe 2 - Comprendre les fondamentaux avant les outils** : Exemple : apprendre HTTP/REST avant Express, SQL avant ORM, JS avant React. Bénéfice : les outils changent, fondamentaux restent. Maîtriser fondamentaux permet d'apprendre n'importe quel outil rapidement. Résultat : adaptabilité, pas dépendance à un outil.
+**Principe 2 - Comprendre les fondamentaux avant les outils** : Exemple : apprendre HTTP/REST avant Express, SQL avant ORM, JS avant React. Bénéfice : les outils changent, fondamentaux restent. Maîtriser fondamentaux permet d'apprendre n'importe quel outil rapidement. **Résultat :**  adaptabilité, pas dépendance à un outil.
 
-**Principe 3 - Pratiquer délibérément les points faibles** : Pratique : identifier ce qui te bloque (ex: async en JS), faire exercices ciblés dessus, pas éviter. Bénéfice : progression sur vrais blocages, pas confort sur ce qu'on sait déjà. Résultat : croissance réelle vs illusion de progression.
+**Principe 3 - Pratiquer délibérément les points faibles** : Pratique : identifier ce qui te bloque (ex: async en JS), faire exercices ciblés dessus, pas éviter. Bénéfice : progression sur vrais blocages, pas confort sur ce qu'on sait déjà. **Résultat :**  croissance réelle vs illusion de progression.
 
-**Principe 4 - Enseigner pour ancrer** : Pratique : expliquer à collègue, écrire doc/article, mentorer junior. Bénéfice : enseigner force à clarifier compréhension, révèle zones floues. Citation : "Si tu ne peux pas l'expliquer simplement, tu ne le comprends pas assez bien." Résultat : compréhension approfondie.
+**Principe 4 - Enseigner pour ancrer** : Pratique : expliquer à collègue, écrire doc/article, mentorer junior. Bénéfice : enseigner force à clarifier compréhension, révèle zones floues. Citation : "Si tu ne peux pas l'expliquer simplement, tu ne le comprends pas assez bien." **Résultat :**  compréhension approfondie.
 
-**Principe 5 - Espacer et répéter** : Pratique : revenir sur concept après 1 jour, 1 semaine, 1 mois (spaced repetition). Éviter : bourrage intensif puis jamais revoir. Bénéfice : ancrage mémoire long terme. Résultat : rétention durable vs oubli rapide.
+**Principe 5 - Espacer et répéter** : Pratique : revenir sur concept après 1 jour, 1 semaine, 1 mois (spaced repetition). Éviter : bourrage intensif puis jamais revoir. Bénéfice : ancrage mémoire long terme. **Résultat :**  rétention durable vs oubli rapide.
 
 ## Cadre de décision
 
@@ -81,7 +81,7 @@ Ce que j'ai observé chez différents profils :
 
 **L'exemple du fondamental** : Junior apprend frameworks (Express, React) sans comprendre HTTP, async, DOM. Bloque constamment sur "magie" du framework. Senior lui fait apprendre HTTP raw, async JS, DOM vanilla. Retour aux frameworks : tout devient clair. Message : fondamentaux avant outils.
 
-**La répétition espacée** : Apprend concept, l'utilise tout de suite (J+1), refait exercice 1 semaine plus tard, ré-utilise dans autre contexte 1 mois plus tard. Résultat : ancrage solide. Vs apprendre intensif puis jamais revoir : oubli rapide.
+**La répétition espacée** : Apprend concept, l'utilise tout de suite (J+1), refait exercice 1 semaine plus tard, ré-utilise dans autre contexte 1 mois plus tard. **Résultat :**  ancrage solide. Vs apprendre intensif puis jamais revoir : oubli rapide.
 
 ## Erreurs fréquentes (et comment les éviter)
 

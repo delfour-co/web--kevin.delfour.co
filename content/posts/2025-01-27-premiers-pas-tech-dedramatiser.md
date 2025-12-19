@@ -82,9 +82,9 @@ Ce que j'ai observé chez des débutants :
 
 **Le junior qui progresse** : Pose questions après avoir cherché, documente apprentissages, demande feedback régulier. 6 mois : autonome sur scope défini, confiant. Message : la méthode compte autant que le talent.
 
-**L'environnement sain** : Buddy dédié, one-on-ones hebdos, petites tâches progressives, feedback constructif, erreurs normalisées. Résultat : junior productif à 6 mois, heureux, reste.
+**L'environnement sain** : Buddy dédié, one-on-ones hebdos, petites tâches progressives, feedback constructif, erreurs normalisées. **Résultat :**  junior productif à 6 mois, heureux, reste.
 
-**L'environnement toxique** : Aucun support, blâme public, tâches impossibles, attentes irréalistes. Résultat : junior part à 6 mois, carrière marquée négativement.
+**L'environnement toxique** : Aucun support, blâme public, tâches impossibles, attentes irréalistes. **Résultat :**  junior part à 6 mois, carrière marquée négativement.
 
 ## Erreurs fréquentes (et comment les éviter)
 

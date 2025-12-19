@@ -42,7 +42,7 @@ Le vrai enjeu est de créer un onboarding qui intègre sans submerger :
 
 **Les 5 piliers d'un onboarding réussi** :
 
-**Pilier 1 - Buddy dédié** : Rôle : point de contact principal pour questions "bêtes", safe space, guide informel. Qui : pair (pas manager), volontaire, bon communicant. Durée : 3 mois minimum. Impact : réduit isolement, accélère intégration.
+**Pilier 1 - Buddy dédié** : Rôle : point de contact principal pour questions "bêtes", safe space, guide informel. Qui : pair (pas manager), volontaire, bon communicant. Durée : 3 mois minimum. ****Impact :** ** réduit isolement, accélère intégration.
 
 **Pilier 2 - Quick wins programmés** : Principe : succès rapides (merge PR semaine 1, ship feature semaine 4). Pourquoi : confiance, sentiment d'utilité, preuve de capacité. Comment : projets calibrés (pas triviaux, pas critiques), support disponible.
 
@@ -50,7 +50,7 @@ Le vrai enjeu est de créer un onboarding qui intègre sans submerger :
 
 **Pilier 4 - Checkpoints structurés** : Fréquence : J1, J7, J14, J30, J60, J90. Format : one-on-one manager, questions ouvertes ("Comment tu te sens ?", "Qu'est-ce qui bloque ?"). Objectif : détecter problèmes tôt, ajuster.
 
-**Pilier 5 - Feedback bidirectionnel** : Manager → nouveau : "Voici ce qui va bien, voici où progresser." Nouveau → process : "Voici ce qui m'a aidé, voici ce qui était confus." Impact : amélioration continue onboarding.
+**Pilier 5 - Feedback bidirectionnel** : Manager → nouveau : "Voici ce qui va bien, voici où progresser." Nouveau → process : "Voici ce qui m'a aidé, voici ce qui était confus." ****Impact :** ** amélioration continue onboarding.
 
 ## Cadre de décision
 
@@ -75,29 +75,29 @@ Survey à J90 : "Qu'est-ce qui t'a aidé ? Qu'est-ce qui manquait ?" Ces retours
 
 Ce que j'ai observé dans différentes organisations :
 
-**L'onboarding inexistant** : "Voilà ton ordi, démerde-toi." Pas de buddy, pas de doc, pas de structure. Résultat : 3 mois perdus, frustration, risque départ à 6 mois.
+**L'onboarding inexistant** : "Voilà ton ordi, démerde-toi." Pas de buddy, pas de doc, pas de structure. **Résultat :**  3 mois perdus, frustration, risque départ à 6 mois.
 
-**L'onboarding submersion** : J1 : 8h de réunions, 200 pages à lire. Semaine 1 : 15 personnes rencontrées, zéro temps de faire. Résultat : surcharge cognitive, rien retenu, stress.
+**L'onboarding submersion** : J1 : 8h de réunions, 200 pages à lire. Semaine 1 : 15 personnes rencontrées, zéro temps de faire. **Résultat :**  surcharge cognitive, rien retenu, stress.
 
-**L'onboarding progressif** : J1 : setup (2h) + présentation équipe (1h) + premier micro-projet (4h). Semaine 1 : merge première PR. Mois 1 : ship première feature. Checkpoints J7, J14, J30. Buddy dédié. Résultat : confiance, intégration rapide, productive à J30.
+**L'onboarding progressif** : J1 : setup (2h) + présentation équipe (1h) + premier micro-projet (4h). Semaine 1 : merge première PR. Mois 1 : ship première feature. Checkpoints J7, J14, J30. Buddy dédié. **Résultat :**  confiance, intégration rapide, productive à J30.
 
-**L'exemple du quick win** : J3 : "Ton premier projet : corriger cette typo dans la doc + améliorer ce bout de README." 2h de travail, PR mergée, félicitations. Message : "Tu peux contribuer dès maintenant." Impact : confiance, sentiment d'appartenance immédiat.
+**L'exemple du quick win** : J3 : "Ton premier projet : corriger cette typo dans la doc + améliorer ce bout de README." 2h de travail, PR mergée, félicitations. Message : "Tu peux contribuer dès maintenant." ****Impact :** ** confiance, sentiment d'appartenance immédiat.
 
-**La mesure qui améliore** : Survey systématique J90 à tous nouveaux. Résultat : identification que doc architecture illisible. Réécriture. Prochains onboardings 30% plus rapides.
+**La mesure qui améliore** : Survey systématique J90 à tous nouveaux. **Résultat :**  identification que doc architecture illisible. Réécriture. Prochains onboardings 30% plus rapides.
 
 ## Erreurs fréquentes
 
 **Rien préparer avant J1**
-Nouveau arrive, ordi pas prêt, accès manquants. Résultat : 2-3 jours perdus, mauvaise première impression.
+Nouveau arrive, ordi pas prêt, accès manquants. **Résultat :**  2-3 jours perdus, mauvaise première impression.
 
 **Surcharge d'info J1**
-8 réunions, 200 slides, 15 personnes. Résultat : rien retenu, épuisement.
+8 réunions, 200 slides, 15 personnes. **Résultat :**  rien retenu, épuisement.
 
 **Pas de quick wins**
-3 semaines de lecture avant premier commit. Résultat : frustration, sentiment d'inutilité.
+3 semaines de lecture avant premier commit. **Résultat :**  frustration, sentiment d'inutilité.
 
 **Pas de checkpoints**
-Supposer que tout va bien. Découvrir problèmes à J60. Résultat : trop tard pour corriger facilement.
+Supposer que tout va bien. Découvrir problèmes à J60. **Résultat :**  trop tard pour corriger facilement.
 
 ## Si c'était à refaire
 

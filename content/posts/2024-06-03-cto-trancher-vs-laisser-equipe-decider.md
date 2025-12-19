@@ -84,27 +84,27 @@ Quand je tranche, ADR expliquant : le contexte, les options considérées, la d�
 
 Ce que j'ai observé dans différentes situations :
 
-**Le CTO qui tranche trop tôt** : Intervient dès qu'un débat apparaît. Résultat : équipe déresponsabilisée, attend toujours qu'on décide pour elle, perte de compétences décisionnelles.
+**Le CTO qui tranche trop tôt** : Intervient dès qu'un débat apparaît. **Résultat :**  équipe déresponsabilisée, attend toujours qu'on décide pour elle, perte de compétences décisionnelles.
 
-**Le CTO qui ne tranche jamais** : Laisse les débats durer des semaines. Résultat : paralysie, frustration, business bloqué, conflits qui pourrissent.
+**Le CTO qui ne tranche jamais** : Laisse les débats durer des semaines. **Résultat :**  paralysie, frustration, business bloqué, conflits qui pourrissent.
 
-**L'intervention qui débloquer** : Débat postgres vs mongo depuis 5 jours, 2 camps égaux. CTO tranche : "Postgres parce que X, Y, Z. On réévalue dans 6 mois si problèmes." Résultat : équipe soulagée, exécution reprend, respect de la décision.
+**L'intervention qui débloquer** : Débat postgres vs mongo depuis 5 jours, 2 camps égaux. CTO tranche : "Postgres parce que X, Y, Z. On réévalue dans 6 mois si problèmes." **Résultat :**  équipe soulagée, exécution reprend, respect de la décision.
 
-**La facilitation qui évite de trancher** : Débat sur architecture. CTO pose des questions, recentre sur critères objectifs. Équipe converge seule. Résultat : meilleure décision, ownership partagé.
+**La facilitation qui évite de trancher** : Débat sur architecture. CTO pose des questions, recentre sur critères objectifs. Équipe converge seule. **Résultat :**  meilleure décision, ownership partagé.
 
 ## Erreurs fréquentes
 
 **Micro-management décisionnel**
-Trancher toutes les décisions, même mineures. Résultat : équipe passive, attend validation pour tout, perte d'autonomie.
+Trancher toutes les décisions, même mineures. **Résultat :**  équipe passive, attend validation pour tout, perte d'autonomie.
 
 **Laisser pourrir**
-Ne jamais trancher, même quand débat devient toxique. Résultat : conflits qui empirent, vélocité qui s'effondre, départs.
+Ne jamais trancher, même quand débat devient toxique. **Résultat :**  conflits qui empirent, vélocité qui s'effondre, départs.
 
 **Trancher sans expliquer**
-"On fait comme ça, point." Résultat : décision appliquée sans conviction, résistance passive.
+"On fait comme ça, point." **Résultat :**  décision appliquée sans conviction, résistance passive.
 
 **Ne pas documenter**
-Trancher oralement sans trace écrite. Résultat : contexte perdu, débat qui revient 3 mois plus tard.
+Trancher oralement sans trace écrite. **Résultat :**  contexte perdu, débat qui revient 3 mois plus tard.
 
 ## Si c'était à refaire
 

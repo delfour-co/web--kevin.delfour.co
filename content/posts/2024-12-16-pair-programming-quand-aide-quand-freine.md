@@ -75,27 +75,27 @@ Encourager, pas imposer. Certains excellent solo. Respecter différences. Cette 
 
 Ce que j'ai observé dans différentes organisations :
 
-**Le pair dogmatique** : "Tout le code en pair, tout le temps." 6 mois : vélocité divisée par 2, équipe épuisée, talents partent ("pas de temps pour réfléchir"). Résultat : abandon complet du pair après.
+**Le pair dogmatique** : "Tout le code en pair, tout le temps." 6 mois : vélocité divisée par 2, équipe épuisée, talents partent ("pas de temps pour réfléchir"). **Résultat :**  abandon complet du pair après.
 
-**Le pair ciblé** : Pair utilisé pour : onboarding (2 semaines), code critique (sécurité, paiement), problèmes bloqués >1 jour. Reste en solo. Résultat : qualité élevée, vélocité préservée, satisfaction équipe.
+**Le pair ciblé** : Pair utilisé pour : onboarding (2 semaines), code critique (sécurité, paiement), problèmes bloqués >1 jour. Reste en solo. **Résultat :**  qualité élevée, vélocité préservée, satisfaction équipe.
 
-**L'exemple de l'onboarding** : Nouveau dev : semaine 1-2 pair 3h/jour avec buddy. Semaine 3-4 pair 1h/jour. Mois 2+ : pair ponctuel sur demande. Résultat : autonomie rapide sans submersion.
+**L'exemple de l'onboarding** : Nouveau dev : semaine 1-2 pair 3h/jour avec buddy. Semaine 3-4 pair 1h/jour. Mois 2+ : pair ponctuel sur demande. **Résultat :**  autonomie rapide sans submersion.
 
-**Le piège de la compatibilité** : Pair imposée entre dev senior dominant et junior intimidé. Junior ne contribue plus, devient "spectateur". Résultat : frustration, pas d'apprentissage. Changement de binôme résout problème.
+**Le piège de la compatibilité** : Pair imposée entre dev senior dominant et junior intimidé. Junior ne contribue plus, devient "spectateur". **Résultat :**  frustration, pas d'apprentissage. Changement de binôme résout problème.
 
 ## Erreurs fréquentes
 
 **Pair systématique sur tout**
-Dogme "tout en pair". Résultat : épuisement, vélocité effondrée, frustration.
+Dogme "tout en pair". **Résultat :**  épuisement, vélocité effondrée, frustration.
 
 **Sessions trop longues**
-Pair 8h/jour pendant semaines. Résultat : burn-out cognitif, inefficacité.
+Pair 8h/jour pendant semaines. **Résultat :**  burn-out cognitif, inefficacité.
 
 **Pas de rotation driver/navigator**
-Un code, l'autre regarde passivement. Résultat : désengagement du navigateur, pas de bénéfice collaboration.
+Un code, l'autre regarde passivement. **Résultat :**  désengagement du navigateur, pas de bénéfice collaboration.
 
 **Ignorer incompatibilités**
-Forcer paires qui ne fonctionnent pas. Résultat : toxicité, inefficacité.
+Forcer paires qui ne fonctionnent pas. **Résultat :**  toxicité, inefficacité.
 
 ## Si c'était à refaire
 

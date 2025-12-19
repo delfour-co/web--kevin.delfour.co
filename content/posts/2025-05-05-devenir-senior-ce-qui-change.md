@@ -83,7 +83,7 @@ One-on-one : "Où suis-je sur chemin junior → senior ? Quoi améliorer ?" Ce f
 
 Ce que j'ai observé chez différents profils :
 
-**Le faux senior** : 8 ans expérience, excellent techniquement, mais : jamais mentore, pas de doc, scope étroit, attend qu'on lui dise quoi faire. Résultat : bloqué mid-level malgré ancienneté. Message : ancienneté ≠ séniorité.
+**Le faux senior** : 8 ans expérience, excellent techniquement, mais : jamais mentore, pas de doc, scope étroit, attend qu'on lui dise quoi faire. **Résultat :**  bloqué mid-level malgré ancienneté. Message : ancienneté ≠ séniorité.
 
 **Le vrai senior rapide** : 3 ans expérience mais : ownership composant critique, mentore 2 juniors, documente, propose améliorations, impact visible. Promu senior à 3.5 ans. Message : mindset et impact > ancienneté.
 

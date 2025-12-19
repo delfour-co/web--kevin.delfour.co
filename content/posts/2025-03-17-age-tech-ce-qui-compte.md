@@ -79,7 +79,7 @@ Ce que j'ai observé chez différents profils :
 
 **L'avantage assumé** : Reconversion 38 ans, ex-commerce. Entretien scale-up : met en avant 10 ans expérience client, soft skills, professionnalisme. Recruté précisément pour ça : "On veut équilibrer équipe très junior." Message : bon fit valorise maturité.
 
-**L'âge neutre** : Reconversion 33 ans, cabinet conseil. Portfolio solide, compétences démontrées. Entretiens : zéro mention âge, focus pure compétences. Résultat : embauché sans que l'âge soit facteur. Message : beaucoup de boîtes s'en foutent vraiment.
+**L'âge neutre** : Reconversion 33 ans, cabinet conseil. Portfolio solide, compétences démontrées. Entretiens : zéro mention âge, focus pure compétences. **Résultat :**  embauché sans que l'âge soit facteur. Message : beaucoup de boîtes s'en foutent vraiment.
 
 **L'exemple du salaire** : Reconversion 36 ans, ancien salaire 48k. Premier job dev : 34k (baisse). 18 mois : 42k. 3 ans : 54k. Message : baisse temporaire, rattrapage rapide si tu progresses.
 

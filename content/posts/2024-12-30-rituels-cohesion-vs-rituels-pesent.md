@@ -75,27 +75,27 @@ Chaque trimestre : audit rituels, survey équipe ("utile ? 1-10"), ajuster. Cett
 
 Ce que j'ai observé dans différentes organisations :
 
-**La surcharge rituels** : 18h réunions/semaine. Standup 45min, 3 réunions statut, planning 4h, review 3h, retro 2h, multiples syncs. Résultat : 22h restantes pour coder, vélocité effondrée, burn-out.
+**La surcharge rituels** : 18h réunions/semaine. Standup 45min, 3 réunions statut, planning 4h, review 3h, retro 2h, multiples syncs. **Résultat :**  22h restantes pour coder, vélocité effondrée, burn-out.
 
-**L'optimisation drastique** : Audit révèle 15h rituels/semaine. Actions : standup strict 15min, statut asynchrone (supprime 3 réunions), retro 60min max avec actions obligatoires. Résultat : 7h rituels/semaine, vélocité ×1.5, satisfaction équipe.
+**L'optimisation drastique** : Audit révèle 15h rituels/semaine. Actions : standup strict 15min, statut asynchrone (supprime 3 réunions), retro 60min max avec actions obligatoires. **Résultat :**  7h rituels/semaine, vélocité ×1.5, satisfaction équipe.
 
-**L'exemple du standup** : Standup dérive à 45min, reporting détaillé. Correction : timer visible, debout, "parking lot" pour discussions longues. 2 semaines : standup 12min, efficace. Résultat : équipe récupère 2.5h/semaine.
+**L'exemple du standup** : Standup dérive à 45min, reporting détaillé. Correction : timer visible, debout, "parking lot" pour discussions longues. 2 semaines : standup 12min, efficace. **Résultat :**  équipe récupère 2.5h/semaine.
 
-**Le one-on-one qui sauve** : Dev performance baisse. One-on-one hebdo révèle burn-out précoce. Intervention rapide. Résultat : problème résolu avant crise. Sans rituel one-on-one : détection tardive, départ.
+**Le one-on-one qui sauve** : Dev performance baisse. One-on-one hebdo révèle burn-out précoce. Intervention rapide. **Résultat :**  problème résolu avant crise. Sans rituel one-on-one : détection tardive, départ.
 
 ## Erreurs fréquentes
 
 **Accumuler sans supprimer**
-Ajouter nouveaux rituels sans jamais retirer anciens. Résultat : 20h réunions/semaine.
+Ajouter nouveaux rituels sans jamais retirer anciens. **Résultat :**  20h réunions/semaine.
 
 **Pas de discipline d'exécution**
-Standup sans timer, retro sans actions. Résultat : dérive durée, perte de valeur.
+Standup sans timer, retro sans actions. **Résultat :**  dérive durée, perte de valeur.
 
 **Cargo cult**
-Copier rituels sans comprendre pourquoi. Résultat : bureaucratie sans bénéfice.
+Copier rituels sans comprendre pourquoi. **Résultat :**  bureaucratie sans bénéfice.
 
 **Annuler rituels high-value**
-One-on-ones annulés régulièrement ("pas urgent"). Résultat : problèmes détectés trop tard.
+One-on-ones annulés régulièrement ("pas urgent"). **Résultat :**  problèmes détectés trop tard.
 
 ## Si c'était à refaire
 

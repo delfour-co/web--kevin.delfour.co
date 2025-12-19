@@ -89,27 +89,27 @@ Règle 80/20 : 20% de contexte qui explique 80% des décisions. Pas tout documen
 
 Ce que j'ai observé dans différentes successions :
 
-**La succession brutale** : CTO part en 2 semaines, pas de successeur identifié, documentation minimale. Résultat : 6 mois de chaos, décisions bloquées, équipe désorientée.
+**La succession brutale** : CTO part en 2 semaines, pas de successeur identifié, documentation minimale. **Résultat :**  6 mois de chaos, décisions bloquées, équipe désorientée.
 
-**La sur-documentation paralysante** : CTO documente 200 pages de contexte technique. Résultat : le successeur ne lit pas, information inutilisable.
+**La sur-documentation paralysante** : CTO documente 200 pages de contexte technique. **Résultat :**  le successeur ne lit pas, information inutilisable.
 
-**La succession propre** : CTO prépare 3 mois, successeur arrive 1 mois avant le départ, onboarding structuré, disponibilité 1 mois post-départ. Résultat : transition fluide, successeur opérationnel rapidement.
+**La succession propre** : CTO prépare 3 mois, successeur arrive 1 mois avant le départ, onboarding structuré, disponibilité 1 mois post-départ. **Résultat :**  transition fluide, successeur opérationnel rapidement.
 
-**L'ingérence post-départ** : CTO reste très impliqué post-départ, continue à conseiller l'équipe. Résultat : le successeur ne peut pas prendre sa place, double command, confusion.
+**L'ingérence post-départ** : CTO reste très impliqué post-départ, continue à conseiller l'équipe. **Résultat :**  le successeur ne peut pas prendre sa place, double command, confusion.
 
 ## Erreurs fréquentes
 
 **Partir sans préparer**
-Démission avec préavis minimum, pas de documentation, pas de transition. Résultat : chaos, contexte perdu, successeur en difficulté.
+Démission avec préavis minimum, pas de documentation, pas de transition. **Résultat :**  chaos, contexte perdu, successeur en difficulté.
 
 **Sur-documenter**
-Vouloir tout documenter parfaitement. Résultat : burn-out pendant la transition, documentation illisible, contexte non transmis.
+Vouloir tout documenter parfaitement. **Résultat :**  burn-out pendant la transition, documentation illisible, contexte non transmis.
 
 **Rester trop impliqué**
-Continuer à conseiller, à participer aux décisions, à être présent. Résultat : le successeur ne peut pas prendre sa place, confusion de responsabilité.
+Continuer à conseiller, à participer aux décisions, à être présent. **Résultat :**  le successeur ne peut pas prendre sa place, confusion de responsabilité.
 
 **Critiquer le successeur**
-Commenter ses décisions, comparer avec "comment je faisais". Résultat : perte de crédibilité du successeur, toxicité.
+Commenter ses décisions, comparer avec "comment je faisais". **Résultat :**  perte de crédibilité du successeur, toxicité.
 
 ## Si c'était à refaire
 

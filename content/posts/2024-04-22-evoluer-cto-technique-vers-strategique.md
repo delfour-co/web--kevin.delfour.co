@@ -68,27 +68,27 @@ Reconnaître que le CTO technique qui code 60% a fait son temps à cette taille 
 
 Ce que j'ai observé dans différentes organisations :
 
-**Le CTO qui ne transition pas** : Organisation à 50 personnes, CTO qui code encore 40%, valide toutes les décisions techniques. Résultat : bottleneck massif, équipe frustrée, turnover des talents, pas de vision stratégique.
+**Le CTO qui ne transition pas** : Organisation à 50 personnes, CTO qui code encore 40%, valide toutes les décisions techniques. **Résultat :**  bottleneck massif, équipe frustrée, turnover des talents, pas de vision stratégique.
 
-**La transition brutale ratée** : CTO qui passe de 60% code à 0% du jour au lendemain. Résultat : perte de crédibilité technique, équipe désorientée, décisions déconnectées de la réalité.
+**La transition brutale ratée** : CTO qui passe de 60% code à 0% du jour au lendemain. **Résultat :**  perte de crédibilité technique, équipe désorientée, décisions déconnectées de la réalité.
 
-**La transition progressive réussie** : Sur 12 mois, passage de 40% à 15% de code, délégation progressive, développement des compétences stratégiques. Résultat : équipe autonome, vision claire, crédibilité maintenue.
+**La transition progressive réussie** : Sur 12 mois, passage de 40% à 15% de code, délégation progressive, développement des compétences stratégiques. **Résultat :**  équipe autonome, vision claire, crédibilité maintenue.
 
-**Le CTO qui ne veut pas évoluer** : Refuse la transition, veut rester technique. Résultat : soit départ volontaire, soit replacement par quelqu'un de plus stratégique.
+**Le CTO qui ne veut pas évoluer** : Refuse la transition, veut rester technique. **Résultat :**  soit départ volontaire, soit replacement par quelqu'un de plus stratégique.
 
 ## Erreurs fréquentes
 
 **Refuser la transition**
-Vouloir rester le CTO hands-on alors que l'organisation a besoin de stratégie. Résultat : devenir bottleneck, bloquer l'organisation, ou être remplacé.
+Vouloir rester le CTO hands-on alors que l'organisation a besoin de stratégie. **Résultat :**  devenir bottleneck, bloquer l'organisation, ou être remplacé.
 
 **Transition trop brutale**
-Passer de très technique à purement stratégique du jour au lendemain. Résultat : perte de crédibilité, décisions déconnectées, équipe méfiante.
+Passer de très technique à purement stratégique du jour au lendemain. **Résultat :**  perte de crédibilité, décisions déconnectées, équipe méfiante.
 
 **Ne pas développer les nouvelles compétences**
-Continuer à optimiser ses compétences techniques sans développer vision, communication, politique. Résultat : incompétence dans le nouveau rôle.
+Continuer à optimiser ses compétences techniques sans développer vision, communication, politique. **Résultat :**  incompétence dans le nouveau rôle.
 
 **Rester nostalgique du rôle précédent**
-Constamment regretter le temps où "je codais vraiment". Résultat : auto-sabotage, retour régulier au code au détriment du stratégique.
+Constamment regretter le temps où "je codais vraiment". **Résultat :**  auto-sabotage, retour régulier au code au détriment du stratégique.
 
 ## Si c'était à refaire
 

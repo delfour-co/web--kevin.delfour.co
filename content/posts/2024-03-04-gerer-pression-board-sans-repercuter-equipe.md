@@ -63,27 +63,27 @@ Ne pas transformer chaque question board en réunion d'urgence ou en rapport dé
 
 Ce que j'ai observé dans différentes organisations :
 
-**La pression répercutée sans filtre** : Chaque board meeting déclenche une cascade d'urgences dans l'équipe. "Le board a demandé X", "Le board s'inquiète de Y". Résultat : l'équipe devient anxieuse, change de priorité toutes les 2 semaines, perd son focus.
+**La pression répercutée sans filtre** : Chaque board meeting déclenche une cascade d'urgences dans l'équipe. "Le board a demandé X", "Le board s'inquiète de Y". **Résultat :**  l'équipe devient anxieuse, change de priorité toutes les 2 semaines, perd son focus.
 
-**La bulle totale** : Un CTO qui ne partage jamais aucun contexte board. L'équipe ignore pourquoi certaines décisions sont prises, pourquoi certaines priorités changent. Résultat : sentiment d'arbitraire, décisions incomprises.
+**La bulle totale** : Un CTO qui ne partage jamais aucun contexte board. L'équipe ignore pourquoi certaines décisions sont prises, pourquoi certaines priorités changent. **Résultat :**  sentiment d'arbitraire, décisions incomprises.
 
-**Le filtre productif** : Board meeting mensuel → digestion pendant 48h → partage à l'équipe des nouvelles priorités avec contexte mais sans anxiété. "Voici ce qui change et pourquoi. Voici notre plan." Résultat : équipe informée, direction claire, pas de panique.
+**Le filtre productif** : Board meeting mensuel → digestion pendant 48h → partage à l'équipe des nouvelles priorités avec contexte mais sans anxiété. "Voici ce qui change et pourquoi. Voici notre plan." **Résultat :**  équipe informée, direction claire, pas de panique.
 
 **Le coût personnel** : Filtrer la pression signifie la porter soi-même. Cette charge émotionnelle est invisible mais réelle. D'où l'importance d'avoir des pairs CTOs avec qui décharger.
 
 ## Erreurs fréquentes
 
 **Répercuter l'anxiété board**
-Transformer chaque tension board en tension équipe. "Le board panique !" Résultat : équipe paralysée, vélocité qui baisse, exactement l'inverse de ce qui est souhaité.
+Transformer chaque tension board en tension équipe. "Le board panique !" **Résultat :**  équipe paralysée, vélocité qui baisse, exactement l'inverse de ce qui est souhaité.
 
 **Multiplier les "urgences board"**
-Chaque question board devient une urgence pour l'équipe. Résultat : l'équipe apprend que "urgent board" ne veut rien dire, et ignore même les vraies urgences.
+Chaque question board devient une urgence pour l'équipe. **Résultat :**  l'équipe apprend que "urgent board" ne veut rien dire, et ignore même les vraies urgences.
 
 **Ne jamais partager le contexte**
-Garder toute l'information board pour soi. Résultat : décisions incomprises, sentiment que les priorités sont arbitraires.
+Garder toute l'information board pour soi. **Résultat :**  décisions incomprises, sentiment que les priorités sont arbitraires.
 
 **Porter seul toute la pression**
-Ne jamais décharger cette pression auprès de pairs ou d'un mentor. Résultat : burn-out silencieux, décisions qui se dégradent par manque de recul.
+Ne jamais décharger cette pression auprès de pairs ou d'un mentor. **Résultat :**  burn-out silencieux, décisions qui se dégradent par manque de recul.
 
 ## Si c'était à refaire
 

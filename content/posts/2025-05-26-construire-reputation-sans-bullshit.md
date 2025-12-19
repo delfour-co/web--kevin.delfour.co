@@ -34,11 +34,11 @@ Le vrai enjeu est de construire réputation authentique et durable :
 
 **Les 3 niveaux de réputation** :
 
-**Niveau 1 - Réputation locale (équipe/boîte)** : Scope : tes collègues, ta boîte. Construction : travail de qualité, fiabilité, collaboration, aide aux autres. Impact : promotions, projets intéressants, recommandations internes. Timeline : 6-18 mois pour établir. Importance : fondation de tout le reste.
+**Niveau 1 - Réputation locale (équipe/boîte)** : Scope : tes collègues, ta boîte. Construction : travail de qualité, fiabilité, collaboration, aide aux autres. ****Impact :** ** promotions, projets intéressants, recommandations internes. Timeline : 6-18 mois pour établir. Importance : fondation de tout le reste.
 
-**Niveau 2 - Réputation communautaire (ville/niche)** : Scope : communauté tech locale (meetups), ou niche spécifique (ex: communauté Rust). Construction : meetups, présentations, contributions open source, partage connaissance. Impact : opportunités job marché caché, collaborations, réseau. Timeline : 1-3 ans pour établir. Importance : différenciation locale.
+**Niveau 2 - Réputation communautaire (ville/niche)** : Scope : communauté tech locale (meetups), ou niche spécifique (ex: communauté Rust). Construction : meetups, présentations, contributions open source, partage connaissance. ****Impact :** ** opportunités job marché caché, collaborations, réseau. Timeline : 1-3 ans pour établir. Importance : différenciation locale.
 
-**Niveau 3 - Réputation large (national/international)** : Scope : reconnaissance au-delà local. Construction : conférences, articles/blog influents, projets open source majeurs, contributions significatives. Impact : opportunités globales, salaire premium, influence. Timeline : 5-10+ ans généralement. Importance : optionnel, pas nécessaire pour carrière réussie.
+**Niveau 3 - Réputation large (national/international)** : Scope : reconnaissance au-delà local. Construction : conférences, articles/blog influents, projets open source majeurs, contributions significatives. ****Impact :** ** opportunités globales, salaire premium, influence. Timeline : 5-10+ ans généralement. Importance : optionnel, pas nécessaire pour carrière réussie.
 
 **Les 5 piliers d'une bonne réputation** :
 

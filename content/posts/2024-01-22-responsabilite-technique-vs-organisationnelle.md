@@ -63,24 +63,24 @@ Métriques techniques : qualité du code, couverture de tests, dette technique, 
 
 Ce que j'ai observé dans différentes organisations :
 
-**Excellence technique insoutenable** : Un CTO impose des standards extrêmement élevés (100% de couverture de tests, code reviews multiples, architecture parfaite). Résultat : vélocité divisée par 3, frustration de l'équipe, turnover élevé, business frustré. L'excellence technique a détruit la capacité organisationnelle.
+**Excellence technique insoutenable** : Un CTO impose des standards extrêmement élevés (100% de couverture de tests, code reviews multiples, architecture parfaite). **Résultat :**  vélocité divisée par 3, frustration de l'équipe, turnover élevé, business frustré. L'excellence technique a détruit la capacité organisationnelle.
 
-**Vélocité sans fondations** : Un CTO optimise pour la rapidité de livraison sans investir dans la qualité. Résultat : dette technique explosive, incidents fréquents, l'équipe passe plus de temps à corriger qu'à livrer. La capacité organisationnelle s'est construite sur du sable.
+**Vélocité sans fondations** : Un CTO optimise pour la rapidité de livraison sans investir dans la qualité. **Résultat :**  dette technique explosive, incidents fréquents, l'équipe passe plus de temps à corriger qu'à livrer. La capacité organisationnelle s'est construite sur du sable.
 
 **L'équilibre observable** : Un CTO qui alloue 70% de capacité aux features, 20% à la dette technique, 10% à l'apprentissage. Cette répartition crée un équilibre : l'organisation livre régulièrement, maintient la qualité, et évolue ses compétences.
 
-**La transition difficile** : Un excellent architecte promu CTO continue à optimiser uniquement la technique. Il propose des solutions brillantes que l'équipe ne peut pas maintenir. Résultat : frustration mutuelle et échec du rôle.
+**La transition difficile** : Un excellent architecte promu CTO continue à optimiser uniquement la technique. Il propose des solutions brillantes que l'équipe ne peut pas maintenir. **Résultat :**  frustration mutuelle et échec du rôle.
 
 ## Erreurs fréquentes
 
 **Optimiser uniquement la technique**
-Imposer des solutions techniquement parfaites sans considérer la capacité de l'équipe à les porter. Résultat : dépendance à quelques experts, fragilité organisationnelle.
+Imposer des solutions techniquement parfaites sans considérer la capacité de l'équipe à les porter. **Résultat :**  dépendance à quelques experts, fragilité organisationnelle.
 
 **Optimiser uniquement l'organisation**
-Sacrifier la qualité technique pour maintenir la vélocité. Résultat : dette technique qui finit par tuer la vélocité, incidents fréquents, perte de crédibilité.
+Sacrifier la qualité technique pour maintenir la vélocité. **Résultat :**  dette technique qui finit par tuer la vélocité, incidents fréquents, perte de crédibilité.
 
 **Ne pas mesurer la santé organisationnelle**
-Surveiller uniquement les métriques techniques (qualité code, couverture tests) sans regarder les métriques humaines (turnover, satisfaction, burn-out). Résultat : découverte tardive d'une organisation en souffrance.
+Surveiller uniquement les métriques techniques (qualité code, couverture tests) sans regarder les métriques humaines (turnover, satisfaction, burn-out). **Résultat :**  découverte tardive d'une organisation en souffrance.
 
 **Déléguer la responsabilité organisationnelle**
 Penser que c'est le rôle du VP Engineering ou des managers. En réalité, le CTO doit créer les conditions organisationnelles qui permettent l'excellence technique.

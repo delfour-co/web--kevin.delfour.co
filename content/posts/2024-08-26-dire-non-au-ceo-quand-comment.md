@@ -34,11 +34,11 @@ Le vrai enjeu est de savoir quand et comment dire non pour protéger à la fois 
 
 **Quand dire non est nécessaire** :
 
-**Situation 1 - Timeline impossible** : CEO veut feature en 2 semaines, réaliste = 2 mois. Dire oui = échec garanti. Impact : crédibilité détruite, équipe épuisée, résultat médiocre.
+**Situation 1 - Timeline impossible** : CEO veut feature en 2 semaines, réaliste = 2 mois. Dire oui = échec garanti. ****Impact :** ** crédibilité détruite, équipe épuisée, résultat médiocre.
 
-**Situation 2 - Dette technique catastrophique** : CEO veut feature qui nécessiterait workaround créant dette massive. Impact : hypothèque capacité future, coût ×10 pour corriger.
+**Situation 2 - Dette technique catastrophique** : CEO veut feature qui nécessiterait workaround créant dette massive. ****Impact :** ** hypothèque capacité future, coût ×10 pour corriger.
 
-**Situation 3 - Risque sécurité inacceptable** : CEO veut feature qui expose données sensibles. Impact : régulation, réputation, légal.
+**Situation 3 - Risque sécurité inacceptable** : CEO veut feature qui expose données sensibles. ****Impact :** ** régulation, réputation, légal.
 
 **Situation 4 - Ressources insuffisantes** : CEO veut 3 projets, capacité pour 1. Dire oui = 3 échecs au lieu de 1 succès.
 
@@ -84,7 +84,7 @@ Ce que j'ai observé dans différentes situations :
 
 **Le oui systématique qui détruit** : CTO qui ne dit jamais non. Promesses impossibles, échecs répétés, crédibilité perdue, replacement.
 
-**Le non brutal qui isole** : "Impossible." Sans explication ni alternative. Résultat : CEO contourne le CTO, décisions prises sans tech, isolement progressif.
+**Le non brutal qui isole** : "Impossible." Sans explication ni alternative. **Résultat :**  CEO contourne le CTO, décisions prises sans tech, isolement progressif.
 
 **Le "non, mais" qui renforce** : "Timeline 1 semaine impossible. Options : démo simulée en 3 jours, ou feature v1 en 2 semaines. Je recommande démo." CEO choisit démo, succès, confiance renforcée.
 
@@ -93,16 +93,16 @@ Ce que j'ai observé dans différentes situations :
 ## Erreurs fréquentes
 
 **Ne jamais dire non**
-Accepter toutes les demandes. Résultat : promesses impossibles, échecs, crédibilité détruite, burn-out.
+Accepter toutes les demandes. **Résultat :**  promesses impossibles, échecs, crédibilité détruite, burn-out.
 
 **Dire non sans alternative**
-"Impossible" sans proposer d'options. Résultat : CEO frustré, contournement, relation détériorée.
+"Impossible" sans proposer d'options. **Résultat :**  CEO frustré, contournement, relation détériorée.
 
 **Argumenter uniquement technique**
 "L'architecture ne permet pas." CEO s'en fout. Mieux : "Cette approche créerait dette qui ralentirait delivery 40% pendant 6 mois."
 
 **Ne pas documenter quand CEO insiste**
-CEO insiste malgré warnings. Pas de trace écrite. Résultat : échec, CTO blâmé, "tu aurais dû dire non plus fort".
+CEO insiste malgré warnings. Pas de trace écrite. **Résultat :**  échec, CTO blâmé, "tu aurais dû dire non plus fort".
 
 ## Si c'était à refaire
 
@@ -118,7 +118,7 @@ Framework A/B/C pour toute demande significative. Cette structure rend le "non, 
 Quand enjeu critique, email récapitulatif : demande, risques, alternatives, décision. Cette trace protège et clarifie.
 
 **Mesurer et partager les résultats**
-"Q2 : j'ai dit non à feature X, proposé alternative Y. Résultat : livrée avec succès, zéro dette." Cette visibilité justifie futurs non.
+"Q2 : j'ai dit non à feature X, proposé alternative Y. **Résultat :**  livrée avec succès, zéro dette." Cette visibilité justifie futurs non.
 
 ## Pour approfondir
 

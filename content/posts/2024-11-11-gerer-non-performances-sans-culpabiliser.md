@@ -48,7 +48,7 @@ Le vrai enjeu est de gérer la non-performance de manière lucide et humaine :
 
 **Structure du PIP** : Durée : 3 mois max. Objectifs : 3-5 objectifs mesurables précis. Support : manager dédié, ressources, temps. Checkpoints : hebdomadaires 30min. Issue : soit amélioration validée, soit séparation.
 
-**Piège du PIP** : PIP utilisé comme procédure de licenciement déguisée. Résultat : hypocrisie, perte de confiance équipe. Vrai PIP = vraie chance d'amélioration.
+**Piège du PIP** : PIP utilisé comme procédure de licenciement déguisée. **Résultat :**  hypocrisie, perte de confiance équipe. Vrai PIP = vraie chance d'amélioration.
 
 ## Cadre de décision
 
@@ -73,29 +73,29 @@ Si amélioration : célébrer, continuer. Si pas amélioration : séparer avec r
 
 Ce que j'ai observé dans différentes situations :
 
-**L'évitement toxique** : Manager tolère non-performance pendant 18 mois. Équipe frustrée, charge redistribuée, talents partent. Résultat : impact massif pour éviter conversation difficile.
+**L'évitement toxique** : Manager tolère non-performance pendant 18 mois. Équipe frustrée, charge redistribuée, talents partent. **Résultat :**  impact massif pour éviter conversation difficile.
 
-**La punition rapide** : Première baisse performance → warning immédiat → séparation 2 mois plus tard. Pas de diagnostic, pas de support. Résultat : équipe terrorisée, culture toxique.
+**La punition rapide** : Première baisse performance → warning immédiat → séparation 2 mois plus tard. Pas de diagnostic, pas de support. **Résultat :**  équipe terrorisée, culture toxique.
 
-**Le PIP qui marche** : Dev performant devient inefficace. Conversation : burn-out identifié. 3 semaines off + charge réduite 2 mois + pair programming. Résultat : retour performance normale en 3 mois.
+**Le PIP qui marche** : Dev performant devient inefficace. Conversation : burn-out identifié. 3 semaines off + charge réduite 2 mois + pair programming. **Résultat :**  retour performance normale en 3 mois.
 
-**La séparation bien faite** : Dev senior désengagé depuis 6 mois. Conversation franche : "Tu n'es plus là. Qu'est-ce qui se passe ?" → "Je veux autre chose." → "OK, donnons-nous 1 mois pour préparer ta sortie proprement." Package correct, recommandations, sortie en bons termes. Résultat : équipe soulagée, personne retrouve motivation ailleurs.
+**La séparation bien faite** : Dev senior désengagé depuis 6 mois. Conversation franche : "Tu n'es plus là. Qu'est-ce qui se passe ?" → "Je veux autre chose." → "OK, donnons-nous 1 mois pour préparer ta sortie proprement." Package correct, recommandations, sortie en bons termes. **Résultat :**  équipe soulagée, personne retrouve motivation ailleurs.
 
-**L'exemple du repositionnement** : Dev backend inefficace. Conversation révèle : frustration, veut faire product. Repositionnement interne sur rôle product. Résultat : performance excellente dans nouveau rôle.
+**L'exemple du repositionnement** : Dev backend inefficace. Conversation révèle : frustration, veut faire product. Repositionnement interne sur rôle product. **Résultat :**  performance excellente dans nouveau rôle.
 
 ## Erreurs fréquentes
 
 **Tolérer trop longtemps**
-Espérer que ça va s'arranger tout seul. 12-18 mois de non-performance tolérée. Résultat : impact massif sur équipe, frustration, départs.
+Espérer que ça va s'arranger tout seul. 12-18 mois de non-performance tolérée. **Résultat :**  impact massif sur équipe, frustration, départs.
 
 **PIP déguisé en procédure licenciement**
-PIP utilisé alors que décision déjà prise. Résultat : hypocrisie, cynisme équipe.
+PIP utilisé alors que décision déjà prise. **Résultat :**  hypocrisie, cynisme équipe.
 
 **Pas de diagnostic de la cause**
-Traiter burn-out comme gap compétence, ou désengagement comme besoin de formation. Résultat : solution inadaptée, échec garanti.
+Traiter burn-out comme gap compétence, ou désengagement comme besoin de formation. **Résultat :**  solution inadaptée, échec garanti.
 
 **Séparer sans humanité**
-Licenciement brutal, pas de package, pas de support. Résultat : culture de peur, réputation toxique.
+Licenciement brutal, pas de package, pas de support. **Résultat :**  culture de peur, réputation toxique.
 
 ## Si c'était à refaire
 

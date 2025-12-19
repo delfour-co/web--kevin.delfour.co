@@ -77,7 +77,7 @@ Ce que j'ai observé dans différentes situations :
 
 **Reporter indéfiniment** : "Pas maintenant, après la release." 18 mois plus tard : vélocité divisée par 3, refonte forcée, 9 mois perdus, coût ×10.
 
-**Le sprint dédié qui sauve** : Vélocité en chute, bugs récurrents. 2 sprints 100% dette sur modules critiques. Résultat : vélocité +60%, bug rate -70%, équipe remotivée.
+**Le sprint dédié qui sauve** : Vélocité en chute, bugs récurrents. 2 sprints 100% dette sur modules critiques. **Résultat :**  vélocité +60%, bug rate -70%, équipe remotivée.
 
 **L'approche continue** : 20% capacité permanente sur dette. 12 mois plus tard : vélocité stable, code quality en amélioration continue, zéro refonte nécessaire.
 
@@ -86,13 +86,13 @@ Ce que j'ai observé dans différentes situations :
 ## Erreurs fréquentes
 
 **Reporter jusqu'à la crise**
-"Après cette release." La release suivante : "après celle-là aussi." Résultat : dette qui explose, refonte forcée, coût ×10.
+"Après cette release." La release suivante : "après celle-là aussi." **Résultat :**  dette qui explose, refonte forcée, coût ×10.
 
 **Big bang rewrite**
-"On refait tout proprement pendant 9 mois." Résultat : taux échec 80%, business frustré, souvent abandon.
+"On refait tout proprement pendant 9 mois." **Résultat :**  taux échec 80%, business frustré, souvent abandon.
 
 **Rembourser sans mesurer**
-Investir dans la dette sans mesurer l'impact. Résultat : impossible de justifier futurs investissements, perte de crédibilité.
+Investir dans la dette sans mesurer l'impact. **Résultat :**  impossible de justifier futurs investissements, perte de crédibilité.
 
 **Ne pas communiquer en termes business**
 "Code plus clean." Le CEO s'en fout. Mieux : "Vélocité +40%, moins de bugs, ROI 6 mois."

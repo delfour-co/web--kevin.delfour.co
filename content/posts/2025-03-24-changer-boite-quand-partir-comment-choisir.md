@@ -64,7 +64,7 @@ Voici comment décider si et quand partir :
 Questions : Est-ce que je progresse ? Suis-je heureux 70%+ du temps ? Culture saine ou toxique ? Perspective d'évolution ? Ces questions révèlent si rester ou partir.
 
 **2. Tentative d'amélioration AVANT de partir**
-Actions : discussion franche avec manager, demande nouvelles responsabilités, feedback sur culture. Résultat : soit amélioration, soit confirmation que partir est bon. Ce process évite décision impulsive.
+Actions : discussion franche avec manager, demande nouvelles responsabilités, feedback sur culture. **Résultat :**  soit amélioration, soit confirmation que partir est bon. Ce process évite décision impulsive.
 
 **3. Timeline de décision**
 Si toxique : décision rapide (1-3 mois). Si stagnation : donner 3-6 mois après avoir signalé. Si opportunité externe : évaluer calmement. Cette patience évite erreur.
@@ -79,13 +79,13 @@ Même si tu pars en mauvais termes internes, sortie professionnelle. Préavis re
 
 Ce que j'ai observé chez différents profils :
 
-**Le départ impulsif** : Junior part après 6 mois car "je m'ennuie". Prochaine boîte : même après 6 mois. Pattern répété 3 fois. Résultat : CV instable, réputation impulsif, pas de progression profonde.
+**Le départ impulsif** : Junior part après 6 mois car "je m'ennuie". Prochaine boîte : même après 6 mois. Pattern répété 3 fois. **Résultat :**  CV instable, réputation impulsif, pas de progression profonde.
 
-**Le départ réfléchi** : Dev après 18 mois : stagnation claire, a demandé évolution (refusée), opportunité senior ailleurs. Départ soigné, préavis respecté. Résultat : progression carrière, réputation intacte.
+**Le départ réfléchi** : Dev après 18 mois : stagnation claire, a demandé évolution (refusée), opportunité senior ailleurs. Départ soigné, préavis respecté. **Résultat :**  progression carrière, réputation intacte.
 
 **Le piège de rester trop longtemps** : Dev reste 4 ans dans boîte toxique par peur de partir. Burn-out, compétences obsolètes, confiance érodée. Quand part enfin : reconstruction longue. Message : rester trop longtemps peut être pire que partir.
 
-**L'exemple de la tentative** : Dev malheureux. Avant de partir : discussion franche manager. Résultat : changement d'équipe interne, nouveaux projets. 1 an plus tard : heureux, resté. Message : tentative d'amélioration avant départ.
+**L'exemple de la tentative** : Dev malheureux. Avant de partir : discussion franche manager. **Résultat :**  changement d'équipe interne, nouveaux projets. 1 an plus tard : heureux, resté. Message : tentative d'amélioration avant départ.
 
 ## Erreurs fréquentes (et comment les éviter)
 

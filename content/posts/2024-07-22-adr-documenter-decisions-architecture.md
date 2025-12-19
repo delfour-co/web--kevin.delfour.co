@@ -42,7 +42,9 @@ Le vrai enjeu est de documenter juste assez pour préserver le contexte sans cr�
 Ne PAS créer pour : décisions mineures, choix évidents, détails d'implémentation.
 
 **Structure ADR minimale** :
+
 ```
+
 # ADR-XXX : Titre de la décision
 
 Date : YYYY-MM-DD
@@ -50,16 +52,21 @@ Statut : [Proposed | Accepted | Superseded | Deprecated]
 Décideurs : [Noms]
 
 ## Contexte
+
 Quel problème on résout, quelles contraintes
 
 ## Décision
+
 Ce qu'on a décidé
 
 ## Alternatives considérées
+
 Options qu'on a évaluées et pourquoi rejetées
 
 ## Conséquences
+
 Positives et négatives de cette décision
+
 ```
 
 **Les règles d'or des ADR** :
@@ -94,25 +101,25 @@ Ce que j'ai observé dans différentes organisations :
 
 **L'absence d'ADR** : Décisions importantes prises, rien de documenté. 6 mois plus tard : "Pourquoi on a choisi Kafka ?" Personne ne se souvient du contexte. Débat refait, temps perdu.
 
-**L'ADR bureaucratique** : Template de 5 pages, 10 sections obligatoires, review par 5 personnes. Résultat : personne ne les écrit, contournement.
+**L'ADR bureaucratique** : Template de 5 pages, 10 sections obligatoires, review par 5 personnes. **Résultat :**  personne ne les écrit, contournement.
 
-**L'ADR qui marche** : Template 1 page, 4 sections, écrit en 30 min, reviewé comme PR. Résultat : 50+ ADR sur 2 ans, contexte préservé, débats évités.
+**L'ADR qui marche** : Template 1 page, 4 sections, écrit en 30 min, reviewé comme PR. **Résultat :**  50+ ADR sur 2 ans, contexte préservé, débats évités.
 
 **L'exemple concret** : ADR-023 "Migration vers microservices". Contexte : monolithe ralentit delivery. Alternatives : optimiser monolithe (rejeté : impact limité), microservices (choisi), modulith (considéré pour futur). Conséquences : +complexité ops, +autonomie équipes, -couplage. 18 mois plus tard : débat "pourquoi microservices ?". ADR répond en 2 min.
 
 ## Erreurs fréquentes
 
 **Ne jamais écrire d'ADR**
-"Pas le temps de documenter." Résultat : contexte perdu, débats répétés, nouvelles personnes perdues.
+"Pas le temps de documenter." **Résultat :**  contexte perdu, débats répétés, nouvelles personnes perdues.
 
 **ADR trop long**
-Vouloir documenter chaque détail. Résultat : personne ne lit, effort trop élevé, abandon du processus.
+Vouloir documenter chaque détail. **Résultat :**  personne ne lit, effort trop élevé, abandon du processus.
 
 **Modifier les ADR existants**
-Changer un ADR après qu'il soit merged. Résultat : historique perdu, confusion sur "qu'est-ce qui était décidé quand".
+Changer un ADR après qu'il soit merged. **Résultat :**  historique perdu, confusion sur "qu'est-ce qui était décidé quand".
 
 **ADR dans un outil externe**
-Mettre ADR dans Notion/Confluence séparé du code. Résultat : désynchronisation, personne ne regarde.
+Mettre ADR dans Notion/Confluence séparé du code. **Résultat :**  désynchronisation, personne ne regarde.
 
 ## Si c'était à refaire
 

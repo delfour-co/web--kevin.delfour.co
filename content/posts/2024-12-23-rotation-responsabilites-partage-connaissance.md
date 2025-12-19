@@ -75,27 +75,27 @@ Métrique : bus factor minimum 2 sur systèmes critiques, idéal 3. Tracker trim
 
 Ce que j'ai observé dans différentes organisations :
 
-**Le prisonnier révolté** : Alice, experte base de données, seule à comprendre. Impossible partir en vacances, impossible évoluer (irremplaçable). Démission brutale. Résultat : 6 mois de chaos, incident majeur.
+**Le prisonnier révolté** : Alice, experte base de données, seule à comprendre. Impossible partir en vacances, impossible évoluer (irremplaçable). Démission brutale. **Résultat :**  6 mois de chaos, incident majeur.
 
-**La rotation qui libère** : Bob, expert infra. CTO impose : "Tu formes 2 backups ce trimestre. C'est dans tes objectifs." Documentation créée, 2 personnes formées. 6 mois plus tard : Bob prend nouveau rôle architecture, serein. Résultat : Bob évolue, équipe résiliente.
+**La rotation qui libère** : Bob, expert infra. CTO impose : "Tu formes 2 backups ce trimestre. C'est dans tes objectifs." Documentation créée, 2 personnes formées. 6 mois plus tard : Bob prend nouveau rôle architecture, serein. **Résultat :**  Bob évolue, équipe résiliente.
 
-**L'exemple cross-équipe** : Dev backend passe 1 jour/semaine avec équipe front. Après 3 mois : comprend contraintes front, APIs mieux designées, collaboration fluide. Résultat : efficacité globale augmente.
+**L'exemple cross-équipe** : Dev backend passe 1 jour/semaine avec équipe front. Après 3 mois : comprend contraintes front, APIs mieux designées, collaboration fluide. **Résultat :**  efficacité globale augmente.
 
-**Le bus factor qui force action** : Audit révèle : 5 systèmes critiques bus factor = 1. Actions : documentation obligatoire + formation 2 backups/système + rotation 12 mois. 1 an plus tard : bus factor minimum 2 partout. Résultat : organisation résiliente.
+**Le bus factor qui force action** : Audit révèle : 5 systèmes critiques bus factor = 1. Actions : documentation obligatoire + formation 2 backups/système + rotation 12 mois. 1 an plus tard : bus factor minimum 2 partout. **Résultat :**  organisation résiliente.
 
 ## Erreurs fréquentes
 
 **Valoriser l'indispensabilité**
-"Alice est indispensable." Résultat : Alice prisonnière, organisation fragile.
+"Alice est indispensable." **Résultat :**  Alice prisonnière, organisation fragile.
 
 **Rotation sans préparation**
-Changer ownership sans doc ni formation. Résultat : chaos, baisse qualité.
+Changer ownership sans doc ni formation. **Résultat :**  chaos, baisse qualité.
 
 **Pas de mesure bus factor**
-Ne jamais auditer. Résultat : découverte tardive lors départ.
+Ne jamais auditer. **Résultat :**  découverte tardive lors départ.
 
 **Documentation sans maintenance**
-Doc écrite une fois, jamais mise à jour. Résultat : doc inutilisable, connaissance reste dans têtes.
+Doc écrite une fois, jamais mise à jour. **Résultat :**  doc inutilisable, connaissance reste dans têtes.
 
 ## Si c'était à refaire
 

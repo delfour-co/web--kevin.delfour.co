@@ -63,9 +63,9 @@ Pour : sujets très spécialisés (sécurité, scalabilité, architecture), audi
 
 Ce que j'ai observé dans différentes organisations :
 
-**Le CTO qui ne demande jamais d'aide** : Prend toutes ses décisions seul, maintient une façade de contrôle total. Résultat : angles morts massifs, décisions sous-optimales, burn-out silencieux.
+**Le CTO qui ne demande jamais d'aide** : Prend toutes ses décisions seul, maintient une façade de contrôle total. **Résultat :**  angles morts massifs, décisions sous-optimales, burn-out silencieux.
 
-**Le CTO qui expose sa vulnérabilité sans direction** : Partage ses doutes et anxiétés à l'équipe sans demander d'aide spécifique. Résultat : anxiété collective, perte de confiance, paralysie.
+**Le CTO qui expose sa vulnérabilité sans direction** : Partage ses doutes et anxiétés à l'équipe sans demander d'aide spécifique. **Résultat :**  anxiété collective, perte de confiance, paralysie.
 
 **Le réseau de pairs qui transforme** : Rejoindre un groupe de CTOs qui se rencontrent mensuellement. Découvrir que d'autres ont les mêmes doutes, les mêmes dilemmes. Partager des solutions, des échecs, des apprentissages. Cette pratique réduit la solitude et améliore les décisions.
 
@@ -74,16 +74,16 @@ Ce que j'ai observé dans différentes organisations :
 ## Erreurs fréquentes
 
 **Ne jamais demander d'aide**
-Maintenir une façade de contrôle total. Résultat : angles morts, mauvaises décisions, isolement progressif, burn-out.
+Maintenir une façade de contrôle total. **Résultat :**  angles morts, mauvaises décisions, isolement progressif, burn-out.
 
 **Demander de l'aide trop tard**
-Attendre la crise avant de chercher du support. Résultat : moins d'options disponibles, décisions sous pression, perception d'incompétence.
+Attendre la crise avant de chercher du support. **Résultat :**  moins d'options disponibles, décisions sous pression, perception d'incompétence.
 
 **Décharger l'anxiété sans demander d'aide**
-Partager ses doutes et inquiétudes sans direction claire ni demande spécifique. Résultat : création d'anxiété collective sans obtenir de support.
+Partager ses doutes et inquiétudes sans direction claire ni demande spécifique. **Résultat :**  création d'anxiété collective sans obtenir de support.
 
 **Demander de l'aide aux mauvaises personnes**
-Demander à l'équipe de l'aide sur des sujets stratégiques qui ne sont pas de leur ressort, ou au CEO de l'aide sur des sujets techniques trop pointus. Résultat : mauvais conseils ou frustration mutuelle.
+Demander à l'équipe de l'aide sur des sujets stratégiques qui ne sont pas de leur ressort, ou au CEO de l'aide sur des sujets techniques trop pointus. **Résultat :**  mauvais conseils ou frustration mutuelle.
 
 ## Si c'était à refaire
 

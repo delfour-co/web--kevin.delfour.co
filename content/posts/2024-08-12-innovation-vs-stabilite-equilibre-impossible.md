@@ -71,27 +71,27 @@ Métriques stabilité : uptime, MTTR, incident rate. Métriques innovation : fea
 
 Ce que j'ai observé dans différentes organisations :
 
-**100% stabilité** : "On ne change rien, trop risqué." Résultat : stagnation, concurrence qui innove, perte de parts de marché, talents qui partent.
+**100% stabilité** : "On ne change rien, trop risqué." **Résultat :**  stagnation, concurrence qui innove, perte de parts de marché, talents qui partent.
 
-**100% innovation** : "Move fast and break things" sans garde-fous. Résultat : instabilité chronique, clients frustrés, réputation ternie, churn élevé.
+**100% innovation** : "Move fast and break things" sans garde-fous. **Résultat :**  instabilité chronique, clients frustrés, réputation ternie, churn élevé.
 
-**L'équilibre H1/H2/H3** : 70% maintain, 20% extend, 10% explore. H1 ultra-stable (99.9% uptime), H3 en sandbox. Résultat : clients satisfaits ET pipeline innovation.
+**L'équilibre H1/H2/H3** : 70% maintain, 20% extend, 10% explore. H1 ultra-stable (99.9% uptime), H3 en sandbox. **Résultat :**  clients satisfaits ET pipeline innovation.
 
 **Feature flags qui sauvent** : Feature IA lancée avec flag, bugs détectés à 5% adoption, rollback immédiat. Fix en 2 jours, relance progressive. Stabilité préservée, innovation livrée.
 
 ## Erreurs fréquentes
 
 **Tout mélanger**
-Pas de séparation H1/H2/H3. Résultat : instabilité H1, innovation ralentie, pire des deux mondes.
+Pas de séparation H1/H2/H3. **Résultat :**  instabilité H1, innovation ralentie, pire des deux mondes.
 
 **Innover sur la prod**
-Tester en production sans feature flags ni sandbox. Résultat : incidents, clients impactés, perte de confiance.
+Tester en production sans feature flags ni sandbox. **Résultat :**  incidents, clients impactés, perte de confiance.
 
 **Punir les échecs d'innovation**
-Blâmer une équipe quand POC échoue. Résultat : peur d'innover, stagnation.
+Blâmer une équipe quand POC échoue. **Résultat :**  peur d'innover, stagnation.
 
 **Ne pas mesurer les deux**
-Tracker uniquement uptime ou uniquement features. Résultat : déséquilibre, sur-optimisation d'un côté.
+Tracker uniquement uptime ou uniquement features. **Résultat :**  déséquilibre, sur-optimisation d'un côté.
 
 ## Si c'était à refaire
 

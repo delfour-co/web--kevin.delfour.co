@@ -66,7 +66,7 @@ Certaines décisions ne peuvent être prises collectivement. Quand deux visions 
 
 Ce que j'ai observé dans différentes organisations :
 
-**Ce qui épuise** : Porter sans jamais expliciter ce qu'on porte. Faire comme si tout était sous contrôle alors qu'on est submergé. Résultat : burn-out silencieux, décisions qui se dégradent, perte de lucidité.
+**Ce qui épuise** : Porter sans jamais expliciter ce qu'on porte. Faire comme si tout était sous contrôle alors qu'on est submergé. **Résultat :**  burn-out silencieux, décisions qui se dégradent, perte de lucidité.
 
 **Ce qui aide** : Partager régulièrement avec des pairs (autres CTO, mentors) ce qu'on porte. Rendre visible au CEO les arbitrages invisibles qu'on fait. Documenter les décisions et leurs raisons pour ne pas porter seul le poids du contexte.
 
@@ -80,13 +80,13 @@ Ce que j'ai observé dans différentes organisations :
 Croire qu'avoir le titre de CTO donne automatiquement le pouvoir de décision. En réalité, le pouvoir se construit par la crédibilité et la confiance. La responsabilité, elle, vient immédiatement avec le titre.
 
 **Vouloir tout porter seul**
-Ne pas partager le poids qu'on porte, ni avec l'équipe, ni avec des pairs, ni avec le CEO. Résultat : isolement progressif, décisions qui se dégradent, burn-out.
+Ne pas partager le poids qu'on porte, ni avec l'équipe, ni avec des pairs, ni avec le CEO. **Résultat :**  isolement progressif, décisions qui se dégradent, burn-out.
 
 **Ne pas expliciter les arbitrages invisibles**
-Faire des arbitrages importants sans les documenter ni les partager. Résultat : l'équipe ne comprend pas les décisions, le CEO découvre les compromis 6 mois trop tard.
+Faire des arbitrages importants sans les documenter ni les partager. **Résultat :**  l'équipe ne comprend pas les décisions, le CEO découvre les compromis 6 mois trop tard.
 
 **Porter ce qui devrait être partagé**
-Prendre sur soi des responsabilités qui devraient être portées collectivement ou par d'autres rôles. Résultat : surcharge et déresponsabilisation de l'équipe.
+Prendre sur soi des responsabilités qui devraient être portées collectivement ou par d'autres rôles. **Résultat :**  surcharge et déresponsabilisation de l'équipe.
 
 ## Si c'était à refaire
 

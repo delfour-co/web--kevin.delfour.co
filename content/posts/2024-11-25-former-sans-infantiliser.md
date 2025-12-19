@@ -38,7 +38,7 @@ Le vrai enjeu est de former pour rendre autonome, pas pour créer dépendance :
 
 **Type 2 - L'abandon déguisé en autonomie** : Caractéristiques : "Débrouille-toi" sans contexte, framework ou support. Pattern : "Lis la doc, tu verras." Résultat court terme : senior libéré. Résultat long terme : junior perdu, erreurs coûteuses, frustration, turnover.
 
-**Type 3 - La formation qui émancipe** : Caractéristiques : donner framework et contexte, laisser chercher avec garde-fous, débriefer apprentissages. Pattern : "Voici le contexte, voici où trouver les ressources, essaie, je suis dispo pour débloquer si besoin, on débriefe après." Résultat : autonomie progressive, apprentissage profond, confiance.
+**Type 3 - La formation qui émancipe** : Caractéristiques : donner framework et contexte, laisser chercher avec garde-fous, débriefer apprentissages. Pattern : "Voici le contexte, voici où trouver les ressources, essaie, je suis dispo pour débloquer si besoin, on débriefe après." **Résultat :**  autonomie progressive, apprentissage profond, confiance.
 
 **Le framework de formation progressive** :
 
@@ -75,11 +75,11 @@ Après tâche : "Qu'est-ce qui était difficile ? Comment tu as résolu ? Qu'est
 
 Ce que j'ai observé dans différentes situations :
 
-**La dépendance créée** : Senior répond systématiquement aux questions junior. 6 mois plus tard, junior toujours dépendant, pose mêmes types de questions. Senior frustré, goulot. Résultat : aucune progression, junior fragile.
+**La dépendance créée** : Senior répond systématiquement aux questions junior. 6 mois plus tard, junior toujours dépendant, pose mêmes types de questions. Senior frustré, goulot. **Résultat :**  aucune progression, junior fragile.
 
-**L'abandon toxique** : "Débrouille-toi, tu verras." Junior fait erreur coûteuse (supprime data prod). Blame. Résultat : peur d'agir, paralysie, culture toxique.
+**L'abandon toxique** : "Débrouille-toi, tu verras." Junior fait erreur coûteuse (supprime data prod). Blame. **Résultat :**  peur d'agir, paralysie, culture toxique.
 
-**La formation progressive** : Junior arrive. Semaine 1-2 : observe senior (niveau 1). Semaine 3-4 : aide senior (niveau 2). Semaine 5-8 : fait avec framework et senior disponible (niveau 3). Mois 3-6 : fait seul avec review (niveau 4). Mois 6+ : autonome (niveau 5). Résultat : progression claire, confiance, autonomie.
+**La formation progressive** : Junior arrive. Semaine 1-2 : observe senior (niveau 1). Semaine 3-4 : aide senior (niveau 2). Semaine 5-8 : fait avec framework et senior disponible (niveau 3). Mois 3-6 : fait seul avec review (niveau 4). Mois 6+ : autonome (niveau 5). **Résultat :**  progression claire, confiance, autonomie.
 
 **L'exemple du débrief** : Junior livre feature. Senior : "Nickel. Maintenant, racontremoi : qu'est-ce qui était dur ? Comment tu as résolu ? Si c'était à refaire ?" → 15min discussion. Ce débrief transforme action en apprentissage profond.
 
@@ -88,16 +88,16 @@ Ce que j'ai observé dans différentes situations :
 ## Erreurs fréquentes
 
 **Répondre systématiquement**
-Junior pose question → senior donne réponse directe. Résultat : dépendance créée, pas d'autonomie.
+Junior pose question → senior donne réponse directe. **Résultat :**  dépendance créée, pas d'autonomie.
 
 **Protéger de l'erreur**
-"Ne touche pas à ça, c'est complexe." Résultat : junior reste junior, pas de progression.
+"Ne touche pas à ça, c'est complexe." **Résultat :**  junior reste junior, pas de progression.
 
 **Pas de débrief**
-Tâche faite, on passe à la suite. Résultat : action sans apprentissage, répétition d'erreurs.
+Tâche faite, on passe à la suite. **Résultat :**  action sans apprentissage, répétition d'erreurs.
 
 **Sauter les niveaux**
-Niveau 1 (observer) directement à niveau 4 (autonome). Résultat : échec, frustration.
+Niveau 1 (observer) directement à niveau 4 (autonome). **Résultat :**  échec, frustration.
 
 ## Si c'était à refaire
 

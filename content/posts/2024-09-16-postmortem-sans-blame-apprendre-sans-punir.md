@@ -81,27 +81,27 @@ Jira/Linear, suivi public, review mensuel. Ces actions doivent être vraiment fa
 
 Ce que j'ai observé dans différentes organisations :
 
-**Le blame qui détruit** : Post-mortem qui cherche coupable. "C'est Bob qui a merdé." Résultat : Bob démissionne, l'équipe cache futurs problèmes, culture toxique.
+**Le blame qui détruit** : Post-mortem qui cherche coupable. "C'est Bob qui a merdé." **Résultat :**  Bob démissionne, l'équipe cache futurs problèmes, culture toxique.
 
-**Le blameless qui améliore** : Incident DB. Post-mortem : "Root cause : pas de monitoring disk space. Action : alerting automatique." 0 blame, problème résolu systémiquement. Résultat : apprentissage, amélioration continue.
+**Le blameless qui améliore** : Incident DB. Post-mortem : "Root cause : pas de monitoring disk space. Action : alerting automatique." 0 blame, problème résolu systémiquement. **Résultat :**  apprentissage, amélioration continue.
 
-**La célébration qui renforce** : Incident détecté par junior en veille. Post-mortem commence par : "Merci Lisa d'avoir détecté et escaladé rapidement." Résultat : culture de transparence renforcée.
+**La célébration qui renforce** : Incident détecté par junior en veille. Post-mortem commence par : "Merci Lisa d'avoir détecté et escaladé rapidement." **Résultat :**  culture de transparence renforcée.
 
-**L'exemple concret** : Deploy qui casse prod. Timeline : 14h45 deploy, 14h50 erreurs, 15h00 rollback. Impact : 10% users, 15 min. Root causes (5 Why) : 1) Pourquoi deploy cassé ? Tests pas complets. 2) Pourquoi tests incomplets ? Feature complexe, pas de tests edge cases. 3) Pourquoi pas edge cases ? Deadline court, pas temps. 4) Pourquoi deadline court ? Estimation irréaliste. 5) Pourquoi estimation irréaliste ? Pas de spike technique préalable. Actions : 1) Spike obligatoire features complexes, 2) Review estimation process, 3) Tests edge cases checklist.
+**L'exemple concret** : Deploy qui casse prod. Timeline : 14h45 deploy, 14h50 erreurs, 15h00 rollback. ****Impact :** ** 10% users, 15 min. Root causes (5 Why) : 1) Pourquoi deploy cassé ? Tests pas complets. 2) Pourquoi tests incomplets ? Feature complexe, pas de tests edge cases. 3) Pourquoi pas edge cases ? Deadline court, pas temps. 4) Pourquoi deadline court ? Estimation irréaliste. 5) Pourquoi estimation irréaliste ? Pas de spike technique préalable. Actions : 1) Spike obligatoire features complexes, 2) Review estimation process, 3) Tests edge cases checklist.
 
 ## Erreurs fréquentes
 
 **Chercher un coupable**
-"C'est qui qui a fait ça ?" Résultat : culture de peur, problèmes cachés, turnover.
+"C'est qui qui a fait ça ?" **Résultat :**  culture de peur, problèmes cachés, turnover.
 
 **Actions vagues**
-"Être plus vigilants", "Mieux communiquer". Résultat : rien ne change, même erreur se répète.
+"Être plus vigilants", "Mieux communiquer". **Résultat :**  rien ne change, même erreur se répète.
 
 **Pas de suivi actions**
-Actions documentées, jamais faites. Résultat : faux sentiment sécurité, même problème revient.
+Actions documentées, jamais faites. **Résultat :**  faux sentiment sécurité, même problème revient.
 
 **Post-mortem trop tard**
-3 mois après, contexte perdu. Résultat : analyse superficielle, leçons ratées.
+3 mois après, contexte perdu. **Résultat :**  analyse superficielle, leçons ratées.
 
 ## Si c'était à refaire
 

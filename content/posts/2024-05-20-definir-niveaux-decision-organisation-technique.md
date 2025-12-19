@@ -35,16 +35,16 @@ Le vrai enjeu est de créer un cadre de décision qui donne de l'autonomie tout 
 
 **Les 4 niveaux de décision** :
 
-**Niveau 1 - Décision individuelle** : Développeur seul décide, aucune validation nécessaire. Exemples : naming variables, structure fichiers d'un composant, choix algorithme local, librairie utilitaire (<1000 downloads/semaine). Impact : limité à un composant, réversible en <1 jour.
+**Niveau 1 - Décision individuelle** : Développeur seul décide, aucune validation nécessaire. Exemples : naming variables, structure fichiers d'un composant, choix algorithme local, librairie utilitaire (<1000 downloads/semaine). ****Impact :** ** limité à un composant, réversible en <1 jour.
 
-**Niveau 2 - Décision d'équipe** : Tech Lead + équipe décident, pas besoin CTO. Exemples : architecture feature spécifique, choix framework UI pour un projet, patterns code équipe, processus reviews équipe. Impact : limité à une équipe, réversible en <1 semaine.
+**Niveau 2 - Décision d'équipe** : Tech Lead + équipe décident, pas besoin CTO. Exemples : architecture feature spécifique, choix framework UI pour un projet, patterns code équipe, processus reviews équipe. ****Impact :** ** limité à une équipe, réversible en <1 semaine.
 
-**Niveau 3 - Décision transverse** : CTO ou Staff+ décide après consultation. Exemples : architecture globale, choix base de données, stratégie déploiement, standards cross-équipes. Impact : multiple équipes, réversible en 1-3 mois.
+**Niveau 3 - Décision transverse** : CTO ou Staff+ décide après consultation. Exemples : architecture globale, choix base de données, stratégie déploiement, standards cross-équipes. ****Impact :** ** multiple équipes, réversible en 1-3 mois.
 
-**Niveau 4 - Décision structurante** : CTO + CEO décident, souvent avec board. Exemples : migration cloud majeure, rewrite complet, build vs buy stratégique, pivot technique. Impact : toute l'organisation, difficile à réverser.
+**Niveau 4 - Décision structurante** : CTO + CEO décident, souvent avec board. Exemples : migration cloud majeure, rewrite complet, build vs buy stratégique, pivot technique. ****Impact :** ** toute l'organisation, difficile à réverser.
 
 **Le framework de classification** : Pour chaque décision, se demander :
-- Impact : combien d'équipes affectées ?
+- ****Impact :** ** combien d'équipes affectées ?
 - Réversibilité : coût de revenir en arrière ?
 - Risque : que se passe-t-il si mauvais choix ?
 
@@ -71,27 +71,27 @@ Tracker : combien de décisions bloquées en attente CTO ? Combien de décisions
 
 Ce que j'ai observé dans différentes organisations :
 
-**L'absence de framework** : Tout remonte au CTO "par sécurité". Résultat : CTO bottleneck, décisions qui prennent des semaines, frustration équipe, talents qui partent.
+**L'absence de framework** : Tout remonte au CTO "par sécurité". **Résultat :**  CTO bottleneck, décisions qui prennent des semaines, frustration équipe, talents qui partent.
 
-**L'autonomie totale** : "Chaque équipe décide". Résultat : 5 frameworks différents, 3 bases de données, aucune cohérence, coût de maintenance explosif.
+**L'autonomie totale** : "Chaque équipe décide". **Résultat :**  5 frameworks différents, 3 bases de données, aucune cohérence, coût de maintenance explosif.
 
-**Le framework bureaucratique** : Processus lourd pour chaque décision, comités multiples. Résultat : paralysie, contournements, innovation tuée.
+**Le framework bureaucratique** : Processus lourd pour chaque décision, comités multiples. **Résultat :**  paralysie, contournements, innovation tuée.
 
-**Le framework léger qui marche** : 4 niveaux clairs, documentation minimale, escalation simple. Résultat : 85% décisions prises sans CTO, cohérence maintenue, vélocité élevée.
+**Le framework léger qui marche** : 4 niveaux clairs, documentation minimale, escalation simple. **Résultat :**  85% décisions prises sans CTO, cohérence maintenue, vélocité élevée.
 
 ## Erreurs fréquentes
 
 **Tout vouloir valider**
-CTO qui valide même les décisions niveau 1-2. Résultat : bottleneck, équipe déresponsabilisée, vélocité divisée par 3.
+CTO qui valide même les décisions niveau 1-2. **Résultat :**  bottleneck, équipe déresponsabilisée, vélocité divisée par 3.
 
 **Aucun cadre**
-"Débrouillez-vous." Résultat : incohérence massive, décisions incompatibles, dette organisationnelle.
+"Débrouillez-vous." **Résultat :**  incohérence massive, décisions incompatibles, dette organisationnelle.
 
 **Framework trop complexe**
-6 niveaux, 10 critères, processus formel. Résultat : personne ne l'utilise, contournements, retour au chaos.
+6 niveaux, 10 critères, processus formel. **Résultat :**  personne ne l'utilise, contournements, retour au chaos.
 
 **Ne jamais réviser le framework**
-Framework défini une fois, jamais ajusté. Résultat : inadéquation progressive avec la réalité, contournements.
+Framework défini une fois, jamais ajusté. **Résultat :**  inadéquation progressive avec la réalité, contournements.
 
 ## Si c'était à refaire
 

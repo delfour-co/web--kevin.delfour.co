@@ -88,16 +88,16 @@ Ce que j'ai observé dans différentes organisations :
 ## Erreurs fréquentes
 
 **Ne rien surveiller**
-"On verra quand ça casse." Résultat : crises en série, réaction permanente, coûts ×10.
+"On verra quand ça casse." **Résultat :**  crises en série, réaction permanente, coûts ×10.
 
 **Sur-monitorer**
-100 métriques, personne ne regarde. Résultat : alerte fatigue, vrais risques noyés dans le bruit.
+100 métriques, personne ne regarde. **Résultat :**  alerte fatigue, vrais risques noyés dans le bruit.
 
 **Culture du blame**
-Punir qui signale risque. Résultat : silence, risques cachés jusqu'à explosion.
+Punir qui signale risque. **Résultat :**  silence, risques cachés jusqu'à explosion.
 
 **Identifier sans agir**
-Liste risques sans plan d'action ni suivi. Résultat : faux sentiment de contrôle, risques qui se concrétisent.
+Liste risques sans plan d'action ni suivi. **Résultat :**  faux sentiment de contrôle, risques qui se concrétisent.
 
 ## Si c'était à refaire
 

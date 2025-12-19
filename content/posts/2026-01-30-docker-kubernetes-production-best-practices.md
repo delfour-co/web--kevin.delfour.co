@@ -45,6 +45,7 @@ FROM node:18
 COPY . .
 RUN npm install
 CMD ["node", "index.js"]
+
 ```
 
 **Problèmes :**
@@ -70,6 +71,7 @@ COPY --from=builder /app/node_modules ./node_modules
 COPY . .
 USER node
 CMD ["node", "index.js"]
+
 ```
 
 **Gain :** -94% taille image, -80% temps build
@@ -101,6 +103,7 @@ HEALTHCHECK --interval=30s --timeout=3s \
 
 EXPOSE 3000
 CMD ["node", "index.js"]
+
 ```
 
 **Best practices :**
@@ -123,6 +126,7 @@ spec:
   - name: app
     image: myapp:latest
     # Pas de resources définies
+
 ```
 
 **Conséquences :**
@@ -148,6 +152,7 @@ spec:
       limits:
         memory: "512Mi"
         cpu: "500m"
+
 ```
 
 **Explication :**
@@ -165,8 +170,7 @@ spec:
 # Mesurer utilisation réelle
 kubectl top pod myapp-pod
 
-# Résultat :
-# NAME          CPU(cores)   MEMORY(bytes)
+# **Résultat :**  # NAME          CPU(cores)   MEMORY(bytes)
 # myapp-pod     180m         320Mi
 
 # Configuration :
@@ -177,6 +181,7 @@ resources:
   limits:
     cpu: "400m"    # 2x request
     memory: "512Mi" # 1.5x request
+
 ```
 
 ## 3. Sécurité : Secrets et RBAC
@@ -193,6 +198,7 @@ spec:
     env:
     - name: DB_PASSWORD
       value: "super-secret-123" # ❌ DANGER
+
 ```
 
 ### Solution : Kubernetes Secrets
@@ -218,6 +224,7 @@ spec:
         secretKeyRef:
           name: db-credentials
           key: password
+
 ```
 
 **Meilleure pratique :** Utiliser un secret manager externe (AWS Secrets Manager, HashiCorp Vault)
@@ -238,6 +245,7 @@ spec:
   - secretKey: password
     remoteRef:
       key: prod/db/password
+
 ```
 
 ### RBAC : Principe du moindre privilège
@@ -268,6 +276,7 @@ roleRef:
   kind: Role
   name: app-deployer
   apiGroup: rbac.authorization.k8s.io
+
 ```
 
 ## 4. Health Checks : Détection précoce
@@ -290,6 +299,7 @@ spec:
       periodSeconds: 10
       timeoutSeconds: 3
       failureThreshold: 3
+
 ```
 
 **Comportement :**
@@ -308,6 +318,7 @@ readinessProbe:
   periodSeconds: 5
   timeoutSeconds: 2
   failureThreshold: 2
+
 ```
 
 **Comportement :**
@@ -326,6 +337,7 @@ startupProbe:
   periodSeconds: 10
   timeoutSeconds: 3
   failureThreshold: 30  # 5 min max
+
 ```
 
 **Comportement :**
@@ -354,6 +366,7 @@ spec:
       containers:
       - name: app
         image: myapp:v2
+
 ```
 
 **Avantages :**
@@ -404,6 +417,7 @@ metadata:
 spec:
   selector:
     version: green  # Bascule vers green
+
 ```
 
 **Avantages :**
@@ -442,6 +456,7 @@ spec:
   - port: metrics
     path: /metrics
     interval: 30s
+
 ```
 
 ### Logs : Centralisation
@@ -462,6 +477,7 @@ spec:
     env:
     - name: LOG_OUTPUT
       value: "elasticsearch"
+
 ```
 
 **Alternative :** DaemonSet Fluentd/Fluent Bit sur chaque node
@@ -484,6 +500,7 @@ spec:
       value: "localhost"
     - name: JAEGER_AGENT_PORT
       value: "6831"
+
 ```
 
 ## 7. Autoscaling : Scalabilité automatique
@@ -516,6 +533,7 @@ spec:
       target:
         type: Utilization
         averageUtilization: 80
+
 ```
 
 **Comportement :**
@@ -538,6 +556,7 @@ spec:
     name: myapp
   updatePolicy:
     updateMode: "Auto"  # ou "Off", "Initial", "Recreate"
+
 ```
 
 **Comportement :**

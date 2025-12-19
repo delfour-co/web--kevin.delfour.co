@@ -48,7 +48,7 @@ Le vrai enjeu est de comprendre comment intégrer l'IA dans le développement sa
 
 **Les développeurs qui s'en sortent** : Ce que j'ai observé : après avoir observé 150+ développeurs ces 3 ans, voici les patterns de ceux qui excellent avec l'IA. Pattern 1 : L'IA comme assistant, pas comme pilote. Mauvais usage : "ChatGPT, écris-moi une app complète de e-commerce" → copie-colle sans comprendre → bugs incompréhensibles → blocage total au moindre problème. Bon usage : "ChatGPT, comment gérer les sessions utilisateur ?" → lit la réponse → comprend l'approche → adapte à son contexte → teste et debug si besoin.
 
-**Prompt engineering comme skill** : Ce que j'ai appris : les meilleurs ne demandent pas juste "fais ça". Ils construisent des prompts structurés avec contexte, task, requirements, output format. Résultat : code 10x plus pertinent qu'un simple "code validation".
+**Prompt engineering comme skill** : Ce que j'ai appris : les meilleurs ne demandent pas juste "fais ça". Ils construisent des prompts structurés avec contexte, task, requirements, output format. **Résultat :**  code 10x plus pertinent qu'un simple "code validation".
 
 **Connaître les limites** : Ce que j'ai constaté : l'IA excelle à boilerplate code, refactoring simple, tests unitaires, documentation, debugging erreurs courantes. L'IA galère sur architecture complexe, logique métier spécifique, performance optimization, security audits, décisions business. Exemple réel : j'ai demandé à GPT-4 d'optimiser une query SQL lente. Sa réponse : ajouter un index. Évident. Le vrai problème ? N+1 queries dans l'ORM. Ça, l'IA ne le voit pas sans contexte complet.
 

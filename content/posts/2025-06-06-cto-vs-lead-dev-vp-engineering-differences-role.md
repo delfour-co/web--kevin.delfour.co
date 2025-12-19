@@ -64,7 +64,7 @@ CTO et VP Engineering doivent naviguer dans l'ambiguïté stratégique et politi
 
 Ce que j'ai observé dans différentes organisations :
 
-**Les erreurs de casting fréquentes** : Un Lead Dev excellent qui veut le titre CTO pour le prestige, mais qui veut continuer à coder 60% du temps. Résultat : la stratégie est négligée, les décisions bloquent, l'organisation souffre. Mieux vaut assumer le titre "Lead Dev" ou "Principal Engineer" et recruter un vrai CTO si l'organisation grandit.
+**Les erreurs de casting fréquentes** : Un Lead Dev excellent qui veut le titre CTO pour le prestige, mais qui veut continuer à coder 60% du temps. **Résultat :**  la stratégie est négligée, les décisions bloquent, l'organisation souffre. Mieux vaut assumer le titre "Lead Dev" ou "Principal Engineer" et recruter un vrai CTO si l'organisation grandit.
 
 **Les transitions difficiles** : VP Engineering qui devient CTO sans avoir développé la capacité de pensée stratégique. Le gap est réel : un VP Eng pense processus, delivery, people. Un CTO pense vision, stratégie, innovation. Cette transition nécessite une évolution de mindset, pas juste une promotion.
 

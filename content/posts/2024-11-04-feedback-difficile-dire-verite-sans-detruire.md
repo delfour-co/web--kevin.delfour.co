@@ -65,7 +65,7 @@ Questions : quel comportement/résultat précis ? Quel impact sur équipe/projet
 One-on-one privé, pas public. Temps suffisant (45-60min). Pas de distractions. Ce contexte permet conversation vraie.
 
 **3. Structure conversation**
-Introduction : "J'ai observé X, je veux en parler avec toi." Faits précis : "Voici situations concrètes [exemples]." Impact : "Voici pourquoi c'est un problème." Écoute : "Qu'est-ce qui se passe de ton côté ?" Plan : "Voici ce qui doit changer, voici comment je t'aide." Timeline : "On se revoit dans 1 semaine."
+Introduction : "J'ai observé X, je veux en parler avec toi." Faits précis : "Voici situations concrètes [exemples]." ****Impact :** ** "Voici pourquoi c'est un problème." Écoute : "Qu'est-ce qui se passe de ton côté ?" Plan : "Voici ce qui doit changer, voici comment je t'aide." Timeline : "On se revoit dans 1 semaine."
 
 **4. Documenter échange**
 Notes écrites : date, faits discutés, attentes clarifiées, plan convenu, échéances. Cette documentation protège les deux parties.
@@ -77,27 +77,27 @@ Check-in réguliers, support actif, ajustements si nécessaire. Ce suivi transfo
 
 Ce que j'ai observé dans différentes situations :
 
-**Le feedback évité** : Manager évite conversation difficile pendant 6 mois. Accumulation. Explosion. Résultat : développeur surpris, relation détruite, départ.
+**Le feedback évité** : Manager évite conversation difficile pendant 6 mois. Accumulation. Explosion. **Résultat :**  développeur surpris, relation détruite, départ.
 
-**Le feedback brutal** : "Ton code est nul, ça doit changer." Pas de précision, pas de support. Résultat : démotivation, défensivité, pas d'amélioration.
+**Le feedback brutal** : "Ton code est nul, ça doit changer." Pas de précision, pas de support. **Résultat :**  démotivation, défensivité, pas d'amélioration.
 
-**Le feedback bien fait** : "J'ai observé ces 3 problèmes précis dans ton code ces 3 dernières semaines [exemples]. Ça impacte la qualité et ralentit l'équipe. Parlons-en : qu'est-ce qui se passe ?" → Écoute. "Voici ce qui doit changer d'ici 3 semaines. Je te propose 2h de pair programming/semaine pour t'aider. On se revoit chaque lundi." Résultat : amélioration visible en 2 semaines, relation préservée.
+**Le feedback bien fait** : "J'ai observé ces 3 problèmes précis dans ton code ces 3 dernières semaines [exemples]. Ça impacte la qualité et ralentit l'équipe. Parlons-en : qu'est-ce qui se passe ?" → Écoute. "Voici ce qui doit changer d'ici 3 semaines. Je te propose 2h de pair programming/semaine pour t'aider. On se revoit chaque lundi." **Résultat :**  amélioration visible en 2 semaines, relation préservée.
 
-**L'exemple du comportement toxique** : Dev senior sarcastique avec juniors. Feedback : "J'ai observé 3 situations où tu as été méprisant [exemples précis]. C'est non-négociable : ce comportement doit cesser immédiatement. Si ça se reproduit, on passe en warning formel." Résultat : comportement change ou séparation rapide. Dans les deux cas, équipe protégée.
+**L'exemple du comportement toxique** : Dev senior sarcastique avec juniors. Feedback : "J'ai observé 3 situations où tu as été méprisant [exemples précis]. C'est non-négociable : ce comportement doit cesser immédiatement. Si ça se reproduit, on passe en warning formel." **Résultat :**  comportement change ou séparation rapide. Dans les deux cas, équipe protégée.
 
 ## Erreurs fréquentes
 
 **Sandwich de feedback**
-"C'est bien, MAIS voici le gros problème, mais sinon c'est cool." Résultat : message dilué, personne ne sait ce qui doit vraiment changer.
+"C'est bien, MAIS voici le gros problème, mais sinon c'est cool." **Résultat :**  message dilué, personne ne sait ce qui doit vraiment changer.
 
 **Généralités vagues**
-"Tu dois améliorer ta communication." Résultat : personne ne sait quoi faire concrètement.
+"Tu dois améliorer ta communication." **Résultat :**  personne ne sait quoi faire concrètement.
 
 **Éviter trop longtemps**
-Attendre 6 mois avant de dire. Résultat : problème amplifié, solution plus difficile, surprise et frustration.
+Attendre 6 mois avant de dire. **Résultat :**  problème amplifié, solution plus difficile, surprise et frustration.
 
 **Donner feedback sans écouter**
-Monologue sans comprendre contexte. Résultat : causes réelles non adressées, amélioration impossible.
+Monologue sans comprendre contexte. **Résultat :**  causes réelles non adressées, amélioration impossible.
 
 ## Si c'était à refaire
 

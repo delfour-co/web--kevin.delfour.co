@@ -82,7 +82,7 @@ Ce que j'ai observé chez différents profils :
 
 **La détection qui sauve** : Candidat en entretien observe : équipe mal à l'aise, manager condescendant, promesses irréalistes. Refuse offre malgré bon salaire. 6 mois plus tard : boîte explose, layoffs massifs. Message : gut feeling + red flags = confiance.
 
-**L'exemple de la question** : Candidat demande : "Pourquoi la dernière personne sur ce poste est partie ?" Réponse évasive + inconfort visible. Investigation : 3 personnes sur ce poste en 18 mois. Résultat : refuse offre. Message : questions directes révèlent.
+**L'exemple de la question** : Candidat demande : "Pourquoi la dernière personne sur ce poste est partie ?" Réponse évasive + inconfort visible. Investigation : 3 personnes sur ce poste en 18 mois. **Résultat :**  refuse offre. Message : questions directes révèlent.
 
 **Le Glassdoor ignoré** : Candidat voit Glassdoor 2.5★, reviews négatives unanimes. Pense "Ça sera différent pour moi." 3 mois : exactement les problèmes décrits. Message : croire patterns, pas exceptions.
 

@@ -77,7 +77,7 @@ Ce que j'ai observé chez différents profils :
 
 **Le mentorship qui transforme** : Junior identifie dev senior pédagogue dans équipe. Commence par questions techniques. Senior apprécie curiosité. Relation informelle émerge. 2 ans : code reviews approfondies, conseils carrière, introduction réseau. Junior progresse 2× plus vite. Message : mentorship organique est le plus puissant.
 
-**L'erreur du cold outreach** : Junior envoie 50 emails à CTOs inconnus : "Soyez mon mentor." 0 réponse. Résultat : frustration. Message : relation se construit, ne se demande pas à froid.
+**L'erreur du cold outreach** : Junior envoie 50 emails à CTOs inconnus : "Soyez mon mentor." 0 réponse. **Résultat :**  frustration. Message : relation se construit, ne se demande pas à froid.
 
 **L'exemple de la réciprocité** : Junior demande aide dev senior. En retour : documente apprentissages, améliore doc équipe, aide autres juniors. Senior apprécie contribution. Relation s'approfondit. Message : réciprocité crée relation durable.
 

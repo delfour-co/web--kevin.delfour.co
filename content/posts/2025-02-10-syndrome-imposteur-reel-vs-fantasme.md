@@ -42,11 +42,11 @@ Le vrai enjeu est de comprendre ce phénomène et de ne pas le laisser te paraly
 
 **Pourquoi ce syndrome existe** :
 
-**Raison 1 - L'écart de visibilité** : Tu vois : toutes tes lacunes, tes hésitations internes, tes erreurs. Tu vois chez les autres : le résultat final poli, pas le processus chaotique. Résultat : impression qu'ils savent et toi non. Réalité : leur processus est aussi chaotique, tu ne le vois juste pas.
+**Raison 1 - L'écart de visibilité** : Tu vois : toutes tes lacunes, tes hésitations internes, tes erreurs. Tu vois chez les autres : le résultat final poli, pas le processus chaotique. **Résultat :**  impression qu'ils savent et toi non. Réalité : leur processus est aussi chaotique, tu ne le vois juste pas.
 
-**Raison 2 - L'effet Dunning-Kruger inversé** : Paradoxe : plus tu sais, plus tu réalises l'étendue de ce que tu ne sais pas. Résultat : les incompétents sont confiants (ignorance), les compétents doutent (lucidité). Message : ton doute peut être signe de compétence croissante.
+**Raison 2 - L'effet Dunning-Kruger inversé** : Paradoxe : plus tu sais, plus tu réalises l'étendue de ce que tu ne sais pas. **Résultat :**  les incompétents sont confiants (ignorance), les compétents doutent (lucidité). Message : ton doute peut être signe de compétence croissante.
 
-**Raison 3 - Culture tech et perfectionnisme** : Contexte : tech valorise l'excellence, célèbre les "10x developers". Résultat : standard irréaliste internalisé, sentiment d'insuffisance permanent. Message : ces standards sont des mythes toxiques.
+**Raison 3 - Culture tech et perfectionnisme** : Contexte : tech valorise l'excellence, célèbre les "10x developers". **Résultat :**  standard irréaliste internalisé, sentiment d'insuffisance permanent. Message : ces standards sont des mythes toxiques.
 
 ## Cadre de décision
 
@@ -71,9 +71,9 @@ Mindset : être inconfortable signifie que tu apprends, pas que tu es incompéte
 
 Ce que j'ai observé chez différents profils :
 
-**Le junior paralysé** : Syndrome de l'imposteur si fort qu'il n'ose plus proposer d'idées, pose zéro question (pour ne pas "révéler" son incompétence). Résultat : progression ralentie, isolement. Correction : partager ce sentiment avec mentor/manager, normaliser.
+**Le junior paralysé** : Syndrome de l'imposteur si fort qu'il n'ose plus proposer d'idées, pose zéro question (pour ne pas "révéler" son incompétence). **Résultat :**  progression ralentie, isolement. Correction : partager ce sentiment avec mentor/manager, normaliser.
 
-**Le senior qui l'avoue** : Dev avec 10 ans d'expérience avoue en one-on-one : "Je doute souvent, j'ai peur d'être un imposteur." Junior découvre : même les seniors le ressentent. Impact : normalisation, déculpabilisation.
+**Le senior qui l'avoue** : Dev avec 10 ans d'expérience avoue en one-on-one : "Je doute souvent, j'ai peur d'être un imposteur." Junior découvre : même les seniors le ressentent. ****Impact :** ** normalisation, déculpabilisation.
 
 **L'exemple du feedback** : Junior persuadé d'être incompétent. One-on-one révèle : manager très satisfait, progression rapide vue. Écart énorme entre perception interne et réalité externe. Correction : s'ancrer dans feedback factuel.
 

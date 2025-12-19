@@ -74,7 +74,7 @@ Ce que j'ai observé dans différentes équipes :
 
 **Ce qui fonctionne** : Comprendre résistances avant d'agir (peur inconnu, perte perçue, manque confiance) permet adapter communication support. Créer urgence sans paniquer (montrer problème pas imposer solution, données concrètes métriques incidents, comparaison alternatives benchmarks) crée urgence sans panique. Construire coalition (early adopters, influencers, skeptics) facilite adoption. Approche progressive (pilote puis scale) réduit risque facilite adoption. Co-construction équipe (équipe décide avec toi pas pour toi) crée adhésion naturelle meilleures décisions propriété changement.
 
-**Ce qui bloque** : Changement imposé sans comprendre résistances. Résultat : résistance forte, adoption faible, échec probable. Communication insuffisante (rumeurs remplacent communication). Résultat : peur, résistance, échec probable. Big Bang plutôt que progressive. Résultat : risque élevé, adoption difficile, échec probable.
+**Ce qui bloque** : Changement imposé sans comprendre résistances. **Résultat :**  résistance forte, adoption faible, échec probable. Communication insuffisante (rumeurs remplacent communication). **Résultat :**  peur, résistance, échec probable. Big Bang plutôt que progressive. **Résultat :**  risque élevé, adoption difficile, échec probable.
 
 **Communication pendant changement** : Fréquence et canaux (communiquer 10x plus que nécessaire, canaux 1-on-1 questions individuelles, stand-ups updates réguliers, réunions dédiées points bloquants, documentation référence partagée). Messages clés à répéter régulièrement (Pourquoi on change vision, Où on en est progrès, Ce qui vient prochaines étapes, Comment aider support disponible, Ce qui fonctionne succès). Gérer rumeurs (transparence > rumeurs, "Non personne ne sera licencié. On investit formation toute équipe. Objectif est que tout le monde réussisse" plutôt que laisser rumeurs circuler).
 
@@ -83,16 +83,16 @@ Ce que j'ai observé dans différentes équipes :
 ## Erreurs fréquentes
 
 **Changement imposé sans comprendre résistances**  
-Imposer changement sans comprendre pourquoi résistance existe. Résultat : résistance forte, adoption faible, échec probable. Mieux vaut comprendre résistances avant d'agir (peur inconnu, perte perçue, manque confiance) et adapter communication support.
+Imposer changement sans comprendre pourquoi résistance existe. **Résultat :**  résistance forte, adoption faible, échec probable. Mieux vaut comprendre résistances avant d'agir (peur inconnu, perte perçue, manque confiance) et adapter communication support.
 
 **Communication insuffisante**  
-Communiquer une fois puis laisser faire. Résultat : rumeurs remplacent communication, peur, résistance, échec probable. Mieux vaut communiquer 10x plus que nécessaire (1-on-1, stand-ups, réunions dédiées, documentation) avec messages clés répétés régulièrement.
+Communiquer une fois puis laisser faire. **Résultat :**  rumeurs remplacent communication, peur, résistance, échec probable. Mieux vaut communiquer 10x plus que nécessaire (1-on-1, stand-ups, réunions dédiées, documentation) avec messages clés répétés régulièrement.
 
 **Big Bang plutôt que progressive**  
-Changer tout d'un coup. Résultat : risque élevé, adoption difficile, échec probable. Mieux vaut approche progressive (pilote puis scale, early adopters, rollout complet) qui réduit risque et facilite adoption.
+Changer tout d'un coup. **Résultat :**  risque élevé, adoption difficile, échec probable. Mieux vaut approche progressive (pilote puis scale, early adopters, rollout complet) qui réduit risque et facilite adoption.
 
 **Pas de co-construction avec équipe**  
-Décider seul puis imposer. Résultat : résistance forte, adoption faible, échec probable. Mieux vaut co-construction équipe (équipe décide avec toi pas pour toi) qui crée adhésion naturelle et meilleures décisions.
+Décider seul puis imposer. **Résultat :**  résistance forte, adoption faible, échec probable. Mieux vaut co-construction équipe (équipe décide avec toi pas pour toi) qui crée adhésion naturelle et meilleures décisions.
 
 ## Si c'était à refaire
 

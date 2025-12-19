@@ -73,7 +73,7 @@ Ce que j'ai observé dans différents projets :
 
 **Ce qui fonctionne** : Une approche progressive en 12 mois. Mois 1-3 : stabiliser (setup CI/CD, tests critiques, documentation architecture). Mois 4-6 : quick wins (formatter, dead code removal, dependencies update). Mois 7-9 : extract services (extraire progressivement les services les plus autonomes). Mois 10-12 : refactoring continu (Boy Scout Rule systématique, amélioration progressive). Cette approche progressive transforme la codebase sans Big Bang.
 
-**Ce qui bloque** : Big Bang rewrite ("on réécrit tout en 6 mois"). Résultat : 6 mois deviennent 18 mois, budget triple, features manquantes, bugs nouveaux, parfois abandon. Refactoring sans tests. Résultat : régressions, bugs en production, perte de confiance. Refactoring du code mort. Résultat : pas de valeur business, temps perdu.
+**Ce qui bloque** : Big Bang rewrite ("on réécrit tout en 6 mois"). **Résultat :**  6 mois deviennent 18 mois, budget triple, features manquantes, bugs nouveaux, parfois abandon. Refactoring sans tests. **Résultat :**  régressions, bugs en production, perte de confiance. Refactoring du code mort. **Résultat :**  pas de valeur business, temps perdu.
 
 **Les résultats mesurés** : Bugs 40/mois → 8/mois (-80%), Deploy 2h → 15min (-87%), Coverage 5% → 45%, Velocity +60%, Team happiness 4/10 → 8/10. Coût : 0.5 ETP dédié = ~$50k. ROI : économie bugs + velocity = ~$200k/an. Ces résultats montrent que le refactoring progressif est un investissement rentable.
 
@@ -82,16 +82,16 @@ Ce que j'ai observé dans différents projets :
 ## Erreurs fréquentes
 
 **Big Bang rewrite**  
-"On réécrit tout en 6 mois". Résultat : 6 mois deviennent 18 mois, budget triple, features manquantes, bugs nouveaux, parfois abandon. Mieux vaut extraire 1 service en 1 mois, évaluer, puis continuer.
+"On réécrit tout en 6 mois". **Résultat :**  6 mois deviennent 18 mois, budget triple, features manquantes, bugs nouveaux, parfois abandon. Mieux vaut extraire 1 service en 1 mois, évaluer, puis continuer.
 
 **Refactoring sans tests**  
-Refactorer du code sans tests. Résultat : régressions, bugs en production, perte de confiance. Mieux vaut tests d'abord, refactoring ensuite.
+Refactorer du code sans tests. **Résultat :**  régressions, bugs en production, perte de confiance. Mieux vaut tests d'abord, refactoring ensuite.
 
 **Refactoring sans business value**  
-Refactorer du code mort ou peu utilisé. Résultat : pas de valeur business, temps perdu. Mieux vaut refactorer le code critique et fréquemment modifié.
+Refactorer du code mort ou peu utilisé. **Résultat :**  pas de valeur business, temps perdu. Mieux vaut refactorer le code critique et fréquemment modifié.
 
 **Perfectionnisme**  
-"Je vais rendre ce code parfait". Résultat : temps infini, pas de progression. Mieux vaut rendre le code 20% meilleur à chaque passage.
+"Je vais rendre ce code parfait". **Résultat :**  temps infini, pas de progression. Mieux vaut rendre le code 20% meilleur à chaque passage.
 
 ## Si c'était à refaire
 

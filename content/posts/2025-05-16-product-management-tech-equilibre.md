@@ -72,26 +72,26 @@ Ce que j'ai observé dans différentes organisations :
 
 **Ce qui fonctionne** : Communication structurée avec process INVEST (time-to-alignment 2 réunions max, rework rate <15%, feature acceptance >90%). Rituels opérationnels avec framework DRIVE (weekly sync structuré, roadmap alignment, issues resolution, velocity tracking, escalation). Traduction mutuelle des langages (business language translation, metrics that matter to C-Level). Conflict resolution avec protocol PIVOT (89% conflicts résolus 1 session). Objectifs alignés avec success metrics partagées (business + technical metrics).
 
-**Ce qui bloque** : Communication non structurée. Résultat : time-to-alignment élevé, rework rate élevé, feature acceptance faible. Absence de rituels opérationnels. Résultat : désalignement régulier, conflits non résolus, frustration mutuelle. Langages non traduits. Résultat : incompréhension mutuelle, conflits sur priorités. Absence de protocol conflict resolution. Résultat : conflits qui traînent, escalations fréquentes. Objectifs non alignés. Résultat : métriques contradictoires, conflits sur ce qui compte.
+**Ce qui bloque** : Communication non structurée. **Résultat :**  time-to-alignment élevé, rework rate élevé, feature acceptance faible. Absence de rituels opérationnels. **Résultat :**  désalignement régulier, conflits non résolus, frustration mutuelle. Langages non traduits. **Résultat :**  incompréhension mutuelle, conflits sur priorités. Absence de protocol conflict resolution. **Résultat :**  conflits qui traînent, escalations fréquentes. Objectifs non alignés. **Résultat :**  métriques contradictoires, conflits sur ce qui compte.
 
-**Les erreurs fréquentes** : PM qui ignore contraintes techniques (legacy, architecture, qualité). Résultat : demandes irréalistes, frustration équipe tech, dette technique accumulée. Tech qui ignore contraintes business (deadlines, budget, market pressure). Résultat : solutions parfaites mais trop tardives, frustration PM, opportunités manquées. Communication non structurée. Résultat : malentendus fréquents, rework élevé, conflits réguliers.
+**Les erreurs fréquentes** : PM qui ignore contraintes techniques (legacy, architecture, qualité). **Résultat :**  demandes irréalistes, frustration équipe tech, dette technique accumulée. Tech qui ignore contraintes business (deadlines, budget, market pressure). **Résultat :**  solutions parfaites mais trop tardives, frustration PM, opportunités manquées. Communication non structurée. **Résultat :**  malentendus fréquents, rework élevé, conflits réguliers.
 
 ## Erreurs fréquentes
 
 **Voir PM vs Tech comme opposition**  
-Croire que PM et Tech sont naturellement en opposition. Résultat : conflits réguliers, frustration mutuelle, valeur non créée. Mieux vaut voir PM + Tech comme synergie qui crée valeur.
+Croire que PM et Tech sont naturellement en opposition. **Résultat :**  conflits réguliers, frustration mutuelle, valeur non créée. Mieux vaut voir PM + Tech comme synergie qui crée valeur.
 
 **Communication non structurée**  
-Pas de process INVEST, pas de rituels DRIVE, pas de traduction mutuelle. Résultat : time-to-alignment élevé, rework rate élevé, feature acceptance faible. Mieux vaut communication structurée avec process et rituels clairs.
+Pas de process INVEST, pas de rituels DRIVE, pas de traduction mutuelle. **Résultat :**  time-to-alignment élevé, rework rate élevé, feature acceptance faible. Mieux vaut communication structurée avec process et rituels clairs.
 
 **Ignorer contraintes mutuelles**  
-PM qui ignore contraintes techniques, Tech qui ignore contraintes business. Résultat : demandes irréalistes, solutions trop tardives, frustration mutuelle. Mieux vaut traduction mutuelle des langages et compréhension des contraintes.
+PM qui ignore contraintes techniques, Tech qui ignore contraintes business. **Résultat :**  demandes irréalistes, solutions trop tardives, frustration mutuelle. Mieux vaut traduction mutuelle des langages et compréhension des contraintes.
 
 **Absence de protocol conflict resolution**  
-Pas de protocol PIVOT, pas d'escalation matrix. Résultat : conflits qui traînent, escalations fréquentes, frustration mutuelle. Mieux vaut protocol conflict resolution clair avec escalation matrix.
+Pas de protocol PIVOT, pas d'escalation matrix. **Résultat :**  conflits qui traînent, escalations fréquentes, frustration mutuelle. Mieux vaut protocol conflict resolution clair avec escalation matrix.
 
 **Objectifs non alignés**  
-Métriques contradictoires, conflits sur ce qui compte. Résultat : désalignement régulier, frustration mutuelle, valeur non créée. Mieux vaut objectifs alignés avec success metrics partagées (business + technical metrics).
+Métriques contradictoires, conflits sur ce qui compte. **Résultat :**  désalignement régulier, frustration mutuelle, valeur non créée. Mieux vaut objectifs alignés avec success metrics partagées (business + technical metrics).
 
 ## Si c'était à refaire
 

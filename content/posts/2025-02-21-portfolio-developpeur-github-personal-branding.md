@@ -63,19 +63,19 @@ Voici une manière de voir les choses pour construire votre portfolio :
 ## Erreurs classiques
 
 **Vouloir tout faire d'un coup**  
-Essayer de construire GitHub + blog + side projects + LinkedIn en même temps. Résultat : épuisement, abandon après quelques semaines. Mieux vaut commencer par un pilier, le maîtriser, puis ajouter les autres progressivement.
+Essayer de construire GitHub + blog + side projects + LinkedIn en même temps. **Résultat :**  épuisement, abandon après quelques semaines. Mieux vaut commencer par un pilier, le maîtriser, puis ajouter les autres progressivement.
 
 **Qualité vs quantité**  
-Penser que plus c'est mieux : 100 repos GitHub, 50 articles de blog, 10 side projects. Résultat : tout est bâclé, rien n'est vraiment bon. Mieux vaut 5 repos soignés, 10 articles de qualité, 1 side project complet.
+Penser que plus c'est mieux : 100 repos GitHub, 50 articles de blog, 10 side projects. **Résultat :**  tout est bâclé, rien n'est vraiment bon. Mieux vaut 5 repos soignés, 10 articles de qualité, 1 side project complet.
 
 **Comparer avec les autres**  
-Se comparer à des développeurs avec 10 ans d'expérience et un portfolio impressionnant. Résultat : découragement, abandon. Mieux vaut comparer avec soi-même : "Où j'en étais il y a 3 mois ? Où j'en suis maintenant ?"
+Se comparer à des développeurs avec 10 ans d'expérience et un portfolio impressionnant. **Résultat :**  découragement, abandon. Mieux vaut comparer avec soi-même : "Où j'en étais il y a 3 mois ? Où j'en suis maintenant ?"
 
 **Ignorer le portfolio complètement**  
-Penser que le portfolio n'est pas nécessaire, que le CV suffit. Résultat : moins d'opportunités, plus de difficultés à se démarquer. Même un portfolio modeste vaut mieux que pas de portfolio du tout.
+Penser que le portfolio n'est pas nécessaire, que le CV suffit. **Résultat :**  moins d'opportunités, plus de difficultés à se démarquer. Même un portfolio modeste vaut mieux que pas de portfolio du tout.
 
 **Ne pas maintenir**  
-Construire un portfolio puis l'abandonner. Résultat : portfolio daté qui ne reflète plus vos compétences actuelles. Mieux vaut un portfolio modeste mais régulièrement mis à jour qu'un portfolio impressionnant mais figé dans le temps.
+Construire un portfolio puis l'abandonner. **Résultat :**  portfolio daté qui ne reflète plus vos compétences actuelles. Mieux vaut un portfolio modeste mais régulièrement mis à jour qu'un portfolio impressionnant mais figé dans le temps.
 
 ## Message de responsabilité
 

@@ -99,7 +99,7 @@ Piège : focus 100% technique, ignorer l'humain. Réalité : relations critiques
 Piège : "Je vais attendre de tout comprendre avant de livrer." Réalité : impossible et frustrant. Correction : quick wins précoces.
 
 **Erreur 4 - Ignorer feedback**
-Piège : manager donne feedback J30, ignoré. Résultat : problème persiste, frustration. Correction : appliquer feedback rapidement.
+Piège : manager donne feedback J30, ignoré. **Résultat :**  problème persiste, frustration. Correction : appliquer feedback rapidement.
 
 ## Message de responsabilité
 

@@ -66,7 +66,7 @@ Ce que j'ai observé dans différentes organisations :
 
 **Ce qui fonctionne** : Setup automatisé <1 heure (script one-click, 15 minutes ready to code). Documentation claire testée à chaque hire. Buddy system formalisé (1 buddy responsable, available questions, code reviews éducatives). Progressive tasks (first task well-defined small safe valuable, second task more independence, week 1 tasks assigned). Feedback loop régulier (daily check-in week 1, feedback session week 2, retrospective month 1).
 
-**Ce qui bloque** : Documentation obsolète (README last updated 2 years ago). Résultat : setup bloqué, frustration, temps perdu. No buddy assigned ("team will help you"). Résultat : personne ne prend ownership, nouveau dev isolé. Tasks trop complexes (first task "Refactor auth system"). Résultat : overwhelming, prend 2 semaines, découragement. No feedback loop (même process depuis 3 ans). Résultat : pas d'amélioration, problèmes répétés.
+**Ce qui bloque** : Documentation obsolète (README last updated 2 years ago). **Résultat :**  setup bloqué, frustration, temps perdu. No buddy assigned ("team will help you"). **Résultat :**  personne ne prend ownership, nouveau dev isolé. Tasks trop complexes (first task "Refactor auth system"). **Résultat :**  overwhelming, prend 2 semaines, découragement. No feedback loop (même process depuis 3 ans). **Résultat :**  pas d'amélioration, problèmes répétés.
 
 **Les résultats mesurés** : Avant (setup 2 jours doc obsolète, first PR jour 8, productive semaine 3, satisfaction 6/10, 90-day retention 70%). Après process implémenté 12 mois 8 nouveaux devs (setup 1 heure, first PR jour 1, productive jour 2-3, satisfaction 9.1/10, 90-day retention 100%). ROI : gain productivité 2 semaines × 8 devs = 16 semaines, coût ~$32k économisés, investissement setup 1 semaine dev amorti.
 
@@ -75,16 +75,16 @@ Ce que j'ai observé dans différentes organisations :
 ## Erreurs fréquentes
 
 **Documentation obsolète**  
-README last updated 2 years ago. Résultat : setup bloqué, frustration, temps perdu. Mieux vaut doc testée à chaque hire ("Last tested: {date} by {new hire}").
+README last updated 2 years ago. **Résultat :**  setup bloqué, frustration, temps perdu. Mieux vaut doc testée à chaque hire ("Last tested: {date} by {new hire}").
 
 **No buddy assigned**  
-"Team will help you" où personne ne prend ownership. Résultat : nouveau dev isolé, questions non répondues, frustration. Mieux vaut 1 buddy assigné responsable.
+"Team will help you" où personne ne prend ownership. **Résultat :**  nouveau dev isolé, questions non répondues, frustration. Mieux vaut 1 buddy assigné responsable.
 
 **Tasks trop complexes**  
-First task "Refactor auth system" overwhelming prend 2 semaines. Résultat : découragement, pas de quick win, confiance réduite. Mieux vaut first task bug fix simple quick win boost confiance.
+First task "Refactor auth system" overwhelming prend 2 semaines. **Résultat :**  découragement, pas de quick win, confiance réduite. Mieux vaut first task bug fix simple quick win boost confiance.
 
 **No feedback loop**  
-Même process depuis 3 ans pas d'amélioration. Résultat : problèmes répétés, satisfaction faible, rétention faible. Mieux vaut feedback à chaque hire itération continue.
+Même process depuis 3 ans pas d'amélioration. **Résultat :**  problèmes répétés, satisfaction faible, rétention faible. Mieux vaut feedback à chaque hire itération continue.
 
 ## Si c'était à refaire
 

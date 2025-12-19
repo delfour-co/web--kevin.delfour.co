@@ -68,7 +68,7 @@ Ce que j'ai observé dans différentes organisations :
 
 **Ce qui bloque** : Arriver avec "on doit refactoriser" sans expliquer pourquoi c'est nécessaire pour le business. Consacrer trop ou trop peu de temps à la dette. Traiter toutes les dettes de la même manière sans priorisation. Ignorer complètement la dette jusqu'à ce qu'elle devienne critique.
 
-**Les erreurs de communication** : Parler technique au CEO ("on doit refactoriser le monolithe") plutôt que business ("notre architecture ralentit le développement de 50%"). Ne pas quantifier l'impact. Ne pas proposer de plan de remboursement avec ROI. Résultat : la dette est ignorée jusqu'à ce qu'elle devienne une crise.
+**Les erreurs de communication** : Parler technique au CEO ("on doit refactoriser le monolithe") plutôt que business ("notre architecture ralentit le développement de 50%"). Ne pas quantifier l'impact. Ne pas proposer de plan de remboursement avec ROI. **Résultat :**  la dette est ignorée jusqu'à ce qu'elle devienne une crise.
 
 **Les stratégies de remboursement** : Le Big Bang Rewrite a un taux de succès faible (environ 20%) car il bloque le business pendant 12-24 mois. Le Strangler Fig a un taux de succès élevé (environ 80%) car il permet de continuer à livrer de la valeur pendant la migration. La Boy Scout Rule est la plus durable car elle intègre l'amélioration continue dans le workflow normal.
 
@@ -78,16 +78,16 @@ Ce que j'ai observé dans différentes organisations :
 Ne pas distinguer dette stratégique (intentionnelle, documentée) et dette accidentelle (accumulée silencieusement). La première peut être acceptable si elle a un plan de remboursement. La seconde nécessite une action immédiate.
 
 **Ignorer complètement la dette**  
-Consacrer 100% du temps aux features. Résultat : la dette s'accumule, la vélocité ralentit, les bugs augmentent, l'équipe se frustre, le turnover augmente, et vous finissez par devoir faire un rewrite forcé qui coûte beaucoup plus cher.
+Consacrer 100% du temps aux features. **Résultat :**  la dette s'accumule, la vélocité ralentit, les bugs augmentent, l'équipe se frustre, le turnover augmente, et vous finissez par devoir faire un rewrite forcé qui coûte beaucoup plus cher.
 
 **Refactoriser parfaitement**  
-Vouloir tout refactoriser parfaitement plutôt que d'améliorer les zones critiques (règle 80/20). Résultat : 12 mois sans valeur business, CEO frustré, équipe démoralisée. Mieux vaut améliorer progressivement les zones qui ont le plus d'impact.
+Vouloir tout refactoriser parfaitement plutôt que d'améliorer les zones critiques (règle 80/20). **Résultat :**  12 mois sans valeur business, CEO frustré, équipe démoralisée. Mieux vaut améliorer progressivement les zones qui ont le plus d'impact.
 
 **Tech debt sprints dédiés**  
-Bloquer le business pendant 2 semaines tous les 3 mois pour traiter la dette. Résultat : patterns pas changés, dette qui revient, frustration du business. Mieux vaut une capacité continue (20%) qui intègre l'amélioration dans le workflow normal.
+Bloquer le business pendant 2 semaines tous les 3 mois pour traiter la dette. **Résultat :**  patterns pas changés, dette qui revient, frustration du business. Mieux vaut une capacité continue (20%) qui intègre l'amélioration dans le workflow normal.
 
 **Ne pas mesurer**  
-Traiter la dette sans métriques objectives. Résultat : vous ne savez pas si vous progressez, vous ne pouvez pas justifier les investissements, vous traitez peut-être les mauvais problèmes. Mesurer permet de prioriser et de communiquer.
+Traiter la dette sans métriques objectives. **Résultat :**  vous ne savez pas si vous progressez, vous ne pouvez pas justifier les investissements, vous traitez peut-être les mauvais problèmes. Mesurer permet de prioriser et de communiquer.
 
 ## Si c'était à refaire
 

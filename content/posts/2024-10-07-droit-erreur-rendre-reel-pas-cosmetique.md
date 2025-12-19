@@ -75,9 +75,9 @@ S'assurer que erreurs ne pénalisent pas évals, promos. Sinon "droit à l'erreu
 
 Ce que j'ai observé dans différentes organisations :
 
-**Le droit à l'erreur cosmétique** : Affiché partout. Première erreur : dev blâmé publiquement. Résultat : erreurs cachées, pas d'apprentissage, incidents répétés.
+**Le droit à l'erreur cosmétique** : Affiché partout. Première erreur : dev blâmé publiquement. **Résultat :**  erreurs cachées, pas d'apprentissage, incidents répétés.
 
-**Le droit à l'erreur réel** : CTO partage erreurs publiquement. Post-mortems blameless systématiques. Dev fait erreur coûteuse, post-mortem révèle gap processus, processus corrigé. Résultat : erreur devient opportunité amélioration.
+**Le droit à l'erreur réel** : CTO partage erreurs publiquement. Post-mortems blameless systématiques. Dev fait erreur coûteuse, post-mortem révèle gap processus, processus corrigé. **Résultat :**  erreur devient opportunité amélioration.
 
 **L'exemple de modélisation** : CTO all-hands : "J'ai choisi MongoDB, c'était une erreur, voici pourquoi, voici ce qu'on fait, voici ce que j'ai appris." Cette vulnérabilité change culture complète en 6 mois.
 
@@ -86,16 +86,16 @@ Ce que j'ai observé dans différentes organisations :
 ## Erreurs fréquentes
 
 **Afficher sans incarner**
-"Droit à l'erreur" affiché mais première erreur = blame. Résultat : cynisme, erreurs cachées.
+"Droit à l'erreur" affiché mais première erreur = blame. **Résultat :**  cynisme, erreurs cachées.
 
 **Confondre erreur et incompétence**
-Type 1 (bonne foi) traité comme Type 3 (répété). Résultat : paralysie, personne n'ose décider.
+Type 1 (bonne foi) traité comme Type 3 (répété). **Résultat :**  paralysie, personne n'ose décider.
 
 **Pas de rituel post-erreur**
-Erreur arrive, pas de post-mortem, pas d'apprentissage. Résultat : même erreur se répète.
+Erreur arrive, pas de post-mortem, pas d'apprentissage. **Résultat :**  même erreur se répète.
 
 **RH non alignée**
-"Droit à l'erreur" mais erreur impacte évaluation annuelle. Résultat : message contradictoire, culture toxique.
+"Droit à l'erreur" mais erreur impacte évaluation annuelle. **Résultat :**  message contradictoire, culture toxique.
 
 ## Si c'était à refaire
 

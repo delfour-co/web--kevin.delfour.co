@@ -73,27 +73,27 @@ Si désaccord : proposition des deux côtés au CEO avec données. CEO tranche. 
 
 Ce que j'ai observé dans différentes situations :
 
-**La guerre permanente** : CTO vs CPO, chaque trimestre. "Features" vs "Tech". Aucun framework. Résultat : décisions politiques, frustration mutuelle, sous-optimisation.
+**La guerre permanente** : CTO vs CPO, chaque trimestre. "Features" vs "Tech". Aucun framework. **Résultat :**  décisions politiques, frustration mutuelle, sous-optimisation.
 
-**L'alignement forcé** : CEO impose "80% features, 20% tech". Pas de discussion. Résultat : dette explose, vélocité s'effondre, CTO part.
+**L'alignement forcé** : CEO impose "80% features, 20% tech". Pas de discussion. **Résultat :**  dette explose, vélocité s'effondre, CTO part.
 
-**Le partenariat qui marche** : CTO + CPO définissent ensemble 70/20/10. Chaque item tech a traduction business. Critères d'arbitrage clairs. Résultat : confiance mutuelle, arbitrages sains, meilleurs résultats.
+**Le partenariat qui marche** : CTO + CPO définissent ensemble 70/20/10. Chaque item tech a traduction business. Critères d'arbitrage clairs. **Résultat :**  confiance mutuelle, arbitrages sains, meilleurs résultats.
 
 **L'exemple concret** : Trimestre Q2. CPO veut 8 features. CTO veut 2 sprints dette. Traduction : dette ralentit delivery 35%, features Q2 prendraient 12 semaines au lieu de 8. Arbitrage : 6 features + 1 sprint dette. Q3 : vélocité remontée, 8 features livrées en 9 semaines vs 12 projetées.
 
 ## Erreurs fréquentes
 
 **Communication en jargon tech**
-"On doit refactoriser le legacy." Product ne comprend pas, refuse. Résultat : dette qui explose.
+"On doit refactoriser le legacy." Product ne comprend pas, refuse. **Résultat :**  dette qui explose.
 
 **Pas de framework d'arbitrage**
-Chaque conflit est un combat politique. Résultat : épuisement mutuel, décisions suboptimales.
+Chaque conflit est un combat politique. **Résultat :**  épuisement mutuel, décisions suboptimales.
 
 **Capacité tech non protégée**
-Product grignote progressivement : "Juste cette feature urgente." Résultat : 0% capacité tech, dette explosive.
+Product grignote progressivement : "Juste cette feature urgente." **Résultat :**  0% capacité tech, dette explosive.
 
 **Ne pas escalader**
-Rester en désaccord sans remonter au CEO. Résultat : paralysie, frustration, relation détériorée.
+Rester en désaccord sans remonter au CEO. **Résultat :**  paralysie, frustration, relation détériorée.
 
 ## Si c'était à refaire
 

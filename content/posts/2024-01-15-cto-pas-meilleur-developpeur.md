@@ -68,25 +68,25 @@ Ce que j'ai observé dans différentes organisations :
 
 **Les promotions réussies** : Un excellent développeur qui avait déjà montré de l'intérêt pour l'architecture globale, le mentoring, l'amélioration des processus. Quelqu'un qui posait des questions comme "Comment on pourrait mieux collaborer ?" plutôt que juste "Comment résoudre ce bug ?".
 
-**Les promotions ratées** : Un brillant développeur promu CTO parce qu'il était le plus senior. Résultat : il continuait à coder 60% du temps, devenait un bottleneck pour les décisions, l'équipe attendait ses reviews, la stratégie était négligée. Démotivation généralisée et turnover.
+**Les promotions ratées** : Un brillant développeur promu CTO parce qu'il était le plus senior. **Résultat :**  il continuait à coder 60% du temps, devenait un bottleneck pour les décisions, l'équipe attendait ses reviews, la stratégie était négligée. Démotivation généralisée et turnover.
 
-**Le piège de la reconnaissance** : Beaucoup acceptent le rôle de CTO non par envie réelle, mais parce que c'est perçu comme "la prochaine étape". Résultat : ils perdent ce qu'ils aimaient (coder) sans gagner ce qu'ils attendaient (impact et reconnaissance).
+**Le piège de la reconnaissance** : Beaucoup acceptent le rôle de CTO non par envie réelle, mais parce que c'est perçu comme "la prochaine étape". **Résultat :**  ils perdent ce qu'ils aimaient (coder) sans gagner ce qu'ils attendaient (impact et reconnaissance).
 
 **L'alternative du technical track** : Les organisations matures ont un track Staff Engineer → Principal Engineer → Distinguished Engineer qui permet un impact technique majeur sans devenir manager. Ce chemin est souvent plus épanouissant pour les excellents développeurs.
 
 ## Erreurs fréquentes
 
 **Promouvoir par défaut le meilleur dev**
-Croire que la seule façon de reconnaître et retenir un excellent développeur est de le promouvoir CTO. Résultat : perte d'un excellent contributeur technique et gain d'un CTO frustré.
+Croire que la seule façon de reconnaître et retenir un excellent développeur est de le promouvoir CTO. **Résultat :**  perte d'un excellent contributeur technique et gain d'un CTO frustré.
 
 **Ignorer les signaux de désintérêt**
-Promouvoir quelqu'un qui n'a jamais montré d'intérêt pour le mentoring, la stratégie, ou l'organisation. Résultat : il continue à coder, néglige ses responsabilités de CTO, et l'organisation souffre.
+Promouvoir quelqu'un qui n'a jamais montré d'intérêt pour le mentoring, la stratégie, ou l'organisation. **Résultat :**  il continue à coder, néglige ses responsabilités de CTO, et l'organisation souffre.
 
 **Ne pas offrir d'alternative**
-Ne pas créer de track technique senior (Staff/Principal Engineer) qui permet reconnaissance et impact sans management. Résultat : les meilleurs devs partent ou acceptent des rôles de CTO qui ne leur conviennent pas.
+Ne pas créer de track technique senior (Staff/Principal Engineer) qui permet reconnaissance et impact sans management. **Résultat :**  les meilleurs devs partent ou acceptent des rôles de CTO qui ne leur conviennent pas.
 
 **Transition trop brutale**
-Passer directement de Senior Dev à CTO sans étape intermédiaire (Tech Lead, Engineering Manager). Résultat : découverte trop tardive que le rôle ne convient pas, sans possibilité de retour en arrière.
+Passer directement de Senior Dev à CTO sans étape intermédiaire (Tech Lead, Engineering Manager). **Résultat :**  découverte trop tardive que le rôle ne convient pas, sans possibilité de retour en arrière.
 
 ## Si c'était à refaire
 

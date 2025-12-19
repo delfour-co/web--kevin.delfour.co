@@ -71,7 +71,7 @@ Bootcamp/formation : donne bases et structure. Mais : compléter avec projets pe
 Projets GitHub : 2-3 projets perso fonctionnels valent plus que certificats. Montrer : capacité à livrer, pas juste suivre tutos. Ce portfolio ouvre portes.
 
 **4. Réseau et visibilité**
-Actions : meetups, Twitter tech, LinkedIn actif, contributions open source. Objectif : être visible, créer connections. Résultat : accès marché caché (30-40% des jobs).
+Actions : meetups, Twitter tech, LinkedIn actif, contributions open source. Objectif : être visible, créer connections. **Résultat :**  accès marché caché (30-40% des jobs).
 
 **5. Accepter premier job imparfait**
 Stratégie : premier job = acquérir expérience, pas job de rêve. 12-18 mois → expérience → second job meilleur. Ce pragmatisme accélère carrière.

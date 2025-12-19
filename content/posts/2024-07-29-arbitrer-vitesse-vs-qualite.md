@@ -75,27 +75,27 @@ Métriques : vélocité (story points/sprint), qualité (bug rate, incidents, de
 
 Ce que j'ai observé dans différentes situations :
 
-**Toujours optimiser (qualité >> vitesse)** : Équipe perfectionnniste, chaque feature prend 3× le temps. Résultat : concurrence livre 3× plus vite, market timing raté, startup qui meurt avec du beau code.
+**Toujours optimiser (qualité >> vitesse)** : Équipe perfectionnniste, chaque feature prend 3× le temps. **Résultat :**  concurrence livre 3× plus vite, market timing raté, startup qui meurt avec du beau code.
 
-**Toujours rusher (vitesse >> qualité)** : Livrer vite sans jamais rembourser dette. Résultat : après 18 mois, vélocité divisée par 3, bugs constants, refonte forcée.
+**Toujours rusher (vitesse >> qualité)** : Livrer vite sans jamais rembourser dette. **Résultat :**  après 18 mois, vélocité divisée par 3, bugs constants, refonte forcée.
 
-**L'arbitrage contextuel** : MVP en 3 semaines avec dette, validation marché positive, puis 2 sprints de refonte propre. Résultat : rapidité validation + qualité durable.
+**L'arbitrage contextuel** : MVP en 3 semaines avec dette, validation marché positive, puis 2 sprints de refonte propre. **Résultat :**  rapidité validation + qualité durable.
 
 **La dette documentée** : Feature urgente livrée avec dette intentionnelle. ADR documente : "Dette prise pour deadline X, coût remboursement estimé 1 semaine, planning remboursement dans 2 sprints." 2 sprints plus tard : dette remboursée comme prévu.
 
 ## Erreurs fréquentes
 
 **Perfectionnisme systématique**
-"On ne livre que du code parfait." Résultat : lenteur excessive, opportunités ratées, frustration business.
+"On ne livre que du code parfait." **Résultat :**  lenteur excessive, opportunités ratées, frustration business.
 
 **Rush permanent**
-"On verra plus tard pour la qualité." Résultat : dette qui explose, vélocité qui s'effondre, refonte forcée.
+"On verra plus tard pour la qualité." **Résultat :**  dette qui explose, vélocité qui s'effondre, refonte forcée.
 
 **Dette non documentée**
-Prendre de la dette sans la documenter. Résultat : oubli, dette qui s'accumule silencieusement, surprise 12 mois plus tard.
+Prendre de la dette sans la documenter. **Résultat :**  oubli, dette qui s'accumule silencieusement, surprise 12 mois plus tard.
 
 **Pas de capacité de remboursement**
-100% capacité sur features, 0% sur dette. Résultat : dette qui grandit sans limite jusqu'à paralysie.
+100% capacité sur features, 0% sur dette. **Résultat :**  dette qui grandit sans limite jusqu'à paralysie.
 
 ## Si c'était à refaire
 

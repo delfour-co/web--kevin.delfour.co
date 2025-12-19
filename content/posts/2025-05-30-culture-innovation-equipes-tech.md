@@ -80,16 +80,16 @@ Ce que j'ai observé dans différentes équipes :
 ## Erreurs fréquentes
 
 **Innovation sans structure**  
-Laisser du temps libre sans structure, processus, ou métriques. Résultat : innovation sporadique, projets qui n'aboutissent pas, frustration équipe. Mieux vaut budget structuré, processus de décision, métriques de suivi.
+Laisser du temps libre sans structure, processus, ou métriques. **Résultat :**  innovation sporadique, projets qui n'aboutissent pas, frustration équipe. Mieux vaut budget structuré, processus de décision, métriques de suivi.
 
 **Trop ou trop peu de budget**  
-Budget innovation >5% ou <10% capacity. Résultat : soit sur-investissement sans ROI, soit sous-investissement sans résultats. Mieux vaut 15-20% capacity team, 2-4% engineering cost.
+Budget innovation >5% ou <10% capacity. **Résultat :**  soit sur-investissement sans ROI, soit sous-investissement sans résultats. Mieux vaut 15-20% capacity team, 2-4% engineering cost.
 
 **Pas de permission d'échouer**  
-Équipes sans échecs = équipes qui ne prennent pas assez de risques. Résultat : innovation conservatrice, pas de breakthroughs. Mieux vaut permission d'échouer intelligemment avec smart failure rate 25-40%, failure recovery rate 95%.
+Équipes sans échecs = équipes qui ne prennent pas assez de risques. **Résultat :**  innovation conservatrice, pas de breakthroughs. Mieux vaut permission d'échouer intelligemment avec smart failure rate 25-40%, failure recovery rate 95%.
 
 **Ne pas mesurer l'impact**  
-Innovation sans métriques de suivi. Résultat : vous ne savez pas si ça fonctionne, vous ne pouvez pas ajuster. Mieux vaut dashboard innovation avec input/process/output/business impact metrics.
+Innovation sans métriques de suivi. **Résultat :**  vous ne savez pas si ça fonctionne, vous ne pouvez pas ajuster. Mieux vaut dashboard innovation avec input/process/output/business impact metrics.
 
 ## Si c'était à refaire
 

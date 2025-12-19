@@ -52,13 +52,13 @@ Le vrai enjeu est de comprendre les options et choisir consciemment :
 
 **La stratégie T-shaped (recommandée pour la plupart)** :
 
-**Phase 1 (0-2 ans) - Explorer largement** : Objectif : découvrir domaines, identifier ce qui t'attire. Actions : toucher front, back, infra, data, mobile selon opportunités. Résultat : vue d'ensemble, découverte affinités.
+**Phase 1 (0-2 ans) - Explorer largement** : Objectif : découvrir domaines, identifier ce qui t'attire. Actions : toucher front, back, infra, data, mobile selon opportunités. **Résultat :**  vue d'ensemble, découverte affinités.
 
-**Phase 2 (2-4 ans) - Développer verticale** : Objectif : expertise profonde sur 1-2 domaines choisis. Actions : projets répétés dans domaine, lecture approfondie, conférences, contributions. Résultat : reconnaissance comme expert sur ce domaine.
+**Phase 2 (2-4 ans) - Développer verticale** : Objectif : expertise profonde sur 1-2 domaines choisis. Actions : projets répétés dans domaine, lecture approfondie, conférences, contributions. **Résultat :**  reconnaissance comme expert sur ce domaine.
 
-**Phase 3 (4-8 ans) - Élargir horizontale** : Objectif : maintenir expertise + compétence solide domaines adjacents. Actions : projets cross-domain, architecture systèmes complets. Résultat : T-shaped solide, forte employabilité.
+**Phase 3 (4-8 ans) - Élargir horizontale** : Objectif : maintenir expertise + compétence solide domaines adjacents. Actions : projets cross-domain, architecture systèmes complets. **Résultat :**  T-shaped solide, forte employabilité.
 
-**Phase 4 (8+ ans) - Évolution** : Options : approfondir verticale (spécialiste reconnu), élargir horizontale (π-shaped : 2-3 verticales), monter abstraction (architecture, leadership). Résultat : optionalité maximale.
+**Phase 4 (8+ ans) - Évolution** : Options : approfondir verticale (spécialiste reconnu), élargir horizontale (π-shaped : 2-3 verticales), monter abstraction (architecture, leadership). **Résultat :**  optionalité maximale.
 
 ## Cadre de décision
 
@@ -89,7 +89,7 @@ Ce que j'ai observé chez différents profils :
 
 **Le T-shaped qui réussit** : Expert backend (Go, distributed systems) + connaissances front/infra/data. Forte demande, salaire élevé, options multiples. Message : T-shaped équilibre optimal pour beaucoup.
 
-**L'évolution naturelle** : Début généraliste (0-3 ans), puis spécialisation backend (3-6 ans), puis élargissement architecture (6-10 ans). Résultat : T-shaped naturel, carrière fluide. Message : évolution organique fonctionne.
+**L'évolution naturelle** : Début généraliste (0-3 ans), puis spécialisation backend (3-6 ans), puis élargissement architecture (6-10 ans). **Résultat :**  T-shaped naturel, carrière fluide. Message : évolution organique fonctionne.
 
 ## Erreurs fréquentes (et comment les éviter)
 

@@ -74,23 +74,23 @@ Ce que j'ai observé dans différentes équipes :
 
 **Ce qui fonctionne** : Trunk-Based Development (Principe simple tout le monde commit sur même branche trunk/main plusieurs fois par jour, Règles commits fréquents petits changements <400 lignes CI/CD obligatoire feature flags code incomplet) simplifie workflow réduit merge conflicts. Migration progressive (Phase 1 Réduire durée vie branches, Phase 2 Short-lived branches, Phase 3 Trunk-Based pur) facilite adoption. CI/CD configuration requise (Pipeline exemple tests rapides fail fast durée <10 minutes objectif <5min, Protection branch main required_status_checks required_reviews enforce_admins allow_force_pushes false) protège branche main sans bloquer workflow. Code Review adapter process (Review rapides obligatoires petit changement <400 lignes review dans l'heure 1-2 aller-retours max, Process review optimisé temps total 1h30 au lieu 2 jours) accélère feedback sans sacrifier qualité.
 
-**Ce qui bloque** : Git Flow standard qui ne scale pas (Merge hell plus branche vit plus conflicts difficiles, Integration tardive on découvre bugs fin, Complexité develop release hotfix feature 4 types branches, Slow feedback PR mergée après plusieurs jours). Résultat : Feature branch moyenne 8.5 jours, Merge conflicts 40% PRs, Time to production 2-3 semaines. Mieux vaut Trunk-Based Development (Commits fréquents petits changements <400 lignes CI/CD obligatoire feature flags code incomplet) simplifie workflow réduit merge conflicts.
+**Ce qui bloque** : Git Flow standard qui ne scale pas (Merge hell plus branche vit plus conflicts difficiles, Integration tardive on découvre bugs fin, Complexité develop release hotfix feature 4 types branches, Slow feedback PR mergée après plusieurs jours). **Résultat :**  Feature branch moyenne 8.5 jours, Merge conflicts 40% PRs, Time to production 2-3 semaines. Mieux vaut Trunk-Based Development (Commits fréquents petits changements <400 lignes CI/CD obligatoire feature flags code incomplet) simplifie workflow réduit merge conflicts.
 
 **Les métriques succès** : Chez un client 6 mois Trunk-Based (Developer Experience Time to merge 2.5 jours → 4h -94%, Merge conflicts 40% → 5% PRs, Lines changed/PR 850 → 280 -67%, Quality Bugs production -35%, Incidents -42%, MTTR 2h → 25min -79%, Business Time to production 2 semaines → 1 jour -93%, Deploys/week 3 → 42 +1300%, Developer satisfaction 6.2 → 8.7 /10). Ces métriques permettent de voir si Trunk-Based Development fonctionne et d'ajuster si nécessaire.
 
 ## Erreurs fréquentes
 
 **Pas de feature flags**  
-Code incomplet pushé sans flag. Résultat : Feature cassée en prod. Mieux vaut feature flags si code incomplet (Unleash Open Source, LaunchDarkly SaaS, Flagsmith Hybrid).
+Code incomplet pushé sans flag. **Résultat :**  Feature cassée en prod. Mieux vaut feature flags si code incomplet (Unleash Open Source, LaunchDarkly SaaS, Flagsmith Hybrid).
 
 **PRs trop grosses**  
-PR #123 Refonte page checkout 1200 lignes. Résultat : Review difficile, merge conflicts fréquents. Mieux vaut découper en 4-5 PRs 250-300 lignes chacune.
+PR #123 Refonte page checkout 1200 lignes. **Résultat :**  Review difficile, merge conflicts fréquents. Mieux vaut découper en 4-5 PRs 250-300 lignes chacune.
 
 **Tests insuffisants**  
-Sans tests solides, trunk-based = chaos. Résultat : Bugs en production fréquents. Mieux vaut minimum requis (Coverage >80%, Tests E2E parcours critiques, CI <10 minutes).
+Sans tests solides, trunk-based = chaos. **Résultat :**  Bugs en production fréquents. Mieux vaut minimum requis (Coverage >80%, Tests E2E parcours critiques, CI <10 minutes).
 
 **Skip code review**  
-"On merge direct on verra après". Résultat : Dette technique explosive. Mieux vaut review obligatoire même petits changements.
+"On merge direct on verra après". **Résultat :**  Dette technique explosive. Mieux vaut review obligatoire même petits changements.
 
 ## Si c'était à refaire
 

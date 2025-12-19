@@ -61,13 +61,13 @@ Voici une manière de voir les choses pour choisir parmi ces nouveaux métiers :
 ## Erreurs classiques
 
 **Choisir uniquement pour les salaires**  
-Ignorer compétences requises et risques (hype bubble potentielle, nécessité double compétence, on-call rotation). Résultat : transition difficile, échec probable. Mieux vaut évaluer votre appétit apprentissage domaine nouveau, OK avec évolution rapide métier, salaires justifient investissement temps.
+Ignorer compétences requises et risques (hype bubble potentielle, nécessité double compétence, on-call rotation). **Résultat :**  transition difficile, échec probable. Mieux vaut évaluer votre appétit apprentissage domaine nouveau, OK avec évolution rapide métier, salaires justifient investissement temps.
 
 **Transition trop rapide**  
-Passer au nouveau métier sans foundations (cours, practice, projets perso). Résultat : compétences insuffisantes, échec probable. Mieux vaut roadmap transition 6-12 mois (Foundations 2-3 mois, Intermediate 3 mois, Job-ready 6 mois).
+Passer au nouveau métier sans foundations (cours, practice, projets perso). **Résultat :**  compétences insuffisantes, échec probable. Mieux vaut roadmap transition 6-12 mois (Foundations 2-3 mois, Intermediate 3 mois, Job-ready 6 mois).
 
 **Ignorer les risques**  
-Ne pas considérer risques (hype bubble potentielle, nécessité double compétence, on-call rotation). Résultat : déception, retour métier précédent. Mieux vaut comprendre risques avant de choisir.
+Ne pas considérer risques (hype bubble potentielle, nécessité double compétence, on-call rotation). **Résultat :**  déception, retour métier précédent. Mieux vaut comprendre risques avant de choisir.
 
 ## Message de responsabilité
 

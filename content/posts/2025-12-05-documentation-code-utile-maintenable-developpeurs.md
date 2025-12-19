@@ -56,16 +56,16 @@ Voici une manière de voir les choses pour créer une documentation utile et mai
 ## Erreurs classiques
 
 **Wall text**  
-README 2000 lignes. Résultat : doc difficile lire, information perdue. Mieux vaut README Quick start 50 lignes Links guides détaillés.
+README 2000 lignes. **Résultat :**  doc difficile lire, information perdue. Mieux vaut README Quick start 50 lignes Links guides détaillés.
 
 **Doc mauvais endroit**  
-"Read Confluence page" personne ne lit Confluence. Résultat : doc ignorée, information perdue. Mieux vaut Doc repo proche code.
+"Read Confluence page" personne ne lit Confluence. **Résultat :**  doc ignorée, information perdue. Mieux vaut Doc repo proche code.
 
 **Commentaires disent rien**  
-Useless comments Get user const user getUser Set name user.name name Save user saveUser user. Résultat : bruit documentation, code pas plus clair. Mieux vaut No comments needed code clear const user getUser user.name name saveUser user.
+Useless comments Get user const user getUser Set name user.name name Save user saveUser user. **Résultat :**  bruit documentation, code pas plus clair. Mieux vaut No comments needed code clear const user getUser user.name name saveUser user.
 
 **Doc jamais testée**  
-README écrit jamais testé Étapes manquantes obsolète. Résultat : doc obsolète, frustration. Mieux vaut README testé chaque nouveau dev Toujours jour.
+README écrit jamais testé Étapes manquantes obsolète. **Résultat :**  doc obsolète, frustration. Mieux vaut README testé chaque nouveau dev Toujours jour.
 
 ## Message de responsabilité
 

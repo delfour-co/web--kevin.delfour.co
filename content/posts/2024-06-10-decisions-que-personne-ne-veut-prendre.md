@@ -73,25 +73,25 @@ Ce que j'ai observé dans différentes situations :
 
 **Le projet qu'on arrête pas** : Projet en échec depuis 12 mois, 200k€ investis. Tout le monde sait que ça ne marchera jamais. Sunken cost fallacy. CTO finit par trancher : on arrête. Résultat immédiat : soulagement de l'équipe, capacité libérée, focus sur ce qui marche.
 
-**La non-performance qu'on ne gère pas** : Développeur senior qui ne livre plus depuis 8 mois. Espoir que "ça va s'améliorer". Équipe frustrée, vélocité baissée. CTO finit par gérer (PIP puis séparation). Résultat : moral équipe remonté, vélocité +30%.
+**La non-performance qu'on ne gère pas** : Développeur senior qui ne livre plus depuis 8 mois. Espoir que "ça va s'améliorer". Équipe frustrée, vélocité baissée. CTO finit par gérer (PIP puis séparation). **Résultat :**  moral équipe remonté, vélocité +30%.
 
 **Le non au CEO qui sauve** : CEO veut refonte complète en 2 mois. CTO dit non, explique pourquoi, propose alternative. CEO mécontent mais accepte. 6 mois plus tard : alternative livrée avec succès, relation CTO-CEO renforcée.
 
-**L'erreur admise qui renforce** : CTO avait choisi techno X, c'était une erreur. Admet publiquement, propose migration. Résultat : crédibilité renforcée (courage d'admettre), équipe rassurée.
+**L'erreur admise qui renforce** : CTO avait choisi techno X, c'était une erreur. Admet publiquement, propose migration. **Résultat :**  crédibilité renforcée (courage d'admettre), équipe rassurée.
 
 ## Erreurs fréquentes
 
 **Reporter indéfiniment**
-Espérer que le problème se résoudra seul. Résultat : le problème empire, devient plus coûteux, finit en crise.
+Espérer que le problème se résoudra seul. **Résultat :**  le problème empire, devient plus coûteux, finit en crise.
 
 **Prendre la décision sans préparation**
-Décider sous le coup de l'émotion ou de la pression. Résultat : mauvaise décision, regrets, perte de crédibilité.
+Décider sous le coup de l'émotion ou de la pression. **Résultat :**  mauvaise décision, regrets, perte de crédibilité.
 
 **Ne pas communiquer le raisonnement**
-Annoncer la décision sans expliquer. Résultat : incompréhension, résistance, rumors.
+Annoncer la décision sans expliquer. **Résultat :**  incompréhension, résistance, rumors.
 
 **Revenir en arrière au premier obstacle**
-Prendre la décision difficile puis la diluer face aux résistances. Résultat : pire des deux mondes, perte de crédibilité totale.
+Prendre la décision difficile puis la diluer face aux résistances. **Résultat :**  pire des deux mondes, perte de crédibilité totale.
 
 ## Si c'était à refaire
 

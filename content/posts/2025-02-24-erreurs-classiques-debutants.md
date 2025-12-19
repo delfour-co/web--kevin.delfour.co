@@ -77,7 +77,7 @@ Réflexion mensuelle : quelles erreurs je ne fais plus ? Quelles nouvelles comp�
 
 Ce que j'ai observé chez différents débutants :
 
-**Le junior qui répète** : Même erreurs code review après code review. Défensif, ne note pas feedback. 6 mois : toujours les mêmes erreurs. Résultat : frustration équipe, progression lente.
+**Le junior qui répète** : Même erreurs code review après code review. Défensif, ne note pas feedback. 6 mois : toujours les mêmes erreurs. **Résultat :**  frustration équipe, progression lente.
 
 **Le junior qui apprend** : Erreur → lit feedback → comprend pourquoi → crée checklist perso → applique. Mois suivant : erreur ne se répète pas. 6 mois : autonome, erreurs basiques éliminées. Message : application du feedback fait la différence.
 

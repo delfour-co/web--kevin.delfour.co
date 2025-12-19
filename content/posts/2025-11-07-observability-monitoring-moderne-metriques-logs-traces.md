@@ -71,7 +71,7 @@ Ce que j'ai observé dans différents systèmes :
 
 **Ce qui fonctionne** : Les 3 piliers complémentaires (Métriques Metrics Counter Gauge Histogram, Logs Événements discrets contexte temporel Logging structuré Format JSON Champs obligatoires timestamp level service_name trace_id span_id message, Traces Flux requêtes système distribué Tracing distribué Composants clés Trace Span Span attributes Span events) donnent vision complète comportement système. Corrélation 3 piliers (1 Metrics Identifier problème, 2 Traces Localiser bottleneck, 3 Logs Comprendre cause) permet diagnostiquer problèmes rapidement. Stack Observability moderne selon contraintes (Option 1 Grafana Stack Open Source ~$200/mois self-hosted, Option 2 Datadog SaaS ~$500-2000/mois, Option 3 Hybrid Metrics Prometheus gratuit Logs & Traces Datadog payant) permet choisir selon contraintes budget expertise.
 
-**Ce qui bloque** : Monitoring classique seul (Savoir QUAND ça casse → Alertes métriques connues → "CPU > 80%" → Alerte, Limite ne répond pas au "Pourquoi ?"). Résultat : diagnostic difficile, MTTR élevé. Mieux vaut observability approche moderne (Comprendre POURQUOI ça casse → Investiguer comportements émergents → Corréler métriques + logs + traces). Pas de corrélation 3 piliers (Métriques seules ou Logs seuls ou Traces seuls). Résultat : diagnostic incomplet, root cause difficile identifier. Mieux vaut corrélation 3 piliers (1 Metrics Identifier problème, 2 Traces Localiser bottleneck, 3 Logs Comprendre cause).
+**Ce qui bloque** : Monitoring classique seul (Savoir QUAND ça casse → Alertes métriques connues → "CPU > 80%" → Alerte, Limite ne répond pas au "Pourquoi ?"). **Résultat :**  diagnostic difficile, MTTR élevé. Mieux vaut observability approche moderne (Comprendre POURQUOI ça casse → Investiguer comportements émergents → Corréler métriques + logs + traces). Pas de corrélation 3 piliers (Métriques seules ou Logs seuls ou Traces seuls). **Résultat :**  diagnostic incomplet, root cause difficile identifier. Mieux vaut corrélation 3 piliers (1 Metrics Identifier problème, 2 Traces Localiser bottleneck, 3 Logs Comprendre cause).
 
 **Cas réel E-commerce Black Friday** : Situation (Black Friday 10x traffic habituel, Pas observability mature, Problème 11h00 Site ralentit 11h15 Checkout cassé 11h20 Panique totale Sans observability 2 heures debug $150k revenue perdu). Après Stack Observability (Stack implémenté Grafana Loki logs Tempo traces Prometheus metrics On-call PagerDuty, Black Friday suivant 10h45 Spike traffic détecté metrics 10h47 Auto-scaling triggered 11h12 DB slow query alert trace 11h15 Index ajouté 3 minutes 11h18 Performance restored Downtime 0 minute Revenue $2.4M +60% vs année précédente). Ce cas montre l'impact de l'observability.
 
@@ -80,13 +80,13 @@ Ce que j'ai observé dans différents systèmes :
 ## Erreurs fréquentes
 
 **Monitoring classique seul**  
-Savoir QUAND ça casse → Alertes métriques connues → "CPU > 80%" → Alerte, Limite ne répond pas au "Pourquoi ?". Résultat : diagnostic difficile, MTTR élevé. Mieux vaut observability approche moderne (Comprendre POURQUOI ça casse → Investiguer comportements émergents → Corréler métriques + logs + traces).
+Savoir QUAND ça casse → Alertes métriques connues → "CPU > 80%" → Alerte, Limite ne répond pas au "Pourquoi ?". **Résultat :**  diagnostic difficile, MTTR élevé. Mieux vaut observability approche moderne (Comprendre POURQUOI ça casse → Investiguer comportements émergents → Corréler métriques + logs + traces).
 
 **Pas de corrélation 3 piliers**  
-Métriques seules ou Logs seuls ou Traces seuls. Résultat : diagnostic incomplet, root cause difficile identifier. Mieux vaut corrélation 3 piliers (1 Metrics Identifier problème, 2 Traces Localiser bottleneck, 3 Logs Comprendre cause).
+Métriques seules ou Logs seuls ou Traces seuls. **Résultat :**  diagnostic incomplet, root cause difficile identifier. Mieux vaut corrélation 3 piliers (1 Metrics Identifier problème, 2 Traces Localiser bottleneck, 3 Logs Comprendre cause).
 
 **Seuils statiques alerting**  
-Seuils statiques simples False positives traffic varie. Résultat : alertes non pertinentes, fatigue alertes. Mieux vaut alerting intelligent (Seuils dynamiques Anomaly detection basique Au-delà 3 deviations standard, SLO-based alerting Service Level Objective target 99.9% Budget erreur error_budget 0.1% Alerte si budget épuisé).
+Seuils statiques simples False positives traffic varie. **Résultat :**  alertes non pertinentes, fatigue alertes. Mieux vaut alerting intelligent (Seuils dynamiques Anomaly detection basique Au-delà 3 deviations standard, SLO-based alerting Service Level Objective target 99.9% Budget erreur error_budget 0.1% Alerte si budget épuisé).
 
 ## Si c'était à refaire
 
