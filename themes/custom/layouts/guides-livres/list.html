@@ -101,14 +101,58 @@
     {{- end }}
 
     {{- /* Récupérer toutes les pages régulières du livre (chapitres) */}}
-    {{- $allPages := .RegularPagesRecursive }}
-    {{- if not $allPages }}
-      {{- $allPages = .RegularPages }}
+    {{- $currentSection := .CurrentSection }}
+    {{- $sectionPath := $currentSection.RelPermalink }}
+    {{- $allPages := $currentSection.RegularPages }}
+    {{- /* Filtrer pour s'assurer qu'on ne prend que les pages de cette section précise */}}
+    {{- $filteredPages := slice }}
+    {{- range $allPages }}
+      {{- /* Vérifier que la page appartient bien à la section courante */}}
+      {{- if and .CurrentSection (eq .CurrentSection.RelPermalink $sectionPath) }}
+        {{- $filteredPages = $filteredPages | append . }}
+      {{- end }}
     {{- end }}
+    {{- $allPages = $filteredPages }}
 
-    {{- /* Trier les pages : d'abord par poids, puis par chemin de fichier */}}
+    {{- /* Trier les pages : d'abord par poids, puis par nom de fichier (déjà zéro-padés) */}}
     {{- $sortedPages := sort $allPages "Weight" "asc" }}
-    {{- $sortedPages = sort $sortedPages "File.Path" "asc" }}
+    {{- /* Créer une slice avec les pages et leur clé de tri basée sur le nom de fichier */}}
+    {{- $pagesWithSortKey := slice }}
+    {{- range $sortedPages }}
+      {{- $filename := .File.LogicalName }}
+      {{- /* Extraire le préfixe numérique pour créer une clé de tri normalisée */}}
+      {{- $sortKey := $filename }}
+      {{- $numericMatch := findRE "^([0-9]+)" $filename }}
+      {{- if $numericMatch }}
+        {{- $mainNum := index $numericMatch 0 }}
+        {{- /* Extraire le sous-numéro s'il existe (ex: "03.01") */}}
+        {{- $subMatch := findRE "^[0-9]+\\.([0-9]+)" $filename }}
+        {{- $subNum := "00" }}
+        {{- if $subMatch }}
+          {{- $subNum = index $subMatch 0 }}
+        {{- end }}
+        {{- /* Normaliser les nombres à 2 chiffres pour un tri cohérent */}}
+        {{- if eq (len $mainNum) 1 }}
+          {{- $mainNum = printf "0%s" $mainNum }}
+        {{- end }}
+        {{- if eq (len $subNum) 1 }}
+          {{- $subNum = printf "0%s" $subNum }}
+        {{- end }}
+        {{- /* Créer une clé de tri : "00.00|00-Accueil.md" pour un tri naturel */}}
+        {{- $sortKey = printf "%s.%s|%s" $mainNum $subNum $filename }}
+      {{- else }}
+        {{- /* Pas de préfixe numérique : mettre à la fin */}}
+        {{- $sortKey = printf "999999.99|%s" $filename }}
+      {{- end }}
+      {{- $pagesWithSortKey = $pagesWithSortKey | append (dict "page" . "sortKey" $sortKey) }}
+    {{- end }}
+    {{- /* Trier par sortKey (tri alphabétique qui fonctionne car les préfixes sont normalisés) */}}
+    {{- $pagesWithSortKey = sort $pagesWithSortKey "sortKey" "asc" }}
+    {{- /* Reconstruire la liste des pages triées */}}
+    {{- $sortedPages = slice }}
+    {{- range $pagesWithSortKey }}
+      {{- $sortedPages = $sortedPages | append .page }}
+    {{- end }}
 
     {{- /* Calculer le temps de lecture total */}}
     {{- $totalReadingTime := 0 }}

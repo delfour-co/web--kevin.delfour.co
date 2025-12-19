@@ -29,15 +29,14 @@
   </div>
   {{- end }}
 
-  {{- /* Navigation entre chapitres du livre - seulement pour les sections guides-livres */}}
-  {{- if eq .Section "guides-livres" }}
+  {{- /* Navigation entre chapitres du livre */}}
   {{- $currentSection := .CurrentSection }}
   {{- $isIndexPage := eq .Kind "section" }}
   
   {{- if $currentSection }}
     {{- /* Récupérer toutes les pages régulières du livre dans l'ordre */}}
     {{- $allPages := $currentSection.RegularPages }}
-    {{- /* S'assurer qu'on ne prend que les pages de cette section précise en filtrant par chemin de section */}}
+    {{- /* Filtrer pour s'assurer qu'on ne prend que les pages de cette section précise */}}
     {{- $sectionPath := $currentSection.RelPermalink }}
     {{- $filteredPages := slice }}
     {{- range $allPages }}
@@ -152,7 +151,6 @@
       </a>
     </div>
   {{- end }}
-  {{- end }}{{/* fin du if eq .Section "guides-livres" */}}
 
   <footer class="post-footer">
     {{- if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
