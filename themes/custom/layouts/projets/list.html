@@ -27,7 +27,9 @@
   {{- $categories := dict }}
   {{- range $projets }}
     {{- $cat := "Autres" }}
-    {{- if eq .langage "TypeScript" }}
+    {{- if or (eq .langage "Rust") (eq .langage "LaTeX") }}
+      {{- $cat = "Projets complexes" }}
+    {{- else if eq .langage "TypeScript" }}
       {{- $cat = "Katas TypeScript" }}
     {{- else if eq .langage "JavaScript" }}
       {{- $cat = "Katas JavaScript" }}
@@ -41,8 +43,8 @@
     {{- $categories = merge $categories (dict $cat $projets_cat) }}
   {{- end }}
 
-  {{- /* Ordre d'affichage des catégories */}}
-  {{- $ordre_categories := slice "Katas TypeScript" "Katas JavaScript" "Katas Python" "Applications Web" "Autres" }}
+  {{- /* Ordre d'affichage des catégories - Projets complexes en premier */}}
+  {{- $ordre_categories := slice "Projets complexes" "Katas TypeScript" "Katas JavaScript" "Katas Python" "Applications Web" "Autres" }}
   
   {{- /* Afficher les projets par catégorie dans l'ordre défini */}}
   {{- range $ordre_categories }}

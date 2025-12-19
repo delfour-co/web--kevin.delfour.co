@@ -12,6 +12,7 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 enableEmoji: true
+ignoreLogs: ['warning-goldmark-raw-html']
 mainsections: ["posts", "guides-livres", "le-role-du-cto", "gouvernance-decision", "culture-management", "trouver-sa-place"]
 
 permalinks:

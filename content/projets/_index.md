@@ -1,7 +1,38 @@
 ---
-title: Projets Open Source
-description: Mes projets open source sur GitHub
+title: Ressources pédagogiques et projets
+description: Katas de programmation pour s'entraîner, et projets plus complexes illustrant architecture et stratégie technique.
 projets:
+  # Projets complexes
+  - nom: "workspace--gk"
+    url: "https://github.com/delfour-co/workspace--gk"
+    description: "Alternative self-hosted à Google Workspace avec interface conversationnelle IA. Système email complet (SMTP/IMAP) en Rust, intégration LLM locale (Ollama), protocole MCP, administration complète (SPF/DKIM/DMARC, backups, SSL). Architecture distribuée avec 3 services : mail-rs (serveur email), ai-runtime (orchestrateur LLM), mcp-mail-server (outils email via MCP)."
+    langage: "Rust"
+    technologies:
+      - "Rust"
+      - "SMTP/IMAP"
+      - "WebAssembly"
+      - "LLM"
+      - "MCP"
+      - "Architecture distribuée"
+  - nom: "tui--survey-builder"
+    url: "https://github.com/delfour-co/tui--survey-builder"
+    description: "Outil d'audit technique et business en Rust avec interface TUI dans le navigateur (Ratzilla/WebAssembly). Questionnaires structurés par catégories (Infra, Sécurité, Architecture, etc.), génération automatique de recommandations, export/import YAML. Compatible déploiement statique (Vercel/Netlify), 45 tests unitaires, couverture 100%."
+    langage: "Rust"
+    technologies:
+      - "Rust"
+      - "WebAssembly"
+      - "Ratzilla"
+      - "TUI"
+      - "YAML"
+  - nom: "workshop--motive_mappers"
+    url: "https://github.com/delfour-co/workshop--motive_mappers"
+    description: "Extension de Moving Motivators (Jurgen Appello) pour comprendre les motivations intrinsèques d'une équipe. Version papier LaTeX (notice, cartes, feuille de score) avec compilation automatisée. Roadmap : version numérique pour équipes distantes. Outil de management et facilitation d'équipe."
+    langage: "LaTeX"
+    technologies:
+      - "LaTeX"
+      - "Management"
+      - "Facilitation"
+  
   # Katas TypeScript
   - nom: "game-of-life"
     url: "https://github.com/delfour-co/kata--game-of-life"
@@ -84,4 +115,10 @@ projets:
 
 ---
 
-Mes projets open source sur GitHub : katas de programmation, applications web et outils de développement.
+## Katas pour s'entraîner
+
+Les katas listés ci-dessous sont des exercices de programmation conçus pour pratiquer le TDD, la modélisation et les bonnes pratiques. Ils sont utiles pour l'apprentissage et la formation continue.
+
+## Projets plus complexes
+
+Les projets en haut de page illustrent des aspects d'architecture, d'infrastructure et de stratégie technique : systèmes distribués, intégration IA, outils CLI, etc.
