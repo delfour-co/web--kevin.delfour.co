@@ -1,5 +1,25 @@
 {{- define "main" }}
 
+<style>
+  /* Hiérarchie visuelle pour les projets */
+  .projets-category-title--main {
+    color: var(--primary);
+    letter-spacing: -0.02em;
+  }
+  
+  /* Espacement supplémentaire après "Projets complexes" */
+  .projets-category-title--main + * {
+    margin-top: calc(var(--gap) * 1.5);
+  }
+  
+  /* Séparateur visuel avant les katas */
+  .projets-section-katas {
+    margin-top: calc(var(--gap) * 2);
+    padding-top: calc(var(--gap) * 1.5);
+    border-top: 1px solid var(--border);
+  }
+</style>
+
 <header class="page-header">
   {{- partial "breadcrumbs.html" . }}
   <h1>
@@ -46,11 +66,24 @@
   {{- /* Ordre d'affichage des catégories - Projets complexes en premier */}}
   {{- $ordre_categories := slice "Projets complexes" "Katas TypeScript" "Katas JavaScript" "Katas Python" "Applications Web" "Autres" }}
   
+  {{- /* Trouver la première catégorie de katas pour ajouter un séparateur */}}
+  {{- $firstKataCategory := "" }}
+  {{- range $ordre_categories }}
+    {{- if and (not $firstKataCategory) (or (eq . "Katas TypeScript") (eq . "Katas JavaScript") (eq . "Katas Python")) }}
+      {{- $firstKataCategory = . }}
+    {{- end }}
+  {{- end }}
+  
   {{- /* Afficher les projets par catégorie dans l'ordre défini */}}
   {{- range $ordre_categories }}
     {{- $projets_cat := index $categories . }}
     {{- if $projets_cat }}
-    <h2 style="margin-top: calc(var(--gap) * 1.5); margin-bottom: var(--gap); font-size: 24px; font-weight: 600;">{{ . }}</h2>
+    {{- $isMainCategory := eq . "Projets complexes" }}
+    {{- $isFirstKataCategory := eq . $firstKataCategory }}
+    {{- if $isFirstKataCategory }}
+      <div class="projets-section-katas"></div>
+    {{- end }}
+    <h2 class="projets-category-title{{ if $isMainCategory }} projets-category-title--main{{ end }}" style="margin-top: {{ if $isMainCategory }}calc(var(--gap) * 2){{ else if $isFirstKataCategory }}calc(var(--gap) * 1.5){{ else }}calc(var(--gap) * 1.5){{ end }}; margin-bottom: var(--gap); font-size: {{ if $isMainCategory }}28px{{ else }}24px{{ end }}; font-weight: {{ if $isMainCategory }}700{{ else }}600{{ end }};{{ if $isMainCategory }} padding-bottom: 12px; border-bottom: 2px solid var(--border);{{ end }}">{{ . }}</h2>
     {{- range $projets_cat }}
     <article class="post-entry">
       <header class="entry-header">

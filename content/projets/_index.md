@@ -16,7 +16,7 @@ projets:
       - "Architecture distribuée"
   - nom: "tui--survey-builder"
     url: "https://github.com/delfour-co/tui--survey-builder"
-    description: "Outil d'audit technique et business en Rust avec interface TUI dans le navigateur (Ratzilla/WebAssembly). Questionnaires structurés par catégories (Infra, Sécurité, Architecture, etc.), génération automatique de recommandations, export/import YAML. Compatible déploiement statique (Vercel/Netlify), 45 tests unitaires, couverture 100%."
+    description: "Outil d'audit technique et business en Rust avec interface TUI dans le navigateur (Ratzilla/WebAssembly). Questionnaires structurés par catégories (Infra, Sécurité, Architecture, etc.), génération automatique de recommandations, export/import YAML. Compatible déploiement statique (Vercel/Netlify), 45 tests unitaires, couverture 100%. C'est la base des audits techniques que je réalise pour mes clients."
     langage: "Rust"
     technologies:
       - "Rust"
