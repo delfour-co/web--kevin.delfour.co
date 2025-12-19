@@ -4,8 +4,6 @@ slug: "trouver-sa-place"
 type: "pillar"
 ---
 
-# Trouver sa place
-
 ## Intention du pilier
 
 Ce pilier regroupe des contenus qui explorent **comment s'orienter dans la tech sans se raconter d'histoires**, en trouvant sa voie de manière réaliste et durable.

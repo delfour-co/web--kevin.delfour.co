@@ -4,8 +4,6 @@ slug: "le-role-du-cto"
 type: "pillar"
 ---
 
-# Le rôle du CTO
-
 ## Intention du pilier
 
 Ce pilier regroupe des contenus qui explorent **ce que recouvre réellement le rôle de CTO**, au-delà du titre ou de la fiche de poste.

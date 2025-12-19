@@ -4,8 +4,6 @@ slug: "gouvernance-decision"
 type: "pillar"
 ---
 
-# Gouvernance & décision
-
 ## Intention du pilier
 
 Ce pilier regroupe des contenus qui explorent **comment prendre des décisions techniques qui tiennent la route dans le temps**, sans tomber dans le dogme ni le chaos.

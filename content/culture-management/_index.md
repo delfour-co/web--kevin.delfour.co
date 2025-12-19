@@ -4,8 +4,6 @@ slug: "culture-management"
 type: "pillar"
 ---
 
-# Culture & management
-
 ## Intention du pilier
 
 Ce pilier regroupe des contenus qui explorent **comment construire une culture d'équipe qui fait grandir, pas qui épuise**, en conciliant performance et bien-être.
