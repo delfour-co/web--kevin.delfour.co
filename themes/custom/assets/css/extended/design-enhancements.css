@@ -572,7 +572,7 @@ body::before {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: top left;
-    opacity: 0.02;
+    opacity: 0.02 !important;
     pointer-events: none;
     z-index: -1;
     mix-blend-mode: multiply;
