@@ -6,8 +6,7 @@ title: 'L''harmonie plutôt que l''équilibre : pourquoi la séparation vie pro/
 date: 2024-09-01
 description: Exploration de l'intégration harmonieuse de la vie professionnelle et
   personnelle à l'ère numérique
-categories:
-- management
+categories: ["organisation"]
 series:
 - Management
 tags:

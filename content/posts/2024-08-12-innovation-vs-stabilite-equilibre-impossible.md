@@ -4,7 +4,7 @@ title: "Innovation vs stabilité : l'équilibre impossible ?"
 date: 2024-08-12
 slug: "innovation-vs-stabilite-equilibre-impossible"
 description: "Gérer la tension entre innover et maintenir la stabilité : pas un choix binaire mais un équilibre dynamique."
-categories: ["leadership"]
+categories: ["architecture"]
 series: ["Gouvernance"]
 tags: ["innovation", "stabilite", "risque", "equilibre"]
 pillar: "gouvernance-decision"

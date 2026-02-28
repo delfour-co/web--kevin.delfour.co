@@ -4,7 +4,7 @@ title: "Gérer les conflits de priorités entre product et tech"
 date: 2024-08-19
 slug: "gerer-conflits-priorites-product-tech"
 description: "Quand le CPO veut features et le CTO veut dette technique : naviguer ce conflit récurrent."
-categories: ["leadership"]
+categories: ["architecture"]
 series: ["Gouvernance"]
 tags: ["product", "priorites", "conflit", "alignement"]
 pillar: "gouvernance-decision"

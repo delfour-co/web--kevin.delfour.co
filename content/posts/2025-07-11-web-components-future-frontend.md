@@ -5,8 +5,7 @@ title: 'Web Components : l''avenir du développement frontend ?'
 date: 2025-07-11
 description: Les Web Components standards révolutionnent-ils le développement frontend
   ? Analyse technique, cas d'usage et comparaison avec React/Vue.
-categories:
-- architecture
+categories: ["architecture"]
 series:
 - Architecture
 tags:

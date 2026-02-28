@@ -4,7 +4,7 @@ title: "Reconnaître une boîte toxique avant de signer"
 date: 2025-04-07
 slug: "reconnaitre-boite-toxique-avant-signer"
 description: "Les red flags à repérer en entretien et recherche pour éviter de signer dans un environnement toxique."
-categories: ["carriere"]
+categories: ["parcours"]
 series: ["Environnements"]
 tags: ["toxicite", "red-flags", "entretien", "choix"]
 pillar: "trouver-sa-place"

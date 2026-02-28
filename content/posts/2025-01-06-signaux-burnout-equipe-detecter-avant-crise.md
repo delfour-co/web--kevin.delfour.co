@@ -4,7 +4,7 @@ title: "Reconnaître les signaux de burn-out dans l'équipe"
 date: 2025-01-06
 slug: "signaux-burnout-equipe-detecter-avant-crise"
 description: "Le burn-out ne surgit pas du jour au lendemain. Apprendre à lire les signaux avant la crise."
-categories: ["culture"]
+categories: ["organisation"]
 series: ["Management"]
 tags: ["burnout", "sante-mentale", "management", "prevention"]
 pillar: "culture-management"

@@ -4,7 +4,7 @@ title: "Erreurs classiques des débutants (et comment les éviter)"
 date: 2025-02-24
 slug: "erreurs-classiques-debutants"
 description: "Ces erreurs, tout le monde les fait. Les connaître permet de les éviter ou de les corriger rapidement."
-categories: ["carriere"]
+categories: ["parcours"]
 series: ["Débuts"]
 tags: ["erreurs", "debutant", "apprentissage", "progression"]
 pillar: "trouver-sa-place"

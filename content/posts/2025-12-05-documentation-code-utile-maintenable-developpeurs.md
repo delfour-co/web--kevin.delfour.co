@@ -6,8 +6,7 @@ title: 'Documentation code : Comment écrire une doc que les développeurs vont 
 date: 2025-12-05
 description: La documentation code est souvent négligée ou obsolète. Principes et
   formats pour créer une doc utile, maintenue et réellement utilisée par l'équipe.
-categories:
-- developpement
+categories: ["organisation"]
 series:
 - Développement
 tags:

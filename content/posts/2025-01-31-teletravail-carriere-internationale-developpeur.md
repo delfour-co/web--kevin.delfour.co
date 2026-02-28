@@ -6,8 +6,7 @@ date: 2025-01-31
 slug: "teletravail-carriere-internationale-developpeur"
 description: Le télétravail a mondialisé le marché dev. Comment en profiter pour booster
   sa carrière sans déménager ? Stratégies, salaires et pièges à éviter.
-categories:
-- carriere
+categories: ["parcours"]
 series:
 - Carrière
 tags:

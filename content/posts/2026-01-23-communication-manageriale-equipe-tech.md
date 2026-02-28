@@ -6,8 +6,7 @@ date: 2025-12-16
 slug: "communication-manageriale-equipe-tech"
 description: 'Guide pratique pour améliorer sa communication en tant que manager tech
   : transparence, feedback, réunions efficaces et gestion des informations.'
-categories:
-- leadership
+categories: ["organisation"]
 series:
 - Management
 tags:

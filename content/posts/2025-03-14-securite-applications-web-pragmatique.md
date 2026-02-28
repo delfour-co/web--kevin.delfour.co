@@ -5,8 +5,7 @@ title: 'Sécurité des applications web : approche pragmatique sans paranoia'
 date: 2025-03-14
 description: Guide pratique pour sécuriser efficacement ses applications web en se
   concentrant sur les risques réels, avec des solutions concrètes et proportionnées
-categories:
-- securite
+categories: ["architecture"]
 series:
 - Tech
 tags:

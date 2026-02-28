@@ -4,7 +4,7 @@ title: "Les rituels qui créent de la cohésion (vs ceux qui pèsent)"
 date: 2024-12-30
 slug: "rituels-cohesion-vs-rituels-pesent"
 description: "Tous les rituels ne se valent pas. Certains renforcent l'équipe, d'autres l'épuisent."
-categories: ["culture"]
+categories: ["organisation"]
 series: ["Culture"]
 tags: ["rituels", "ceremonies", "cohesion", "efficacite"]
 pillar: "culture-management"

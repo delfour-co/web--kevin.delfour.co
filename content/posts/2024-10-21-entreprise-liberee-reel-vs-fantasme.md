@@ -4,7 +4,7 @@ title: "L'entreprise libérée : réel vs fantasme"
 date: 2024-10-21
 slug: "entreprise-liberee-reel-vs-fantasme"
 description: "Holacracie, entreprise libérée, auto-organisation : démêler le réel du marketing."
-categories: ["culture"]
+categories: ["organisation"]
 series: ["Culture"]
 tags: ["entreprise-liberee", "holacracie", "auto-organisation", "management"]
 pillar: "culture-management"

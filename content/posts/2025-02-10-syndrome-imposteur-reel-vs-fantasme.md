@@ -4,7 +4,7 @@ title: "Syndrome de l'imposteur : le réel vs le fantasme"
 date: 2025-02-10
 slug: "syndrome-imposteur-reel-vs-fantasme"
 description: "Ce sentiment que tu vas être démasqué est très répandu. Comprendre pourquoi, et comment le gérer."
-categories: ["carriere"]
+categories: ["parcours"]
 series: ["Débuts"]
 tags: ["syndrome-imposteur", "confiance", "psychologie", "junior"]
 pillar: "trouver-sa-place"

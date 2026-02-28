@@ -6,8 +6,7 @@ date: 2025-06-13
 slug: "premiers-jours-cto-reussir-prise-de-poste"
 description: Nouveau CTO ? Les 3 premiers mois sont critiques. Roadmap jour par jour
   pour établir crédibilité, comprendre l'existant et définir la vision.
-categories:
-- leadership
+categories: ["organisation"]
 series:
 - CTO
 tags:

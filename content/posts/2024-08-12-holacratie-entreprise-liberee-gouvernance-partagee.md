@@ -7,8 +7,7 @@ date: 2024-08-12
 description: Explorer les concepts clés de la gouvernance partagée et de l'Holacratie
   dans le cadre de l'Entreprise Libérée, tout en proposant des perspectives novatrices
   pour repenser l'organisation du travail.
-categories:
-- management
+categories: ["architecture"]
 series:
 - Management
 tags:

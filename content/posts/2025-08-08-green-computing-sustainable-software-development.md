@@ -5,8 +5,7 @@ title: 'Green Computing : développement logiciel durable et efficacité énerg�
 date: 2025-08-08
 description: Comment réduire l'empreinte carbone de nos applications ? Techniques
   de développement durable, optimisations énergétiques et métriques d'impact environnemental.
-categories:
-- architecture
+categories: ["architecture"]
 series:
 - Tech
 tags:

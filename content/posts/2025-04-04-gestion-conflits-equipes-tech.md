@@ -6,8 +6,7 @@ date: 2025-04-04
 slug: "gestion-conflits-equipes-tech"
 description: Guide pratique pour identifier, comprendre et résoudre les conflits techniques
   et humains, avec des outils concrets pour managers et développeurs
-categories:
-- leadership
+categories: ["organisation"]
 series:
 - Tech
 tags:

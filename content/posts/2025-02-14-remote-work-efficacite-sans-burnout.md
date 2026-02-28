@@ -5,8 +5,7 @@ title: 'Remote work : maintenir l''efficacité sans tomber dans le burnout'
 date: 2025-02-14
 description: Stratégies éprouvées pour concilier productivité et bien-être dans le
   travail à distance, avec des solutions concrètes aux défis quotidiens
-categories:
-- management
+categories: ["organisation"]
 series:
 - Management
 tags:

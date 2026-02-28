@@ -1,6 +1,8 @@
 ---
 title: "À propos"
 description: "CTO avec 17 ans d'expérience, basé à Lyon. Je donne des repères aux CTO et leaders tech, et j'aide la nouvelle génération à trouver sa place."
+aliases:
+  - /a-propos/
 ---
 
 ## Donner des repères. Pas des leçons.

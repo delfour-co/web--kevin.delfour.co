@@ -6,8 +6,7 @@ title: 'Repenser son code : Comment une quête de performance a transformé ma v
 date: 2024-11-22
 description: Découvrez comment une refonte totale d'un site web, de Nuxt à Astro,
   a permis d'améliorer son impact carbone et sa performance.
-categories:
-- developpement
+categories: ["architecture"]
 series:
 - Développement
 tags:

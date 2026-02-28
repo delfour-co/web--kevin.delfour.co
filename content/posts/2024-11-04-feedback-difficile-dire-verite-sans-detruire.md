@@ -4,7 +4,7 @@ title: "Feedback difficile : dire la vérité sans détruire"
 date: 2024-11-04
 slug: "feedback-difficile-dire-verite-sans-detruire"
 description: "Comment donner un feedback dur nécessaire sans briser la relation ni la confiance."
-categories: ["culture"]
+categories: ["organisation"]
 series: ["Management"]
 tags: ["feedback", "management", "communication", "confiance"]
 pillar: "culture-management"

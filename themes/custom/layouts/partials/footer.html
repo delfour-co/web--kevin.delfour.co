@@ -3,57 +3,32 @@
     <div class="footer-content">
         <nav class="footer-links" aria-label="Navigation principale">
             {{- $currentPage := . }}
-            {{- $menuItems := site.Menus.main }}
-            {{- $reperesItems := slice }}
-            {{- $resourcesItems := slice }}
-            {{- range $menuItems }}
-                {{- if eq .Params.group "reperes" }}
-                    {{- $reperesItems = $reperesItems | append . }}
-                {{- else if or (eq .Identifier "guides-livres") (eq .Identifier "about") }}
-                    {{- $resourcesItems = $resourcesItems | append . }}
-                {{- end }}
-            {{- end }}
-            {{- $additionalLinks := slice (dict "name" "Archives" "url" "/archives/") (dict "name" "Bénévolat" "url" "/benevolat/") (dict "name" "Projets" "url" "/projets/") }}
-            
             <div class="footer-columns">
-                {{- if $reperesItems }}
                 <div class="footer-column">
-                    <h3 class="footer-column-title">Piliers</h3>
+                    <h3 class="footer-column-title">Explorer</h3>
                     <div class="footer-links-group">
-                        {{- range $item := $reperesItems }}
-                            {{- $itemURL := $item.URL | absLangURL }}
-                            {{- $currentURL := $currentPage.Permalink | absLangURL }}
-                            <a href="{{ $itemURL }}"{{ if or (eq $itemURL $currentURL) (hasPrefix $currentURL $itemURL) }} class="active"{{ end }}>{{ $item.Name }}</a>
-                        {{- end }}
+                        <a href="/articles/">Articles</a>
+                        <a href="/livres/">Livres</a>
+                        <a href="/projets/">Projets</a>
                     </div>
                 </div>
-                {{- end }}
-                
-                {{- if $resourcesItems }}
+
                 <div class="footer-column">
-                    <h3 class="footer-column-title">Ressources</h3>
+                    <h3 class="footer-column-title">Découvrir</h3>
                     <div class="footer-links-group">
-                        {{- range $item := $resourcesItems }}
-                            {{- $itemURL := $item.URL | absLangURL }}
-                            {{- $currentURL := $currentPage.Permalink | absLangURL }}
-                            <a href="{{ $itemURL }}"{{ if or (eq $itemURL $currentURL) (hasPrefix $currentURL $itemURL) }} class="active"{{ end }}>{{ $item.Name }}</a>
-                        {{- end }}
+                        <a href="/vision/">Vision</a>
+                        <a href="/about/">À propos</a>
+                        <a href="/contact/">Contact</a>
                     </div>
                 </div>
-                {{- end }}
-                
-                {{- if $additionalLinks }}
+
                 <div class="footer-column">
-                    <h3 class="footer-column-title">Autres</h3>
+                    <h3 class="footer-column-title">Suivre</h3>
                     <div class="footer-links-group">
-                        {{- range $link := $additionalLinks }}
-                            {{- $linkURL := $link.url | absLangURL }}
-                            {{- $currentURL := $currentPage.Permalink | absLangURL }}
-                            <a href="{{ $linkURL }}"{{ if or (eq $linkURL $currentURL) (hasPrefix $currentURL $linkURL) }} class="active"{{ end }}>{{ $link.name }}</a>
-                        {{- end }}
+                        <a href="https://github.com/kdelfour" rel="noopener noreferrer" target="_blank">GitHub</a>
+                        <a href="https://linkedin.com/in/kevindelfour" rel="noopener noreferrer" target="_blank">LinkedIn</a>
                     </div>
                 </div>
-                {{- end }}
             </div>
         </nav>
         <div class="footer-bottom">
@@ -64,7 +39,7 @@
                     {{- $diskette := partial "icon.html" (dict "name" "interface-essential/interface-essential-floppy-disk" "size" 16 "class" "footer-diskette" "ariaHidden" true) -}}
                     {{- $copyright = replace $copyright "💾" $diskette -}}
                     <span>{{ $copyright | safeHTML }}{{- print " · "}}Powered by
-                        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> and 80's nostalgia ... not anymore.
+                        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a>
                     </span>
                     {{- else }}
                     <span>&copy; {{ now.Year }} <a href="{{ "" | absLangURL }}">{{ site.Title }}</a></span>
@@ -76,8 +51,6 @@
                     {{ . | markdownify }}
                     {{- print " · "}}
                 {{- end }}
-
-                
             </div>
             <div id="wcb" class="carbonbadge wcb-d"></div>
         </div>
@@ -100,23 +73,20 @@
     // Gestion du menu hamburger mobile
     const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
-    
+
     if (menuToggle && menu) {
-        // Fonction pour fermer le menu
         function closeMenu() {
             menu.classList.remove('menu-open');
             menuToggle.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
         }
-        
-        // Fonction pour ouvrir le menu
+
         function openMenu() {
             menu.classList.add('menu-open');
             menuToggle.setAttribute('aria-expanded', 'true');
             document.body.style.overflow = 'hidden';
         }
-        
-        // Toggle du menu
+
         menuToggle.addEventListener('click', function() {
             if (menu.classList.contains('menu-open')) {
                 closeMenu();
@@ -124,8 +94,7 @@
                 openMenu();
             }
         });
-        
-        // Fermer le menu quand on clique sur un lien
+
         const menuLinks = menu.querySelectorAll('a');
         menuLinks.forEach(link => {
             link.addEventListener('click', function() {
@@ -134,31 +103,28 @@
                 }
             });
         });
-        
-        // Fermer le menu si on clique en dehors
+
         document.addEventListener('click', function(event) {
-            if (window.innerWidth <= 768 && 
+            if (window.innerWidth <= 768 &&
                 menu.classList.contains('menu-open') &&
                 !menu.contains(event.target) &&
                 !menuToggle.contains(event.target)) {
                 closeMenu();
             }
         });
-        
-        // Fermer le menu au redimensionnement si on passe en desktop
+
         window.addEventListener('resize', function() {
             if (window.innerWidth > 768) {
                 closeMenu();
             }
         });
-        
-        // Sauvegarder la position de défilement pour desktop uniquement
+
         if (window.innerWidth > 768) {
             const scrollPosition = localStorage.getItem("menu-scroll-position");
             if (scrollPosition) {
                 menu.scrollLeft = parseInt(scrollPosition, 10);
             }
-            
+
             menu.onscroll = function () {
                 localStorage.setItem("menu-scroll-position", menu.scrollLeft);
             }

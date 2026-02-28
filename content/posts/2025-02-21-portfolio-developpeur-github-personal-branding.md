@@ -7,8 +7,7 @@ date: 2025-02-21
 slug: "portfolio-developpeur-github-personal-branding"
 description: GitHub + Blog + Side projects + Présence online = Portfolio qui décroche
   des entretiens. Stratégie complète de personal branding pour développeurs.
-categories:
-- carriere
+categories: ["parcours"]
 series:
 - Carrière
 tags:

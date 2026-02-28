@@ -6,8 +6,7 @@ date: 2025-12-16
 slug: "gestion-changement-resistance-equipe-tech"
 description: Guide pratique pour introduire des changements techniques et organisationnels,
   comprendre les résistances et créer l'adhésion dans une équipe tech.
-categories:
-- leadership
+categories: ["organisation"]
 series:
 - Management
 tags:

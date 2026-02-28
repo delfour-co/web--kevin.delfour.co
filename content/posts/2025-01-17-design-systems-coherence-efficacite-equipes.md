@@ -6,8 +6,7 @@ title: 'Design Systems : au-delà de la cohérence visuelle, un outil d''efficac
 date: 2025-01-17
 description: Comment les Design Systems transforment la collaboration entre designers
   et développeurs, avec des exemples concrets d'implémentation et de gouvernance
-categories:
-- frontend
+categories: ["organisation"]
 series:
 - Frontend
 tags:

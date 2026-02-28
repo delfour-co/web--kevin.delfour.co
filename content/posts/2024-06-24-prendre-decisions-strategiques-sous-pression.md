@@ -4,7 +4,7 @@ title: "Comment prendre des décisions stratégiques sous pression"
 date: 2024-06-24
 slug: "prendre-decisions-strategiques-sous-pression"
 description: "Décider dans l'urgence sans sacrifier la qualité : méthodes et garde-fous."
-categories: ["leadership"]
+categories: ["architecture"]
 series: ["Gouvernance"]
 tags: ["decision", "strategie", "urgence", "pression"]
 pillar: "gouvernance-decision"

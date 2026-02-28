@@ -4,7 +4,7 @@ title: "Spécialiste vs généraliste : quel chemin ?"
 date: 2025-05-19
 slug: "specialiste-vs-generaliste-quel-chemin"
 description: "T-shaped, spécialiste profond, ou généraliste large : comprendre les options et choisir consciemment."
-categories: ["carriere"]
+categories: ["parcours"]
 series: ["Evolution"]
 tags: ["specialisation", "generaliste", "carriere", "competences"]
 pillar: "trouver-sa-place"

@@ -4,7 +4,7 @@ title: "Dette technique : investir maintenant ou plus tard ?"
 date: 2024-08-05
 slug: "dette-technique-investir-maintenant-ou-plus-tard"
 description: "Quand rembourser la dette technique : timing et stratégies selon le contexte."
-categories: ["leadership"]
+categories: ["architecture"]
 series: ["Gouvernance"]
 tags: ["dette-technique", "refactoring", "strategie", "timing"]
 pillar: "gouvernance-decision"

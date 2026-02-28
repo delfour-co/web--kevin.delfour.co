@@ -7,8 +7,7 @@ slug: "architecture-microservices-observabilite-complete"
 description: Comment maintenir la visibilité dans un système distribué ? Stratégies
   d'observabilité, tracing distribué et techniques de debugging pour architectures
   microservices.
-categories:
-- architecture
+categories: ["architecture"]
 series:
 - Architecture
 tags:

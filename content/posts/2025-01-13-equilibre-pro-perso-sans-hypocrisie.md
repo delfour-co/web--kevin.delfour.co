@@ -4,7 +4,7 @@ title: "Encourager l'équilibre pro-perso sans hypocrisie"
 date: 2025-01-13
 slug: "equilibre-pro-perso-sans-hypocrisie"
 description: "Afficher l'équilibre est facile. Le vivre et le faire vivre demande cohérence et discipline."
-categories: ["culture"]
+categories: ["organisation"]
 series: ["Culture"]
 tags: ["equilibre", "vie-perso", "culture", "burnout"]
 pillar: "culture-management"

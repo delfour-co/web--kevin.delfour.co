@@ -27,17 +27,21 @@ Ce fichier sert de référence pour les assistants IA travaillant sur ce projet.
 ```
 .
 ├── content/                      # Contenus markdown
-│   ├── _index.md                # Page d'accueil
-│   ├── start-here.md            # Guide de démarrage
-│   ├── le-role-du-cto/          # Pilier 1
-│   ├── gouvernance-decision/    # Pilier 2
-│   ├── culture-management/      # Pilier 3
-│   ├── trouver-sa-place/        # Pilier 4
-│   ├── guides-livres/           # Livres complets
+│   ├── _index.md                # Page d'accueil (hero + sections)
+│   ├── articles/_index.md       # Page liste articles (alias /posts/)
+│   ├── livres/_index.md         # Vitrine livres (alias /guides-livres/)
+│   ├── projets/_index.md        # Page projets
+│   ├── vision/_index.md         # Convictions et posture
+│   ├── contact/_index.md        # Contact et liens sociaux
+│   ├── about.md                 # À propos (alias /a-propos/)
+│   ├── start-here.md            # Guide de démarrage (legacy)
+│   ├── le-role-du-cto/          # Pilier 1 (legacy, accessible via URL)
+│   ├── gouvernance-decision/    # Pilier 2 (legacy, accessible via URL)
+│   ├── culture-management/      # Pilier 3 (legacy, accessible via URL)
+│   ├── trouver-sa-place/        # Pilier 4 (legacy, accessible via URL)
+│   ├── guides-livres/           # Livres complets (contenu source)
 │   └── posts/                   # Articles (550+)
 ├── layouts/                      # Templates Hugo personnalisés
-│   ├── _default/baseof.html     # Template de base
-│   └── partials/                # Composants réutilisables
 ├── assets/css/extended/         # CSS personnalisés
 ├── themes/custom/               # Thème custom
 ├── hugo.yaml                     # Configuration Hugo
@@ -48,21 +52,32 @@ Ce fichier sert de référence pour les assistants IA travaillant sur ce projet.
 
 ---
 
-## Piliers éditoriaux
+## Architecture de contenu
 
-Le site est structuré autour de 4 piliers (voir `LIGNE_EDITORIALE.md`) :
+### Navigation principale
 
-1. **Le rôle du CTO** (`/le-role-du-cto/`)
-   - Responsabilité réelle, limites, solitude, arbitrages
+Le site est structuré autour de 6 sections :
 
-2. **Gouvernance & décision** (`/gouvernance-decision/`)
-   - Qui décide quoi, cadres de décision, autonomie vs chaos
+1. **Articles** (`/articles/`) — Liste filtrable par catégorie
+2. **Livres** (`/livres/`) — Vitrine des livres gratuits en ligne
+3. **Projets** (`/projets/`) — Projets open source et katas
+4. **Vision** (`/vision/`) — Convictions et posture
+5. **À propos** (`/a-propos/`) — Parcours et ligne morale
+6. **Contact** (`/contact/`) — Liens sociaux et accompagnement
 
-3. **Culture & management** (`/culture-management/`)
-   - Droit à l'erreur, sécurité psychologique, valeurs vécues
+### Catégories d'articles
 
-4. **Trouver sa place** (`/trouver-sa-place/`)
-   - Débuts, reconversion, environnements sains, trajectoires réalistes
+Les articles sont classés en 4 catégories (remplacent les anciens piliers) :
+
+- **Leadership** — Le rôle du CTO, responsabilité, arbitrages
+- **Architecture** — Gouvernance, décision, cadres techniques
+- **Organisation** — Culture, management, sécurité psychologique
+- **Parcours** — Débuts, reconversion, trajectoires réalistes
+
+### Pages pilier (legacy)
+
+Les anciennes pages pilier restent accessibles à leurs URLs historiques :
+- `/le-role-du-cto/`, `/gouvernance-decision/`, `/culture-management/`, `/trouver-sa-place/`
 
 ---
 
@@ -116,35 +131,21 @@ Si la réponse est non → ne pas faire.
 ## Menu principal (structure actuelle)
 
 ```yaml
-- Par où commencer ?
-- Le rôle du CTO
-- Gouvernance & décision
-- Culture & management
-- Trouver sa place
-- Guides & livres
+- Articles
+- Livres
+- Projets
+- Vision
 - À propos
+- Contact
 ```
 
-Les 4 piliers centraux ont un attribut `group: "reperes"` et des micro-descriptions dans `hugo.yaml`.
+### Design system
 
-**Modèle de navigation :** `.claude/NAVIGATION_MODEL.md`
-- Un pilier = UNE page de référence (carte)
-- Les articles sont rattachés via sous-chemin `/pilier/posts/article`
-- Relation pilier ↔ article : carte ↔ territoire
-
----
-
-## Bandeau de navigation
-
-Un bandeau apparaît sur la home et les pages piliers :
-
-```
-Ce site est organisé par repères, pas par ordre chronologique.
-Tu peux explorer librement selon ta situation.
-```
-
-**Fichier :** `layouts/partials/navigation_hint.html`
-**CSS :** `assets/css/extended/navigation-hint.css`
+- **Typographie :** Fraunces (titres), Source Serif 4 (corps), Inter/system-ui (UI)
+- **Couleur accent :** Ambre/doré `#D4920B` (clair) / `#F0B840` (sombre)
+- **Largeur homepage :** 1080px (`--home-width`)
+- **Style :** Clair épuré, espaces généreux, style éditorial craft
+- **Tokens :** `themes/custom/assets/css/core/theme-vars.css`
 
 ---
 
@@ -153,12 +154,14 @@ Tu peux explorer librement selon ta situation.
 ```yaml
 taxonomies:
   tag: "tags"
-  pillar: "pillars"
+  category: "categories"
+  pillar: "pillars"      # legacy, conservé pour compatibilité
   audience: "audiences"
 ```
 
-Chaque article doit être taggé avec :
-- `pillar:` (le-role-du-cto | gouvernance-decision | culture-management | trouver-sa-place)
+Chaque article doit avoir :
+- `categories:` (leadership | architecture | organisation | parcours)
+- `pillar:` (le-role-du-cto | gouvernance-decision | culture-management | trouver-sa-place) — legacy
 - `audience:` (cto | jeunesse-tech | tous)
 - `featured:` (true | false)
 
@@ -267,9 +270,10 @@ Si une seule réponse est "non" → ne pas faire.
 title: "Titre de l'article"
 description: "Description courte (150-160 caractères)"
 date: 2025-01-15
-pillar: "le-role-du-cto"  # ou gouvernance-decision, culture-management, trouver-sa-place
-audience: "cto"            # ou jeunesse-tech, tous
-featured: false            # ou true
+categories: ["leadership"]  # ou architecture, organisation, parcours
+pillar: "le-role-du-cto"    # legacy, conservé pour compatibilité
+audience: "cto"              # ou jeunesse-tech, tous
+featured: false              # ou true
 tags: ["tag1", "tag2"]
 ---
 ```
@@ -317,6 +321,14 @@ tags: ["tag1", "tag2"]
   - Titre "Par où commencer ?" → "Selon ta situation"
   - Ajout ancres #cto et #jeunesse-tech
   - Liens raccourcis sur la home
+
+- **2026-02-28** : Refonte complète du site
+  - Nouvelle identité visuelle : Fraunces + Source Serif 4, accent ambre #D4920B
+  - Nouvelle navigation : Articles, Livres, Projets, Vision, À propos, Contact
+  - Nouvelle homepage : hero + sections thématiques (1080px)
+  - Migration piliers → catégories (leadership, architecture, organisation, parcours)
+  - Suppression système 4 couleurs pilier, bandeau navigation, watermark dinosaure
+  - Pages dédiées : /vision/, /contact/, /articles/ avec filtres JS
 
 ---
 
@@ -394,7 +406,8 @@ Le dossier `.claude/` contient les ressources de référence pour maintenir la c
 - **Kit éditorial :** `.claude/` (templates, prompts, guides)
 - **Configuration Hugo :** `hugo.yaml`
 - **Page d'accueil :** `content/_index.md`
-- **Guide de démarrage :** `content/start-here.md`
+- **Design tokens :** `themes/custom/assets/css/core/theme-vars.css`
+- **Homepage CSS :** `assets/css/extended/homepage.css`
 - **Thème custom :** `themes/custom/`
 
 ---

@@ -4,7 +4,7 @@ title: "De non-tech à tech : ce qui change vraiment"
 date: 2025-03-10
 slug: "non-tech-vers-tech-ce-qui-change"
 description: "Tu as bossé ailleurs avant. Voici ce qui sera différent, familier, et surprenant dans la tech."
-categories: ["carriere"]
+categories: ["parcours"]
 series: ["Reconversion"]
 tags: ["reconversion", "transition", "culture-tech", "differences"]
 pillar: "trouver-sa-place"

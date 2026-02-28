@@ -4,7 +4,7 @@ title: "Former sans infantiliser : rendre autonome, pas dépendant"
 date: 2024-11-25
 slug: "former-sans-infantiliser"
 description: "La formation qui émancipé vs celle qui crée de la dépendance. Comment transmettre sans diminuer."
-categories: ["culture"]
+categories: ["organisation"]
 series: ["Management"]
 tags: ["formation", "autonomie", "mentorat", "apprentissage"]
 pillar: "culture-management"

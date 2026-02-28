@@ -4,7 +4,7 @@ title: "Droit à l'erreur : comment le rendre réel, pas cosmétique"
 date: 2024-10-07
 slug: "droit-erreur-rendre-reel-pas-cosmetique"
 description: "Le droit à l'erreur affiché vs vécu : transformer une valeur théorique en pratique concrète."
-categories: ["culture"]
+categories: ["organisation"]
 series: ["Culture"]
 tags: ["erreur", "apprentissage", "culture", "blameless"]
 pillar: "culture-management"

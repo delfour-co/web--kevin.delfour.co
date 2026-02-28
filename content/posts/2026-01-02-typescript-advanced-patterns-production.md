@@ -5,8 +5,7 @@ title: 'TypeScript avancé : Patterns de production pour code maintenable'
 date: 2026-01-02
 description: 'Patterns TypeScript avancés utilisés en production : branded types,
   discriminated unions, utility types, et techniques pour écrire du code robuste.'
-categories:
-- developpement
+categories: ["architecture"]
 series:
 - Développement
 tags:

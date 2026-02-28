@@ -4,7 +4,7 @@ title: "Gérer les non-performances sans culpabiliser"
 date: 2024-11-11
 slug: "gerer-non-performances-sans-culpabiliser"
 description: "Face à une baisse de performance : accompagner, clarifier, et parfois séparer. Sans culpabilité toxique."
-categories: ["culture"]
+categories: ["organisation"]
 series: ["Management"]
 tags: ["performance", "management", "pip", "separation"]
 pillar: "culture-management"

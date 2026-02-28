@@ -1,0 +1,52 @@
+/* ============================================
+   Typography — Fraunces + Source Serif 4
+   ============================================ */
+
+body {
+    font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+}
+
+#menu,
+.breadcrumbs,
+.post-meta,
+.entry-footer,
+.pagination,
+.footer,
+button,
+.button,
+input,
+select,
+textarea {
+    font-family: var(--font-ui);
+}
+
+/* Dyslexia font override — prend le dessus sur tout */
+:root[data-dyslexia-font="true"] body,
+:root[data-dyslexia-font="true"] h1,
+:root[data-dyslexia-font="true"] h2,
+:root[data-dyslexia-font="true"] h3,
+:root[data-dyslexia-font="true"] h4,
+:root[data-dyslexia-font="true"] h5,
+:root[data-dyslexia-font="true"] h6,
+:root[data-dyslexia-font="true"] #menu,
+:root[data-dyslexia-font="true"] .breadcrumbs,
+:root[data-dyslexia-font="true"] .post-meta,
+:root[data-dyslexia-font="true"] .home-hero__title,
+:root[data-dyslexia-font="true"] .home-hero__subtitle,
+:root[data-dyslexia-font="true"] .home-hero__tagline,
+:root[data-dyslexia-font="true"] .home-card__title,
+:root[data-dyslexia-font="true"] .home-card__subtitle,
+:root[data-dyslexia-font="true"] .home-card__desc,
+:root[data-dyslexia-font="true"] .home-card__meta,
+:root[data-dyslexia-font="true"] .home-section__more a,
+:root[data-dyslexia-font="true"] .home-vision__quote p,
+:root[data-dyslexia-font="true"] .btn-primary,
+:root[data-dyslexia-font="true"] .btn-secondary,
+:root[data-dyslexia-font="true"] .footer,
+:root[data-dyslexia-font="true"] .articles-filters button {
+    font-family: 'OpenDyslexic', sans-serif !important;
+}

@@ -5,8 +5,7 @@ title: 'Guide ultime des optimisations Astro : de zéro à expert'
 date: 2024-12-20
 description: Un guide exhaustif pour pousser les performances de votre site Astro
   au maximum, avec exemples concrets et structure de projet complète
-categories:
-- developpement
+categories: ["architecture"]
 series:
 - Développement
 tags:

@@ -4,7 +4,7 @@ title: "Construire une culture technique durable"
 date: 2024-09-23
 slug: "construire-culture-technique-durable"
 description: "La culture technique ne se décrète pas : comment la construire progressivement et la faire durer."
-categories: ["culture"]
+categories: ["organisation"]
 series: ["Culture"]
 tags: ["culture", "valeurs", "excellence", "durabilite"]
 pillar: "culture-management"

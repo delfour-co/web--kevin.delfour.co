@@ -1,6 +1,8 @@
 ---
 title: "Par où commencer ?"
 description: "Guide de démarrage pour trouver rapidement les repères dont vous avez besoin selon votre profil : CTO en poste ou jeunesse tech."
+aliases:
+  - /start-here/
 ---
 
 ## Donner des repères. Pas des leçons.

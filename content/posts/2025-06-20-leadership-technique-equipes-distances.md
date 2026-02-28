@@ -6,8 +6,7 @@ date: 2025-06-20
 slug: "leadership-technique-equipes-distances"
 description: 'Guide pragmatique pour CTOs et Tech Leads : métriques, budgets et frameworks
   terrain pour maximiser la performance d''équipes tech distribuées.'
-categories:
-- leadership
+categories: ["organisation"]
 series:
 - CTO
 tags:

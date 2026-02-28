@@ -6,8 +6,7 @@ date: 2025-03-21
 slug: "pair-programming-efficace"
 description: Guide pratique pour tirer le maximum du pair programming, avec techniques
   adaptées au remote, outils modernes et résolution des frictions courantes
-categories:
-- developpement
+categories: ["organisation"]
 series:
 - Développement
 tags:

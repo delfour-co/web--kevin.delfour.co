@@ -4,7 +4,7 @@ title: "Arbitrer entre vitesse et qualité"
 date: 2024-07-29
 slug: "arbitrer-vitesse-vs-qualite"
 description: "Le dilemme permanent du CTO : livrer vite ou bien ? Comprendre qu'il n'y a pas de bonne réponse universelle."
-categories: ["leadership"]
+categories: ["architecture"]
 series: ["Gouvernance"]
 tags: ["qualite", "verite", "dette-technique", "arbitrage"]
 pillar: "gouvernance-decision"

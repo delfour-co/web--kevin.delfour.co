@@ -6,8 +6,7 @@ title: 'Trunk-Based Development : Simplifier votre workflow Git sans sacrifier l
 date: 2025-09-12
 description: Git Flow est trop complexe ? Feature branches interminables ? Découvrez
   le Trunk-Based Development et pourquoi Google, Facebook et Netflix l'utilisent.
-categories:
-- developpement
+categories: ["architecture"]
 series:
 - Développement
 tags:

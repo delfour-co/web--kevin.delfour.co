@@ -4,7 +4,7 @@ title: "Red flags en entretien : ce qu'on ne te dit pas"
 date: 2025-04-14
 slug: "red-flags-entretien-ce-quon-ne-dit-pas"
 description: "Les signaux subtils en entretien qui révèlent un environnement problématique."
-categories: ["carriere"]
+categories: ["parcours"]
 series: ["Environnements"]
 tags: ["entretien", "red-flags", "recrutement", "signaux"]
 pillar: "trouver-sa-place"

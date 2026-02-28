@@ -5,8 +5,7 @@ title: 'IA et développement : Collaborer avec ChatGPT et Copilot sans perdre so
 date: 2025-01-24
 description: L'IA générative change notre métier. Mais entre hype et réalité, comment
   l'utiliser intelligemment pour booster sa productivité sans devenir dépendant ?
-categories:
-- ia
+categories: ["architecture"]
 series:
 - IA & Productivité
 tags:

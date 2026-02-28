@@ -1,0 +1,82 @@
+{{- define "main" }}
+
+<header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{- if .Description }}
+    <p class="post-description">{{ .Description }}</p>
+    {{- end }}
+</header>
+
+{{- if .Content }}
+<div class="post-content" style="margin-bottom: calc(var(--gap) * 2);">
+    {{ .Content }}
+</div>
+{{- end }}
+
+{{- /* Récupérer les livres depuis guides-livres */ -}}
+{{- $guidesSection := site.GetPage "/guides-livres/" }}
+{{- if $guidesSection }}
+    {{- $livres := $guidesSection.Params.livres }}
+    {{- if $livres }}
+    <div class="home-grid home-grid--2">
+        {{- range $livres }}
+        <a href="/guides-livres/{{ .slug }}/" class="home-card home-card--large">
+            <h3 class="home-card__title">{{ .title }}</h3>
+            {{- if .subtitle }}
+            <p class="home-card__subtitle">{{ .subtitle }}</p>
+            {{- end }}
+            <p class="home-card__desc">{{ .description }}</p>
+            <span class="home-card__meta">Lire en ligne</span>
+        </a>
+        {{- end }}
+    </div>
+    {{- end }}
+
+    {{- /* Also show actual book pages if they exist */ -}}
+    {{- $bookPages := $guidesSection.RegularPages }}
+    {{- $published := where $bookPages "Params.status" "publié" }}
+    {{- $upcoming := where $bookPages "Params.status" "à venir" }}
+
+    {{- if or $published $upcoming }}
+    <div style="margin-top: calc(var(--gap) * 2);">
+        {{- if $published }}
+        <h2>Publiés</h2>
+        <div class="post-entries" style="margin-top: var(--gap);">
+            {{- range $published }}
+            <article class="post-entry">
+                <header class="entry-header">
+                    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                </header>
+                {{- if .Description }}
+                <div class="entry-content">
+                    <p>{{ .Description | markdownify }}</p>
+                </div>
+                {{- end }}
+                <a class="entry-link" aria-label="Lire {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+            </article>
+            {{- end }}
+        </div>
+        {{- end }}
+
+        {{- if $upcoming }}
+        <h2 style="margin-top: calc(var(--gap) * 2);">À venir</h2>
+        <div class="post-entries" style="margin-top: var(--gap);">
+            {{- range $upcoming }}
+            <article class="post-entry">
+                <header class="entry-header">
+                    <h3>{{ .Title }}</h3>
+                </header>
+                {{- if .Description }}
+                <div class="entry-content">
+                    <p>{{ .Description | markdownify }}</p>
+                </div>
+                {{- end }}
+            </article>
+            {{- end }}
+        </div>
+        {{- end }}
+    </div>
+    {{- end }}
+{{- end }}
+
+{{- end }}

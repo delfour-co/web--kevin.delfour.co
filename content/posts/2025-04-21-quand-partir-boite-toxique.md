@@ -4,7 +4,7 @@ title: "Quand partir d'une boîte toxique"
 date: 2025-04-21
 slug: "quand-partir-boite-toxique"
 description: "Tu es dans un environnement toxique. Quand et comment partir sans te détruire."
-categories: ["carriere"]
+categories: ["parcours"]
 series: ["Environnements"]
 tags: ["toxicite", "depart", "sante-mentale", "decision"]
 pillar: "trouver-sa-place"

@@ -4,7 +4,7 @@ title: "Reconversion vers la tech : le réel sans filtre"
 date: 2025-03-03
 slug: "reconversion-tech-reel-sans-filtre"
 description: "Se reconvertir dans la tech après 30 ans : ce qui est vrai, ce qui est bullshit, ce qui t'attend vraiment."
-categories: ["carriere"]
+categories: ["parcours"]
 series: ["Reconversion"]
 tags: ["reconversion", "carriere", "realite", "junior"]
 pillar: "trouver-sa-place"

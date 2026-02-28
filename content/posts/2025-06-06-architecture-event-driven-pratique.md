@@ -6,8 +6,7 @@ date: 2025-06-06
 slug: "architecture-event-driven-pratique"
 description: 'Retour d''expérience sur l''adoption d''une architecture événementielle
   : métriques, coûts réels et recommandations techniques pour CTOs.'
-categories:
-- architecture
+categories: ["architecture"]
 series:
 - Architecture
 tags:

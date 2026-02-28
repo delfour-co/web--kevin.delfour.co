@@ -6,8 +6,7 @@ date: 2025-12-16
 slug: "feedback-performance-management-equipe"
 description: Guide pratique pour donner du feedback efficace, organiser des évaluations
   constructives et développer les talents dans une équipe tech.
-categories:
-- leadership
+categories: ["organisation"]
 series:
 - Management
 tags:

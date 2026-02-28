@@ -5,8 +5,7 @@ title: 'IA générative et productivité développeur : au-delà du code auto-g�
 date: 2025-01-03
 description: Retour d'expérience sur l'intégration de l'IA générative dans le workflow
   de développement, entre gains réels et nouveaux défis
-categories:
-- ia
+categories: ["parcours"]
 series:
 - IA & Productivité
 tags:

@@ -4,7 +4,7 @@ title: "Construire sa réputation sans bullshit"
 date: 2025-05-26
 slug: "construire-reputation-sans-bullshit"
 description: "Ta réputation ouvre des portes. Comment la construire authentiquement, sans marketing vide."
-categories: ["carriere"]
+categories: ["parcours"]
 series: ["Evolution"]
 tags: ["reputation", "networking", "visibilite", "authenticitee"]
 pillar: "trouver-sa-place"

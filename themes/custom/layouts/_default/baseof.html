@@ -16,26 +16,14 @@
     {{- partial "head.html" . }}
 </head>
 
-{{- $pillarSlug := "" }}
-{{- if eq .Kind "page" }}
-  {{- with .Params.pillar }}
-    {{- $pillarSlug = cond (eq . "role-cto") "le-role-du-cto" . }}
-  {{- end }}
-{{- else if eq .Kind "section" }}
-  {{- $pillarSections := slice "le-role-du-cto" "gouvernance-decision" "culture-management" "trouver-sa-place" }}
-  {{- if in $pillarSections .Section }}
-    {{- $pillarSlug = .Section }}
-  {{- end }}
-{{- end }}
 {{- if (or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`)) }}
-<body class="list" id="top"{{ if $pillarSlug }} data-pillar="{{ $pillarSlug }}"{{ end }}>
+<body class="list" id="top">
 {{- else }}
-<body id="top"{{ if $pillarSlug }} data-pillar="{{ $pillarSlug }}"{{ end }}>
+<body id="top">
 {{- end }}
     {{- $hideScrollProgress := or .IsHome (eq .RelPermalink "/travailler-avec-moi/") -}}
     {{- if not $hideScrollProgress }}{{ partial "scroll_progress.html" . }}{{ end -}}
     {{ partialCached "header.html" . .Page -}}
-    {{- partial "navigation_hint.html" . -}}
     <main class="main">
         {{- block "main" . }}{{ end }}
     </main>

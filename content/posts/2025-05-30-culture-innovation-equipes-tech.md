@@ -6,8 +6,7 @@ date: 2025-05-30
 slug: "culture-innovation-equipes-tech"
 description: Budget innovation, KPIs qui fonctionnent, et frameworks managériaux pour
   transformer votre culture tech. Retour d'expérience avec chiffres à l'appui.
-categories:
-- leadership
+categories: ["organisation"]
 series:
 - CTO
 tags:

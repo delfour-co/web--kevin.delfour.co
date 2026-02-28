@@ -4,7 +4,7 @@ title: "Communication de crise : dire la vérité sans paniquer"
 date: 2024-09-09
 slug: "communication-crise-dire-verite-sans-paniquer"
 description: "Gérer la communication pendant un incident majeur : transparence, calme et actions concrètes."
-categories: ["leadership"]
+categories: ["architecture"]
 series: ["Gouvernance"]
 tags: ["crise", "communication", "incident", "leadership"]
 pillar: "gouvernance-decision"

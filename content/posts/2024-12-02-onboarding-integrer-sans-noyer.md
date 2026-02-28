@@ -4,7 +4,7 @@ title: "Onboarding : intégrer sans noyer"
 date: 2024-12-02
 slug: "onboarding-integrer-sans-noyer"
 description: "Les 90 premiers jours : comment structurer l'arrivée pour créer de l'autonomie, pas de la dépendance."
-categories: ["culture"]
+categories: ["organisation"]
 series: ["Management"]
 tags: ["onboarding", "integration", "premiers-jours", "autonomie"]
 pillar: "culture-management"

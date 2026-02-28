@@ -5,8 +5,7 @@ title: 'API Versioning : Gérer les breaking changes sans casser les clients'
 date: 2025-11-21
 description: Faire évoluer une API sans casser les clients existants ? Stratégies
   de versioning pragmatiques et patterns de backward compatibility éprouvés en prod.
-categories:
-- architecture
+categories: ["architecture"]
 series:
 - Architecture
 tags:

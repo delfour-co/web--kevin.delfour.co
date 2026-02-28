@@ -6,8 +6,7 @@ date: 2025-06-27
 slug: "recruter-equipe-technique-cto-hiring-strategies"
 description: 'Hiring, org design, et scaling team : stratégies pour construire une
   équipe tech performante et éviter les erreurs classiques.'
-categories:
-- leadership
+categories: ["organisation"]
 series:
 - CTO
 tags:

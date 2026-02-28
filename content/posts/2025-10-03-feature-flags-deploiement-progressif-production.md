@@ -5,8 +5,7 @@ title: 'Feature Flags : Déployer en prod sans stress (et rollback en 1 clic)'
 date: 2025-10-03
 description: Les Feature Flags transforment votre façon de déployer. Découvrez comment
   découpler déploiement et release, tester en prod et rollback instantanément.
-categories:
-- developpement
+categories: ["architecture"]
 series:
 - Développement
 tags:

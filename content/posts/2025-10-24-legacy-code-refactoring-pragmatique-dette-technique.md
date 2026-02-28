@@ -6,8 +6,7 @@ date: 2025-10-24
 slug: "legacy-code-refactoring-pragmatique-dette-technique"
 description: Refactorer du legacy sans tout réécrire ? C'est possible. Stratégies
   pragmatiques pour améliorer progressivement une base de code vieillissante.
-categories:
-- architecture
+categories: ["architecture"]
 series:
 - CTO
 - Architecture

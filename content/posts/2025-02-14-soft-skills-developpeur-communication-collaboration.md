@@ -7,8 +7,7 @@ date: 2025-02-14
 slug: "soft-skills-developpeur-communication-collaboration"
 description: En 2025, les soft skills sont aussi critiques que les hard skills. Comment
   développer communication, empathie et leadership pour booster sa carrière.
-categories:
-- management
+categories: ["organisation"]
 series:
 - Management
 tags:

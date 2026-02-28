@@ -5,8 +5,7 @@ title: 'WebAssembly : Performance native dans le navigateur, vraiment ?'
 date: 2025-09-05
 description: 'Au-delà du hype WebAssembly : cas d''usage réels, performance mesurée,
   et quand l''utiliser (ou pas) en production.'
-categories:
-- architecture
+categories: ["architecture"]
 series:
 - Tech
 tags:

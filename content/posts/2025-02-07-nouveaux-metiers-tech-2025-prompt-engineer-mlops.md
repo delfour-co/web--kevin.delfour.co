@@ -6,8 +6,7 @@ date: 2025-02-07
 slug: "nouveaux-metiers-tech-2025-prompt-engineer-mlops"
 description: Trois métiers qui n'existaient pas en 2020 et qui explosent en 2025.
   Compétences requises, salaires et comment se positionner sur ces marchés.
-categories:
-- carriere
+categories: ["parcours"]
 series:
 - Carrière
 tags:

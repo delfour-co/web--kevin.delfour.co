@@ -5,8 +5,7 @@ title: 'React en production : Optimisations qui changent vraiment les performanc
 date: 2026-01-16
 description: 'Guide pratique d''optimisation React : memo, useMemo, code splitting,
   et techniques avancées pour des apps performantes en production.'
-categories:
-- developpement
+categories: ["architecture"]
 series:
 - Développement
 tags:

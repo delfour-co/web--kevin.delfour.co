@@ -4,7 +4,7 @@ title: "ADR : documenter pour ne pas répéter les erreurs"
 date: 2024-07-22
 slug: "adr-documenter-decisions-architecture"
 description: "Architecture Decision Records : garder la mémoire des décisions importantes et leur contexte."
-categories: ["leadership"]
+categories: ["architecture"]
 series: ["Gouvernance"]
 tags: ["adr", "documentation", "architecture", "decision"]
 pillar: "gouvernance-decision"

@@ -4,7 +4,7 @@ title: "Délégation de décision : responsabilité sans abandon"
 date: 2024-06-17
 slug: "delegation-decision-responsabilite-sans-abandon"
 description: "Déléguer les décisions sans abandonner la responsabilité : l'art de l'accountability partagée."
-categories: ["leadership"]
+categories: ["architecture"]
 series: ["Gouvernance"]
 tags: ["delegation", "responsabilite", "autonomie", "leadership"]
 pillar: "gouvernance-decision"

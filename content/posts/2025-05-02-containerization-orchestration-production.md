@@ -5,8 +5,7 @@ title: 'Conteneurisation et orchestration : de Docker à la production'
 date: 2025-05-02
 description: Guide pratique pour maîtriser Docker, orchestrer avec Kubernetes et déployer
   sereinement en production. De la théorie à la pratique opérationnelle.
-categories:
-- developpement
+categories: ["architecture"]
 series:
 - Développement
 tags:

@@ -5,8 +5,7 @@ title: 'API Design : créer une developer experience exceptionnelle'
 date: 2025-02-28
 description: Guide complet pour concevoir des APIs intuitives et robustes, avec focus
   sur l'expérience développeur et les bonnes pratiques modernes
-categories:
-- architecture
+categories: ["architecture"]
 series:
 - Architecture
 tags:

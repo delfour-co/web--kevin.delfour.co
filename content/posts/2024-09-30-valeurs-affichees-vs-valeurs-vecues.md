@@ -4,7 +4,7 @@ title: "Valeurs affichées vs valeurs vécues : combler l'écart"
 date: 2024-09-30
 slug: "valeurs-affichees-vs-valeurs-vecues"
 description: "Quand les valeurs affichées ne correspondent pas aux comportements réels : diagnostic et solutions."
-categories: ["culture"]
+categories: ["organisation"]
 series: ["Culture"]
 tags: ["valeurs", "culture", "coherence", "authenticite"]
 pillar: "culture-management"

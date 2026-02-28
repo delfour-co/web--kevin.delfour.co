@@ -40,42 +40,40 @@
     const containerWidth = scrollProgressFill.parentElement.offsetWidth;
     const iconWidth = scrollProgressIcon.offsetWidth;
     const iconHalfWidth = iconWidth / 2;
-    
-    // Calculer la largeur maximale de la barre pour que l'icône reste visible
-    // À 100% de scroll, on veut que l'icône soit encore visible, donc on limite la barre
+
+    const rawPercentage = Math.min(100, Math.max(0, scrollPercentage));
+
+    // Largeur de la barre limitée pour garder l'icône visible
     const maxBarWidth = containerWidth - iconHalfWidth;
     const maxBarPercentage = (maxBarWidth / containerWidth) * 100;
-    
-    // Calculer le pourcentage réel de la barre (limitée pour garder l'icône visible)
-    const rawPercentage = Math.min(100, Math.max(0, scrollPercentage));
     const barPercentage = Math.min(maxBarPercentage, rawPercentage);
-    
-    // Calculer la couleur de rouge à vert selon la progression
-    // 0% = rouge (255, 0, 0), 100% = vert (0, 255, 0)
-    const red = Math.round(255 * (1 - rawPercentage / 100));
-    const green = Math.round(255 * (rawPercentage / 100));
-    const borderRed = Math.round(200 * (1 - rawPercentage / 100));
-    const borderGreen = Math.round(200 * (rawPercentage / 100));
-    
-    // Mettre à jour la largeur et la couleur de la barre
+
+    // Mettre à jour la largeur de la barre
     scrollProgressFill.style.width = barPercentage + '%';
-    scrollProgressFill.style.backgroundColor = `rgba(${red}, ${green}, 0, 0.8)`;
-    scrollProgressFill.style.borderRightColor = `rgba(${borderRed}, ${borderGreen}, 0, 0.4)`;
-    
-    // Positionner l'icône à la fin de la barre de progression
-    // Quand on est à 100%, l'icône doit être positionnée pour rester visible
+
+    // Positionner l'icône à la fin de la barre
     const fillWidth = (containerWidth * barPercentage) / 100;
     const iconPosition = Math.min(fillWidth, containerWidth - iconHalfWidth);
     scrollProgressIcon.style.left = Math.max(iconHalfWidth, iconPosition) + 'px';
-    
-    // Mettre à jour le pourcentage affiché
-    const displayPercentage = Math.round(rawPercentage);
-    scrollProgressPercentage.textContent = String(displayPercentage).padStart(2, '0') + '%';
+
+    // Mettre à jour le pourcentage
+    scrollProgressPercentage.textContent = Math.round(rawPercentage) + '%';
   }
   
+  // Détection du scroll pour la fumée
+  let scrollTimeout;
+  function startSmoke() {
+    scrollProgressContainer.classList.add('scrolling');
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(function() {
+      scrollProgressContainer.classList.remove('scrolling');
+    }, 200);
+  }
+
   // Mettre à jour au scroll
   let ticking = false;
   function onScroll() {
+    startSmoke();
     if (!ticking) {
       window.requestAnimationFrame(function() {
         updateScrollProgress();
@@ -84,7 +82,7 @@
       ticking = true;
     }
   }
-  
+
   // Écouter les événements de scroll
   window.addEventListener('scroll', onScroll, { passive: true });
   

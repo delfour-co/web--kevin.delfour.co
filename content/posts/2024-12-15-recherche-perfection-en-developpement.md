@@ -5,8 +5,7 @@ title: 'La quête de perfection en développement : au-delà du code'
 date: 2024-12-15
 description: Entre excellence technique et compréhension métier, trouver le juste
   équilibre pour créer de la valeur durable
-categories:
-- management
+categories: ["architecture"]
 series:
 - Management
 tags:

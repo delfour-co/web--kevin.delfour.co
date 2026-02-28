@@ -5,8 +5,7 @@ title: 'Observability moderne : Métriques, Logs et Traces expliqués simplement
 date: 2025-11-07
 description: 'Monitoring vs Observability : quelle différence ? Comment implémenter
   les 3 piliers (métriques, logs, traces) pour débugger efficacement en prod.'
-categories:
-- developpement
+categories: ["architecture"]
 series:
 - Développement
 tags:

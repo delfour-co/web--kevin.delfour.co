@@ -6,8 +6,7 @@ date: 2025-05-16
 slug: "product-management-tech-equilibre"
 description: Comment créer une collaboration efficace entre Product Managers et équipes
   techniques ? Stratégies pour aligner vision produit et réalité technique.
-categories:
-- leadership
+categories: ["organisation"]
 series:
 - Tech
 tags:

@@ -5,8 +5,7 @@ title: 'JavaScript moderne : patterns avancés et optimisation performance'
 date: 2025-05-09
 description: Explorez les patterns JavaScript avancés, les optimisations performance
   et les bonnes pratiques pour du code robuste et performant en 2025.
-categories:
-- architecture
+categories: ["architecture"]
 series:
 - Tech
 tags:

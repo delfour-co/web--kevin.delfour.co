@@ -4,7 +4,7 @@ title: "Gérer les départs sans culpabiliser"
 date: 2025-01-20
 slug: "gerer-departs-sans-culpabiliser"
 description: "Un départ n'est ni un échec ni une trahison. C'est une transition à gérer avec lucidité et respect."
-categories: ["culture"]
+categories: ["organisation"]
 series: ["Management"]
 tags: ["turnover", "depart", "transition", "management"]
 pillar: "culture-management"

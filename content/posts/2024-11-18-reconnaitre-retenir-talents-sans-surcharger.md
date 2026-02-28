@@ -4,7 +4,7 @@ title: "Reconnaître et retenir les talents sans les surcharger"
 date: 2024-11-18
 slug: "reconnaitre-retenir-talents-sans-surcharger"
 description: "Les meilleurs développeurs sont souvent les plus sollicités. Comment les valoriser sans les brûler."
-categories: ["culture"]
+categories: ["organisation"]
 series: ["Management"]
 tags: ["talents", "retention", "burnout", "reconnaissance"]
 pillar: "culture-management"

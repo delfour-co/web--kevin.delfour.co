@@ -4,7 +4,7 @@ title: "L'âge en tech : ce qui compte, ce qui ne compte pas"
 date: 2025-03-17
 slug: "age-tech-ce-qui-compte"
 description: "Débuter à 30, 35, 40 ans dans la tech : les vrais obstacles et les fausses craintes."
-categories: ["carriere"]
+categories: ["parcours"]
 series: ["Reconversion"]
 tags: ["age", "reconversion", "discrimination", "realite"]
 pillar: "trouver-sa-place"

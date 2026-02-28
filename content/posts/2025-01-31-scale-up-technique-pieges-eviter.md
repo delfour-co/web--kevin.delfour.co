@@ -6,8 +6,7 @@ date: 2025-01-31
 slug: "scale-up-technique-pieges-eviter"
 description: Analyse des défis techniques récurrents rencontrés lors de la croissance
   des startups, avec des solutions pragmatiques et préventives
-categories:
-- architecture
+categories: ["architecture"]
 series:
 - Architecture
 tags:

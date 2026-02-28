@@ -4,7 +4,7 @@ title: "Reconversion développeur : Changer de domaine/techno sans repartir de z
 date:  2025-03-07
 slug: "reconversion-developpeur-transition-carriere-reussie"
 description:  "Frontend → Backend, Java → Rust, Dev → DevOps : stratégies pour réussir sa transition sans perdre salaire ni temps."
-categories: ["carriere"]
+categories: ["parcours"]
 series: ["Carrière"]
 tags: ["reconversion", "carriere", "transition", "formation", "developpement"]
 pillar: "trouver-sa-place"

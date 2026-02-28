@@ -5,8 +5,7 @@ title: 'Machine Learning en production : budget, équipes et ROI réel'
 date: 2025-06-13
 description: 'Retour d''expérience sur le déploiement ML en production : coûts infrastructure,
   équipes nécessaires, métriques business et décisions techniques pragmatiques.'
-categories:
-- ia
+categories: ["architecture"]
 series:
 - IA & Productivité
 tags:

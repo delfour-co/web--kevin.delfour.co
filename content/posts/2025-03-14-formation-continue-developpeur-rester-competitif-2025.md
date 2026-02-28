@@ -6,8 +6,7 @@ date: 2025-03-14
 slug: "formation-continue-developpeur-rester-competitif-2025"
 description: 'Apprendre efficacement en 2025 : ressources, méthodes, temps optimal.
   Comment rester à jour sans burnout ni FOMO.'
-categories:
-- carriere
+categories: ["parcours"]
 series:
 - Carrière
 tags:

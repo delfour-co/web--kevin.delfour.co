@@ -4,7 +4,7 @@ title: "Junior : ce qu'on attend vraiment de toi"
 date: 2025-02-03
 slug: "junior-ce-quon-attend-vraiment"
 description: "Les attentes réelles vs fantasmées. Ce qui compte vraiment pour progresser en tant que junior."
-categories: ["carriere"]
+categories: ["parcours"]
 series: ["Débuts"]
 tags: ["junior", "attentes", "progression", "carriere"]
 pillar: "trouver-sa-place"

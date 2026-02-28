@@ -4,7 +4,7 @@ title: "Dette technique : La gérer sans bloquer l'innovation (Guide CTO)"
 date:  2025-07-04
 slug: "dette-technique-cto-gestion-compromis-strategies"
 description:  "Tech debt n'est pas le mal. Apprenez à prioriser, mesurer et rembourser intelligemment sans sacrifier la roadmap produit."
-categories: ["leadership"]
+categories: ["architecture"]
 series: ["CTO"]
 tags: ["cto", "dette-technique", "strategie", "refactoring", "architecture"]
 pillar: "gouvernance-decision"

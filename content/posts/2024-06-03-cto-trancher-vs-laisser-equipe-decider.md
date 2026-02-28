@@ -4,7 +4,7 @@ title: "Quand le CTO doit-il trancher vs laisser l'équipe décider"
 date: 2024-06-03
 slug: "cto-trancher-vs-laisser-equipe-decider"
 description: "L'art de savoir quand intervenir et quand laisser faire : ni micro-management ni abandon."
-categories: ["leadership"]
+categories: ["architecture"]
 series: ["Gouvernance"]
 tags: ["decision", "delegation", "leadership", "autonomie"]
 pillar: "gouvernance-decision"

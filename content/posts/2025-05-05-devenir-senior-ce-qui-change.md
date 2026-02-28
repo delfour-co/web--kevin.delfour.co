@@ -4,7 +4,7 @@ title: "Devenir senior : ce qui change vraiment"
 date: 2025-05-05
 slug: "devenir-senior-ce-qui-change"
 description: "Passer de junior à senior n'est pas juste une question de compétences techniques. Voici ce qui change vraiment."
-categories: ["carriere"]
+categories: ["parcours"]
 series: ["Evolution"]
 tags: ["senior", "progression", "responsabilites", "carriere"]
 pillar: "trouver-sa-place"

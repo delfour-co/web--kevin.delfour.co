@@ -4,7 +4,7 @@ title: "Premiers pas en tech : dédramatiser"
 date: 2025-01-27
 slug: "premiers-pas-tech-dedramatiser"
 description: "Débuter en tech peut être intimidant. Voici le réel : ce qui est normal, ce qui ne l'est pas."
-categories: ["carriere"]
+categories: ["parcours"]
 series: ["Débuts"]
 tags: ["junior", "debutant", "premiers-pas", "carriere"]
 pillar: "trouver-sa-place"

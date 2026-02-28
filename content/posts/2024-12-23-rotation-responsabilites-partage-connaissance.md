@@ -4,7 +4,7 @@ title: "Rotation des responsabilités : éviter les silos et les prisonniers"
 date: 2024-12-23
 slug: "rotation-responsabilites-partage-connaissance"
 description: "Quand une personne devient indispensable, elle devient prisonnière. La rotation libère et protège."
-categories: ["culture"]
+categories: ["organisation"]
 series: ["Culture"]
 tags: ["rotation", "connaissance", "silos", "autonomie"]
 pillar: "culture-management"

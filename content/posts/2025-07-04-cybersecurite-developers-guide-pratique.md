@@ -5,8 +5,7 @@ title: 'Cybersécurité pour développeurs : guide pratique de la sécurité dé
 date: 2025-07-04
 description: Comment intégrer la sécurité dans le cycle de développement ? Techniques
   défensives, outils et bonnes pratiques pour sécuriser vos applications.
-categories:
-- securite
+categories: ["parcours"]
 series:
 - Tech
 tags:

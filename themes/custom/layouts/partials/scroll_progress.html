@@ -6,10 +6,10 @@
       {{- $icon := resources.Get $iconPath -}}
       {{- if $icon -}}
         {{- $svg := $icon.Content -}}
-        {{- /* Remplacer le noir par du blanc pour meilleure visibilité */ -}}
-        {{- $svg = replaceRE "fill=\"#000000\"" "fill=\"#ffffff\"" $svg -}}
-        {{- $svg = replaceRE "fill=\"black\"" "fill=\"#ffffff\"" $svg -}}
-        {{- $svg = replaceRE "fill=\"#000\"" "fill=\"#ffffff\"" $svg -}}
+        {{- /* Utiliser la couleur accent pour l'icône */ -}}
+        {{- $svg = replaceRE "fill=\"#000000\"" "fill=\"currentColor\"" $svg -}}
+        {{- $svg = replaceRE "fill=\"black\"" "fill=\"currentColor\"" $svg -}}
+        {{- $svg = replaceRE "fill=\"#000\"" "fill=\"currentColor\"" $svg -}}
         {{- $svg | safeHTML -}}
       {{- else -}}
         {{- warnf "Icon not found: %s" $iconPath -}}

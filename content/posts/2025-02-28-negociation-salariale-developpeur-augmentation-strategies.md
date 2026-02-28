@@ -6,8 +6,7 @@ date: 2025-02-28
 slug: "negociation-salariale-developpeur-augmentation-strategies"
 description: Négocier efficacement son salaire d'embauche ou une augmentation. Données
   marché, arguments, timing et techniques éprouvées pour développeurs.
-categories:
-- carriere
+categories: ["parcours"]
 series:
 - Carrière
 tags:

@@ -4,7 +4,7 @@ title: "IC vs management : choisir sa voie"
 date: 2025-05-12
 slug: "ic-vs-management-choisir-voie"
 description: "Individual Contributor ou Manager : deux voies légitimes avec des réalités différentes. Comment choisir."
-categories: ["carriere"]
+categories: ["parcours"]
 series: ["Evolution"]
 tags: ["ic", "management", "carriere", "choix"]
 pillar: "trouver-sa-place"

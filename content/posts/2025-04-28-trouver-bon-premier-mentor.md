@@ -4,7 +4,7 @@ title: "Trouver un bon premier mentor"
 date: 2025-04-28
 slug: "trouver-bon-premier-mentor"
 description: "Un bon mentor accélère ta croissance. Comment en trouver un et construire cette relation."
-categories: ["carriere"]
+categories: ["parcours"]
 series: ["Débuts"]
 tags: ["mentorat", "apprentissage", "croissance", "relations"]
 pillar: "trouver-sa-place"

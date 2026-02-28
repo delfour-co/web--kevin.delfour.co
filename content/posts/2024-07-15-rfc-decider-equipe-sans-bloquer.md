@@ -4,7 +4,7 @@ title: "La RFC : décider en équipe sans bloquer"
 date: 2024-07-15
 slug: "rfc-decider-equipe-sans-bloquer"
 description: "Request for Comments : un outil puissant pour décisions techniques collaboratives sans paralysie."
-categories: ["leadership"]
+categories: ["architecture"]
 series: ["Gouvernance"]
 tags: ["rfc", "decision", "collaboration", "processus"]
 pillar: "gouvernance-decision"

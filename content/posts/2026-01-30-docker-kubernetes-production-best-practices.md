@@ -5,8 +5,7 @@ title: 'Docker et Kubernetes en production : Best practices qui évitent les pi�
 date: 2026-01-30
 description: 'Guide pratique pour Docker et Kubernetes en production : sécurité, performance,
   monitoring et patterns qui fonctionnent vraiment.'
-categories:
-- developpement
+categories: ["architecture"]
 series:
 - Développement
 tags:

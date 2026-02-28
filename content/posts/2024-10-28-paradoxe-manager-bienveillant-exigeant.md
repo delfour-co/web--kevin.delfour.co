@@ -4,7 +4,7 @@ title: "Le paradoxe du manager bienveillant et exigeant"
 date: 2024-10-28
 slug: "paradoxe-manager-bienveillant-exigeant"
 description: "Concilier bienveillance et exigence : pas une contradiction mais un équilibre difficile."
-categories: ["culture"]
+categories: ["organisation"]
 series: ["Management"]
 tags: ["management", "bienveillance", "exigence", "feedback"]
 pillar: "culture-management"

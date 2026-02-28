@@ -4,7 +4,7 @@ title: "Changer de boîte : quand partir, comment choisir"
 date: 2025-03-24
 slug: "changer-boite-quand-partir-comment-choisir"
 description: "Savoir quand il est temps de partir et comment choisir ta prochaine étape sans te tromper."
-categories: ["carriere"]
+categories: ["parcours"]
 series: ["Navigation"]
 tags: ["changement", "carriere", "decision", "choix"]
 pillar: "trouver-sa-place"

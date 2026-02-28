@@ -4,7 +4,7 @@ title: "Naviguer les premiers 90 jours dans une nouvelle boîte"
 date: 2025-03-31
 slug: "premiers-90-jours-nouvelle-boite"
 description: "Les 3 premiers mois dans une nouvelle boîte sont critiques. Comment les naviguer efficacement."
-categories: ["carriere"]
+categories: ["parcours"]
 series: ["Navigation"]
 tags: ["onboarding", "integration", "nouveaute", "premiers-jours"]
 pillar: "trouver-sa-place"

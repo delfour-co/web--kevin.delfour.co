@@ -4,7 +4,7 @@ title: "Les décisions que personne ne veut prendre"
 date: 2024-06-10
 slug: "decisions-que-personne-ne-veut-prendre"
 description: "Ces décisions inconfortables qui finissent toujours par remonter au CTO : pourquoi et comment les assumer."
-categories: ["leadership"]
+categories: ["architecture"]
 series: ["Gouvernance"]
 tags: ["decision", "leadership", "responsabilite", "courage"]
 pillar: "gouvernance-decision"

@@ -6,8 +6,7 @@ date: 2025-03-21
 slug: "networking-developpeur-construire-reseau-professionnel"
 description: 'Comment networker authentiquement dans la tech. Conferences, meetups,
   online : stratégies qui marchent pour introvertis.'
-categories:
-- carriere
+categories: ["parcours"]
 series:
 - Carrière
 tags:

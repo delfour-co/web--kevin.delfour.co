@@ -7,8 +7,7 @@ date: 2025-03-28
 slug: "freelance-vs-salarie-developpeur-choisir-statut"
 description: 'Freelance ou CDI ? Revenus, sécurité, lifestyle : comparatif complet
   pour faire le bon choix selon votre situation.'
-categories:
-- carriere
+categories: ["parcours"]
 series:
 - Carrière
 tags:

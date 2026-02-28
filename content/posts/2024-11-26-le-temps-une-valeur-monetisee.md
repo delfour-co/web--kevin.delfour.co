@@ -5,8 +5,7 @@ title: 'Le temps : une valeur monétisée, mais qu''en est-il de la qualité ?'
 date: 2024-11-26
 description: Réflexion sur le rapport entre temps, qualité et innovation dans les
   organisations
-categories:
-- management
+categories: ["organisation"]
 series:
 - Management
 tags:

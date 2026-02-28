@@ -6,8 +6,7 @@ date: 2025-01-10
 slug: "microservices-monolithe-modulaire-pragmatisme"
 description: Analyse comparée des architectures microservices et monolithiques, avec
   des critères de choix pragmatiques basés sur l'expérience terrain
-categories:
-- architecture
+categories: ["architecture"]
 series:
 - Architecture
 tags:

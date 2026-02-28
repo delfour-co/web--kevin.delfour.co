@@ -5,8 +5,7 @@ title: 'Software Craftsmanship : par où commencer sans se perdre'
 date: 2025-01-24
 description: Guide pratique pour débuter dans l'artisanat logiciel avec des étapes
   concrètes et accessibles, loin du jargon intimidant
-categories:
-- qualite
+categories: ["architecture"]
 series:
 - Qualité & Tests
 tags:

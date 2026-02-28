@@ -4,7 +4,7 @@ title: "Sécurité psychologique : créer un environnement où l'on ose parler"
 date: 2024-10-14
 slug: "securite-psychologique-environnement-oser-parler"
 description: "La sécurité psychologique comme fondation de la performance : comment la créer concrètement."
-categories: ["culture"]
+categories: ["organisation"]
 series: ["Culture"]
 tags: ["securite-psychologique", "feedback", "culture", "confiance"]
 pillar: "culture-management"

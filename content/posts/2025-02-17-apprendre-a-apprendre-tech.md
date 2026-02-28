@@ -4,7 +4,7 @@ title: "Apprendre à apprendre en tech"
 date: 2025-02-17
 slug: "apprendre-a-apprendre-tech"
 description: "La tech évolue constamment. La compétence clé n'est pas ce que tu sais, c'est comment tu apprends."
-categories: ["carriere"]
+categories: ["parcours"]
 series: ["Débuts"]
 tags: ["apprentissage", "formation", "progression", "autodidacte"]
 pillar: "trouver-sa-place"
