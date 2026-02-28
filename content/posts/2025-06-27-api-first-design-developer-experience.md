@@ -5,7 +5,7 @@ title: 'API-First Design : créer une Developer Experience exceptionnelle'
 date: 2025-06-27
 description: Comment concevoir des APIs qui ravissent les développeurs ? Stratégies,
   patterns et outils pour une Developer Experience de classe mondiale.
-categories: ["architecture"]
+categories: ["craft"]
 series:
 - Architecture
 tags:

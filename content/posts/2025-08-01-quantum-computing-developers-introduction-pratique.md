@@ -6,7 +6,7 @@ title: 'Quantum Computing pour développeurs : introduction pratique aux algorit
 date: 2025-08-01
 description: 'Le quantum computing devient accessible aux développeurs. Introduction
   pratique : concepts fondamentaux, premiers algorithmes et applications concrètes.'
-categories: ["parcours"]
+categories: ["craft"]
 series:
 - Développement
 tags:

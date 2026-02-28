@@ -5,7 +5,7 @@ title: 'Infrastructure as Code : Terraform vs Pulumi, le match pragmatique'
 date: 2025-09-19
 description: Terraform ou Pulumi pour votre infra ? Comparatif technique basé sur
   des projets réels, avec benchmarks, pièges et recommandations.
-categories: ["architecture"]
+categories: ["craft"]
 series:
 - Développement
 tags:

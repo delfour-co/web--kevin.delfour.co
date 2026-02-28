@@ -5,7 +5,7 @@ title: 'Performance web centrée utilisateur : au-delà des métriques technique
 date: 2025-03-28
 description: Comment mesurer et optimiser la performance web en se concentrant sur
   l'expérience utilisateur réelle, avec Core Web Vitals et techniques modernes
-categories: ["architecture"]
+categories: ["craft"]
 series:
 - Développement
 tags:

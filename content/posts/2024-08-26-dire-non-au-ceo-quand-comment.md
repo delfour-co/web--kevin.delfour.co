@@ -4,7 +4,7 @@ title: "Dire non au CEO : quand et comment"
 date: 2024-08-26
 slug: "dire-non-au-ceo-quand-comment"
 description: "L'art du refus stratégique face au CEO : courage et diplomatie pour protéger la tech et le business."
-categories: ["architecture"]
+categories: ["décision"]
 series: ["Gouvernance"]
 tags: ["ceo", "decision", "courage", "diplomatie"]
 pillar: "gouvernance-decision"

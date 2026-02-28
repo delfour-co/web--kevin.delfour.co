@@ -4,7 +4,7 @@ title: "Build vs Buy vs Partner : un cadre de décision pragmatique"
 date: 2024-07-01
 slug: "build-vs-buy-vs-partner-cadre-decision"
 description: "Construire, acheter ou s'associer : comment décider face à ce trilemme classique."
-categories: ["architecture"]
+categories: ["décision"]
 series: ["Gouvernance"]
 tags: ["decision", "strategie", "build-vs-buy", "architecture"]
 pillar: "gouvernance-decision"

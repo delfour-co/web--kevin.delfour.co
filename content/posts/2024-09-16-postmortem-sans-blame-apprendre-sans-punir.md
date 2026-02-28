@@ -4,7 +4,7 @@ title: "Post-mortem sans blame : apprendre sans punir"
 date: 2024-09-16
 slug: "postmortem-sans-blame-apprendre-sans-punir"
 description: "L'art du post-mortem blameless : transformer les échecs en apprentissages collectifs."
-categories: ["architecture"]
+categories: ["pratiques"]
 series: ["Gouvernance"]
 tags: ["postmortem", "culture", "apprentissage", "blameless"]
 pillar: "gouvernance-decision"

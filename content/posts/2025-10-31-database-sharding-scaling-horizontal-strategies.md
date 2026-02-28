@@ -6,7 +6,7 @@ title: 'Database Sharding : Quand et comment scaler horizontalement votre base d
 date: 2025-10-31
 description: Votre DB est saturée ? Le sharding peut résoudre le problème. Mais c'est
   complexe. Guide pragmatique pour sharding réussi (ou évité si pas nécessaire).
-categories: ["architecture"]
+categories: ["craft"]
 series:
 - Architecture
 tags:

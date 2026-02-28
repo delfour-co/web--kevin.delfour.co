@@ -5,7 +5,7 @@ title: 'Edge Computing : applications distribuées au plus près des utilisateur
 date: 2025-08-15
 description: L'edge computing révolutionne la distribution d'applications. Architectures,
   patterns et implémentations pour déployer au plus près des utilisateurs.
-categories: ["architecture"]
+categories: ["craft"]
 series:
 - Architecture
 tags:

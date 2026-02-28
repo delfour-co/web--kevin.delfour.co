@@ -4,7 +4,7 @@ title: "Code review : outil de qualité ou terrain de guerre d'ego ?"
 date: 2024-12-09
 slug: "code-review-qualite-ou-guerre-ego"
 description: "La code review peut élever la qualité ou détruire la confiance. Tout dépend de comment elle est pratiquée."
-categories: ["organisation"]
+categories: ["pratiques"]
 series: ["Culture"]
 tags: ["code-review", "qualite", "collaboration", "culture"]
 pillar: "culture-management"

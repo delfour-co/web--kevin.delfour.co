@@ -4,7 +4,7 @@ title: "Onboarding développeurs : De 2 semaines à 2 jours avec un process stru
 date:  2025-11-28
 slug: "onboarding-developpeurs-integration-rapide-efficace"
 description:  "L'onboarding peut faire ou défaire l'expérience d'un nouveau dev. Process concret pour rendre productif un développeur en 48h au lieu de 2 semaines."
-categories: ["organisation"]
+categories: ["pratiques"]
 series: ["Management"]
 tags: ["onboarding", "management", "productivite", "rh", "developpement"]
 pillar: "culture-management"

@@ -5,7 +5,7 @@ title: 'Observabilité des applications modernes : voir au-delà des logs'
 date: 2025-02-21
 description: Guide pratique pour implémenter une observabilité efficace avec métriques,
   traces et logs structurés, adaptée aux architectures distribuées
-categories: ["architecture"]
+categories: ["craft"]
 series:
 - Tech
 tags:

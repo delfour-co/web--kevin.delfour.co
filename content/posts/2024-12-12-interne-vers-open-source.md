@@ -5,7 +5,7 @@ title: 'De l''interne à l''open source : Un guide pratique pour libérer votre 
 date: 2024-12-12
 description: Guide complet pour transformer un projet interne en projet open source,
   avec les bonnes pratiques, les points de vigilance et les étapes clés à suivre
-categories: ["architecture"]
+categories: ["pratiques"]
 series:
 - Développement
 tags:

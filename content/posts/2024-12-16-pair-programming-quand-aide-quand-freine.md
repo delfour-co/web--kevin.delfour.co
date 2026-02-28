@@ -4,7 +4,7 @@ title: "Pair programming : quand ça aide, quand ça freine"
 date: 2024-12-16
 slug: "pair-programming-quand-aide-quand-freine"
 description: "Le pair programming peut accélérer ou ralentir. Comprendre quand l'utiliser et comment."
-categories: ["organisation"]
+categories: ["pratiques"]
 series: ["Culture"]
 tags: ["pair-programming", "collaboration", "apprentissage", "productivite"]
 pillar: "culture-management"

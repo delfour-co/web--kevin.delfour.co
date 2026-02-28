@@ -6,7 +6,7 @@ date: 2025-06-20
 slug: "vision-technique-roadmap-cto-strategy"
 description: Créer une vision technique inspirante et une roadmap executable. Frameworks,
   exemples concrets et pièges à éviter pour CTOs.
-categories: ["architecture"]
+categories: ["décision"]
 series:
 - CTO
 tags:

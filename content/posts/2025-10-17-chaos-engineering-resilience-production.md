@@ -5,7 +5,7 @@ title: 'Chaos Engineering : Casser votre prod volontairement (pour la rendre inc
 date: 2025-10-17
 description: Netflix tue des serveurs en prod tous les jours. Et si vous faisiez pareil
   ? Découvrez le Chaos Engineering pour une prod vraiment résiliente.
-categories: ["architecture"]
+categories: ["craft"]
 series:
 - Développement
 tags:

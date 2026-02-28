@@ -5,7 +5,7 @@ title: 'CI/CD pipelines robustes : automatisation intelligente sans over-enginee
 date: 2025-04-11
 description: Guide pratique pour concevoir des pipelines CI/CD efficaces, avec focus
   sur la fiabilité, la rapidité et la maintenabilité
-categories: ["architecture"]
+categories: ["pratiques"]
 series:
 - Développement
 tags:

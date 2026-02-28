@@ -4,7 +4,7 @@ title: "Décisions réversibles vs décisions irréversibles"
 date: 2024-07-08
 slug: "decisions-reversibles-vs-irreversibles"
 description: "Distinguer les décisions à une porte vs deux portes : adapter le processus selon le type de décision."
-categories: ["architecture"]
+categories: ["décision"]
 series: ["Gouvernance"]
 tags: ["decision", "strategie", "reversibilite", "bezos"]
 pillar: "gouvernance-decision"

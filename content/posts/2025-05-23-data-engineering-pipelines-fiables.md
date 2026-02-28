@@ -5,7 +5,7 @@ title: 'Data Engineering : construire des pipelines fiables et évolutifs'
 date: 2025-05-23
 description: Guide pratique pour architecurer, développer et maintenir des pipelines
   de données robustes. De l'ingestion au monitoring, tous les aspects essentiels.
-categories: ["architecture"]
+categories: ["craft"]
 series:
 - Architecture
 tags:

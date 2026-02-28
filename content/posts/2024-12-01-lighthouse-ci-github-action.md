@@ -5,7 +5,7 @@ title: 'Automatiser des tests pour maîtriser son impact carbone : guide pratiqu
 date: 2024-12-01
 description: Découvrez comment automatiser des tests pour réduire l'impact carbone
   de vos projets numériques, grâce à un guide accessible et innovant.
-categories: ["architecture"]
+categories: ["pratiques"]
 series:
 - Développement
 tags:

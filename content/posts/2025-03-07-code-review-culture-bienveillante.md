@@ -6,7 +6,7 @@ date: 2025-03-07
 slug: "code-review-culture-bienveillante"
 description: Comment transformer la revue de code d'un exercice redouté en opportunité
   d'apprentissage mutuel, avec des pratiques concrètes pour équipes épanouies
-categories: ["organisation"]
+categories: ["pratiques"]
 series:
 - Qualité & Tests
 tags:

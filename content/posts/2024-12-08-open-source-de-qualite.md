@@ -5,7 +5,7 @@ title: Et si développer un logiciel en open source était source de qualité ?
 date: 2024-12-08
 description: Explorer les bienfaits inattendus de l'open source sur la qualité logicielle
   et l'éthique de développement.
-categories: ["architecture"]
+categories: ["pratiques"]
 series:
 - Développement
 tags:

@@ -5,7 +5,7 @@ title: 'Documentation vivante : ADR et RFC pour des décisions d''équipe traça
 date: 2025-10-10
 description: Fini la doc obsolète et les décisions perdues. Découvrez les ADR et RFC
   pour documenter l'architecture et les décisions en continu.
-categories: ["architecture"]
+categories: ["pratiques"]
 series:
 - Architecture
 tags:

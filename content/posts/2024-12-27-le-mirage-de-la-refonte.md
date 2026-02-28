@@ -7,7 +7,7 @@ date: 2024-12-27
 description: Une analyse approfondie des alternatives à la refonte complète d'applications,
   avec stratégies concrètes et retours d'expérience pour moderniser efficacement un
   système existant
-categories: ["leadership"]
+categories: ["décision"]
 series:
 - Développement
 tags:

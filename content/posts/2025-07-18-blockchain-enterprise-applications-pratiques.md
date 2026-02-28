@@ -5,7 +5,7 @@ title: 'Blockchain en entreprise : applications pratiques au-delà des cryptomon
 date: 2025-07-18
 description: Comment la blockchain transforme-t-elle réellement les processus d'entreprise
   ? Cas d'usage concrets, architectures et retours d'expérience terrain.
-categories: ["architecture"]
+categories: ["craft"]
 series:
 - Architecture
 tags:

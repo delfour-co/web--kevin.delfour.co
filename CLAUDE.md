@@ -67,12 +67,14 @@ Le site est structuré autour de 6 sections :
 
 ### Catégories d'articles
 
-Les articles sont classés en 4 catégories (remplacent les anciens piliers) :
+Les articles sont classés en 6 catégories :
 
-- **Leadership** — Le rôle du CTO, responsabilité, arbitrages
-- **Architecture** — Gouvernance, décision, cadres techniques
-- **Organisation** — Culture, management, sécurité psychologique
-- **Parcours** — Débuts, reconversion, trajectoires réalistes
+- **Leadership** — Posture CTO, rôle, dilemmes, responsabilité
+- **Décision** — Gouvernance technique, arbitrages, RFC, ADR, Build vs Buy
+- **Craft** — Stack, code, infra, technologies, architecture logicielle
+- **Organisation** — Culture, management, sécurité psychologique, équipe
+- **Pratiques** — Code review, testing, pair programming, CI/CD, documentation
+- **Parcours** — Débuts, reconversion, carrière, trajectoires réalistes
 
 ### Pages pilier (legacy)
 
@@ -160,7 +162,7 @@ taxonomies:
 ```
 
 Chaque article doit avoir :
-- `categories:` (leadership | architecture | organisation | parcours)
+- `categories:` (leadership | décision | craft | organisation | pratiques | parcours)
 - `pillar:` (le-role-du-cto | gouvernance-decision | culture-management | trouver-sa-place) — legacy
 - `audience:` (cto | jeunesse-tech | tous)
 - `featured:` (true | false)
@@ -270,7 +272,7 @@ Si une seule réponse est "non" → ne pas faire.
 title: "Titre de l'article"
 description: "Description courte (150-160 caractères)"
 date: 2025-01-15
-categories: ["leadership"]  # ou architecture, organisation, parcours
+categories: ["leadership"]  # ou décision, craft, organisation, pratiques, parcours
 pillar: "le-role-du-cto"    # legacy, conservé pour compatibilité
 audience: "cto"              # ou jeunesse-tech, tous
 featured: false              # ou true

@@ -5,7 +5,7 @@ title: 'GraphQL vs REST : Comment choisir la bonne architecture pour votre API ?
 date: 2025-08-22
 description: 'Au-delà du buzz GraphQL : analyse pragmatique pour choisir entre REST
   et GraphQL selon vos vrais besoins métier et contraintes techniques.'
-categories: ["architecture"]
+categories: ["craft"]
 series:
 - Architecture
 tags:

@@ -4,7 +4,7 @@ title: "Autonomie des équipes : jusqu'où et comment ?"
 date: 2024-05-27
 slug: "autonomie-equipes-jusquou-comment"
 description: "Donner de l'autonomie sans créer le chaos : les limites de l'autonomie et comment les définir."
-categories: ["architecture"]
+categories: ["décision"]
 series: ["Gouvernance"]
 tags: ["autonomie", "gouvernance", "equipe", "delegation"]
 pillar: "gouvernance-decision"

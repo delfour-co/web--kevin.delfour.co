@@ -6,7 +6,7 @@ date: 2025-11-14
 slug: "code-review-efficace-feedback-constructif-equipe"
 description: Les code reviews peuvent être frustrantes ou formidables. Techniques
   concrètes pour des reviews constructives, rapides et qui font grandir l'équipe.
-categories: ["organisation"]
+categories: ["pratiques"]
 series:
 - Management
 tags:

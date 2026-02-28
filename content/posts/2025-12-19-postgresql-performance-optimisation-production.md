@@ -5,7 +5,7 @@ title: 'PostgreSQL en production : Optimisations qui changent vraiment la donne'
 date: 2025-12-19
 description: 'Guide pratique d''optimisation PostgreSQL : index, requêtes, configuration.
   Basé sur des cas réels avec benchmarks avant/après.'
-categories: ["architecture"]
+categories: ["craft"]
 series:
 - Développement
 tags:

@@ -4,7 +4,7 @@ title: "Identifier les risques techniques avant qu'ils deviennent des crises"
 date: 2024-09-02
 slug: "identifier-risques-techniques-avant-crises"
 description: "L'art de voir les problèmes venir : signaux faibles et systèmes d'alerte précoce."
-categories: ["architecture"]
+categories: ["décision"]
 series: ["Gouvernance"]
 tags: ["risques", "anticipation", "prevention", "crise"]
 pillar: "gouvernance-decision"

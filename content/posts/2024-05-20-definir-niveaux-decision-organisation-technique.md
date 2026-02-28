@@ -4,7 +4,7 @@ title: "Définir les niveaux de décision dans l'organisation technique"
 date: 2024-05-20
 slug: "definir-niveaux-decision-organisation-technique"
 description: "Qui décide quoi dans une organisation technique : clarifier les responsabilités sans bureaucratie."
-categories: ["architecture"]
+categories: ["décision"]
 series: ["Gouvernance"]
 tags: ["gouvernance", "decision", "autonomie", "organisation"]
 pillar: "gouvernance-decision"

@@ -5,7 +5,7 @@ title: 'Service Mesh : Faut-il vraiment ajouter Istio à vos microservices ?'
 date: 2025-09-26
 description: 'Istio, Linkerd, Consul : les Service Mesh promettent beaucoup mais ajoutent
   de la complexité. Quand en avez-vous vraiment besoin ?'
-categories: ["architecture"]
+categories: ["craft"]
 series:
 - Architecture
 tags:

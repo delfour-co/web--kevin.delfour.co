@@ -5,7 +5,7 @@ title: 'Stratégies de test pragmatiques : maximiser l''impact avec un effort mi
 date: 2025-02-07
 description: Comment construire une suite de tests efficace sans tomber dans les extrêmes,
   avec des stratégies adaptées aux contraintes réelles des projets
-categories: ["architecture"]
+categories: ["pratiques"]
 series:
 - Qualité & Tests
 tags:

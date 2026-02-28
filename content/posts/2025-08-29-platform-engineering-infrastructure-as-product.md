@@ -5,7 +5,7 @@ title: 'Platform Engineering : Traiter votre infrastructure comme un produit'
 date: 2025-08-29
 description: Le Platform Engineering révolutionne le DevOps. Découvrez comment construire
   une plateforme interne qui booste la productivité des développeurs.
-categories: ["architecture"]
+categories: ["craft"]
 series:
 - Architecture
 tags:
