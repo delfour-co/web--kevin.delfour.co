@@ -2,6 +2,7 @@
 
 {{- /* 1. HERO */ -}}
 <section class="home-hero">
+    <img src="/images/kevin-delfour.webp" alt="Kevin Delfour" class="home-hero__avatar" width="120" height="120">
     <h1 class="home-hero__title">Kevin Delfour</h1>
     <p class="home-hero__subtitle">CTO · 17 ans de terrain</p>
     <p class="home-hero__tagline">Je donne des repères. Pas des leçons.</p>
@@ -11,28 +12,42 @@
     </div>
 </section>
 
-{{- /* 2. EXPLORER PAR THÈME */ -}}
-<section class="home-section home-themes">
-    <h2>Explorer par thème</h2>
-    <div class="home-grid home-grid--3">
-        {{- $categories := slice
-            (dict "name" "Leadership" "slug" "leadership" "desc" "Posture CTO, rôle, dilemmes et solitude du poste.")
-            (dict "name" "Décision" "slug" "décision" "desc" "Gouvernance technique, arbitrages, RFC, ADR, Build vs Buy.")
-            (dict "name" "Craft" "slug" "craft" "desc" "Stack, code, infra et technologies en production.")
-            (dict "name" "Organisation" "slug" "organisation" "desc" "Culture d'équipe, management, droit à l'erreur.")
-            (dict "name" "Pratiques" "slug" "pratiques" "desc" "Code review, testing, pair programming, CI/CD, documentation.")
-            (dict "name" "Parcours" "slug" "parcours" "desc" "Débuts, reconversion, carrière : trouver sa place sans se raconter d'histoires.")
-        }}
-        {{- range $categories }}
-        <a href="/articles/?cat={{ .slug }}" class="home-card">
-            <h3 class="home-card__title">{{ .name }}</h3>
-            <p class="home-card__desc">{{ .desc }}</p>
+{{- /* 2. DERNIERS ARTICLES */ -}}
+{{- $articles := where site.RegularPages "Section" "posts" }}
+{{- $articles = $articles | first 4 }}
+{{- if gt (len $articles) 0 }}
+<section class="home-section home-articles">
+    <h2>Derniers articles</h2>
+    <div class="home-grid home-grid--2">
+        {{- range $articles }}
+        <a href="{{ .RelPermalink }}" class="home-card">
+            <h3 class="home-card__title">{{ .Title }}</h3>
+            <p class="home-card__desc">{{ .Description | default (.Summary | plainify | truncate 120) }}</p>
+            {{- with .Params.categories }}
+            <span class="home-card__meta">{{ index . 0 }}</span>
+            {{- end }}
         </a>
         {{- end }}
     </div>
+    <div class="home-articles__themes">
+        <span class="home-articles__themes-label">Par thème</span>
+        {{- $categories := slice
+            (dict "name" "Leadership" "slug" "leadership")
+            (dict "name" "Décision" "slug" "décision")
+            (dict "name" "Craft" "slug" "craft")
+            (dict "name" "Organisation" "slug" "organisation")
+            (dict "name" "Pratiques" "slug" "pratiques")
+            (dict "name" "Parcours" "slug" "parcours")
+        }}
+        {{- range $categories }}
+        <a href="/articles/?cat={{ .slug }}">{{ .name }}</a>
+        {{- end }}
+    </div>
+    <p class="home-section__more"><a href="/articles/">Voir tous les articles</a></p>
 </section>
+{{- end }}
 
-{{- /* 3. PROJETS PHARES */ -}}
+{{- /* 4. PROJETS PHARES */ -}}
 {{- $projetsPage := site.GetPage "/projets/" }}
 {{- if $projetsPage }}
 {{- $projets := $projetsPage.Params.projets }}
@@ -59,7 +74,7 @@
 {{- end }}
 {{- end }}
 
-{{- /* 4. LIVRES */ -}}
+{{- /* 5. LIVRES */ -}}
 {{- $livresPage := site.GetPage "/guides-livres/" }}
 {{- if $livresPage }}
 {{- $livres := $livresPage.Params.livres }}
@@ -80,22 +95,20 @@
 {{- end }}
 {{- end }}
 
-{{- /* 5. VISION */ -}}
+{{- /* 6. VISION */ -}}
 <section class="home-section home-vision">
+    <h2>Vision</h2>
     <blockquote class="home-vision__quote">
         <p>Je transmets gratuitement quand cela aide à grande échelle. Je mets un cadre quand cela demande du temps individuel.</p>
     </blockquote>
     <p class="home-section__more"><a href="/vision/">Lire ma vision</a></p>
 </section>
 
-{{- /* 6. CONTACT */ -}}
+{{- /* 7. CONTACT */ -}}
 <section class="home-section home-contact">
     <h2>Contact</h2>
-    <div class="home-contact__links">
-        <a href="https://github.com/kdelfour" class="btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://linkedin.com/in/kevindelfour" class="btn-secondary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="/contact/" class="btn-secondary">Me contacter</a>
-    </div>
+    <p class="home-contact__text">Un échange, une question, un projet commun ?</p>
+    <p class="home-section__more"><a href="/contact/">Me contacter</a></p>
 </section>
 
 {{- end }}{{- /* end main */ -}}
