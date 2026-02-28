@@ -14,12 +14,14 @@
 {{- /* 2. EXPLORER PAR THÈME */ -}}
 <section class="home-section home-themes">
     <h2>Explorer par thème</h2>
-    <div class="home-grid home-grid--4">
+    <div class="home-grid home-grid--3">
         {{- $categories := slice
-            (dict "name" "Leadership" "slug" "leadership" "desc" "Le rôle du CTO, la posture, les arbitrages, la solitude du poste.")
-            (dict "name" "Architecture" "slug" "architecture" "desc" "Les décisions techniques qui structurent, la gouvernance, les cadres.")
-            (dict "name" "Organisation" "slug" "organisation" "desc" "La culture d'équipe, le management, le droit à l'erreur.")
-            (dict "name" "Parcours" "slug" "parcours" "desc" "Débuts, reconversion, orientation : trouver sa place sans se raconter d'histoires.")
+            (dict "name" "Leadership" "slug" "leadership" "desc" "Posture CTO, rôle, dilemmes et solitude du poste.")
+            (dict "name" "Décision" "slug" "décision" "desc" "Gouvernance technique, arbitrages, RFC, ADR, Build vs Buy.")
+            (dict "name" "Craft" "slug" "craft" "desc" "Stack, code, infra et technologies en production.")
+            (dict "name" "Organisation" "slug" "organisation" "desc" "Culture d'équipe, management, droit à l'erreur.")
+            (dict "name" "Pratiques" "slug" "pratiques" "desc" "Code review, testing, pair programming, CI/CD, documentation.")
+            (dict "name" "Parcours" "slug" "parcours" "desc" "Débuts, reconversion, carrière : trouver sa place sans se raconter d'histoires.")
         }}
         {{- range $categories }}
         <a href="/articles/?cat={{ .slug }}" class="home-card">
