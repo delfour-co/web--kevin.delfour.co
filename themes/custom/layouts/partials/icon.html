@@ -12,7 +12,7 @@
     - title (string): optional <title>
     - ariaLabel (string): optional aria-label on wrapper
     - ariaHidden (bool): if true, wrapper gets aria-hidden="true"
-    - fallbackPartial (string): optional partial to render if pixelart icon doesn't exist
+    - fallbackPartial (string): optional partial to render if icon doesn't exist
     - fallbackCtx (any): context passed to fallbackPartial (defaults to the current dict)
 */ -}}
 
@@ -30,7 +30,7 @@
 {{- $fallbackPartial := (or .fallbackPartial "") -}}
 {{- $fallbackCtx := (or .fallbackCtx .) -}}
 
-<span{{ if $id }} id="{{ $id }}"{{ end }} class="icon icon--pixel {{ $class }}" style="--icon-size: {{ $size }}px;"{{ if $ariaLabel }} aria-label="{{ $ariaLabel }}"{{ end }}{{ if $ariaHidden }} aria-hidden="true"{{ end }}>
+<span{{ if $id }} id="{{ $id }}"{{ end }} class="icon {{ $class }}" style="--icon-size: {{ $size }}px;"{{ if $ariaLabel }} aria-label="{{ $ariaLabel }}"{{ end }}{{ if $ariaHidden }} aria-hidden="true"{{ end }}>
   {{- with resources.Get $iconAssetPath -}}
     {{- $svg := .Content -}}
     {{- /* Force theme-following colors (avoid lookaheads: RE2) */ -}}

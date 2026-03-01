@@ -8,7 +8,7 @@ description: "Me contacter pour un échange, une question, ou une collaboration.
 - **GitHub** : [kdelfour](https://github.com/kdelfour)
 - **LinkedIn** : [kevindelfour](https://linkedin.com/in/kevindelfour)
 - **Twitter** : [@kevindelfour](https://twitter.com/kevindelfour)
-- **Email** : [contact@kevin.delfour.co](mailto:contact@kevin.delfour.co)
+
 
 ## Pour une demande d'accompagnement
 
