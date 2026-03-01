@@ -15,10 +15,10 @@
     --code-block-bg: rgb(28, 29, 33);
     --code-bg: rgb(245, 245, 245);
     --border: rgb(238, 238, 238);
-    --accent: #D4920B;
-    --accent-hover: #B57D09;
-    --accent-light: rgba(212, 146, 11, 0.1);
-    --accent-border: rgba(212, 146, 11, 0.25);
+    --accent: #B37A08;
+    --accent-hover: #956607;
+    --accent-light: rgba(179, 122, 8, 0.1);
+    --accent-border: rgba(179, 122, 8, 0.25);
     --font-heading: 'Fraunces', Georgia, serif;
     --font-body: 'Source Serif 4', Georgia, serif;
     --font-ui: 'Inter', system-ui, -apple-system, sans-serif;

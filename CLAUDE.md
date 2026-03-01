@@ -40,8 +40,8 @@ Ce fichier sert de référence pour les assistants IA travaillant sur ce projet.
 │   ├── culture-management/      # Pilier 3 (legacy, accessible via URL)
 │   ├── trouver-sa-place/        # Pilier 4 (legacy, accessible via URL)
 │   ├── guides-livres/           # Livres complets (contenu source)
-│   └── posts/                   # Articles (550+)
-├── layouts/                      # Templates Hugo personnalisés
+│   └── posts/                   # Articles (152)
+├── themes/custom/layouts/        # Templates Hugo personnalisés
 ├── assets/css/extended/         # CSS personnalisés
 ├── themes/custom/               # Thème custom
 ├── hugo.yaml                     # Configuration Hugo
@@ -144,7 +144,7 @@ Si la réponse est non → ne pas faire.
 ### Design system
 
 - **Typographie :** Fraunces (titres), Source Serif 4 (corps), Inter/system-ui (UI)
-- **Couleur accent :** Ambre/doré `#D4920B` (clair) / `#F0B840` (sombre)
+- **Couleur accent :** Ambre/doré `#B37A08` (clair, WCAG AA) / `#F0B840` (sombre)
 - **Largeur homepage :** 1080px (`--home-width`)
 - **Style :** Clair épuré, espaces généreux, style éditorial craft
 - **Tokens :** `themes/custom/assets/css/core/theme-vars.css`
@@ -328,9 +328,16 @@ tags: ["tag1", "tag2"]
   - Nouvelle identité visuelle : Fraunces + Source Serif 4, accent ambre #D4920B
   - Nouvelle navigation : Articles, Livres, Projets, Vision, À propos, Contact
   - Nouvelle homepage : hero + sections thématiques (1080px)
-  - Migration piliers → catégories (leadership, architecture, organisation, parcours)
+  - Migration piliers → catégories (leadership, décision, craft, organisation, pratiques, parcours)
   - Suppression système 4 couleurs pilier, bandeau navigation, watermark dinosaure
   - Pages dédiées : /vision/, /contact/, /articles/ avec filtres JS
+
+- **2026-03-01** : Optimisation homepage + audit complet
+  - Hero : avatar circulaire, tagline, CTA
+  - Section "Derniers articles" avec pills par thème
+  - Meta description longue (149 chars) + image OG
+  - Optimisation Google Fonts (poids réduits)
+  - Audit SEO, accessibilité, performance, contenu → 34 issues GitHub
 
 ---
 
@@ -347,7 +354,7 @@ tags: ["tag1", "tag2"]
 
 ### Avant toute intervention
 
-1. Lire `LIGNE_EDITORIALE.md` en entier (ou `.claude/LINE_EDITORIALE.md`)
+1. Lire `LIGNE_EDITORIALE.md` en entier
 2. Lire ce fichier (`CLAUDE.md`)
 3. Consulter les templates pertinents dans `.claude/` si création/refactoring
 4. Identifier les frictions réelles (pas supposées)
@@ -376,9 +383,10 @@ Se demander régulièrement :
 Le dossier `.claude/` contient les ressources de référence pour maintenir la cohérence du site :
 
 ### Documents de référence
-- **`LINE_EDITORIALE.md`** — Ligne éditoriale complète (version validée)
 - **`TONE_GUIDE.md`** — Guide de ton et formulations
 - **`NAVIGATION_MODEL.md`** — Modèle de navigation (piliers → articles)
+- **`DESIGN_SYSTEM.md`** — Tokens, typographie, breakpoints, conventions CSS
+- **`LAYOUTS_REFERENCE.md`** — Inventaire des templates et partials Hugo
 
 ### Templates
 - **`PILLAR_TEMPLATE.md`** — Template pour pages piliers
@@ -404,7 +412,7 @@ Le dossier `.claude/` contient les ressources de référence pour maintenir la c
 
 ## Ressources complémentaires
 
-- **Ligne éditoriale complète :** `LIGNE_EDITORIALE.md` (et `.claude/LINE_EDITORIALE.md`)
+- **Ligne éditoriale complète :** `LIGNE_EDITORIALE.md` (source unique)
 - **Kit éditorial :** `.claude/` (templates, prompts, guides)
 - **Configuration Hugo :** `hugo.yaml`
 - **Page d'accueil :** `content/_index.md`

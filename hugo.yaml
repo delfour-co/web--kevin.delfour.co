@@ -1,7 +1,7 @@
 defaultContentLanguage: fr
 title: Kevin Delfour
 description: "Je partage mes repères aux CTO et leaders tech pour mieux décider et mieux durer, et j'aide la nouvelle génération à trouver sa place sans se raconter d'histoires."
-copyright: "© 2025 Kevin Delfour – All rights reserved – Blow on the cartridge 💾 if this site doesn't load"
+copyright: "© 2026 Kevin Delfour – All rights reserved – Blow on the cartridge 💾 if this site doesn't load"
 baseURL: https://kevin.delfour.co
 environment: production
 theme: custom

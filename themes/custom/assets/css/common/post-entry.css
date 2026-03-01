@@ -141,7 +141,8 @@
 }
 
 .entry-footer {
-    color: var(--secondary);calc(0.7em * var(--font-size-multiplier,1)) !important;
+    color: var(--secondary);
+    font-size: calc(0.7em * var(--font-size-multiplier, 1));
 }
 
 .entry-link {
