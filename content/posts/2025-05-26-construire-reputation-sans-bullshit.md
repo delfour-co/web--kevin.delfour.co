@@ -149,4 +149,4 @@ Réputation se construit lentement. Commence maintenant, sois patient, reste aut
 
 Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment différents leaders tech ont construit leur réputation et influence.
 
-Tu peux aussi consulter les autres contenus du pilier [\"Trouver sa place\"](/trouver-sa-place/) pour approfondir ta trajectoire professionnelle.
+Tu peux aussi consulter les autres contenus du pilier [\"Trouver sa place\"](/articles/?cat=parcours) pour approfondir ta trajectoire professionnelle.

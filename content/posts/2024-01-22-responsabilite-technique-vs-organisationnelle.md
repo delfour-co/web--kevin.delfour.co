@@ -105,4 +105,4 @@ Quand je choisis une solution technique moins optimale pour des raisons organisa
 
 Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore en profondeur comment équilibrer responsabilité technique et organisationnelle selon les contextes.
 
-Pour approfondir, tu peux aussi consulter les autres articles du pilier ["Le rôle du CTO"](/le-role-du-cto/) ou l'article sur ["La dette technique"](/posts/dette-technique-cto-gestion-compromis-strategies/).
+Pour approfondir, tu peux aussi consulter les autres articles du pilier ["Le rôle du CTO"](/articles/?cat=leadership) ou l'article sur ["La dette technique"](/posts/dette-technique-cto-gestion-compromis-strategies/).

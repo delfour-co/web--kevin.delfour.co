@@ -120,4 +120,4 @@ Ni spécialiste ni généraliste n'est "mieux". C'est une question de stratégie
 
 Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore les différentes trajectoires et spécialisations possibles.
 
-Tu peux aussi consulter l'article [\"Devenir senior\"](/posts/devenir-senior-ce-qui-change/) ou les autres contenus du pilier [\"Trouver sa place\"](/trouver-sa-place/).
+Tu peux aussi consulter l'article [\"Devenir senior\"](/posts/devenir-senior-ce-qui-change/) ou les autres contenus du pilier [\"Trouver sa place\"](/articles/?cat=parcours).

@@ -116,4 +116,4 @@ Mettre en avant les décisions Type 2 inversées rapidement. "On a essayé X, ç
 
 Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore ce framework avec des exemples concrets de classifications correctes et incorrectes.
 
-Pour approfondir, tu peux aussi consulter l'article ["Build vs Buy vs Partner"](/posts/build-vs-buy-vs-partner-cadre-decision/) ou les autres contenus du pilier ["Gouvernance & décision"](/gouvernance-decision/).
+Pour approfondir, tu peux aussi consulter l'article ["Build vs Buy vs Partner"](/posts/build-vs-buy-vs-partner-cadre-decision/) ou les autres contenus du pilier ["Gouvernance & décision"](/articles/?cat=décision).

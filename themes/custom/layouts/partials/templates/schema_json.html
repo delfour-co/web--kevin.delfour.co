@@ -7,7 +7,7 @@
   "url": {{ site.Home.Permalink | jsonify }},
   "description": {{ (site.Params.description | default site.Params.homeInfoParams.Content) | plainify | truncate 180 | jsonify }},
   {{- if (eq site.Params.schema.publisherType "Person") }}
-  "image": {{ site.Params.assets.favicon | default "favicon.ico" | absURL | jsonify }},
+  "image": {{ "/images/kevin-delfour.webp" | absURL | jsonify }},
   {{- with site.Params.schema.jobTitle }}
   "jobTitle": {{ . | jsonify }},
   {{- end }}
@@ -86,6 +86,10 @@
 </script>
 {{- if .IsSection }}
 {{/* CollectionPage Schema */}}
+{{- $sectionPages := .RegularPages }}
+{{- if eq .Section "articles" }}
+  {{- $sectionPages = where site.RegularPages "Section" "posts" }}
+{{- end }}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -95,9 +99,9 @@
   "description": {{ with .Description | plainify }}{{ . | jsonify }}{{ else }}{{ .Summary | plainify | jsonify }}{{ end }},
   "mainEntity": {
     "@type": "ItemList",
-    "numberOfItems": {{ len .RegularPages }},
+    "numberOfItems": {{ len $sectionPages }},
     "itemListElement": [
-      {{- range $index, $page := .RegularPages | first 20 }}
+      {{- range $index, $page := $sectionPages | first 20 }}
       {{- if $index }}, {{ end }}
       {
         "@type": "ListItem",

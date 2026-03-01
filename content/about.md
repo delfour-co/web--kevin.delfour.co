@@ -15,7 +15,7 @@ Je m'appuie sur le terrain, des cadres clairs, et une culture du droit à l'erre
 
 ## Ce que je partage
 
-Sur ce site, vous trouverez :
+Sur ce site, tu trouveras :
 
 - **Des repères structurants** sur le rôle du CTO, la gouvernance technique, la culture d'équipe
 - **Des ressources complètes** : livres disponibles gratuitement en ligne
@@ -31,12 +31,12 @@ Les articles, les livres complets en ligne, les ressources structurées — tout
 
 **Je mets un cadre quand cela demande du temps individuel.**
 
-Si vous cherchez un accompagnement personnalisé, une consultation, ou un mentorat individuel, je mets un cadre clair. Mon temps est limité, et je dois le protéger pour rester efficace.
+Si tu cherches un accompagnement personnalisé, une consultation, ou un mentorat individuel, je mets un cadre clair. Mon temps est limité, et je dois le protéger pour rester efficace.
 
-Pour toute demande d'accompagnement individuel, contactez-moi avec :
-- Votre contexte et votre besoin précis
-- Votre disponibilité et vos contraintes
-- Votre budget si applicable
+Pour toute demande d'accompagnement individuel, contacte-moi avec :
+- Ton contexte et ton besoin précis
+- Ta disponibilité et tes contraintes
+- Ton budget si applicable
 
 ## Bénévolat
 

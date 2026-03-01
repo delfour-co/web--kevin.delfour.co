@@ -155,4 +155,4 @@ Arrêter d'espérer que ces décisions deviendront confortables. Elles ne le ser
 
 Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore ces décisions difficiles avec des témoignages de CTOs sur leurs propres décisions inconfortables.
 
-Pour approfondir, tu peux aussi consulter l'article ["Dire non au CEO"](/posts/dire-non-quand-tous-attendent-oui/) ou les autres contenus du pilier ["Gouvernance & décision"](/gouvernance-decision/).
+Pour approfondir, tu peux aussi consulter l'article ["Dire non au CEO"](/posts/dire-non-quand-tous-attendent-oui/) ou les autres contenus du pilier ["Gouvernance & décision"](/articles/?cat=décision).

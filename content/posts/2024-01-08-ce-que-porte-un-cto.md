@@ -109,4 +109,4 @@ Arrêter de chercher à déléguer certaines responsabilités qui sont intrinsè
 
 Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore en profondeur les responsabilités invisibles du rôle et comment les assumer sans s'y perdre.
 
-Pour approfondir, tu peux aussi consulter les autres articles du pilier ["Le rôle du CTO"](/le-role-du-cto/) ou les guides mis à disposition.
+Pour approfondir, tu peux aussi consulter les autres articles du pilier ["Le rôle du CTO"](/articles/?cat=leadership) ou les guides mis à disposition.

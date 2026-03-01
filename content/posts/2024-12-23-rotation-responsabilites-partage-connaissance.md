@@ -117,4 +117,4 @@ Minimum 3 personnes par astreinte, rotation mensuelle. Cette distribution évite
 
 Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment créer une organisation résiliente sans silos.
 
-Pour approfondir, tu peux aussi consulter l'article [\"Former sans infantiliser\"](/posts/former-sans-infantiliser/) ou les autres contenus du pilier [\"Culture & management\"](/culture-management/).
+Pour approfondir, tu peux aussi consulter l'article [\"Former sans infantiliser\"](/posts/former-sans-infantiliser/) ou les autres contenus du pilier [\"Culture & management\"](/articles/?cat=organisation).

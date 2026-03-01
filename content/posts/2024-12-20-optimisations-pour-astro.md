@@ -162,4 +162,4 @@ Pour approfondir, tu peux explorer plusieurs domaines :
 
 Une manière de voir les choses : la performance n'est pas un état final mais un processus continu. Ce que j'ai observé : l'optimisation d'un site Astro est un voyage passionnant qui peut mener à des résultats exceptionnels. Les techniques présentées sont le fruit de nombreuses expériences en production et continuent d'évoluer avec chaque nouveau projet.
 
-Pour approfondir, tu peux aussi consulter la page pilier ["Gouvernance & décision"](/gouvernance-decision/) ou les guides mis à disposition.
+Pour approfondir, tu peux aussi consulter la page pilier ["Gouvernance & décision"](/articles/?cat=décision) ou les guides mis à disposition.

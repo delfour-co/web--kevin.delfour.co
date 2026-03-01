@@ -147,4 +147,4 @@ Pour décisions passées importantes : écrire ADR rétroactif pour capturer le 
 
 Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) montre des exemples concrets d'ADR et comment les utiliser efficacement.
 
-Pour approfondir, tu peux aussi consulter l'article ["RFC : décider en équipe"](/posts/rfc-decider-equipe-sans-bloquer/) ou les autres contenus du pilier ["Gouvernance & décision"](/gouvernance-decision/).
+Pour approfondir, tu peux aussi consulter l'article ["RFC : décider en équipe"](/posts/rfc-decider-equipe-sans-bloquer/) ou les autres contenus du pilier ["Gouvernance & décision"](/articles/?cat=décision).

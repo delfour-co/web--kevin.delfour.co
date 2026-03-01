@@ -151,4 +151,4 @@ Pour approfondir, tu peux explorer plusieurs domaines :
 
 Une manière de voir les choses : l'open source n'est pas une destination, c'est un voyage continu d'apprentissage et de partage. Ce que j'ai observé : le passage en open source est une opportunité unique de participer à l'écosystème global du logiciel libre et de créer de la valeur collective.
 
-Pour approfondir, tu peux aussi consulter la page pilier ["Gouvernance & décision"](/gouvernance-decision/) ou les guides mis à disposition.
+Pour approfondir, tu peux aussi consulter la page pilier ["Gouvernance & décision"](/articles/?cat=décision) ou les guides mis à disposition.

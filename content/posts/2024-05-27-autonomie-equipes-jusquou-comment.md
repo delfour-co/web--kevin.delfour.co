@@ -111,4 +111,4 @@ Pulse mensuel : "As-tu assez d'autonomie ? Trop de contraintes ?" Ces données p
 
 Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment différents CTOs gèrent l'autonomie selon la taille et la maturité de leur organisation.
 
-Pour approfondir, tu peux aussi consulter l'article ["Définir les niveaux de décision"](/posts/definir-niveaux-decision-organisation-technique/) ou les autres contenus du pilier ["Gouvernance & décision"](/gouvernance-decision/).
+Pour approfondir, tu peux aussi consulter l'article ["Définir les niveaux de décision"](/posts/definir-niveaux-decision-organisation-technique/) ou les autres contenus du pilier ["Gouvernance & décision"](/articles/?cat=décision).

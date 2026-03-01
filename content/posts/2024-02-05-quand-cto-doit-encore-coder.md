@@ -113,4 +113,4 @@ Arrêter de me comparer à ma vitesse de développement d'il y a 5 ans. Mon cont
 
 Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment différents CTOs gèrent leur relation au code selon leur contexte organisationnel.
 
-Pour approfondir, tu peux aussi consulter l'article ["Pourquoi le CTO n'est pas le meilleur développeur"](/posts/cto-pas-meilleur-developpeur/) ou les autres contenus du pilier ["Le rôle du CTO"](/le-role-du-cto/).
+Pour approfondir, tu peux aussi consulter l'article ["Pourquoi le CTO n'est pas le meilleur développeur"](/posts/cto-pas-meilleur-developpeur/) ou les autres contenus du pilier ["Le rôle du CTO"](/articles/?cat=leadership).

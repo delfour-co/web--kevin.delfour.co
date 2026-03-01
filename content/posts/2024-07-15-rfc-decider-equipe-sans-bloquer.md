@@ -127,4 +127,4 @@ Mettre en avant les RFC qui ont évité des erreurs ou accéléré des décision
 
 Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment implémenter RFC selon la taille et la maturité de l'organisation.
 
-Pour approfondir, tu peux aussi consulter l'article ["ADR : documenter pour ne pas répéter"](/posts/adr-documenter-decisions-architecture/) ou les autres contenus du pilier ["Gouvernance & décision"](/gouvernance-decision/).
+Pour approfondir, tu peux aussi consulter l'article ["ADR : documenter pour ne pas répéter"](/posts/adr-documenter-decisions-architecture/) ou les autres contenus du pilier ["Gouvernance & décision"](/articles/?cat=décision).

@@ -9,13 +9,13 @@
 
 {{- /* Filtres par catégorie */ -}}
 <div class="articles-filters">
-    <button class="filter-btn filter-btn--active" data-cat="all">Tous</button>
-    <button class="filter-btn" data-cat="leadership">Leadership</button>
-    <button class="filter-btn" data-cat="décision">Décision</button>
-    <button class="filter-btn" data-cat="craft">Craft</button>
-    <button class="filter-btn" data-cat="organisation">Organisation</button>
-    <button class="filter-btn" data-cat="pratiques">Pratiques</button>
-    <button class="filter-btn" data-cat="parcours">Parcours</button>
+    <button class="filter-btn filter-btn--active" data-cat="all" aria-pressed="true">Tous</button>
+    <button class="filter-btn" data-cat="leadership" aria-pressed="false">Leadership</button>
+    <button class="filter-btn" data-cat="décision" aria-pressed="false">Décision</button>
+    <button class="filter-btn" data-cat="craft" aria-pressed="false">Craft</button>
+    <button class="filter-btn" data-cat="organisation" aria-pressed="false">Organisation</button>
+    <button class="filter-btn" data-cat="pratiques" aria-pressed="false">Pratiques</button>
+    <button class="filter-btn" data-cat="parcours" aria-pressed="false">Parcours</button>
 </div>
 
 {{- /* Récupérer tous les articles */ -}}
@@ -28,9 +28,9 @@
     {{- $catStr := delimit $cats " " }}
     <article class="post-entry" data-category="{{ $catStr }}">
         <header class="entry-header">
-            <h3 class="entry-hint-parent">
+            <h2 class="entry-hint-parent">
                 <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            </h3>
+            </h2>
         </header>
         {{- if (ne (.Param "hideSummary") true) }}
         <div class="entry-content">
@@ -63,8 +63,15 @@
     const initialCat = params.get('cat') || 'all';
 
     function filterArticles(cat) {
-        buttons.forEach(b => b.classList.remove('filter-btn--active'));
-        document.querySelector('[data-cat="' + cat + '"]')?.classList.add('filter-btn--active');
+        buttons.forEach(b => {
+            b.classList.remove('filter-btn--active');
+            b.setAttribute('aria-pressed', 'false');
+        });
+        const active = document.querySelector('[data-cat="' + cat + '"]');
+        if (active) {
+            active.classList.add('filter-btn--active');
+            active.setAttribute('aria-pressed', 'true');
+        }
 
         articles.forEach(article => {
             if (cat === 'all') {

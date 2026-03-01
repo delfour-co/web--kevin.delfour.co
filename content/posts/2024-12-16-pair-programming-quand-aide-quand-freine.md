@@ -117,4 +117,4 @@ Encourager pair, pas imposer. Certains performent mieux solo. Cette flexibilité
 
 Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore différentes pratiques de collaboration et leur impact réel.
 
-Pour approfondir, tu peux aussi consulter l'article [\"Code review\"](/posts/code-review-qualite-ou-guerre-ego/) ou les autres contenus du pilier [\"Culture & management\"](/culture-management/).
+Pour approfondir, tu peux aussi consulter l'article [\"Code review\"](/posts/code-review-qualite-ou-guerre-ego/) ou les autres contenus du pilier [\"Culture & management\"](/articles/?cat=organisation).

@@ -157,4 +157,4 @@ Même en urgence, décider le matin suivant, pas le soir même. Le sommeil amél
 
 Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore différentes techniques de décision sous pression avec des cas réels.
 
-Pour approfondir, tu peux aussi consulter l'article ["Les décisions que personne ne veut prendre"](/posts/decisions-que-personne-ne-veut-prendre/) ou les autres contenus du pilier ["Gouvernance & décision"](/gouvernance-decision/).
+Pour approfondir, tu peux aussi consulter l'article ["Les décisions que personne ne veut prendre"](/posts/decisions-que-personne-ne-veut-prendre/) ou les autres contenus du pilier ["Gouvernance & décision"](/articles/?cat=décision).

@@ -117,4 +117,4 @@ One-on-one hebdo non-annulable sauf exception. Ce rituel détecte problèmes ava
 
 Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment créer juste assez de structure sans bureaucratie.
 
-Pour approfondir, tu peux aussi consulter l'article [\"Autonomie des équipes\"](/posts/autonomie-equipes-jusquou-comment/) ou les autres contenus du pilier [\"Culture & management\"](/culture-management/).
+Pour approfondir, tu peux aussi consulter l'article [\"Autonomie des équipes\"](/posts/autonomie-equipes-jusquou-comment/) ou les autres contenus du pilier [\"Culture & management\"](/articles/?cat=organisation).

@@ -122,4 +122,4 @@ Les boîtes ne vont pas te dire "On est toxiques". C'est à toi de décoder.
 
 Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment évaluer une opportunité au-delà du discours marketing.
 
-Tu peux aussi consulter l'article [\"Reconnaître une boîte toxique\"](/posts/reconnaitre-boite-toxique-avant-signer/) ou les autres contenus du pilier [\"Trouver sa place\"](/trouver-sa-place/).
+Tu peux aussi consulter l'article [\"Reconnaître une boîte toxique\"](/posts/reconnaitre-boite-toxique-avant-signer/) ou les autres contenus du pilier [\"Trouver sa place\"](/articles/?cat=parcours).

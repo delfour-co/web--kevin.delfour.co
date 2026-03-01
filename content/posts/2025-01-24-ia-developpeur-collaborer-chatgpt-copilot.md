@@ -144,4 +144,4 @@ Compétences qui deviennent obsolètes :
 - Mémoriser APIs (ChatGPT les explique)
 - Copier-coller StackOverflow (IA le fait mieux)
 
-Pour approfondir, tu peux aussi consulter la page pilier ["Trouver sa place"](/trouver-sa-place/) ou les guides mis à disposition.
+Pour approfondir, tu peux aussi consulter la page pilier ["Trouver sa place"](/articles/?cat=parcours) ou les guides mis à disposition.

@@ -17,12 +17,16 @@ Chaque contexte est différent. Ce qui a marché pour moi ne marchera pas forcé
 
 ### La transmission gratuite quand ça aide à grande échelle
 
-Les articles, les livres complets en ligne, les ressources structurées — tout cela est gratuit et accessible. Quand un contenu peut aider cent personnes, il n'a pas de raison d'être derrière un mur.
+Les [articles](/articles/), les [livres](/livres/) complets en ligne, les ressources structurées — tout cela est gratuit et accessible. Quand un contenu peut aider cent personnes, il n'a pas de raison d'être derrière un mur.
 
 ### Un cadre clair quand ça demande du temps individuel
 
-L'accompagnement personnalisé, le mentorat, la consultation — ça demande du temps, de l'attention, de l'énergie. Mon temps est limité, et je dois le protéger pour rester utile.
+L'accompagnement personnalisé, le mentorat, la consultation — ça demande du temps, de l'attention, de l'énergie. Mon temps est limité, et je dois le protéger pour rester utile. Si tu as un besoin précis, [contacte-moi](/contact/).
 
 ### Le droit à l'erreur n'est pas un slogan
 
 C'est une pratique quotidienne. On ne construit rien de solide dans un environnement où les gens ont peur de se tromper. La sécurité psychologique n'est pas un luxe, c'est un prérequis.
+
+---
+
+Pour en savoir plus sur mon parcours : [À propos](/about/).

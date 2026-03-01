@@ -113,4 +113,4 @@ Métriques stabilité ET innovation affichées au comex. Cette visibilité maint
 
 Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment différents CTOs gèrent cette tension selon leur contexte.
 
-Pour approfondir, tu peux aussi consulter les autres contenus du pilier ["Gouvernance & décision"](/gouvernance-decision/).
+Pour approfondir, tu peux aussi consulter les autres contenus du pilier ["Gouvernance & décision"](/articles/?cat=décision).

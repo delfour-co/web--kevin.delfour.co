@@ -117,4 +117,4 @@ Maintenir quelqu'un dans rôle où il échoue est cruel. Parfois, l'aider à par
 
 Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment gérer les situations difficiles de management avec lucidité et humanité.
 
-Pour approfondir, tu peux aussi consulter l'article [\"Feedback difficile\"](/posts/feedback-difficile-dire-verite-sans-detruire/) ou les autres contenus du pilier [\"Culture & management\"](/culture-management/).
+Pour approfondir, tu peux aussi consulter l'article [\"Feedback difficile\"](/posts/feedback-difficile-dire-verite-sans-detruire/) ou les autres contenus du pilier [\"Culture & management\"](/articles/?cat=organisation).

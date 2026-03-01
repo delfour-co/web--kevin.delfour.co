@@ -112,4 +112,4 @@ Pour approfondir, tu peux explorer plusieurs domaines :
 
 Une manière de voir les choses : la qualité n'est pas un luxe, c'est un investissement. Ce que j'ai observé : les équipes qui adoptent cette mentalité développent une culture de qualité partagée et améliorent leur vélocité à long terme.
 
-Pour approfondir, tu peux aussi consulter la page pilier ["Culture & management"](/culture-management/) ou les guides mis à disposition.
+Pour approfondir, tu peux aussi consulter la page pilier ["Culture & management"](/articles/?cat=organisation) ou les guides mis à disposition.

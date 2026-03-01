@@ -205,4 +205,4 @@ Une manière de voir les choses : la modernisation d'une application n'est pas q
 
 En adoptant ces approches alternatives à la refonte complète, les équipes peuvent non seulement moderniser leurs applications de manière plus sûre, mais aussi construire une culture d'amélioration continue qui bénéficiera à l'organisation sur le long terme. Car après tout, le véritable objectif n'est pas de créer un nouveau système parfait, mais de faire évoluer l'existant de manière à ce qu'il continue de servir efficacement les besoins de l'entreprise, aujourd'hui et demain.
 
-Pour approfondir, tu peux aussi consulter la page pilier ["Le rôle du CTO"](/le-role-du-cto/) ou les guides mis à disposition.
+Pour approfondir, tu peux aussi consulter la page pilier ["Le rôle du CTO"](/articles/?cat=leadership) ou les guides mis à disposition.

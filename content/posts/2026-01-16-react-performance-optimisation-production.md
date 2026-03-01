@@ -128,6 +128,6 @@ Une manière de voir les choses : l'objectif n'est pas d'optimiser tout, mais d'
 
 Prochaine étape : lance React DevTools Profiler sur ton app et identifie les 3 composants les plus coûteux à optimiser.
 
-Pour approfondir, tu peux aussi consulter la page pilier ["Gouvernance & décision"](/gouvernance-decision/) ou les guides mis à disposition.
+Pour approfondir, tu peux aussi consulter la page pilier ["Gouvernance & décision"](/articles/?cat=décision) ou les guides mis à disposition.
 
 Pour approfondir, tu peux aussi consulter les pages piliers du site ou les guides mis à disposition.

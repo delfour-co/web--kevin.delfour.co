@@ -119,4 +119,4 @@ Tracker : après X mois, junior à quel niveau sur compétences clés ? Cette me
 
 Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment créer une culture d'apprentissage qui émancipe.
 
-Pour approfondir, tu peux aussi consulter l'article [\"Autonomie des équipes\"](/posts/autonomie-equipes-jusquou-comment/) ou les autres contenus du pilier [\"Culture & management\"](/culture-management/).
+Pour approfondir, tu peux aussi consulter l'article [\"Autonomie des équipes\"](/posts/autonomie-equipes-jusquou-comment/) ou les autres contenus du pilier [\"Culture & management\"](/articles/?cat=organisation).

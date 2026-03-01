@@ -134,4 +134,4 @@ Deux burn-outs = problème système. Audit culture, charge, management. Cette lu
 
 Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment créer une culture qui prévient le burn-out.
 
-Pour approfondir, tu peux aussi consulter l'article [\"Signaux d'alarme du burn-out CTO\"](/posts/signaux-alarme-burnout-cto/) ou les autres contenus du pilier [\"Culture & management\"](/culture-management/).
+Pour approfondir, tu peux aussi consulter l'article [\"Signaux d'alarme du burn-out CTO\"](/posts/signaux-alarme-burnout-cto/) ou les autres contenus du pilier [\"Culture & management\"](/articles/?cat=organisation).

@@ -120,4 +120,4 @@ Pour approfondir, tu peux explorer plusieurs domaines :
 
 Une manière de voir les choses : la transformation culturelle prend du temps, mais chaque commentaire bienveillant, chaque explication pédagogique, chaque encouragement contribue à construire une équipe plus forte et plus épanouie. Ce que j'ai observé : l'objectif n'est pas d'avoir des reviews parfaites, mais des reviews qui font grandir chaque membre de l'équipe.
 
-Pour approfondir, tu peux aussi consulter la page pilier ["Culture & management"](/culture-management/) ou les guides mis à disposition.
+Pour approfondir, tu peux aussi consulter la page pilier ["Culture & management"](/articles/?cat=organisation) ou les guides mis à disposition.

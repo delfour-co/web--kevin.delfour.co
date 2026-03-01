@@ -119,4 +119,4 @@ All-hands valoriser qui livre bien en 35h. Arrêter célébrer héros surmenés.
 
 Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment créer une culture soutenable sur la durée.
 
-Pour approfondir, tu peux aussi consulter l'article [\"Signaux de burn-out\"](/posts/signaux-burnout-equipe-detecter-avant-crise/) ou les autres contenus du pilier [\"Culture & management\"](/culture-management/).
+Pour approfondir, tu peux aussi consulter l'article [\"Signaux de burn-out\"](/posts/signaux-burnout-equipe-detecter-avant-crise/) ou les autres contenus du pilier [\"Culture & management\"](/articles/?cat=organisation).

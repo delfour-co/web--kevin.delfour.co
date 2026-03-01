@@ -145,4 +145,4 @@ Arrêter de me flageller pour chaque erreur. La transition de développeur à CT
 
 Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore ces erreurs de posture avec des témoignages de CTOs sur leurs propres erreurs et comment ils les ont corrigées.
 
-Pour approfondir, tu peux aussi consulter les autres articles du pilier ["Le rôle du CTO"](/le-role-du-cto/) ou l'article sur ["Ce que le rôle de CTO ne doit pas devenir"](/posts/ce-que-role-cto-ne-doit-pas-devenir/).
+Pour approfondir, tu peux aussi consulter les autres articles du pilier ["Le rôle du CTO"](/articles/?cat=leadership) ou l'article sur ["Ce que le rôle de CTO ne doit pas devenir"](/posts/ce-que-role-cto-ne-doit-pas-devenir/).

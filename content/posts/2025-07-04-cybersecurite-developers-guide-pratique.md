@@ -124,4 +124,4 @@ Pour approfondir, tu peux explorer plusieurs domaines :
 
 Une manière de voir les choses : la sécurité n'est pas une destination, c'est un voyage continu. Ce que j'ai observé : les équipes qui adoptent cette mentalité développent une résilience naturelle face aux menaces.
 
-Pour approfondir, tu peux aussi consulter la page pilier ["Gouvernance & décision"](/gouvernance-decision/) ou les guides mis à disposition.
+Pour approfondir, tu peux aussi consulter la page pilier ["Gouvernance & décision"](/articles/?cat=décision) ou les guides mis à disposition.

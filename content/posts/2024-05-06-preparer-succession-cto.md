@@ -134,4 +134,4 @@ Encourager publiquement quand le successeur fait différemment de moi. Cette pos
 
 Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore différentes successions avec leurs réussites et leurs échecs.
 
-Pour approfondir, tu peux aussi consulter l'article ["Comment passer le relais sans abandonner l'équipe"](/posts/passer-relais-sans-abandonner-equipe/) ou les autres contenus du pilier ["Le rôle du CTO"](/le-role-du-cto/).
+Pour approfondir, tu peux aussi consulter l'article ["Comment passer le relais sans abandonner l'équipe"](/posts/passer-relais-sans-abandonner-equipe/) ou les autres contenus du pilier ["Le rôle du CTO"](/articles/?cat=leadership).

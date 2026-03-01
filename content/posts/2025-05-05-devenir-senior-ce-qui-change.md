@@ -223,4 +223,4 @@ La promo senior n'est pas donnée, elle est gagnée en démontrant impact senior
 
 Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore les différents niveaux de séniorité et leurs attentes.
 
-Tu peux aussi consulter l'article [\"IC vs management\"](/posts/ic-vs-management-choisir-voie/) ou les autres contenus du pilier [\"Trouver sa place\"](/trouver-sa-place/).
+Tu peux aussi consulter l'article [\"IC vs management\"](/posts/ic-vs-management-choisir-voie/) ou les autres contenus du pilier [\"Trouver sa place\"](/articles/?cat=parcours).

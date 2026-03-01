@@ -116,4 +116,4 @@ Une bonne intégration n'est pas juste luck. C'est méthode et attitude.
 
 Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment réussir ses transitions et prises de poste.
 
-Tu peux aussi consulter l'article [\"Onboarding : intégrer sans noyer\"](/posts/onboarding-integrer-sans-noyer/) ou les autres contenus du pilier [\"Trouver sa place\"](/trouver-sa-place/).
+Tu peux aussi consulter l'article [\"Onboarding : intégrer sans noyer\"](/posts/onboarding-integrer-sans-noyer/) ou les autres contenus du pilier [\"Trouver sa place\"](/articles/?cat=parcours).

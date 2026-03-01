@@ -114,4 +114,4 @@ Pour approfondir, tu peux explorer plusieurs domaines :
 
 Une manière de voir les choses : plutôt que de chercher un équilibre souvent impossible à atteindre, viser l'harmonie permet de naviguer plus sereinement entre nos différentes aspirations. Ce que j'ai observé : cette approche crée un environnement où chacun peut s'épanouir pleinement.
 
-Pour approfondir, tu peux aussi consulter la page pilier ["Culture & management"](/culture-management/) ou les guides mis à disposition.
+Pour approfondir, tu peux aussi consulter la page pilier ["Culture & management"](/articles/?cat=organisation) ou les guides mis à disposition.

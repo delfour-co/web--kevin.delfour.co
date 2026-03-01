@@ -110,4 +110,4 @@ Arrêter de regretter le rôle précédent. Le nouveau rôle a ses propres satis
 
 Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore cette transition avec des témoignages de CTOs à différentes étapes.
 
-Pour approfondir, tu peux aussi consulter l'article ["CTO vs Lead Dev vs VP Engineering"](/posts/cto-vs-lead-dev-vp-engineering-differences-role/) ou les autres contenus du pilier ["Le rôle du CTO"](/le-role-du-cto/).
+Pour approfondir, tu peux aussi consulter l'article ["CTO vs Lead Dev vs VP Engineering"](/posts/cto-vs-lead-dev-vp-engineering-differences-role/) ou les autres contenus du pilier ["Le rôle du CTO"](/articles/?cat=leadership).

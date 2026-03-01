@@ -105,4 +105,4 @@ Garder une trace écrite des priorités board et de leur évolution. Cette docum
 
 Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment différents CTOs gèrent la relation au board selon leur contexte.
 
-Pour approfondir, tu peux aussi consulter l'article ["Entre loyauté envers l'équipe et loyauté envers l'entreprise"](/posts/loyaute-equipe-vs-entreprise-cto/) ou les autres contenus du pilier ["Le rôle du CTO"](/le-role-du-cto/).
+Pour approfondir, tu peux aussi consulter l'article ["Entre loyauté envers l'équipe et loyauté envers l'entreprise"](/posts/loyaute-equipe-vs-entreprise-cto/) ou les autres contenus du pilier ["Le rôle du CTO"](/articles/?cat=leadership).

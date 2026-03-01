@@ -122,4 +122,4 @@ Imaginez une organisation où les pratiques de développement internes s'alignen
 
 Vous obtiendriez non seulement une meilleure qualité logicielle, mais aussi une culture organisationnelle tournée vers la collaboration et l'innovation.
 
-Pour approfondir, tu peux aussi consulter la page pilier ["Gouvernance & décision"](/gouvernance-decision/) ou les guides mis à disposition.
+Pour approfondir, tu peux aussi consulter la page pilier ["Gouvernance & décision"](/articles/?cat=décision) ou les guides mis à disposition.

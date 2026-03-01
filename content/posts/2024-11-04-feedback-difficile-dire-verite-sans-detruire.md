@@ -175,4 +175,4 @@ Toute conversation difficile → notes partagées avec personne. Cette documenta
 
 Le livre [\"Être ou ne pas être CTO\"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment créer une culture de feedback honnête et constructif.
 
-Pour approfondir, tu peux aussi consulter l'article [\"Le paradoxe du manager bienveillant et exigeant\"](/posts/paradoxe-manager-bienveillant-exigeant/) ou les autres contenus du pilier [\"Culture & management\"](/culture-management/).
+Pour approfondir, tu peux aussi consulter l'article [\"Le paradoxe du manager bienveillant et exigeant\"](/posts/paradoxe-manager-bienveillant-exigeant/) ou les autres contenus du pilier [\"Culture & management\"](/articles/?cat=organisation).

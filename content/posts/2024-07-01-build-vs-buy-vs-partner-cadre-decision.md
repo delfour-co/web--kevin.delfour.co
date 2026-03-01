@@ -186,4 +186,4 @@ ADR avec : option choisie, scoring, TCO, et "on révise si X change". Cette clau
 
 Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore différentes décisions Build/Buy/Partner avec leurs résultats à long terme.
 
-Pour approfondir, tu peux aussi consulter l'article ["Dette technique"](/posts/dette-technique-cto-gestion-compromis-strategies/) ou les autres contenus du pilier ["Gouvernance & décision"](/gouvernance-decision/).
+Pour approfondir, tu peux aussi consulter l'article ["Dette technique"](/posts/dette-technique-cto-gestion-compromis-strategies/) ou les autres contenus du pilier ["Gouvernance & décision"](/articles/?cat=décision).

@@ -158,4 +158,4 @@ Questions à se poser régulièrement :
 - Mes choix techniques facilitent-ils ou compliquent-ils la vie des utilisateurs ?
 - La solution proposée est-elle proportionnée au problème à résoudre ?
 
-Pour approfondir, tu peux aussi consulter la page pilier ["Gouvernance & décision"](/gouvernance-decision/) ou les guides mis à disposition.
+Pour approfondir, tu peux aussi consulter la page pilier ["Gouvernance & décision"](/articles/?cat=décision) ou les guides mis à disposition.

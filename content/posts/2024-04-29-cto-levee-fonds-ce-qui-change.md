@@ -133,4 +133,4 @@ Apprendre à parler KPIs, ROI, risques. Cette compétence devient critique dès 
 
 Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore en profondeur la transition startup→scale-up avec des témoignages de CTOs.
 
-Pour approfondir, tu peux aussi consulter l'article ["Évolu d'un CTO technique vers un CTO stratégique"](/posts/evoluer-cto-technique-vers-strategique/) ou les autres contenus du pilier ["Le rôle du CTO"](/le-role-du-cto/).
+Pour approfondir, tu peux aussi consulter l'article ["Évolu d'un CTO technique vers un CTO stratégique"](/posts/evoluer-cto-technique-vers-strategique/) ou les autres contenus du pilier ["Le rôle du CTO"](/articles/?cat=leadership).

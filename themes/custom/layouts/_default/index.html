@@ -12,9 +12,15 @@
     </div>
 </section>
 
-{{- /* 2. DERNIERS ARTICLES */ -}}
-{{- $articles := where site.RegularPages "Section" "posts" }}
-{{- $articles = $articles | first 4 }}
+{{- /* 2. DERNIERS ARTICLES (featured d'abord, puis récents) */ -}}
+{{- $allPosts := where site.RegularPages "Section" "posts" }}
+{{- $featured := where $allPosts ".Params.featured" true }}
+{{- $articles := $featured | first 4 }}
+{{- if lt (len $articles) 4 }}
+    {{- $remaining := 4 | sub (len $articles) }}
+    {{- $recent := $allPosts | first $remaining }}
+    {{- $articles = $articles | append $recent }}
+{{- end }}
 {{- if gt (len $articles) 0 }}
 <section class="home-section home-articles">
     <h2>Derniers articles</h2>
@@ -104,11 +110,14 @@
     <p class="home-section__more"><a href="/vision/">Lire ma vision</a></p>
 </section>
 
-{{- /* 7. CONTACT */ -}}
+{{- /* 7. SUIVRE */ -}}
 <section class="home-section home-contact">
-    <h2>Contact</h2>
-    <p class="home-contact__text">Un échange, une question, un projet commun ?</p>
-    <p class="home-section__more"><a href="/contact/">Me contacter</a></p>
+    <h2>Suivre</h2>
+    <p class="home-contact__text">Un nouvel article chaque mois. Pas de spam, pas d'algorithme.</p>
+    <div class="home-hero__actions" style="justify-content: flex-start; margin-top: 1rem;">
+        <a href="/index.xml" class="btn-primary">Flux RSS</a>
+        <a href="/contact/" class="btn-secondary">Me contacter</a>
+    </div>
 </section>
 
 {{- end }}{{- /* end main */ -}}

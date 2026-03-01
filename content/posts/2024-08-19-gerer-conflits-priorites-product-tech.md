@@ -115,4 +115,4 @@ CTO + CPO : vélocité trending ? Dette impacting ? Ajustements nécessaires ? C
 
 Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore la relation CTO-CPO avec des frameworks concrets.
 
-Pour approfondir, tu peux aussi consulter l'article ["Dette technique"](/posts/dette-technique-cto-gestion-compromis-strategies/) ou les autres contenus du pilier ["Gouvernance & décision"](/gouvernance-decision/).
+Pour approfondir, tu peux aussi consulter l'article ["Dette technique"](/posts/dette-technique-cto-gestion-compromis-strategies/) ou les autres contenus du pilier ["Gouvernance & décision"](/articles/?cat=décision).

@@ -117,4 +117,4 @@ CTO doit être premier à changer. Si je dis "droit à l'erreur" mais je blame, 
 
 Le livre ["Être ou ne pas être CTO"](/guides-livres/etre-ou-ne-pas-etre-cto/) explore comment combler l'écart entre valeurs et comportements.
 
-Pour approfondir, tu peux aussi consulter l'article ["Construire une culture durable"](/posts/construire-culture-technique-durable/) ou les autres contenus du pilier ["Culture & management"](/culture-management/).
+Pour approfondir, tu peux aussi consulter l'article ["Construire une culture durable"](/posts/construire-culture-technique-durable/) ou les autres contenus du pilier ["Culture & management"](/articles/?cat=organisation).

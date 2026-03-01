@@ -135,6 +135,6 @@ Ce que j'ai observé : l'objectif n'est pas d'utiliser tous les patterns avancé
 
 Prochaine étape : identifier 3 endroits dans le code où `any` est utilisé et les remplacer par des types précis avec ces patterns.
 
-Pour approfondir, tu peux aussi consulter la page pilier ["Gouvernance & décision"](/gouvernance-decision/) ou les guides mis à disposition.
+Pour approfondir, tu peux aussi consulter la page pilier ["Gouvernance & décision"](/articles/?cat=décision) ou les guides mis à disposition.
 
 Pour approfondir, tu peux aussi consulter les pages piliers du site ou les guides mis à disposition.
