@@ -1,7 +1,7 @@
 ---
 author: [Kevin Delfour]
 title: "Équipes distribuées : construire la confiance à distance"
-date: 2026-03-01
+date: 2026-02-21
 slug: "equipes-distribuees-confiance-distance"
 description: "Le remote ne tue pas la confiance. Ce qui la tue, c'est l'absence de cadre. Retour sur ce qui fonctionne — et ce qui détruit — dans les équipes distribuées."
 categories: ["organisation"]

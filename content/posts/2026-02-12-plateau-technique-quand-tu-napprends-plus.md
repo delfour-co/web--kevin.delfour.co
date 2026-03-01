@@ -1,7 +1,7 @@
 ---
 author: [Kevin Delfour]
 title: "Plateau technique : quand tu as l'impression de ne plus apprendre"
-date: 2026-03-01
+date: 2026-02-12
 slug: "plateau-technique-quand-tu-napprends-plus"
 description: "Après 3 à 5 ans, beaucoup de développeurs ont l'impression de stagner. Ce n'est pas un échec. C'est une étape normale qui demande un changement de regard."
 categories: ["parcours"]

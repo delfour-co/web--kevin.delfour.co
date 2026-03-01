@@ -1,7 +1,7 @@
 ---
 author: [Kevin Delfour]
 title: "CTO face au board : traduire la tech en stratégie"
-date: 2026-03-01
+date: 2026-02-28
 slug: "cto-face-au-board-traduire-tech-en-strategie"
 description: "Le board ne comprend pas la tech. Ce n'est pas son rôle. C'est au CTO de traduire. Retour sur ce qui fonctionne — et ce qui fait perdre toute crédibilité."
 categories: ["leadership"]

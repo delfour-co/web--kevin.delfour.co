@@ -1,7 +1,7 @@
 ---
 author: [Kevin Delfour]
 title: "Pair programming : une pratique, pas un dogme"
-date: 2026-03-01
+date: 2026-02-07
 slug: "pair-programming-pratique-pas-dogme"
 description: "Le pair programming divise. Certains y voient un accélérateur, d'autres une perte de temps. Ce qui compte, c'est comment et quand l'utiliser."
 categories: ["pratiques"]
