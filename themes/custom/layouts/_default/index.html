@@ -12,41 +12,38 @@
     </div>
 </section>
 
-{{- /* 2. DERNIERS ARTICLES (featured d'abord, puis récents) */ -}}
+{{- /* 2. DERNIERS ARTICLES (format liste, 6 derniers) */ -}}
 {{- $allPosts := where site.RegularPages "Section" "posts" }}
-{{- $featured := where $allPosts ".Params.featured" true }}
-{{- $articles := $featured | first 4 }}
-{{- if lt (len $articles) 4 }}
-    {{- $remaining := 4 | sub (len $articles) }}
-    {{- $recent := $allPosts | first $remaining }}
-    {{- $articles = $articles | append $recent }}
-{{- end }}
-{{- if gt (len $articles) 0 }}
+{{- $allPosts = $allPosts.ByDate.Reverse }}
+{{- $latestArticles := $allPosts | first 6 }}
+{{- if gt (len $latestArticles) 0 }}
 <section class="home-section home-articles">
     <h2>Derniers articles</h2>
-    <div class="home-grid home-grid--2">
-        {{- range $articles }}
-        <a href="{{ .RelPermalink }}" class="home-card">
-            <h3 class="home-card__title">{{ .Title }}</h3>
-            <p class="home-card__desc">{{ .Description | default (.Summary | plainify | truncate 120) }}</p>
-            {{- with .Params.categories }}
-            <span class="home-card__meta">{{ index . 0 }}</span>
+    <div class="articles-list">
+        {{- range $latestArticles }}
+        {{- $cats := .Params.categories | default slice }}
+        <article class="post-entry">
+            <header class="entry-header">
+                <h2 class="entry-hint-parent">
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </h2>
+            </header>
+            {{- if (ne (.Param "hideSummary") true) }}
+            <div class="entry-content">
+                <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+            </div>
             {{- end }}
-        </a>
-        {{- end }}
-    </div>
-    <div class="home-articles__themes">
-        <span class="home-articles__themes-label">Par thème</span>
-        {{- $categories := slice
-            (dict "name" "Leadership" "slug" "leadership")
-            (dict "name" "Décision" "slug" "décision")
-            (dict "name" "Craft" "slug" "craft")
-            (dict "name" "Organisation" "slug" "organisation")
-            (dict "name" "Pratiques" "slug" "pratiques")
-            (dict "name" "Parcours" "slug" "parcours")
-        }}
-        {{- range $categories }}
-        <a href="/articles/?cat={{ .slug }}">{{ .name }}</a>
+            <footer class="entry-footer">
+                {{- $metaContent := partial "post_meta.html" . -}}
+                {{- if $metaContent }}
+                  {{ $metaContent | safeHTML }}
+                {{- end }}
+                {{- range $cats }}
+                <span class="meta-pillar"><a href="/articles/?cat={{ . }}">{{ . | title }}</a></span>
+                {{- end }}
+            </footer>
+            <a class="entry-link" aria-label="{{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+        </article>
         {{- end }}
     </div>
     <p class="home-section__more"><a href="/articles/">Voir tous les articles</a></p>
