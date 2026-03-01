@@ -307,8 +307,9 @@
     margin-inline-start: var(--gap);
 }
 
-.toc summary:focus {
-    outline: 0;
+.toc summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
 }
 
 .post-footer {

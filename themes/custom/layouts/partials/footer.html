@@ -1,7 +1,7 @@
 {{- if not (.Param "hideFooter") }}
 <footer class="footer">
     <div class="footer-content">
-        <nav class="footer-links" aria-label="Navigation principale">
+        <nav class="footer-links" aria-label="Navigation pied de page">
             {{- $currentPage := . }}
             <div class="footer-columns">
                 <div class="footer-column">
@@ -61,7 +61,7 @@
 <script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
 
 {{- if (not site.Params.disableScrollToTop) }}
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+<a href="#top" aria-label="Retour en haut" title="Retour en haut (Alt + G)" class="top-link" id="top-link" accesskey="g">
     {{ partial "icon.html" (dict "name" "internet-network/internet-network-upload" "size" 18 "ariaHidden" true) }}
 </a>
 {{- end }}
