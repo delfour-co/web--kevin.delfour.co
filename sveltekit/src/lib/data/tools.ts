@@ -22,7 +22,7 @@ export const tools: Tool[] = [
 		slug: 'generateur-adr',
 		description:
 			"Produis un Architecture Decision Record structuré à partir d'un formulaire guidé. Export Markdown.",
-		statut: 'à venir',
+		statut: 'disponible',
 		url: '/outils/generateur-adr/',
 		categorie: 'gouvernance'
 	},
@@ -31,7 +31,7 @@ export const tools: Tool[] = [
 		slug: 'diagnostic-maturite-cto',
 		description:
 			'Évalue ta posture CTO sur 6 axes : leadership, décision, craft, organisation, pratiques, parcours.',
-		statut: 'à venir',
+		statut: 'disponible',
 		url: '/outils/diagnostic-maturite-cto/',
 		categorie: 'leadership'
 	},
@@ -40,7 +40,7 @@ export const tools: Tool[] = [
 		slug: 'boussole-carriere-tech',
 		description:
 			'Aide-toi à te situer dans ton parcours tech et identifie les repères pour la suite.',
-		statut: 'à venir',
+		statut: 'disponible',
 		url: '/outils/boussole-carriere-tech/',
 		categorie: 'carrière'
 	},
@@ -48,8 +48,8 @@ export const tools: Tool[] = [
 		nom: 'Tech Radar personnel',
 		slug: 'tech-radar-personnel',
 		description:
-			'Crée ton propre tech radar interactif : Adopt, Trial, Assess, Hold. Export image.',
-		statut: 'à venir',
+			'Crée ton propre tech radar interactif : Adopt, Trial, Assess, Hold. Export Markdown.',
+		statut: 'disponible',
 		url: '/outils/tech-radar-personnel/',
 		categorie: 'décision'
 	},
@@ -58,7 +58,7 @@ export const tools: Tool[] = [
 		slug: 'generateur-rfc',
 		description:
 			'Structure une Request for Comments avec des repères contextuels issus du terrain.',
-		statut: 'à venir',
+		statut: 'disponible',
 		url: '/outils/generateur-rfc/',
 		categorie: 'gouvernance'
 	},
@@ -67,7 +67,7 @@ export const tools: Tool[] = [
 		slug: 'matrice-decision-technique',
 		description:
 			'Scoring multicritères pondéré pour les décisions tech. Générique et adaptable.',
-		statut: 'à venir',
+		statut: 'disponible',
 		url: '/outils/matrice-decision-technique/',
 		categorie: 'décision'
 	},
@@ -76,7 +76,7 @@ export const tools: Tool[] = [
 		slug: 'checklist-code-review',
 		description:
 			'Checklist interactive pour structurer tes revues de code. Annotable et exportable.',
-		statut: 'à venir',
+		statut: 'disponible',
 		url: '/outils/checklist-code-review/',
 		categorie: 'pratiques'
 	}
