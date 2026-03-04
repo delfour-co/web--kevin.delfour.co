@@ -18,33 +18,59 @@ Ce fichier sert de référence pour les assistants IA travaillant sur ce projet.
 
 ## Architecture technique
 
-**Générateur :** Hugo (v0.147.8+extended)
-**Thème :** Custom (basé sur PaperMod, fortement personnalisé)
+**Framework :** SvelteKit (Svelte 5) avec adapter-static (site statique)
+**Langage :** TypeScript
+**Contenu :** Markdown via mdsvex
+**Recherche :** Pagefind (post-build)
 **Langue :** Français
+**Déploiement :** GitHub Pages via GitHub Actions
 
 ### Structure des dossiers
 
 ```
 .
-├── content/                      # Contenus markdown
-│   ├── _index.md                # Page d'accueil (hero + sections)
-│   ├── articles/_index.md       # Page liste articles (alias /posts/)
-│   ├── livres/_index.md         # Vitrine livres (alias /guides-livres/)
-│   ├── projets/_index.md        # Page projets
-│   ├── vision/_index.md         # Convictions et posture
-│   ├── contact/_index.md        # Contact et liens sociaux
-│   ├── about.md                 # À propos (alias /a-propos/)
-│   ├── start-here.md            # Guide de démarrage (legacy)
-│   ├── le-role-du-cto/          # Pilier 1 (legacy, accessible via URL)
-│   ├── gouvernance-decision/    # Pilier 2 (legacy, accessible via URL)
-│   ├── culture-management/      # Pilier 3 (legacy, accessible via URL)
-│   ├── trouver-sa-place/        # Pilier 4 (legacy, accessible via URL)
-│   ├── guides-livres/           # Livres complets (contenu source)
-│   └── posts/                   # Articles (152)
-├── themes/custom/layouts/        # Templates Hugo personnalisés
-├── assets/css/extended/         # CSS personnalisés
-├── themes/custom/               # Thème custom
-├── hugo.yaml                     # Configuration Hugo
+├── src/
+│   ├── routes/                   # Pages SvelteKit (file-based routing)
+│   │   ├── +layout.svelte       # Layout principal
+│   │   ├── articles/            # Liste + [slug] articles
+│   │   ├── livres/              # Vitrine + [book]/[chapter]
+│   │   ├── outils/              # Outils interactifs
+│   │   ├── projets/             # Page projets
+│   │   ├── vision/              # Convictions et posture
+│   │   ├── a-propos/            # Parcours et ligne morale
+│   │   ├── contact/             # Liens sociaux
+│   │   ├── search/              # Recherche Pagefind
+│   │   ├── archives/            # Archives chronologiques
+│   │   ├── categories/[category]/ # Filtrage par catégorie
+│   │   ├── posts/[slug]/        # Redirections legacy
+│   │   └── le-role-du-cto/ etc. # Redirections pages pilier legacy
+│   ├── content/                 # Contenus markdown
+│   │   ├── posts/               # Articles (~172)
+│   │   └── livres/              # Chapitres des livres
+│   ├── lib/
+│   │   ├── components/          # Composants Svelte
+│   │   │   ├── tools/           # Outils interactifs (BuildVsBuy, etc.)
+│   │   │   ├── Header.svelte
+│   │   │   ├── Footer.svelte
+│   │   │   ├── SEO.svelte
+│   │   │   ├── ThemeToggle.svelte
+│   │   │   ├── ScrollProgress.svelte
+│   │   │   ├── TableOfContents.svelte
+│   │   │   ├── Breadcrumbs.svelte
+│   │   │   ├── BookNav.svelte
+│   │   │   └── AccessibilityPanel.svelte
+│   │   ├── data/                # Données structurées (books, projects, tools)
+│   │   ├── stores/              # Stores Svelte (accessibility)
+│   │   ├── content.ts           # Chargement des articles markdown
+│   │   └── books.ts             # Chargement des chapitres de livres
+│   ├── app.css                  # Styles globaux
+│   ├── app.html                 # Template HTML racine
+│   └── app.d.ts                 # Types TypeScript
+├── static/                      # Assets statiques (images, favicons)
+├── svelte.config.js             # Configuration SvelteKit
+├── vite.config.ts               # Configuration Vite
+├── tsconfig.json                # Configuration TypeScript
+├── package.json                 # Dépendances et scripts
 ├── LIGNE_EDITORIALE.md          # Ligne éditoriale (référence absolue)
 ├── CLAUDE.md                    # Ce fichier
 └── .claude/                     # Kit éditorial (templates, prompts, guides)
@@ -56,14 +82,15 @@ Ce fichier sert de référence pour les assistants IA travaillant sur ce projet.
 
 ### Navigation principale
 
-Le site est structuré autour de 6 sections :
+Le site est structuré autour de 7 sections :
 
 1. **Articles** (`/articles/`) — Liste filtrable par catégorie
 2. **Livres** (`/livres/`) — Vitrine des livres gratuits en ligne
-3. **Projets** (`/projets/`) — Projets open source et katas
-4. **Vision** (`/vision/`) — Convictions et posture
-5. **À propos** (`/a-propos/`) — Parcours et ligne morale
-6. **Contact** (`/contact/`) — Liens sociaux et accompagnement
+3. **Outils** (`/outils/`) — Outils interactifs pour décisions techniques
+4. **Projets** (`/projets/`) — Projets open source et katas
+5. **Vision** (`/vision/`) — Convictions et posture
+6. **À propos** (`/a-propos/`) — Parcours et ligne morale
+7. **Contact** (`/contact/`) — Liens sociaux et accompagnement
 
 ### Catégories d'articles
 
@@ -76,34 +103,17 @@ Les articles sont classés en 6 catégories :
 - **Pratiques** — Code review, testing, pair programming, CI/CD, documentation
 - **Parcours** — Débuts, reconversion, carrière, trajectoires réalistes
 
-### Pages pilier (legacy)
+### Outils interactifs
 
-Les anciennes pages pilier restent accessibles à leurs URLs historiques :
-- `/le-role-du-cto/`, `/gouvernance-decision/`, `/culture-management/`, `/trouver-sa-place/`
-
----
-
-## Structure standard d'une page pilier
-
-Chaque page pilier suit cette structure (NON NÉGOCIABLE) :
-
-**Référence complète :** `.claude/PILLAR_TEMPLATE.md`
-
-Structure minimale :
-- Intention (1-2 paragraphes max)
-- À qui s'adresse (principalement / secondairement / ce que ce n'est pas)
-- Grandes tensions (4 à 6 tensions structurantes)
-- Où commencer (6-8 liens max, organisés par situations)
-- Derniers articles (3-5 maximum)
-- Aller plus loin (lien vers /posts)
-
-**Règle d'or :** Une page pilier est une **carte**, pas un article. Elle oriente, elle ne développe pas.
+8 outils Svelte dans `src/lib/components/tools/` :
+- Build vs Buy, Générateur ADR, Diagnostic CTO, Boussole Carrière
+- Tech Radar, Générateur RFC, Matrice Décision, Checklist Code Review
 
 ---
 
 ## Ton & style (NON NÉGOCIABLE)
 
-### ✅ À faire
+### À faire
 
 - Ton calme, sobre, lucide
 - Tutoiement assumé
@@ -111,7 +121,7 @@ Structure minimale :
 - Repères proposés, jamais imposés
 - Respect de l'autonomie du lecteur
 
-### ❌ À éviter ABSOLUMENT
+### À éviter ABSOLUMENT
 
 - "Il faut", "Tu dois", "La bonne solution est"
 - Jargon UX/marketing
@@ -135,6 +145,7 @@ Si la réponse est non → ne pas faire.
 ```yaml
 - Articles
 - Livres
+- Outils
 - Projets
 - Vision
 - À propos
@@ -147,44 +158,47 @@ Si la réponse est non → ne pas faire.
 - **Couleur accent :** Ambre/doré `#B37A08` (clair, WCAG AA) / `#F0B840` (sombre)
 - **Largeur homepage :** 1080px (`--home-width`)
 - **Style :** Clair épuré, espaces généreux, style éditorial craft
-- **Tokens :** `themes/custom/assets/css/core/theme-vars.css`
 
 ---
 
-## Taxonomies Hugo
+## Front matter des articles
+
+Chaque article markdown dans `src/content/posts/` doit avoir :
 
 ```yaml
-taxonomies:
-  tag: "tags"
-  category: "categories"
-  pillar: "pillars"      # legacy, conservé pour compatibilité
-  audience: "audiences"
+---
+title: "Titre de l'article"
+description: "Description courte (150-160 caractères)"
+date: 2025-01-15
+categories: ["leadership"]  # ou décision, craft, organisation, pratiques, parcours
+audience: "cto"              # ou jeunesse-tech, tous
+featured: false              # ou true
+tags: ["tag1", "tag2"]
+---
 ```
-
-Chaque article doit avoir :
-- `categories:` (leadership | décision | craft | organisation | pratiques | parcours)
-- `pillar:` (le-role-du-cto | gouvernance-decision | culture-management | trouver-sa-place) — legacy
-- `audience:` (cto | jeunesse-tech | tous)
-- `featured:` (true | false)
 
 ---
 
 ## Commandes utiles
 
 ```bash
-# Build local
-hugo server
+# Installer les dépendances
+npm install
 
-# Build production
-hugo --minify
+# Serveur de développement
+npm run dev
+
+# Build production (+ Pagefind)
+npm run build
+
+# Preview du build
+npm run preview
+
+# Vérification TypeScript
+npm run check
 
 # Check git status
 git status
-
-# Commit standard
-git add .
-git commit -m "Message"
-git push origin main
 ```
 
 ### Format des messages de commit
@@ -229,22 +243,20 @@ Toute modification doit :
 
 ### 2. Modifications interdites
 
-❌ Ajouter des niveaux de navigation
-❌ Créer de nouvelles taxonomies sans validation
-❌ Modifier le ton (voir section "Ton & style")
-❌ Ajouter des promesses de résultats
-❌ Transformer les piliers en "méthode"
-❌ Multiplier les CTA
-❌ Créer des fichiers markdown de documentation non demandés
+- Ajouter des niveaux de navigation
+- Modifier le ton (voir section "Ton & style")
+- Ajouter des promesses de résultats
+- Multiplier les CTA
+- Créer des fichiers markdown de documentation non demandés
 
 ### 3. Modifications autorisées
 
-✅ Micro-copy (1-2 phrases maximum)
-✅ Corrections de friction UX réelle et identifiée
-✅ Ajustements de hiérarchie visuelle légère
-✅ Reformulations minimales respectant le ton
-✅ Ajout d'articles respectant la ligne éditoriale
-✅ Ajustements CSS légers
+- Micro-copy (1-2 phrases maximum)
+- Corrections de friction UX réelle et identifiée
+- Ajustements de hiérarchie visuelle légère
+- Reformulations minimales respectant le ton
+- Ajout d'articles respectant la ligne éditoriale
+- Ajustements CSS légers
 
 ### 4. Process de validation
 
@@ -265,21 +277,6 @@ Si une seule réponse est "non" → ne pas faire.
 - `.claude/ARTICLE_TEMPLATE_CTO.md` — Structure canonique pour articles CTO
 - `.claude/ARTICLE_TEMPLATE_JEUNESSE.md` — Structure canonique pour articles jeunesse tech
 
-### Front matter minimal
-
-```yaml
----
-title: "Titre de l'article"
-description: "Description courte (150-160 caractères)"
-date: 2025-01-15
-categories: ["leadership"]  # ou décision, craft, organisation, pratiques, parcours
-pillar: "le-role-du-cto"    # legacy, conservé pour compatibilité
-audience: "cto"              # ou jeunesse-tech, tous
-featured: false              # ou true
-tags: ["tag1", "tag2"]
----
-```
-
 ### Structure canonique (CTO)
 
 1. Situation réelle
@@ -291,8 +288,6 @@ tags: ["tag1", "tag2"]
 7. Si c'était à refaire
 8. Pour approfondir (liens internes uniquement)
 
-**Chaque article doit renvoyer vers sa page pilier.**
-
 ### Structure canonique (Jeunesse tech)
 
 1. Dédramatisation
@@ -302,43 +297,6 @@ tags: ["tag1", "tag2"]
 5. Message de responsabilité
 6. Pour aller plus loin (liens internes uniquement)
 
-**Chaque article doit renvoyer vers sa page pilier.**
-
----
-
-## Historique des modifications majeures
-
-- **2025-01-XX** : Création du kit éditorial `.claude/`
-  - Templates pour piliers et articles
-  - Prompts de refactoring et création
-  - Checklists de publication
-  - Guide de ton et ligne éditoriale validée
-
-- **2025-12-16** : Retouche UX — Amélioration continuité cognitive menu → piliers
-  - Ajout bandeau de navigation
-  - Standardisation des 4 pages piliers
-  - Ajout micro-descriptions dans hugo.yaml
-
-- **2025-12-16** : Ajustements UX minimalistes
-  - Titre "Par où commencer ?" → "Selon ta situation"
-  - Ajout ancres #cto et #jeunesse-tech
-  - Liens raccourcis sur la home
-
-- **2026-02-28** : Refonte complète du site
-  - Nouvelle identité visuelle : Fraunces + Source Serif 4, accent ambre #D4920B
-  - Nouvelle navigation : Articles, Livres, Projets, Vision, À propos, Contact
-  - Nouvelle homepage : hero + sections thématiques (1080px)
-  - Migration piliers → catégories (leadership, décision, craft, organisation, pratiques, parcours)
-  - Suppression système 4 couleurs pilier, bandeau navigation, watermark dinosaure
-  - Pages dédiées : /vision/, /contact/, /articles/ avec filtres JS
-
-- **2026-03-01** : Optimisation homepage + audit complet
-  - Hero : avatar circulaire, tagline, CTA
-  - Section "Derniers articles" avec pills par thème
-  - Meta description longue (149 chars) + image OG
-  - Optimisation Google Fonts (poids réduits)
-  - Audit SEO, accessibilité, performance, contenu → 34 issues GitHub
-
 ---
 
 ## Contact & maintenance
@@ -346,7 +304,7 @@ tags: ["tag1", "tag2"]
 **Propriétaire :** Kevin Delfour
 **Repo :** github.com/delfour-co/web--kevin.delfour.co (privé)
 **Branche principale :** main
-**Déploiement :** Automatique sur push (via GitHub Actions ou Netlify)
+**Déploiement :** Automatique sur push via GitHub Actions → GitHub Pages
 
 ---
 
@@ -384,9 +342,8 @@ Le dossier `.claude/` contient les ressources de référence pour maintenir la c
 
 ### Documents de référence
 - **`TONE_GUIDE.md`** — Guide de ton et formulations
-- **`NAVIGATION_MODEL.md`** — Modèle de navigation (piliers → articles)
+- **`NAVIGATION_MODEL.md`** — Modèle de navigation
 - **`DESIGN_SYSTEM.md`** — Tokens, typographie, breakpoints, conventions CSS
-- **`LAYOUTS_REFERENCE.md`** — Inventaire des templates et partials Hugo
 
 ### Templates
 - **`PILLAR_TEMPLATE.md`** — Template pour pages piliers
@@ -397,14 +354,10 @@ Le dossier `.claude/` contient les ressources de référence pour maintenir la c
 - **`PROMPT_PILLAR_REFACTOR.md`** — Refactorer une page pilier
 - **`PROMPT_BATCH_REFACTOR_ARTICLES.md`** — Refactorer un lot d'articles
 - **`PROMPT_CREATE_PILLAR_CORPUS.md`** — Créer un corpus complet pour un pilier
-- **`PROMPT_UNIFY_SITE.md`** — Unifier le site (fin du "double univers")
 
 ### Checklists & maintenance
 - **`CHECKLIST_PUBLICATION.md`** — Checklist avant publication (2 minutes)
 - **`MAINTENANCE_LINKS.md`** — Audit et corrections des liens internes
-
-### Documentation
-- **`README.md`** — Vue d'ensemble du kit éditorial
 
 **Règle :** Avant toute création ou refactoring majeur, consulter les templates et prompts correspondants dans `.claude/`.
 
@@ -414,11 +367,10 @@ Le dossier `.claude/` contient les ressources de référence pour maintenir la c
 
 - **Ligne éditoriale complète :** `LIGNE_EDITORIALE.md` (source unique)
 - **Kit éditorial :** `.claude/` (templates, prompts, guides)
-- **Configuration Hugo :** `hugo.yaml`
-- **Page d'accueil :** `content/_index.md`
-- **Design tokens :** `themes/custom/assets/css/core/theme-vars.css`
-- **Homepage CSS :** `assets/css/extended/homepage.css`
-- **Thème custom :** `themes/custom/`
+- **Styles globaux :** `src/app.css`
+- **Composants :** `src/lib/components/`
+- **Données :** `src/lib/data/`
+- **Contenu :** `src/content/`
 
 ---
 
