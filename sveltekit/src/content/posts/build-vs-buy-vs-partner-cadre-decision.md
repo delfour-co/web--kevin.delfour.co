@@ -1,0 +1,182 @@
+---
+title: "Build vs Buy vs Partner : un cadre de décision pragmatique"
+date: "2024-07-01"
+slug: "build-vs-buy-vs-partner-cadre-decision"
+description: "Construire, acheter ou s'associer : comment décider face à ce trilemme classique."
+categories: ["décision"]
+tags: ["decision", "strategie", "build-vs-buy", "architecture"]
+featured: false
+ShowToc: true
+---
+
+## Situation réelle
+
+"On doit implémenter un système de paiement. On le code nous-mêmes, on prend Stripe, ou on s'associe avec un partenaire fintech ?" Cette question, tout CTO l'a déjà rencontrée des dizaines de fois.
+
+Ce que j'ai observé : la décision Build vs Buy vs Partner revient constamment. Sans cadre clair, elle se prend au feeling ou selon les préférences techniques. Avec un cadre, elle devient rationnelle.
+
+## Le faux problème
+
+Le faux problème serait de croire qu'il existe une réponse universelle. "Toujours acheter" ou "Toujours construire" sont également faux. La bonne réponse dépend du contexte.
+
+Un autre faux problème : évaluer uniquement sur le coût immédiat. En réalité, le TCO (Total Cost of Ownership) sur 3 ans change souvent la conclusion.
+
+## Le vrai enjeu CTO
+
+Le vrai enjeu est de structurer la décision avec des critères objectifs :
+
+**Les 3 options expliquées** :
+
+**Build (construire en interne)**
+
+Avantages :
+- Contrôle total
+- Différenciation possible
+- Pas de dépendance externe
+- Données en interne
+
+Inconvénients :
+- Temps de développement
+- Coût développement + maintenance
+- Compétences à avoir en interne
+- Risque de sous-estimer la complexité
+
+**Buy (acheter SaaS/licence)**
+
+Avantages :
+- Rapidité (jours vs mois)
+- Maintenance externalisée
+- Features matures
+- Expertise du vendor
+
+Inconvénients :
+- Coût récurrent
+- Dépendance au vendor
+- Personnalisation limitée
+- Risque de lock-in
+
+**Partner (s'associer)**
+
+Avantages :
+- Mutualisation des coûts
+- Expertise partagée
+- Accès réseau/distribution
+
+Inconvénients :
+- Gouvernance complexe
+- Alignement stratégique nécessaire
+- Risque relationnel
+- Partage de la valeur
+
+**Le framework de décision** :
+
+**Critère 1 - Différenciation**
+
+Est-ce un avantage compétitif pour nous ?
+- Core business → Build
+- Commodity → Buy
+- Nouveau marché → Partner
+
+**Critère 2 - Complexité**
+
+Quel niveau de complexité et de spécificité ?
+- Simple et mature → Buy
+- Complexe et spécifique → Build
+- Très complexe et hors expertise → Partner
+
+**Critère 3 - TCO 3 ans**
+
+Coût total de possession sur 3 ans :
+- **Coût Build** : Dev initial + maintenance (souvent sous-estimé ×2)
+- **Coût Buy** : Licences × 36 mois + intégration
+- **Coût Partner** : Investissement + revenue sharing
+
+**Critère 4 - Time to market**
+
+Quelle urgence ?
+- Besoin immédiat → Buy
+- Peut attendre 3-6 mois → Build
+- Expérimentation → Partner (test de marché)
+
+**Critère 5 - Compétences**
+
+Avons-nous l'expertise nécessaire ?
+- Expertise en interne → Build possible
+- Pas d'expertise → Buy ou Partner
+- Compétence stratégique à développer → Build comme investissement
+
+## Cadre de décision
+
+Tu peux aussi utiliser [l'outil interactif Build vs Buy](/outils/build-vs-buy/) pour appliquer ce cadre directement à ta situation.
+
+Voici ma matrice pour décider :
+
+**1. Scoring simple (0-10 par critère)**
+- Différenciation compétitive (10 = cœur business)
+- Complexité technique (10 = très complexe)
+- Urgence (10 = besoin immédiat)
+- Compétences internes (10 = expertise forte)
+- Budget disponible (10 = budget large)
+
+**2. Interpréter les scores**
+- Build si : différenciation &gt;7, compétences &gt;7, urgence &lt;5
+- Buy si : différenciation &lt;4, urgence &gt;7, ou complexité trop haute vs compétences
+- Partner si : nouveau marché, complexité très haute, ou mutualisation intéressante
+
+**3. Calculer TCO sur 3 ans**
+Exemple paiement :
+- Build : 6 mois × 2 devs (120k€) + 20% maintenance/an (48k€ sur 3 ans) = 168k€
+- Buy Stripe : 2.9% + 0.25€/transaction × volume + intégration (10k€) = calculer selon volume
+- Partner : négocier revshare + investissement initial
+
+**4. Tester avec MVP si incertitude**
+Si hésitation, commencer par Buy (rapide), puis Build si ça devient stratégique. Ou Partner en pilote.
+
+**5. Critères de révision**
+"On Buy maintenant, mais on revisite dans 12 mois si volume × 10." Cette clause évite la paralysie.
+
+## Retour terrain
+
+Ce que j'ai observé dans différentes décisions :
+
+**Le build raté** : Système de facturation construit en interne. "On est une tech company, on sait faire." Sous-estimation ×3, 18 mois au lieu de 6, coût réel 400k€ vs 80k€ si Buy. Leçon : pas une différenciation, était un Buy.
+
+**Le buy qui limite** : Pris Salesforce pour CRM, customisation impossible pour cas spécifiques. Lock-in progressif, dépendance totale. Leçon : quand c'est différenciant, Build peut avoir du sens.
+
+**Le partner qui marche** : S'associer avec un acteur logistique pour nouvelle offre. Mutualisation expertise, accès marché, partage risque. **Résultat:** succès partagé, ROI rapide.
+
+**La transition Build→Buy** : Construit système de monitoring custom. Maintenance 30% temps équipe. Migration vers Datadog. **Résultat:** -70% coût, features meilleures, équipe focus sur différenciation.
+
+## Erreurs fréquentes
+
+**Build par ego technique**
+"On est capables de le faire." Oui, mais est-ce qu'on devrait ? **Résultat:** temps et argent gaspillés sur du non-différenciant.
+
+**Buy sans évaluer TCO**
+Prendre SaaS sans calculer coût sur 3 ans. **Résultat:** surprise à 300k€/an alors qu'on pensait 50k€/an.
+
+**Partner sans gouvernance claire**
+S'associer sans définir qui décide quoi. **Résultat:** blocages, désalignement, échec du partenariat.
+
+**Sous-estimer le coût du Build**
+Oublier la maintenance (souvent 20-30% du coût initial par an). **Résultat:** TCO réel × 2-3 vs estimé.
+
+## Si c'était à refaire
+
+Avec le recul, voici ce que je ferais différemment :
+
+**Systématiser le framework**
+Utiliser la matrice scoring pour toute décision Build/Buy/Partner. Cette rigueur évite les décisions au feeling.
+
+**Calculer TCO 3 ans systématiquement**
+Ne jamais décider sans ce calcul. Inclure maintenance, évolution, coût opportunité.
+
+**Commencer par Buy, migrer vers Build si nécessaire**
+Stratégie par défaut : Buy pour valider rapidement, puis Build si ça devient différenciant et le volume le justifie.
+
+**Documenter la décision et les critères de révision**
+ADR avec : option choisie, scoring, TCO, et "on révise si X change". Cette clause permet d'ajuster.
+
+## Pour approfondir
+
+Pour approfondir, tu peux aussi consulter les autres contenus du pilier [Gouvernance & décision](/articles/?cat=décision).
