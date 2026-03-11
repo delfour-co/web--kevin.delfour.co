@@ -27,15 +27,22 @@
 		top: var(--header-height);
 		left: 0;
 		right: 0;
-		height: 2px;
+		height: 3px;
 		z-index: 49;
-		background: transparent;
+		background: rgba(0, 0, 0, 0.4);
 	}
 
 	.scroll-progress-bar {
 		height: 100%;
 		background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3));
 		transition: width 0.1s linear;
-		box-shadow: 0 0 8px rgba(6, 182, 212, 0.5);
+		box-shadow: 0 0 10px rgba(6, 182, 212, 0.6);
+	}
+
+	@media (max-width: 768px) {
+		.scroll-progress {
+			height: 4px;
+			background: rgba(0, 0, 0, 0.6);
+		}
 	}
 </style>

@@ -70,23 +70,22 @@
 		</div>
 
 		<div class="hero-content">
-			<div class="hero-avatar-wrapper reveal">
+			<div class="hero-avatar-wrapper">
 				<div class="avatar-ring"></div>
 				<div class="avatar-glow"></div>
 				<img src="/images/kevin-delfour.webp" alt="Kevin Delfour" class="hero-avatar" width="140" height="140" />
 			</div>
-			<h1 class="hero-title gradient-text reveal reveal-delay-1">Kevin Delfour</h1>
-			<p class="hero-subtitle reveal reveal-delay-2">CTO Hands-on · 17 ans de terrain</p>
-			<p class="hero-tagline reveal reveal-delay-3">Je donne des repères. Pas des leçons.</p>
-			<div class="hero-actions reveal reveal-delay-4">
+			<h1 class="hero-title gradient-text">Kevin Delfour</h1>
+			<p class="hero-subtitle">CTO Hands-on · 17 ans de terrain</p>
+			<p class="hero-tagline">Je donne des repères. Pas des leçons.</p>
+			<div class="hero-actions">
 				<a href="/outils/" class="btn-primary">Voir les outils</a>
 				<a href="/livres/" class="btn-secondary">Lire les livres</a>
 			</div>
-		</div>
-
-		<div class="scroll-indicator" aria-hidden="true">
-			<div class="scroll-line">
-				<div class="scroll-dot"></div>
+			<div class="scroll-indicator" aria-hidden="true">
+				<div class="scroll-line">
+					<div class="scroll-dot"></div>
+				</div>
 			</div>
 		</div>
 	</section>
