@@ -63,7 +63,6 @@
 	<section class="hero">
 		<!-- Animated background -->
 		<div class="hero-bg" aria-hidden="true">
-			<div class="hero-grid"></div>
 			<div class="hero-orb hero-orb--1"></div>
 			<div class="hero-orb hero-orb--2"></div>
 			<div class="hero-orb hero-orb--3"></div>
@@ -82,6 +81,12 @@
 			<div class="hero-actions reveal reveal-delay-4">
 				<a href="/outils/" class="btn-primary">Voir les outils</a>
 				<a href="/livres/" class="btn-secondary">Lire les livres</a>
+			</div>
+		</div>
+
+		<div class="scroll-indicator" aria-hidden="true">
+			<div class="scroll-line">
+				<div class="scroll-dot"></div>
 			</div>
 		</div>
 	</section>
@@ -226,19 +231,6 @@
 		inset: 0;
 		overflow: hidden;
 		pointer-events: none;
-	}
-
-	.hero-grid {
-		position: absolute;
-		inset: -10%;
-		background-image:
-			linear-gradient(rgba(6, 182, 212, 0.07) 1px, transparent 1px),
-			linear-gradient(90deg, rgba(6, 182, 212, 0.07) 1px, transparent 1px);
-		background-size: 60px 60px;
-		animation: grid-pulse 6s ease-in-out infinite;
-		transform: perspective(500px) rotateX(25deg);
-		transform-origin: center 70%;
-		mask-image: linear-gradient(to top, transparent, black 20%, black 80%, transparent);
 	}
 
 	.hero-orb {
@@ -569,8 +561,47 @@
 		color: var(--secondary);
 	}
 
+	/* Scroll indicator — mobile only */
+	.scroll-indicator {
+		display: none;
+		position: absolute;
+		bottom: 24px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 2;
+	}
+
+	.scroll-line {
+		width: 1px;
+		height: 48px;
+		background: rgba(6, 182, 212, 0.15);
+		border-radius: 1px;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.scroll-dot {
+		width: 3px;
+		height: 12px;
+		background: var(--accent);
+		border-radius: 3px;
+		position: absolute;
+		left: -1px;
+		top: 0;
+		animation: scroll-bounce 2s ease-in-out infinite;
+		box-shadow: 0 0 8px rgba(6, 182, 212, 0.6);
+	}
+
+	@keyframes scroll-bounce {
+		0%, 100% { top: 0; opacity: 0.4; }
+		50% { top: 36px; opacity: 1; }
+	}
+
 	/* Responsive */
 	@media (max-width: 768px) {
+		.scroll-indicator {
+			display: block;
+		}
 		.hero {
 			min-height: 70vh;
 			padding: calc(var(--gap) * 4) var(--gap) calc(var(--gap) * 3);
