@@ -72,27 +72,24 @@
 
 	const averageLevel = $derived(getLevel(Math.round(average)));
 
-	const sortedAxes = $derived(() => {
+	const sortedAxes = $derived.by(() => {
 		return [...axes].sort((a, b) => scores[b.id] - scores[a.id]);
 	});
 
-	const strongest = $derived(() => {
-		const sorted = sortedAxes();
-		return sorted[0];
+	const strongest = $derived.by(() => {
+		return sortedAxes[0];
 	});
 
-	const weakest = $derived(() => {
-		const sorted = sortedAxes();
-		return sorted[sorted.length - 1];
+	const weakest = $derived.by(() => {
+		return sortedAxes[sortedAxes.length - 1];
 	});
 
-	const twoWeakest = $derived(() => {
-		const sorted = sortedAxes();
-		return [sorted[sorted.length - 1], sorted[sorted.length - 2]];
+	const twoWeakest = $derived.by(() => {
+		return [sortedAxes[sortedAxes.length - 1], sortedAxes[sortedAxes.length - 2]];
 	});
 
 	// Radar chart SVG computation
-	const radarPoints = $derived(() => {
+	const radarPoints = $derived.by(() => {
 		const cx = 150;
 		const cy = 150;
 		const maxR = 120;
@@ -111,7 +108,7 @@
 	});
 
 	const radarPolygon = $derived(
-		radarPoints().map((p) => `${p.x},${p.y}`).join(' ')
+		radarPoints.map((p) => `${p.x},${p.y}`).join(' ')
 	);
 
 	function gridPoints(level: number): string {
@@ -163,7 +160,7 @@
 
 	async function handleExport() {
 		const today = new Date().toISOString().split('T')[0];
-		const weak = twoWeakest();
+		const weak = twoWeakest;
 		const lines = [
 			'# Évaluation Maturité Équipe',
 			'',
@@ -174,8 +171,8 @@
 			'',
 			...axes.map((a) => `- ${a.name} : ${scores[a.id]}/10 — ${getLevel(scores[a.id]).label}`),
 			'',
-			`**Point fort :** ${strongest().name} (${scores[strongest().id]}/10)`,
-			`**Axe de progression :** ${weakest().name} (${scores[weakest().id]}/10)`,
+			`**Point fort :** ${strongest.name} (${scores[strongest.id]}/10)`,
+			`**Axe de progression :** ${weakest.name} (${scores[weakest.id]}/10)`,
 			'',
 			'## Pistes de progression',
 			'',
@@ -260,7 +257,7 @@
 					{/each}
 
 					<!-- Axes lines -->
-					{#each radarPoints() as point}
+					{#each radarPoints as point}
 						<line x1="150" y1="150" x2={point.x} y2={point.y} class="radar-axis" />
 					{/each}
 
@@ -268,12 +265,12 @@
 					<polygon points={radarPolygon} class="radar-data" />
 
 					<!-- Data points -->
-					{#each radarPoints() as point}
+					{#each radarPoints as point}
 						<circle cx={point.x} cy={point.y} r="4" class="radar-dot" />
 					{/each}
 
 					<!-- Labels -->
-					{#each radarPoints() as point}
+					{#each radarPoints as point}
 						<text
 							x={point.labelX}
 							y={point.labelY}
@@ -297,17 +294,17 @@
 				</div>
 				<div class="summary-row">
 					<span class="summary-label">Point fort</span>
-					<span class="summary-value summary-value--accent">{strongest().name}</span>
+					<span class="summary-value summary-value--accent">{strongest.name}</span>
 				</div>
 				<div class="summary-row">
 					<span class="summary-label">Axe de progression</span>
-					<span class="summary-value">{weakest().name}</span>
+					<span class="summary-value">{weakest.name}</span>
 				</div>
 			</div>
 
 			<div class="suggestions">
 				<div class="suggestions-title">Pistes de progression</div>
-				{#each twoWeakest() as axis}
+				{#each twoWeakest as axis}
 					{@const level = getLevel(scores[axis.id])}
 					<div class="suggestion-block">
 						<div class="suggestion-axis">

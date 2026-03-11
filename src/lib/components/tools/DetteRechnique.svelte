@@ -65,7 +65,7 @@
 	let expandedZone = $state<string | null>(null);
 
 	// Weighted average: weight = impact for each zone
-	const overallScore = $derived(() => {
+	const overallScore = $derived.by(() => {
 		let totalWeight = 0;
 		let weightedSum = 0;
 		for (const z of zones) {
@@ -77,8 +77,8 @@
 		return Math.round((weightedSum / totalWeight) * 10) / 10;
 	});
 
-	const debtLevel = $derived(() => {
-		const s = overallScore();
+	const debtLevel = $derived.by(() => {
+		const s = overallScore;
 		if (s <= 3) return { label: 'Saine', color: 'var(--dt-accent)' };
 		if (s <= 5) return { label: 'Gerable', color: 'var(--dt-accent2)' };
 		if (s <= 7) return { label: 'Preoccupante', color: 'var(--dt-warning)' };
@@ -86,7 +86,7 @@
 	});
 
 	// Priority: sorted by impact desc, then effort asc
-	const priorities = $derived(() => {
+	const priorities = $derived.by(() => {
 		return zones
 			.map((z) => ({
 				...z,
@@ -98,10 +98,10 @@
 			.sort((a, b) => b.ratio - a.ratio);
 	});
 
-	const top3 = $derived(() => priorities().slice(0, 3));
+	const top3 = $derived.by(() => priorities.slice(0, 3));
 
 	// Matrix quadrants
-	const matrixZones = $derived(() => {
+	const matrixZones = $derived.by(() => {
 		return zones.map((z) => ({
 			id: z.id,
 			name: z.name,
@@ -188,14 +188,14 @@
 
 	async function handleExport() {
 		const today = new Date().toISOString().split('T')[0];
-		const level = debtLevel();
-		const p = top3();
+		const level = debtLevel;
+		const p = top3;
 
 		const md = [
 			'# Evaluation dette technique',
 			'',
 			`**Date :** ${today}`,
-			`**Score global :** ${overallScore()}/10 — ${level.label}`,
+			`**Score global :** ${overallScore}/10 — ${level.label}`,
 			'',
 			'## Scores par zone',
 			'',
@@ -215,7 +215,7 @@
 			'',
 			'| Zone | Impact | Effort | Quadrant |',
 			'|------|--------|--------|----------|',
-			...matrixZones().map(
+			...matrixZones.map(
 				(z) => `| ${z.name} | ${z.impact}/5 | ${z.effort}/5 | ${getQuadrantLabel(z.quadrant)} |`
 			),
 			'',
@@ -354,13 +354,13 @@
 		<div class="dt-results" aria-live="polite" aria-atomic="true">
 			<div class="glass-card dt-score-card">
 				<div class="dt-score-header">Score global</div>
-				<div class="dt-score-big" style="color: {debtLevel().color}">{overallScore()}</div>
+				<div class="dt-score-big" style="color: {debtLevel.color}">{overallScore}</div>
 				<div class="dt-score-max">/10</div>
-				<div class="dt-score-label" style="color: {debtLevel().color}">{debtLevel().label}</div>
+				<div class="dt-score-label" style="color: {debtLevel.color}">{debtLevel.label}</div>
 				<div class="dt-score-bar-track">
 					<div
 						class="dt-score-bar-fill"
-						style="width: {overallScore() * 10}%; background: {debtLevel().color}"
+						style="width: {overallScore * 10}%; background: {debtLevel.color}"
 					></div>
 				</div>
 			</div>
@@ -380,7 +380,7 @@
 						<span class="dt-matrix-quadrant dt-matrix-quadrant--br">A surveiller</span>
 
 						<!-- Zone dots -->
-						{#each matrixZones() as z}
+						{#each matrixZones as z}
 							<div
 								class="dt-matrix-dot"
 								style="
@@ -401,7 +401,7 @@
 			<div class="glass-card dt-priorities-card">
 				<div class="dt-card-title">Top 3 priorites</div>
 				<ol class="dt-priorities-list">
-					{#each top3() as item, i}
+					{#each top3 as item, i}
 						<li class="dt-priority-item">
 							<span class="dt-priority-rank">#{i + 1}</span>
 							<div class="dt-priority-info">

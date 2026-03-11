@@ -80,7 +80,7 @@
 	}
 
 	// Completeness
-	let completeness = $derived(() => {
+	let completeness = $derived.by(() => {
 		const sections = [
 			// Metadata
 			title.trim() || incidentDate || duration.trim() || author.trim(),
@@ -100,7 +100,7 @@
 	});
 
 	// Actions summary
-	let actionsSummary = $derived(() => {
+	let actionsSummary = $derived.by(() => {
 		const validActions = actions.filter((a) => a.action.trim());
 		const byPriority: Record<string, number> = {};
 		const byStatus: Record<string, number> = {};
@@ -631,12 +631,12 @@
 			<div class="completeness-section">
 				<div class="completeness-header">
 					<span class="completeness-label">Complétude</span>
-					<span class="completeness-value">{completeness()}%</span>
+					<span class="completeness-value">{completeness}%</span>
 				</div>
 				<div class="completeness-bar">
 					<div
 						class="completeness-fill"
-						style="width: {completeness()}%"
+						style="width: {completeness}%"
 					></div>
 				</div>
 			</div>
@@ -665,13 +665,13 @@
 			{/if}
 
 			<!-- Actions summary -->
-			{#if actionsSummary().total > 0}
+			{#if actionsSummary.total > 0}
 				<div class="actions-summary">
 					<h3 class="panel-subtitle">
-						Actions ({actionsSummary().total})
+						Actions ({actionsSummary.total})
 					</h3>
 					<div class="summary-grid">
-						{#each Object.entries(actionsSummary().byPriority) as [priority, count]}
+						{#each Object.entries(actionsSummary.byPriority) as [priority, count]}
 							<div class="summary-item">
 								<span class="summary-count">{count}</span>
 								<span class="summary-label">{priority}</span>
@@ -679,7 +679,7 @@
 						{/each}
 					</div>
 					<div class="summary-grid summary-grid--status">
-						{#each Object.entries(actionsSummary().byStatus) as [status, count]}
+						{#each Object.entries(actionsSummary.byStatus) as [status, count]}
 							<div class="summary-item">
 								<span
 									class="summary-status-dot"

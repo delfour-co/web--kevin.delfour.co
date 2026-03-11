@@ -75,7 +75,7 @@
 
 	const overallMaturity = $derived(getOverallMaturity(average));
 
-	const strongest = $derived(() => {
+	const strongest = $derived.by(() => {
 		let max = 0;
 		let name = '';
 		for (const a of axes) {
@@ -87,7 +87,7 @@
 		return name;
 	});
 
-	const weakest = $derived(() => {
+	const weakest = $derived.by(() => {
 		let min = 11;
 		let name = '';
 		for (const a of axes) {
@@ -99,13 +99,13 @@
 		return name;
 	});
 
-	const weakestTwo = $derived(() => {
+	const weakestTwo = $derived.by(() => {
 		const sorted = [...axes].sort((a, b) => scores[a.id] - scores[b.id]);
 		return sorted.slice(0, 2);
 	});
 
 	// Radar chart SVG computation
-	const radarPoints = $derived(() => {
+	const radarPoints = $derived.by(() => {
 		const cx = 150;
 		const cy = 150;
 		const maxR = 120;
@@ -124,7 +124,7 @@
 	});
 
 	const radarPolygon = $derived(
-		radarPoints().map((p) => `${p.x},${p.y}`).join(' ')
+		radarPoints.map((p) => `${p.x},${p.y}`).join(' ')
 	);
 
 	function gridPoints(level: number): string {
@@ -191,12 +191,12 @@
 				return `- ${a.name} : ${scores[a.id]}/10 — _${m.label}_`;
 			}),
 			'',
-			`**Point fort :** ${strongest()}`,
-			`**Axe de progression :** ${weakest()}`,
+			`**Point fort :** ${strongest}`,
+			`**Axe de progression :** ${weakest}`,
 			'',
 			'## Pistes de réflexion',
 			'',
-			...weakestTwo().flatMap((a) => [
+			...weakestTwo.flatMap((a) => [
 				`### ${a.name} (${scores[a.id]}/10 — ${getAxisMaturity(scores[a.id]).label})`,
 				'',
 				a.guidance,
@@ -288,7 +288,7 @@
 					{/each}
 
 					<!-- Axes lines -->
-					{#each radarPoints() as point}
+					{#each radarPoints as point}
 						<line x1="150" y1="150" x2={point.x} y2={point.y} class="radar-axis" />
 					{/each}
 
@@ -296,12 +296,12 @@
 					<polygon points={radarPolygon} class="radar-data" />
 
 					<!-- Data points -->
-					{#each radarPoints() as point}
+					{#each radarPoints as point}
 						<circle cx={point.x} cy={point.y} r="4" class="radar-dot" />
 					{/each}
 
 					<!-- Labels -->
-					{#each radarPoints() as point}
+					{#each radarPoints as point}
 						<text
 							x={point.labelX}
 							y={point.labelY}
@@ -316,17 +316,17 @@
 			<div class="result-summary">
 				<div class="summary-row">
 					<span class="summary-label">Point fort</span>
-					<span class="summary-value summary-value--accent">{strongest()}</span>
+					<span class="summary-value summary-value--accent">{strongest}</span>
 				</div>
 				<div class="summary-row">
 					<span class="summary-label">Axe de progression</span>
-					<span class="summary-value">{weakest()}</span>
+					<span class="summary-value">{weakest}</span>
 				</div>
 			</div>
 
 			<div class="guidance-section">
 				<div class="guidance-title">Pistes de réflexion</div>
-				{#each weakestTwo() as axis}
+				{#each weakestTwo as axis}
 					{@const maturity = getAxisMaturity(scores[axis.id])}
 					<div class="guidance-card">
 						<div class="guidance-card-header">

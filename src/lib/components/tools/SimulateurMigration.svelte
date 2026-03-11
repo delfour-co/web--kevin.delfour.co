@@ -117,7 +117,7 @@
 	);
 
 	// Risk matrix: 3x3 grid [probability][impact] -> count
-	const riskMatrix = $derived(() => {
+	const riskMatrix = $derived.by(() => {
 		const matrix: number[][] = [
 			[0, 0, 0],
 			[0, 0, 0],
@@ -134,7 +134,7 @@
 	});
 
 	// Timeline: cumulative start days for each phase
-	const timeline = $derived(() => {
+	const timeline = $derived.by(() => {
 		let offset = 0;
 		return phases.map((p) => {
 			const start = offset;
@@ -455,7 +455,7 @@
 				<div class="result-section-title">Timeline</div>
 				{#if totalDays > 0}
 					<div class="timeline-bar">
-						{#each timeline() as seg, i}
+						{#each timeline as seg, i}
 							{@const widthPct = totalDays > 0 ? ((seg.end - seg.start) / totalDays) * 100 : 0}
 							{#if widthPct > 0}
 								<div
@@ -471,7 +471,7 @@
 						{/each}
 					</div>
 					<div class="timeline-legend">
-						{#each timeline() as seg, i}
+						{#each timeline as seg, i}
 							<div class="timeline-legend-item">
 								<span class="timeline-legend-dot" style="background: {phaseColors[i % phaseColors.length]}"></span>
 								<span class="timeline-legend-name">{seg.nom || `Phase ${i + 1}`}</span>
@@ -503,7 +503,7 @@
 						<div class="matrix-grid">
 							{#each [2, 1, 0] as probIdx}
 								{#each [0, 1, 2] as impIdx}
-									{@const count = riskMatrix()[probIdx][impIdx]}
+									{@const count = riskMatrix[probIdx][impIdx]}
 									<div
 										class="matrix-cell"
 										style="background: {matrixCellColor(probIdx, impIdx)}"

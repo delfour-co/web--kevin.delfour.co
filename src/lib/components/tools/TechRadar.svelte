@@ -18,53 +18,80 @@
 		quadrant: Quadrant;
 	}
 
-	interface PlacedBlip extends Blip {
-		x: number;
-		y: number;
-	}
-
 	const ringDescriptions: Record<Ring, string> = {
-		Adopt: 'Pret pour la production. Confiance forte.',
-		Trial: 'A tester sur un vrai projet. Prometeur.',
-		Assess: 'A explorer. Merite investigation.',
-		Hold: 'A eviter pour les nouveaux projets.'
+		Adopt: 'Prêt pour la production. Confiance forte.',
+		Trial: 'À tester sur un vrai projet. Prometteur.',
+		Assess: 'À explorer. Mérite investigation.',
+		Hold: 'À éviter pour les nouveaux projets.'
 	};
 
 	const ringColors: Record<Ring, string> = {
-		Adopt: '#27ae60',
-		Trial: '#2980b9',
-		Assess: '#f39c12',
-		Hold: '#c0392b'
+		Adopt: '#06b6d4',
+		Trial: '#8b5cf6',
+		Assess: '#f59e0b',
+		Hold: '#ef4444'
 	};
 
-	const ringColorsAlpha: Record<Ring, string> = {
-		Adopt: 'rgba(39, 174, 96, 0.15)',
-		Trial: 'rgba(41, 128, 185, 0.12)',
-		Assess: 'rgba(243, 156, 18, 0.10)',
-		Hold: 'rgba(192, 57, 43, 0.08)'
-	};
-
-	// SVG radar constants
-	const SVG_SIZE = 600;
-	const CENTER = SVG_SIZE / 2;
-	const MAX_RADIUS = CENTER - 40; // leave margin for labels
-	const RING_RADII = [
-		MAX_RADIUS * 0.25, // Adopt outer edge
-		MAX_RADIUS * 0.50, // Trial outer edge
-		MAX_RADIUS * 0.75, // Assess outer edge
-		MAX_RADIUS          // Hold outer edge
+	const DEFAULT_BLIPS: Blip[] = [
+		// Langages & Frameworks
+		{ id: 'def-ts', name: 'TypeScript', ring: 'Adopt', quadrant: 'Langages & Frameworks' },
+		{ id: 'def-svelte', name: 'SvelteKit', ring: 'Adopt', quadrant: 'Langages & Frameworks' },
+		{ id: 'def-rust', name: 'Rust', ring: 'Trial', quadrant: 'Langages & Frameworks' },
+		{ id: 'def-react', name: 'React', ring: 'Adopt', quadrant: 'Langages & Frameworks' },
+		{ id: 'def-go', name: 'Go', ring: 'Assess', quadrant: 'Langages & Frameworks' },
+		{ id: 'def-flutter', name: 'Flutter', ring: 'Trial', quadrant: 'Langages & Frameworks' },
+		{ id: 'def-angular', name: 'Angular', ring: 'Hold', quadrant: 'Langages & Frameworks' },
+		{ id: 'def-python', name: 'Python', ring: 'Adopt', quadrant: 'Langages & Frameworks' },
+		// Outils
+		{ id: 'def-gh-actions', name: 'GitHub Actions', ring: 'Adopt', quadrant: 'Outils' },
+		{ id: 'def-docker', name: 'Docker', ring: 'Adopt', quadrant: 'Outils' },
+		{ id: 'def-biome', name: 'Biome', ring: 'Trial', quadrant: 'Outils' },
+		{ id: 'def-vitest', name: 'Vitest', ring: 'Adopt', quadrant: 'Outils' },
+		{ id: 'def-playwright', name: 'Playwright', ring: 'Trial', quadrant: 'Outils' },
+		{ id: 'def-terraform', name: 'Terraform', ring: 'Assess', quadrant: 'Outils' },
+		{ id: 'def-webpack', name: 'Webpack', ring: 'Hold', quadrant: 'Outils' },
+		// Plateformes
+		{ id: 'def-vercel', name: 'Vercel', ring: 'Adopt', quadrant: 'Plateformes' },
+		{ id: 'def-aws', name: 'AWS', ring: 'Adopt', quadrant: 'Plateformes' },
+		{ id: 'def-fly', name: 'Fly.io', ring: 'Trial', quadrant: 'Plateformes' },
+		{ id: 'def-supabase', name: 'Supabase', ring: 'Assess', quadrant: 'Plateformes' },
+		{ id: 'def-heroku', name: 'Heroku', ring: 'Hold', quadrant: 'Plateformes' },
+		{ id: 'def-ghpages', name: 'GitHub Pages', ring: 'Adopt', quadrant: 'Plateformes' },
+		// Techniques
+		{ id: 'def-tdd', name: 'TDD', ring: 'Adopt', quadrant: 'Techniques' },
+		{ id: 'def-pair', name: 'Pair Programming', ring: 'Trial', quadrant: 'Techniques' },
+		{ id: 'def-adr', name: 'ADR', ring: 'Adopt', quadrant: 'Techniques' },
+		{ id: 'def-trunk', name: 'Trunk-based dev', ring: 'Trial', quadrant: 'Techniques' },
+		{ id: 'def-micro', name: 'Microservices', ring: 'Assess', quadrant: 'Techniques' },
+		{ id: 'def-mono', name: 'Monorepo', ring: 'Assess', quadrant: 'Techniques' },
+		{ id: 'def-scrum', name: 'Scrum', ring: 'Hold', quadrant: 'Techniques' }
 	];
-	const BLIP_RADIUS = 7;
+
+	// SVG radar
+	const SVG_SIZE = 560;
+	const CENTER = SVG_SIZE / 2;
+	const MAX_RADIUS = CENTER - 36;
+	const RING_RADII = [
+		MAX_RADIUS * 0.25,
+		MAX_RADIUS * 0.50,
+		MAX_RADIUS * 0.75,
+		MAX_RADIUS
+	];
+	const BLIP_RADIUS = 6;
 
 	let blips = $state<Blip[]>([]);
 	let newName = $state('');
 	let newRing = $state<Ring>('Assess');
 	let newQuadrant = $state<Quadrant>('Langages & Frameworks');
 	let copyFeedback = $state(false);
-	let activeQuadrant = $state<Quadrant | null>(null);
 	let hoveredBlip = $state<string | null>(null);
+	let filterQuadrant = $state<Quadrant | 'all'>('all');
 
-	const blipsByQuadrant = $derived(() => {
+	const filteredBlips = $derived(
+		filterQuadrant === 'all' ? blips : blips.filter(b => b.quadrant === filterQuadrant)
+	);
+
+	const blipsByQuadrant = $derived.by(() => {
 		const grouped: Record<Quadrant, Record<Ring, Blip[]>> = {} as any;
 		for (const q of QUADRANTS) {
 			grouped[q] = {} as any;
@@ -78,7 +105,7 @@
 		return grouped;
 	});
 
-	// Deterministic pseudo-random from blip id
+	// Deterministic placement
 	function hashCode(s: string): number {
 		let h = 0;
 		for (let i = 0; i < s.length; i++) {
@@ -95,14 +122,18 @@
 		};
 	}
 
-	// Place blips on the radar SVG
-	const placedBlips = $derived(() => {
+	interface PlacedBlip extends Blip {
+		x: number;
+		y: number;
+	}
+
+	const placedBlips = $derived.by(() => {
 		const result: PlacedBlip[] = [];
 		const quadrantAngles: Record<Quadrant, [number, number]> = {
-			'Langages & Frameworks': [Math.PI, Math.PI * 1.5],      // top-left
-			'Outils': [Math.PI * 1.5, Math.PI * 2],                  // top-right
-			'Plateformes': [0, Math.PI * 0.5],                       // bottom-right
-			'Techniques': [Math.PI * 0.5, Math.PI]                    // bottom-left
+			'Langages & Frameworks': [Math.PI, Math.PI * 1.5],
+			'Outils': [Math.PI * 1.5, Math.PI * 2],
+			'Plateformes': [0, Math.PI * 0.5],
+			'Techniques': [Math.PI * 0.5, Math.PI]
 		};
 
 		for (const b of blips) {
@@ -112,31 +143,20 @@
 			const [startAngle, endAngle] = quadrantAngles[b.quadrant];
 
 			const rng = seededRandom(hashCode(b.id));
-			const margin = BLIP_RADIUS + 2;
+			const margin = BLIP_RADIUS + 3;
 			const r = innerR + margin + rng() * (outerR - innerR - margin * 2);
-			const anglePadding = 0.08;
+			const anglePadding = 0.12;
 			const angle = startAngle + anglePadding + rng() * (endAngle - startAngle - anglePadding * 2);
 
-			const x = CENTER + r * Math.cos(angle);
-			const y = CENTER + r * Math.sin(angle);
-
-			result.push({ ...b, x, y });
+			result.push({ ...b, x: CENTER + r * Math.cos(angle), y: CENTER - r * Math.sin(angle) });
 		}
-
 		return result;
 	});
-
-	// Quadrant label positions
-	const quadrantLabels = [
-		{ label: 'Langages & Frameworks', x: CENTER - MAX_RADIUS / 2, y: CENTER - MAX_RADIUS - 12 },
-		{ label: 'Outils', x: CENTER + MAX_RADIUS / 2, y: CENTER - MAX_RADIUS - 12 },
-		{ label: 'Plateformes', x: CENTER + MAX_RADIUS / 2, y: CENTER + MAX_RADIUS + 22 },
-		{ label: 'Techniques', x: CENTER - MAX_RADIUS / 2, y: CENTER + MAX_RADIUS + 22 }
-	];
 
 	function addBlip() {
 		const name = newName.trim();
 		if (!name) return;
+		if (blips.some(b => b.name.toLowerCase() === name.toLowerCase())) return;
 		const id = Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
 		blips.push({ id, name, ring: newRing, quadrant: newQuadrant });
 		newName = '';
@@ -144,33 +164,23 @@
 	}
 
 	function removeBlip(id: string) {
-		const idx = blips.findIndex((b) => b.id === id);
-		if (idx >= 0) {
-			blips.splice(idx, 1);
-			save();
-		}
+		const idx = blips.findIndex(b => b.id === id);
+		if (idx >= 0) { blips.splice(idx, 1); save(); }
 	}
 
 	function moveBlip(id: string, ring: Ring) {
-		const b = blips.find((b) => b.id === id);
-		if (b) {
-			b.ring = ring;
-			save();
-		}
+		const b = blips.find(b => b.id === id);
+		if (b) { b.ring = ring; save(); }
 	}
 
 	function handleReset() {
 		blips = [];
-		try {
-			localStorage.removeItem(STORAGE_KEY);
-		} catch {}
+		save();
 	}
 
 	function save() {
 		if (!browser) return;
-		try {
-			localStorage.setItem(STORAGE_KEY, JSON.stringify({ blips }));
-		} catch {}
+		try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ blips })); } catch {}
 	}
 
 	function load() {
@@ -178,311 +188,356 @@
 			const saved = localStorage.getItem(STORAGE_KEY);
 			if (saved) {
 				const d = JSON.parse(saved);
-				if (Array.isArray(d.blips)) blips = d.blips;
+				if (Array.isArray(d.blips) && d.blips.length > 0) { blips = d.blips; return; }
 			}
 		} catch {}
+		// First visit: start empty
+		blips = [];
 	}
 
 	async function handleExport() {
 		const today = new Date().toISOString().split('T')[0];
-		const grouped = blipsByQuadrant();
+		const grouped = blipsByQuadrant;
 		const lines = [
-			'# Tech Radar Personnel',
-			'',
+			'# Tech Radar Personnel', '',
 			`**Date :** ${today}`,
-			`**Technologies :** ${blips.length}`,
-			''
+			`**Technologies :** ${blips.length}`, ''
 		];
-
 		for (const q of QUADRANTS) {
-			const qBlips = RINGS.flatMap((r) => grouped[q][r]);
+			const qBlips = RINGS.flatMap(r => grouped[q][r]);
 			if (qBlips.length === 0) continue;
 			lines.push(`## ${q}`, '');
 			for (const r of RINGS) {
 				if (grouped[q][r].length > 0) {
 					lines.push(`### ${r}`);
-					for (const b of grouped[q][r]) {
-						lines.push(`- ${b.name}`);
-					}
+					for (const b of grouped[q][r]) lines.push(`- ${b.name}`);
 					lines.push('');
 				}
 			}
 		}
-
-		lines.push('---', `_Genere avec le Tech Radar Personnel — ${TOOL_URL}_`);
+		lines.push('---', `_Généré avec le Tech Radar Personnel — ${TOOL_URL}_`);
 		const md = lines.join('\n');
-
 		try {
 			await navigator.clipboard.writeText(md);
-			copyFeedback = true;
-			setTimeout(() => (copyFeedback = false), 2000);
 		} catch {
-			const textarea = document.createElement('textarea');
-			textarea.value = md;
-			textarea.style.position = 'fixed';
-			textarea.style.opacity = '0';
-			document.body.appendChild(textarea);
-			textarea.select();
-			document.execCommand('copy');
-			document.body.removeChild(textarea);
-			copyFeedback = true;
-			setTimeout(() => (copyFeedback = false), 2000);
+			const ta = document.createElement('textarea');
+			ta.value = md; ta.style.position = 'fixed'; ta.style.opacity = '0';
+			document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+			document.body.removeChild(ta);
 		}
+		copyFeedback = true;
+		setTimeout(() => (copyFeedback = false), 2000);
 	}
 
-	onMount(() => {
-		load();
-	});
+	onMount(() => { load(); });
 </script>
 
-<div class="tool-container">
-	<!-- Add form -->
-	<div class="add-form">
-		<div class="add-fields">
-			<input
-				type="text"
-				bind:value={newName}
-				placeholder="Nom de la technologie"
-				class="add-input"
-				onkeydown={(e) => e.key === 'Enter' && addBlip()}
-			/>
-			<select bind:value={newRing} class="add-select">
-				{#each RINGS as r}
-					<option value={r}>{r}</option>
-				{/each}
-			</select>
-			<select bind:value={newQuadrant} class="add-select add-select--wide">
-				{#each QUADRANTS as q}
-					<option value={q}>{q}</option>
-				{/each}
-			</select>
-			<button class="tool-btn tool-btn--primary add-btn" onclick={addBlip}>Ajouter</button>
-		</div>
-	</div>
-
-	<!-- Ring legend -->
-	<div class="ring-legend">
-		{#each RINGS as r}
-			<div class="ring-legend-item">
-				<span class="ring-dot" style="background: {ringColors[r]}"></span>
-				<span class="ring-name">{r}</span>
-				<span class="ring-desc">{ringDescriptions[r]}</span>
+<div class="tool-layout">
+	<!-- LEFT: List & Controls -->
+	<div class="tool-left">
+		<!-- Add form -->
+		<div class="add-form glass-card">
+			<h3 class="form-title">Ajouter une technologie</h3>
+			<div class="add-row">
+				<input
+					type="text"
+					bind:value={newName}
+					placeholder="Nom de la technologie"
+					class="add-input"
+					onkeydown={(e) => e.key === 'Enter' && addBlip()}
+				/>
+				<button class="tool-btn tool-btn--primary" onclick={addBlip}>+</button>
 			</div>
-		{/each}
-	</div>
-
-	<!-- SVG Radar Visualization -->
-	{#if blips.length > 0}
-		<div class="radar-svg-wrapper">
-			<svg
-				viewBox="0 0 {SVG_SIZE} {SVG_SIZE}"
-				class="radar-svg"
-				role="img"
-				aria-label="Tech Radar : visualisation circulaire des technologies"
-			>
-				<!-- Ring backgrounds (outermost first) -->
-				{#each [3, 2, 1, 0] as ringIdx}
-					<circle
-						cx={CENTER}
-						cy={CENTER}
-						r={RING_RADII[ringIdx]}
-						fill={ringColorsAlpha[RINGS[ringIdx]]}
-						stroke={ringColors[RINGS[ringIdx]]}
-						stroke-width="1"
-						stroke-opacity="0.3"
-					/>
-				{/each}
-
-				<!-- Quadrant dividers -->
-				<line
-					x1={CENTER - MAX_RADIUS}
-					y1={CENTER}
-					x2={CENTER + MAX_RADIUS}
-					y2={CENTER}
-					stroke="var(--border)"
-					stroke-width="1"
-				/>
-				<line
-					x1={CENTER}
-					y1={CENTER - MAX_RADIUS}
-					x2={CENTER}
-					y2={CENTER + MAX_RADIUS}
-					stroke="var(--border)"
-					stroke-width="1"
-				/>
-
-				<!-- Ring labels on axes -->
-				{#each RINGS as r, i}
-					<text
-						x={CENTER + RING_RADII[i] - (RING_RADII[i] - (i === 0 ? 0 : RING_RADII[i - 1])) / 2}
-						y={CENTER - 6}
-						text-anchor="middle"
-						class="radar-ring-label"
-						fill={ringColors[r]}
-					>
-						{r}
-					</text>
-				{/each}
-
-				<!-- Quadrant labels -->
-				{#each quadrantLabels as ql}
-					<text
-						x={ql.x}
-						y={ql.y}
-						text-anchor="middle"
-						class="radar-quadrant-label"
-					>
-						{ql.label}
-					</text>
-				{/each}
-
-				<!-- Blips -->
-				{#each placedBlips() as b}
-					<g
-						class="radar-blip"
-						class:radar-blip--hovered={hoveredBlip === b.id}
-						onmouseenter={() => (hoveredBlip = b.id)}
-						onmouseleave={() => (hoveredBlip = null)}
-						onfocus={() => (hoveredBlip = b.id)}
-						onblur={() => (hoveredBlip = null)}
-						tabindex="0"
-						role="button"
-						aria-label="{b.name} — {b.ring}, {b.quadrant}"
-					>
-						<circle
-							cx={b.x}
-							cy={b.y}
-							r={hoveredBlip === b.id ? BLIP_RADIUS + 2 : BLIP_RADIUS}
-							fill={ringColors[b.ring]}
-							stroke="#000"
-							stroke-width="1.5"
-							class="radar-blip-dot"
-						/>
-						{#if hoveredBlip === b.id}
-							<!-- Tooltip background -->
-							<rect
-								x={b.x + 12}
-								y={b.y - 14}
-								width={b.name.length * 7.5 + 16}
-								height="24"
-								rx="4"
-								fill="rgba(0, 0, 0, 0.85)"
-								stroke={ringColors[b.ring]}
-								stroke-width="1"
-							/>
-							<text
-								x={b.x + 20}
-								y={b.y + 2}
-								class="radar-blip-label"
-								fill="#e4e4e7"
-							>
-								{b.name}
-							</text>
-						{/if}
-					</g>
-				{/each}
-			</svg>
+			<div class="add-selects">
+				<select bind:value={newRing} class="add-select">
+					{#each RINGS as r}
+						<option value={r}>{r}</option>
+					{/each}
+				</select>
+				<select bind:value={newQuadrant} class="add-select">
+					{#each QUADRANTS as q}
+						<option value={q}>{q}</option>
+					{/each}
+				</select>
+			</div>
 		</div>
-	{/if}
 
-	<!-- List view -->
-	{#if blips.length === 0}
-		<div class="empty-state">
-			<p>Ajoute des technologies pour construire ton radar.</p>
-		</div>
-	{:else}
-		<h2 class="list-heading">Detail par quadrant</h2>
-		<div class="radar-grid">
+		<!-- Filter -->
+		<div class="filter-row">
+			<button
+				class="filter-pill"
+				class:filter-pill--active={filterQuadrant === 'all'}
+				onclick={() => filterQuadrant = 'all'}
+			>Tous ({blips.length})</button>
 			{#each QUADRANTS as q}
-				{@const grouped = blipsByQuadrant()}
-				{@const hasBlips = RINGS.some((r) => grouped[q][r].length > 0)}
-				{#if hasBlips}
-					<div class="quadrant-card" class:quadrant-card--active={activeQuadrant === q}>
-						<button
-							class="quadrant-title"
-							onclick={() => (activeQuadrant = activeQuadrant === q ? null : q)}
-						>
-							{q}
-							<span class="quadrant-count">
-								{RINGS.reduce((sum, r) => sum + grouped[q][r].length, 0)}
-							</span>
-						</button>
+				{@const count = blips.filter(b => b.quadrant === q).length}
+				<button
+					class="filter-pill"
+					class:filter-pill--active={filterQuadrant === q}
+					onclick={() => filterQuadrant = q}
+				>{q} ({count})</button>
+			{/each}
+		</div>
 
-						<div class="quadrant-content">
-							{#each RINGS as r}
-								{#if grouped[q][r].length > 0}
-									<div class="ring-section">
-										<span class="ring-label" style="color: {ringColors[r]}">{r}</span>
-										<div class="blip-list">
-											{#each grouped[q][r] as b}
-												<div class="blip">
-													<span class="blip-name">{b.name}</span>
-													<div class="blip-actions">
-														<select
-															value={b.ring}
-															class="blip-ring-select"
-															onchange={(e) => moveBlip(b.id, e.currentTarget.value as Ring)}
-														>
-															{#each RINGS as ring}
-																<option value={ring}>{ring}</option>
-															{/each}
-														</select>
-														<button
-															class="blip-remove"
-															onclick={() => removeBlip(b.id)}
-															aria-label="Supprimer {b.name}"
-														>
-															&times;
-														</button>
-													</div>
-												</div>
-											{/each}
-										</div>
-									</div>
-								{/if}
-							{/each}
+		<!-- Blip list -->
+		<div class="blip-list">
+			{#each RINGS as ring}
+				{@const ringBlips = filteredBlips.filter(b => b.ring === ring)}
+				{#if ringBlips.length > 0}
+					<div class="ring-group">
+						<div class="ring-header">
+							<span class="ring-dot" style="background:{ringColors[ring]}"></span>
+							<span class="ring-name" style="color:{ringColors[ring]}">{ring}</span>
+							<span class="ring-desc">{ringDescriptions[ring]}</span>
 						</div>
+						{#each ringBlips as b}
+							<div
+								class="blip-item"
+								class:blip-item--hovered={hoveredBlip === b.id}
+								onmouseenter={() => hoveredBlip = b.id}
+								onmouseleave={() => hoveredBlip = null}
+							>
+								<span class="blip-dot" style="background:{ringColors[b.ring]}"></span>
+								<span class="blip-name">{b.name}</span>
+								<div class="blip-actions">
+									<select
+										value={b.ring}
+										class="blip-select"
+										onchange={(e) => moveBlip(b.id, e.currentTarget.value as Ring)}
+									>
+										{#each RINGS as r}
+											<option value={r}>{r}</option>
+										{/each}
+									</select>
+									<button
+										class="blip-remove"
+										onclick={() => removeBlip(b.id)}
+										aria-label="Supprimer {b.name}"
+									>&times;</button>
+								</div>
+							</div>
+						{/each}
 					</div>
 				{/if}
 			{/each}
 		</div>
 
+		<!-- Actions -->
 		<div class="tool-actions">
 			<button class="tool-btn tool-btn--primary" onclick={handleExport}>
-				{copyFeedback ? 'Copie dans le presse-papier' : 'Exporter en Markdown'}
+				{copyFeedback ? 'Copié !' : 'Exporter Markdown'}
 			</button>
-			<button class="tool-btn tool-btn--secondary" onclick={handleReset}>Tout supprimer</button>
+			<button class="tool-btn tool-btn--secondary" onclick={handleReset}>
+				Réinitialiser
+			</button>
 		</div>
-	{/if}
+	</div>
+
+	<!-- RIGHT: Radar -->
+	<div class="tool-right">
+		<div class="radar-panel glass-card">
+			<div class="radar-container">
+				<svg
+					viewBox="0 0 {SVG_SIZE} {SVG_SIZE}"
+					class="radar-svg"
+					role="img"
+					aria-label="Tech Radar"
+				>
+					<defs>
+						<radialGradient id="radarGlow" cx="50%" cy="50%" r="50%">
+							<stop offset="0%" stop-color="rgba(6,182,212,0.08)" />
+							<stop offset="100%" stop-color="transparent" />
+						</radialGradient>
+						<clipPath id="radarClip">
+							<circle cx={CENTER} cy={CENTER} r={MAX_RADIUS} />
+						</clipPath>
+					</defs>
+
+					<!-- Background glow -->
+					<circle cx={CENTER} cy={CENTER} r={MAX_RADIUS} fill="url(#radarGlow)" />
+
+					<!-- Grid circles -->
+					{#each RING_RADII as radius, i}
+						<circle
+							cx={CENTER} cy={CENTER} r={radius}
+							fill="none"
+							stroke={ringColors[RINGS[i]]}
+							stroke-width="1"
+							stroke-opacity="0.25"
+						/>
+					{/each}
+
+					<!-- Subtle inner grid circles -->
+					{#each [0.125, 0.375, 0.625, 0.875] as frac}
+						<circle
+							cx={CENTER} cy={CENTER} r={MAX_RADIUS * frac}
+							fill="none"
+							stroke="rgba(255,255,255,0.03)"
+							stroke-width="0.5"
+						/>
+					{/each}
+
+					<!-- Crosshairs -->
+					<line x1={CENTER - MAX_RADIUS} y1={CENTER} x2={CENTER + MAX_RADIUS} y2={CENTER}
+						stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+					<line x1={CENTER} y1={CENTER - MAX_RADIUS} x2={CENTER} y2={CENTER + MAX_RADIUS}
+						stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+
+					<!-- Diagonal guidelines -->
+					{#each [Math.PI/4, Math.PI*3/4, Math.PI*5/4, Math.PI*7/4] as angle}
+						<line
+							x1={CENTER} y1={CENTER}
+							x2={CENTER + MAX_RADIUS * Math.cos(angle)}
+							y2={CENTER - MAX_RADIUS * Math.sin(angle)}
+							stroke="rgba(255,255,255,0.03)" stroke-width="0.5"
+						/>
+					{/each}
+
+					<!-- Sweep line (animated) -->
+					<line
+						x1={CENTER} y1={CENTER}
+						x2={CENTER + MAX_RADIUS} y2={CENTER}
+						stroke="rgba(6,182,212,0.4)" stroke-width="1.5"
+						class="sweep-line"
+						clip-path="url(#radarClip)"
+					/>
+
+					<!-- Sweep trail -->
+					<path
+						d="M {CENTER},{CENTER} L {CENTER + MAX_RADIUS},{CENTER} A {MAX_RADIUS},{MAX_RADIUS} 0 0,0 {CENTER + MAX_RADIUS * Math.cos(Math.PI/6)},{CENTER - MAX_RADIUS * Math.sin(Math.PI/6)} Z"
+						fill="rgba(6,182,212,0.04)"
+						class="sweep-trail"
+						clip-path="url(#radarClip)"
+					/>
+
+					<!-- Ring labels -->
+					{#each RINGS as r, i}
+						{@const labelR = i === 0 ? RING_RADII[0] / 2 : (RING_RADII[i - 1] + RING_RADII[i]) / 2}
+						<text
+							x={CENTER + labelR}
+							y={CENTER - 4}
+							text-anchor="middle"
+							class="ring-label-svg"
+							fill={ringColors[r]}
+							fill-opacity="0.5"
+						>{r}</text>
+					{/each}
+
+					<!-- Quadrant labels -->
+					<text x={CENTER - MAX_RADIUS/2} y={CENTER - MAX_RADIUS + 16} text-anchor="middle" class="quadrant-label-svg">Langages</text>
+					<text x={CENTER + MAX_RADIUS/2} y={CENTER - MAX_RADIUS + 16} text-anchor="middle" class="quadrant-label-svg">Outils</text>
+					<text x={CENTER + MAX_RADIUS/2} y={CENTER + MAX_RADIUS - 8} text-anchor="middle" class="quadrant-label-svg">Plateformes</text>
+					<text x={CENTER - MAX_RADIUS/2} y={CENTER + MAX_RADIUS - 8} text-anchor="middle" class="quadrant-label-svg">Techniques</text>
+
+					<!-- Center dot -->
+					<circle cx={CENTER} cy={CENTER} r="3" fill="var(--accent)" fill-opacity="0.6" />
+
+					<!-- Blips -->
+					{#each placedBlips as b}
+						{@const isHovered = hoveredBlip === b.id}
+						<g
+							class="radar-blip"
+							onmouseenter={() => hoveredBlip = b.id}
+							onmouseleave={() => hoveredBlip = null}
+							onfocus={() => hoveredBlip = b.id}
+							onblur={() => hoveredBlip = null}
+							tabindex="0"
+							role="button"
+							aria-label="{b.name} — {b.ring}, {b.quadrant}"
+						>
+							<!-- Glow -->
+							{#if isHovered}
+								<circle cx={b.x} cy={b.y} r={BLIP_RADIUS * 3} fill={ringColors[b.ring]} fill-opacity="0.15" />
+							{/if}
+							<!-- Dot -->
+							<circle
+								cx={b.x} cy={b.y}
+								r={isHovered ? BLIP_RADIUS + 2 : BLIP_RADIUS}
+								fill={ringColors[b.ring]}
+								stroke="rgba(0,0,0,0.6)"
+								stroke-width="1.5"
+								class="blip-dot-svg"
+							/>
+							<!-- Label on hover -->
+							{#if isHovered}
+								{@const textWidth = b.name.length * 7 + 16}
+								{@const labelX = b.x + textWidth + 20 > SVG_SIZE ? b.x - textWidth - 8 : b.x + 14}
+								<rect
+									x={labelX - 6}
+									y={b.y - 12}
+									width={textWidth}
+									height="22"
+									rx="4"
+									fill="rgba(0,0,0,0.9)"
+									stroke={ringColors[b.ring]}
+									stroke-width="1"
+									stroke-opacity="0.6"
+								/>
+								<text x={labelX + 2} y={b.y + 3} class="blip-label-svg" fill="#e4e4e7">{b.name}</text>
+							{/if}
+						</g>
+					{/each}
+				</svg>
+			</div>
+
+			<!-- Legend -->
+			<div class="radar-legend">
+				{#each RINGS as r}
+					<div class="legend-item">
+						<span class="legend-dot" style="background:{ringColors[r]}"></span>
+						<span class="legend-name">{r}</span>
+						<span class="legend-count">{blips.filter(b => b.ring === r).length}</span>
+					</div>
+				{/each}
+			</div>
+		</div>
+	</div>
 </div>
 
 <style>
-	.tool-container {
-		max-width: 100%;
+	.tool-layout {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: calc(var(--gap) * 1.5);
+		align-items: start;
 	}
 
-	/* Add form */
+	/* LEFT COLUMN */
+	.tool-left {
+		display: flex;
+		flex-direction: column;
+		gap: var(--gap);
+	}
+
 	.add-form {
-		margin-bottom: calc(var(--gap) * 1.5);
+		padding: calc(var(--gap) * 1.2);
 	}
 
-	.add-fields {
+	.form-title {
+		font-family: var(--font-ui);
+		font-size: 0.8rem;
+		font-weight: 700;
+		color: var(--accent);
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		margin: 0 0 12px;
+	}
+
+	.add-row {
 		display: flex;
 		gap: 8px;
-		flex-wrap: wrap;
+		margin-bottom: 8px;
 	}
 
 	.add-input {
 		flex: 1;
-		min-width: 200px;
 		font-family: var(--font-body);
-		font-size: 15px;
+		font-size: 14px;
 		padding: 10px 12px;
 		border: 1px solid var(--border);
 		border-radius: var(--radius);
 		background: var(--theme);
 		color: var(--primary);
-		transition: var(--transition);
 	}
 
 	.add-input:focus {
@@ -491,210 +546,120 @@
 		border-color: var(--accent);
 	}
 
+	.add-selects {
+		display: flex;
+		gap: 8px;
+	}
+
 	.add-select {
+		flex: 1;
 		font-family: var(--font-ui);
-		font-size: 14px;
-		padding: 10px 12px;
+		font-size: 13px;
+		padding: 8px 10px;
 		border: 1px solid var(--border);
 		border-radius: var(--radius);
 		background: var(--theme);
 		color: var(--primary);
 	}
 
-	.add-select--wide {
-		min-width: 160px;
-	}
-
-	.add-btn {
-		white-space: nowrap;
-	}
-
-	/* Ring legend */
-	.ring-legend {
+	/* Filter pills */
+	.filter-row {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 16px;
-		margin-bottom: calc(var(--gap) * 1.5);
-		padding: 12px 16px;
-		background: var(--code-bg, var(--entry));
-		border-radius: var(--radius);
-	}
-
-	.ring-legend-item {
-		display: flex;
-		align-items: center;
 		gap: 6px;
 	}
 
+	.filter-pill {
+		font-family: var(--font-ui);
+		font-size: 11px;
+		font-weight: 500;
+		padding: 4px 12px;
+		border: 1px solid var(--border);
+		border-radius: 9999px;
+		background: transparent;
+		color: var(--secondary);
+		cursor: pointer;
+		transition: all 0.15s ease;
+	}
+
+	.filter-pill:hover {
+		border-color: var(--accent);
+		color: var(--primary);
+	}
+
+	.filter-pill--active {
+		background: var(--accent);
+		border-color: var(--accent);
+		color: #000;
+		font-weight: 600;
+	}
+
+	/* Blip list */
+	.blip-list {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+
+	.ring-group {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+	}
+
+	.ring-header {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		padding-bottom: 6px;
+		border-bottom: 1px solid var(--border);
+		margin-bottom: 2px;
+	}
+
 	.ring-dot {
-		width: 10px;
-		height: 10px;
+		width: 8px;
+		height: 8px;
 		border-radius: 50%;
 		flex-shrink: 0;
 	}
 
 	.ring-name {
 		font-family: var(--font-ui);
-		font-size: 13px;
-		font-weight: 600;
-		color: var(--primary);
-	}
-
-	.ring-desc {
-		font-size: 12px;
-		color: var(--secondary);
-		display: none;
-	}
-
-	/* SVG Radar */
-	.radar-svg-wrapper {
-		margin-bottom: calc(var(--gap) * 2);
-		display: flex;
-		justify-content: center;
-	}
-
-	.radar-svg {
-		width: 100%;
-		max-width: 640px;
-		height: auto;
-		aspect-ratio: 1 / 1;
-	}
-
-	.radar-ring-label {
-		font-family: var(--font-ui, 'Space Grotesk', system-ui);
-		font-size: 10px;
-		font-weight: 600;
-		text-transform: uppercase;
-		letter-spacing: 0.04em;
-		opacity: 0.7;
-		pointer-events: none;
-	}
-
-	.radar-quadrant-label {
-		font-family: var(--font-ui, 'Space Grotesk', system-ui);
-		font-size: 12px;
-		font-weight: 600;
-		fill: var(--secondary, #a1a1aa);
-		pointer-events: none;
-	}
-
-	.radar-blip {
-		cursor: pointer;
-		outline: none;
-	}
-
-	.radar-blip:focus-visible .radar-blip-dot {
-		stroke: var(--accent, #06b6d4);
-		stroke-width: 3;
-	}
-
-	.radar-blip-dot {
-		transition: r 0.15s ease, fill-opacity 0.15s ease;
-	}
-
-	.radar-blip--hovered .radar-blip-dot {
-		fill-opacity: 1;
-	}
-
-	.radar-blip-label {
-		font-family: var(--font-ui, 'Space Grotesk', system-ui);
-		font-size: 12px;
-		font-weight: 500;
-		pointer-events: none;
-	}
-
-	/* List heading */
-	.list-heading {
-		font-family: var(--font-ui);
-		font-size: 16px;
-		font-weight: 600;
-		color: var(--secondary);
-		margin-bottom: var(--gap);
-		padding-bottom: 8px;
-		border-bottom: 1px solid var(--border);
-	}
-
-	/* Radar grid */
-	.radar-grid {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: var(--gap);
-		margin-bottom: var(--gap);
-	}
-
-	.quadrant-card {
-		border: 1px solid var(--border);
-		border-radius: var(--radius);
-		overflow: hidden;
-	}
-
-	.quadrant-title {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		width: 100%;
-		padding: 12px 16px;
-		background: var(--code-bg, var(--entry));
-		border: none;
-		font-family: var(--font-ui);
-		font-size: 14px;
-		font-weight: 600;
-		color: var(--primary);
-		cursor: pointer;
-		transition: var(--transition);
-	}
-
-	.quadrant-title:hover {
-		background: var(--accent-light);
-	}
-
-	.quadrant-count {
-		font-family: var(--font-mono);
-		font-size: 12px;
-		color: var(--secondary);
-		background: var(--border);
-		padding: 2px 8px;
-		border-radius: 10px;
-	}
-
-	.quadrant-content {
-		padding: 12px 16px;
-	}
-
-	.ring-section {
-		margin-bottom: 10px;
-	}
-
-	.ring-section:last-child {
-		margin-bottom: 0;
-	}
-
-	.ring-label {
-		font-family: var(--font-ui);
 		font-size: 12px;
 		font-weight: 700;
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
-		margin-bottom: 4px;
-		display: block;
 	}
 
-	.blip-list {
-		display: flex;
-		flex-direction: column;
-		gap: 4px;
+	.ring-desc {
+		font-size: 11px;
+		color: var(--tertiary);
 	}
 
-	.blip {
+	.blip-item {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
 		gap: 8px;
-		padding: 4px 0;
+		padding: 6px 8px;
+		border-radius: 6px;
+		transition: background 0.15s ease;
+	}
+
+	.blip-item:hover,
+	.blip-item--hovered {
+		background: rgba(255, 255, 255, 0.04);
+	}
+
+	.blip-dot {
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		flex-shrink: 0;
 	}
 
 	.blip-name {
-		font-size: 14px;
+		flex: 1;
+		font-size: 13px;
 		color: var(--primary);
 	}
 
@@ -705,7 +670,7 @@
 		flex-shrink: 0;
 	}
 
-	.blip-ring-select {
+	.blip-select {
 		font-family: var(--font-ui);
 		font-size: 11px;
 		padding: 2px 6px;
@@ -716,61 +681,49 @@
 	}
 
 	.blip-remove {
-		width: 24px;
-		height: 24px;
+		width: 22px;
+		height: 22px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		background: none;
 		border: 1px solid transparent;
 		border-radius: 4px;
-		color: var(--secondary);
+		color: var(--tertiary);
 		cursor: pointer;
-		font-size: 16px;
-		transition: var(--transition);
+		font-size: 14px;
 	}
 
 	.blip-remove:hover {
-		color: #c0392b;
-		border-color: #c0392b;
+		color: #ef4444;
+		border-color: #ef4444;
 	}
 
-	/* Empty state */
-	.empty-state {
-		text-align: center;
-		padding: calc(var(--gap) * 2);
-		color: var(--secondary);
-		border: 1px dashed var(--border);
-		border-radius: var(--radius);
-	}
-
-	/* Actions */
 	.tool-actions {
 		display: flex;
-		gap: 12px;
-		margin-top: var(--gap);
+		gap: 10px;
 		flex-wrap: wrap;
 	}
 
 	.tool-btn {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 13px;
 		font-weight: 600;
 		padding: 10px 20px;
 		border-radius: var(--radius);
 		cursor: pointer;
-		transition: var(--transition);
 		border: none;
-		min-height: 44px;
+		min-height: 42px;
+		transition: all 0.15s ease;
 	}
 
 	.tool-btn--primary {
 		background: var(--accent);
-		color: #fff;
+		color: #000;
 	}
 
 	.tool-btn--primary:hover {
-		background: var(--accent-hover);
+		box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
 	}
 
 	.tool-btn--secondary {
@@ -784,37 +737,145 @@
 		color: var(--primary);
 	}
 
-	@media (max-width: 768px) {
-		.radar-grid {
+	/* RIGHT COLUMN */
+	.tool-right {
+		position: sticky;
+		top: calc(var(--gap) * 2 + 60px);
+	}
+
+	.radar-panel {
+		padding: var(--gap);
+		overflow: hidden;
+	}
+
+	.radar-container {
+		position: relative;
+	}
+
+	.radar-svg {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+
+	/* Sweep animation */
+	.sweep-line,
+	.sweep-trail {
+		transform-origin: 50% 50%;
+		animation: radar-sweep 6s linear infinite;
+	}
+
+	@keyframes radar-sweep {
+		from { transform: rotate(0deg); }
+		to { transform: rotate(360deg); }
+	}
+
+	/* SVG text styles */
+	.ring-label-svg {
+		font-family: var(--font-ui, 'Space Grotesk', system-ui);
+		font-size: 9px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		pointer-events: none;
+	}
+
+	.quadrant-label-svg {
+		font-family: var(--font-ui, 'Space Grotesk', system-ui);
+		font-size: 11px;
+		font-weight: 600;
+		fill: rgba(255, 255, 255, 0.3);
+		pointer-events: none;
+	}
+
+	.radar-blip {
+		cursor: pointer;
+		outline: none;
+	}
+
+	.radar-blip:focus-visible .blip-dot-svg {
+		stroke: var(--accent);
+		stroke-width: 3;
+	}
+
+	.blip-dot-svg {
+		transition: r 0.15s ease;
+	}
+
+	.blip-label-svg {
+		font-family: var(--font-ui, 'Space Grotesk', system-ui);
+		font-size: 11px;
+		font-weight: 500;
+		pointer-events: none;
+	}
+
+	/* Legend */
+	.radar-legend {
+		display: flex;
+		justify-content: center;
+		gap: 20px;
+		margin-top: 12px;
+		padding-top: 12px;
+		border-top: 1px solid var(--border);
+	}
+
+	.legend-item {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+	}
+
+	.legend-dot {
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+	}
+
+	.legend-name {
+		font-family: var(--font-ui);
+		font-size: 12px;
+		font-weight: 600;
+		color: var(--secondary);
+	}
+
+	.legend-count {
+		font-family: var(--font-ui);
+		font-size: 11px;
+		color: var(--tertiary);
+		background: rgba(255, 255, 255, 0.05);
+		padding: 1px 6px;
+		border-radius: 9999px;
+	}
+
+	/* Responsive */
+	@media (max-width: 900px) {
+		.tool-layout {
 			grid-template-columns: 1fr;
 		}
 
-		.ring-legend {
-			flex-direction: column;
-			gap: 8px;
-		}
-
-		.ring-desc {
-			display: inline;
-		}
-
-		.radar-svg {
-			max-width: 100%;
-		}
-
-		.radar-quadrant-label {
-			font-size: 10px;
+		.tool-right {
+			position: static;
+			order: -1;
 		}
 	}
 
 	@media (max-width: 600px) {
-		.add-fields {
+		.add-selects {
 			flex-direction: column;
 		}
 
-		.add-input,
-		.add-select {
-			width: 100%;
+		.filter-row {
+			gap: 4px;
+		}
+
+		.filter-pill {
+			font-size: 10px;
+			padding: 3px 8px;
+		}
+
+		.radar-legend {
+			flex-wrap: wrap;
+			gap: 10px;
 		}
 
 		.tool-actions {

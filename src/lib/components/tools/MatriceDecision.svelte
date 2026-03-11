@@ -37,7 +37,7 @@
 	}
 
 	// Computed scores
-	const results = $derived(() => {
+	const results = $derived.by(() => {
 		return options.map((opt) => {
 			let weightedSum = 0;
 			let totalWeight = 0;
@@ -52,8 +52,8 @@
 	});
 
 	// Close results detection: top 2 differ by less than 5%
-	const closeResults = $derived(() => {
-		const res = results();
+	const closeResults = $derived.by(() => {
+		const res = results;
 		if (res.length < 2) return false;
 		return Math.abs(res[0].pct - res[1].pct) < 5;
 	});
@@ -128,7 +128,7 @@
 
 	async function handleExport() {
 		const today = new Date().toISOString().split('T')[0];
-		const res = results();
+		const res = results;
 		const lines = [
 			`# Matrice de décision : ${decisionTitle || 'Sans titre'}`,
 			'',
@@ -153,7 +153,7 @@
 			`**Recommandation :** ${res[0]?.option.name || '—'} (${res[0]?.pct}%)`,
 		];
 
-		if (closeResults()) {
+		if (closeResults) {
 			lines.push('');
 			lines.push('> **Attention :** Les résultats sont très proches. Cette matrice ne suffit pas seule — confronte cette analyse à ton contexte d\'équipe.');
 		}
@@ -259,7 +259,7 @@
 					</thead>
 					<tbody>
 						{#each options as opt, oi}
-							{@const r = results().find((r) => r.option.id === opt.id)}
+							{@const r = results.find((r) => r.option.id === opt.id)}
 							<tr>
 								<td class="td-option">
 									<div class="option-name-cell">
@@ -286,7 +286,7 @@
 									</td>
 								{/each}
 								<td class="td-total">
-									<span class="total-pct" class:total-pct--best={r === results()[0]}>{r?.pct ?? 0}%</span>
+									<span class="total-pct" class:total-pct--best={r === results[0]}>{r?.pct ?? 0}%</span>
 								</td>
 							</tr>
 						{/each}
@@ -297,11 +297,11 @@
 			<!-- Mobile: card-based view -->
 			<div class="mobile-cards">
 				{#each options as opt, oi}
-					{@const r = results().find((r) => r.option.id === opt.id)}
+					{@const r = results.find((r) => r.option.id === opt.id)}
 					<div class="mobile-card glass-card">
 						<div class="mobile-card-header">
 							<input type="text" bind:value={opt.name} placeholder="Option" class="mobile-card-name" />
-							<span class="mobile-card-score" class:total-pct--best={r === results()[0]}>{r?.pct ?? 0}%</span>
+							<span class="mobile-card-score" class:total-pct--best={r === results[0]}>{r?.pct ?? 0}%</span>
 							{#if options.length > 2}
 								<button class="remove-btn remove-btn--small" onclick={() => removeOption(oi)} aria-label="Supprimer {opt.name}">
 									&times;
@@ -341,14 +341,14 @@
 		<div class="result-panel" aria-live="polite">
 			<h3 class="result-title">Classement</h3>
 
-			{#if closeResults()}
+			{#if closeResults}
 				<div class="close-results-warning" role="alert">
 					Les résultats sont très proches. Ce cadre ne suffit pas seul — confronte cette analyse à ton contexte d'équipe.
 				</div>
 			{/if}
 
 			<div class="result-chart">
-				{#each results() as r, i}
+				{#each results as r, i}
 					<div class="result-bar-row">
 						<span class="result-rank">{i + 1}.</span>
 						<span class="result-name">{r.option.name || '—'}</span>

@@ -1,15 +1,14 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { getAccessibilityPanel } from '$lib/stores/accessibility.svelte';
-	// ThemeToggle removed — Neon Network is dark-only
 
 	let menuOpen = $state(false);
 	const a11yPanel = getAccessibilityPanel();
 
 	const navItems = [
-		{ label: 'Articles', href: '/articles/' },
-		{ label: 'Livres', href: '/livres/' },
 		{ label: 'Outils', href: '/outils/' },
+		{ label: 'Livres', href: '/livres/' },
+		{ label: 'Articles', href: '/articles/' },
 		{ label: 'Projets', href: '/projets/' },
 		{ label: 'Vision', href: '/vision/' },
 		{ label: 'À propos', href: '/a-propos/' },
@@ -40,14 +39,13 @@
 	<nav class="nav">
 		<a href="/" class="logo">Kevin Delfour</a>
 
-		<div class="nav-center">
-			<ul class="nav-menu" class:open={menuOpen}>
+		<div class="nav-center desktop-only">
+			<ul class="nav-links">
 				{#each navItems as item}
 					<li>
 						<a
 							href={item.href}
 							class:active={page.url.pathname.startsWith(item.href)}
-							onclick={closeMenu}
 						>
 							{item.label}
 						</a>
@@ -81,6 +79,28 @@
 		</div>
 	</nav>
 </header>
+
+{#if menuOpen}
+	<!-- svelte-ignore a11y_no_static_element_interactions -->
+	<div class="mobile-overlay" onclick={closeMenu} onkeydown={() => {}}>
+		<!-- svelte-ignore a11y_no_static_element_interactions -->
+		<nav class="mobile-menu" onclick={(e) => e.stopPropagation()} onkeydown={() => {}}>
+			<ul>
+				{#each navItems as item}
+					<li>
+						<a
+							href={item.href}
+							class:active={page.url.pathname.startsWith(item.href)}
+							onclick={closeMenu}
+						>
+							{item.label}
+						</a>
+					</li>
+				{/each}
+			</ul>
+		</nav>
+	</div>
+{/if}
 
 <style>
 	.header {
@@ -163,7 +183,8 @@
 		cursor: pointer;
 	}
 
-	.nav-menu {
+	/* Desktop nav links */
+	.nav-links {
 		display: flex;
 		list-style: none;
 		margin: 0;
@@ -171,7 +192,7 @@
 		gap: 4px;
 	}
 
-	.nav-menu a {
+	.nav-links a {
 		display: block;
 		font-family: var(--font-ui);
 		font-size: 14px;
@@ -183,15 +204,62 @@
 		transition: var(--transition);
 	}
 
-	.nav-menu a:hover {
+	.nav-links a:hover {
 		color: var(--primary);
 		background: var(--surface);
 		text-decoration: none;
 	}
 
-	.nav-menu a.active {
+	.nav-links a.active {
 		color: var(--accent);
 		font-weight: 600;
+	}
+
+	/* Mobile overlay — outside header stacking context */
+	.mobile-overlay {
+		position: fixed;
+		inset: 0;
+		top: var(--header-height);
+		z-index: 100;
+		background: rgba(0, 0, 0, 0.6);
+		backdrop-filter: blur(4px);
+	}
+
+	.mobile-menu {
+		background: rgba(10, 10, 10, 0.98);
+		border-bottom: 1px solid var(--border);
+		padding: var(--gap) 0;
+		max-height: calc(100dvh - var(--header-height));
+		overflow-y: auto;
+	}
+
+	.mobile-menu ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.mobile-menu a {
+		display: block;
+		font-family: var(--font-ui);
+		font-size: 18px;
+		font-weight: 500;
+		color: var(--secondary);
+		text-decoration: none;
+		padding: 14px calc(var(--gap) * 1.5);
+		transition: var(--transition);
+	}
+
+	.mobile-menu a:hover {
+		color: var(--primary);
+		background: var(--surface);
+		text-decoration: none;
+	}
+
+	.mobile-menu a.active {
+		color: var(--accent);
+		font-weight: 600;
+		border-left: 3px solid var(--accent);
 	}
 
 	@media (max-width: 768px) {
@@ -199,29 +267,8 @@
 			display: flex;
 		}
 
-		.nav-menu {
+		.desktop-only {
 			display: none;
-			position: fixed;
-			top: var(--header-height);
-			left: 0;
-			right: 0;
-			bottom: 0;
-			flex-direction: column;
-			background: rgba(0, 0, 0, 0.95);
-			backdrop-filter: blur(16px);
-			padding: var(--gap);
-			gap: 0;
-			z-index: 40;
-			overflow-y: auto;
-		}
-
-		.nav-menu.open {
-			display: flex;
-		}
-
-		.nav-menu a {
-			font-size: 18px;
-			padding: 14px 16px;
 		}
 	}
 </style>

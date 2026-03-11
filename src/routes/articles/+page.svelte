@@ -163,11 +163,12 @@
 		display: block;
 		text-decoration: none;
 		color: inherit;
-		transition: var(--transition);
+		transition: all 0.3s ease;
 	}
 
 	.article-link:hover {
 		text-decoration: none;
+		padding-left: 12px;
 	}
 
 	.article-link:hover .article-title {

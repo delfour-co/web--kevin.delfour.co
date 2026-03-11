@@ -115,7 +115,7 @@
 
 	const totalWeight = allCheckpoints.reduce((sum, c) => sum + criticalityWeights[c.criticality], 0);
 
-	const globalScore = $derived(() => {
+	const globalScore = $derived.by(() => {
 		const earned = allCheckpoints.reduce(
 			(sum, c) => sum + (checked[c.id] ? criticalityWeights[c.criticality] : 0),
 			0
@@ -123,7 +123,7 @@
 		return Math.round((earned / totalWeight) * 100);
 	});
 
-	const layerScores = $derived(() => {
+	const layerScores = $derived.by(() => {
 		return layers.map((layer) => {
 			const layerWeight = layer.checkpoints.reduce(
 				(sum, c) => sum + criticalityWeights[c.criticality],
@@ -143,19 +143,19 @@
 		});
 	});
 
-	const securityLevel = $derived(() => {
-		const score = globalScore();
+	const securityLevel = $derived.by(() => {
+		const score = globalScore;
 		if (score <= 40) return { label: 'Exposition critique', color: 'var(--audit-critique)' };
 		if (score <= 60) return { label: 'Fondations fragiles', color: 'var(--audit-important)' };
 		if (score <= 80) return { label: 'Base solide', color: 'var(--audit-accent)' };
 		return { label: 'Posture mature', color: 'var(--audit-accent2)' };
 	});
 
-	const uncheckedCritical = $derived(() => {
+	const uncheckedCritical = $derived.by(() => {
 		return allCheckpoints.filter((c) => c.criticality === 'critique' && !checked[c.id]);
 	});
 
-	const checkedCount = $derived(() => {
+	const checkedCount = $derived.by(() => {
 		return allCheckpoints.filter((c) => checked[c.id]).length;
 	});
 
@@ -197,13 +197,13 @@
 			'# Audit s\u00e9curit\u00e9 express',
 			'',
 			`**Date :** ${today}`,
-			`**Score global :** ${globalScore()}%`,
-			`**Niveau :** ${securityLevel().label}`,
+			`**Score global :** ${globalScore}%`,
+			`**Niveau :** ${securityLevel.label}`,
 			''
 		];
 
 		for (const layer of layers) {
-			const ls = layerScores().find((s) => s.id === layer.id)!;
+			const ls = layerScores.find((s) => s.id === layer.id)!;
 			lines.push(`## ${layer.name} (${ls.score}%)`);
 			lines.push('');
 			for (const cp of layer.checkpoints) {
@@ -213,7 +213,7 @@
 			lines.push('');
 		}
 
-		const critical = uncheckedCritical();
+		const critical = uncheckedCritical;
 		if (critical.length > 0) {
 			lines.push('## Priorit\u00e9s imm\u00e9diates');
 			lines.push('');
@@ -260,7 +260,7 @@
 	<div class="audit-layout">
 		<div class="audit-layers">
 			{#each layers as layer}
-				{@const ls = layerScores().find((s) => s.id === layer.id)!}
+				{@const ls = layerScores.find((s) => s.id === layer.id)!}
 				<section class="glass-card layer-card">
 					<div class="layer-header">
 						<div class="layer-title-row">
@@ -304,7 +304,7 @@
 		<div class="audit-result" aria-live="polite" aria-atomic="true">
 			<div class="result-section">
 				<div class="score-global">
-					<div class="score-ring" style="--score-pct: {globalScore()}; --score-color: {securityLevel().color}">
+					<div class="score-ring" style="--score-pct: {globalScore}; --score-color: {securityLevel.color}">
 						<svg viewBox="0 0 120 120" class="score-svg">
 							<circle cx="60" cy="60" r="52" class="score-ring-bg" />
 							<circle
@@ -312,22 +312,22 @@
 								cy="60"
 								r="52"
 								class="score-ring-fill"
-								style="stroke-dasharray: {326.7}; stroke-dashoffset: {326.7 - (326.7 * globalScore()) / 100}; stroke: {securityLevel().color}"
+								style="stroke-dasharray: {326.7}; stroke-dashoffset: {326.7 - (326.7 * globalScore) / 100}; stroke: {securityLevel.color}"
 							/>
 						</svg>
 						<div class="score-text">
-							<span class="score-number" style="color: {securityLevel().color}">{globalScore()}%</span>
-							<span class="score-count">{checkedCount()}/{totalCheckpoints}</span>
+							<span class="score-number" style="color: {securityLevel.color}">{globalScore}%</span>
+							<span class="score-count">{checkedCount}/{totalCheckpoints}</span>
 						</div>
 					</div>
-					<div class="score-level" style="color: {securityLevel().color}">{securityLevel().label}</div>
+					<div class="score-level" style="color: {securityLevel.color}">{securityLevel.label}</div>
 				</div>
 			</div>
 
 			<div class="result-section">
 				<h3 class="result-title">Score par couche</h3>
 				<div class="layer-scores">
-					{#each layerScores() as ls}
+					{#each layerScores as ls}
 						<div class="mini-score">
 							<div class="mini-score-header">
 								<span class="mini-score-name">{ls.name}</span>
@@ -344,12 +344,12 @@
 				</div>
 			</div>
 
-			{#if uncheckedCritical().length > 0}
+			{#if uncheckedCritical.length > 0}
 				<div class="result-section">
 					<h3 class="result-title result-title--alert">Priorit\u00e9s imm\u00e9diates</h3>
 					<p class="priorities-hint">Points critiques non coch\u00e9s \u2014 ce que j'observe souvent comme premi\u00e8res failles.</p>
 					<ul class="priorities-list">
-						{#each uncheckedCritical() as cp}
+						{#each uncheckedCritical as cp}
 							<li class="priority-item">{cp.label}</li>
 						{/each}
 					</ul>

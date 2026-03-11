@@ -1,6 +1,6 @@
 <script lang="ts">
 	import SEO from '$lib/components/SEO.svelte';
-	import { tools } from '$lib/data/tools';
+	import { toolCategories } from '$lib/data/tools';
 </script>
 
 <SEO
@@ -19,29 +19,26 @@
 		<p class="page-privacy">Chaque outil fonctionne entièrement dans ton navigateur. Rien n'est envoyé à un serveur — tes données restent chez toi.</p>
 	</header>
 
-	<div class="outils-grid">
-		{#each tools as tool}
-			{#if tool.statut === 'disponible'}
-				<a href={tool.url} class="tool-card glass-card">
-					<div class="tool-card-header">
-						<h2 class="tool-card-title">{tool.nom}</h2>
-						<span class="tool-badge tool-badge--available">Disponible</span>
-					</div>
-					<p class="tool-card-desc">{tool.description}</p>
-					<span class="tool-category">{tool.categorie}</span>
-				</a>
-			{:else}
-				<div class="tool-card glass-card tool-card--upcoming">
-					<div class="tool-card-header">
-						<h2 class="tool-card-title">{tool.nom}</h2>
-						<span class="tool-badge tool-badge--upcoming">À venir</span>
-					</div>
-					<p class="tool-card-desc">{tool.description}</p>
-					<span class="tool-category">{tool.categorie}</span>
-				</div>
-			{/if}
-		{/each}
-	</div>
+	{#each toolCategories as category}
+		<section class="tool-section">
+			<h2 class="tool-section-title">{category.label}</h2>
+			<div class="outils-grid">
+				{#each category.tools as tool}
+					<a href={tool.url} class="tool-card glass-card">
+						<div class="tool-card-icon">
+							<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+								{@html tool.icon}
+							</svg>
+						</div>
+						<div class="tool-card-content">
+							<h3 class="tool-card-title">{tool.nom}</h3>
+							<p class="tool-card-desc">{tool.description}</p>
+						</div>
+					</a>
+				{/each}
+			</div>
+		</section>
+	{/each}
 </div>
 
 <style>
@@ -67,6 +64,17 @@
 		font-style: italic;
 	}
 
+	.tool-section {
+		margin-bottom: calc(var(--gap) * 2);
+	}
+
+	.tool-section-title {
+		font-size: 1.2rem;
+		margin-bottom: var(--gap);
+		padding-bottom: 8px;
+		border-bottom: 1px solid var(--border);
+	}
+
 	.outils-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -74,71 +82,53 @@
 	}
 
 	.tool-card {
-		display: block;
+		display: flex;
+		gap: calc(var(--gap) * 0.8);
 		padding: var(--gap);
 		text-decoration: none;
 		color: inherit;
+		align-items: flex-start;
 	}
 
-	a.tool-card:hover {
+	.tool-card:hover {
 		text-decoration: none;
 		box-shadow: var(--accent-glow);
 		border-color: var(--accent-border);
 	}
 
-	.tool-card--upcoming {
-		opacity: 0.4;
-		cursor: not-allowed;
+	.tool-card:hover .tool-card-icon {
+		color: var(--accent);
 	}
 
-	.tool-card-header {
+	.tool-card-icon {
+		flex-shrink: 0;
+		width: 44px;
+		height: 44px;
 		display: flex;
 		align-items: center;
-		gap: 8px;
-		margin-bottom: 8px;
-		flex-wrap: wrap;
+		justify-content: center;
+		border-radius: 12px;
+		background: var(--surface);
+		border: 1px solid var(--border);
+		color: var(--secondary);
+		transition: color 0.2s ease;
+	}
+
+	.tool-card-content {
+		flex: 1;
+		min-width: 0;
 	}
 
 	.tool-card-title {
-		font-size: 1.1rem;
-		margin: 0;
-	}
-
-	.tool-badge {
-		display: inline-block;
-		font-family: var(--font-ui);
-		font-size: 11px;
-		font-weight: 700;
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
-		padding: 2px 8px;
-		border-radius: 9999px;
-	}
-
-	.tool-badge--available {
-		background: var(--accent-light);
-		color: var(--accent);
-		border: 1px solid var(--accent-border);
-	}
-
-	.tool-badge--upcoming {
-		background: var(--surface);
-		color: var(--tertiary);
-		border: 1px solid var(--border);
+		font-size: 1rem;
+		margin: 0 0 6px 0;
 	}
 
 	.tool-card-desc {
-		font-size: 0.9rem;
+		font-size: 0.85rem;
 		color: var(--secondary);
 		line-height: 1.5;
-		margin: 0 0 12px 0;
-	}
-
-	.tool-category {
-		font-family: var(--font-ui);
-		font-size: 12px;
-		color: var(--tertiary);
-		text-transform: capitalize;
+		margin: 0;
 	}
 
 	@media (max-width: 600px) {
