@@ -82,10 +82,14 @@
 				<a href="/outils/" class="btn-primary">Voir les outils</a>
 				<a href="/livres/" class="btn-secondary">Lire les livres</a>
 			</div>
-			<div class="scroll-indicator" aria-hidden="true">
-				<div class="scroll-line">
-					<div class="scroll-dot"></div>
-				</div>
+		</div>
+
+		<div class="scroll-indicator" aria-hidden="true">
+			<span class="scroll-label">Scroll</span>
+			<div class="scroll-chevrons">
+				<div class="scroll-chevron scroll-chevron-1"></div>
+				<div class="scroll-chevron scroll-chevron-2"></div>
+				<div class="scroll-chevron scroll-chevron-3"></div>
 			</div>
 		</div>
 	</section>
@@ -267,7 +271,7 @@
 
 	.hero-glow {
 		position: absolute;
-		top: 50%;
+		top: 54%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 		width: 600px;
@@ -564,42 +568,63 @@
 	.scroll-indicator {
 		display: none;
 		position: absolute;
-		bottom: 24px;
+		bottom: 32px;
 		left: 50%;
 		transform: translateX(-50%);
 		z-index: 2;
+		flex-direction: column;
+		align-items: center;
+		gap: 4px;
 	}
 
-	.scroll-line {
-		width: 1px;
-		height: 48px;
-		background: rgba(6, 182, 212, 0.15);
-		border-radius: 1px;
-		position: relative;
-		overflow: hidden;
+	.scroll-label {
+		font-family: var(--font-ui);
+		font-size: 0.7rem;
+		text-transform: uppercase;
+		letter-spacing: 0.16em;
+		color: var(--secondary);
 	}
 
-	.scroll-dot {
-		width: 3px;
-		height: 12px;
-		background: var(--accent);
-		border-radius: 3px;
-		position: absolute;
-		left: -1px;
-		top: 0;
-		animation: scroll-bounce 2s ease-in-out infinite;
-		box-shadow: 0 0 8px rgba(6, 182, 212, 0.6);
+	.scroll-chevrons {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2px;
 	}
 
-	@keyframes scroll-bounce {
-		0%, 100% { top: 0; opacity: 0.4; }
-		50% { top: 36px; opacity: 1; }
+	.scroll-chevron {
+		width: 14px;
+		height: 8px;
+		border-left: 2px solid var(--accent);
+		border-right: 2px solid var(--accent);
+		border-bottom: 2px solid var(--accent);
+		border-radius: 0 0 6px 6px;
+		transform: rotate(0deg);
+		opacity: 0.2;
+	}
+
+	.scroll-chevron-1 {
+		animation: scroll-chevron 1.6s ease-in-out infinite;
+	}
+
+	.scroll-chevron-2 {
+		animation: scroll-chevron 1.6s ease-in-out infinite 0.15s;
+	}
+
+	.scroll-chevron-3 {
+		animation: scroll-chevron 1.6s ease-in-out infinite 0.3s;
+	}
+
+	@keyframes scroll-chevron {
+		0% { transform: translateY(0); opacity: 0.1; }
+		40% { transform: translateY(3px); opacity: 0.7; }
+		80%, 100% { transform: translateY(6px); opacity: 0; }
 	}
 
 	/* Responsive */
 	@media (max-width: 768px) {
 		.scroll-indicator {
-			display: block;
+			display: flex;
 		}
 		.hero {
 			min-height: 70vh;
