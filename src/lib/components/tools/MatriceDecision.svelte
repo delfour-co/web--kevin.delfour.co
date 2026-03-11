@@ -30,6 +30,7 @@
 
 	let copyFeedback = $state(false);
 	let nextId = $state(10);
+	let isMobile = $state(false);
 
 	function genId(prefix: string) {
 		return prefix + nextId++;
@@ -48,6 +49,13 @@
 			const pct = totalWeight > 0 ? Math.round((weightedSum / totalWeight) * 100) : 0;
 			return { option: opt, weightedSum, pct };
 		}).sort((a, b) => b.pct - a.pct);
+	});
+
+	// Close results detection: top 2 differ by less than 5%
+	const closeResults = $derived(() => {
+		const res = results();
+		if (res.length < 2) return false;
+		return Math.abs(res[0].pct - res[1].pct) < 5;
 	});
 
 	function addCriterion() {
@@ -143,10 +151,14 @@
 			'## Résultat',
 			'',
 			`**Recommandation :** ${res[0]?.option.name || '—'} (${res[0]?.pct}%)`,
-			'',
-			'---',
-			`_Généré avec la Matrice de décision technique — ${TOOL_URL}_`
 		];
+
+		if (closeResults()) {
+			lines.push('');
+			lines.push('> **Attention :** Les résultats sont très proches. Cette matrice ne suffit pas seule — confronte cette analyse à ton contexte d\'équipe.');
+		}
+
+		lines.push('', '---', `_Généré avec la Matrice de décision technique — ${TOOL_URL}_`);
 
 		const md = lines.join('\n');
 		try {
@@ -167,12 +179,21 @@
 		}
 	}
 
+	function checkMobile() {
+		if (browser) {
+			isMobile = window.innerWidth < 768;
+		}
+	}
+
 	$effect(() => {
 		save();
 	});
 
 	onMount(() => {
 		load();
+		checkMobile();
+		window.addEventListener('resize', checkMobile);
+		return () => window.removeEventListener('resize', checkMobile);
 	});
 </script>
 
@@ -220,76 +241,128 @@
 			<button class="add-btn add-btn--inline" onclick={addOption}>+ Option</button>
 		</div>
 
-		<div class="matrix-table-wrapper">
-			<table class="matrix-table">
-				<thead>
-					<tr>
-						<th class="th-option">Option</th>
-						{#each criteria as c}
-							<th class="th-criterion">
-								{c.name || '—'}
-								<span class="th-weight">(×{c.weight})</span>
-							</th>
-						{/each}
-						<th class="th-score">Score</th>
-					</tr>
-				</thead>
-				<tbody>
-					{#each options as opt, oi}
-						{@const r = results().find((r) => r.option.id === opt.id)}
+		<!-- Desktop: table view -->
+		{#if !isMobile}
+			<div class="matrix-table-wrapper">
+				<table class="matrix-table">
+					<thead>
 						<tr>
-							<td class="td-option">
-								<div class="option-name-cell">
-									<input type="text" bind:value={opt.name} placeholder="Option" class="option-name-input" />
-									{#if options.length > 2}
-										<button class="remove-btn remove-btn--small" onclick={() => removeOption(oi)} aria-label="Supprimer {opt.name}">
-											&times;
-										</button>
-									{/if}
-								</div>
-							</td>
+							<th class="th-option">Option</th>
 							{#each criteria as c}
-								<td class="td-score">
-									<input
-										type="range"
-										min="0"
-										max="10"
-										step="1"
-										bind:value={opt.scores[c.id]}
-										class="score-slider"
-										aria-label="{opt.name} - {c.name}"
-									/>
-									<span class="score-value">{opt.scores[c.id]}</span>
-								</td>
+								<th class="th-criterion">
+									{c.name || '—'}
+									<span class="th-weight">(×{c.weight})</span>
+								</th>
 							{/each}
-							<td class="td-total">
-								<span class="total-pct" class:total-pct--best={r === results()[0]}>{r?.pct ?? 0}%</span>
-							</td>
+							<th class="th-score">Score</th>
 						</tr>
-					{/each}
-				</tbody>
-			</table>
-		</div>
+					</thead>
+					<tbody>
+						{#each options as opt, oi}
+							{@const r = results().find((r) => r.option.id === opt.id)}
+							<tr>
+								<td class="td-option">
+									<div class="option-name-cell">
+										<input type="text" bind:value={opt.name} placeholder="Option" class="option-name-input" />
+										{#if options.length > 2}
+											<button class="remove-btn remove-btn--small" onclick={() => removeOption(oi)} aria-label="Supprimer {opt.name}">
+												&times;
+											</button>
+										{/if}
+									</div>
+								</td>
+								{#each criteria as c}
+									<td class="td-score">
+										<input
+											type="range"
+											min="0"
+											max="10"
+											step="1"
+											bind:value={opt.scores[c.id]}
+											class="score-slider"
+											aria-label="{opt.name} - {c.name}"
+										/>
+										<span class="score-value">{opt.scores[c.id]}</span>
+									</td>
+								{/each}
+								<td class="td-total">
+									<span class="total-pct" class:total-pct--best={r === results()[0]}>{r?.pct ?? 0}%</span>
+								</td>
+							</tr>
+						{/each}
+					</tbody>
+				</table>
+			</div>
+		{:else}
+			<!-- Mobile: card-based view -->
+			<div class="mobile-cards">
+				{#each options as opt, oi}
+					{@const r = results().find((r) => r.option.id === opt.id)}
+					<div class="mobile-card glass-card">
+						<div class="mobile-card-header">
+							<input type="text" bind:value={opt.name} placeholder="Option" class="mobile-card-name" />
+							<span class="mobile-card-score" class:total-pct--best={r === results()[0]}>{r?.pct ?? 0}%</span>
+							{#if options.length > 2}
+								<button class="remove-btn remove-btn--small" onclick={() => removeOption(oi)} aria-label="Supprimer {opt.name}">
+									&times;
+								</button>
+							{/if}
+						</div>
+						<div class="mobile-card-criteria">
+							{#each criteria as c}
+								<div class="mobile-criterion-row">
+									<div class="mobile-criterion-info">
+										<span class="mobile-criterion-name">{c.name || '—'}</span>
+										<span class="mobile-criterion-weight">(×{c.weight})</span>
+									</div>
+									<div class="mobile-criterion-input">
+										<input
+											type="range"
+											min="0"
+											max="10"
+											step="1"
+											bind:value={opt.scores[c.id]}
+											class="score-slider score-slider--mobile"
+											aria-label="{opt.name} - {c.name}"
+										/>
+										<span class="score-value">{opt.scores[c.id]}</span>
+									</div>
+								</div>
+							{/each}
+						</div>
+					</div>
+				{/each}
+			</div>
+		{/if}
 	</div>
 
-	<!-- Result bars -->
+	<!-- Result panel with bar chart -->
 	{#if options.length > 0}
 		<div class="result-panel" aria-live="polite">
 			<h3 class="result-title">Classement</h3>
-			{#each results() as r, i}
-				<div class="result-bar-row">
-					<span class="result-rank">{i + 1}.</span>
-					<span class="result-name">{r.option.name || '—'}</span>
-					<div class="result-bar-track">
-						<div
-							class="result-bar-fill"
-							class:result-bar-fill--best={i === 0}
-							style="width: {r.pct}%"
-						></div>
-					</div>
-					<span class="result-pct">{r.pct}%</span>
+
+			{#if closeResults()}
+				<div class="close-results-warning" role="alert">
+					Les résultats sont très proches. Ce cadre ne suffit pas seul — confronte cette analyse à ton contexte d'équipe.
 				</div>
-			{/each}
+			{/if}
+
+			<div class="result-chart">
+				{#each results() as r, i}
+					<div class="result-bar-row">
+						<span class="result-rank">{i + 1}.</span>
+						<span class="result-name">{r.option.name || '—'}</span>
+						<div class="result-bar-track">
+							<div
+								class="result-bar-fill"
+								class:result-bar-fill--best={i === 0}
+								style="width: {r.pct}%"
+							></div>
+						</div>
+						<span class="result-pct" class:result-pct--best={i === 0}>{r.pct}%</span>
+					</div>
+				{/each}
+			</div>
 		</div>
 	{/if}
 
@@ -567,7 +640,97 @@
 	}
 
 	.total-pct--best {
-		color: var(--accent);
+		color: #06b6d4;
+	}
+
+	/* Mobile card view */
+	.mobile-cards {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	.mobile-card {
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-radius: var(--radius);
+		padding: 16px;
+		background: rgba(255, 255, 255, 0.05);
+	}
+
+	.mobile-card-header {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		margin-bottom: 12px;
+		padding-bottom: 10px;
+		border-bottom: 1px solid var(--border);
+	}
+
+	.mobile-card-name {
+		flex: 1;
+		font-size: 15px;
+		font-weight: 600;
+	}
+
+	.mobile-card-score {
+		font-family: var(--font-mono);
+		font-size: 18px;
+		font-weight: 700;
+		flex-shrink: 0;
+	}
+
+	.mobile-card-criteria {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.mobile-criterion-row {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+	}
+
+	.mobile-criterion-info {
+		display: flex;
+		align-items: baseline;
+		gap: 4px;
+	}
+
+	.mobile-criterion-name {
+		font-family: var(--font-ui);
+		font-size: 13px;
+		font-weight: 600;
+		color: var(--primary);
+	}
+
+	.mobile-criterion-weight {
+		font-size: 11px;
+		color: var(--secondary);
+	}
+
+	.mobile-criterion-input {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+
+	.score-slider--mobile {
+		flex: 1;
+		width: 100%;
+	}
+
+	/* Close results warning */
+	.close-results-warning {
+		font-family: var(--font-ui);
+		font-size: 13px;
+		line-height: 1.5;
+		color: #f59e0b;
+		background: rgba(245, 158, 11, 0.08);
+		border: 1px solid rgba(245, 158, 11, 0.25);
+		border-radius: var(--radius);
+		padding: 10px 14px;
+		margin-bottom: 14px;
 	}
 
 	/* Result panel */
@@ -586,15 +749,16 @@
 		margin: 0 0 12px 0;
 	}
 
+	.result-chart {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+
 	.result-bar-row {
 		display: flex;
 		align-items: center;
 		gap: 8px;
-		margin-bottom: 8px;
-	}
-
-	.result-bar-row:last-child {
-		margin-bottom: 0;
 	}
 
 	.result-rank {
@@ -613,7 +777,7 @@
 
 	.result-bar-track {
 		flex: 1;
-		height: 20px;
+		height: 22px;
 		background: var(--border);
 		border-radius: 4px;
 		overflow: hidden;
@@ -621,14 +785,14 @@
 
 	.result-bar-fill {
 		height: 100%;
-		background: var(--secondary);
+		background: #8b5cf6;
 		border-radius: 4px;
 		transition: width 0.3s ease;
 		min-width: 2px;
 	}
 
 	.result-bar-fill--best {
-		background: var(--accent);
+		background: #06b6d4;
 	}
 
 	.result-pct {
@@ -637,6 +801,11 @@
 		font-weight: 600;
 		min-width: 40px;
 		text-align: right;
+		color: var(--secondary);
+	}
+
+	.result-pct--best {
+		color: #06b6d4;
 	}
 
 	/* Actions */
@@ -685,6 +854,15 @@
 
 		.score-slider {
 			width: 60px;
+		}
+
+		.result-bar-row {
+			flex-wrap: wrap;
+		}
+
+		.result-name {
+			min-width: 60px;
+			font-size: 13px;
 		}
 	}
 

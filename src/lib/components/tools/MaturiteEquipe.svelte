@@ -2,66 +2,63 @@
 	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
 
-	const STORAGE_KEY = 'tool-diagnostic-maturite-cto';
-	const TOOL_URL = 'https://kevin.delfour.co/outils/diagnostic-maturite-cto/';
-
-	interface MaturityLevel {
-		label: string;
-		color: string;
-	}
-
-	function getAxisMaturity(score: number): MaturityLevel {
-		if (score <= 3) return { label: 'Découverte', color: '#f59e0b' };
-		if (score <= 6) return { label: 'Structuration', color: 'var(--accent2)' };
-		if (score <= 8) return { label: 'Maîtrise', color: 'var(--accent)' };
-		return { label: 'Référence', color: 'var(--accent3)' };
-	}
-
-	function getOverallMaturity(avg: number): MaturityLevel {
-		if (avg <= 3) return { label: 'Phase de découverte', color: '#f59e0b' };
-		if (avg <= 5) return { label: 'En construction', color: 'var(--accent2)' };
-		if (avg <= 7) return { label: 'Posture solide', color: 'var(--accent)' };
-		return { label: 'CTO de référence', color: 'var(--accent3)' };
-	}
+	const STORAGE_KEY = 'tool-maturite-equipe';
+	const TOOL_URL = 'https://kevin.delfour.co/outils/maturite-equipe/';
 
 	const axes = [
 		{
-			id: 'leadership',
-			name: 'Leadership',
-			description: 'Capacité à porter une vision, embarquer les équipes, incarner une posture.',
-			guidance: "Ce que j'ai observé : le leadership technique se construit rarement par la théorie. Il émerge souvent en prenant des décisions visibles, même imparfaites, et en assumant leurs conséquences devant l'équipe. Un cadre possible : commencer par clarifier ce que l'on attend de soi dans ce rôle, avant de chercher à inspirer."
+			id: 'autonomie',
+			name: 'Autonomie',
+			description: 'Capacité à prendre des décisions sans escalade systématique.'
 		},
 		{
-			id: 'decision',
-			name: 'Décision',
-			description: 'Qualité des arbitrages techniques, gouvernance, gestion des trade-offs.',
-			guidance: "Ce que j'ai observé : les meilleures décisions techniques ne sont pas toujours les plus brillantes. Elles sont souvent celles qui ont été documentées, partagées et réversibles. Un cadre possible : mettre en place un format léger (ADR, RFC) pour rendre les arbitrages traçables, sans alourdir le quotidien."
+			id: 'qualite',
+			name: 'Qualité',
+			description: 'Rigueur technique, code review, testing, respect des standards.'
 		},
 		{
-			id: 'craft',
-			name: 'Craft',
-			description: 'Maîtrise technique, architecture, qualité du code et des systèmes.',
-			guidance: "Avec le recul, la maîtrise technique d'un CTO ne se mesure pas au nombre de lignes écrites. Elle se lit dans la capacité à poser des contraintes d'architecture claires et à reconnaître quand on n'est plus la bonne personne pour coder un module. Un cadre possible : identifier les zones où l'on apporte encore de la valeur technique directe, et déléguer le reste."
+			id: 'delivery',
+			name: 'Delivery',
+			description: 'Prévisibilité, respect des engagements, flux continu.'
 		},
 		{
-			id: 'organisation',
-			name: 'Organisation',
-			description: 'Structuration des équipes, culture, sécurité psychologique.',
-			guidance: "Ce que j'ai observé : la sécurité psychologique ne se décrète pas. Elle se construit par des actes répétés — reconnaître ses erreurs, protéger le droit à l'expérimentation, ne pas sanctionner les mauvaises nouvelles. Un cadre possible : commencer par observer comment les désaccords se règlent dans l'équipe, avant de changer quoi que ce soit."
+			id: 'communication',
+			name: 'Communication',
+			description: 'Transparence, feedback, documentation, partage de contexte.'
 		},
 		{
-			id: 'pratiques',
-			name: 'Pratiques',
-			description: 'Processus de développement, CI/CD, code review, testing.',
-			guidance: "Avec le recul, les pratiques de développement les plus durables sont celles que l'équipe s'approprie, pas celles qu'on impose. Un processus adopté à 80 % vaut mieux qu'un processus parfait ignoré. Un cadre possible : partir de ce qui frotte au quotidien (temps de review, flakiness des tests) et traiter un irritant à la fois."
+			id: 'apprentissage',
+			name: 'Apprentissage',
+			description: 'Veille, rétros, amélioration continue, mentoring.'
 		},
 		{
-			id: 'parcours',
-			name: 'Parcours',
-			description: 'Conscience de sa trajectoire, mentorat, apprentissage continu.',
-			guidance: "Ce que j'ai observé : les CTO qui durent sont souvent ceux qui ont appris à nommer ce qu'ils ne savent pas, et à chercher des pairs plutôt que des réponses. La trajectoire se clarifie rarement seul. Un cadre possible : trouver un espace d'échange régulier avec d'autres leaders tech, sans enjeu hiérarchique."
+			id: 'collaboration',
+			name: 'Collaboration',
+			description: 'Pair programming, mob, entraide, cross-fonctionnel.'
 		}
 	];
+
+	const suggestions: Record<string, string> = {
+		autonomie:
+			"Ce que j'ai observé dans les équipes qui progressent sur cet axe : elles commencent par clarifier les périmètres de décision. Quand chacun sait ce qu'il peut décider seul, l'escalade diminue naturellement. Un cadre explicite — même imparfait — libère plus qu'un flou bienveillant.",
+		qualite:
+			"Ce que j'ai observé dans les équipes qui progressent sur cet axe : elles ritualisent la qualité plutôt que de la décréter. Une code review systématique, un seuil de couverture raisonnable, un standard partagé et écrit. La rigueur vient rarement de la volonté individuelle — elle vient du cadre collectif.",
+		delivery:
+			"Ce que j'ai observé dans les équipes qui progressent sur cet axe : elles réduisent la taille de ce qu'elles livrent. Des incréments plus petits, plus fréquents, avec moins de dépendances. La prévisibilité n'est pas une question de vélocité — c'est une question de découpage.",
+		communication:
+			"Ce que j'ai observé dans les équipes qui progressent sur cet axe : elles documentent les décisions, pas seulement les résultats. Un canal dédié aux choix techniques, des rétros où on parle vrai, des post-mortems sans blame. La transparence se construit par la pratique, pas par l'intention.",
+		apprentissage:
+			"Ce que j'ai observé dans les équipes qui progressent sur cet axe : elles créent du temps protégé pour apprendre. Une demi-journée de veille, un format lightning talk, un binôme junior/senior sur un sujet nouveau. L'apprentissage ne se décrète pas — il se rend possible.",
+		collaboration:
+			"Ce que j'ai observé dans les équipes qui progressent sur cet axe : elles commencent petit. Un créneau de mob programming hebdomadaire, un ticket traité en binôme. La collaboration cross-fonctionnelle suit souvent : quand on s'habitue à travailler ensemble, les frontières d'équipe s'assouplissent."
+	};
+
+	function getLevel(score: number): { label: string; color: string } {
+		if (score <= 3) return { label: 'Émergent', color: '#f97316' };
+		if (score <= 6) return { label: 'Structuré', color: '#8b5cf6' };
+		if (score <= 8) return { label: 'Performant', color: '#06b6d4' };
+		return { label: 'Autonome', color: '#ec4899' };
+	}
 
 	let scores = $state<Record<string, number>>(
 		Object.fromEntries(axes.map((a) => [a.id, 5]))
@@ -73,35 +70,25 @@
 		Math.round((Object.values(scores).reduce((a, b) => a + b, 0) / axes.length) * 10) / 10
 	);
 
-	const overallMaturity = $derived(getOverallMaturity(average));
+	const averageLevel = $derived(getLevel(Math.round(average)));
+
+	const sortedAxes = $derived(() => {
+		return [...axes].sort((a, b) => scores[b.id] - scores[a.id]);
+	});
 
 	const strongest = $derived(() => {
-		let max = 0;
-		let name = '';
-		for (const a of axes) {
-			if (scores[a.id] > max) {
-				max = scores[a.id];
-				name = a.name;
-			}
-		}
-		return name;
+		const sorted = sortedAxes();
+		return sorted[0];
 	});
 
 	const weakest = $derived(() => {
-		let min = 11;
-		let name = '';
-		for (const a of axes) {
-			if (scores[a.id] < min) {
-				min = scores[a.id];
-				name = a.name;
-			}
-		}
-		return name;
+		const sorted = sortedAxes();
+		return sorted[sorted.length - 1];
 	});
 
-	const weakestTwo = $derived(() => {
-		const sorted = [...axes].sort((a, b) => scores[a.id] - scores[b.id]);
-		return sorted.slice(0, 2);
+	const twoWeakest = $derived(() => {
+		const sorted = sortedAxes();
+		return [sorted[sorted.length - 1], sorted[sorted.length - 2]];
 	});
 
 	// Radar chart SVG computation
@@ -176,34 +163,25 @@
 
 	async function handleExport() {
 		const today = new Date().toISOString().split('T')[0];
-		const overall = getOverallMaturity(average);
+		const weak = twoWeakest();
 		const lines = [
-			'# Diagnostic Maturité CTO',
+			'# Évaluation Maturité Équipe',
 			'',
 			`**Date :** ${today}`,
-			`**Moyenne :** ${average}/10`,
-			`**Niveau global :** ${overall.label}`,
+			`**Moyenne :** ${average}/10 — ${averageLevel.label}`,
 			'',
 			'## Scores par axe',
 			'',
-			...axes.map((a) => {
-				const m = getAxisMaturity(scores[a.id]);
-				return `- ${a.name} : ${scores[a.id]}/10 — _${m.label}_`;
-			}),
+			...axes.map((a) => `- ${a.name} : ${scores[a.id]}/10 — ${getLevel(scores[a.id]).label}`),
 			'',
-			`**Point fort :** ${strongest()}`,
-			`**Axe de progression :** ${weakest()}`,
+			`**Point fort :** ${strongest().name} (${scores[strongest().id]}/10)`,
+			`**Axe de progression :** ${weakest().name} (${scores[weakest().id]}/10)`,
 			'',
-			'## Pistes de réflexion',
+			'## Pistes de progression',
 			'',
-			...weakestTwo().flatMap((a) => [
-				`### ${a.name} (${scores[a.id]}/10 — ${getAxisMaturity(scores[a.id]).label})`,
-				'',
-				a.guidance,
-				''
-			]),
+			...weak.map((a) => [`### ${a.name}`, '', suggestions[a.id], '']).flat(),
 			'---',
-			`_Généré avec le Diagnostic Maturité CTO — ${TOOL_URL}_`
+			`_Généré avec l'Évaluation Maturité Équipe — ${TOOL_URL}_`
 		];
 
 		const md = lines.join('\n');
@@ -238,13 +216,13 @@
 	<div class="tool-layout">
 		<div class="tool-sliders">
 			{#each axes as axis}
-				{@const maturity = getAxisMaturity(scores[axis.id])}
+				{@const level = getLevel(scores[axis.id])}
 				<div class="slider-group">
 					<div class="slider-label">
 						<span class="slider-name">{axis.name}</span>
-						<span class="slider-meta">
-							<span class="maturity-badge" style="color: {maturity.color}; border-color: {maturity.color}">{maturity.label}</span>
+						<span class="slider-value-group">
 							<span class="slider-value">{scores[axis.id]}/10</span>
+							<span class="slider-level" style="color: {level.color}">{level.label}</span>
 						</span>
 					</div>
 					<p class="slider-hint">{axis.description}</p>
@@ -255,7 +233,7 @@
 						step="1"
 						value={scores[axis.id]}
 						class="slider"
-						aria-label="{axis.name} : {scores[axis.id]} sur 10 — {maturity.label}"
+						aria-label="{axis.name} : {scores[axis.id]} sur 10 — {level.label}"
 						oninput={(e) => {
 							scores[axis.id] = parseInt(e.currentTarget.value, 10);
 						}}
@@ -272,13 +250,7 @@
 		</div>
 
 		<div class="tool-result" aria-live="polite" aria-atomic="true">
-			<div class="result-title">Profil</div>
-
-			<div class="overall-maturity" style="border-color: {overallMaturity.color}">
-				<span class="overall-maturity-label">Niveau global</span>
-				<span class="overall-maturity-value" style="color: {overallMaturity.color}">{overallMaturity.label}</span>
-				<span class="overall-maturity-score">{average}/10</span>
-			</div>
+			<div class="result-title">Profil de l'équipe</div>
 
 			<div class="radar-container">
 				<svg viewBox="0 0 300 300" class="radar-svg" aria-hidden="true">
@@ -315,25 +287,34 @@
 
 			<div class="result-summary">
 				<div class="summary-row">
+					<span class="summary-label">Maturité globale</span>
+					<span class="summary-value">
+						{average}/10
+						<span class="summary-level" style="color: {averageLevel.color}">
+							{averageLevel.label}
+						</span>
+					</span>
+				</div>
+				<div class="summary-row">
 					<span class="summary-label">Point fort</span>
-					<span class="summary-value summary-value--accent">{strongest()}</span>
+					<span class="summary-value summary-value--accent">{strongest().name}</span>
 				</div>
 				<div class="summary-row">
 					<span class="summary-label">Axe de progression</span>
-					<span class="summary-value">{weakest()}</span>
+					<span class="summary-value">{weakest().name}</span>
 				</div>
 			</div>
 
-			<div class="guidance-section">
-				<div class="guidance-title">Pistes de réflexion</div>
-				{#each weakestTwo() as axis}
-					{@const maturity = getAxisMaturity(scores[axis.id])}
-					<div class="guidance-card">
-						<div class="guidance-card-header">
-							<span class="guidance-axis-name">{axis.name}</span>
-							<span class="guidance-axis-level" style="color: {maturity.color}">{scores[axis.id]}/10 — {maturity.label}</span>
+			<div class="suggestions">
+				<div class="suggestions-title">Pistes de progression</div>
+				{#each twoWeakest() as axis}
+					{@const level = getLevel(scores[axis.id])}
+					<div class="suggestion-block">
+						<div class="suggestion-axis">
+							<span>{axis.name}</span>
+							<span class="suggestion-score" style="color: {level.color}">{scores[axis.id]}/10 — {level.label}</span>
 						</div>
-						<p class="guidance-text">{axis.guidance}</p>
+						<p class="suggestion-text">{suggestions[axis.id]}</p>
 					</div>
 				{/each}
 			</div>
@@ -359,6 +340,10 @@
 		gap: var(--content-gap);
 	}
 
+	.slider-group {
+		/* individual */
+	}
+
 	.slider-label {
 		display: flex;
 		justify-content: space-between;
@@ -373,21 +358,10 @@
 		color: var(--primary);
 	}
 
-	.slider-meta {
+	.slider-value-group {
 		display: flex;
 		align-items: baseline;
 		gap: 8px;
-	}
-
-	.maturity-badge {
-		font-family: var(--font-ui);
-		font-size: 11px;
-		font-weight: 600;
-		padding: 1px 8px;
-		border: 1px solid;
-		border-radius: 12px;
-		white-space: nowrap;
-		transition: color 0.3s ease, border-color 0.3s ease;
 	}
 
 	.slider-value {
@@ -395,6 +369,13 @@
 		font-size: 14px;
 		font-weight: 700;
 		color: var(--accent);
+	}
+
+	.slider-level {
+		font-family: var(--font-ui);
+		font-size: 12px;
+		font-weight: 600;
+		transition: color 0.2s ease;
 	}
 
 	.slider-hint {
@@ -459,43 +440,6 @@
 		height: 6px;
 		border-radius: 3px;
 		background: var(--border);
-	}
-
-	/* Overall maturity */
-	.overall-maturity {
-		text-align: center;
-		padding: 16px;
-		border: 1px solid;
-		border-radius: var(--radius);
-		margin-bottom: var(--content-gap);
-		background: rgba(0, 0, 0, 0.2);
-		transition: border-color 0.3s ease;
-	}
-
-	.overall-maturity-label {
-		display: block;
-		font-family: var(--font-ui);
-		font-size: 12px;
-		color: var(--secondary);
-		margin-bottom: 4px;
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
-	}
-
-	.overall-maturity-value {
-		display: block;
-		font-family: var(--font-heading);
-		font-size: 22px;
-		font-weight: 700;
-		transition: color 0.3s ease;
-	}
-
-	.overall-maturity-score {
-		display: block;
-		font-family: var(--font-mono);
-		font-size: 14px;
-		color: var(--secondary);
-		margin-top: 2px;
 	}
 
 	/* Result */
@@ -563,6 +507,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 8px;
+		margin-bottom: var(--content-gap);
 	}
 
 	.summary-row {
@@ -589,54 +534,53 @@
 		color: var(--accent);
 	}
 
-	/* Guidance */
-	.guidance-section {
-		margin-top: var(--content-gap);
-		padding-top: var(--content-gap);
-		border-top: 1px solid var(--border);
+	.summary-level {
+		font-family: var(--font-ui);
+		font-size: 12px;
+		font-weight: 600;
+		margin-left: 6px;
 	}
 
-	.guidance-title {
-		font-family: var(--font-heading);
-		font-size: 16px;
+	/* Suggestions */
+	.suggestions {
+		border-top: 1px solid var(--border);
+		padding-top: var(--content-gap);
+	}
+
+	.suggestions-title {
+		font-family: var(--font-ui);
+		font-size: 14px;
 		font-weight: 600;
 		color: var(--primary);
 		margin-bottom: 12px;
 	}
 
-	.guidance-card {
-		padding: 12px;
-		border-radius: var(--radius);
-		background: rgba(0, 0, 0, 0.15);
-		margin-bottom: 10px;
+	.suggestion-block {
+		margin-bottom: 16px;
 	}
 
-	.guidance-card:last-child {
+	.suggestion-block:last-child {
 		margin-bottom: 0;
 	}
 
-	.guidance-card-header {
+	.suggestion-axis {
 		display: flex;
 		justify-content: space-between;
 		align-items: baseline;
-		margin-bottom: 8px;
-	}
-
-	.guidance-axis-name {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 13px;
 		font-weight: 600;
 		color: var(--primary);
+		margin-bottom: 4px;
 	}
 
-	.guidance-axis-level {
+	.suggestion-score {
 		font-family: var(--font-mono);
 		font-size: 12px;
 		font-weight: 600;
-		transition: color 0.3s ease;
 	}
 
-	.guidance-text {
+	.suggestion-text {
 		font-size: 13px;
 		line-height: 1.6;
 		color: var(--secondary);
@@ -701,11 +645,6 @@
 		.tool-btn {
 			width: 100%;
 			text-align: center;
-		}
-
-		.guidance-card-header {
-			flex-direction: column;
-			gap: 2px;
 		}
 	}
 </style>

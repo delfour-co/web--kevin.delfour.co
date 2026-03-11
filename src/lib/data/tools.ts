@@ -62,4 +62,58 @@ export const tools: Tool[] = [
 		url: '/outils/matrice-decision-technique/',
 		categorie: 'décision'
 	},
+	{
+		nom: 'Calculateur capacité équipe',
+		slug: 'calculateur-capacite-equipe',
+		description:
+			'Estime la capacité réelle de ton équipe vs la capacité théorique. Visualise l\'impact des cérémonies, support et absences.',
+		statut: 'disponible',
+		url: '/outils/calculateur-capacite-equipe/',
+		categorie: 'organisation'
+	},
+	{
+		nom: 'Évaluation dette technique',
+		slug: 'evaluation-dette-technique',
+		description:
+			'Quantifie et priorise ta dette technique sur 6 axes. Matrice impact/effort pour identifier les quick wins.',
+		statut: 'disponible',
+		url: '/outils/evaluation-dette-technique/',
+		categorie: 'décision'
+	},
+	{
+		nom: 'Évaluation maturité équipe',
+		slug: 'maturite-equipe',
+		description:
+			'Diagnostique la maturité de ton équipe tech sur 6 axes : autonomie, qualité, delivery, communication, apprentissage, collaboration.',
+		statut: 'disponible',
+		url: '/outils/maturite-equipe/',
+		categorie: 'organisation'
+	},
+	{
+		nom: 'Audit sécurité express',
+		slug: 'audit-securite-express',
+		description:
+			'Checklist sécurité OWASP-inspired par couche : auth, données, infra, CI/CD, application, organisation.',
+		statut: 'disponible',
+		url: '/outils/audit-securite-express/',
+		categorie: 'sécurité'
+	},
+	{
+		nom: 'Simulateur de migration',
+		slug: 'simulateur-migration',
+		description:
+			'Planifie ta migration technique : phases, risques, checklist pre-migration, timeline. Export plan complet.',
+		statut: 'disponible',
+		url: '/outils/simulateur-migration/',
+		categorie: 'décision'
+	},
+	{
+		nom: 'Générateur de post-mortem',
+		slug: 'generateur-post-mortem',
+		description:
+			"Structure un post-mortem d'incident : timeline, root cause, impact, actions. Blameless par design.",
+		statut: 'disponible',
+		url: '/outils/generateur-post-mortem/',
+		categorie: 'gouvernance'
+	},
 ];

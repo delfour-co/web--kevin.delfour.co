@@ -18,11 +18,16 @@
 		quadrant: Quadrant;
 	}
 
+	interface PlacedBlip extends Blip {
+		x: number;
+		y: number;
+	}
+
 	const ringDescriptions: Record<Ring, string> = {
-		Adopt: 'Prêt pour la production. Confiance forte.',
-		Trial: 'À tester sur un vrai projet. Prometeur.',
-		Assess: 'À explorer. Mérite investigation.',
-		Hold: 'À éviter pour les nouveaux projets.'
+		Adopt: 'Pret pour la production. Confiance forte.',
+		Trial: 'A tester sur un vrai projet. Prometeur.',
+		Assess: 'A explorer. Merite investigation.',
+		Hold: 'A eviter pour les nouveaux projets.'
 	};
 
 	const ringColors: Record<Ring, string> = {
@@ -32,12 +37,32 @@
 		Hold: '#c0392b'
 	};
 
+	const ringColorsAlpha: Record<Ring, string> = {
+		Adopt: 'rgba(39, 174, 96, 0.15)',
+		Trial: 'rgba(41, 128, 185, 0.12)',
+		Assess: 'rgba(243, 156, 18, 0.10)',
+		Hold: 'rgba(192, 57, 43, 0.08)'
+	};
+
+	// SVG radar constants
+	const SVG_SIZE = 600;
+	const CENTER = SVG_SIZE / 2;
+	const MAX_RADIUS = CENTER - 40; // leave margin for labels
+	const RING_RADII = [
+		MAX_RADIUS * 0.25, // Adopt outer edge
+		MAX_RADIUS * 0.50, // Trial outer edge
+		MAX_RADIUS * 0.75, // Assess outer edge
+		MAX_RADIUS          // Hold outer edge
+	];
+	const BLIP_RADIUS = 7;
+
 	let blips = $state<Blip[]>([]);
 	let newName = $state('');
 	let newRing = $state<Ring>('Assess');
 	let newQuadrant = $state<Quadrant>('Langages & Frameworks');
 	let copyFeedback = $state(false);
 	let activeQuadrant = $state<Quadrant | null>(null);
+	let hoveredBlip = $state<string | null>(null);
 
 	const blipsByQuadrant = $derived(() => {
 		const grouped: Record<Quadrant, Record<Ring, Blip[]>> = {} as any;
@@ -52,6 +77,62 @@
 		}
 		return grouped;
 	});
+
+	// Deterministic pseudo-random from blip id
+	function hashCode(s: string): number {
+		let h = 0;
+		for (let i = 0; i < s.length; i++) {
+			h = (Math.imul(31, h) + s.charCodeAt(i)) | 0;
+		}
+		return h;
+	}
+
+	function seededRandom(seed: number): () => number {
+		let s = seed;
+		return () => {
+			s = (s * 16807 + 0) % 2147483647;
+			return (s - 1) / 2147483646;
+		};
+	}
+
+	// Place blips on the radar SVG
+	const placedBlips = $derived(() => {
+		const result: PlacedBlip[] = [];
+		const quadrantAngles: Record<Quadrant, [number, number]> = {
+			'Langages & Frameworks': [Math.PI, Math.PI * 1.5],      // top-left
+			'Outils': [Math.PI * 1.5, Math.PI * 2],                  // top-right
+			'Plateformes': [0, Math.PI * 0.5],                       // bottom-right
+			'Techniques': [Math.PI * 0.5, Math.PI]                    // bottom-left
+		};
+
+		for (const b of blips) {
+			const ringIdx = RINGS.indexOf(b.ring);
+			const innerR = ringIdx === 0 ? 0 : RING_RADII[ringIdx - 1];
+			const outerR = RING_RADII[ringIdx];
+			const [startAngle, endAngle] = quadrantAngles[b.quadrant];
+
+			const rng = seededRandom(hashCode(b.id));
+			const margin = BLIP_RADIUS + 2;
+			const r = innerR + margin + rng() * (outerR - innerR - margin * 2);
+			const anglePadding = 0.08;
+			const angle = startAngle + anglePadding + rng() * (endAngle - startAngle - anglePadding * 2);
+
+			const x = CENTER + r * Math.cos(angle);
+			const y = CENTER + r * Math.sin(angle);
+
+			result.push({ ...b, x, y });
+		}
+
+		return result;
+	});
+
+	// Quadrant label positions
+	const quadrantLabels = [
+		{ label: 'Langages & Frameworks', x: CENTER - MAX_RADIUS / 2, y: CENTER - MAX_RADIUS - 12 },
+		{ label: 'Outils', x: CENTER + MAX_RADIUS / 2, y: CENTER - MAX_RADIUS - 12 },
+		{ label: 'Plateformes', x: CENTER + MAX_RADIUS / 2, y: CENTER + MAX_RADIUS + 22 },
+		{ label: 'Techniques', x: CENTER - MAX_RADIUS / 2, y: CENTER + MAX_RADIUS + 22 }
+	];
 
 	function addBlip() {
 		const name = newName.trim();
@@ -128,7 +209,7 @@
 			}
 		}
 
-		lines.push('---', `_Généré avec le Tech Radar Personnel — ${TOOL_URL}_`);
+		lines.push('---', `_Genere avec le Tech Radar Personnel — ${TOOL_URL}_`);
 		const md = lines.join('\n');
 
 		try {
@@ -190,12 +271,127 @@
 		{/each}
 	</div>
 
-	<!-- Radar grid -->
+	<!-- SVG Radar Visualization -->
+	{#if blips.length > 0}
+		<div class="radar-svg-wrapper">
+			<svg
+				viewBox="0 0 {SVG_SIZE} {SVG_SIZE}"
+				class="radar-svg"
+				role="img"
+				aria-label="Tech Radar : visualisation circulaire des technologies"
+			>
+				<!-- Ring backgrounds (outermost first) -->
+				{#each [3, 2, 1, 0] as ringIdx}
+					<circle
+						cx={CENTER}
+						cy={CENTER}
+						r={RING_RADII[ringIdx]}
+						fill={ringColorsAlpha[RINGS[ringIdx]]}
+						stroke={ringColors[RINGS[ringIdx]]}
+						stroke-width="1"
+						stroke-opacity="0.3"
+					/>
+				{/each}
+
+				<!-- Quadrant dividers -->
+				<line
+					x1={CENTER - MAX_RADIUS}
+					y1={CENTER}
+					x2={CENTER + MAX_RADIUS}
+					y2={CENTER}
+					stroke="var(--border)"
+					stroke-width="1"
+				/>
+				<line
+					x1={CENTER}
+					y1={CENTER - MAX_RADIUS}
+					x2={CENTER}
+					y2={CENTER + MAX_RADIUS}
+					stroke="var(--border)"
+					stroke-width="1"
+				/>
+
+				<!-- Ring labels on axes -->
+				{#each RINGS as r, i}
+					<text
+						x={CENTER + RING_RADII[i] - (RING_RADII[i] - (i === 0 ? 0 : RING_RADII[i - 1])) / 2}
+						y={CENTER - 6}
+						text-anchor="middle"
+						class="radar-ring-label"
+						fill={ringColors[r]}
+					>
+						{r}
+					</text>
+				{/each}
+
+				<!-- Quadrant labels -->
+				{#each quadrantLabels as ql}
+					<text
+						x={ql.x}
+						y={ql.y}
+						text-anchor="middle"
+						class="radar-quadrant-label"
+					>
+						{ql.label}
+					</text>
+				{/each}
+
+				<!-- Blips -->
+				{#each placedBlips() as b}
+					<g
+						class="radar-blip"
+						class:radar-blip--hovered={hoveredBlip === b.id}
+						onmouseenter={() => (hoveredBlip = b.id)}
+						onmouseleave={() => (hoveredBlip = null)}
+						onfocus={() => (hoveredBlip = b.id)}
+						onblur={() => (hoveredBlip = null)}
+						tabindex="0"
+						role="button"
+						aria-label="{b.name} — {b.ring}, {b.quadrant}"
+					>
+						<circle
+							cx={b.x}
+							cy={b.y}
+							r={hoveredBlip === b.id ? BLIP_RADIUS + 2 : BLIP_RADIUS}
+							fill={ringColors[b.ring]}
+							stroke="#000"
+							stroke-width="1.5"
+							class="radar-blip-dot"
+						/>
+						{#if hoveredBlip === b.id}
+							<!-- Tooltip background -->
+							<rect
+								x={b.x + 12}
+								y={b.y - 14}
+								width={b.name.length * 7.5 + 16}
+								height="24"
+								rx="4"
+								fill="rgba(0, 0, 0, 0.85)"
+								stroke={ringColors[b.ring]}
+								stroke-width="1"
+							/>
+							<text
+								x={b.x + 20}
+								y={b.y + 2}
+								class="radar-blip-label"
+								fill="#e4e4e7"
+							>
+								{b.name}
+							</text>
+						{/if}
+					</g>
+				{/each}
+			</svg>
+		</div>
+	{/if}
+
+	<!-- List view -->
 	{#if blips.length === 0}
 		<div class="empty-state">
 			<p>Ajoute des technologies pour construire ton radar.</p>
 		</div>
 	{:else}
+		<h2 class="list-heading">Detail par quadrant</h2>
 		<div class="radar-grid">
 			{#each QUADRANTS as q}
 				{@const grouped = blipsByQuadrant()}
@@ -253,7 +449,7 @@
 
 		<div class="tool-actions">
 			<button class="tool-btn tool-btn--primary" onclick={handleExport}>
-				{copyFeedback ? 'Copié dans le presse-papier' : 'Exporter en Markdown'}
+				{copyFeedback ? 'Copie dans le presse-papier' : 'Exporter en Markdown'}
 			</button>
 			<button class="tool-btn tool-btn--secondary" onclick={handleReset}>Tout supprimer</button>
 		</div>
@@ -348,6 +544,74 @@
 		font-size: 12px;
 		color: var(--secondary);
 		display: none;
+	}
+
+	/* SVG Radar */
+	.radar-svg-wrapper {
+		margin-bottom: calc(var(--gap) * 2);
+		display: flex;
+		justify-content: center;
+	}
+
+	.radar-svg {
+		width: 100%;
+		max-width: 640px;
+		height: auto;
+		aspect-ratio: 1 / 1;
+	}
+
+	.radar-ring-label {
+		font-family: var(--font-ui, 'Space Grotesk', system-ui);
+		font-size: 10px;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		opacity: 0.7;
+		pointer-events: none;
+	}
+
+	.radar-quadrant-label {
+		font-family: var(--font-ui, 'Space Grotesk', system-ui);
+		font-size: 12px;
+		font-weight: 600;
+		fill: var(--secondary, #a1a1aa);
+		pointer-events: none;
+	}
+
+	.radar-blip {
+		cursor: pointer;
+		outline: none;
+	}
+
+	.radar-blip:focus-visible .radar-blip-dot {
+		stroke: var(--accent, #06b6d4);
+		stroke-width: 3;
+	}
+
+	.radar-blip-dot {
+		transition: r 0.15s ease, fill-opacity 0.15s ease;
+	}
+
+	.radar-blip--hovered .radar-blip-dot {
+		fill-opacity: 1;
+	}
+
+	.radar-blip-label {
+		font-family: var(--font-ui, 'Space Grotesk', system-ui);
+		font-size: 12px;
+		font-weight: 500;
+		pointer-events: none;
+	}
+
+	/* List heading */
+	.list-heading {
+		font-family: var(--font-ui);
+		font-size: 16px;
+		font-weight: 600;
+		color: var(--secondary);
+		margin-bottom: var(--gap);
+		padding-bottom: 8px;
+		border-bottom: 1px solid var(--border);
 	}
 
 	/* Radar grid */
@@ -532,6 +796,14 @@
 
 		.ring-desc {
 			display: inline;
+		}
+
+		.radar-svg {
+			max-width: 100%;
+		}
+
+		.radar-quadrant-label {
+			font-size: 10px;
 		}
 	}
 
