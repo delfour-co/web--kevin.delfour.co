@@ -5,35 +5,119 @@
 
 <SEO
 	title="Projets"
-	description="Katas de programmation pour s'entraîner, et projets plus complexes illustrant architecture et stratégie technique."
+	description="Applications mobiles, outils CLI, plateforme événementielle et jeux — les projets en cours de développement."
 	url="https://kevin.delfour.co/projets/"
 />
 
 <div class="page-container">
 	<header class="page-header">
-		<h1>Projets</h1>
-		<p class="page-description">Katas de programmation et projets open source illustrant architecture et stratégie technique.</p>
+		<span class="badge">Projets</span>
+		<h1>Projets en cours</h1>
+		<p class="page-description">Les projets sur lesquels je travaille actuellement. Applications mobiles, outils CLI, plateforme web et jeu RPG.</p>
 	</header>
 
-	{#each projectCategories as category}
-		<section class="category-section">
-			<h2>{category.label}</h2>
-			<div class="projects-grid">
-				{#each category.projects as project}
-					<a href={project.url} target="_blank" rel="noopener" class="project-card">
-						<h3 class="project-name">{project.nom}</h3>
-						<p class="project-desc">{project.description}</p>
-						<div class="project-meta">
-							<span class="project-lang">{project.langage}</span>
-							{#each project.technologies.slice(0, 3) as tech}
-								<span class="project-tech">{tech}</span>
-							{/each}
-						</div>
-					</a>
-				{/each}
-			</div>
-		</section>
-	{/each}
+	<!-- Applications mobiles -->
+	<section class="category-section">
+		<h2>Applications mobiles</h2>
+		<p class="section-subtitle">En test fermé sur Google Play</p>
+		<div class="apps-grid">
+			<a href="/projets/asteroids/" class="app-card glass-card">
+				<img src="/images/apps/asteroids/icon.webp" alt="Icône Neon Asteroids" class="app-card-icon" />
+				<div class="app-card-content">
+					<h3>Neon Asteroids</h3>
+					<p>Arcade shooter néon avec Flutter et Flame. Vagues progressives, UFOs, power-ups, combos.</p>
+					<div class="project-meta">
+						<span class="project-lang">Flutter</span>
+						<span class="project-tech pill">Flame</span>
+						<span class="project-tech pill">Dart</span>
+					</div>
+				</div>
+			</a>
+			<a href="/projets/notch/" class="app-card glass-card">
+				<img src="/images/apps/notch/icon.webp" alt="Icône Notch" class="app-card-icon" />
+				<div class="app-card-content">
+					<h3>Notch</h3>
+					<p>Messagerie SMS chiffrée par Enigma. Pas de serveur, pas d'internet. Juste des rotors et des SMS.</p>
+					<div class="project-meta">
+						<span class="project-lang">Flutter</span>
+						<span class="project-tech pill">Enigma</span>
+						<span class="project-tech pill">SMS</span>
+					</div>
+				</div>
+			</a>
+		</div>
+	</section>
+
+	<!-- Projets open source -->
+	<section class="category-section">
+		<h2>Open source</h2>
+		<div class="projects-grid">
+			<a href="/projets/open-event-orchestrator/" class="project-card glass-card">
+				<h3 class="project-name">Open Event Orchestrator</h3>
+				<p class="project-desc">Plateforme open source de gestion d'événements. CFP, planning, billetterie, CRM, sponsoring, budget. 4 538 tests unitaires, 533 tests E2E.</p>
+				<div class="project-meta">
+					<span class="project-lang">TypeScript</span>
+					<span class="project-tech pill">SvelteKit</span>
+					<span class="project-tech pill">PocketBase</span>
+					<span class="project-tech pill">Playwright</span>
+				</div>
+			</a>
+			<a href="/projets/repolens/" class="project-card glass-card">
+				<h3 class="project-name">RepoLens</h3>
+				<p class="project-desc">CLI d'audit de dépôts GitHub : bonnes pratiques, sécurité, compliance. Génère un plan de corrections applicable automatiquement. Export JSON, SARIF, Markdown, HTML.</p>
+				<div class="project-meta">
+					<span class="project-lang">Rust</span>
+					<span class="project-tech pill">CLI</span>
+					<span class="project-tech pill">GitHub</span>
+					<span class="project-tech pill">SARIF</span>
+				</div>
+			</a>
+		</div>
+	</section>
+
+	<!-- En développement -->
+	<section class="category-section">
+		<h2>En développement</h2>
+		<div class="apps-grid">
+			<a href="/projets/arcane-craft/" class="app-card glass-card">
+				<img src="/images/apps/arcane-craft/app_icon.png" alt="Icône Arcane Craft" class="app-card-icon" />
+				<div class="app-card-content">
+					<h3>Arcane Craft</h3>
+					<p>Action-RPG top-down avec craft de sorts 3×3. Donjons procéduraux, puzzles élémentaires, boss. Flutter + Flame.</p>
+					<div class="project-meta">
+						<span class="project-lang">Flutter</span>
+						<span class="project-tech pill">Flame</span>
+						<span class="project-tech pill">RPG</span>
+						<span class="status-wip">En cours</span>
+					</div>
+				</div>
+			</a>
+		</div>
+	</section>
+
+	<!-- Katas et autres -->
+	<details class="other-projects">
+		<summary>Katas et exercices de programmation</summary>
+		{#each projectCategories as category}
+			<section class="category-section">
+				<h3 class="sub-category">{category.label}</h3>
+				<div class="projects-grid">
+					{#each category.projects as project}
+						<a href={project.url} target="_blank" rel="noopener" class="project-card glass-card">
+							<h3 class="project-name">{project.nom}</h3>
+							<p class="project-desc">{project.description}</p>
+							<div class="project-meta">
+								<span class="project-lang">{project.langage}</span>
+								{#each project.technologies.slice(0, 3) as tech}
+									<span class="project-tech pill">{tech}</span>
+								{/each}
+							</div>
+						</a>
+					{/each}
+				</div>
+			</section>
+		{/each}
+	</details>
 </div>
 
 <style>
@@ -56,6 +140,55 @@
 		border-bottom: 1px solid var(--border);
 	}
 
+	.section-subtitle {
+		color: var(--tertiary);
+		font-size: 0.85rem;
+		margin: -8px 0 var(--gap) 0;
+	}
+
+	/* App cards (mobile apps with icons) */
+	.apps-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+		gap: var(--gap);
+	}
+
+	.app-card {
+		display: flex;
+		gap: calc(var(--gap) * 1.2);
+		padding: calc(var(--gap) * 1.2);
+		text-decoration: none;
+		color: inherit;
+		align-items: flex-start;
+	}
+
+	.app-card:hover {
+		text-decoration: none;
+		box-shadow: var(--accent-glow);
+		border-color: var(--accent-border);
+	}
+
+	.app-card-icon {
+		width: 56px;
+		height: 56px;
+		border-radius: 14px;
+		flex-shrink: 0;
+	}
+
+	.app-card-content h3 {
+		font-size: 1rem;
+		margin: 0 0 6px;
+		font-family: var(--font-ui);
+	}
+
+	.app-card-content p {
+		font-size: 0.85rem;
+		color: var(--secondary);
+		margin: 0 0 8px;
+		line-height: 1.5;
+	}
+
+	/* Project cards */
 	.projects-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -67,16 +200,19 @@
 		flex-direction: column;
 		gap: 8px;
 		padding: calc(var(--gap) * 1.2);
-		border: 1px solid var(--border);
-		border-radius: 8px;
 		text-decoration: none;
 		color: inherit;
-		transition: var(--transition);
 	}
 
 	.project-card:hover {
-		border-color: var(--accent);
 		text-decoration: none;
+		box-shadow: var(--accent-glow);
+		border-color: var(--accent-border);
+	}
+
+	.project-card--wip {
+		opacity: 0.7;
+		border-style: dashed;
 	}
 
 	.project-name {
@@ -102,19 +238,55 @@
 	.project-lang {
 		font-family: var(--font-ui);
 		font-size: 11px;
-		padding: 2px 8px;
+		padding: 2px 10px;
 		background: var(--accent);
-		color: white;
-		border-radius: 10px;
-		font-weight: 500;
+		color: #000;
+		border-radius: 9999px;
+		font-weight: 600;
 	}
 
-	.project-tech {
+	.status-wip {
 		font-family: var(--font-ui);
 		font-size: 11px;
-		padding: 2px 8px;
-		background: var(--accent-light);
+		padding: 2px 10px;
+		border: 1px solid var(--accent2);
+		color: var(--accent2);
+		border-radius: 9999px;
+		font-weight: 600;
+	}
+
+	/* Katas collapsible */
+	.other-projects {
+		margin-top: calc(var(--gap) * 2);
+		border-top: 1px solid var(--border);
+		padding-top: calc(var(--gap) * 1.5);
+	}
+
+	.other-projects summary {
+		font-family: var(--font-ui);
+		font-size: 1rem;
+		font-weight: 600;
+		color: var(--secondary);
+		cursor: pointer;
+		padding: 8px 0;
+		margin-bottom: var(--gap);
+	}
+
+	.other-projects summary:hover {
 		color: var(--accent);
-		border-radius: 10px;
+	}
+
+	.sub-category {
+		font-size: 1rem;
+		margin-bottom: calc(var(--gap) * 0.8);
+		padding-bottom: 6px;
+		border-bottom: 1px solid var(--border);
+		color: var(--secondary);
+	}
+
+	@media (max-width: 640px) {
+		.apps-grid {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>

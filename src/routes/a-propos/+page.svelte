@@ -10,6 +10,7 @@
 
 <div class="page-container">
 	<header class="page-header">
+		<span class="badge">Parcours</span>
 		<h1>À propos</h1>
 	</header>
 

@@ -102,8 +102,10 @@
 
 	/* Table des matières — card style comme Hugo */
 	.toc-card {
-		border: 1px solid var(--border);
+		background: var(--surface);
+		border: 1px solid var(--surface-border);
 		border-radius: var(--radius);
+		backdrop-filter: blur(8px);
 		padding: 1.25rem 1.5rem;
 		margin-top: var(--gap);
 	}
@@ -185,7 +187,7 @@
 		display: inline-block;
 		padding: 10px 20px;
 		background: var(--accent);
-		color: white;
+		color: #000;
 		border-radius: var(--radius);
 		text-decoration: none;
 		font-weight: 600;
@@ -194,7 +196,7 @@
 	}
 
 	.btn-start:hover {
-		opacity: 0.9;
+		box-shadow: var(--accent-glow);
 		text-decoration: none;
 	}
 

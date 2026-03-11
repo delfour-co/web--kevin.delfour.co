@@ -13,35 +13,6 @@ export interface ProjectCategory {
 
 export const projectCategories: ProjectCategory[] = [
 	{
-		label: 'Projets complexes',
-		projects: [
-			{
-				nom: 'workspace--gk',
-				url: 'https://github.com/delfour-co/workspace--gk',
-				description:
-					"Alternative self-hosted à Google Workspace avec interface conversationnelle IA. Système email complet (SMTP/IMAP) en Rust, intégration LLM locale (Ollama), protocole MCP, administration complète (SPF/DKIM/DMARC, backups, SSL).",
-				langage: 'Rust',
-				technologies: ['Rust', 'SMTP/IMAP', 'WebAssembly', 'LLM', 'MCP', 'Architecture distribuée']
-			},
-			{
-				nom: 'tui--survey-builder',
-				url: 'https://github.com/delfour-co/tui--survey-builder',
-				description:
-					"Outil d'audit technique et business en Rust avec interface TUI dans le navigateur (Ratzilla/WebAssembly). Questionnaires structurés par catégories, génération automatique de recommandations, export/import YAML.",
-				langage: 'Rust',
-				technologies: ['Rust', 'WebAssembly', 'Ratzilla', 'TUI', 'YAML']
-			},
-			{
-				nom: 'workshop--motive_mappers',
-				url: 'https://github.com/delfour-co/workshop--motive_mappers',
-				description:
-					"Extension de Moving Motivators (Jurgen Appello) pour comprendre les motivations intrinsèques d'une équipe. Version papier LaTeX avec compilation automatisée.",
-				langage: 'LaTeX',
-				technologies: ['LaTeX', 'Management', 'Facilitation']
-			}
-		]
-	},
-	{
 		label: 'Katas TypeScript',
 		projects: [
 			{
@@ -109,18 +80,6 @@ export const projectCategories: ProjectCategory[] = [
 				description: 'Conversion bidirectionnelle entre nombres arabes et chiffres romains avec pytest.',
 				langage: 'Python',
 				technologies: ['Python', 'pytest', 'TDD']
-			}
-		]
-	},
-	{
-		label: 'Applications Web',
-		projects: [
-			{
-				nom: 'majikku-shisutemu',
-				url: 'https://github.com/delfour-co/webapp--majikku-shisutemu',
-				description: 'Application web avec système de design personnalisé.',
-				langage: 'SCSS',
-				technologies: ['SCSS', 'Web']
 			}
 		]
 	}

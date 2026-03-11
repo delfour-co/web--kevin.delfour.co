@@ -10,6 +10,7 @@
 
 <div class="page-container">
 	<header class="page-header">
+		<span class="badge">Connexion</span>
 		<h1>Contact</h1>
 	</header>
 

@@ -297,7 +297,7 @@
 	.a11y-overlay {
 		position: fixed;
 		inset: 0;
-		background: rgba(0, 0, 0, 0.3);
+		background: rgba(0, 0, 0, 0.6);
 		z-index: 60;
 	}
 
@@ -308,9 +308,9 @@
 		bottom: 0;
 		width: 340px;
 		max-width: 90vw;
-		background: var(--theme);
+		background: rgba(10, 10, 10, 0.95);
+		backdrop-filter: blur(16px);
 		border-left: 1px solid var(--border);
-		box-shadow: var(--shadow-lg);
 		z-index: 70;
 		overflow-y: auto;
 		padding: var(--gap);
@@ -341,7 +341,7 @@
 		background: none;
 		color: var(--secondary);
 		cursor: pointer;
-		border-radius: var(--radius);
+		border-radius: var(--radius-sm);
 		transition: var(--transition);
 	}
 
@@ -375,8 +375,8 @@
 		font-size: 13px;
 		padding: 8px;
 		border: 1px solid var(--border);
-		border-radius: var(--radius);
-		background: var(--theme);
+		border-radius: var(--radius-sm);
+		background: var(--surface);
 		color: var(--secondary);
 		cursor: pointer;
 		transition: var(--transition);
@@ -409,8 +409,8 @@
 		font-size: 13px;
 		padding: 6px 12px;
 		border: 1px solid var(--border);
-		border-radius: var(--radius);
-		background: var(--theme);
+		border-radius: var(--radius-sm);
+		background: var(--surface);
 		color: var(--secondary);
 		cursor: pointer;
 		transition: var(--transition);
@@ -419,7 +419,7 @@
 	.a11y-toggle-btn.active {
 		background: var(--accent);
 		border-color: var(--accent);
-		color: #fff;
+		color: #000;
 	}
 
 	.a11y-reset {
@@ -428,8 +428,8 @@
 		font-weight: 600;
 		padding: 10px;
 		border: 1px solid var(--border);
-		border-radius: var(--radius);
-		background: var(--theme);
+		border-radius: var(--radius-sm);
+		background: var(--surface);
 		color: var(--secondary);
 		cursor: pointer;
 		transition: var(--transition);
@@ -438,6 +438,6 @@
 
 	.a11y-reset:hover {
 		border-color: var(--accent-border);
-		color: var(--primary);
+		color: var(--accent);
 	}
 </style>

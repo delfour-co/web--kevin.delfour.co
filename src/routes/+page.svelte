@@ -13,7 +13,7 @@
 </script>
 
 <SEO
-	description="CTO · 17 ans de terrain. Je donne des repères. Pas des leçons."
+	description="CTO Hands-on · 17 ans de terrain. Je donne des repères. Pas des leçons."
 	url="https://kevin.delfour.co/"
 />
 
@@ -21,18 +21,54 @@
 	<!-- Hero -->
 	<section class="hero">
 		<img src="/images/kevin-delfour.webp" alt="Kevin Delfour" class="hero-avatar" width="120" height="120" />
-		<h1 class="hero-title">Kevin Delfour</h1>
-		<p class="hero-subtitle">CTO · 17 ans de terrain</p>
-		<p class="hero-tagline">Je donne des repères. Pas des leçons.</p>
+		<h1 class="hero-title gradient-text">Kevin Delfour</h1>
+		<p class="hero-subtitle">CTO Hands-on · 17 ans de terrain</p>
+		<p class="hero-tagline glow">Je donne des repères. Pas des leçons.</p>
 		<div class="hero-actions">
 			<a href="/articles/" class="btn-primary">Lire les articles</a>
 			<a href="/vision/" class="btn-secondary">Ma vision</a>
 		</div>
 	</section>
 
+	<!-- Projets -->
+	<section class="home-section">
+		<span class="section-badge badge">Projets</span>
+		<h2>Ce que je construis</h2>
+		<div class="home-grid grid-2">
+			<a href="/projets/asteroids/" class="home-card glass-card home-card--app">
+				<img src="/images/apps/asteroids/icon.webp" alt="Neon Asteroids" class="card-icon" />
+				<div>
+					<h3 class="card-title">Neon Asteroids</h3>
+					<p class="card-desc">Arcade shooter néon. Flutter + Flame.</p>
+					<span class="card-meta">Test fermé · Google Play</span>
+				</div>
+			</a>
+			<a href="/projets/notch/" class="home-card glass-card home-card--app">
+				<img src="/images/apps/notch/icon.webp" alt="Notch" class="card-icon" />
+				<div>
+					<h3 class="card-title">Notch</h3>
+					<p class="card-desc">SMS chiffrés par Enigma. Pas de serveur.</p>
+					<span class="card-meta">Test fermé · Google Play</span>
+				</div>
+			</a>
+			<a href="/projets/open-event-orchestrator/" class="home-card glass-card">
+				<h3 class="card-title">Open Event Orchestrator</h3>
+				<p class="card-desc">Plateforme open source de gestion d'événements. CFP, planning, billetterie, CRM.</p>
+				<span class="card-meta">TypeScript · SvelteKit · PocketBase</span>
+			</a>
+			<a href="/projets/repolens/" class="home-card glass-card">
+				<h3 class="card-title">RepoLens</h3>
+				<p class="card-desc">CLI d'audit de dépôts GitHub. Bonnes pratiques, sécurité, compliance.</p>
+				<span class="card-meta">Rust · CLI · Open source</span>
+			</a>
+		</div>
+		<p class="section-more"><a href="/projets/">Voir tous les projets →</a></p>
+	</section>
+
 	<!-- Derniers articles -->
 	{#if data.latestPosts.length > 0}
 		<section class="home-section">
+			<span class="section-badge badge">Blog</span>
 			<h2>Derniers articles</h2>
 			<div class="articles-list">
 				{#each data.latestPosts as post}
@@ -46,7 +82,7 @@
 									<span>{post.readingTime} min</span>
 								{/if}
 								{#each post.categories as cat}
-									<span class="entry-pill">{cat}</span>
+									<span class="entry-pill pill">{cat}</span>
 								{/each}
 							</footer>
 						</a>
@@ -57,27 +93,13 @@
 		</section>
 	{/if}
 
-	<!-- Projets -->
-	<section class="home-section">
-		<h2>Projets</h2>
-		<div class="home-grid grid-3">
-			{#each data.projects as projet}
-				<a href={projet.url} class="home-card" target="_blank" rel="noopener noreferrer">
-					<h3 class="card-title">{projet.nom}</h3>
-					<p class="card-desc">{projet.description}</p>
-					<span class="card-meta">{projet.langage}</span>
-				</a>
-			{/each}
-		</div>
-		<p class="section-more"><a href="/projets/">Voir tous les projets →</a></p>
-	</section>
-
 	<!-- Livres -->
 	<section class="home-section">
+		<span class="section-badge badge">Livres gratuits</span>
 		<h2>Livres</h2>
 		<div class="home-grid grid-2">
 			{#each data.books as livre}
-				<a href="/livres/{livre.slug}/" class="home-card home-card--large">
+				<a href="/livres/{livre.slug}/" class="home-card glass-card home-card--large">
 					{#if livre.cover}
 						<img src={livre.cover} alt="Couverture {livre.title}" class="card-cover" loading="lazy" />
 					{/if}
@@ -90,17 +112,9 @@
 		<p class="section-more"><a href="/livres/">Voir les livres →</a></p>
 	</section>
 
-	<!-- Vision -->
-	<section class="home-section">
-		<h2>Vision</h2>
-		<blockquote class="vision-quote">
-			<p>Je transmets gratuitement quand cela aide à grande échelle. Je mets un cadre quand cela demande du temps individuel.</p>
-		</blockquote>
-		<p class="section-more"><a href="/vision/">En savoir plus →</a></p>
-	</section>
-
 	<!-- Suivre -->
 	<section class="home-section">
+		<span class="section-badge badge">Connexion</span>
 		<h2>Suivre</h2>
 		<p class="follow-text">Un nouvel article chaque mois. Pas de spam, pas d'algorithme.</p>
 		<div class="hero-actions" style="justify-content: flex-start; margin-top: 1rem;">
@@ -120,7 +134,7 @@
 	/* Hero */
 	.hero {
 		text-align: center;
-		padding: calc(var(--gap) * 3) 0;
+		padding: calc(var(--gap) * 4) 0 calc(var(--gap) * 3);
 	}
 
 	.hero-avatar {
@@ -129,11 +143,14 @@
 		border-radius: 50%;
 		margin: 0 auto var(--gap);
 		object-fit: cover;
+		border: 2px solid var(--border);
+		box-shadow: 0 0 40px rgba(6, 182, 212, 0.15);
 	}
 
 	.hero-title {
-		font-size: 2.5rem;
+		font-size: 3rem;
 		margin-bottom: 4px;
+		font-weight: 700;
 	}
 
 	.hero-subtitle {
@@ -145,9 +162,8 @@
 
 	.hero-tagline {
 		font-family: var(--font-body);
-		font-size: 1.2rem;
+		font-size: 1.3rem;
 		color: var(--accent);
-		font-style: italic;
 		margin-bottom: calc(var(--gap) * 1.5);
 	}
 
@@ -162,6 +178,11 @@
 	.home-section {
 		padding: calc(var(--gap) * 2) 0;
 		border-top: 1px solid var(--border);
+	}
+
+	.section-badge {
+		display: block;
+		margin-bottom: 8px;
 	}
 
 	.home-section h2 {
@@ -224,18 +245,7 @@
 		gap: 10px;
 		font-family: var(--font-ui);
 		font-size: 12px;
-		color: var(--secondary);
-	}
-
-	.entry-pill {
-		display: inline-block;
-		padding: 1px 8px;
-		background: var(--accent-light);
-		color: var(--accent);
-		border-radius: 10px;
-		font-size: 11px;
-		font-weight: 500;
-		text-transform: capitalize;
+		color: var(--tertiary);
 	}
 
 	/* Cards grid */
@@ -255,24 +265,33 @@
 	.home-card {
 		display: block;
 		padding: var(--gap);
-		border: 1px solid var(--border);
-		border-radius: var(--radius);
 		text-decoration: none;
 		color: inherit;
-		transition: var(--transition);
 	}
 
 	.home-card:hover {
-		border-color: var(--accent-border);
-		box-shadow: var(--shadow-md);
 		text-decoration: none;
+		box-shadow: var(--accent-glow);
+	}
+
+	.home-card--app {
+		display: flex;
+		gap: calc(var(--gap) * 1.2);
+		align-items: flex-start;
+	}
+
+	.card-icon {
+		width: 52px;
+		height: 52px;
+		border-radius: 14px;
+		flex-shrink: 0;
 	}
 
 	.card-cover {
 		width: 100%;
 		height: 140px;
 		object-fit: cover;
-		border-radius: 6px;
+		border-radius: var(--radius-sm);
 		margin-bottom: 12px;
 	}
 
@@ -286,7 +305,7 @@
 	.card-subtitle {
 		font-family: var(--font-ui);
 		font-size: 0.85rem;
-		color: var(--accent);
+		color: var(--accent2);
 		margin: 0 0 8px 0;
 	}
 
@@ -300,18 +319,19 @@
 	.card-meta {
 		font-family: var(--font-ui);
 		font-size: 12px;
-		color: var(--secondary);
+		color: var(--tertiary);
 	}
 
 	/* Vision */
 	.vision-quote {
 		margin: var(--gap) 0;
 		padding: var(--content-gap) var(--gap);
-		border-left: 3px solid var(--accent);
-		background: var(--accent-light);
+		border-left: 3px solid var(--accent2);
+		background: var(--accent2-light);
 		border-radius: 0 var(--radius) var(--radius) 0;
 		font-style: italic;
 		font-size: 1.1rem;
+		color: var(--secondary);
 	}
 
 	.vision-quote p {
@@ -326,7 +346,7 @@
 	/* Responsive */
 	@media (max-width: 768px) {
 		.hero-title {
-			font-size: 2rem;
+			font-size: 2.25rem;
 		}
 
 		.grid-3 {

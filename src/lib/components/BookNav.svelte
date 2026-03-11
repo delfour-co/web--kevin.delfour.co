@@ -87,9 +87,10 @@
 
 	.progress-fill {
 		height: 100%;
-		background: var(--accent);
+		background: linear-gradient(90deg, var(--accent), var(--accent2));
 		border-radius: 2px;
 		transition: width 0.3s ease;
+		box-shadow: 0 0 8px rgba(6, 182, 212, 0.4);
 	}
 
 	.progress-text {
@@ -112,33 +113,34 @@
 		align-items: center;
 		gap: 12px;
 		padding: 16px 20px;
-		border: 1px solid var(--border);
+		background: var(--surface);
+		border: 1px solid var(--surface-border);
 		border-radius: var(--radius);
+		backdrop-filter: blur(8px);
 		text-decoration: none;
 		color: inherit;
 		transition: all 0.2s ease;
 	}
 
 	.nav-btn:hover {
-		border-color: var(--accent);
-		box-shadow: var(--shadow-sm);
+		border-color: var(--accent-border);
+		box-shadow: var(--accent-glow);
 		text-decoration: none;
 	}
 
 	.nav-btn--primary {
 		background: var(--accent);
 		border-color: var(--accent);
-		color: white;
+		color: #000;
 	}
 
 	.nav-btn--primary:hover {
-		opacity: 0.9;
-		box-shadow: var(--shadow-md);
+		box-shadow: var(--accent-glow);
 	}
 
 	.nav-btn--finish {
 		background: var(--accent-light);
-		border-color: var(--accent);
+		border-color: var(--accent-border);
 	}
 
 	.nav-next {
@@ -160,14 +162,15 @@
 
 	.nav-label {
 		font-family: var(--font-ui);
-		font-size: 12px;
-		color: var(--secondary);
+		font-size: 0.75rem;
+		font-weight: 700;
+		color: var(--accent);
 		text-transform: uppercase;
-		letter-spacing: 0.05em;
+		letter-spacing: 0.1em;
 	}
 
 	.nav-btn--primary .nav-label {
-		color: rgba(255, 255, 255, 0.8);
+		color: rgba(0, 0, 0, 0.7);
 	}
 
 	.nav-title {

@@ -27,14 +27,15 @@
 		top: var(--header-height);
 		left: 0;
 		right: 0;
-		height: 3px;
+		height: 2px;
 		z-index: 49;
 		background: transparent;
 	}
 
 	.scroll-progress-bar {
 		height: 100%;
-		background: var(--accent);
+		background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3));
 		transition: width 0.1s linear;
+		box-shadow: 0 0 8px rgba(6, 182, 212, 0.5);
 	}
 </style>

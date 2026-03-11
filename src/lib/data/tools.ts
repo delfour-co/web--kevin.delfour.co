@@ -36,15 +36,6 @@ export const tools: Tool[] = [
 		categorie: 'leadership'
 	},
 	{
-		nom: 'Boussole Carrière Tech',
-		slug: 'boussole-carriere-tech',
-		description:
-			'Aide-toi à te situer dans ton parcours tech et identifie les repères pour la suite.',
-		statut: 'disponible',
-		url: '/outils/boussole-carriere-tech/',
-		categorie: 'carrière'
-	},
-	{
 		nom: 'Tech Radar personnel',
 		slug: 'tech-radar-personnel',
 		description:
@@ -71,13 +62,4 @@ export const tools: Tool[] = [
 		url: '/outils/matrice-decision-technique/',
 		categorie: 'décision'
 	},
-	{
-		nom: 'Checklist code review',
-		slug: 'checklist-code-review',
-		description:
-			'Checklist interactive pour structurer tes revues de code. Annotable et exportable.',
-		statut: 'disponible',
-		url: '/outils/checklist-code-review/',
-		categorie: 'pratiques'
-	}
 ];

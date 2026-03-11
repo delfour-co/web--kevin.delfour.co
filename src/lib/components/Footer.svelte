@@ -67,18 +67,18 @@
 
 	.footer-column h3 {
 		font-family: var(--font-ui);
-		font-size: 13px;
-		font-weight: 600;
+		font-size: 0.75rem;
+		font-weight: 700;
 		text-transform: uppercase;
-		letter-spacing: 0.05em;
-		color: var(--secondary);
+		letter-spacing: 0.1em;
+		color: var(--accent);
 		margin: 0 0 4px 0;
 	}
 
 	.footer-column a {
 		font-family: var(--font-ui);
 		font-size: 14px;
-		color: var(--primary);
+		color: var(--secondary);
 		text-decoration: none;
 		transition: var(--transition);
 	}
@@ -87,18 +87,12 @@
 		color: var(--accent);
 	}
 
-	.footer-placeholder {
-		font-family: var(--font-ui);
-		font-size: 14px;
-		color: var(--tertiary);
-	}
-
 	.footer-bottom {
 		padding-top: var(--gap);
 		border-top: 1px solid var(--border);
 		font-family: var(--font-ui);
 		font-size: 13px;
-		color: var(--secondary);
+		color: var(--tertiary);
 	}
 
 	.back-to-top {
@@ -110,12 +104,12 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background: var(--theme);
+		background: var(--surface);
 		border: 1px solid var(--border);
 		border-radius: 50%;
-		color: var(--primary);
+		color: var(--secondary);
 		cursor: pointer;
-		box-shadow: var(--shadow-md);
+		backdrop-filter: blur(8px);
 		transition: var(--transition);
 		z-index: 30;
 	}
@@ -124,6 +118,7 @@
 		background: var(--accent-light);
 		color: var(--accent);
 		border-color: var(--accent-border);
+		box-shadow: var(--accent-glow);
 	}
 
 	@media (max-width: 600px) {

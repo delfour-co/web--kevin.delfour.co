@@ -52,3 +52,6 @@ vite.config.ts.timestamp-*
 .vercel
 .netlify
 .wrangler
+
+# Others
+_resources

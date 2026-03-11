@@ -25,7 +25,7 @@
 </script>
 
 {#if headings.length > 0}
-	<nav class="toc" aria-label="Table des matières">
+	<nav class="toc glass-card" aria-label="Table des matières">
 		<button class="toc-toggle" onclick={() => (expanded = !expanded)} aria-expanded={expanded}>
 			<span class="toc-title">Table des matières</span>
 			<svg
@@ -60,8 +60,6 @@
 
 <style>
 	.toc {
-		border: 1px solid var(--border);
-		border-radius: 8px;
 		padding: 16px;
 		margin-bottom: calc(var(--gap) * 2);
 	}
@@ -80,14 +78,16 @@
 
 	.toc-title {
 		font-family: var(--font-ui);
-		font-size: 14px;
-		font-weight: 600;
+		font-size: 0.75rem;
+		font-weight: 700;
 		text-transform: uppercase;
-		letter-spacing: 0.05em;
+		letter-spacing: 0.1em;
+		color: var(--accent);
 	}
 
 	.toc-chevron {
 		transition: transform 0.2s;
+		color: var(--secondary);
 	}
 
 	.toc-chevron.rotated {
@@ -100,7 +100,7 @@
 		margin: 12px 0 0 0;
 		display: flex;
 		flex-direction: column;
-		gap: 4px;
+		gap: 2px;
 	}
 
 	.toc-item.indent {
@@ -113,7 +113,7 @@
 		color: var(--secondary);
 		text-decoration: none;
 		padding: 4px 8px;
-		border-radius: 4px;
+		border-radius: var(--radius-sm);
 		transition: var(--transition);
 		line-height: 1.4;
 	}

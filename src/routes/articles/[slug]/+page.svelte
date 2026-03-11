@@ -43,7 +43,7 @@
 				<span class="reading-time">{metadata.readingTime} min de lecture</span>
 			{/if}
 			{#each metadata.categories || [] as cat}
-				<a href="/articles/?cat={cat}" class="article-pill">{cat}</a>
+				<a href="/articles/?cat={cat}" class="article-pill pill">{cat}</a>
 			{/each}
 		</div>
 		<h1>{metadata.title}</h1>
@@ -62,7 +62,7 @@
 
 	<nav class="article-nav" aria-label="Articles précédent et suivant">
 		{#if data.prevPost}
-			<a href="/articles/{data.prevPost.slug}/" class="nav-link nav-prev">
+			<a href="/articles/{data.prevPost.slug}/" class="nav-link glass-card">
 				<span class="nav-label">← Précédent</span>
 				<span class="nav-title">{data.prevPost.title}</span>
 			</a>
@@ -70,7 +70,7 @@
 			<div></div>
 		{/if}
 		{#if data.nextPost}
-			<a href="/articles/{data.nextPost.slug}/" class="nav-link nav-next">
+			<a href="/articles/{data.nextPost.slug}/" class="nav-link nav-next glass-card">
 				<span class="nav-label">Suivant →</span>
 				<span class="nav-title">{data.nextPost.title}</span>
 			</a>
@@ -97,30 +97,24 @@
 		gap: 12px;
 		font-family: var(--font-ui);
 		font-size: 13px;
-		color: var(--secondary);
+		color: var(--tertiary);
 		margin-bottom: 12px;
 	}
 
 	.reading-time {
-		color: var(--secondary);
+		color: var(--tertiary);
 	}
 
 	.article-pill {
-		display: inline-block;
-		padding: 2px 10px;
-		background: var(--accent-light);
-		color: var(--accent);
-		border-radius: 12px;
-		font-size: 12px;
-		font-weight: 500;
-		text-transform: capitalize;
 		text-decoration: none;
 		transition: var(--transition);
+		text-transform: capitalize;
 	}
 
 	.article-pill:hover {
 		background: var(--accent);
-		color: white;
+		color: #000;
+		border-color: var(--accent);
 	}
 
 	.article-description {
@@ -143,16 +137,13 @@
 		flex-direction: column;
 		gap: 4px;
 		padding: 16px;
-		border: 1px solid var(--border);
-		border-radius: 8px;
 		text-decoration: none;
 		color: inherit;
-		transition: var(--transition);
 	}
 
 	.nav-link:hover {
-		border-color: var(--accent);
 		text-decoration: none;
+		box-shadow: var(--accent-glow);
 	}
 
 	.nav-next {
@@ -161,10 +152,11 @@
 
 	.nav-label {
 		font-family: var(--font-ui);
-		font-size: 12px;
-		color: var(--secondary);
+		font-size: 0.75rem;
+		font-weight: 700;
+		color: var(--accent);
 		text-transform: uppercase;
-		letter-spacing: 0.05em;
+		letter-spacing: 0.1em;
 	}
 
 	.nav-title {

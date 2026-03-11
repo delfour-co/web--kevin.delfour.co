@@ -89,13 +89,16 @@
 
 	.chapter-count {
 		font-family: var(--font-ui);
-		font-size: 13px;
-		color: var(--secondary);
+		font-size: 0.75rem;
+		font-weight: 700;
+		color: var(--accent);
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
 	}
 
 	.chapter-reading-time {
 		font-family: var(--font-ui);
 		font-size: 13px;
-		color: var(--secondary);
+		color: var(--tertiary);
 	}
 </style>

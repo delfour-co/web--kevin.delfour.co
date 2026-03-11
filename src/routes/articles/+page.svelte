@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import { goto } from '$app/navigation';
 	import { browser } from '$app/environment';
 	import SEO from '$lib/components/SEO.svelte';
 
@@ -10,7 +8,6 @@
 
 	let activeFilter = $state('tous');
 
-	// Read initial filter from URL
 	if (browser) {
 		const urlCat = new URL(window.location.href).searchParams.get('cat');
 		if (urlCat && categories.includes(urlCat)) {
@@ -54,6 +51,7 @@
 
 <div class="page-container">
 	<header class="page-header">
+		<span class="badge">Blog</span>
 		<h1>Articles</h1>
 		<p class="page-description">Des repères pour CTO et leaders tech. Pas des leçons.</p>
 	</header>
@@ -85,7 +83,7 @@
 							<span class="reading-time">{post.readingTime} min</span>
 						{/if}
 						{#each post.categories as cat}
-							<span class="article-pill">{cat}</span>
+							<span class="article-pill pill">{cat}</span>
 						{/each}
 					</footer>
 				</a>
@@ -120,8 +118,8 @@
 	.filter-btn {
 		padding: 6px 16px;
 		border: 1px solid var(--border);
-		border-radius: 20px;
-		background: transparent;
+		border-radius: 9999px;
+		background: var(--surface);
 		color: var(--secondary);
 		font-family: var(--font-ui);
 		font-size: 13px;
@@ -132,20 +130,21 @@
 	}
 
 	.filter-btn:hover {
-		border-color: var(--accent);
+		border-color: var(--accent-border);
 		color: var(--accent);
 	}
 
 	.filter-btn.active {
 		background: var(--accent);
 		border-color: var(--accent);
-		color: white;
+		color: #000;
+		font-weight: 600;
 	}
 
 	.results-count {
 		font-family: var(--font-ui);
 		font-size: 13px;
-		color: var(--secondary);
+		color: var(--tertiary);
 		margin-bottom: var(--gap);
 	}
 
@@ -194,21 +193,10 @@
 		gap: 12px;
 		font-family: var(--font-ui);
 		font-size: 13px;
-		color: var(--secondary);
+		color: var(--tertiary);
 	}
 
 	.reading-time {
-		color: var(--secondary);
-	}
-
-	.article-pill {
-		display: inline-block;
-		padding: 2px 10px;
-		background: var(--accent-light);
-		color: var(--accent);
-		border-radius: 12px;
-		font-size: 12px;
-		font-weight: 500;
-		text-transform: capitalize;
+		color: var(--tertiary);
 	}
 </style>

@@ -10,6 +10,7 @@
 
 <div class="page-container">
 	<header class="page-header">
+		<span class="badge">Convictions</span>
 		<h1>Vision</h1>
 		<p class="page-description">Ce qui guide ce site et mon travail. Des convictions forgées par 17 ans de terrain.</p>
 	</header>

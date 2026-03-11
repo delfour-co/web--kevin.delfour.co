@@ -24,13 +24,13 @@
 		gap: 8px;
 		font-family: var(--font-ui);
 		font-size: 13px;
-		color: var(--secondary);
+		color: var(--tertiary);
 		margin-bottom: calc(var(--gap) * 1.5);
 		flex-wrap: wrap;
 	}
 
 	.breadcrumb-link {
-		color: var(--secondary);
+		color: var(--tertiary);
 		text-decoration: none;
 	}
 
@@ -39,6 +39,6 @@
 	}
 
 	.breadcrumb-current {
-		color: var(--primary);
+		color: var(--secondary);
 	}
 </style>

@@ -11,6 +11,7 @@
 
 <div class="page-container">
 	<header class="page-header">
+		<span class="badge">Boîte à outils</span>
 		<h1>Outils</h1>
 		<p class="page-description">
 			Des outils interactifs pour structurer tes décisions techniques. Pas des réponses toutes faites — des cadres de réflexion.
@@ -21,7 +22,7 @@
 	<div class="outils-grid">
 		{#each tools as tool}
 			{#if tool.statut === 'disponible'}
-				<a href={tool.url} class="tool-card">
+				<a href={tool.url} class="tool-card glass-card">
 					<div class="tool-card-header">
 						<h2 class="tool-card-title">{tool.nom}</h2>
 						<span class="tool-badge tool-badge--available">Disponible</span>
@@ -30,7 +31,7 @@
 					<span class="tool-category">{tool.categorie}</span>
 				</a>
 			{:else}
-				<div class="tool-card tool-card--upcoming">
+				<div class="tool-card glass-card tool-card--upcoming">
 					<div class="tool-card-header">
 						<h2 class="tool-card-title">{tool.nom}</h2>
 						<span class="tool-badge tool-badge--upcoming">À venir</span>
@@ -62,7 +63,7 @@
 	.page-privacy {
 		font-family: var(--font-ui);
 		font-size: 13px;
-		color: var(--secondary);
+		color: var(--tertiary);
 		font-style: italic;
 	}
 
@@ -75,22 +76,18 @@
 	.tool-card {
 		display: block;
 		padding: var(--gap);
-		border: 1px solid var(--border);
-		border-radius: var(--radius);
 		text-decoration: none;
 		color: inherit;
-		transition: var(--transition);
 	}
 
 	a.tool-card:hover {
-		border-color: var(--accent-border);
-		box-shadow: var(--shadow-md);
 		text-decoration: none;
-		transform: translateY(-2px);
+		box-shadow: var(--accent-glow);
+		border-color: var(--accent-border);
 	}
 
 	.tool-card--upcoming {
-		opacity: 0.55;
+		opacity: 0.4;
 		cursor: not-allowed;
 	}
 
@@ -111,11 +108,11 @@
 		display: inline-block;
 		font-family: var(--font-ui);
 		font-size: 11px;
-		font-weight: 600;
+		font-weight: 700;
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
 		padding: 2px 8px;
-		border-radius: 4px;
+		border-radius: 9999px;
 	}
 
 	.tool-badge--available {
@@ -125,8 +122,8 @@
 	}
 
 	.tool-badge--upcoming {
-		background: transparent;
-		color: var(--secondary);
+		background: var(--surface);
+		color: var(--tertiary);
 		border: 1px solid var(--border);
 	}
 
@@ -140,7 +137,7 @@
 	.tool-category {
 		font-family: var(--font-ui);
 		font-size: 12px;
-		color: var(--secondary);
+		color: var(--tertiary);
 		text-transform: capitalize;
 	}
 

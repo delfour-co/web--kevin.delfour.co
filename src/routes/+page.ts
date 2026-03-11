@@ -1,13 +1,9 @@
 import { getAllPosts } from '$lib/content';
 import { getAllBooks } from '$lib/books';
-import { projectCategories } from '$lib/data/projects';
 
 export function load() {
 	const posts = getAllPosts();
 	const books = getAllBooks();
-
-	// Top 3 projects (complex ones)
-	const featuredProjects = projectCategories[0].projects.slice(0, 3);
 
 	return {
 		latestPosts: posts.slice(0, 6).map((p) => ({
@@ -24,7 +20,6 @@ export function load() {
 			subtitle: b.data.subtitle,
 			cover: b.data.cover,
 			chapterCount: b.chapters.length
-		})),
-		projects: featuredProjects
+		}))
 	};
 }

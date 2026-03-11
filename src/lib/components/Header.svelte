@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import ThemeToggle from './ThemeToggle.svelte';
 	import { getAccessibilityPanel } from '$lib/stores/accessibility.svelte';
+	// ThemeToggle removed — Neon Network is dark-only
 
 	let menuOpen = $state(false);
 	const a11yPanel = getAccessibilityPanel();
@@ -57,8 +57,6 @@
 		</div>
 
 		<div class="nav-actions">
-			<ThemeToggle />
-
 			<button
 				class="a11y-toggle"
 				onclick={toggleAccessibility}
@@ -89,7 +87,8 @@
 		position: sticky;
 		top: 0;
 		z-index: 50;
-		background: var(--theme);
+		background: rgba(0, 0, 0, 0.8);
+		backdrop-filter: blur(12px);
 		border-bottom: 1px solid var(--border);
 		height: var(--header-height);
 	}
@@ -106,7 +105,7 @@
 	.logo {
 		font-family: var(--font-heading);
 		font-size: 1.2rem;
-		font-weight: 600;
+		font-weight: 700;
 		color: var(--primary);
 		text-decoration: none;
 		white-space: nowrap;
@@ -140,9 +139,9 @@
 		padding: 0;
 		border: none;
 		background: none;
-		color: var(--primary);
+		color: var(--secondary);
 		cursor: pointer;
-		border-radius: var(--radius);
+		border-radius: var(--radius-sm);
 		transition: var(--transition);
 	}
 
@@ -180,13 +179,13 @@
 		color: var(--secondary);
 		text-decoration: none;
 		padding: 8px 12px;
-		border-radius: var(--radius);
+		border-radius: var(--radius-sm);
 		transition: var(--transition);
 	}
 
 	.nav-menu a:hover {
 		color: var(--primary);
-		background: var(--accent-light);
+		background: var(--surface);
 		text-decoration: none;
 	}
 
@@ -208,7 +207,8 @@
 			right: 0;
 			bottom: 0;
 			flex-direction: column;
-			background: var(--theme);
+			background: rgba(0, 0, 0, 0.95);
+			backdrop-filter: blur(16px);
 			padding: var(--gap);
 			gap: 0;
 			z-index: 40;

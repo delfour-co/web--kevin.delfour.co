@@ -12,6 +12,7 @@
 
 <div class="page-container">
 	<header class="page-header">
+		<span class="badge">Livres gratuits</span>
 		<h1>Livres</h1>
 		<p class="page-description">
 			Des livres complets, en accès libre. Des repères structurés, pas des leçons.
@@ -20,7 +21,7 @@
 
 	<div class="books-grid">
 		{#each data.books as book}
-			<a href="/livres/{book.slug}/" class="book-card">
+			<a href="/livres/{book.slug}/" class="book-card glass-card">
 				{#if book.cover}
 					<div class="book-cover">
 						<img src={book.cover} alt="Couverture {book.title}" loading="lazy" />
@@ -62,24 +63,21 @@
 	.book-card {
 		display: flex;
 		flex-direction: column;
-		border: 1px solid var(--border);
-		border-radius: 12px;
 		overflow: hidden;
 		text-decoration: none;
 		color: inherit;
-		transition: var(--transition);
 	}
 
 	.book-card:hover {
-		border-color: var(--accent);
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 		text-decoration: none;
+		box-shadow: var(--accent2-glow);
+		border-color: var(--accent2-border);
 	}
 
 	.book-cover {
 		aspect-ratio: 3 / 2;
 		overflow: hidden;
-		background: var(--code-bg, #f5f5f5);
+		background: var(--surface);
 	}
 
 	.book-cover img {
@@ -118,7 +116,7 @@
 		font-family: var(--font-ui);
 		font-size: 12px;
 		color: var(--accent);
-		font-weight: 500;
+		font-weight: 600;
 		margin-top: 4px;
 	}
 
