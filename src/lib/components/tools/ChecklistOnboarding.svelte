@@ -24,32 +24,32 @@
 		return [
 			{
 				id: 'semaine1',
-				name: 'Semaine 1 — Accueil',
-				description: 'Les fondations : que tout soit pret pour que la personne se sente attendue.',
+				name: 'Semaine 1 — Accueil et integration',
+				description: 'Les fondations : que tout soit pret pour que la personne se sente attendue. Un accueil rate fragilise la suite.',
 				dayStart: 0,
 				dayEnd: 7,
 				items: [
 					{ id: 's1-email', label: 'Acces email et outils configures' },
-					{ id: 's1-poste', label: 'Poste de travail pret (ou remote setup)' },
+					{ id: 's1-poste', label: 'Poste de travail pret (ou installation a distance)' },
 					{ id: 's1-repo', label: 'Acces au repo et environnement de dev' },
 					{ id: 's1-equipe', label: "Presentation a l'equipe" },
-					{ id: 's1-docs', label: "Documentation d'onboarding partagee" },
+					{ id: 's1-docs', label: "Documentation d'accueil partagee" },
 					{ id: 's1-cafe', label: 'Premier cafe/call informel avec le manager' }
 				]
 			},
 			{
 				id: 'j1-30',
 				name: 'J1-J30 — Decouverte',
-				description: "Comprendre le contexte, poser ses premieres questions, livrer un premier quick win.",
+				description: "Comprendre le contexte, poser ses premieres questions, livrer une premiere contribution rapide.",
 				dayStart: 1,
 				dayEnd: 30,
 				items: [
 					{ id: 'j30-archi', label: "Tour d'horizon de l'architecture" },
-					{ id: 'j30-ticket', label: 'Premier ticket merge (quick win)' },
-					{ id: 'j30-review', label: 'Participer a une code review' },
+					{ id: 'j30-ticket', label: 'Premier ticket integre (premiere contribution)' },
+					{ id: 'j30-review', label: 'Participer a une revue de code' },
 					{ id: 'j30-deploy', label: 'Comprendre le processus de deploiement' },
-					{ id: 'j30-buddy', label: 'Identifier son buddy technique' },
-					{ id: 'j30-adr', label: 'Lire les ADR / decisions cles' },
+					{ id: 'j30-buddy', label: 'Identifier son referent technique (parrain)' },
+					{ id: 'j30-adr', label: 'Lire les decisions techniques documentees (ADR)' },
 					{ id: 'j30-1on1', label: 'Premier 1:1 avec le manager' },
 					{ id: 'j30-roadmap', label: 'Comprendre la roadmap produit' }
 				]
@@ -57,15 +57,15 @@
 			{
 				id: 'j30-60',
 				name: 'J30-J60 — Autonomie',
-				description: "Monter en autonomie progressive : livrer, contribuer, s'integrer aux rituels.",
+				description: "Monter en autonomie progressive : livrer, contribuer, s'integrer aux rituels d'equipe.",
 				dayStart: 30,
 				dayEnd: 60,
 				items: [
 					{ id: 'j60-ticket', label: 'Capable de livrer un ticket seul' },
-					{ id: 'j60-review', label: 'Faire une code review a un pair' },
+					{ id: 'j60-review', label: 'Faire une revue de code a un pair' },
 					{ id: 'j60-rituels', label: 'Participer activement aux rituels' },
 					{ id: 'j60-amelioration', label: "Identifier un sujet d'amelioration" },
-					{ id: 'j60-feedback', label: 'Feedback 360 informel recueilli' },
+					{ id: 'j60-feedback', label: 'Retours informels recueillis aupres des collegues' },
 					{ id: 'j60-1on1', label: 'Deuxieme 1:1 structure' }
 				]
 			},
@@ -76,12 +76,12 @@
 				dayStart: 60,
 				dayEnd: 90,
 				items: [
-					{ id: 'j90-feature', label: 'Livrer une feature complete' },
+					{ id: 'j90-feature', label: 'Livrer une fonctionnalite complete' },
 					{ id: 'j90-proposition', label: 'Proposer une amelioration technique' },
 					{ id: 'j90-aide', label: "Aider un autre membre de l'equipe" },
 					{ id: 'j90-bilan', label: "Bilan de periode d'essai prepare" },
 					{ id: 'j90-objectifs', label: 'Objectifs a 6 mois definis' },
-					{ id: 'j90-feedback', label: 'Feedback formel du manager' }
+					{ id: 'j90-feedback', label: 'Retour formel du manager' }
 				]
 			}
 		];
@@ -282,7 +282,7 @@
 			`**Nouveau :** ${nom || '(non renseigne)'}`,
 			`**Poste :** ${poste || '(non renseigne)'}`,
 			`**Date d\'arrivee :** ${dateArrivee || '(non renseignee)'}`,
-			`**Buddy/Referent :** ${buddy || '(non renseigne)'}`,
+			`**Referent/Parrain :** ${buddy || '(non renseigne)'}`,
 			`**Progression globale :** ${globalStats.pct}% (${globalStats.done}/${globalStats.total})`,
 			''
 		];
@@ -387,12 +387,12 @@
 						/>
 					</div>
 					<div class="field-group">
-						<label class="field-label" for="onb-buddy">Buddy / Referent</label>
+						<label class="field-label" for="onb-buddy">Referent / Parrain</label>
 						<input
 							id="onb-buddy"
 							type="text"
 							class="field-input"
-							placeholder="Nom du buddy"
+							placeholder="Nom du referent"
 							bind:value={buddy}
 						/>
 					</div>
@@ -492,7 +492,7 @@
 			<!-- Actions -->
 			<div class="onb-actions">
 				<button class="onb-btn onb-btn--primary" onclick={handleExport}>
-					{copyFeedback ? 'Copie dans le presse-papier' : 'Exporter en Markdown'}
+					{copyFeedback ? 'Copie dans le presse-papier' : 'Copier le bilan (format texte)'}
 				</button>
 				<button class="onb-btn onb-btn--secondary" onclick={handleReset}>
 					Reinitialiser
@@ -530,7 +530,7 @@
 						style="color: {globalStats.pct >= 80 ? 'var(--onb-success)' : globalStats.pct >= 50 ? 'var(--onb-accent)' : 'var(--onb-muted)'}"
 					>
 						{#if globalStats.pct === 100}
-							Onboarding termine
+							Integration terminee
 						{:else if globalStats.pct >= 80}
 							Bientot termine
 						{:else if globalStats.pct >= 50}
@@ -625,7 +625,7 @@
 					{/if}
 					{#if buddy}
 						<div class="context-row">
-							<span class="context-label">Buddy</span>
+							<span class="context-label">Referent</span>
 							<span class="context-value">{buddy}</span>
 						</div>
 					{/if}

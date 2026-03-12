@@ -14,27 +14,27 @@
 		{
 			id: 'qualite',
 			name: 'Qualité',
-			description: 'Rigueur technique, code review, testing, respect des standards.'
+			description: 'Rigueur technique, revue de code, tests, respect des standards.'
 		},
 		{
 			id: 'delivery',
-			name: 'Delivery',
-			description: 'Prévisibilité, respect des engagements, flux continu.'
+			name: 'Livraison',
+			description: 'Prévisibilité, respect des engagements, flux de livraison continu.'
 		},
 		{
 			id: 'communication',
 			name: 'Communication',
-			description: 'Transparence, feedback, documentation, partage de contexte.'
+			description: 'Transparence, retours entre pairs, documentation, partage de contexte.'
 		},
 		{
 			id: 'apprentissage',
 			name: 'Apprentissage',
-			description: 'Veille, rétros, amélioration continue, mentoring.'
+			description: 'Veille, rétrospectives, amélioration continue, accompagnement des pairs.'
 		},
 		{
 			id: 'collaboration',
 			name: 'Collaboration',
-			description: 'Pair programming, mob, entraide, cross-fonctionnel.'
+			description: 'Programmation en binôme, mob (en groupe), entraide, travail transversal entre équipes.'
 		}
 	];
 
@@ -42,15 +42,15 @@
 		autonomie:
 			"Ce que j'ai observé dans les équipes qui progressent sur cet axe : elles commencent par clarifier les périmètres de décision. Quand chacun sait ce qu'il peut décider seul, l'escalade diminue naturellement. Un cadre explicite — même imparfait — libère plus qu'un flou bienveillant.",
 		qualite:
-			"Ce que j'ai observé dans les équipes qui progressent sur cet axe : elles ritualisent la qualité plutôt que de la décréter. Une code review systématique, un seuil de couverture raisonnable, un standard partagé et écrit. La rigueur vient rarement de la volonté individuelle — elle vient du cadre collectif.",
+			"Ce que j'ai observé dans les équipes qui progressent sur cet axe : elles ritualisent la qualité plutôt que de la décréter. Une revue de code systématique, un seuil de couverture raisonnable, un standard partagé et écrit. La rigueur vient rarement de la volonté individuelle — elle vient du cadre collectif.",
 		delivery:
 			"Ce que j'ai observé dans les équipes qui progressent sur cet axe : elles réduisent la taille de ce qu'elles livrent. Des incréments plus petits, plus fréquents, avec moins de dépendances. La prévisibilité n'est pas une question de vélocité — c'est une question de découpage.",
 		communication:
-			"Ce que j'ai observé dans les équipes qui progressent sur cet axe : elles documentent les décisions, pas seulement les résultats. Un canal dédié aux choix techniques, des rétros où on parle vrai, des post-mortems sans blame. La transparence se construit par la pratique, pas par l'intention.",
+			"Ce que j'ai observé dans les équipes qui progressent sur cet axe : elles documentent les décisions, pas seulement les résultats. Un canal dédié aux choix techniques, des rétrospectives où on parle vrai, des bilans d'incident sans chercher de coupable. La transparence se construit par la pratique, pas par l'intention.",
 		apprentissage:
-			"Ce que j'ai observé dans les équipes qui progressent sur cet axe : elles créent du temps protégé pour apprendre. Une demi-journée de veille, un format lightning talk, un binôme junior/senior sur un sujet nouveau. L'apprentissage ne se décrète pas — il se rend possible.",
+			"Ce que j'ai observé dans les équipes qui progressent sur cet axe : elles créent du temps protégé pour apprendre. Une demi-journée de veille, une présentation courte en interne, un binôme junior/senior sur un sujet nouveau. L'apprentissage ne se décrète pas — il se rend possible.",
 		collaboration:
-			"Ce que j'ai observé dans les équipes qui progressent sur cet axe : elles commencent petit. Un créneau de mob programming hebdomadaire, un ticket traité en binôme. La collaboration cross-fonctionnelle suit souvent : quand on s'habitue à travailler ensemble, les frontières d'équipe s'assouplissent."
+			"Ce que j'ai observé dans les équipes qui progressent sur cet axe : elles commencent petit. Un créneau de programmation en groupe hebdomadaire, un ticket traité en binôme. La collaboration transversale suit souvent : quand on s'habitue à travailler ensemble, les frontières d'équipe s'assouplissent."
 	};
 
 	function getLevel(score: number): { label: string; color: string } {
@@ -240,7 +240,7 @@
 
 			<div class="tool-actions">
 				<button class="tool-btn tool-btn--primary" onclick={handleExport}>
-					{copyFeedback ? 'Copié dans le presse-papier' : 'Exporter en Markdown'}
+					{copyFeedback ? 'Copié dans le presse-papier' : 'Copier le bilan (format texte)'}
 				</button>
 				<button class="tool-btn tool-btn--secondary" onclick={handleReset}>Réinitialiser</button>
 			</div>

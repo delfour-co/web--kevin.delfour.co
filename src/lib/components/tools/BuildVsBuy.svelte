@@ -10,46 +10,51 @@
 		{
 			id: 'differentiation',
 			name: 'Différenciation compétitive',
-			min: 'Commodity',
+			description: 'Ce que cette fonctionnalité apporte de spécifique à ton produit par rapport au marché.',
+			min: 'Standard (disponible partout)',
 			max: 'Cœur de métier'
 		},
 		{
 			id: 'complexity',
 			name: 'Complexité technique',
+			description: 'Le niveau de difficulté pour développer et maintenir cette fonctionnalité.',
 			min: 'Simple / mature',
 			max: 'Très complexe'
 		},
 		{
 			id: 'urgency',
 			name: 'Urgence',
+			description: 'Le délai acceptable avant la mise en service.',
 			min: 'Peut attendre',
 			max: 'Immédiat'
 		},
 		{
 			id: 'competences',
 			name: 'Compétences internes',
+			description: 'Le niveau de maîtrise de ton équipe sur le sujet.',
 			min: 'Aucune expertise',
 			max: 'Expertise forte'
 		},
 		{
 			id: 'budget',
 			name: 'Budget disponible',
+			description: 'L\u2019enveloppe financière mobilisable pour cette fonctionnalité.',
 			min: 'Très contraint',
 			max: 'Large'
 		}
 	];
 
 	const contextualTexts: Record<string, string> = {
-		Build:
-			"La différenciation forte et les compétences internes justifient un développement sur mesure. Pense à estimer le TCO sur 3 ans avant de t\u2019engager.",
-		Buy:
-			"L\u2019urgence et la faible différenciation orientent vers une solution existante. Vérifie le coût récurrent sur 3 ans \u2014 les surprises viennent souvent de là.",
-		Partner:
+		Développer:
+			"La différenciation forte et les compétences internes justifient un développement sur mesure. Pense à estimer le TCO (coût total de possession : achat + maintenance + évolutions) sur 3 ans avant de t\u2019engager.",
+		Acheter:
+			"L\u2019urgence et la faible différenciation orientent vers une solution existante. Vérifie le coût récurrent sur 3 ans et le risque de dépendance fournisseur \u2014 les surprises viennent souvent de là.",
+		'S\u2019associer':
 			"La complexité et le potentiel de mutualisation rendent le partenariat intéressant. Définis clairement la gouvernance avant de t\u2019engager."
 	};
 
 	const CLOSE_SCORE_NUANCE =
-		"Quand les scores sont aussi proches, le cadre de décision seul ne suffit pas. Prends le temps d\u2019évaluer le TCO sur 3 ans pour chaque option et de confronter l\u2019analyse à ton contexte d\u2019équipe.";
+		"Quand les scores sont aussi proches, le cadre de décision seul ne suffit pas. Prends le temps d\u2019évaluer le TCO (coût total de possession) sur 3 ans pour chaque option et de confronter l\u2019analyse à ton contexte d\u2019équipe.";
 
 	let scores = $state<Record<string, number>>({
 		differentiation: DEFAULT_SCORE,
@@ -80,9 +85,9 @@
 		const pctPartner = 100 - pctBuild - pctBuy;
 
 		const results = [
-			{ label: 'Build', pct: pctBuild },
-			{ label: 'Buy', pct: pctBuy },
-			{ label: 'Partner', pct: pctPartner }
+			{ label: 'Développer', pct: pctBuild },
+			{ label: 'Acheter', pct: pctBuy },
+			{ label: 'S\u2019associer', pct: pctPartner }
 		].sort((a, b) => b.pct - a.pct);
 
 		const dominant = results[0];
@@ -149,7 +154,7 @@
 		const today = new Date().toISOString().split('T')[0];
 
 		const md = [
-			'# Analyse Build vs Buy vs Partner',
+			'# Analyse Développer vs Acheter vs S’associer',
 			'',
 			'Date : ' + today,
 			'',
@@ -203,9 +208,10 @@
 			{#each criteria as criterion}
 				<div class="slider-group">
 					<div class="slider-label">
-						<span class="slider-name">{criterion.name}</span>
+						<span class="slider-name" title={criterion.description}>{criterion.name}</span>
 						<span class="slider-value">{scores[criterion.id]}/10</span>
 					</div>
+					<p class="slider-hint">{criterion.description}</p>
 					<div class="slider-row">
 						<span class="slider-bound">{criterion.min}</span>
 						<input
@@ -225,7 +231,7 @@
 
 			<div class="tool-actions">
 				<button class="tool-btn tool-btn--primary" onclick={handleExport}>
-					{copyFeedback ? 'Copié dans le presse-papier' : 'Exporter en Markdown'}
+					{copyFeedback ? 'Copié dans le presse-papier' : 'Copier le bilan (format texte)'}
 				</button>
 				<button class="tool-btn tool-btn--secondary" onclick={handleReset}>
 					Réinitialiser
@@ -292,6 +298,13 @@
 
 	.slider-group {
 		/* individual slider group */
+	}
+
+	.slider-hint {
+		font-size: 13px;
+		color: var(--secondary);
+		margin: 0 0 4px 0;
+		font-style: italic;
 	}
 
 	.slider-label {
@@ -424,7 +437,7 @@
 		font-size: 14px;
 		font-weight: 600;
 		color: var(--primary);
-		min-width: 64px;
+		min-width: 90px;
 	}
 
 	.bar-track {

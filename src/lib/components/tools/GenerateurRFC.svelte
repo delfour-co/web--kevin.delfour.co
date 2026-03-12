@@ -101,7 +101,7 @@
 		];
 
 		if (reviewers.trim()) {
-			lines.push(`**Reviewers :** ${reviewers}`);
+			lines.push(`**Relecteurs :** ${reviewers}`);
 		}
 
 		lines.push(
@@ -143,7 +143,7 @@
 		}
 
 		if (timeline.trim()) {
-			lines.push('## Timeline', '', timeline, '');
+			lines.push('## Calendrier prévisionnel', '', timeline, '');
 		}
 
 		lines.push('---', `_Généré avec le Générateur de RFC — ${TOOL_URL}_`);
@@ -184,7 +184,8 @@
 		<!-- Metadata -->
 		<div class="form-row form-row--three">
 			<div class="form-group">
-				<label for="rfc-title">Titre de la RFC</label>
+				<label for="rfc-title">Titre de la proposition</label>
+				<p class="form-hint">Une RFC (Request for Comments) est une proposition technique ouverte à discussion au sein de l’équipe.</p>
 				<input id="rfc-title" type="text" bind:value={title} placeholder="Ex: Migration vers Event Sourcing" />
 			</div>
 			<div class="form-group">
@@ -207,8 +208,8 @@
 				</select>
 			</div>
 			<div class="form-group">
-				<label for="rfc-reviewers">Reviewers</label>
-				<input id="rfc-reviewers" type="text" bind:value={reviewers} placeholder="Ex: Lead Backend, Staff Engineer" />
+				<label for="rfc-reviewers" title="Les personnes chargées de relire et commenter cette proposition">Relecteurs</label>
+				<input id="rfc-reviewers" type="text" bind:value={reviewers} placeholder="Ex: Lead Backend, architecte, Staff Engineer" />
 			</div>
 		</div>
 
@@ -266,8 +267,8 @@
 
 		<div class="form-group">
 			<label for="rfc-migration">Plan de migration</label>
-			<p class="form-hint">Comment passer de l'état actuel à la cible ? Étapes, feature flags, rollback.</p>
-			<textarea id="rfc-migration" bind:value={migration} rows="3" placeholder="Phase 1 : dual-write pendant 2 sprints..."></textarea>
+			<p class="form-hint">Comment passer de l'état actuel à la cible ? Étapes, activation progressive, retour arrière possible.</p>
+			<textarea id="rfc-migration" bind:value={migration} rows="3" placeholder="Phase 1 : double écriture pendant 2 itérations..."></textarea>
 		</div>
 
 		<div class="form-row form-row--two">
@@ -276,14 +277,14 @@
 				<textarea id="rfc-risks" bind:value={risks} rows="3" placeholder="Risque de perte de données pendant la migration..."></textarea>
 			</div>
 			<div class="form-group">
-				<label for="rfc-timeline">Timeline</label>
-				<textarea id="rfc-timeline" bind:value={timeline} rows="3" placeholder="Sprint 1 : POC, Sprint 2-3 : implémentation..."></textarea>
+				<label for="rfc-timeline">Calendrier prévisionnel</label>
+				<textarea id="rfc-timeline" bind:value={timeline} rows="3" placeholder="Itération 1 : prototype, Itération 2-3 : implémentation..."></textarea>
 			</div>
 		</div>
 
 		<div class="tool-actions">
 			<button class="tool-btn tool-btn--primary" onclick={handleExport}>
-				{copyFeedback ? 'Copié dans le presse-papier' : 'Exporter en Markdown'}
+				{copyFeedback ? 'Copié dans le presse-papier' : 'Copier le document (format texte)'}
 			</button>
 			<button class="tool-btn tool-btn--secondary" onclick={handleReset}>Réinitialiser</button>
 		</div>

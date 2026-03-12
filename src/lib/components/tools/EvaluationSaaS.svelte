@@ -6,14 +6,14 @@
 	const TOOL_URL = 'https://kevin.delfour.co/outils/evaluation-saas/';
 
 	const categories = [
-		'Monitoring',
-		'CI/CD',
+		'Surveillance (monitoring)',
+		'Intégration continue (CI/CD)',
 		'Hébergement',
-		'BDD',
-		'Auth',
+		'Base de données',
+		'Authentification',
 		'Paiement',
 		'Communication',
-		'Analytics',
+		'Analyse de données',
 		'Autre'
 	] as const;
 
@@ -26,28 +26,28 @@
 	const criteria: Criterion[] = [
 		{
 			id: 'tco',
-			name: 'Coût total (TCO)',
-			hint: "Ce que j'observe souvent : le prix d'entrée est attractif, c'est le prix à l'échelle qui pose problème."
+			name: 'Coût total de possession',
+			hint: "Ce que j'observe souvent : le prix d'entrée est attractif, c'est le prix à l'échelle qui pose problème. Le coût total inclut l'abonnement, l'intégration, la formation et la maintenance."
 		},
 		{
 			id: 'lockin',
-			name: 'Lock-in',
+			name: 'Dépendance fournisseur',
 			hint: "Un bon SaaS permet d'exporter ses données facilement. Si ce n'est pas le cas, c'est un signal fort."
 		},
 		{
 			id: 'security',
-			name: 'Sécurité & Conformité',
+			name: 'Sécurité & Conformité réglementaire',
 			hint: "Ce que j'observe souvent : la sécurité est rarement un problème... jusqu'au jour de l'audit."
 		},
 		{
 			id: 'integration',
 			name: 'Intégration',
-			hint: "La qualité de l'API est souvent le meilleur indicateur de la maturité d'un SaaS."
+			hint: "La qualité de l'API (interface de connexion entre systèmes) est souvent le meilleur indicateur de la maturité d'un SaaS."
 		},
 		{
 			id: 'reliability',
-			name: 'Fiabilité',
-			hint: 'Regarder la status page des 12 derniers mois. C\'est plus fiable que n\'importe quelle promesse commerciale.'
+			name: 'Fiabilité (disponibilité)',
+			hint: 'Regarder la page de suivi de disponibilité des 12 derniers mois. C\'est plus fiable que n\'importe quelle promesse commerciale.'
 		},
 		{
 			id: 'support',
@@ -377,7 +377,7 @@
 
 			<!-- Grille d'évaluation -->
 			<section class="glass-card">
-				<h2 class="section-title">Grille d'évaluation</h2>
+				<h2 class="section-title" title="SaaS : logiciel en ligne, accessible par abonnement">Grille d'évaluation</h2>
 				{#each criteria as criterion}
 					<div class="criterion-group">
 						<div class="criterion-header">
@@ -436,7 +436,7 @@
 			<!-- Actions -->
 			<div class="tool-actions">
 				<button class="tool-btn tool-btn--primary" onclick={handleExport}>
-					{copyFeedback ? 'Copié dans le presse-papier' : 'Exporter en Markdown'}
+					{copyFeedback ? 'Copié dans le presse-papier' : 'Copier le bilan (format texte)'}
 				</button>
 				<button class="tool-btn tool-btn--secondary" onclick={handleReset}>
 					Réinitialiser

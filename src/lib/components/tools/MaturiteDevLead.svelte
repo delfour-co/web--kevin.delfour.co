@@ -28,9 +28,9 @@
 		},
 		{
 			id: 'mentorat',
-			name: 'Mentorat',
-			description: 'Capacit\u00e9 \u00e0 accompagner, transmettre, donner du feedback constructif.',
-			hint: 'Le mentorat ne s\u2019improvise pas. Observer comment la personne fait des code reviews est un bon indicateur.'
+			name: 'Accompagnement',
+			description: 'Capacit\u00e9 \u00e0 accompagner, transmettre, donner des retours constructifs.',
+			hint: 'L\u2019accompagnement ne s\u2019improvise pas. Observer comment la personne fait des revues de code est un bon indicateur.'
 		},
 		{
 			id: 'communication',
@@ -64,8 +64,8 @@
 		},
 		{
 			id: 'ownership',
-			name: 'Ownership',
-			description: 'Prise de responsabilit\u00e9, initiative, accountability.',
+			name: 'Responsabilisation',
+			description: 'Prise de responsabilit\u00e9, initiative, capacit\u00e9 \u00e0 rendre des comptes.',
 			hint: 'Observer qui prend naturellement la responsabilit\u00e9 quand \u00e7a va mal. C\u2019est souvent un futur lead.'
 		}
 	];
@@ -353,7 +353,7 @@
 
 			<div class="tool-actions">
 				<button class="tool-btn tool-btn--primary" onclick={handleExport}>
-					{copyFeedback ? 'Copi\u00e9 dans le presse-papier' : 'Exporter en Markdown'}
+					{copyFeedback ? 'Copi\u00e9 dans le presse-papier' : 'Copier le bilan (format texte)'}
 				</button>
 				<button class="tool-btn tool-btn--secondary" onclick={handleReset}>R\u00e9initialiser</button>
 			</div>

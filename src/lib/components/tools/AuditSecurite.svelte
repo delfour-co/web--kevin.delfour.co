@@ -26,10 +26,10 @@
 			name: 'Authentification & Acc\u00e8s',
 			description: 'Qui entre, avec quels droits, et comment on le v\u00e9rifie.',
 			checkpoints: [
-				{ id: 'auth-mfa', label: 'MFA activ\u00e9 sur les acc\u00e8s critiques', criticality: 'critique' },
+				{ id: 'auth-mfa', label: 'MFA (authentification multi-facteurs) activ\u00e9 sur les acc\u00e8s critiques', criticality: 'critique' },
 				{ id: 'auth-password', label: 'Politique de mots de passe appliqu\u00e9e', criticality: 'important' },
 				{ id: 'auth-sessions', label: 'Sessions expirantes et r\u00e9vocation possible', criticality: 'important' },
-				{ id: 'auth-rbac', label: 'RBAC ou gestion fine des permissions', criticality: 'critique' },
+				{ id: 'auth-rbac', label: 'RBAC (contr\u00f4le d\u2019acc\u00e8s par r\u00f4les) ou gestion fine des permissions', criticality: 'critique' },
 				{ id: 'auth-logs', label: 'Audit logs des acc\u00e8s et actions sensibles', criticality: 'recommand\u00e9' }
 			]
 		},
@@ -39,7 +39,7 @@
 			description: 'Ce qu\u2019on stocke, comment on le prot\u00e8ge, et ce qu\u2019on peut restaurer.',
 			checkpoints: [
 				{ id: 'data-rest', label: 'Chiffrement au repos (BDD, fichiers, backups)', criticality: 'critique' },
-				{ id: 'data-transit', label: 'Chiffrement en transit (TLS partout)', criticality: 'critique' },
+				{ id: 'data-transit', label: 'Chiffrement en transit (TLS \u2014 chiffrement des communications \u2014 partout)', criticality: 'critique' },
 				{ id: 'data-rgpd', label: 'RGPD / anonymisation des donn\u00e9es personnelles', criticality: 'important' },
 				{ id: 'data-backups', label: 'Backups test\u00e9s et restauration valid\u00e9e', criticality: 'critique' },
 				{ id: 'data-secrets', label: 'Secrets g\u00e9r\u00e9s via vault ou gestionnaire d\u00e9di\u00e9', criticality: 'important' }
@@ -48,23 +48,23 @@
 		{
 			id: 'infra',
 			name: 'Infrastructure',
-			description: 'Les fondations r\u00e9seau, le monitoring, et la surface d\u2019attaque.',
+			description: 'Les fondations r\u00e9seau, la supervision, et la surface d\u2019attaque.',
 			checkpoints: [
-				{ id: 'infra-waf', label: 'Firewall / WAF en place', criticality: 'critique' },
-				{ id: 'infra-monitoring', label: 'Monitoring et alerting op\u00e9rationnels', criticality: 'important' },
-				{ id: 'infra-patching', label: 'Patching r\u00e9gulier (OS, runtime, d\u00e9pendances)', criticality: 'critique' },
-				{ id: 'infra-network', label: 'R\u00e9seau segment\u00e9 (pas de flat network)', criticality: 'important' }
+				{ id: 'infra-waf', label: 'Pare-feu / WAF (pare-feu applicatif) en place', criticality: 'critique' },
+				{ id: 'infra-monitoring', label: 'Supervision et alertes op\u00e9rationnelles', criticality: 'important' },
+				{ id: 'infra-patching', label: 'Mises \u00e0 jour r\u00e9guli\u00e8res (OS, runtime, d\u00e9pendances)', criticality: 'critique' },
+				{ id: 'infra-network', label: 'R\u00e9seau segment\u00e9 (pas de r\u00e9seau \u00e0 plat)', criticality: 'important' }
 			]
 		},
 		{
 			id: 'cicd',
-			name: 'CI/CD & Supply Chain',
-			description: 'La cha\u00eene de livraison, du code \u00e0 la prod.',
+			name: 'CI/CD (int\u00e9gration et d\u00e9ploiement continus) & Cha\u00eene logicielle',
+			description: 'La cha\u00eene de livraison, du code \u00e0 la production.',
 			checkpoints: [
-				{ id: 'cicd-sast', label: 'SAST / DAST int\u00e9gr\u00e9 au pipeline', criticality: 'important' },
+				{ id: 'cicd-sast', label: 'SAST/DAST (analyse de code statique/dynamique) int\u00e9gr\u00e9 \u00e0 la cha\u00eene de d\u00e9ploiement', criticality: 'important' },
 				{ id: 'cicd-deps', label: 'D\u00e9pendances audit\u00e9es (Snyk, Dependabot, etc.)', criticality: 'critique' },
-				{ id: 'cicd-images', label: 'Images sign\u00e9es et scann\u00e9es', criticality: 'recommand\u00e9' },
-				{ id: 'cicd-access', label: 'Acc\u00e8s repo et pipeline restreints', criticality: 'important' }
+				{ id: 'cicd-images', label: 'Images de conteneurs sign\u00e9es et analys\u00e9es', criticality: 'recommand\u00e9' },
+				{ id: 'cicd-access', label: 'Acc\u00e8s au d\u00e9p\u00f4t de code et \u00e0 la cha\u00eene de d\u00e9ploiement restreints', criticality: 'important' }
 			]
 		},
 		{
@@ -73,10 +73,10 @@
 			description: 'Le code lui-m\u00eame, ses protections et ses comportements.',
 			checkpoints: [
 				{ id: 'app-inputs', label: 'Validation et sanitisation de tous les inputs', criticality: 'critique' },
-				{ id: 'app-csrf', label: 'Protection CSRF / XSS effective', criticality: 'critique' },
-				{ id: 'app-rate', label: 'Rate limiting sur les endpoints expos\u00e9s', criticality: 'important' },
-				{ id: 'app-headers', label: 'Headers s\u00e9curit\u00e9 (CSP, HSTS, X-Frame-Options)', criticality: 'important' },
-				{ id: 'app-errors', label: 'Error handling sans fuite d\u2019information', criticality: 'recommand\u00e9' }
+				{ id: 'app-csrf', label: 'Protection CSRF/XSS (failles de s\u00e9curit\u00e9 web) effective', criticality: 'critique' },
+				{ id: 'app-rate', label: 'Limitation du nombre de requ\u00eates sur les points d\u2019entr\u00e9e expos\u00e9s', criticality: 'important' },
+				{ id: 'app-headers', label: 'En-t\u00eates de s\u00e9curit\u00e9 HTTP (CSP, HSTS, X-Frame-Options)', criticality: 'important' },
+				{ id: 'app-errors', label: 'Gestion des erreurs sans fuite d\u2019information', criticality: 'recommand\u00e9' }
 			]
 		},
 		{
@@ -86,7 +86,7 @@
 			checkpoints: [
 				{ id: 'org-training', label: '\u00c9quipe form\u00e9e aux bases s\u00e9curit\u00e9', criticality: 'important' },
 				{ id: 'org-incident', label: 'Plan de r\u00e9ponse incident document\u00e9', criticality: 'critique' },
-				{ id: 'org-pentest', label: 'Pentests ou audits r\u00e9guliers', criticality: 'recommand\u00e9' },
+				{ id: 'org-pentest', label: 'Tests d\u2019intrusion ou audits r\u00e9guliers', criticality: 'recommand\u00e9' },
 				{ id: 'org-docs', label: 'Documentation s\u00e9curit\u00e9 \u00e0 jour', criticality: 'recommand\u00e9' }
 			]
 		}
@@ -295,7 +295,7 @@
 
 			<div class="audit-actions">
 				<button class="audit-btn audit-btn--primary" onclick={handleExport}>
-					{copyFeedback ? 'Copi\u00e9 dans le presse-papier' : 'Exporter en Markdown'}
+					{copyFeedback ? 'Copi\u00e9 dans le presse-papier' : 'Copier le bilan (format texte)'}
 				</button>
 				<button class="audit-btn audit-btn--secondary" onclick={handleReset}>R\u00e9initialiser</button>
 			</div>

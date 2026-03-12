@@ -206,7 +206,7 @@
 	<!-- Criteria -->
 	<fieldset class="section-card">
 		<legend>Critères</legend>
-		<p class="form-hint">Définis les critères d'évaluation et leur poids (1 = faible, 5 = critique).</p>
+		<p class="form-hint">Definis les criteres qui comptent pour ta decision. Le poids determine l'importance de chaque critere : 1 = secondaire, 3 = important, 5 = decisif.</p>
 
 		{#each criteria as c, i}
 			<div class="criterion-row">
@@ -237,9 +237,10 @@
 	<!-- Scoring matrix -->
 	<div class="matrix-section">
 		<div class="matrix-header">
-			<h2>Évaluation</h2>
+			<h2>Evaluation</h2>
 			<button class="add-btn add-btn--inline" onclick={addOption}>+ Option</button>
 		</div>
+		<p class="form-hint">Note chaque option sur chaque critere de 0 (tres mauvais) a 10 (excellent). Le score final combine les notes et les poids.</p>
 
 		<!-- Desktop: table view -->
 		{#if !isMobile}
@@ -343,7 +344,7 @@
 
 			{#if closeResults}
 				<div class="close-results-warning" role="alert">
-					Les résultats sont très proches. Ce cadre ne suffit pas seul — confronte cette analyse à ton contexte d'équipe.
+					Les scores sont tres proches. La matrice ne suffit pas a trancher : d'autres elements de contexte (equipe, contraintes, calendrier) peuvent faire pencher la balance.
 				</div>
 			{/if}
 

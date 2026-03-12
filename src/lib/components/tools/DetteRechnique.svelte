@@ -16,38 +16,38 @@
 		{
 			id: 'code',
 			name: 'Code',
-			description: 'Lisibilite, duplication, conventions',
-			hint: 'Ce que j\u2019observe souvent : quand la lecture du code demande plus d\u2019effort que sa modification, c\u2019est un signal.'
+			description: 'Lisibilité, duplication, conventions',
+			hint: 'Ce que j\u2019observe souvent : quand la lecture du code demande plus d\u2019effort que sa modification, c\u2019est un signal. La remise en forme du code (refactoring) régulière aide à garder cette dette sous contrôle.'
 		},
 		{
 			id: 'tests',
 			name: 'Tests',
-			description: 'Couverture, fiabilite, temps d\u2019execution',
-			hint: 'Ce que j\u2019observe souvent : des tests lents ou fragiles finissent par etre ignores. La confiance dans le deploy s\u2019erode.'
+			description: 'Couverture, fiabilité, temps d\u2019exécution',
+			hint: 'Ce que j\u2019observe souvent : des tests lents ou fragiles finissent par être ignorés. La confiance dans le déploiement s\u2019érode.'
 		},
 		{
 			id: 'infra',
 			name: 'Infrastructure',
-			description: 'Monitoring, scalabilite, automatisation',
-			hint: 'Ce que j\u2019observe souvent : quand le deploiement repose sur une seule personne ou un wiki obsolete, la fragilite est deja la.'
+			description: 'Supervision, passage à l\u2019échelle, automatisation',
+			hint: 'Ce que j\u2019observe souvent : quand le déploiement repose sur une seule personne ou un wiki obsolète, la fragilité est déjà là.'
 		},
 		{
 			id: 'docs',
 			name: 'Documentation',
-			description: 'A jour, onboarding, ADR',
-			hint: 'Ce que j\u2019observe souvent : l\u2019absence de documentation n\u2019est pas un choix, c\u2019est une dette qui se paie a chaque nouvel arrivant.'
+			description: 'À jour, intégration des nouveaux, ADR (traces de décisions)',
+			hint: 'Ce que j\u2019observe souvent : l\u2019absence de documentation n\u2019est pas un choix, c\u2019est une dette qui se paie à chaque nouvel arrivant.'
 		},
 		{
 			id: 'deps',
 			name: 'Dependances',
-			description: 'Versions, vulnerabilites, lock-in',
-			hint: 'Ce que j\u2019observe souvent : les dependances oubliees deviennent des bombes a retardement. Un audit regulier evite les surprises.'
+			description: 'Versions, vulnérabilités, dépendance fournisseur',
+			hint: 'Ce que j\u2019observe souvent : les dépendances oubliées deviennent des bombes à retardement. Un audit régulier évite les surprises.'
 		},
 		{
 			id: 'archi',
 			name: 'Architecture',
-			description: 'Couplage, complexite, evolutivite',
-			hint: 'Ce que j\u2019observe souvent : une architecture trop couplee rend chaque changement risque. Le couplage se mesure au nombre de fichiers touches par feature.'
+			description: 'Couplage, complexité, évolutivité',
+			hint: 'Ce que j\u2019observe souvent : une architecture trop couplée rend chaque changement risqué. Le couplage se mesure au nombre de fichiers touchés par fonctionnalité.'
 		}
 	];
 
@@ -121,10 +121,10 @@
 
 	function getQuadrantLabel(q: string): string {
 		switch (q) {
-			case 'quick-win': return 'Quick win';
+			case 'quick-win': return 'Gain rapide';
 			case 'projet-majeur': return 'Projet majeur';
-			case 'amelioration': return 'Amelioration facile';
-			case 'a-surveiller': return 'A surveiller';
+			case 'amelioration': return 'Amélioration facile';
+			case 'a-surveiller': return 'À surveiller';
 			default: return '';
 		}
 	}
@@ -192,7 +192,7 @@
 		const p = top3;
 
 		const md = [
-			'# Evaluation dette technique',
+			'# Évaluation dette technique',
 			'',
 			`**Date :** ${today}`,
 			`**Score global :** ${overallScore}/10 — ${level.label}`,
@@ -204,7 +204,7 @@
 					`- **${z.name}** : ${scores[z.id]}/10 (impact : ${impacts[z.id]}/5, effort : ${efforts[z.id]}/5)`
 			),
 			'',
-			'## Top 3 priorites',
+			'## Top 3 priorités',
 			'',
 			...p.map(
 				(item, i) =>
@@ -220,7 +220,7 @@
 			),
 			'',
 			'---',
-			`Genere avec l'outil Evaluation dette technique — ${TOOL_URL}`
+			`Généré avec l'outil Evaluation dette technique — ${TOOL_URL}`
 		].join('\n');
 
 		try {
@@ -343,10 +343,10 @@
 
 			<div class="dt-actions">
 				<button class="dt-btn dt-btn--primary" onclick={handleExport}>
-					{copyFeedback ? 'Copie dans le presse-papier' : 'Exporter en Markdown'}
+					{copyFeedback ? 'Copié dans le presse-papier' : 'Copier le bilan (format texte)'}
 				</button>
 				<button class="dt-btn dt-btn--secondary" onclick={handleReset}>
-					Reinitialiser
+					Réinitialiser
 				</button>
 			</div>
 		</div>
@@ -374,10 +374,10 @@
 						<span class="dt-matrix-label dt-matrix-label--x">Effort</span>
 
 						<!-- Quadrant labels -->
-						<span class="dt-matrix-quadrant dt-matrix-quadrant--tl">Quick wins</span>
+						<span class="dt-matrix-quadrant dt-matrix-quadrant--tl">Gains rapides</span>
 						<span class="dt-matrix-quadrant dt-matrix-quadrant--tr">Projets majeurs</span>
-						<span class="dt-matrix-quadrant dt-matrix-quadrant--bl">Ameliorations faciles</span>
-						<span class="dt-matrix-quadrant dt-matrix-quadrant--br">A surveiller</span>
+						<span class="dt-matrix-quadrant dt-matrix-quadrant--bl">Améliorations faciles</span>
+						<span class="dt-matrix-quadrant dt-matrix-quadrant--br">À surveiller</span>
 
 						<!-- Zone dots -->
 						{#each matrixZones as z}
@@ -399,7 +399,7 @@
 			</div>
 
 			<div class="glass-card dt-priorities-card">
-				<div class="dt-card-title">Top 3 priorites</div>
+				<div class="dt-card-title">Top 3 priorités</div>
 				<ol class="dt-priorities-list">
 					{#each top3 as item, i}
 						<li class="dt-priority-item">

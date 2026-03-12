@@ -25,10 +25,10 @@
 
 	const typeLabels: Record<ItemType, string> = {
 		'dette-technique': 'Dette technique',
-		feature: 'Feature',
+		feature: 'Fonctionnalite',
 		infrastructure: 'Infrastructure',
-		refactoring: 'Refactoring',
-		'sécurité': 'Sécurité'
+		refactoring: 'Remise en forme du code',
+		'sécurité': 'Securite'
 	};
 
 	const typeColors: Record<ItemType, string> = {
@@ -40,11 +40,11 @@
 	};
 
 	const effortLabels: Record<number, string> = {
-		1: 'XS',
-		2: 'S',
-		3: 'M',
-		4: 'L',
-		5: 'XL'
+		1: 'Tres petit',
+		2: 'Petit',
+		3: 'Moyen',
+		4: 'Grand',
+		5: 'Tres grand'
 	};
 
 	let items = $state<BacklogItem[]>([
@@ -227,7 +227,7 @@
 		<fieldset class="section-card">
 			<legend>Items du backlog</legend>
 			<p class="form-hint">
-				Formule : (Impact x Confiance x Urgence) / Effort. Plus le score est eleve, plus l'item est prioritaire.
+				Chaque item est note selon 4 axes. Le score est calcule ainsi : (Impact x Confiance x Urgence) / Effort. Plus le score est eleve, plus l'item merite d'etre traite en premier.
 			</p>
 
 			{#each items as item, i}
@@ -259,7 +259,7 @@
 						</div>
 
 						<div class="field-group">
-							<label for="impact-{item.id}">Impact <span class="field-hint">valeur business</span></label>
+							<label for="impact-{item.id}">Impact <span class="field-hint">quelle valeur ca apporte ?</span></label>
 							<div class="slider-row">
 								<input
 									id="impact-{item.id}"
@@ -275,7 +275,7 @@
 						</div>
 
 						<div class="field-group">
-							<label for="confiance-{item.id}">Confiance <span class="field-hint">certitude de l'impact</span></label>
+							<label for="confiance-{item.id}">Confiance <span class="field-hint">a quel point on est sur de l'impact ?</span></label>
 							<div class="slider-row">
 								<input
 									id="confiance-{item.id}"
@@ -291,7 +291,7 @@
 						</div>
 
 						<div class="field-group">
-							<label for="urgence-{item.id}">Urgence <span class="field-hint">risque du delai</span></label>
+							<label for="urgence-{item.id}">Urgence <span class="field-hint">que se passe-t-il si on attend ?</span></label>
 							<div class="slider-row">
 								<input
 									id="urgence-{item.id}"
@@ -307,7 +307,7 @@
 						</div>
 
 						<div class="field-group">
-							<label for="effort-{item.id}">Effort <span class="field-hint">{effortLabels[item.effort]}</span></label>
+							<label for="effort-{item.id}">Effort <span class="field-hint">temps et energie necessaires — {effortLabels[item.effort]}</span></label>
 							<div class="slider-row">
 								<input
 									id="effort-{item.id}"
@@ -368,8 +368,8 @@
 			<!-- Quick wins -->
 			{#if quickWins.length > 0}
 				<div class="result-panel quick-wins-panel">
-					<h3 class="result-title">Quick wins</h3>
-					<p class="panel-hint">Score eleve + effort faible (XS ou S)</p>
+					<h3 class="result-title">Gains rapides</h3>
+					<p class="panel-hint">Items a fort impact avec peu d'effort — a traiter en priorite</p>
 					<div class="quick-wins-list">
 						{#each quickWins as qw}
 							<div class="quick-win-item">

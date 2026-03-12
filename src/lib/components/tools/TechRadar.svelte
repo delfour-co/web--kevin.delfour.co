@@ -5,7 +5,7 @@
 	const STORAGE_KEY = 'tool-tech-radar-personnel';
 	const TOOL_URL = 'https://kevin.delfour.co/outils/tech-radar-personnel/';
 
-	const RINGS = ['Adopt', 'Trial', 'Assess', 'Hold'] as const;
+	const RINGS = ['Adopter', 'Expérimenter', 'Évaluer', 'Mettre en pause'] as const;
 	const QUADRANTS = ['Langages & Frameworks', 'Outils', 'Plateformes', 'Techniques'] as const;
 
 	type Ring = (typeof RINGS)[number];
@@ -19,52 +19,52 @@
 	}
 
 	const ringDescriptions: Record<Ring, string> = {
-		Adopt: 'Prêt pour la production. Confiance forte.',
-		Trial: 'À tester sur un vrai projet. Prometteur.',
-		Assess: 'À explorer. Mérite investigation.',
-		Hold: 'À éviter pour les nouveaux projets.'
+		'Adopter': 'Prêt pour la production. Confiance forte.',
+		'Expérimenter': 'À tester sur un vrai projet. Prometteur.',
+		'Évaluer': 'À explorer. Mérite investigation.',
+		'Mettre en pause': 'À éviter pour les nouveaux projets.'
 	};
 
 	const ringColors: Record<Ring, string> = {
-		Adopt: '#06b6d4',
-		Trial: '#8b5cf6',
-		Assess: '#f59e0b',
-		Hold: '#ef4444'
+		'Adopter': '#06b6d4',
+		'Expérimenter': '#8b5cf6',
+		'Évaluer': '#f59e0b',
+		'Mettre en pause': '#ef4444'
 	};
 
 	const DEFAULT_BLIPS: Blip[] = [
 		// Langages & Frameworks
-		{ id: 'def-ts', name: 'TypeScript', ring: 'Adopt', quadrant: 'Langages & Frameworks' },
-		{ id: 'def-svelte', name: 'SvelteKit', ring: 'Adopt', quadrant: 'Langages & Frameworks' },
-		{ id: 'def-rust', name: 'Rust', ring: 'Trial', quadrant: 'Langages & Frameworks' },
-		{ id: 'def-react', name: 'React', ring: 'Adopt', quadrant: 'Langages & Frameworks' },
-		{ id: 'def-go', name: 'Go', ring: 'Assess', quadrant: 'Langages & Frameworks' },
-		{ id: 'def-flutter', name: 'Flutter', ring: 'Trial', quadrant: 'Langages & Frameworks' },
-		{ id: 'def-angular', name: 'Angular', ring: 'Hold', quadrant: 'Langages & Frameworks' },
-		{ id: 'def-python', name: 'Python', ring: 'Adopt', quadrant: 'Langages & Frameworks' },
+		{ id: 'def-ts', name: 'TypeScript', ring: 'Adopter', quadrant: 'Langages & Frameworks' },
+		{ id: 'def-svelte', name: 'SvelteKit', ring: 'Adopter', quadrant: 'Langages & Frameworks' },
+		{ id: 'def-rust', name: 'Rust', ring: 'Expérimenter', quadrant: 'Langages & Frameworks' },
+		{ id: 'def-react', name: 'React', ring: 'Adopter', quadrant: 'Langages & Frameworks' },
+		{ id: 'def-go', name: 'Go', ring: 'Évaluer', quadrant: 'Langages & Frameworks' },
+		{ id: 'def-flutter', name: 'Flutter', ring: 'Expérimenter', quadrant: 'Langages & Frameworks' },
+		{ id: 'def-angular', name: 'Angular', ring: 'Mettre en pause', quadrant: 'Langages & Frameworks' },
+		{ id: 'def-python', name: 'Python', ring: 'Adopter', quadrant: 'Langages & Frameworks' },
 		// Outils
-		{ id: 'def-gh-actions', name: 'GitHub Actions', ring: 'Adopt', quadrant: 'Outils' },
-		{ id: 'def-docker', name: 'Docker', ring: 'Adopt', quadrant: 'Outils' },
-		{ id: 'def-biome', name: 'Biome', ring: 'Trial', quadrant: 'Outils' },
-		{ id: 'def-vitest', name: 'Vitest', ring: 'Adopt', quadrant: 'Outils' },
-		{ id: 'def-playwright', name: 'Playwright', ring: 'Trial', quadrant: 'Outils' },
-		{ id: 'def-terraform', name: 'Terraform', ring: 'Assess', quadrant: 'Outils' },
-		{ id: 'def-webpack', name: 'Webpack', ring: 'Hold', quadrant: 'Outils' },
+		{ id: 'def-gh-actions', name: 'GitHub Actions', ring: 'Adopter', quadrant: 'Outils' },
+		{ id: 'def-docker', name: 'Docker', ring: 'Adopter', quadrant: 'Outils' },
+		{ id: 'def-biome', name: 'Biome', ring: 'Expérimenter', quadrant: 'Outils' },
+		{ id: 'def-vitest', name: 'Vitest', ring: 'Adopter', quadrant: 'Outils' },
+		{ id: 'def-playwright', name: 'Playwright', ring: 'Expérimenter', quadrant: 'Outils' },
+		{ id: 'def-terraform', name: 'Terraform', ring: 'Évaluer', quadrant: 'Outils' },
+		{ id: 'def-webpack', name: 'Webpack', ring: 'Mettre en pause', quadrant: 'Outils' },
 		// Plateformes
-		{ id: 'def-vercel', name: 'Vercel', ring: 'Adopt', quadrant: 'Plateformes' },
-		{ id: 'def-aws', name: 'AWS', ring: 'Adopt', quadrant: 'Plateformes' },
-		{ id: 'def-fly', name: 'Fly.io', ring: 'Trial', quadrant: 'Plateformes' },
-		{ id: 'def-supabase', name: 'Supabase', ring: 'Assess', quadrant: 'Plateformes' },
-		{ id: 'def-heroku', name: 'Heroku', ring: 'Hold', quadrant: 'Plateformes' },
-		{ id: 'def-ghpages', name: 'GitHub Pages', ring: 'Adopt', quadrant: 'Plateformes' },
+		{ id: 'def-vercel', name: 'Vercel', ring: 'Adopter', quadrant: 'Plateformes' },
+		{ id: 'def-aws', name: 'AWS', ring: 'Adopter', quadrant: 'Plateformes' },
+		{ id: 'def-fly', name: 'Fly.io', ring: 'Expérimenter', quadrant: 'Plateformes' },
+		{ id: 'def-supabase', name: 'Supabase', ring: 'Évaluer', quadrant: 'Plateformes' },
+		{ id: 'def-heroku', name: 'Heroku', ring: 'Mettre en pause', quadrant: 'Plateformes' },
+		{ id: 'def-ghpages', name: 'GitHub Pages', ring: 'Adopter', quadrant: 'Plateformes' },
 		// Techniques
-		{ id: 'def-tdd', name: 'TDD', ring: 'Adopt', quadrant: 'Techniques' },
-		{ id: 'def-pair', name: 'Pair Programming', ring: 'Trial', quadrant: 'Techniques' },
-		{ id: 'def-adr', name: 'ADR', ring: 'Adopt', quadrant: 'Techniques' },
-		{ id: 'def-trunk', name: 'Trunk-based dev', ring: 'Trial', quadrant: 'Techniques' },
-		{ id: 'def-micro', name: 'Microservices', ring: 'Assess', quadrant: 'Techniques' },
-		{ id: 'def-mono', name: 'Monorepo', ring: 'Assess', quadrant: 'Techniques' },
-		{ id: 'def-scrum', name: 'Scrum', ring: 'Hold', quadrant: 'Techniques' }
+		{ id: 'def-tdd', name: 'TDD (dev. piloté par les tests)', ring: 'Adopter', quadrant: 'Techniques' },
+		{ id: 'def-pair', name: 'Programmation en binôme', ring: 'Expérimenter', quadrant: 'Techniques' },
+		{ id: 'def-adr', name: 'ADR (journal de décisions)', ring: 'Adopter', quadrant: 'Techniques' },
+		{ id: 'def-trunk', name: 'Trunk-based dev', ring: 'Expérimenter', quadrant: 'Techniques' },
+		{ id: 'def-micro', name: 'Microservices', ring: 'Évaluer', quadrant: 'Techniques' },
+		{ id: 'def-mono', name: 'Monorepo', ring: 'Évaluer', quadrant: 'Techniques' },
+		{ id: 'def-scrum', name: 'Scrum', ring: 'Mettre en pause', quadrant: 'Techniques' }
 	];
 
 	// SVG radar
@@ -81,7 +81,7 @@
 
 	let blips = $state<Blip[]>([]);
 	let newName = $state('');
-	let newRing = $state<Ring>('Assess');
+	let newRing = $state<Ring>('Évaluer');
 	let newQuadrant = $state<Quadrant>('Langages & Frameworks');
 	let copyFeedback = $state(false);
 	let hoveredBlip = $state<string | null>(null);
@@ -199,7 +199,7 @@
 		const today = new Date().toISOString().split('T')[0];
 		const grouped = blipsByQuadrant;
 		const lines = [
-			'# Tech Radar Personnel', '',
+			'# Cartographie des technologies', '',
 			`**Date :** ${today}`,
 			`**Technologies :** ${blips.length}`, ''
 		];
@@ -215,7 +215,7 @@
 				}
 			}
 		}
-		lines.push('---', `_Généré avec le Tech Radar Personnel — ${TOOL_URL}_`);
+		lines.push('---', `_Généré avec la Cartographie des technologies — ${TOOL_URL}_`);
 		const md = lines.join('\n');
 		try {
 			await navigator.clipboard.writeText(md);
@@ -325,7 +325,7 @@
 		<!-- Actions -->
 		<div class="tool-actions">
 			<button class="tool-btn tool-btn--primary" onclick={handleExport}>
-				{copyFeedback ? 'Copié !' : 'Exporter Markdown'}
+				{copyFeedback ? 'Copié !' : 'Copier le bilan (format texte)'}
 			</button>
 			<button class="tool-btn tool-btn--secondary" onclick={handleReset}>
 				Réinitialiser
@@ -341,7 +341,7 @@
 					viewBox="0 0 {SVG_SIZE} {SVG_SIZE}"
 					class="radar-svg"
 					role="img"
-					aria-label="Tech Radar"
+					aria-label="Cartographie des technologies"
 				>
 					<defs>
 						<radialGradient id="radarGlow" cx="50%" cy="50%" r="50%">

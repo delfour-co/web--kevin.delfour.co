@@ -34,7 +34,7 @@
 		{
 			id: 'decision',
 			name: 'Décision',
-			description: 'Qualité des arbitrages techniques, gouvernance, gestion des trade-offs.',
+			description: 'Qualité des arbitrages techniques, gouvernance, gestion des compromis entre options.',
 			guidance: "Ce que j'ai observé : les meilleures décisions techniques ne sont pas toujours les plus brillantes. Elles sont souvent celles qui ont été documentées, partagées et réversibles. Un cadre possible : mettre en place un format léger (ADR, RFC) pour rendre les arbitrages traçables, sans alourdir le quotidien."
 		},
 		{
@@ -52,13 +52,13 @@
 		{
 			id: 'pratiques',
 			name: 'Pratiques',
-			description: 'Processus de développement, CI/CD, code review, testing.',
-			guidance: "Avec le recul, les pratiques de développement les plus durables sont celles que l'équipe s'approprie, pas celles qu'on impose. Un processus adopté à 80 % vaut mieux qu'un processus parfait ignoré. Un cadre possible : partir de ce qui frotte au quotidien (temps de review, flakiness des tests) et traiter un irritant à la fois."
+			description: 'Processus de développement, intégration et déploiement continus (CI/CD), revue de code, tests.',
+			guidance: "Avec le recul, les pratiques de développement les plus durables sont celles que l'équipe s'approprie, pas celles qu'on impose. Un processus adopté à 80 % vaut mieux qu'un processus parfait ignoré. Un cadre possible : partir de ce qui frotte au quotidien (temps de revue de code, instabilité des tests) et traiter un irritant à la fois."
 		},
 		{
 			id: 'parcours',
 			name: 'Parcours',
-			description: 'Conscience de sa trajectoire, mentorat, apprentissage continu.',
+			description: 'Conscience de sa trajectoire, accompagnement des pairs, apprentissage continu.',
 			guidance: "Ce que j'ai observé : les CTO qui durent sont souvent ceux qui ont appris à nommer ce qu'ils ne savent pas, et à chercher des pairs plutôt que des réponses. La trajectoire se clarifie rarement seul. Un cadre possible : trouver un espace d'échange régulier avec d'autres leaders tech, sans enjeu hiérarchique."
 		}
 	];
@@ -265,7 +265,7 @@
 
 			<div class="tool-actions">
 				<button class="tool-btn tool-btn--primary" onclick={handleExport}>
-					{copyFeedback ? 'Copié dans le presse-papier' : 'Exporter en Markdown'}
+					{copyFeedback ? 'Copié dans le presse-papier' : 'Copier le bilan (format texte)'}
 				</button>
 				<button class="tool-btn tool-btn--secondary" onclick={handleReset}>Réinitialiser</button>
 			</div>

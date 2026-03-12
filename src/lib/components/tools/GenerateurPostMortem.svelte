@@ -195,11 +195,11 @@
 
 	function generateMarkdown(): string {
 		const lines: string[] = [
-			`# Post-mortem : ${title || 'Sans titre'}`,
+			`# Retour d’expérience (post-mortem) : ${title || 'Sans titre'}`,
 			'',
 			`**Date de l'incident :** ${incidentDate}`,
 			`**Durée :** ${duration || '_Non renseigné_'}`,
-			`**Sévérité :** ${severity}`,
+			`**Gravité :** ${severity}`,
 			`**Auteur :** ${author || '_Non renseigné_'}`
 		];
 
@@ -224,7 +224,7 @@
 		lines.push('', '## Impact', '');
 		lines.push(`**Utilisateurs impactés :** ${usersImpacted || '_Non renseigné_'}`);
 		lines.push(`**Services impactés :** ${servicesImpacted || '_Non renseigné_'}`);
-		lines.push('', `**Impact business :**`, '', businessImpact || '_Non renseigné_');
+		lines.push('', `**Impact métier :**`, '', businessImpact || '_Non renseigné_');
 		if (slaViolated.trim()) {
 			lines.push('', `**SLA violés :** ${slaViolated}`);
 		}
@@ -317,6 +317,7 @@
 			<!-- Metadata -->
 			<fieldset class="section-card glass-card">
 				<legend>Informations générales</legend>
+				<p class="form-hint">Un post-mortem (retour d’expérience après incident) aide à comprendre ce qui s’est passé sans chercher de coupable.</p>
 
 				<div class="form-group">
 					<label for="pm-title">Titre de l'incident</label>
@@ -343,7 +344,7 @@
 						/>
 					</div>
 					<div class="form-group">
-						<label for="pm-severity">Sévérité</label>
+						<label for="pm-severity" title="Le niveau de gravité de l’incident selon son impact">Gravité</label>
 						<select id="pm-severity" bind:value={severity}>
 							{#each SEVERITY_OPTIONS as s}
 								<option value={s}>{s}</option>
@@ -354,7 +355,7 @@
 
 				<div class="form-row form-row--two">
 					<div class="form-group">
-						<label for="pm-author">Auteur du post-mortem</label>
+						<label for="pm-author">Auteur du retour d’expérience</label>
 						<input
 							id="pm-author"
 							type="text"
@@ -363,7 +364,7 @@
 						/>
 					</div>
 					<div class="form-group">
-						<label for="pm-participants">Participants</label>
+						<label for="pm-participants" title="Les parties prenantes impliquées dans l’analyse de l’incident">Participants</label>
 						<input
 							id="pm-participants"
 							type="text"
@@ -407,7 +408,7 @@
 									id="tl-event-{i}"
 									bind:value={entry.event}
 									rows="2"
-									placeholder="Ex: Alerte PagerDuty — latence API > 5s"
+									placeholder="Ex: Alerte monitoring — latence API > 5s"
 								></textarea>
 							</div>
 						</div>
@@ -447,7 +448,7 @@
 				</div>
 
 				<div class="form-group">
-					<label for="pm-business">Impact business</label>
+					<label for="pm-business">Impact métier</label>
 					<textarea
 						id="pm-business"
 						bind:value={businessImpact}
@@ -457,7 +458,7 @@
 				</div>
 
 				<div class="form-group">
-					<label for="pm-sla">SLA violés <span class="optional">(optionnel)</span></label>
+					<label for="pm-sla" title="SLA : accord de niveau de service, un engagement de disponibilité envers les utilisateurs">SLA (engagements de service) non respectés <span class="optional">(optionnel)</span></label>
 					<input
 						id="pm-sla"
 						type="text"
@@ -471,7 +472,7 @@
 			<fieldset class="section-card glass-card">
 				<legend>Analyse des causes</legend>
 				<p class="form-hint">
-					Distinguer cause immédiate et cause profonde, c'est ce qui permet de corriger
+					Distinguer la cause immédiate (ce qui a déclenché l’incident) et la cause profonde (ce qui a permis que ça arrive), c'est ce qui permet de corriger
 					durablement. Le but n'est pas de trouver un coupable.
 				</p>
 
@@ -486,7 +487,7 @@
 				</div>
 
 				<div class="form-group">
-					<label for="pm-root">Cause profonde</label>
+					<label for="pm-root" title="La cause racine : le problème structurel qui a rendu l’incident possible">Cause profonde (cause racine)</label>
 					<textarea
 						id="pm-root"
 						bind:value={rootCause}
@@ -503,7 +504,7 @@
 						id="pm-contributing"
 						bind:value={contributingFactors}
 						rows="3"
-						placeholder="Ex: Pression sur le delivery, équipe réduite, pas de staging environment"
+						placeholder="Ex: Pression sur la livraison, équipe réduite, pas de staging environment"
 					></textarea>
 				</div>
 			</fieldset>
@@ -512,7 +513,7 @@
 			<fieldset class="section-card glass-card">
 				<legend>Actions correctives</legend>
 				<p class="form-hint">
-					Des actions concrètes, avec un responsable et un horizon. Ce qui n'est pas
+					Des actions à mener concrètes, avec un responsable et un horizon. Ce qui n'est pas
 					assigné ne sera pas fait.
 				</p>
 
@@ -594,7 +595,7 @@
 			<!-- Export actions -->
 			<div class="tool-actions">
 				<button class="tool-btn tool-btn--primary" onclick={handleExport}>
-					{copyFeedback ? 'Copié dans le presse-papier' : 'Exporter en Markdown'}
+					{copyFeedback ? 'Copié dans le presse-papier' : 'Copier le document (format texte)'}
 				</button>
 				<button class="tool-btn tool-btn--secondary" onclick={handleReset}>
 					Réinitialiser

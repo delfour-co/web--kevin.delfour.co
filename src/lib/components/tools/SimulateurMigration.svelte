@@ -51,13 +51,13 @@
 	]);
 
 	let checklist = $state<ChecklistItem[]>([
-		{ id: 'chk-1', label: 'Tests de non-régression prêts', checked: false },
-		{ id: 'chk-2', label: 'Plan de rollback documenté', checked: false },
-		{ id: 'chk-3', label: 'Communication équipe faite', checked: false },
-		{ id: 'chk-4', label: 'Monitoring en place', checked: false },
-		{ id: 'chk-5', label: 'Backup des données fait', checked: false },
-		{ id: 'chk-6', label: 'Feature flags configurés', checked: false },
-		{ id: 'chk-7', label: 'Environnement de staging validé', checked: false }
+		{ id: 'chk-1', label: 'Tests de verification prets', checked: false },
+		{ id: 'chk-2', label: 'Procedure de retour arriere documentee', checked: false },
+		{ id: 'chk-3', label: 'Equipe informee du plan', checked: false },
+		{ id: 'chk-4', label: 'Surveillance et alertes en place', checked: false },
+		{ id: 'chk-5', label: 'Sauvegarde des donnees faite', checked: false },
+		{ id: 'chk-6', label: 'Activations progressives configurees', checked: false },
+		{ id: 'chk-7', label: 'Environnement de pre-production valide', checked: false }
 	]);
 
 	let copyFeedback = $state(false);
@@ -182,13 +182,13 @@
 			{ id: genId(), description: '', probabilite: 'Moyenne', impact: 'Moyen', mitigation: '' }
 		];
 		checklist = [
-			{ id: 'chk-1', label: 'Tests de non-régression prêts', checked: false },
-			{ id: 'chk-2', label: 'Plan de rollback documenté', checked: false },
-			{ id: 'chk-3', label: 'Communication équipe faite', checked: false },
-			{ id: 'chk-4', label: 'Monitoring en place', checked: false },
-			{ id: 'chk-5', label: 'Backup des données fait', checked: false },
-			{ id: 'chk-6', label: 'Feature flags configurés', checked: false },
-			{ id: 'chk-7', label: 'Environnement de staging validé', checked: false }
+			{ id: 'chk-1', label: 'Tests de verification prets', checked: false },
+			{ id: 'chk-2', label: 'Procedure de retour arriere documentee', checked: false },
+			{ id: 'chk-3', label: 'Equipe informee du plan', checked: false },
+			{ id: 'chk-4', label: 'Surveillance et alertes en place', checked: false },
+			{ id: 'chk-5', label: 'Sauvegarde des donnees faite', checked: false },
+			{ id: 'chk-6', label: 'Activations progressives configurees', checked: false },
+			{ id: 'chk-7', label: 'Environnement de pre-production valide', checked: false }
 		];
 		try {
 			localStorage.removeItem(STORAGE_KEY);
@@ -326,7 +326,7 @@
 			<!-- Phases -->
 			<fieldset class="glass-card">
 				<legend>Phases</legend>
-				<p class="form-hint">Découpe la migration en phases séquentielles. Au moins une phase.</p>
+				<p class="form-hint">Decoupe la migration en etapes successives. Chaque phase a sa propre strategie et sa duree estimee.</p>
 
 				{#each phases as phase, i}
 					<div class="phase-card">
@@ -346,22 +346,23 @@
 								<input id="phase-duree-{i}" type="number" min="1" bind:value={phase.duree} />
 							</div>
 							<div class="form-group">
-								<label for="phase-strategie-{i}">Stratégie</label>
-								<select id="phase-strategie-{i}" bind:value={phase.strategie}>
-									{#each STRATEGIES as s}
-										<option value={s}>{s}</option>
-									{/each}
+								<label for="phase-strategie-{i}">Strategie</label>
+								<select id="phase-strategie-{i}" bind:value={phase.strategie} title="Big bang : tout migrer d'un coup. Progressive : par petits morceaux. Strangler fig : remplacer piece par piece en parallele. Blue-green : deux systemes en parallele, bascule instantanee.">
+									<option value="Big bang">Big bang (tout d'un coup)</option>
+									<option value="Progressive">Progressive (par morceaux)</option>
+									<option value="Strangler fig">Strangler fig (remplacement progressif)</option>
+									<option value="Blue-green">Blue-green (bascule instantanee)</option>
 								</select>
 							</div>
 						</div>
 						<div class="checkbox-row">
-							<label class="checkbox-label">
+							<label class="checkbox-label" title="Les feature flags permettent d'activer ou desactiver une fonctionnalite sans redeployer le code.">
 								<input type="checkbox" bind:checked={phase.featureFlags} />
-								<span>Feature flags requis</span>
+								<span>Activation progressive necessaire</span>
 							</label>
-							<label class="checkbox-label">
+							<label class="checkbox-label" title="Possibilite de revenir a l'etat precedent en cas de probleme.">
 								<input type="checkbox" bind:checked={phase.rollback} />
-								<span>Rollback possible</span>
+								<span>Retour arriere possible</span>
 							</label>
 						</div>
 					</div>
@@ -373,7 +374,7 @@
 			<!-- Risks -->
 			<fieldset class="glass-card">
 				<legend>Risques</legend>
-				<p class="form-hint">Identifie les risques potentiels et les stratégies de mitigation.</p>
+				<p class="form-hint">Identifie ce qui pourrait mal tourner et comment s'en premunir.</p>
 
 				{#each risks as risk, i}
 					<div class="risk-card">
@@ -406,8 +407,8 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="risk-mit-{i}">Mitigation prévue</label>
-							<textarea id="risk-mit-{i}" bind:value={risk.mitigation} rows="2" placeholder="Ex: Dry-run complet sur staging avant migration production"></textarea>
+							<label for="risk-mit-{i}">Comment s'en premunir</label>
+							<textarea id="risk-mit-{i}" bind:value={risk.mitigation} rows="2" placeholder="Ex: Faire un test complet sur un environnement de pre-production avant la migration reelle"></textarea>
 						</div>
 					</div>
 				{/each}
@@ -417,8 +418,8 @@
 
 			<!-- Checklist -->
 			<fieldset class="glass-card">
-				<legend>Checklist pre-migration</legend>
-				<p class="form-hint">Un cadre pour ne rien oublier avant le lancement.</p>
+				<legend>Checklist avant migration</legend>
+				<p class="form-hint">Les points essentiels a verifier avant de lancer la migration. Plus tu en coches, plus tu es pret.</p>
 
 				<div class="checklist-grid">
 					{#each checklist as item}
@@ -445,9 +446,9 @@
 
 			<!-- Go/No-go -->
 			<div class="go-nogo" style="border-color: {goNoGo.color}">
-				<span class="go-nogo-label">Indicateur Go / No-go</span>
+				<span class="go-nogo-label">Pret a lancer ?</span>
 				<span class="go-nogo-value" style="color: {goNoGo.color}">{goNoGo.label}</span>
-				<span class="go-nogo-score">{readinessScore}% prêt</span>
+				<span class="go-nogo-score">{readinessScore}% pret</span>
 			</div>
 
 			<!-- Timeline -->
@@ -528,7 +529,7 @@
 
 			<!-- Readiness -->
 			<div class="result-section">
-				<div class="result-section-title">Readiness</div>
+				<div class="result-section-title">Niveau de preparation</div>
 				<div class="readiness-bar-track">
 					<div
 						class="readiness-bar-fill"
@@ -549,10 +550,10 @@
 					<span class="pill">{risks.filter((r) => r.description.trim()).length} risque{risks.filter((r) => r.description.trim()).length > 1 ? 's' : ''}</span>
 					<span class="pill">{totalDays} jours</span>
 					{#if phases.some((p) => p.featureFlags)}
-						<span class="badge badge--accent">Feature flags</span>
+						<span class="badge badge--accent">Activation progressive</span>
 					{/if}
 					{#if phases.every((p) => p.rollback)}
-						<span class="badge badge--green">Rollback OK</span>
+						<span class="badge badge--green">Retour arriere OK</span>
 					{/if}
 				</div>
 			</div>

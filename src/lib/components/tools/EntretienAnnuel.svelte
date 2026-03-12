@@ -26,7 +26,7 @@
 			id: 'contribution',
 			name: "Contribution a l'equipe",
 			label: 'Contribution',
-			hint: "Ce que j'observe souvent : les code reviews constructives, le partage de connaissances, l'aide aux collegues en difficulte."
+			hint: "Ce que j'observe souvent : les revues de code constructives, le partage de connaissances, l'aide aux collegues en difficulte."
 		},
 		{
 			id: 'engagements',
@@ -307,7 +307,7 @@
 		}
 
 		if (feedbackPairs.trim()) {
-			lines.push('## Feedback des pairs', '', feedbackPairs.trim(), '');
+			lines.push('## Retours des pairs', '', feedbackPairs.trim(), '');
 		}
 
 		const validObjPrec = objectifsPrecedents.filter((o) => o.label.trim());
@@ -462,7 +462,7 @@
 				<div class="form-group">
 					<label for="ea-realisations">Realisations cles</label>
 					<p class="form-hint">Ce que j'observe souvent : les realisations les plus significatives ne sont pas toujours les plus visibles. Pense aux contributions silencieuses.</p>
-					<textarea id="ea-realisations" bind:value={realisations} rows="3" placeholder="Migration du service de paiement, mentorat d'un junior, reduction de 40% du temps de CI..."></textarea>
+					<textarea id="ea-realisations" bind:value={realisations} rows="3" placeholder="Migration du service de paiement, accompagnement d'un junior, reduction de 40% du temps d'integration continue..."></textarea>
 				</div>
 
 				<div class="form-group">
@@ -472,8 +472,8 @@
 				</div>
 
 				<div class="form-group">
-					<label for="ea-feedback-pairs">Feedback des pairs <span class="optional">(optionnel)</span></label>
-					<textarea id="ea-feedback-pairs" bind:value={feedbackPairs} rows="3" placeholder="Retours recueillis aupres des collegues, du tech lead, du product manager..."></textarea>
+					<label for="ea-feedback-pairs">Retours des pairs <span class="optional">(optionnel)</span></label>
+					<textarea id="ea-feedback-pairs" bind:value={feedbackPairs} rows="3" placeholder="Retours recueillis aupres des collegues, du responsable technique, du chef de produit..."></textarea>
 				</div>
 			</fieldset>
 
@@ -574,14 +574,14 @@
 
 				<div class="form-group">
 					<label for="ea-formations">Formations ou accompagnements identifies</label>
-					<textarea id="ea-formations" bind:value={formations} rows="3" placeholder="Formation Docker avancee, coaching technique, conference DDD Europe..."></textarea>
+					<textarea id="ea-formations" bind:value={formations} rows="3" placeholder="Formation Docker avancee, accompagnement technique, conference DDD Europe..."></textarea>
 				</div>
 			</fieldset>
 
 			<!-- Actions -->
 			<div class="tool-actions">
 				<button class="tool-btn tool-btn--primary" onclick={handleExport}>
-					{copyFeedback ? 'Copie dans le presse-papier' : 'Exporter en Markdown'}
+					{copyFeedback ? 'Copie dans le presse-papier' : 'Copier le bilan (format texte)'}
 				</button>
 				<button class="tool-btn tool-btn--secondary" onclick={handleReset}>Reinitialiser</button>
 			</div>

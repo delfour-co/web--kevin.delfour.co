@@ -26,11 +26,11 @@
 	}
 
 	const contextes = [
-		{ value: 'onboarding', label: 'Onboarding' },
-		{ value: 'croisiere', label: 'Croisiere' },
+		{ value: 'onboarding', label: 'Int\u00e9gration' },
+		{ value: 'croisiere', label: 'Croisi\u00e8re' },
 		{ value: 'tension', label: 'Tension' },
 		{ value: 'transition', label: 'Transition' },
-		{ value: 'depart', label: 'Depart' }
+		{ value: 'depart', label: 'D\u00e9part' }
 	];
 
 	const frequences = [
@@ -45,7 +45,7 @@
 			{
 				id: 'bien-etre',
 				label: 'Bien-etre',
-				hint: "Ce que j'observe souvent : les signaux faibles sur le bien-etre sont ceux qu'on capte le moins en reunion d'equipe. Le 1:1 est parfois le seul espace ou ils emergent.",
+				hint: "Ce que j'observe souvent : les signaux faibles sur le bien-\u00eatre sont ceux qu'on capte le moins en r\u00e9union d'\u00e9quipe. L'entretien individuel est parfois le seul espace o\u00f9 ils \u00e9mergent.",
 				items: [
 					{ id: 'be-charge', label: 'Charge de travail', checked: false },
 					{ id: 'be-motivation', label: 'Motivation', checked: false },
@@ -56,18 +56,18 @@
 			{
 				id: 'progression',
 				label: 'Progression',
-				hint: "Ce que j'observe souvent : la progression se discute rarement spontanement. Sans cadre explicite, elle reste implicite -- et les frustrations s'accumulent en silence.",
+				hint: "Ce que j'observe souvent : la progression se discute rarement spontan\u00e9ment. Sans cadre explicite, elle reste implicite \u2014 et les frustrations s'accumulent en silence.",
 				items: [
 					{ id: 'pr-objectifs', label: 'Objectifs en cours', checked: false },
 					{ id: 'pr-competences', label: 'Competences a developper', checked: false },
-					{ id: 'pr-feedback', label: 'Feedback recu/donne', checked: false },
+					{ id: 'pr-feedback', label: 'Retours re\u00e7us/donn\u00e9s', checked: false },
 					{ id: 'pr-carriere', label: 'Prochaine etape de carriere', checked: false }
 				]
 			},
 			{
 				id: 'operationnel',
 				label: 'Operationnel',
-				hint: "Ce que j'observe souvent : les blocages operationnels sont souvent les plus faciles a debloquer -- a condition de les nommer. Le 1:1 sert aussi a ca.",
+				hint: "Ce que j'observe souvent : les blocages op\u00e9rationnels sont souvent les plus faciles \u00e0 d\u00e9bloquer \u2014 \u00e0 condition de les nommer. L'entretien individuel sert aussi \u00e0 \u00e7a.",
 				items: [
 					{ id: 'op-blocages', label: 'Blocages actuels', checked: false },
 					{ id: 'op-support', label: 'Besoin de support', checked: false },
@@ -83,7 +83,7 @@
 					{ id: 'al-vision', label: 'Vision produit/tech', checked: false },
 					{ id: 'al-priorites', label: "Priorites de l'equipe", checked: false },
 					{ id: 'al-decisions', label: 'Decisions a prendre', checked: false },
-					{ id: 'al-feedbacks', label: 'Feedbacks a remonter', checked: false }
+					{ id: 'al-feedbacks', label: 'Retours \u00e0 remonter', checked: false }
 				]
 			}
 		];
@@ -232,7 +232,7 @@
 		const frequenceLabel = frequences.find((f) => f.value === frequence)?.label || frequence;
 
 		const lines: string[] = [
-			'# Cadrage 1:1',
+			'# Cadrage 1:1 (entretien individuel)',
 			'',
 			`**Date :** ${today}`,
 			`**Collaborateur :** ${nom || '(non renseigne)'}`,
@@ -313,7 +313,8 @@
 		<div class="tool-form">
 			<!-- Preparation -->
 			<section class="form-section">
-				<h2 class="section-title">Preparation</h2>
+				<h2 class="section-title">Pr\u00e9paration</h2>
+				<p class="section-subtitle">Cadrage de l\u2019entretien individuel (1:1) avec un collaborateur.</p>
 
 				<div class="field-group">
 					<label class="field-label" for="oo-nom">Nom du collaborateur</label>
@@ -352,7 +353,7 @@
 						id="oo-derniere-action"
 						class="field-textarea"
 						rows="2"
-						placeholder="Ce qui s'est passe depuis le dernier 1:1..."
+						placeholder="Ce qui s'est pass\u00e9 depuis le dernier entretien..."
 						bind:value={derniereAction}
 					></textarea>
 				</div>
@@ -461,7 +462,7 @@
 			<!-- Buttons -->
 			<div class="tool-actions">
 				<button class="tool-btn tool-btn--primary" onclick={handleExport}>
-					{copyFeedback ? 'Copie dans le presse-papier' : 'Exporter en Markdown'}
+					{copyFeedback ? 'Copi\u00e9 dans le presse-papier' : 'Copier le bilan (format texte)'}
 				</button>
 				<button class="tool-btn tool-btn--secondary" onclick={handleReset}>
 					Reinitialiser
@@ -567,6 +568,13 @@
 		margin: 0;
 		padding-bottom: 8px;
 		border-bottom: 1px solid var(--border);
+	}
+
+	.section-subtitle {
+		font-size: 13px;
+		color: var(--secondary);
+		margin: 4px 0 0 0;
+		line-height: 1.4;
 	}
 
 	/* Fields */

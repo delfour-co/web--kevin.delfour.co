@@ -46,13 +46,13 @@
 		},
 		{
 			id: 'onboarding',
-			label: 'Onboarding et montée en compétence',
-			description: 'Formation, pair programming, mentorat',
+			label: 'Intégration et montée en compétence',
+			description: 'Formation, programmation en binôme, mentorat',
 			value: 5
 		},
 		{
 			id: 'slack',
-			label: 'Slack time / exploration',
+			label: 'Temps libre / exploration',
 			description: 'Veille, prototypage, dette exploratoire',
 			value: 5
 		}
@@ -158,7 +158,7 @@
 		const today = new Date().toISOString().split('T')[0];
 
 		const lines = [
-			'# Capacité équipe — Sprint',
+			'# Capacité équipe — Itération',
 			'',
 			`**Date :** ${today}`,
 			'',
@@ -258,7 +258,7 @@
 				</div>
 
 				<div class="input-group">
-					<label for="sprint-days">Durée du sprint</label>
+					<label for="sprint-days" title="Un sprint (ou itération) est une période de travail à durée fixe, souvent 1 à 3 semaines">Durée de l’itération (sprint)</label>
 					<div class="input-row">
 						<input
 							id="sprint-days"
@@ -286,7 +286,7 @@
 				</div>
 
 				<div class="input-group">
-					<label for="velocity">Vélocité moyenne</label>
+					<label for="velocity" title="La vélocité mesure le rythme de livraison moyen de l’équipe">Vélocité (rythme de livraison)</label>
 					<div class="input-row">
 						<input
 							id="velocity"
@@ -296,7 +296,7 @@
 							step="0.5"
 							bind:value={velocityPerPersonDay}
 						/>
-						<span class="input-unit">SP / personne / jour</span>
+						<span class="input-unit" title="Points d’effort : une unité relative pour estimer la complexité des tâches">points / personne / jour</span>
 					</div>
 				</div>
 			</fieldset>
@@ -336,7 +336,7 @@
 			<!-- Actions -->
 			<div class="tool-actions">
 				<button class="tool-btn tool-btn--primary" onclick={handleExport}>
-					{copyFeedback ? 'Copié dans le presse-papier' : 'Exporter en Markdown'}
+					{copyFeedback ? 'Copié dans le presse-papier' : 'Copier le bilan (format texte)'}
 				</button>
 				<button class="tool-btn tool-btn--secondary" onclick={handleReset}>
 					Réinitialiser
@@ -360,8 +360,8 @@
 					<span class="metric-pct">{realPct}% du théorique</span>
 				</div>
 				<div class="metric-card">
-					<span class="metric-label">Story points estimés</span>
-					<span class="metric-value">{estimatedStoryPoints}<span class="metric-unit">SP</span></span>
+					<span class="metric-label" title="Les points d’effort estiment la complexité relative des tâches, pas le temps exact">Points d’effort estimés</span>
+					<span class="metric-value">{estimatedStoryPoints}<span class="metric-unit">pts</span></span>
 				</div>
 				<div class="metric-card">
 					<span class="metric-label">Jours-homme effectifs</span>

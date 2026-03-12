@@ -144,6 +144,7 @@
 		<div class="form-row form-row--two">
 			<div class="form-group">
 				<label for="adr-title">Titre de la décision</label>
+				<p class="form-hint">Un ADR (Architecture Decision Record) est une trace écrite d’une décision technique importante.</p>
 				<input id="adr-title" type="text" bind:value={title} placeholder="Ex: Adopter PostgreSQL comme base principale" />
 			</div>
 			<div class="form-group form-group--small">
@@ -155,6 +156,7 @@
 		<div class="form-row form-row--two">
 			<div class="form-group">
 				<label for="adr-status">Statut</label>
+				<p class="form-hint">L’état actuel de cette décision dans son cycle de vie.</p>
 				<select id="adr-status" bind:value={status}>
 					{#each STATUS_OPTIONS as s}
 						<option value={s}>{s}</option>
@@ -163,6 +165,7 @@
 			</div>
 			<div class="form-group">
 				<label for="adr-participants">Participants</label>
+				<p class="form-hint">Les personnes impliquées dans cette décision.</p>
 				<input id="adr-participants" type="text" bind:value={participants} placeholder="Ex: CTO, Lead Dev, Architecte" />
 			</div>
 		</div>
@@ -219,7 +222,7 @@
 
 		<div class="tool-actions">
 			<button class="tool-btn tool-btn--primary" onclick={handleExport}>
-				{copyFeedback ? 'Copié dans le presse-papier' : 'Exporter en Markdown'}
+				{copyFeedback ? 'Copié dans le presse-papier' : 'Copier le document (format texte)'}
 			</button>
 			<button class="tool-btn tool-btn--secondary" onclick={handleReset}>Réinitialiser</button>
 		</div>

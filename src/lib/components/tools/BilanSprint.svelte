@@ -27,10 +27,10 @@
 
 	const metriquesConfig = [
 		{ id: 'collaboration', label: 'Collaboration equipe' },
-		{ id: 'specs', label: 'Clarte des specs' },
+		{ id: 'specs', label: 'Clarte des specifications' },
 		{ id: 'technique', label: 'Qualite technique' },
 		{ id: 'communication', label: 'Communication avec le produit' },
-		{ id: 'velocite', label: 'Velocite ressentie' }
+		{ id: 'velocite', label: 'Rythme de livraison ressenti' }
 	];
 
 	// Context
@@ -298,12 +298,12 @@
 			lines.push(`**Objectif :** ${objectif.trim()}`, '');
 		}
 
-		lines.push('## Delivery', '');
-		lines.push(`- Stories prevues : ${storiesPrevues}`);
-		lines.push(`- Stories livrees : ${storiesLivrees}`);
-		lines.push(`- Stories reportees : ${storiesReportees}`);
+		lines.push('## Livraison', '');
+		lines.push(`- Taches prevues : ${storiesPrevues}`);
+		lines.push(`- Taches livrees : ${storiesLivrees}`);
+		lines.push(`- Taches reportees : ${storiesReportees}`);
 		lines.push(`- Bugs critiques en prod : ${bugsCritiques}`);
-		lines.push(`- **Taux de completion : ${tauxCompletion} %**`);
+		lines.push(`- **Taux d'avancement : ${tauxCompletion} %**`);
 		lines.push('');
 
 		lines.push('## Retrospective', '');
@@ -317,7 +317,7 @@
 			lines.push('');
 		}
 
-		lines.push('## Metriques qualite', '');
+		lines.push('## Indicateurs de qualite', '');
 		for (const m of metriquesConfig) {
 			lines.push(`- ${m.label} : ${metriques[m.id]}/5`);
 		}
@@ -386,7 +386,7 @@
 
 				<div class="field-row">
 					<div class="field-group">
-						<label class="field-label" for="bs-nom">Numero / nom du sprint</label>
+						<label class="field-label" for="bs-nom" title="Sprint : cycle de travail, generalement de 2 semaines">Numero / nom du cycle (sprint)</label>
 						<input
 							id="bs-nom"
 							type="text"
@@ -432,11 +432,11 @@
 
 			<!-- Bilan delivery -->
 			<section class="form-section">
-				<h2 class="section-title">Bilan delivery</h2>
+				<h2 class="section-title">Bilan de livraison</h2>
 
 				<div class="field-row field-row--4">
 					<div class="field-group">
-						<label class="field-label" for="bs-prevues">Stories prevues</label>
+						<label class="field-label" for="bs-prevues" title="Nombre de recits utilisateur (user stories) prevus pour ce cycle">Taches prevues</label>
 						<input
 							id="bs-prevues"
 							type="number"
@@ -446,7 +446,7 @@
 						/>
 					</div>
 					<div class="field-group">
-						<label class="field-label" for="bs-livrees">Stories livrees</label>
+						<label class="field-label" for="bs-livrees">Taches livrees</label>
 						<input
 							id="bs-livrees"
 							type="number"
@@ -456,7 +456,7 @@
 						/>
 					</div>
 					<div class="field-group">
-						<label class="field-label" for="bs-reportees">Stories reportees</label>
+						<label class="field-label" for="bs-reportees">Taches reportees</label>
 						<input
 							id="bs-reportees"
 							type="number"
@@ -478,7 +478,7 @@
 				</div>
 
 				<div class="delivery-completion">
-					<span class="delivery-completion-label">Taux de completion</span>
+					<span class="delivery-completion-label">Taux d'avancement</span>
 					<div class="delivery-bar-track">
 						<div
 							class="delivery-bar-fill"
@@ -494,7 +494,7 @@
 
 			<!-- Retrospective -->
 			<section class="form-section">
-				<h2 class="section-title">Retrospective</h2>
+				<h2 class="section-title" title="Temps de bilan collectif pour identifier ce qui a fonctionne et ce qui peut etre ameliore">Retrospective (bilan d'equipe)</h2>
 
 				<div class="retro-grid">
 					{#each quadrants as quadrant}
@@ -620,8 +620,8 @@
 
 			<!-- Metriques qualite -->
 			<section class="form-section">
-				<h2 class="section-title">Metriques qualite</h2>
-				<p class="section-hint">Evaluation subjective de l'equipe sur ce sprint. Un repere, pas un verdict.</p>
+				<h2 class="section-title">Indicateurs de qualite</h2>
+				<p class="section-hint">Evaluation subjective de l'equipe sur ce cycle. Un repere, pas un verdict.</p>
 
 				{#each metriquesConfig as metrique}
 					<div class="metrique-row">
@@ -643,7 +643,7 @@
 			<!-- Buttons -->
 			<div class="tool-actions">
 				<button class="tool-btn tool-btn--primary" onclick={handleExport}>
-					{copyFeedback ? 'Copie dans le presse-papier' : 'Exporter en Markdown'}
+					{copyFeedback ? 'Copie dans le presse-papier' : 'Copier le bilan (format texte)'}
 				</button>
 				<button class="tool-btn tool-btn--secondary" onclick={handleReset}>
 					Reinitialiser
@@ -663,13 +663,13 @@
 
 			<!-- Delivery score -->
 			<div class="result-section">
-				<div class="result-section-title">Delivery</div>
+				<div class="result-section-title">Livraison</div>
 				<div class="result-big-number">
 					<span class="result-big-value">{tauxCompletion}</span>
 					<span class="result-big-unit">%</span>
 				</div>
 				<div class="result-delivery-details">
-					<span>{storiesLivrees}/{storiesPrevues} stories</span>
+					<span>{storiesLivrees}/{storiesPrevues} taches</span>
 					{#if storiesReportees > 0}
 						<span>{storiesReportees} reportee{storiesReportees > 1 ? 's' : ''}</span>
 					{/if}
@@ -681,7 +681,7 @@
 
 			<!-- Quality radar -->
 			<div class="result-section">
-				<div class="result-section-title">Qualite ({moyenneMetriques}/5)</div>
+				<div class="result-section-title">Indicateurs ({moyenneMetriques}/5)</div>
 				<div class="radar-container">
 					<svg viewBox="0 0 200 200" class="radar-svg">
 						<!-- Grid -->

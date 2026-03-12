@@ -6,14 +6,14 @@
 	const TOOL_URL = 'https://kevin.delfour.co/outils/planification-staffing/';
 
 	type Role = 'dev' | 'senior' | 'lead' | 'staff' | 'manager';
-	type AttritionRisk = 'faible' | 'moyen' | 'élevé';
+	type DepartureRisk = 'faible' | 'moyen' | 'élevé';
 
 	interface TeamMember {
 		id: string;
 		name: string;
 		role: Role;
 		startDate: string;
-		attritionRisk: AttritionRisk;
+		attritionRisk: DepartureRisk;
 	}
 
 	interface Project {
@@ -32,13 +32,13 @@
 		{ value: 'manager', label: 'Manager' }
 	];
 
-	const RISK_LABELS: Record<AttritionRisk, string> = {
+	const RISK_LABELS: Record<DepartureRisk, string> = {
 		faible: 'Faible',
 		moyen: 'Moyen',
 		'élevé': 'Élevé'
 	};
 
-	const RISK_ATTRITION_RATE: Record<AttritionRisk, number> = {
+	const RISK_DEPARTURE_RATE: Record<DepartureRisk, number> = {
 		faible: 0.05,
 		moyen: 0.15,
 		'élevé': 0.35
@@ -139,11 +139,11 @@
 		return gaps.filter((g) => g.deficit);
 	});
 
-	// Attrition projection based on individual risk
-	const attritionProjection = $derived.by(() => {
+	// Departure projection based on individual risk
+	const departureProjection = $derived.by(() => {
 		let expectedDepartures = 0;
 		for (const m of team) {
-			expectedDepartures += RISK_ATTRITION_RATE[m.attritionRisk] * (horizon / 12);
+			expectedDepartures += RISK_DEPARTURE_RATE[m.attritionRisk] * (horizon / 12);
 		}
 		return Math.round(expectedDepartures * 10) / 10;
 	});
@@ -321,27 +321,27 @@
 			`**Date :** ${today}`,
 			`**Horizon :** ${horizon} mois`,
 			`**Taille equipe :** ${teamSize}`,
-			`**Capacite par personne :** ${capacityPerPerson}%`,
-			`**Taux d'attrition estime :** ${attritionRate}%`,
+			`**Temps reel sur projets :** ${capacityPerPerson}%`,
+			`**Taux de departs annuel estime :** ${attritionRate}%`,
 			`**Delai de recrutement :** ${recruitmentDelay} mois`,
 			'',
 			'## Equipe actuelle',
 			'',
 			...team.map(
 				(m) =>
-					`- ${m.name} (${ROLES.find((r) => r.value === m.role)?.label || m.role}) — Risque attrition : ${RISK_LABELS[m.attritionRisk]}`
+					`- ${m.name} (${ROLES.find((r) => r.value === m.role)?.label || m.role}) — Risque de depart : ${RISK_LABELS[m.attritionRisk]}`
 			),
 			'',
 			'## Roadmap',
 			'',
 			...projects.map(
 				(p) =>
-					`- ${p.name} : mois ${p.startMonth} a ${p.endMonth}, ${p.fte} FTE`
+					`- ${p.name} : mois ${p.startMonth} a ${p.endMonth}, ${p.fte} personne${p.fte > 1 ? 's' : ''} temps plein`
 			),
 			'',
 			'## Analyse',
 			'',
-			`- Departs projetes : ~${attritionProjection}`,
+			`- Departs estimes : ~${departureProjection}`,
 			`- Mois en deficit : ${deficitMonths.length}`,
 			`- Postes a ouvrir : ${totalPositionsToOpen}`,
 			''
@@ -351,7 +351,7 @@
 			lines.push('## Plan de recrutement recommande', '');
 			for (const rec of hiringRecommendations) {
 				lines.push(
-					`- Lancer le recrutement en **${monthLabels[rec.recruitBy] || 'maintenant'}** (~${Math.ceil(rec.fte)} FTE) pour couvrir le besoin de **${monthLabels[rec.neededFor] || '?'}**`
+					`- Lancer le recrutement en **${monthLabels[rec.recruitBy] || 'maintenant'}** (~${Math.ceil(rec.fte)} personne${Math.ceil(rec.fte) > 1 ? 's' : ''}) pour couvrir le besoin de **${monthLabels[rec.neededFor] || '?'}**`
 				);
 			}
 			lines.push('');
@@ -398,7 +398,7 @@
 					<h2 class="section-title">Equipe actuelle</h2>
 					<span class="section-badge">{teamSize} membre{teamSize > 1 ? 's' : ''}</span>
 				</div>
-				<p class="section-hint">Ce que j'observe souvent : les projections de staffing qui ignorent l'attrition sous-estiment systematiquement les besoins reels.</p>
+				<p class="section-hint">Ce que j'observe souvent : les projections de staffing qui ignorent les departs sous-estiment systematiquement les besoins reels.</p>
 
 				<div class="items-list">
 					{#each team as member, i}
@@ -428,11 +428,12 @@
 							<select
 								class="input input--select input--risk"
 								bind:value={member.attritionRisk}
-								aria-label="Risque d'attrition"
+								aria-label="Risque de depart"
+								title="Quelle probabilite que cette personne quitte l'equipe sur la periode ?"
 							>
-								<option value="faible">Faible</option>
-								<option value="moyen">Moyen</option>
-								<option value="élevé">Eleve</option>
+								<option value="faible">Risque faible</option>
+								<option value="moyen">Risque moyen</option>
+								<option value="élevé">Risque eleve</option>
 							</select>
 							<button
 								class="btn-icon btn-icon--remove"
@@ -498,7 +499,7 @@
 									/>
 								</label>
 								<label class="mini-label">
-									FTE
+									Personnes
 									<input
 										type="number"
 										class="input input--small"
@@ -506,7 +507,8 @@
 										max="20"
 										step="0.5"
 										bind:value={project.fte}
-										aria-label="FTE necessaires"
+										aria-label="Nombre de personnes necessaires (en equivalent temps plein)"
+										title="En equivalent temps plein. Ex : 0.5 = une personne a mi-temps, 2 = deux personnes a plein temps."
 									/>
 								</label>
 							</div>
@@ -541,9 +543,10 @@
 
 				<div class="param-group">
 					<div class="param-header">
-						<label class="field-label" for="attrition-rate">Taux d'attrition estime</label>
+						<label class="field-label" for="attrition-rate">Taux de departs annuel estime</label>
 						<span class="param-value">{attritionRate}%</span>
 					</div>
+					<p class="param-hint">Pourcentage de l'equipe susceptible de partir sur un an. En tech, la moyenne se situe entre 10% et 20%.</p>
 					<input
 						id="attrition-rate"
 						type="range"
@@ -561,9 +564,10 @@
 
 				<div class="param-group">
 					<div class="param-header">
-						<label class="field-label" for="capacity-person">Capacite par personne</label>
+						<label class="field-label" for="capacity-person">Temps reel consacre aux projets</label>
 						<span class="param-value">{capacityPerPerson}%</span>
 					</div>
+					<p class="param-hint">Part du temps effectivement passee sur les projets. Le reste part en reunions, support, veille, ceremonies agile, etc. 80% est une estimation courante.</p>
 					<input
 						id="capacity-person"
 						type="range"
@@ -577,7 +581,6 @@
 						<span>60%</span>
 						<span>100%</span>
 					</div>
-					<p class="param-hint">Reunions, support, veille, ceremonies... la capacite effective est rarement a 100%.</p>
 				</div>
 			</section>
 
@@ -661,7 +664,7 @@
 						{#each deficitMonths as d}
 							<div class="deficit-row">
 								<span class="deficit-month">{monthLabels[d.month]}</span>
-								<span class="deficit-value">{Math.abs(d.gap)} FTE manquant{Math.abs(d.gap) > 1 ? 's' : ''}</span>
+								<span class="deficit-value">{Math.abs(d.gap)} personne{Math.abs(d.gap) > 1 ? 's' : ''} manquante{Math.abs(d.gap) > 1 ? 's' : ''}</span>
 							</div>
 						{/each}
 					</div>
@@ -677,21 +680,21 @@
 						{#each hiringRecommendations as rec}
 							<div class="hiring-row">
 								<span class="hiring-action">Lancer en <strong>{monthLabels[rec.recruitBy] || 'maintenant'}</strong></span>
-								<span class="hiring-detail">~{Math.ceil(rec.fte)} FTE pour {monthLabels[rec.neededFor] || '?'}</span>
+								<span class="hiring-detail">~{Math.ceil(rec.fte)} personne{Math.ceil(rec.fte) > 1 ? 's' : ''} pour {monthLabels[rec.neededFor] || '?'}</span>
 							</div>
 						{/each}
 					</div>
 				</div>
 			{/if}
 
-			<!-- Attrition projection -->
+			<!-- Departure projection -->
 			<div class="result-section">
-				<div class="result-section-title">Projection attrition</div>
+				<div class="result-section-title">Departs probables</div>
 				<div class="attrition-summary">
-					<span class="attrition-value">{attritionProjection}</span>
-					<span class="attrition-label">depart{attritionProjection > 1 ? 's' : ''} projete{attritionProjection > 1 ? 's' : ''} sur {horizon} mois</span>
+					<span class="attrition-value">{departureProjection}</span>
+					<span class="attrition-label">depart{departureProjection > 1 ? 's' : ''} estime{departureProjection > 1 ? 's' : ''} sur {horizon} mois</span>
 				</div>
-				<p class="result-hint">Base sur les niveaux de risque individuels et l'horizon choisi.</p>
+				<p class="result-hint">Calcule a partir du risque de depart de chaque membre et de l'horizon choisi.</p>
 			</div>
 
 			<!-- Summary -->

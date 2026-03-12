@@ -5,7 +5,7 @@
 
 <SEO
 	title="Planification staffing"
-	description="Anticipe tes besoins de recrutement. Timeline capacite vs charge, projection attrition, plan de hiring."
+	description="Anticipe tes besoins de recrutement. Timeline capacite vs charge, projection des departs, plan de recrutement."
 	url="https://kevin.delfour.co/outils/planification-staffing/"
 />
 
@@ -19,7 +19,7 @@
 	<header class="tool-header">
 		<h1>Planification staffing</h1>
 		<p class="tool-description">
-			Anticipe les besoins de recrutement en croisant roadmap, capacite actuelle et risque d'attrition. Un repere pour structurer la reflexion, pas une prevision definitive.
+			Anticipe les besoins de recrutement en croisant roadmap, capacite actuelle et risque de departs. Un repere pour structurer la reflexion, pas une prevision definitive.
 		</p>
 	</header>
 

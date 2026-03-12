@@ -25,26 +25,26 @@
 	};
 
 	const levelLabels: Record<number, string> = {
-		0: 'Non evalue',
-		1: 'Debutant',
+		0: 'Non \u00e9valu\u00e9',
+		1: 'D\u00e9butant',
 		2: 'Autonome',
-		3: 'Confirme',
+		3: 'Confirm\u00e9',
 		4: 'Expert'
 	};
 
 	const levelDescriptions: Record<number, string> = {
-		0: 'Non evalue',
-		1: "Besoin d'accompagnement",
-		2: 'Capable seul sur des taches courantes',
-		3: 'Referent sur le sujet',
-		4: 'Peut former et faire evoluer les pratiques'
+		0: 'Non \u00e9valu\u00e9 \u2014 comp\u00e9tence pas encore observ\u00e9e',
+		1: "D\u00e9butant \u2014 besoin d'accompagnement r\u00e9gulier",
+		2: 'Autonome \u2014 capable seul sur des t\u00e2ches courantes',
+		3: 'Confirm\u00e9 \u2014 r\u00e9f\u00e9rent sur le sujet dans l\u2019\u00e9quipe',
+		4: 'Expert \u2014 peut former et faire \u00e9voluer les pratiques'
 	};
 
 	const defaultDomains: SkillDomain[] = [
-		{ id: 'backend', name: 'Backend', skills: ['API Design', 'Base de donnees', 'Performance', 'Securite'] },
-		{ id: 'frontend', name: 'Frontend', skills: ['UI/UX', 'Accessibilite', 'State management', 'Testing'] },
-		{ id: 'devops', name: 'DevOps', skills: ['CI/CD', 'Monitoring', 'Infrastructure', 'Containers'] },
-		{ id: 'craft', name: 'Craft', skills: ['Code review', 'Testing', 'Documentation', 'Architecture'] }
+		{ id: 'backend', name: 'Serveur (backend)', skills: ['Conception d\u2019API', 'Base de donn\u00e9es', 'Performance', 'S\u00e9curit\u00e9'] },
+		{ id: 'frontend', name: 'Interface (frontend)', skills: ['UI/UX', 'Accessibilit\u00e9', 'Gestion d\u2019\u00e9tat', 'Tests'] },
+		{ id: 'devops', name: 'DevOps', skills: ['CI/CD (int\u00e9gration et d\u00e9ploiement continus)', 'Supervision', 'Infrastructure', 'Conteneurs'] },
+		{ id: 'craft', name: 'Craft', skills: ['Revue de code', 'Tests', 'Documentation', 'Architecture'] }
 	];
 
 	let domains = $state<SkillDomain[]>(structuredClone(defaultDomains));
@@ -465,7 +465,7 @@
 
 			<div class="tool-actions">
 				<button class="tool-btn tool-btn--primary" onclick={handleExport} disabled={members.length === 0}>
-					{copyFeedback ? 'Copie dans le presse-papier' : 'Exporter en Markdown'}
+					{copyFeedback ? 'Copi\u00e9 dans le presse-papier' : 'Copier le bilan (format texte)'}
 				</button>
 				<button class="tool-btn tool-btn--secondary" onclick={handleReset}>Reinitialiser</button>
 			</div>
