@@ -21,6 +21,7 @@
 				<a href="/outils/">Outils</a>
 				<a href="/vision/">Vision</a>
 				<a href="/a-propos/">À propos</a>
+				<a href="/search/">Rechercher</a>
 			</div>
 
 			<div class="footer-column">
