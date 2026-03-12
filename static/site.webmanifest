@@ -1,6 +1,12 @@
 {
-  "name": "Kevin Delfour",
+  "name": "Kevin Delfour — CTO Hands-on",
   "short_name": "k.d.co",
+  "description": "Outils de décision, livres gratuits et projets open source. Je donne des repères. Pas des leçons.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#000000",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -13,9 +19,12 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
+    },
+    {
+      "src": "/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
     }
-  ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  ]
 }
