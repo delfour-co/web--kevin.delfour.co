@@ -46,32 +46,31 @@
 			});
 		}
 
-		// Floating particles
-		interface Particle {
-			x: number;
-			y: number;
-			vx: number;
-			vy: number;
+		// Grid-following particles
+		interface GridParticle {
+			pos: number;       // 0→1 progress along the line (vanish→bottom)
+			speed: number;
+			lineIndex: number; // which grid line (-1..1 ratio for vertical, 0..1 for horizontal)
+			isVertical: boolean;
 			size: number;
-			alpha: number;
-			life: number;
-			maxLife: number;
+			brightness: number;
+			trail: number;     // trail length in progress units
 		}
 
-		const particles: Particle[] = [];
-		const MAX_PARTICLES = 40;
+		const gridParticles: GridParticle[] = [];
+		const MAX_GRID_PARTICLES = 50;
+		const VERT_LINES = 24;
 
-		function spawnParticle() {
-			if (particles.length >= MAX_PARTICLES) return;
-			particles.push({
-				x: Math.random() * w,
-				y: Math.random() * h,
-				vx: (Math.random() - 0.5) * 0.3,
-				vy: -0.2 - Math.random() * 0.5,
-				size: 1 + Math.random() * 2,
-				alpha: 0,
-				life: 0,
-				maxLife: 3 + Math.random() * 5
+		function spawnGridParticle() {
+			if (gridParticles.length >= MAX_GRID_PARTICLES) return;
+			gridParticles.push({
+				pos: -0.02,
+				speed: 0.08 + Math.random() * 0.2,
+				lineIndex: (Math.floor(Math.random() * (VERT_LINES + 1)) - VERT_LINES / 2) / (VERT_LINES / 2),
+				isVertical: true,
+				size: 1 + Math.random() * 1.5,
+				brightness: 0.4 + Math.random() * 0.5,
+				trail: 0.03 + Math.random() * 0.06
 			});
 		}
 
@@ -90,11 +89,17 @@
 			const dt = 0.016;
 			const time = t * 0.001;
 
+			if (w === 0 || h === 0) {
+				animId = requestAnimationFrame(draw);
+				return;
+			}
+
 			ctx!.clearRect(0, 0, w, h);
 
-			// === Tron floor grid — horizon at 35%, spreads to full width ===
+			// === Tron floor grid — vanishing point at avatar center ===
 			const vanishX = w * 0.5;
-			const horizon = h * 0.35;
+			const isMobile = w < 768;
+			const horizon = isMobile ? h * 0.28 : h * 0.35;
 			const gridBottom = h;
 			const gridLines = 20;
 			const vertLines = 24;
@@ -156,6 +161,7 @@
 				const py = horizon + (gridBottom - horizon) * perspective;
 				const spread = 0.3 + perspective * 2.5;
 				const glowSize = p.width * Math.max(0.1, perspective);
+				if (glowSize < 1) continue;
 
 				let px: number;
 				if (p.isVertical) {
@@ -165,6 +171,7 @@
 					px = vanishX - xSpread / 2 + p.x * xSpread;
 				}
 
+				if (!isFinite(px) || !isFinite(py)) continue;
 				const grad = ctx!.createRadialGradient(px, py, 0, px, py, glowSize);
 				grad.addColorStop(0, `rgba(${CYAN.r},${CYAN.g},${CYAN.b},${p.brightness * perspective})`);
 				grad.addColorStop(0.5, `rgba(${CYAN.r},${CYAN.g},${CYAN.b},${p.brightness * perspective * 0.3})`);
@@ -185,40 +192,58 @@
 				ctx!.fillRect(beamX - 40, 0, 80, horizon);
 			}
 
-			// === Floating particles ===
-			if (Math.random() < 0.08) spawnParticle();
+			// === Grid-following particles ===
+			if (Math.random() < 0.12) spawnGridParticle();
 
-			for (let i = particles.length - 1; i >= 0; i--) {
-				const p = particles[i];
-				p.life += dt;
-				if (p.life > p.maxLife) {
-					particles.splice(i, 1);
+			for (let i = gridParticles.length - 1; i >= 0; i--) {
+				const gp = gridParticles[i];
+				gp.pos += gp.speed * dt;
+
+				if (gp.pos > 1.1) {
+					gridParticles.splice(i, 1);
 					continue;
 				}
-				p.x += p.vx;
-				p.y += p.vy;
 
-				const lifeRatio = p.life / p.maxLife;
-				if (lifeRatio < 0.1) {
-					p.alpha = lifeRatio / 0.1;
-				} else if (lifeRatio > 0.7) {
-					p.alpha = (1 - lifeRatio) / 0.3;
-				} else {
-					p.alpha = 1;
-				}
+				// Compute screen position along the grid line
+				const trailSteps = 6;
+				const stepSize = gp.trail / trailSteps;
 
-				const finalAlpha = p.alpha * 0.4;
-				ctx!.beginPath();
-				ctx!.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-				ctx!.fillStyle = `rgba(${CYAN.r},${CYAN.g},${CYAN.b},${finalAlpha})`;
-				ctx!.fill();
+				for (let s = 0; s < trailSteps; s++) {
+					const p = gp.pos - s * stepSize;
+					if (p < 0 || p > 1) continue;
 
-				if (p.size > 1.5) {
-					const glow = ctx!.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size * 4);
-					glow.addColorStop(0, `rgba(${CYAN.r},${CYAN.g},${CYAN.b},${finalAlpha * 0.3})`);
-					glow.addColorStop(1, 'rgba(6,182,212,0)');
-					ctx!.fillStyle = glow;
-					ctx!.fillRect(p.x - p.size * 4, p.y - p.size * 4, p.size * 8, p.size * 8);
+					const perspective = Math.pow(p, 2.5);
+					let sx: number, sy: number;
+
+					// Follow a vertical line from vanish point to bottom
+					const bottomX = vanishX + gp.lineIndex * w * 1.5;
+					sx = vanishX + (bottomX - vanishX) * perspective;
+					sy = horizon + (gridBottom - horizon) * perspective;
+
+					if (!isFinite(sx) || !isFinite(sy)) continue;
+
+					// Fade trail: head is bright, tail fades
+					const trailFade = 1 - s / trailSteps;
+					const alpha = gp.brightness * perspective * trailFade;
+					const size = gp.size * (0.5 + perspective * 0.5) * trailFade;
+
+					if (alpha < 0.01 || size < 0.3) continue;
+
+					// Draw particle dot
+					ctx!.beginPath();
+					ctx!.arc(sx, sy, size, 0, Math.PI * 2);
+					ctx!.fillStyle = `rgba(${CYAN.r},${CYAN.g},${CYAN.b},${alpha})`;
+					ctx!.fill();
+
+					// Glow on head only
+					if (s === 0 && size > 1) {
+						const glowR = size * 6;
+						const glow = ctx!.createRadialGradient(sx, sy, 0, sx, sy, glowR);
+						glow.addColorStop(0, `rgba(${CYAN.r},${CYAN.g},${CYAN.b},${alpha * 0.4})`);
+						glow.addColorStop(1, 'rgba(6,182,212,0)');
+						ctx!.fillStyle = glow;
+						ctx!.fillRect(sx - glowR, sy - glowR, glowR * 2, glowR * 2);
+					}
 				}
 			}
 
@@ -265,7 +290,8 @@
 <style>
 	.global-grid-bg {
 		position: absolute;
-		inset: 0;
+		top: 0;
+		left: 0;
 		pointer-events: none;
 		z-index: -1;
 	}

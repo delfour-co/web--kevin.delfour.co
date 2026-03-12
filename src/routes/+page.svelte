@@ -295,7 +295,7 @@
 
 	.avatar-ring {
 		position: absolute;
-		inset: -4px;
+		inset: -8px;
 		border-radius: 50%;
 		background: conic-gradient(from 0deg, #06b6d4, #8b5cf6, #ec4899, #06b6d4);
 		animation: ring-rotate 6s linear infinite;
@@ -304,9 +304,20 @@
 	.avatar-ring::after {
 		content: '';
 		position: absolute;
-		inset: 3px;
+		inset: 5px;
 		border-radius: 50%;
 		background: #000;
+	}
+
+	.avatar-ring::before {
+		content: '';
+		position: absolute;
+		inset: -8px;
+		border-radius: 50%;
+		background: conic-gradient(from 0deg, rgba(6,182,212,0.3), rgba(139,92,246,0.3), rgba(236,72,153,0.3), rgba(6,182,212,0.3));
+		filter: blur(10px);
+		animation: ring-rotate 6s linear infinite;
+		z-index: -1;
 	}
 
 	.avatar-glow {
@@ -362,7 +373,6 @@
 	/* Sections */
 	.home-section {
 		padding: calc(var(--gap) * 3) 0;
-		border-top: 1px solid var(--border);
 	}
 
 	.section-badge {
@@ -648,13 +658,13 @@
 		}
 
 		.hero-avatar-wrapper {
-			width: 118px;
-			height: 118px;
+			width: 160px;
+			height: 160px;
 		}
 
 		.hero-avatar {
-			width: 110px;
-			height: 110px;
+			width: 150px;
+			height: 150px;
 		}
 
 		.hero-orb--1 { width: 200px; height: 200px; }
