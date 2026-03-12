@@ -195,6 +195,7 @@
 
 	.nav-links a {
 		display: block;
+		position: relative;
 		font-family: var(--font-ui);
 		font-size: 14px;
 		font-weight: 500;
@@ -205,15 +206,39 @@
 		transition: var(--transition);
 	}
 
+	.nav-links a::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 0;
+		height: 2px;
+		background: var(--accent);
+		border-radius: 1px;
+		transition: width 0.3s ease;
+		box-shadow: none;
+	}
+
 	.nav-links a:hover {
 		color: var(--primary);
 		background: var(--surface);
 		text-decoration: none;
 	}
 
+	.nav-links a:hover::after {
+		width: 60%;
+	}
+
 	.nav-links a.active {
 		color: var(--accent);
 		font-weight: 600;
+		text-shadow: 0 0 12px rgba(6, 182, 212, 0.4);
+	}
+
+	.nav-links a.active::after {
+		width: 80%;
+		box-shadow: 0 0 8px rgba(6, 182, 212, 0.6), 0 0 16px rgba(6, 182, 212, 0.3);
 	}
 
 	/* Mobile overlay — outside header stacking context */

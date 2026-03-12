@@ -20,32 +20,6 @@
 		const CYAN = { r: 6, g: 182, b: 212 };
 		const BLUE = { r: 30, g: 80, b: 220 };
 
-		// Light pulses traveling along the ground
-		interface Pulse {
-			x: number;
-			speed: number;
-			width: number;
-			brightness: number;
-			isVertical: boolean;
-			pos: number;
-		}
-
-		const pulses: Pulse[] = [];
-		const MAX_PULSES = 12;
-
-		function spawnPulse() {
-			if (pulses.length >= MAX_PULSES) return;
-			const isVertical = Math.random() > 0.5;
-			pulses.push({
-				x: Math.random(),
-				speed: 0.15 + Math.random() * 0.35,
-				width: 60 + Math.random() * 120,
-				brightness: 0.3 + Math.random() * 0.5,
-				isVertical,
-				pos: -0.05
-			});
-		}
-
 		// Grid-following particles
 		interface GridParticle {
 			pos: number;       // 0→1 progress along the line (vanish→bottom)
@@ -143,42 +117,6 @@
 			horizonGlow.addColorStop(1, 'rgba(6,182,212,0)');
 			ctx!.fillStyle = horizonGlow;
 			ctx!.fillRect(0, horizon - 60, w, 100);
-
-			// === Traveling light pulses ===
-			if (Math.random() < 0.02) spawnPulse();
-
-			for (let i = pulses.length - 1; i >= 0; i--) {
-				const p = pulses[i];
-				p.pos += p.speed * dt;
-
-				if (p.pos > 1.1) {
-					pulses.splice(i, 1);
-					continue;
-				}
-
-				const progress = p.pos;
-				const perspective = Math.pow(progress, 2.5);
-				const py = horizon + (gridBottom - horizon) * perspective;
-				const spread = 0.3 + perspective * 2.5;
-				const glowSize = p.width * Math.max(0.1, perspective);
-				if (glowSize < 1) continue;
-
-				let px: number;
-				if (p.isVertical) {
-					px = vanishX + (p.x - 0.5) * w * spread;
-				} else {
-					const xSpread = w * spread;
-					px = vanishX - xSpread / 2 + p.x * xSpread;
-				}
-
-				if (!isFinite(px) || !isFinite(py)) continue;
-				const grad = ctx!.createRadialGradient(px, py, 0, px, py, glowSize);
-				grad.addColorStop(0, `rgba(${CYAN.r},${CYAN.g},${CYAN.b},${p.brightness * perspective})`);
-				grad.addColorStop(0.5, `rgba(${CYAN.r},${CYAN.g},${CYAN.b},${p.brightness * perspective * 0.3})`);
-				grad.addColorStop(1, 'rgba(6,182,212,0)');
-				ctx!.fillStyle = grad;
-				ctx!.fillRect(px - glowSize, py - glowSize, glowSize * 2, glowSize * 2);
-			}
 
 			// === Subtle vertical light beams (upper area) ===
 			for (let i = 0; i < 3; i++) {

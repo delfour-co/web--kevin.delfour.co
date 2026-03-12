@@ -18,7 +18,9 @@
 </script>
 
 <div class="scroll-progress" aria-hidden="true">
-	<div class="scroll-progress-bar" style="width: {progress}%"></div>
+	<div class="scroll-progress-bar" style="width: {progress}%">
+		<div class="scroll-progress-head"></div>
+	</div>
 </div>
 
 <style>
@@ -27,22 +29,37 @@
 		top: var(--header-height);
 		left: 0;
 		right: 0;
-		height: 3px;
+		height: 2px;
 		z-index: 49;
-		background: rgba(0, 0, 0, 0.4);
+		background: rgba(6, 182, 212, 0.08);
 	}
 
 	.scroll-progress-bar {
 		height: 100%;
-		background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3));
+		background: linear-gradient(90deg, rgba(6, 182, 212, 0.1), rgba(6, 182, 212, 0.4), var(--accent));
 		transition: width 0.1s linear;
-		box-shadow: 0 0 10px rgba(6, 182, 212, 0.6);
+		position: relative;
+	}
+
+	/* Light trail head — bright point at the tip */
+	.scroll-progress-head {
+		position: absolute;
+		right: -1px;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		background: #fff;
+		box-shadow:
+			0 0 6px 2px rgba(6, 182, 212, 0.9),
+			0 0 16px 4px rgba(6, 182, 212, 0.5),
+			0 0 30px 8px rgba(6, 182, 212, 0.2);
 	}
 
 	@media (max-width: 768px) {
 		.scroll-progress {
-			height: 4px;
-			background: rgba(0, 0, 0, 0.6);
+			height: 2px;
 		}
 	}
 </style>
