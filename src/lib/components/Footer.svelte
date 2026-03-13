@@ -33,6 +33,10 @@
 
 		<div class="footer-bottom">
 			<span>&copy; {year} Kevin Delfour</span>
+			<span class="footer-easter">
+				<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h9l3 3v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M14 2v4h4"/><rect x="8" y="12" width="8" height="6" rx="1"/></svg>
+				If the site doesn't load, remove the cartridge, blow on it and reinsert.
+			</span>
 		</div>
 	</div>
 </footer>
@@ -94,6 +98,19 @@
 		font-family: var(--font-ui);
 		font-size: 13px;
 		color: var(--tertiary);
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		gap: 8px;
+	}
+
+	.footer-easter {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		font-size: 13px;
+		color: var(--tertiary);
 	}
 
 	.back-to-top {
@@ -123,8 +140,28 @@
 	}
 
 	@media (max-width: 600px) {
+		.footer {
+			padding: calc(var(--gap) * 1.5) var(--gap);
+			margin-top: calc(var(--gap) * 2);
+		}
+
 		.footer-columns {
-			grid-template-columns: 1fr;
+			grid-template-columns: repeat(3, 1fr);
+			gap: calc(var(--gap) * 0.5);
+			margin-bottom: calc(var(--gap) * 1.5);
+		}
+
+		.footer-column {
+			gap: 6px;
+		}
+
+		.footer-column h3 {
+			font-size: 0.65rem;
+			margin-bottom: 2px;
+		}
+
+		.footer-column a {
+			font-size: 13px;
 		}
 	}
 </style>
