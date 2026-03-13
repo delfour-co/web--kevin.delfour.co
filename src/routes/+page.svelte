@@ -155,13 +155,17 @@
 		<h2>Livres</h2>
 		<div class="home-grid grid-2">
 			{#each data.books as livre, i}
-				<a href="/livres/{livre.slug}/" class="home-card glass-card home-card--large reveal reveal-delay-{i + 1}">
+				<a href="/livres/{livre.slug}/" class="home-card glass-card home-card--book reveal reveal-delay-{i + 1}">
 					{#if livre.cover}
-						<img src={livre.cover} alt="Couverture {livre.title}" class="card-cover" loading="lazy" />
+						<div class="book-cover-wrapper">
+							<img src={livre.cover} alt="Couverture {livre.title}" class="card-book-cover" loading="lazy" />
+						</div>
 					{/if}
-					<h3 class="card-title">{livre.title}</h3>
-					<p class="card-subtitle">{livre.subtitle}</p>
-					<span class="card-meta">{livre.chapterCount} chapitres · Gratuit</span>
+					<div class="book-card-info">
+						<h3 class="card-title">{livre.title}</h3>
+						<p class="card-subtitle">{livre.subtitle}</p>
+						<span class="card-meta">{livre.chapterCount} chapitres · Gratuit</span>
+					</div>
 				</a>
 			{/each}
 		</div>
@@ -372,7 +376,7 @@
 
 	/* Sections */
 	.home-section {
-		padding: calc(var(--gap) * 3) 0;
+		padding: calc(var(--gap) * 1) 0;
 	}
 
 	.home-section::before {
@@ -381,7 +385,7 @@
 		width: 100%;
 		height: 1px;
 		background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.2), rgba(6, 182, 212, 0.4), rgba(6, 182, 212, 0.2), transparent);
-		margin-bottom: calc(var(--gap) * 3);
+		margin-bottom: calc(var(--gap) * 1);
 		animation: circuit-pulse 4s ease-in-out infinite;
 	}
 
@@ -548,21 +552,39 @@
 		box-shadow: 0 0 12px rgba(6, 182, 212, 0.2);
 	}
 
-	.card-cover {
-		width: 100%;
-		height: 140px;
-		object-fit: cover;
-		border-radius: var(--radius-sm);
-		margin-bottom: 12px;
-		border: 1px solid rgba(6, 182, 212, 0.15);
-		box-shadow: 0 0 8px rgba(6, 182, 212, 0.05);
-		transition: transform 0.4s ease;
+	.home-card--book {
+		flex-direction: row;
+		display: flex;
+		gap: calc(var(--gap) * 1.2);
+		align-items: flex-start;
 	}
 
-	.home-card:hover .card-cover {
-		transform: scale(1.02);
+	.book-cover-wrapper {
+		flex-shrink: 0;
+		width: 120px;
+		border-radius: var(--radius-sm);
+		overflow: hidden;
+		border: 1px solid rgba(6, 182, 212, 0.15);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+		transition: transform 0.4s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.card-book-cover {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+
+	.home-card:hover .book-cover-wrapper {
+		transform: scale(1.03);
 		border-color: rgba(6, 182, 212, 0.4);
-		box-shadow: 0 0 15px rgba(6, 182, 212, 0.15);
+		box-shadow: 0 6px 20px rgba(6, 182, 212, 0.15);
+	}
+
+	.book-card-info {
+		flex: 1;
+		min-width: 0;
+		padding-top: 4px;
 	}
 
 	.card-title {
