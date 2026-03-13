@@ -8,6 +8,9 @@
 		publishedDate?: string;
 		modifiedDate?: string;
 		noindex?: boolean;
+		categories?: string[];
+		tags?: string[];
+		breadcrumbs?: { label: string; href?: string }[];
 	}
 
 	const SITE_NAME = 'Kevin Delfour';
@@ -23,36 +26,83 @@
 		type = 'website',
 		publishedDate = '',
 		modifiedDate = '',
-		noindex = false
+		noindex = false,
+		categories = [],
+		tags = [],
+		breadcrumbs = []
 	}: Props = $props();
 
 	let fullTitle = $derived(title ? `${title} — ${SITE_NAME}` : SITE_NAME);
 
-	let jsonLd = $derived(
-		type === 'article'
-			? JSON.stringify({
-					'@context': 'https://schema.org',
-					'@type': 'Article',
-					headline: title,
-					description,
-					url,
-					image,
-					datePublished: publishedDate,
-					dateModified: modifiedDate || publishedDate,
-					author: {
-						'@type': 'Person',
-						name: SITE_NAME,
-						url: SITE_URL
-					}
-				})
-			: JSON.stringify({
-					'@context': 'https://schema.org',
-					'@type': 'WebSite',
-					name: SITE_NAME,
-					url: SITE_URL,
-					description
-				})
-	);
+	const personSchema = {
+		'@type': 'Person',
+		name: SITE_NAME,
+		url: SITE_URL,
+		jobTitle: 'CTO',
+		sameAs: [
+			'https://github.com/kdelfour',
+			'https://linkedin.com/in/kevindelfour'
+		]
+	};
+
+	let jsonLdSchemas = $derived(() => {
+		const schemas: object[] = [];
+
+		if (type === 'article') {
+			const articleSchema: Record<string, unknown> = {
+				'@context': 'https://schema.org',
+				'@type': 'Article',
+				headline: title,
+				description,
+				url,
+				image,
+				inLanguage: 'fr',
+				datePublished: publishedDate,
+				dateModified: modifiedDate || publishedDate,
+				author: personSchema
+			};
+			if (categories.length > 0) {
+				articleSchema.articleSection = categories[0];
+			}
+			if (tags.length > 0) {
+				articleSchema.keywords = tags.join(', ');
+			}
+			schemas.push(articleSchema);
+		} else {
+			schemas.push({
+				'@context': 'https://schema.org',
+				'@type': 'WebSite',
+				name: SITE_NAME,
+				url: SITE_URL,
+				description,
+				inLanguage: 'fr',
+				author: personSchema,
+				potentialAction: {
+					'@type': 'SearchAction',
+					target: `${SITE_URL}/search/?q={search_term_string}`,
+					'query-input': 'required name=search_term_string'
+				}
+			});
+		}
+
+		if (breadcrumbs.length > 0) {
+			schemas.push({
+				'@context': 'https://schema.org',
+				'@type': 'BreadcrumbList',
+				itemListElement: [
+					{ '@type': 'ListItem', position: 1, name: 'Accueil', item: SITE_URL },
+					...breadcrumbs.map((crumb, i) => ({
+						'@type': 'ListItem',
+						position: i + 2,
+						name: crumb.label,
+						...(crumb.href ? { item: `${SITE_URL}${crumb.href}` } : {})
+					}))
+				]
+			});
+		}
+
+		return schemas;
+	});
 </script>
 
 <svelte:head>
@@ -80,5 +130,7 @@
 	<meta name="twitter:image" content={image} />
 
 	<!-- JSON-LD -->
-	{@html `<script type="application/ld+json">${jsonLd.replace(/<\//g, '<\\/')}</script>`}
+	{#each jsonLdSchemas() as schema}
+		{@html `<script type="application/ld+json">${JSON.stringify(schema).replace(/<\//g, '<\\/')}</script>`}
+	{/each}
 </svelte:head>

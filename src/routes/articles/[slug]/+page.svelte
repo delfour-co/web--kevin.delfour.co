@@ -26,6 +26,12 @@
 	url="https://kevin.delfour.co/articles/{metadata.slug}/"
 	type="article"
 	publishedDate={metadata.date}
+	categories={metadata.categories || []}
+	tags={metadata.tags || []}
+	breadcrumbs={[
+		{ label: 'Articles', href: '/articles/' },
+		{ label: metadata.title }
+	]}
 />
 
 <article class="article">
