@@ -1,3 +1,38 @@
+export const projectStages = [
+	{ key: 'ideation', label: 'Idéation', icon: '💡' },
+	{ key: 'design', label: 'Conception', icon: '📐' },
+	{ key: 'prototype', label: 'Prototype', icon: '🧪' },
+	{ key: 'dev', label: 'Développement', icon: '⚙️' },
+	{ key: 'alpha', label: 'Alpha', icon: '🔒' },
+	{ key: 'beta', label: 'Bêta', icon: '🔓' },
+	{ key: 'release', label: 'Release', icon: '🚀' },
+	{ key: 'production', label: 'Production', icon: '✅' }
+] as const;
+
+export type ProjectStageKey = (typeof projectStages)[number]['key'];
+
+export interface FeaturedProject {
+	slug: string;
+	stage: ProjectStageKey;
+}
+
+export const featuredProjects: FeaturedProject[] = [
+	{ slug: 'asteroids', stage: 'alpha' },
+	{ slug: 'notch', stage: 'alpha' },
+	{ slug: 'open-event-orchestrator', stage: 'dev' },
+	{ slug: 'repolens', stage: 'production' },
+	{ slug: 'arcane-craft', stage: 'prototype' }
+];
+
+export function getProjectStage(slug: string): ProjectStageKey | undefined {
+	return featuredProjects.find((p) => p.slug === slug)?.stage;
+}
+
+export function getProjectStageLabel(slug: string): string | undefined {
+	const key = getProjectStage(slug);
+	return projectStages.find((s) => s.key === key)?.label;
+}
+
 export interface Project {
 	nom: string;
 	url: string;

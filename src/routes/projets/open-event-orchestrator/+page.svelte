@@ -1,5 +1,7 @@
 <script lang="ts">
 	import SEO from '$lib/components/SEO.svelte';
+	import ProjectProgress from '$lib/components/ProjectProgress.svelte';
+	import { getProjectStage } from '$lib/data/projects';
 </script>
 
 <SEO
@@ -16,13 +18,20 @@
 	</nav>
 
 	<header class="project-header">
-		<div>
-			<span class="badge">Plateforme web</span>
-			<h1>Open Event Orchestrator</h1>
-			<p class="project-tagline">Le control plane open source pour les événements. Conférences, meetups, communautés — tout au même endroit.</p>
+		<div class="project-identity">
+			<img src="/images/apps/oeo/icon.webp" alt="Icône Open Event Orchestrator" class="project-icon" />
+			<div>
+				<span class="badge">Plateforme web</span>
+				<h1>Open Event Orchestrator</h1>
+				<p class="project-tagline">Le control plane open source pour les événements. Conférences, meetups, communautés — tout au même endroit.</p>
+			</div>
 		</div>
 		<a href="https://github.com/delfour-co/open-event-orchestrator" target="_blank" rel="noopener" class="github-link btn-secondary">Voir sur GitHub →</a>
 	</header>
+
+	<div class="progress-section">
+		<ProjectProgress stage={getProjectStage('open-event-orchestrator')!} />
+	</div>
 
 	<img src="/images/apps/oeo-social.png" alt="Open Event Orchestrator" class="hero-image" />
 
@@ -168,6 +177,19 @@
 		flex-wrap: wrap;
 	}
 
+	.project-identity {
+		display: flex;
+		gap: calc(var(--gap) * 1.2);
+		align-items: flex-start;
+	}
+
+	.project-icon {
+		width: 80px;
+		height: 80px;
+		border-radius: 18px;
+		flex-shrink: 0;
+	}
+
 	.project-header h1 {
 		margin: 4px 0 8px;
 	}
@@ -301,6 +323,10 @@
 
 	.back-link:hover {
 		color: var(--accent);
+	}
+
+	.progress-section {
+		margin-bottom: calc(var(--gap) * 2);
 	}
 
 	@media (max-width: 640px) {

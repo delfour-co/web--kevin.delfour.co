@@ -1,6 +1,6 @@
 <script lang="ts">
 	import SEO from '$lib/components/SEO.svelte';
-	import { projectCategories } from '$lib/data/projects';
+	import { getProjectStageLabel } from '$lib/data/projects';
 </script>
 
 <SEO
@@ -16,10 +16,9 @@
 		<p class="page-description">Les projets sur lesquels je travaille actuellement. Applications mobiles, outils CLI, plateforme web et jeu RPG.</p>
 	</header>
 
-	<!-- Applications mobiles -->
+	<!-- Jeux mobiles -->
 	<section class="category-section">
-		<h2>Applications mobiles</h2>
-		<p class="section-subtitle">En test fermé sur Google Play</p>
+		<h2>Jeux mobiles</h2>
 		<div class="apps-grid">
 			<a href="/projets/asteroids/" class="app-card glass-card">
 				<img src="/images/apps/asteroids/icon.webp" alt="Icône Neon Asteroids" class="app-card-icon" />
@@ -31,8 +30,29 @@
 						<span class="project-tech pill">Flame</span>
 						<span class="project-tech pill">Dart</span>
 					</div>
+					<span class="status-stage"><span class="status-label">Étape :</span> {getProjectStageLabel('asteroids')}</span>
 				</div>
 			</a>
+			<a href="/projets/arcane-craft/" class="app-card glass-card">
+				<img src="/images/apps/arcane-craft/app_icon.png" alt="Icône Arcane Craft" class="app-card-icon" />
+				<div class="app-card-content">
+					<h3>Arcane Craft</h3>
+					<p>Action-RPG top-down avec craft de sorts 3×3. Donjons procéduraux, puzzles élémentaires, boss.</p>
+					<div class="project-meta">
+						<span class="project-lang">Flutter</span>
+						<span class="project-tech pill">Flame</span>
+						<span class="project-tech pill">RPG</span>
+					</div>
+					<span class="status-stage"><span class="status-label">Étape :</span> {getProjectStageLabel('arcane-craft')}</span>
+				</div>
+			</a>
+		</div>
+	</section>
+
+	<!-- App mobile -->
+	<section class="category-section">
+		<h2>Application mobile</h2>
+		<div class="apps-grid">
 			<a href="/projets/notch/" class="app-card glass-card">
 				<img src="/images/apps/notch/icon.webp" alt="Icône Notch" class="app-card-icon" />
 				<div class="app-card-content">
@@ -43,81 +63,52 @@
 						<span class="project-tech pill">Enigma</span>
 						<span class="project-tech pill">SMS</span>
 					</div>
+					<span class="status-stage"><span class="status-label">Étape :</span> {getProjectStageLabel('notch')}</span>
 				</div>
 			</a>
 		</div>
 	</section>
 
-	<!-- Projets open source -->
+	<!-- Web app -->
 	<section class="category-section">
-		<h2>Open source</h2>
-		<div class="projects-grid">
-			<a href="/projets/open-event-orchestrator/" class="project-card glass-card">
-				<h3 class="project-name">Open Event Orchestrator</h3>
-				<p class="project-desc">Plateforme open source de gestion d'événements. CFP, planning, billetterie, CRM, sponsoring, budget. 4 538 tests unitaires, 533 tests E2E.</p>
-				<div class="project-meta">
-					<span class="project-lang">TypeScript</span>
-					<span class="project-tech pill">SvelteKit</span>
-					<span class="project-tech pill">PocketBase</span>
-					<span class="project-tech pill">Playwright</span>
-				</div>
-			</a>
-			<a href="/projets/repolens/" class="project-card glass-card">
-				<h3 class="project-name">RepoLens</h3>
-				<p class="project-desc">CLI d'audit de dépôts GitHub : bonnes pratiques, sécurité, compliance. Génère un plan de corrections applicable automatiquement. Export JSON, SARIF, Markdown, HTML.</p>
-				<div class="project-meta">
-					<span class="project-lang">Rust</span>
-					<span class="project-tech pill">CLI</span>
-					<span class="project-tech pill">GitHub</span>
-					<span class="project-tech pill">SARIF</span>
-				</div>
-			</a>
-		</div>
-	</section>
-
-	<!-- En développement -->
-	<section class="category-section">
-		<h2>En développement</h2>
+		<h2>Web app</h2>
 		<div class="apps-grid">
-			<a href="/projets/arcane-craft/" class="app-card glass-card">
-				<img src="/images/apps/arcane-craft/app_icon.png" alt="Icône Arcane Craft" class="app-card-icon" />
+			<a href="/projets/open-event-orchestrator/" class="app-card glass-card">
+				<img src="/images/apps/oeo/icon.webp" alt="Icône Open Event Orchestrator" class="app-card-icon" />
 				<div class="app-card-content">
-					<h3>Arcane Craft</h3>
-					<p>Action-RPG top-down avec craft de sorts 3×3. Donjons procéduraux, puzzles élémentaires, boss. Flutter + Flame.</p>
+					<h3>Open Event Orchestrator</h3>
+					<p>Plateforme open source de gestion d'événements. CFP, planning, billetterie, CRM, sponsoring, budget.</p>
 					<div class="project-meta">
-						<span class="project-lang">Flutter</span>
-						<span class="project-tech pill">Flame</span>
-						<span class="project-tech pill">RPG</span>
-						<span class="status-wip">En cours</span>
+						<span class="project-lang">TypeScript</span>
+						<span class="project-tech pill">SvelteKit</span>
+						<span class="project-tech pill">PocketBase</span>
 					</div>
+					<span class="status-stage"><span class="status-label">Étape :</span> {getProjectStageLabel('open-event-orchestrator')}</span>
 				</div>
 			</a>
 		</div>
 	</section>
 
-	<!-- Katas et autres -->
-	<details class="other-projects">
-		<summary>Katas et exercices de programmation</summary>
-		{#each projectCategories as category}
-			<section class="category-section">
-				<h3 class="sub-category">{category.label}</h3>
-				<div class="projects-grid">
-					{#each category.projects as project}
-						<a href={project.url} target="_blank" rel="noopener" class="project-card glass-card">
-							<h3 class="project-name">{project.nom}</h3>
-							<p class="project-desc">{project.description}</p>
-							<div class="project-meta">
-								<span class="project-lang">{project.langage}</span>
-								{#each project.technologies.slice(0, 3) as tech}
-									<span class="project-tech pill">{tech}</span>
-								{/each}
-							</div>
-						</a>
-					{/each}
+	<!-- CLI -->
+	<section class="category-section">
+		<h2>CLI</h2>
+		<div class="apps-grid">
+			<a href="/projets/repolens/" class="app-card glass-card">
+				<img src="/images/apps/repolens/icon.webp" alt="Icône RepoLens" class="app-card-icon" />
+				<div class="app-card-content">
+					<h3>RepoLens</h3>
+					<p>CLI d'audit de dépôts GitHub. Bonnes pratiques, sécurité, compliance. Export JSON, SARIF, Markdown, HTML.</p>
+					<div class="project-meta">
+						<span class="project-lang">Rust</span>
+						<span class="project-tech pill">CLI</span>
+						<span class="project-tech pill">GitHub</span>
+					</div>
+					<span class="status-stage"><span class="status-label">Étape :</span> {getProjectStageLabel('repolens')}</span>
 				</div>
-			</section>
-		{/each}
-	</details>
+			</a>
+		</div>
+	</section>
+
 </div>
 
 <style>
@@ -231,6 +222,7 @@
 	.project-meta {
 		display: flex;
 		flex-wrap: wrap;
+		align-items: center;
 		gap: 6px;
 		margin-top: 4px;
 	}
@@ -245,14 +237,24 @@
 		font-weight: 600;
 	}
 
-	.status-wip {
+	.status-stage {
+		display: inline-flex;
+		align-items: center;
+		gap: 4px;
 		font-family: var(--font-ui);
 		font-size: 11px;
-		padding: 2px 10px;
-		border: 1px solid var(--accent2);
-		color: var(--accent2);
-		border-radius: 9999px;
 		font-weight: 600;
+		color: var(--accent);
+		border: 1px solid var(--accent-border);
+		background: var(--accent-light);
+		padding: 2px 10px;
+		border-radius: 9999px;
+		margin-top: 6px;
+	}
+
+	.status-label {
+		font-weight: 400;
+		color: var(--secondary);
 	}
 
 	/* Katas collapsible */

@@ -1,5 +1,7 @@
 <script lang="ts">
 	import SEO from '$lib/components/SEO.svelte';
+	import ProjectProgress from '$lib/components/ProjectProgress.svelte';
+	import { getProjectStage } from '$lib/data/projects';
 </script>
 
 <SEO
@@ -26,6 +28,10 @@
 		</div>
 		<span class="status-pill">En développement</span>
 	</header>
+
+	<div class="progress-section">
+		<ProjectProgress stage={getProjectStage('arcane-craft')!} />
+	</div>
 
 	<img src="/images/apps/arcane-craft/forging.png" alt="Système de craft de sorts — Arcane Craft" class="hero-image" />
 
@@ -215,6 +221,10 @@
 
 	.back-link:hover {
 		color: var(--accent);
+	}
+
+	.progress-section {
+		margin-bottom: calc(var(--gap) * 2);
 	}
 
 	@media (max-width: 640px) {

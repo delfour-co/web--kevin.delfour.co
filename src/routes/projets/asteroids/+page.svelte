@@ -1,5 +1,7 @@
 <script lang="ts">
 	import SEO from '$lib/components/SEO.svelte';
+	import ProjectProgress from '$lib/components/ProjectProgress.svelte';
+	import { getProjectStage } from '$lib/data/projects';
 
 	const screenshots = [
 		{ src: '/images/apps/asteroids/asteroids_01.png', alt: 'Écran titre Neon Asteroids' },
@@ -40,6 +42,10 @@
 		</div>
 		<span class="status-pill">Test fermé · Google Play</span>
 	</header>
+
+	<div class="progress-section">
+		<ProjectProgress stage={getProjectStage('asteroids')!} />
+	</div>
 
 	<img src="/images/apps/asteroids/presentation.webp" alt="Présentation Neon Asteroids" class="hero-image" />
 
@@ -304,6 +310,10 @@
 		font-size: 1.5rem;
 		cursor: pointer;
 		padding: 8px;
+	}
+
+	.progress-section {
+		margin-bottom: calc(var(--gap) * 2);
 	}
 
 	@media (max-width: 640px) {

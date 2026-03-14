@@ -10,7 +10,6 @@
 		{ label: 'Livres', href: '/livres/' },
 		{ label: 'Articles', href: '/articles/' },
 		{ label: 'Projets', href: '/projets/' },
-		{ label: 'Vision', href: '/vision/' },
 		{ label: 'À propos', href: '/a-propos/' },
 		{ label: 'Contact', href: '/contact/' }
 	];

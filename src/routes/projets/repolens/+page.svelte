@@ -1,5 +1,7 @@
 <script lang="ts">
 	import SEO from '$lib/components/SEO.svelte';
+	import ProjectProgress from '$lib/components/ProjectProgress.svelte';
+	import { getProjectStage } from '$lib/data/projects';
 </script>
 
 <SEO
@@ -16,13 +18,23 @@
 	</nav>
 
 	<header class="project-header">
-		<div>
-			<span class="badge">CLI · Rust</span>
-			<h1>RepoLens</h1>
-			<p class="project-tagline">Audite tes dépôts GitHub pour les bonnes pratiques, la sécurité et la compliance. Génère un plan de corrections et les applique.</p>
+		<div class="project-identity">
+			<img src="/images/apps/repolens/icon.webp" alt="Icône RepoLens" class="project-icon" />
+			<div>
+				<span class="badge">CLI · Rust</span>
+				<h1>RepoLens</h1>
+				<p class="project-tagline">Audite tes dépôts GitHub pour les bonnes pratiques, la sécurité et la compliance. Génère un plan de corrections et les applique.</p>
+			</div>
 		</div>
-		<a href="https://github.com/delfour-co/repolens" target="_blank" rel="noopener" class="github-link btn-secondary">Voir sur GitHub →</a>
+		<div class="project-links">
+			<a href="https://crates.io/crates/repolens" target="_blank" rel="noopener" class="btn-primary">crates.io →</a>
+			<a href="https://github.com/delfour-co/repolens" target="_blank" rel="noopener" class="github-link btn-secondary">Voir sur GitHub →</a>
+		</div>
 	</header>
+
+	<div class="progress-section">
+		<ProjectProgress stage={getProjectStage('repolens')!} />
+	</div>
 
 	<img src="/images/apps/repolens-social.png" alt="RepoLens" class="hero-image" />
 
@@ -192,6 +204,25 @@
 		flex-wrap: wrap;
 	}
 
+	.project-identity {
+		display: flex;
+		gap: calc(var(--gap) * 1.2);
+		align-items: flex-start;
+	}
+
+	.project-icon {
+		width: 80px;
+		height: 80px;
+		border-radius: 18px;
+		flex-shrink: 0;
+	}
+
+	.project-links {
+		display: flex;
+		gap: 12px;
+		flex-wrap: wrap;
+	}
+
 	.project-header h1 {
 		margin: 4px 0 8px;
 	}
@@ -337,6 +368,10 @@
 
 	.back-link:hover {
 		color: var(--accent);
+	}
+
+	.progress-section {
+		margin-bottom: calc(var(--gap) * 2);
 	}
 
 	@media (max-width: 640px) {

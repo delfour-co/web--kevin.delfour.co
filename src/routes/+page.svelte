@@ -2,6 +2,7 @@
 	import SEO from '$lib/components/SEO.svelte';
 	import { onMount } from 'svelte';
 	import { toolCategories } from '$lib/data/tools';
+	import { getProjectStageLabel } from '$lib/data/projects';
 
 	let { data } = $props();
 
@@ -124,7 +125,7 @@
 				<div>
 					<h3 class="card-title">Neon Asteroids</h3>
 					<p class="card-desc">Arcade shooter néon. Flutter + Flame.</p>
-					<span class="card-meta">Test fermé · Google Play</span>
+					<span class="card-stage">{getProjectStageLabel('asteroids')}</span>
 				</div>
 			</a>
 			<a href="/projets/notch/" class="home-card glass-card home-card--app reveal reveal-delay-2">
@@ -132,18 +133,24 @@
 				<div>
 					<h3 class="card-title">Notch</h3>
 					<p class="card-desc">SMS chiffrés par Enigma. Pas de serveur.</p>
-					<span class="card-meta">Test fermé · Google Play</span>
+					<span class="card-stage">{getProjectStageLabel('notch')}</span>
 				</div>
 			</a>
-			<a href="/projets/open-event-orchestrator/" class="home-card glass-card reveal reveal-delay-3">
-				<h3 class="card-title">Open Event Orchestrator</h3>
-				<p class="card-desc">Plateforme open source de gestion d'événements. CFP, planning, billetterie, CRM.</p>
-				<span class="card-meta">TypeScript · SvelteKit · PocketBase</span>
+			<a href="/projets/open-event-orchestrator/" class="home-card glass-card home-card--app reveal reveal-delay-3">
+				<img src="/images/apps/oeo/icon.webp" alt="Open Event Orchestrator" class="card-icon" />
+				<div>
+					<h3 class="card-title">Open Event Orchestrator</h3>
+					<p class="card-desc">Plateforme open source de gestion d'événements. CFP, planning, billetterie, CRM.</p>
+					<span class="card-stage">{getProjectStageLabel('open-event-orchestrator')}</span>
+				</div>
 			</a>
-			<a href="/projets/repolens/" class="home-card glass-card reveal reveal-delay-4">
-				<h3 class="card-title">RepoLens</h3>
-				<p class="card-desc">CLI d'audit de dépôts GitHub. Bonnes pratiques, sécurité, compliance.</p>
-				<span class="card-meta">Rust · CLI · Open source</span>
+			<a href="/projets/repolens/" class="home-card glass-card home-card--app reveal reveal-delay-4">
+				<img src="/images/apps/repolens/icon.webp" alt="RepoLens" class="card-icon" />
+				<div>
+					<h3 class="card-title">RepoLens</h3>
+					<p class="card-desc">CLI d'audit de dépôts GitHub. Bonnes pratiques, sécurité, compliance.</p>
+					<span class="card-stage">{getProjectStageLabel('repolens')}</span>
+				</div>
 			</a>
 		</div>
 		<p class="section-more"><a href="/projets/">Voir tous les projets →</a></p>
@@ -612,6 +619,19 @@
 		font-family: var(--font-ui);
 		font-size: 12px;
 		color: var(--tertiary);
+	}
+
+	.card-stage {
+		display: inline-block;
+		font-family: var(--font-ui);
+		font-size: 11px;
+		font-weight: 600;
+		color: var(--accent);
+		border: 1px solid var(--accent-border);
+		background: var(--accent-light);
+		padding: 2px 10px;
+		border-radius: 9999px;
+		margin-top: 4px;
 	}
 
 	/* Follow */

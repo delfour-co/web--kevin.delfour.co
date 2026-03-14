@@ -1,5 +1,7 @@
 <script lang="ts">
 	import SEO from '$lib/components/SEO.svelte';
+	import ProjectProgress from '$lib/components/ProjectProgress.svelte';
+	import { getProjectStage } from '$lib/data/projects';
 
 	const screenshots = [
 		{ src: '/images/apps/notch/notch_001.png', alt: 'Écran d\'accueil Notch' },
@@ -39,6 +41,10 @@
 		</div>
 		<span class="status-pill">Test fermé · Google Play</span>
 	</header>
+
+	<div class="progress-section">
+		<ProjectProgress stage={getProjectStage('notch')!} />
+	</div>
 
 	<img src="/images/apps/notch/presentation.webp" alt="Présentation Notch" class="hero-image" />
 
@@ -447,6 +453,10 @@
 		font-size: 1.5rem;
 		cursor: pointer;
 		padding: 8px;
+	}
+
+	.progress-section {
+		margin-bottom: calc(var(--gap) * 2);
 	}
 
 	@media (max-width: 640px) {
