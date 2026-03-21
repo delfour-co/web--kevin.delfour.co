@@ -70,7 +70,7 @@
 				<img src="/images/apps/githero/icon.png" alt="Icône Git Hero" class="app-card-icon" />
 				<div class="app-card-content">
 					<h3>Git Hero</h3>
-					<p>App mobile de livres-jeux interactifs pilotés par l'historique git. Apprendre git en jouant.</p>
+					<p>L'histoire vit dans les commits. Des livres-jeux interactifs où les branches git sont vos choix.</p>
 					<div class="project-meta">
 						<span class="project-lang">Flutter</span>
 						<span class="project-tech pill">Dart</span>

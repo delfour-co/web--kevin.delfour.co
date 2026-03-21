@@ -19,7 +19,7 @@
 
 <SEO
 	title="Git Hero"
-	description="App mobile de livres-jeux interactifs pilotés par l'historique git. Apprendre git en jouant."
+	description="L'histoire vit dans les commits. Des livres-jeux interactifs où les branches git sont vos choix."
 	url="https://kevin.delfour.co/projets/githero/"
 />
 
@@ -36,7 +36,7 @@
 			<div>
 				<span class="badge">Mobile · Dart</span>
 				<h1>Git Hero</h1>
-				<p class="project-tagline">App mobile de livres-jeux interactifs où l'historique git pilote la narration. Apprendre git en jouant.</p>
+				<p class="project-tagline">L'histoire vit dans les commits. Des livres-jeux interactifs où les branches git sont vos choix.</p>
 			</div>
 		</div>
 		<div class="project-links">
@@ -51,23 +51,49 @@
 
 	<section class="project-section">
 		<h2>Le concept</h2>
-		<p>Git Hero transforme l'apprentissage de git en aventure interactive. Chaque livre-jeu utilise un vrai historique git comme moteur narratif : les branches deviennent des choix, les commits des étapes, et les merges des résolutions. Le lecteur progresse en manipulant git pour avancer dans l'histoire.</p>
+		<p>Des livres-jeux interactifs où les branches git sont vos choix. Chaque commit est un fragment narratif, chaque branche un embranchement de l'histoire. Aux points de divergence, le lecteur explore les chemins — chaque route mène à une fin différente.</p>
 	</section>
 
 	<section class="project-section">
-		<h2>Fonctionnalités</h2>
+		<h2>Comment ça marche</h2>
 		<div class="features-grid">
 			<div class="feature glass-card">
-				<h3>Livres-jeux interactifs</h3>
-				<p>Des aventures narratives où chaque choix correspond à une opération git.</p>
+				<h3>Catalogue</h3>
+				<p>Parcourez le catalogue et découvrez les détails de chaque histoire.</p>
 			</div>
 			<div class="feature glass-card">
-				<h3>Historique git comme moteur</h3>
-				<p>L'arbre git réel pilote la progression et les embranchements de l'histoire.</p>
+				<h3>Lecture par commits</h3>
+				<p>Chaque commit est un fragment narratif. Avancez dans le récit étape par étape.</p>
 			</div>
 			<div class="feature glass-card">
-				<h3>Apprentissage par la pratique</h3>
-				<p>Comprendre branch, merge, rebase et cherry-pick en contexte narratif.</p>
+				<h3>Branches = choix</h3>
+				<p>Aux points de divergence, explorez les branches — chaque chemin mène à une fin différente.</p>
+			</div>
+			<div class="feature glass-card">
+				<h3>Git graph</h3>
+				<p>Visualisez votre progression comme un git graph. Repérez les branches inexplorées.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="project-section">
+		<h2>Au catalogue</h2>
+		<div class="features-grid">
+			<div class="feature glass-card">
+				<h3>Le Signal</h3>
+				<p>Un développeur reçoit un commit qu'il n'a jamais écrit. Le SHA est impossible.</p>
+			</div>
+			<div class="feature glass-card">
+				<h3>La Faille</h3>
+				<p>Une IA de code review commence à laisser des commentaires étranges sur les pull requests.</p>
+			</div>
+			<div class="feature glass-card">
+				<h3>Comment planter sa startup</h3>
+				<p>Tu viens de lever 500 000 €. Tu as un pitch deck en béton, un logo qui claque, et absolument aucune idée de ce que tu fais.</p>
+			</div>
+			<div class="feature glass-card">
+				<h3>Le CTO qui savait tout</h3>
+				<p>Tu viens d'être promu CTO. Tu étais le meilleur développeur de l'équipe, donc logiquement, tu seras le meilleur manager technique.</p>
 			</div>
 		</div>
 	</section>
