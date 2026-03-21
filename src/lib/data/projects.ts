@@ -19,8 +19,10 @@ export interface FeaturedProject {
 export const featuredProjects: FeaturedProject[] = [
 	{ slug: 'asteroids', stage: 'alpha' },
 	{ slug: 'notch', stage: 'alpha' },
+	{ slug: 'githero', stage: 'beta' },
 	{ slug: 'open-event-orchestrator', stage: 'dev' },
 	{ slug: 'repolens', stage: 'production' },
+	{ slug: 'claude-pulse', stage: 'production' },
 	{ slug: 'arcane-craft', stage: 'prototype' }
 ];
 

@@ -51,7 +51,7 @@
 
 	<!-- App mobile -->
 	<section class="category-section">
-		<h2>Application mobile</h2>
+		<h2>Applications mobiles</h2>
 		<div class="apps-grid">
 			<a href="/projets/notch/" class="app-card glass-card">
 				<img src="/images/apps/notch/icon.webp" alt="Icône Notch" class="app-card-icon" />
@@ -64,6 +64,19 @@
 						<span class="project-tech pill">SMS</span>
 					</div>
 					<span class="status-stage"><span class="status-label">Étape :</span> {getProjectStageLabel('notch')}</span>
+				</div>
+			</a>
+			<a href="/projets/githero/" class="app-card glass-card">
+				<img src="/images/apps/githero/icon.png" alt="Icône Git Hero" class="app-card-icon" />
+				<div class="app-card-content">
+					<h3>Git Hero</h3>
+					<p>App mobile de livres-jeux interactifs pilotés par l'historique git. Apprendre git en jouant.</p>
+					<div class="project-meta">
+						<span class="project-lang">Flutter</span>
+						<span class="project-tech pill">Dart</span>
+						<span class="project-tech pill">Git</span>
+					</div>
+					<span class="status-stage"><span class="status-label">Étape :</span> {getProjectStageLabel('githero')}</span>
 				</div>
 			</a>
 		</div>
@@ -84,6 +97,26 @@
 						<span class="project-tech pill">PocketBase</span>
 					</div>
 					<span class="status-stage"><span class="status-label">Étape :</span> {getProjectStageLabel('open-event-orchestrator')}</span>
+				</div>
+			</a>
+		</div>
+	</section>
+
+	<!-- Desktop -->
+	<section class="category-section">
+		<h2>Desktop</h2>
+		<div class="apps-grid">
+			<a href="/projets/claude-pulse/" class="app-card glass-card">
+				<div class="app-card-icon-placeholder">CP</div>
+				<div class="app-card-content">
+					<h3>Claude Pulse</h3>
+					<p>Monitore tes agents Claude Code en temps réel depuis le bureau. Multi-profils, suivi live, notifications desktop.</p>
+					<div class="project-meta">
+						<span class="project-lang">JavaScript</span>
+						<span class="project-tech pill">Electron</span>
+						<span class="project-tech pill">Desktop</span>
+					</div>
+					<span class="status-stage"><span class="status-label">Étape :</span> {getProjectStageLabel('claude-pulse')}</span>
 				</div>
 			</a>
 		</div>
@@ -164,6 +197,22 @@
 		height: 56px;
 		border-radius: 14px;
 		flex-shrink: 0;
+	}
+
+	.app-card-icon-placeholder {
+		width: 56px;
+		height: 56px;
+		border-radius: 14px;
+		flex-shrink: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--accent-light);
+		border: 1px solid var(--accent-border);
+		color: var(--accent);
+		font-family: var(--font-ui);
+		font-weight: 700;
+		font-size: 16px;
 	}
 
 	.app-card-content h3 {
