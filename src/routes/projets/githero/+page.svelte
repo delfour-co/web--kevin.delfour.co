@@ -2,6 +2,19 @@
 	import SEO from '$lib/components/SEO.svelte';
 	import ProjectProgress from '$lib/components/ProjectProgress.svelte';
 	import { getProjectStage } from '$lib/data/projects';
+
+	const screenshots = [
+		{ src: '/images/apps/githero/git-hero_008.png', alt: 'Bibliothèque — liste des livres-jeux' },
+		{ src: '/images/apps/githero/git-hero_007.png', alt: 'Fiche livre — Le Signal, thriller dev' },
+		{ src: '/images/apps/githero/git-hero_001.png', alt: 'Écran de connexion — $ git login' },
+		{ src: '/images/apps/githero/git-hero_002.png', alt: 'Inscription — $ git init --user' },
+		{ src: '/images/apps/githero/git-hero_003.png', alt: 'Carte du livre — $ git log --graph' },
+		{ src: '/images/apps/githero/git-hero_004.png', alt: 'Lecture d\'un commit sur une branche' },
+		{ src: '/images/apps/githero/git-hero_005.png', alt: 'Choix de branche — $ git checkout' },
+		{ src: '/images/apps/githero/git-hero_006.png', alt: 'Divergence détectée — choix multiples' }
+	];
+
+	let selectedImage: string | null = $state(null);
 </script>
 
 <SEO
@@ -27,7 +40,8 @@
 			</div>
 		</div>
 		<div class="project-links">
-			<a href="https://github.com/delfour-co/githero" target="_blank" rel="noopener" class="btn-primary">Voir sur GitHub →</a>
+			<a href="http://githero.demo.delfour.co/" target="_blank" rel="noopener" class="btn-primary">Tester la démo →</a>
+			<a href="https://github.com/delfour-co/githero" target="_blank" rel="noopener" class="btn-secondary">Voir sur GitHub →</a>
 		</div>
 	</header>
 
@@ -59,6 +73,17 @@
 	</section>
 
 	<section class="project-section">
+		<h2>Captures d'écran</h2>
+		<div class="screenshots-grid">
+			{#each screenshots as screenshot}
+				<button class="screenshot-thumb" onclick={() => selectedImage = screenshot.src}>
+					<img src={screenshot.src} alt={screenshot.alt} loading="lazy" />
+				</button>
+			{/each}
+		</div>
+	</section>
+
+	<section class="project-section">
 		<h2>Stack technique</h2>
 		<div class="tech-pills">
 			<span class="pill">Dart</span>
@@ -71,6 +96,13 @@
 		<a href="/projets/" class="back-link">← Retour aux projets</a>
 	</footer>
 </div>
+
+{#if selectedImage}
+	<div class="lightbox" role="dialog" aria-label="Image agrandie" onclick={() => selectedImage = null} onkeydown={(e) => e.key === 'Escape' && (selectedImage = null)}>
+		<button class="lightbox-close" onclick={() => selectedImage = null} aria-label="Fermer">✕</button>
+		<img src={selectedImage} alt="Capture d'écran agrandie" />
+	</div>
+{/if}
 
 <style>
 	.page-container {
@@ -202,9 +234,73 @@
 		color: var(--accent);
 	}
 
+	/* Screenshots */
+	.screenshots-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+		gap: var(--gap);
+	}
+
+	.screenshot-thumb {
+		background: none;
+		border: 1px solid var(--border);
+		border-radius: var(--radius);
+		overflow: hidden;
+		cursor: pointer;
+		padding: 0;
+		transition: all 0.2s ease;
+	}
+
+	.screenshot-thumb:hover {
+		border-color: var(--accent-border);
+		box-shadow: var(--accent-glow);
+	}
+
+	.screenshot-thumb img {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+
+	/* Lightbox */
+	.lightbox {
+		position: fixed;
+		inset: 0;
+		z-index: 1000;
+		background: rgba(0, 0, 0, 0.9);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: var(--gap);
+		cursor: pointer;
+	}
+
+	.lightbox img {
+		max-width: 90vw;
+		max-height: 90vh;
+		border-radius: var(--radius);
+		cursor: default;
+	}
+
+	.lightbox-close {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		background: none;
+		border: none;
+		color: var(--primary);
+		font-size: 1.5rem;
+		cursor: pointer;
+		padding: 8px;
+	}
+
 	@media (max-width: 640px) {
 		.project-header {
 			flex-direction: column;
+		}
+
+		.screenshots-grid {
+			grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
 		}
 	}
 </style>
