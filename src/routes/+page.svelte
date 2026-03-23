@@ -150,6 +150,27 @@
 					<span class="card-stage">{getProjectStageLabel('repolens')}</span>
 				</div>
 			</a>
+			<a href="/projets/claude-pulse/" class="home-card glass-card home-card--app reveal reveal-delay-1">
+				<div class="card-icon-svg">
+					<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+						<path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+						<path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z" />
+					</svg>
+				</div>
+				<div>
+					<h3 class="card-title">Claude Pulse</h3>
+					<p class="card-desc">Monitore tes agents Claude Code en temps réel. Multi-profils, notifications desktop.</p>
+					<span class="card-stage">{getProjectStageLabel('claude-pulse')}</span>
+				</div>
+			</a>
+			<a href="/projets/githero/" class="home-card glass-card home-card--app reveal reveal-delay-2">
+				<img src="/images/apps/githero/icon.png" alt="Git Hero" class="card-icon" />
+				<div>
+					<h3 class="card-title">Git Hero</h3>
+					<p class="card-desc">Des livres-jeux interactifs où les branches git sont vos choix.</p>
+					<span class="card-stage">{getProjectStageLabel('githero')}</span>
+				</div>
+			</a>
 		</div>
 		<p class="section-more"><a href="/projets/">Voir tous les projets →</a></p>
 	</section>
@@ -517,6 +538,27 @@
 		border: 1px solid rgba(6, 182, 212, 0.15);
 		box-shadow: 0 0 6px rgba(6, 182, 212, 0.05);
 		transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.card-icon-svg {
+		width: 52px;
+		height: 52px;
+		border-radius: 14px;
+		flex-shrink: 0;
+		border: 1px solid rgba(6, 182, 212, 0.15);
+		box-shadow: 0 0 6px rgba(6, 182, 212, 0.05);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--accent);
+		background: rgba(6, 182, 212, 0.05);
+		transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.home-card:hover .card-icon-svg {
+		transform: scale(1.08);
+		border-color: rgba(6, 182, 212, 0.4);
+		box-shadow: 0 0 12px rgba(6, 182, 212, 0.2);
 	}
 
 	.home-card:hover .card-icon {
