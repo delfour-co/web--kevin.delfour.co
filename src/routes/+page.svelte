@@ -72,9 +72,7 @@
 
 		<div class="hero-content">
 			<div class="hero-avatar-wrapper">
-				<div class="avatar-ring"></div>
-				<div class="avatar-glow"></div>
-				<img src="/images/kevin-delfour.webp" alt="Kevin Delfour" class="hero-avatar" width="140" height="140" />
+				<img src="/images/kevin-delfour.png" alt="Kevin Delfour" class="hero-avatar" width="140" height="140" />
 			</div>
 			<h1 class="hero-title gradient-text">Kevin Delfour</h1>
 			<p class="hero-subtitle">CTO Hands-on · 17 ans de terrain</p>
@@ -298,45 +296,7 @@
 	}
 
 	.hero-avatar-wrapper {
-		position: relative;
-		width: 148px;
-		height: 148px;
 		margin: 0 auto calc(var(--gap) * 2);
-	}
-
-	.avatar-ring {
-		position: absolute;
-		inset: -8px;
-		border-radius: 50%;
-		background: conic-gradient(from 0deg, #06b6d4, #8b5cf6, #ec4899, #06b6d4);
-		animation: ring-rotate 6s linear infinite;
-	}
-
-	.avatar-ring::after {
-		content: '';
-		position: absolute;
-		inset: 5px;
-		border-radius: 50%;
-		background: #000;
-	}
-
-	.avatar-ring::before {
-		content: '';
-		position: absolute;
-		inset: -8px;
-		border-radius: 50%;
-		background: conic-gradient(from 0deg, rgba(6,182,212,0.3), rgba(139,92,246,0.3), rgba(236,72,153,0.3), rgba(6,182,212,0.3));
-		filter: blur(10px);
-		animation: ring-rotate 6s linear infinite;
-		z-index: -1;
-	}
-
-	.avatar-glow {
-		position: absolute;
-		inset: -30px;
-		border-radius: 50%;
-		background: radial-gradient(circle, rgba(6, 182, 212, 0.2) 0%, transparent 70%);
-		animation: glow-pulse 3s ease-in-out infinite;
 	}
 
 	.hero-avatar {
@@ -344,11 +304,6 @@
 		height: 140px;
 		border-radius: 50%;
 		object-fit: cover;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		z-index: 1;
 	}
 
 	.hero-title {
@@ -720,11 +675,6 @@
 
 		.grid-2 {
 			grid-template-columns: 1fr;
-		}
-
-		.hero-avatar-wrapper {
-			width: 160px;
-			height: 160px;
 		}
 
 		.hero-avatar {

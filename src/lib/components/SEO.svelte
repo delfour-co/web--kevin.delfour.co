@@ -16,7 +16,7 @@
 	const SITE_NAME = 'Kevin Delfour';
 	const SITE_URL = 'https://kevin.delfour.co';
 	const DEFAULT_DESCRIPTION = 'CTO · 17 ans de terrain. Je donne des repères. Pas des leçons.';
-	const DEFAULT_IMAGE = `${SITE_URL}/images/kevin-delfour.webp`;
+	const DEFAULT_IMAGE = `${SITE_URL}/images/kevin-delfour.png`;
 
 	let {
 		title = '',
