@@ -72,7 +72,7 @@
 
 		<div class="hero-content">
 			<div class="hero-avatar-wrapper">
-				<img src="/images/kevin-delfour.png" alt="Kevin Delfour" class="hero-avatar" width="140" height="140" />
+				<img src="/images/kevin-delfour.png" alt="Kevin Delfour" class="hero-avatar" width="200" height="200" />
 			</div>
 			<h1 class="hero-title gradient-text">Kevin Delfour</h1>
 			<p class="hero-subtitle">CTO Hands-on · 17 ans de terrain</p>
@@ -296,13 +296,24 @@
 	}
 
 	.hero-avatar-wrapper {
+		position: relative;
+		width: 200px;
+		height: 200px;
 		margin: 0 auto calc(var(--gap) * 2);
+		border-radius: 20px;
+		animation: halo-shift 6s ease-in-out infinite;
+	}
+
+	@keyframes halo-shift {
+		0%, 100% { box-shadow: 0 0 12px 3px rgba(6, 182, 212, 0.35), 0 0 24px 6px rgba(6, 182, 212, 0.1); }
+		33% { box-shadow: 0 0 12px 3px rgba(139, 92, 246, 0.35), 0 0 24px 6px rgba(139, 92, 246, 0.1); }
+		66% { box-shadow: 0 0 12px 3px rgba(236, 72, 153, 0.35), 0 0 24px 6px rgba(236, 72, 153, 0.1); }
 	}
 
 	.hero-avatar {
-		width: 140px;
-		height: 140px;
-		border-radius: 50%;
+		width: 200px;
+		height: 200px;
+		border-radius: 20px;
 		object-fit: cover;
 	}
 
@@ -677,9 +688,14 @@
 			grid-template-columns: 1fr;
 		}
 
+		.hero-avatar-wrapper {
+			width: 180px;
+			height: 180px;
+		}
+
 		.hero-avatar {
-			width: 150px;
-			height: 150px;
+			width: 180px;
+			height: 180px;
 		}
 
 		.hero-orb--1 { width: 200px; height: 200px; }
