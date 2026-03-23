@@ -27,6 +27,7 @@
 		</div>
 		<div class="project-links">
 			<a href="https://github.com/delfour-co/claude-pulse" target="_blank" rel="noopener" class="btn-primary">Voir sur GitHub →</a>
+			<a href="https://launchpad.net/~delfour-co/+archive/ubuntu/claude-pulse" target="_blank" rel="noopener" class="btn-secondary">PPA Ubuntu →</a>
 		</div>
 	</header>
 
