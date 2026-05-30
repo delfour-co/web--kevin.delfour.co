@@ -689,7 +689,7 @@
 							<polygon
 								points={gridPoints(level)}
 								fill="none"
-								stroke="var(--border)"
+								style="stroke: var(--border)"
 								stroke-width="0.5"
 								opacity="0.5"
 							/>
@@ -701,7 +701,7 @@
 								y1="100"
 								x2={100 + 80 * Math.cos(Math.atan2(point.y - 100, point.x - 100))}
 								y2={100 + 80 * Math.sin(Math.atan2(point.y - 100, point.x - 100))}
-								stroke="var(--border)"
+								style="stroke: var(--border)"
 								stroke-width="0.5"
 								opacity="0.3"
 							/>
@@ -709,14 +709,13 @@
 						<!-- Data polygon -->
 						<polygon
 							points={radarPolygon}
-							fill="var(--accent)"
+							style="fill: var(--accent); stroke: var(--accent)"
 							fill-opacity="0.15"
-							stroke="var(--accent)"
 							stroke-width="1.5"
 						/>
 						<!-- Points -->
 						{#each radarPoints as point}
-							<circle cx={point.x} cy={point.y} r="3" fill="var(--accent)" />
+							<circle cx={point.x} cy={point.y} r="3" style="fill: var(--accent)" />
 						{/each}
 						<!-- Labels -->
 						{#each radarPoints as point}
@@ -725,9 +724,8 @@
 								y={point.labelY}
 								text-anchor="middle"
 								dominant-baseline="middle"
-								fill="var(--secondary)"
+								style="fill: var(--secondary); font-family: var(--font-ui)"
 								font-size="7"
-								font-family="var(--font-ui)"
 							>
 								{point.label}
 							</text>

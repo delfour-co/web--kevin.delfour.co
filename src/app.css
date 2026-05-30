@@ -480,7 +480,7 @@ textarea:focus {
 }
 
 select option {
-	background: #1a1a1a;
+	background: var(--surface);
 	color: var(--primary);
 }
 

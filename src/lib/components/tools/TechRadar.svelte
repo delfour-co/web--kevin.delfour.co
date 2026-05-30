@@ -397,7 +397,7 @@
 					<line
 						x1={CENTER} y1={CENTER}
 						x2={CENTER + MAX_RADIUS} y2={CENTER}
-						stroke="rgb(var(--accent-rgb) / 0.4)" stroke-width="1.5"
+						style="stroke: rgb(var(--accent-rgb) / 0.4)" stroke-width="1.5"
 						class="sweep-line"
 						clip-path="url(#radarClip)"
 					/>
@@ -405,7 +405,7 @@
 					<!-- Sweep trail -->
 					<path
 						d="M {CENTER},{CENTER} L {CENTER + MAX_RADIUS},{CENTER} A {MAX_RADIUS},{MAX_RADIUS} 0 0,0 {CENTER + MAX_RADIUS * Math.cos(Math.PI/6)},{CENTER - MAX_RADIUS * Math.sin(Math.PI/6)} Z"
-						fill="rgb(var(--accent-rgb) / 0.04)"
+						style="fill: rgb(var(--accent-rgb) / 0.04)"
 						class="sweep-trail"
 						clip-path="url(#radarClip)"
 					/>
@@ -430,7 +430,7 @@
 					<text x={CENTER - MAX_RADIUS/2} y={CENTER + MAX_RADIUS - 8} text-anchor="middle" class="quadrant-label-svg">Techniques</text>
 
 					<!-- Center dot -->
-					<circle cx={CENTER} cy={CENTER} r="3" fill="var(--accent)" fill-opacity="0.6" />
+					<circle cx={CENTER} cy={CENTER} r="3" style="fill: var(--accent)" fill-opacity="0.6" />
 
 					<!-- Blips -->
 					{#each placedBlips as b}
