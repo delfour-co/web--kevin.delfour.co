@@ -1,18 +1,9 @@
 <script lang="ts">
 	import SEO from '$lib/components/SEO.svelte';
 	import { toolCategories } from '$lib/data/tools';
-	import { getProjectStageLabel } from '$lib/data/projects';
+	import { homeProjects } from '$lib/data/projects';
 
 	let { data } = $props();
-
-	const projects = [
-		{ href: '/projets/asteroids/', name: 'neon-asteroids', desc: 'Arcade shooter néon. Flutter + Flame.', tech: 'Flutter', slug: 'asteroids' },
-		{ href: '/projets/notch/', name: 'notch', desc: 'SMS chiffrés par Enigma. Pas de serveur.', tech: 'crypto', slug: 'notch' },
-		{ href: '/projets/claude-pulse/', name: 'claude-pulse', desc: 'Monitore tes agents Claude Code en temps réel.', tech: 'CLI', slug: 'claude-pulse' },
-		{ href: '/projets/repolens/', name: 'repolens', desc: "CLI d'audit de dépôts GitHub.", tech: 'CLI', slug: 'repolens' },
-		{ href: '/projets/githero/', name: 'githero', desc: 'Livres-jeux où les branches git sont tes choix.', tech: 'web', slug: 'githero' },
-		{ href: '/projets/open-event-orchestrator/', name: 'open-event-orchestrator', desc: "Plateforme open source d'événements.", tech: 'web', slug: 'open-event-orchestrator' }
-	];
 
 	const tools = toolCategories.flatMap((c) => c.tools).slice(0, 9);
 </script>
@@ -53,15 +44,26 @@
 				<h2 class="visually-hidden">Projets</h2>
 				<div class="cmd"><span class="p">$</span> ls projets/</div>
 				<div class="grid">
-					{#each projects as p}
-						<a class="card" href={p.href}>
-							<div class="card-name">{p.name}</div>
-							<div class="card-desc">{p.desc}</div>
-							<div class="card-meta">
-								<span class="stage">{getProjectStageLabel(p.slug)}</span>
-								<span class="tech">{p.tech}</span>
+					{#each homeProjects as p}
+						{#if p.href}
+							<a class="card" href={p.href}>
+								<div class="card-name">{p.name}</div>
+								{#if p.desc}<div class="card-desc">{p.desc}</div>{/if}
+								<div class="card-meta">
+									{#if p.private}<span class="priv">privé</span>{/if}
+									<span class="tech">{p.lang}</span>
+								</div>
+							</a>
+						{:else}
+							<div class="card card--static">
+								<div class="card-name">{p.name}</div>
+								{#if p.desc}<div class="card-desc">{p.desc}</div>{/if}
+								<div class="card-meta">
+									{#if p.private}<span class="priv">privé</span>{/if}
+									<span class="tech">{p.lang}</span>
+								</div>
 							</div>
-						</a>
+						{/if}
 					{/each}
 				</div>
 				<p class="more"><a href="/projets/">→ tous les projets</a></p>
@@ -193,11 +195,13 @@
 		display: block;
 	}
 	.card:hover { border-color: var(--accent); transform: translateY(-2px); text-decoration: none; }
+	.card--static { cursor: default; }
+	.card--static:hover { border-color: var(--border); transform: none; }
 	.card-name { color: var(--accent); font-weight: 600; font-size: 0.8125rem; margin-bottom: 5px; }
 	.card-name::before { content: './'; color: var(--tertiary); }
 	.card-desc { color: var(--content); font-size: 0.72rem; line-height: calc(1.5 * var(--a11y-line-height-mult)); margin-bottom: 9px; }
 	.card-meta { display: flex; gap: 8px; align-items: center; font-size: 0.66rem; }
-	.stage { color: var(--accent); border: 1px solid var(--accent-border); background: var(--accent-light); border-radius: 999px; padding: 1px 8px; }
+	.priv { color: var(--tertiary); border: 1px solid var(--border); border-radius: 999px; padding: 1px 8px; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.05em; }
 	.tech { color: var(--tertiary); }
 
 	/* Tools */
