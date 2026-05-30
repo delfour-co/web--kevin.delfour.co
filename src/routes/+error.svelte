@@ -55,9 +55,6 @@
 				<span class="btn-glow"></span>
 				Retour à la grille
 			</a>
-			<a href="/articles/" class="btn-grid btn-grid--secondary">
-				Lire les articles
-			</a>
 		</nav>
 
 		<div class="error-suggestions">

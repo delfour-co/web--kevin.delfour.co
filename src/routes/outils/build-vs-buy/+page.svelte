@@ -25,9 +25,6 @@
 
 	<BuildVsBuy />
 
-	<div class="tool-article-link">
-		<a href="/articles/build-vs-buy-vs-partner-cadre-decision/">Lire l'article de fond</a>
-	</div>
 </div>
 
 <style>
