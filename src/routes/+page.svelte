@@ -6,14 +6,6 @@
 
 	let { data } = $props();
 
-	function formatDate(dateStr: string): string {
-		return new Date(dateStr).toLocaleDateString('fr-FR', {
-			year: 'numeric',
-			month: 'long',
-			day: 'numeric'
-		});
-	}
-
 	// Flatten all tools for homepage display (max 6)
 	const featuredTools = toolCategories.flatMap((c) => c.tools).slice(0, 6);
 
@@ -198,44 +190,6 @@
 		<p class="section-more"><a href="/livres/">Voir les livres →</a></p>
 	</section>
 
-	<!-- Derniers articles -->
-	{#if data.latestPosts.length > 0}
-		<section class="home-section reveal">
-			<span class="section-badge badge">Blog</span>
-			<h2>Derniers articles</h2>
-			<div class="articles-list">
-				{#each data.latestPosts.slice(0, 4) as post, i}
-					<article class="post-entry reveal reveal-delay-{(i % 4) + 1}">
-						<a href="/articles/{post.slug}/" class="entry-link">
-							<h3 class="entry-title">{post.title}</h3>
-							<p class="entry-desc">{post.description}</p>
-							<footer class="entry-meta">
-								<time datetime={post.date}>{formatDate(post.date)}</time>
-								{#if post.readingTime}
-									<span>{post.readingTime} min</span>
-								{/if}
-								{#each post.categories as cat}
-									<span class="entry-pill pill">{cat}</span>
-								{/each}
-							</footer>
-						</a>
-					</article>
-				{/each}
-			</div>
-			<p class="section-more"><a href="/articles/">Voir tous les articles →</a></p>
-		</section>
-	{/if}
-
-	<!-- Suivre -->
-	<section class="home-section reveal">
-		<span class="section-badge badge">Connexion</span>
-		<h2>Suivre</h2>
-		<p class="follow-text">Un nouvel article chaque mois. Pas de spam, pas d'algorithme.</p>
-		<div class="hero-actions" style="justify-content: flex-start; margin-top: 1rem;">
-			<a href="https://github.com/kdelfour" class="btn-primary" target="_blank" rel="noopener noreferrer">GitHub</a>
-			<a href="https://linkedin.com/in/kevindelfour" class="btn-secondary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-		</div>
-	</section>
 </div>
 
 <style>
