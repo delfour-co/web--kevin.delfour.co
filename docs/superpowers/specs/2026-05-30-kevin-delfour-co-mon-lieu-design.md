@@ -39,6 +39,7 @@ cette énergie passe par une **esthétique terminal** (voir §7) plutôt que né
 | Sujet | Décision |
 |---|---|
 | Job n°1 du site | Mon espace à moi |
+| Identité / rôle | **Lead Tech** (avec dimension management), 17 ans de terrain — remplace « CTO » partout |
 | Blog (172 articles) | **Suppression physique** des fichiers + échafaudage |
 | Cadre de mission | Retiré (ligne éditoriale, publics, piliers, cadence) |
 | Projets | Au cœur de la home |
@@ -59,8 +60,10 @@ cette énergie passe par une **esthétique terminal** (voir §7) plutôt que né
 > Il ne sert pas un public, n'a pas de mission, ne doit rien à personne.
 > Site-objet, joueur, **esthétique terminal / ligne de commande** assumée.
 
-L'identité **CTO / 17 ans** reste — mais comme *qui il est*, pas comme une
-autorité qui transmet.
+L'identité **Lead Tech (dimension management) / 17 ans de terrain** est posée
+comme *qui il est*, pas comme une autorité qui transmet. Le rôle actuel est
+**Lead Tech avec une part de management** — plus « CTO ». Toute mention « CTO »
+du site est remplacée en conséquence (hero, À propos, SEO, micro-copy).
 
 ---
 
@@ -99,10 +102,15 @@ autorité qui transmet.
 
 - **Home** : hero recentré sur « qui est Kevin » (`$ whoami`), plus de CTA de
   service. Projets en premier. Cadre fenêtre terminal (voir §7).
-- **À propos** : réécrite en « qui je suis », sans vocabulaire de mission ni
-  « ligne morale » de service.
+- **À propos** : réécrite en « qui je suis » (**Lead Tech + management**),
+  sans vocabulaire de mission ni « ligne morale » de service. Le passage
+  antérieur par un poste de CTO peut y être évoqué si Kevin le souhaite, mais
+  n'est pas la vitrine.
+- **Rôle « CTO » → « Lead Tech »** : remplacer toutes les occurrences de copy
+  « CTO » présentant Kevin (hero `whoami`, À propos, SEO/méta, footer). Ne pas
+  toucher au **titre du livre** « Être ou ne pas être CTO » (œuvre publiée).
 - **SEO / méta home** : description reformulée (retirer « outils de décision,
-  livres gratuits » formulé comme offre).
+  livres gratuits » formulé comme offre ; refléter le rôle Lead Tech).
 - **CLAUDE.md** : réécrit pour refléter « mon lieu » (sinon toute future
   intervention IA repart d'une fausse carte).
 
@@ -125,7 +133,8 @@ Kevin ajoute un projet quand il en termine un — jamais par devoir.
 ## 6. Ton & forme
 
 - Première personne, libre.
-- Identité CTO/17 ans = qui il est, pas une posture d'autorité.
+- Identité Lead Tech (+ management) / 17 ans = qui il est, pas une posture
+  d'autorité.
 - Esprit terminal, jeu, expérimentation : assumés plutôt que bridés.
 - Micro-copy en métaphore shell : `$ whoami`, `$ ls projets/`,
   `$ cat livres/*`, `$ contact --me` — au service de la lisibilité, jamais
