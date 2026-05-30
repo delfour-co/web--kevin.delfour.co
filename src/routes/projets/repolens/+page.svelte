@@ -181,7 +181,7 @@
 		align-items: center;
 		gap: 8px;
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--secondary);
 		margin-bottom: calc(var(--gap) * 1.5);
 	}
@@ -361,7 +361,7 @@
 
 	.back-link {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: var(--secondary);
 		text-decoration: none;
 	}

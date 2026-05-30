@@ -109,7 +109,7 @@
 		border: 1px solid var(--accent-border);
 		border-radius: var(--radius);
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: var(--secondary);
 	}
 
@@ -118,7 +118,7 @@
 		background: var(--code-bg);
 		padding: 2px 6px;
 		border-radius: 4px;
-		font-size: 13px;
+		font-size: 0.8125rem;
 	}
 
 	.search-input-wrapper {
@@ -128,7 +128,7 @@
 	.search-input {
 		width: 100%;
 		font-family: var(--font-ui);
-		font-size: 16px;
+		font-size: 1rem;
 		padding: 12px 16px;
 		border: 1px solid var(--border);
 		border-radius: var(--radius);
@@ -150,7 +150,7 @@
 	.search-status,
 	.search-hint {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: var(--secondary);
 	}
 

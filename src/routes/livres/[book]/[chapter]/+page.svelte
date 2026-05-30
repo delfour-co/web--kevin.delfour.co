@@ -61,7 +61,7 @@
 		align-items: center;
 		gap: 8px;
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--secondary);
 		margin-bottom: calc(var(--gap) * 1.5);
 		flex-wrap: wrap;
@@ -98,7 +98,7 @@
 
 	.chapter-reading-time {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--tertiary);
 	}
 </style>

@@ -95,7 +95,7 @@
 
 	.progress-text {
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 		white-space: nowrap;
 	}
@@ -186,7 +186,7 @@
 		display: block;
 		text-align: center;
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--secondary);
 		text-decoration: none;
 		padding: 8px;

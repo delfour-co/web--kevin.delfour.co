@@ -212,7 +212,7 @@
 		color: var(--accent);
 		font-family: var(--font-ui);
 		font-weight: 700;
-		font-size: 16px;
+		font-size: 1rem;
 	}
 
 	.app-card-content h3 {
@@ -278,7 +278,7 @@
 
 	.project-lang {
 		font-family: var(--font-ui);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		padding: 2px 10px;
 		background: var(--accent);
 		color: var(--theme);
@@ -291,7 +291,7 @@
 		align-items: center;
 		gap: 4px;
 		font-family: var(--font-ui);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		font-weight: 600;
 		color: var(--accent);
 		border: 1px solid var(--accent-border);

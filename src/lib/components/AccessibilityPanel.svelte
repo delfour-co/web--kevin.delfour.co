@@ -358,7 +358,7 @@
 	.a11y-label {
 		display: block;
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin-bottom: 8px;
@@ -372,7 +372,7 @@
 	.a11y-btn {
 		flex: 1;
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		padding: 8px;
 		border: 1px solid var(--border);
 		border-radius: var(--radius-sm);
@@ -406,7 +406,7 @@
 
 	.a11y-toggle-btn {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		padding: 6px 12px;
 		border: 1px solid var(--border);
 		border-radius: var(--radius-sm);
@@ -424,7 +424,7 @@
 
 	.a11y-reset {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		padding: 10px;
 		border: 1px solid var(--border);

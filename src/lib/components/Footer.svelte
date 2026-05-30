@@ -86,7 +86,7 @@
 
 	.footer-column a {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: var(--secondary);
 		text-decoration: none;
 		transition: var(--transition);
@@ -110,7 +110,7 @@
 		padding-top: var(--gap);
 		border-top: 1px solid var(--border);
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--tertiary);
 		display: flex;
 		flex-wrap: wrap;
@@ -123,7 +123,7 @@
 		display: flex;
 		align-items: center;
 		gap: 6px;
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--tertiary);
 	}
 
@@ -175,7 +175,7 @@
 		}
 
 		.footer-column a {
-			font-size: 13px;
+			font-size: 0.8125rem;
 		}
 	}
 </style>

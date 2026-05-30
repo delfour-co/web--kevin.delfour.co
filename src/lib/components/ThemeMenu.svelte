@@ -80,7 +80,7 @@
 	.theme-option {
 		display: flex; align-items: center; gap: 10px; width: 100%;
 		padding: 7px 10px; border: none; background: none; cursor: pointer;
-		font-family: var(--font-ui); font-size: 13px; color: var(--content);
+		font-family: var(--font-ui); font-size: 0.8125rem; color: var(--content);
 		border-radius: var(--radius-sm); text-align: left;
 	}
 	.theme-option:hover { background: var(--surface-hover); color: var(--accent); }

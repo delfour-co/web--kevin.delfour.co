@@ -233,7 +233,7 @@
 		display: block;
 		position: relative;
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 500;
 		color: var(--secondary);
 		text-decoration: none;
@@ -304,7 +304,7 @@
 	.mobile-menu a {
 		display: block;
 		font-family: var(--font-ui);
-		font-size: 18px;
+		font-size: 1.125rem;
 		font-weight: 500;
 		color: var(--secondary);
 		text-decoration: none;

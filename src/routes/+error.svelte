@@ -212,7 +212,7 @@
 	.btn-grid {
 		position: relative;
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		text-transform: uppercase;
 		letter-spacing: 0.08em;
@@ -254,7 +254,7 @@
 
 	.suggestions-label {
 		font-family: var(--font-ui);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		color: var(--tertiary);
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
@@ -272,7 +272,7 @@
 
 	.error-suggestions a {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--secondary);
 		text-decoration: none;
 		transition: var(--transition);

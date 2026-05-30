@@ -419,7 +419,7 @@ a:hover {
 	padding: 8px 16px;
 	z-index: 100;
 	font-family: var(--font-ui);
-	font-size: 14px;
+	font-size: 0.875rem;
 	font-weight: 600;
 	transition: top 0.2s;
 }
@@ -474,7 +474,7 @@ input[type='date']::-webkit-calendar-picker-indicator {
 .btn-primary {
 	display: inline-block;
 	font-family: var(--font-ui);
-	font-size: 14px;
+	font-size: 0.875rem;
 	font-weight: 600;
 	padding: 10px 24px;
 	border-radius: var(--radius);
@@ -516,7 +516,7 @@ input[type='date']::-webkit-calendar-picker-indicator {
 .btn-secondary {
 	display: inline-block;
 	font-family: var(--font-ui);
-	font-size: 14px;
+	font-size: 0.875rem;
 	font-weight: 600;
 	padding: 10px 24px;
 	border-radius: var(--radius);
@@ -717,7 +717,7 @@ input[type='date']::-webkit-calendar-picker-indicator {
 
 .post-content figure > figcaption {
 	color: var(--tertiary);
-	font-size: 14px;
+	font-size: 0.875rem;
 	margin-top: 8px;
 	text-align: center;
 }

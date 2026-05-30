@@ -113,7 +113,7 @@
 
 	.step-label {
 		font-family: var(--font-ui);
-		font-size: 10px;
+		font-size: 0.625rem;
 		color: var(--tertiary);
 		white-space: nowrap;
 		transition: color 0.3s ease;
@@ -127,16 +127,16 @@
 	.progress-step--current .step-label {
 		color: var(--accent);
 		font-weight: 700;
-		font-size: 11px;
+		font-size: 0.6875rem;
 	}
 
 	@media (max-width: 640px) {
 		.step-label {
-			font-size: 8px;
+			font-size: 0.5rem;
 		}
 
 		.progress-step--current .step-label {
-			font-size: 9px;
+			font-size: 0.5625rem;
 		}
 
 		.step-marker {

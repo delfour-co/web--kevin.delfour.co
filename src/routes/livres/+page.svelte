@@ -118,7 +118,7 @@
 
 	.book-chapters {
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--accent);
 		font-weight: 600;
 		margin-top: 4px;
