@@ -1,701 +1,250 @@
 <script lang="ts">
 	import SEO from '$lib/components/SEO.svelte';
-	import { onMount } from 'svelte';
 	import { toolCategories } from '$lib/data/tools';
 	import { getProjectStageLabel } from '$lib/data/projects';
 
 	let { data } = $props();
 
-	// Flatten all tools for homepage display (max 6)
-	const featuredTools = toolCategories.flatMap((c) => c.tools).slice(0, 6);
+	const projects = [
+		{ href: '/projets/asteroids/', name: 'neon-asteroids', desc: 'Arcade shooter néon. Flutter + Flame.', tech: 'Flutter', slug: 'asteroids' },
+		{ href: '/projets/notch/', name: 'notch', desc: 'SMS chiffrés par Enigma. Pas de serveur.', tech: 'crypto', slug: 'notch' },
+		{ href: '/projets/claude-pulse/', name: 'claude-pulse', desc: 'Monitore tes agents Claude Code en temps réel.', tech: 'CLI', slug: 'claude-pulse' },
+		{ href: '/projets/repolens/', name: 'repolens', desc: "CLI d'audit de dépôts GitHub.", tech: 'CLI', slug: 'repolens' },
+		{ href: '/projets/githero/', name: 'githero', desc: 'Livres-jeux où les branches git sont tes choix.', tech: 'web', slug: 'githero' },
+		{ href: '/projets/open-event-orchestrator/', name: 'open-event-orchestrator', desc: "Plateforme open source d'événements.", tech: 'web', slug: 'open-event-orchestrator' }
+	];
 
-	onMount(() => {
-		// Scroll reveal with IntersectionObserver
-		const reveals = document.querySelectorAll('.reveal');
-		const observer = new IntersectionObserver(
-			(entries) => {
-				for (const entry of entries) {
-					if (entry.isIntersecting) {
-						entry.target.classList.add('visible');
-						observer.unobserve(entry.target);
-					}
-				}
-			},
-			{ threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
-		);
-		reveals.forEach((el) => observer.observe(el));
-
-		// Mouse-following glow on glass-cards
-		const cards = document.querySelectorAll('.glass-card');
-		function handleMouseMove(e: MouseEvent) {
-			const card = e.currentTarget as HTMLElement;
-			const rect = card.getBoundingClientRect();
-			card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
-			card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
-		}
-		cards.forEach((card) => {
-			card.addEventListener('mousemove', handleMouseMove as EventListener);
-		});
-
-		return () => {
-			observer.disconnect();
-			cards.forEach((card) => {
-				card.removeEventListener('mousemove', handleMouseMove as EventListener);
-			});
-		};
-	});
+	const tools = toolCategories.flatMap((c) => c.tools).slice(0, 9);
 </script>
 
 <SEO
-	description="CTO Hands-on · 17 ans de terrain. Outils de décision, livres gratuits et projets open source."
+	description="Lead Tech (+ management) · 17 ans de terrain · Lyon. Mon lieu : ce que je construis, les outils que je bricole, mes livres."
 	url="https://kevin.delfour.co/"
 />
 
-<div class="home">
-	<!-- Hero -->
-	<section class="hero">
-		<!-- Animated background -->
-		<div class="hero-bg" aria-hidden="true">
-			<div class="hero-orb hero-orb--1"></div>
-			<div class="hero-orb hero-orb--2"></div>
-			<div class="hero-orb hero-orb--3"></div>
-			<div class="hero-glow"></div>
-		</div>
+<div class="win">
+	<div class="win-bar">
+		<span class="dot dot-r" aria-hidden="true"></span>
+		<span class="dot dot-y" aria-hidden="true"></span>
+		<span class="dot dot-g" aria-hidden="true"></span>
+		<span class="win-title">kevin@delfour: ~/lieu — zsh</span>
+	</div>
 
-		<div class="hero-content">
-			<div class="hero-avatar-wrapper">
-				<img src="/images/kevin-delfour.png" alt="Kevin Delfour" class="hero-avatar" width="200" height="200" />
-			</div>
-			<h1 class="hero-title gradient-text">Kevin Delfour</h1>
-			<p class="hero-subtitle">CTO Hands-on · 17 ans de terrain</p>
-			<p class="hero-tagline">Je donne des repères. Pas des leçons.</p>
-			<div class="hero-actions">
-				<a href="/outils/" class="btn-primary">Voir les outils</a>
-				<a href="/livres/" class="btn-secondary">Lire les livres</a>
-			</div>
-		</div>
+	<div class="win-body">
+		<nav class="side" aria-label="Sections du lieu">
+			<div class="side-head">~ / LIEU</div>
+			<a class="side-row" href="#projets"><span class="tw">▸</span> projets/</a>
+			<a class="side-row" href="#outils"><span class="tw">▸</span> outils/</a>
+			<a class="side-row" href="#livres"><span class="tw">▸</span> livres/</a>
+			<a class="side-row" href="/a-propos/"><span class="ch">≡</span> about.md</a>
+			<a class="side-row" href="#contact"><span class="ch">@</span> contact</a>
+		</nav>
 
-		<div class="scroll-indicator" aria-hidden="true">
-			<span class="scroll-label">Scroll</span>
-			<div class="scroll-chevrons">
-				<div class="scroll-chevron scroll-chevron-1"></div>
-				<div class="scroll-chevron scroll-chevron-2"></div>
-				<div class="scroll-chevron scroll-chevron-3"></div>
-			</div>
-		</div>
-	</section>
+		<div class="main">
+			<section class="sec hero">
+				<div class="cmd"><span class="p">$</span> whoami</div>
+				<h1 class="h1">Kevin Delfour</h1>
+				<p class="role">Lead Tech · management · 17 ans de terrain · Lyon</p>
+				<div class="cmd"><span class="p">$</span> cat intention.md</div>
+				<p class="intent"><span class="hash">#</span> Mon lieu. Ce que je construis, les outils que je bricole, ce que j'essaie. Pas une mission — juste chez moi.<span class="cur" aria-hidden="true"></span></p>
+			</section>
 
-	<!-- Outils -->
-	<section class="home-section reveal">
-		<span class="section-badge badge">Boîte à outils</span>
-		<h2>Outils d'aide à la décision</h2>
-		<div class="home-grid grid-3">
-			{#each featuredTools as tool, i}
-				<a href={tool.url} class="home-card glass-card reveal reveal-delay-{(i % 3) + 1}">
-					<div class="tool-icon-sm">
-						<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
-							{@html tool.icon}
-						</svg>
-					</div>
-					<h3 class="card-title">{tool.nom}</h3>
-					<p class="card-desc">{tool.description}</p>
-				</a>
-			{/each}
-		</div>
-		<p class="section-more"><a href="/outils/">Voir tous les outils →</a></p>
-	</section>
+			<section class="sec" id="projets">
+				<div class="cmd"><span class="p">$</span> ls projets/</div>
+				<div class="grid">
+					{#each projects as p}
+						<a class="card" href={p.href}>
+							<div class="card-name">{p.name}</div>
+							<div class="card-desc">{p.desc}</div>
+							<div class="card-meta">
+								<span class="stage">{getProjectStageLabel(p.slug)}</span>
+								<span class="tech">{p.tech}</span>
+							</div>
+						</a>
+					{/each}
+				</div>
+				<p class="more"><a href="/projets/">→ tous les projets</a></p>
+			</section>
 
-	<!-- Projets -->
-	<section class="home-section reveal">
-		<span class="section-badge badge">Projets</span>
-		<h2>Ce que je construis</h2>
-		<div class="home-grid grid-2">
-			<a href="/projets/asteroids/" class="home-card glass-card home-card--app reveal reveal-delay-1">
-				<img src="/images/apps/asteroids/icon.webp" alt="Neon Asteroids" class="card-icon" />
-				<div>
-					<h3 class="card-title">Neon Asteroids</h3>
-					<p class="card-desc">Arcade shooter néon. Flutter + Flame.</p>
-					<span class="card-stage">{getProjectStageLabel('asteroids')}</span>
+			<section class="sec" id="outils">
+				<div class="cmd"><span class="p">$</span> ls outils/ <span class="hash"># des trucs que je bricole et que j'utilise</span></div>
+				<div class="tools">
+					{#each tools as t}
+						<a class="tool" href={t.url}>
+							<span class="tool-name">{t.slug}</span>
+							<span class="tool-cat">{t.categorie}</span>
+						</a>
+					{/each}
 				</div>
-			</a>
-			<a href="/projets/notch/" class="home-card glass-card home-card--app reveal reveal-delay-2">
-				<img src="/images/apps/notch/icon.webp" alt="Notch" class="card-icon" />
-				<div>
-					<h3 class="card-title">Notch</h3>
-					<p class="card-desc">SMS chiffrés par Enigma. Pas de serveur.</p>
-					<span class="card-stage">{getProjectStageLabel('notch')}</span>
-				</div>
-			</a>
-			<a href="/projets/open-event-orchestrator/" class="home-card glass-card home-card--app reveal reveal-delay-3">
-				<img src="/images/apps/oeo/icon.webp" alt="Open Event Orchestrator" class="card-icon" />
-				<div>
-					<h3 class="card-title">Open Event Orchestrator</h3>
-					<p class="card-desc">Plateforme open source de gestion d'événements. CFP, planning, billetterie, CRM.</p>
-					<span class="card-stage">{getProjectStageLabel('open-event-orchestrator')}</span>
-				</div>
-			</a>
-			<a href="/projets/repolens/" class="home-card glass-card home-card--app reveal reveal-delay-4">
-				<img src="/images/apps/repolens/icon.webp" alt="RepoLens" class="card-icon" />
-				<div>
-					<h3 class="card-title">RepoLens</h3>
-					<p class="card-desc">CLI d'audit de dépôts GitHub. Bonnes pratiques, sécurité, compliance.</p>
-					<span class="card-stage">{getProjectStageLabel('repolens')}</span>
-				</div>
-			</a>
-			<a href="/projets/claude-pulse/" class="home-card glass-card home-card--app reveal reveal-delay-1">
-				<div class="card-icon-svg">
-					<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-						<path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-						<path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z" />
-					</svg>
-				</div>
-				<div>
-					<h3 class="card-title">Claude Pulse</h3>
-					<p class="card-desc">Monitore tes agents Claude Code en temps réel. Multi-profils, notifications desktop.</p>
-					<span class="card-stage">{getProjectStageLabel('claude-pulse')}</span>
-				</div>
-			</a>
-			<a href="/projets/githero/" class="home-card glass-card home-card--app reveal reveal-delay-2">
-				<img src="/images/apps/githero/icon.png" alt="Git Hero" class="card-icon" />
-				<div>
-					<h3 class="card-title">Git Hero</h3>
-					<p class="card-desc">Des livres-jeux interactifs où les branches git sont vos choix.</p>
-					<span class="card-stage">{getProjectStageLabel('githero')}</span>
-				</div>
-			</a>
-		</div>
-		<p class="section-more"><a href="/projets/">Voir tous les projets →</a></p>
-	</section>
+				<p class="more"><a href="/outils/">→ tous les outils</a></p>
+			</section>
 
-	<!-- Livres -->
-	<section class="home-section reveal">
-		<span class="section-badge badge">Livres gratuits</span>
-		<h2>Livres</h2>
-		<div class="home-grid grid-2">
-			{#each data.books as livre, i}
-				<a href="/livres/{livre.slug}/" class="home-card glass-card home-card--book reveal reveal-delay-{i + 1}">
-					{#if livre.cover}
-						<div class="book-cover-wrapper">
-							<img src={livre.cover} alt="Couverture {livre.title}" class="card-book-cover" loading="lazy" />
-						</div>
-					{/if}
-					<div class="book-card-info">
-						<h3 class="card-title">{livre.title}</h3>
-						<p class="card-subtitle">{livre.subtitle}</p>
-						<span class="card-meta">{livre.chapterCount} chapitres · Gratuit</span>
-					</div>
-				</a>
-			{/each}
-		</div>
-		<p class="section-more"><a href="/livres/">Voir les livres →</a></p>
-	</section>
+			<section class="sec" id="livres">
+				<div class="cmd"><span class="p">$</span> cat livres/* <span class="hash"># ce que j'ai écrit</span></div>
+				<div class="books">
+					{#each data.books as b}
+						<a class="book" href="/livres/{b.slug}/">
+							{#if b.cover}
+								<img class="book-cov" src={b.cover} alt="Couverture {b.title}" loading="lazy" />
+							{/if}
+							<div class="book-info">
+								<div class="book-title">{b.title}</div>
+								<div class="book-sub">{b.subtitle}</div>
+								<div class="book-meta">{b.chapterCount} chapitres · gratuit</div>
+							</div>
+						</a>
+					{/each}
+				</div>
+			</section>
 
+			<section class="sec contact" id="contact">
+				<div class="cmd"><span class="p">$</span> contact --me</div>
+				<div class="crow"><span class="ckey">github</span> <a href="https://github.com/kdelfour" target="_blank" rel="noopener noreferrer">→ github.com/kdelfour</a></div>
+				<div class="crow"><span class="ckey">linkedin</span> <a href="https://linkedin.com/in/kevindelfour" target="_blank" rel="noopener noreferrer">→ in/kevindelfour</a></div>
+			</section>
+		</div>
+	</div>
+
+	<div class="win-status" aria-hidden="true">
+		<span class="seg mode">NORMAL</span>
+		<span class="seg path">~/lieu</span>
+		<span class="sp"></span>
+		<span class="seg">lyon</span>
+		<span class="seg">17y</span>
+		<span class="seg">utf-8</span>
+	</div>
 </div>
 
 <style>
-	.home {
-		max-width: var(--home-width-a11y);
-		margin: 0 auto;
-		padding: 0 var(--gap);
-		position: relative;
-	}
-
-	/* Hero */
-	.hero {
-		position: relative;
-		overflow: hidden;
-		margin: 0 calc(var(--gap) * -1);
-		padding: calc(var(--gap) * 6) var(--gap) calc(var(--gap) * 4);
-		min-height: 85vh;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	/* Hero background layers */
-	.hero-bg {
-		position: absolute;
-		inset: 0;
-		overflow: hidden;
-		pointer-events: none;
-	}
-
-	.hero-orb {
-		position: absolute;
-		border-radius: 50%;
-		filter: blur(80px);
-	}
-
-	.hero-orb--1 {
-		width: 400px;
-		height: 400px;
-		background: rgba(6, 182, 212, 0.12);
-		top: 10%;
-		left: 15%;
-		animation: orb-float-1 12s ease-in-out infinite;
-	}
-
-	.hero-orb--2 {
-		width: 350px;
-		height: 350px;
-		background: rgba(139, 92, 246, 0.1);
-		top: 20%;
-		right: 10%;
-		animation: orb-float-2 15s ease-in-out infinite;
-	}
-
-	.hero-orb--3 {
-		width: 300px;
-		height: 300px;
-		background: rgba(236, 72, 153, 0.08);
-		bottom: 10%;
-		left: 40%;
-		animation: orb-float-3 18s ease-in-out infinite;
-	}
-
-	.hero-glow {
-		position: absolute;
-		top: 54%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		width: 600px;
-		height: 600px;
-		background: radial-gradient(circle, rgba(6, 182, 212, 0.08) 0%, transparent 70%);
-		border-radius: 50%;
-	}
-
-	.hero-content {
-		position: relative;
-		z-index: 1;
-		text-align: center;
-	}
-
-	.hero-avatar-wrapper {
-		position: relative;
-		width: 200px;
-		height: 200px;
-		margin: 0 auto calc(var(--gap) * 2);
-		border-radius: 20px;
-		animation: halo-shift 6s ease-in-out infinite;
-	}
-
-	@keyframes halo-shift {
-		0%, 100% { box-shadow: 0 0 12px 3px rgba(6, 182, 212, 0.35), 0 0 24px 6px rgba(6, 182, 212, 0.1); }
-		33% { box-shadow: 0 0 12px 3px rgba(139, 92, 246, 0.35), 0 0 24px 6px rgba(139, 92, 246, 0.1); }
-		66% { box-shadow: 0 0 12px 3px rgba(236, 72, 153, 0.35), 0 0 24px 6px rgba(236, 72, 153, 0.1); }
-	}
-
-	.hero-avatar {
-		width: 200px;
-		height: 200px;
-		border-radius: 20px;
-		object-fit: cover;
-	}
-
-	.hero-title {
-		font-size: 4rem;
-		margin-bottom: 12px;
-		font-weight: 700;
-		letter-spacing: -0.03em;
-	}
-
-	.hero-subtitle {
-		font-family: var(--font-ui);
-		font-size: 1.2rem;
-		color: var(--secondary);
-		margin-bottom: 16px;
-		letter-spacing: 0.02em;
-	}
-
-	.hero-tagline {
-		font-family: var(--font-body);
-		font-size: 1.5rem;
-		color: var(--accent);
-		margin-bottom: calc(var(--gap) * 2.5);
-		text-shadow: 0 0 40px rgba(6, 182, 212, 0.4);
-	}
-
-	.hero-actions {
-		display: flex;
-		justify-content: center;
-		gap: 16px;
-		flex-wrap: wrap;
-	}
-
-	/* Sections */
-	.home-section {
-		padding: calc(var(--gap) * 1) 0;
-	}
-
-	.home-section::before {
-		content: '';
-		display: block;
-		width: 100%;
-		height: 1px;
-		background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.2), rgba(6, 182, 212, 0.4), rgba(6, 182, 212, 0.2), transparent);
-		margin-bottom: calc(var(--gap) * 1);
-		animation: circuit-pulse 4s ease-in-out infinite;
-	}
-
-	@keyframes circuit-pulse {
-		0%, 100% { opacity: 0.4; }
-		50% { opacity: 1; }
-	}
-
-	.section-badge {
-		display: block;
-		margin-bottom: 8px;
-	}
-
-	.home-section h2 {
-		margin-top: 0;
-		font-size: 1.6rem;
-	}
-
-	.section-more {
-		margin-top: calc(var(--gap) * 1.5);
-	}
-
-	.section-more a {
-		font-family: var(--font-ui);
-		font-size: 14px;
-		font-weight: 500;
-		position: relative;
-	}
-
-	.section-more a::after {
-		content: '';
-		position: absolute;
-		bottom: -2px;
-		left: 0;
-		width: 0;
-		height: 1px;
-		background: var(--accent);
-		transition: width 0.3s ease;
-	}
-
-	.section-more a:hover::after {
-		width: 100%;
-	}
-
-	.section-more a:hover {
-		text-decoration: none;
-	}
-
-	/* Tool icon */
-	.tool-icon-sm {
-		width: 40px;
-		height: 40px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+	.win {
+		max-width: 1000px;
+		margin: calc(var(--gap) * 1.5) auto;
+		background: var(--theme);
+		border: 1px solid var(--border);
 		border-radius: 10px;
-		background: var(--accent-light);
-		border: 1px solid var(--accent-border);
-		color: var(--accent);
-		margin-bottom: 12px;
-		transition: all 0.3s ease;
+		overflow: hidden;
+		box-shadow: var(--shadow-lg);
+		font-size: 13px;
+		line-height: 1.6;
 	}
 
-	.home-card:hover .tool-icon-sm {
-		background: var(--accent);
-		color: #000;
-		box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
-	}
-
-	/* Articles list */
-	.articles-list {
+	/* Title bar */
+	.win-bar {
 		display: flex;
-		flex-direction: column;
-		gap: 0;
-	}
-
-	.post-entry {
+		align-items: center;
+		gap: 8px;
+		padding: 9px 14px;
+		background: var(--surface);
 		border-bottom: 1px solid var(--border);
 	}
+	.dot { width: 11px; height: 11px; border-radius: 50%; }
+	.dot-r { background: #ff5f57; }
+	.dot-y { background: #febc2e; }
+	.dot-g { background: #28c840; }
+	.win-title { flex: 1; text-align: center; color: var(--tertiary); font-size: 12px; }
 
-	.entry-link {
-		display: block;
-		padding: var(--content-gap) 0;
-		text-decoration: none;
-		color: inherit;
-		transition: all 0.3s ease;
-	}
+	/* Body */
+	.win-body { display: flex; min-height: 420px; }
 
-	.entry-link:hover {
-		text-decoration: none;
-		padding-left: 12px;
-	}
-
-	.entry-link:hover .entry-title {
-		color: var(--accent);
-	}
-
-	.entry-title {
-		font-size: 1.15rem;
-		margin: 0 0 4px 0;
-		transition: all 0.3s ease;
-	}
-
-	.entry-desc {
-		font-size: 0.9rem;
-		color: var(--secondary);
-		margin: 0 0 6px 0;
-		line-height: 1.5;
-	}
-
-	.entry-meta {
-		display: flex;
-		align-items: center;
-		gap: 10px;
-		font-family: var(--font-ui);
+	.side {
+		width: 188px;
+		flex-shrink: 0;
+		border-right: 1px solid var(--border);
+		padding: 14px 0;
 		font-size: 12px;
-		color: var(--tertiary);
 	}
-
-	/* Cards grid */
-	.home-grid {
-		display: grid;
-		gap: var(--gap);
+	.side-head { color: var(--tertiary); font-size: 10px; letter-spacing: 0.14em; padding: 0 16px 10px; }
+	.side-row {
+		display: flex; gap: 7px; align-items: center;
+		padding: 5px 16px; color: var(--content); text-decoration: none;
+		transition: var(--transition);
 	}
+	.side-row:hover { background: var(--surface-hover); color: var(--accent); text-decoration: none; }
+	.side-row .tw { color: var(--tertiary); }
+	.side-row .ch { color: var(--accent2); }
 
-	.grid-3 {
-		grid-template-columns: repeat(3, 1fr);
-	}
+	.main { flex: 1; min-width: 0; padding: 26px 26px 30px; }
 
-	.grid-2 {
-		grid-template-columns: repeat(2, 1fr);
-	}
+	.cmd { color: var(--tertiary); font-size: 12px; margin-bottom: 12px; }
+	.cmd .p { color: var(--accent); }
+	.cmd .hash { color: var(--tertiary); }
+	.sec { margin-bottom: 26px; scroll-margin-top: calc(var(--header-height) + 12px); }
 
-	.home-card {
-		display: block;
-		padding: var(--gap);
+	.hero .h1 { font-size: 34px; font-weight: 700; color: var(--primary); margin: 4px 0; letter-spacing: -0.02em; }
+	.hero .role { color: var(--secondary); font-size: 13px; margin-bottom: 16px; }
+	.hero .intent { color: var(--content); font-size: 14px; max-width: 560px; line-height: 1.65; }
+	.hero .intent .hash { color: var(--accent); }
+	.cur { display: inline-block; width: 8px; height: 14px; background: var(--accent); vertical-align: -2px; margin-left: 2px; animation: blink 1.1s steps(1) infinite; }
+	@keyframes blink { 50% { opacity: 0; } }
+
+	/* Projects */
+	.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(228px, 1fr)); gap: 11px; }
+	.card {
+		border: 1px solid var(--border);
+		border-radius: 8px;
+		padding: 13px 15px;
+		background: var(--surface);
 		text-decoration: none;
-		color: inherit;
-	}
-
-	.home-card:hover {
-		text-decoration: none;
-	}
-
-	.home-card--app {
-		display: flex;
-		gap: calc(var(--gap) * 1.2);
-		align-items: flex-start;
-	}
-
-	.card-icon {
-		width: 52px;
-		height: 52px;
-		border-radius: 14px;
-		flex-shrink: 0;
-		border: 1px solid rgba(6, 182, 212, 0.15);
-		box-shadow: 0 0 6px rgba(6, 182, 212, 0.05);
-		transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-	}
-
-	.card-icon-svg {
-		width: 52px;
-		height: 52px;
-		border-radius: 14px;
-		flex-shrink: 0;
-		border: 1px solid rgba(6, 182, 212, 0.15);
-		box-shadow: 0 0 6px rgba(6, 182, 212, 0.05);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: var(--accent);
-		background: rgba(6, 182, 212, 0.05);
-		transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-	}
-
-	.home-card:hover .card-icon-svg {
-		transform: scale(1.08);
-		border-color: rgba(6, 182, 212, 0.4);
-		box-shadow: 0 0 12px rgba(6, 182, 212, 0.2);
-	}
-
-	.home-card:hover .card-icon {
-		transform: scale(1.08);
-		border-color: rgba(6, 182, 212, 0.4);
-		box-shadow: 0 0 12px rgba(6, 182, 212, 0.2);
-	}
-
-	.home-card--book {
-		flex-direction: row;
-		display: flex;
-		gap: calc(var(--gap) * 1.2);
-		align-items: flex-start;
-	}
-
-	.book-cover-wrapper {
-		flex-shrink: 0;
-		width: 120px;
-		border-radius: var(--radius-sm);
-		overflow: hidden;
-		border: 1px solid rgba(6, 182, 212, 0.15);
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-		transition: transform 0.4s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-	}
-
-	.card-book-cover {
-		width: 100%;
-		height: auto;
+		transition: var(--transition);
 		display: block;
 	}
+	.card:hover { border-color: var(--accent); transform: translateY(-2px); text-decoration: none; }
+	.card-name { color: var(--accent); font-weight: 600; font-size: 13px; margin-bottom: 5px; }
+	.card-name::before { content: './'; color: var(--tertiary); }
+	.card-desc { color: var(--content); font-size: 11.5px; line-height: 1.5; margin-bottom: 9px; }
+	.card-meta { display: flex; gap: 8px; align-items: center; font-size: 10.5px; }
+	.stage { color: var(--accent); border: 1px solid var(--accent-border); background: var(--accent-light); border-radius: 999px; padding: 1px 8px; }
+	.tech { color: var(--tertiary); }
 
-	.home-card:hover .book-cover-wrapper {
-		transform: scale(1.03);
-		border-color: rgba(6, 182, 212, 0.4);
-		box-shadow: 0 6px 20px rgba(6, 182, 212, 0.15);
-	}
+	/* Tools */
+	.tools { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 22px; }
+	.tool { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px dashed var(--border); text-decoration: none; font-size: 12px; }
+	.tool:hover { text-decoration: none; }
+	.tool:hover .tool-name { color: var(--accent); }
+	.tool-name { color: var(--content); }
+	.tool-cat { color: var(--tertiary); }
 
-	.book-card-info {
-		flex: 1;
-		min-width: 0;
-		padding-top: 4px;
-	}
+	.more { margin-top: 12px; font-size: 12px; }
+	.more a { color: var(--accent); }
 
-	.card-title {
-		font-family: var(--font-ui);
-		font-size: 1rem;
-		font-weight: 600;
-		margin: 0 0 8px 0;
-	}
+	/* Books */
+	.books { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; }
+	.book { display: flex; gap: 12px; border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; background: var(--surface); text-decoration: none; transition: var(--transition); }
+	.book:hover { border-color: var(--accent); text-decoration: none; }
+	.book-cov { width: 46px; height: auto; border-radius: 4px; flex-shrink: 0; border: 1px solid var(--border); }
+	.book-title { color: var(--primary); font-weight: 600; font-size: 12.5px; margin-bottom: 3px; }
+	.book-sub { color: var(--secondary); font-size: 10.5px; margin-bottom: 6px; }
+	.book-meta { color: var(--tertiary); font-size: 10.5px; }
 
-	.card-subtitle {
-		font-family: var(--font-ui);
-		font-size: 0.85rem;
-		color: var(--accent2);
-		margin: 0 0 8px 0;
-	}
+	/* Contact */
+	.crow { padding: 5px 0; }
+	.ckey { color: var(--accent2); display: inline-block; width: 80px; }
+	.contact a { color: var(--content); text-decoration: none; }
+	.contact a:hover { color: var(--accent); }
 
-	.card-desc {
-		font-size: 0.875rem;
-		color: var(--secondary);
-		line-height: 1.5;
-		margin: 0 0 8px 0;
-	}
+	/* Status bar */
+	.win-status { display: flex; align-items: stretch; font-size: 11px; background: var(--surface); border-top: 1px solid var(--border); }
+	.win-status .seg { display: flex; align-items: center; padding: 5px 12px; color: var(--tertiary); }
+	.win-status .mode { background: var(--accent); color: var(--theme); font-weight: 700; }
+	.win-status .path { color: var(--accent2); }
+	.win-status .sp { flex: 1; }
 
-	.card-meta {
-		font-family: var(--font-ui);
-		font-size: 12px;
-		color: var(--tertiary);
-	}
-
-	.card-stage {
-		display: inline-block;
-		font-family: var(--font-ui);
-		font-size: 11px;
-		font-weight: 600;
-		color: var(--accent);
-		border: 1px solid var(--accent-border);
-		background: var(--accent-light);
-		padding: 2px 10px;
-		border-radius: 9999px;
-		margin-top: 4px;
-	}
-
-	/* Follow */
-	.follow-text {
-		color: var(--secondary);
-	}
-
-	/* Scroll indicator — mobile only */
-	.scroll-indicator {
-		display: none;
-		position: absolute;
-		bottom: 32px;
-		left: 50%;
-		transform: translateX(-50%);
-		z-index: 2;
-		flex-direction: column;
-		align-items: center;
-		gap: 4px;
-	}
-
-	.scroll-label {
-		font-family: var(--font-ui);
-		font-size: 0.7rem;
-		text-transform: uppercase;
-		letter-spacing: 0.16em;
-		color: var(--secondary);
-	}
-
-	.scroll-chevrons {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 2px;
-	}
-
-	.scroll-chevron {
-		width: 14px;
-		height: 8px;
-		border-left: 2px solid var(--accent);
-		border-right: 2px solid var(--accent);
-		border-bottom: 2px solid var(--accent);
-		border-radius: 0 0 6px 6px;
-		transform: rotate(0deg);
-		opacity: 0.2;
-	}
-
-	.scroll-chevron-1 {
-		animation: scroll-chevron 1.6s ease-in-out infinite;
-	}
-
-	.scroll-chevron-2 {
-		animation: scroll-chevron 1.6s ease-in-out infinite 0.15s;
-	}
-
-	.scroll-chevron-3 {
-		animation: scroll-chevron 1.6s ease-in-out infinite 0.3s;
-	}
-
-	@keyframes scroll-chevron {
-		0% { transform: translateY(0); opacity: 0.1; }
-		40% { transform: translateY(3px); opacity: 0.7; }
-		80%, 100% { transform: translateY(6px); opacity: 0; }
-	}
-
-	/* Responsive */
-	@media (max-width: 768px) {
-		.scroll-indicator {
+	/* Responsive — sidebar devient onglets, contenu en 1 colonne */
+	@media (max-width: 760px) {
+		.win { margin: var(--gap) var(--gap) calc(var(--gap) * 2); }
+		.win-body { flex-direction: column; }
+		.side {
+			width: auto;
+			border-right: none;
+			border-bottom: 1px solid var(--border);
 			display: flex;
+			gap: 4px;
+			overflow-x: auto;
+			padding: 10px 12px;
 		}
-		.hero {
-			min-height: 70vh;
-			padding: calc(var(--gap) * 4) var(--gap) calc(var(--gap) * 3);
-		}
-
-		.hero-title {
-			font-size: 2.5rem;
-		}
-
-		.hero-tagline {
-			font-size: 1.1rem;
-		}
-
-		.grid-3 {
-			grid-template-columns: 1fr;
-		}
-
-		.grid-2 {
-			grid-template-columns: 1fr;
-		}
-
-		.hero-avatar-wrapper {
-			width: 180px;
-			height: 180px;
-		}
-
-		.hero-avatar {
-			width: 180px;
-			height: 180px;
-		}
-
-		.hero-orb--1 { width: 200px; height: 200px; }
-		.hero-orb--2 { width: 180px; height: 180px; }
-		.hero-orb--3 { width: 150px; height: 150px; }
+		.side-head { display: none; }
+		.side-row { padding: 4px 9px; border-radius: 6px; white-space: nowrap; }
+		.main { padding: 20px 16px 24px; }
+		.grid, .tools, .books { grid-template-columns: 1fr; }
 	}
 </style>
