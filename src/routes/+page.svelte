@@ -23,7 +23,7 @@
 />
 
 <div class="win">
-	<div class="win-bar">
+	<div class="win-bar" aria-hidden="true">
 		<span class="dot dot-r" aria-hidden="true"></span>
 		<span class="dot dot-y" aria-hidden="true"></span>
 		<span class="dot dot-g" aria-hidden="true"></span>
@@ -50,6 +50,7 @@
 			</section>
 
 			<section class="sec" id="projets">
+				<h2 class="visually-hidden">Projets</h2>
 				<div class="cmd"><span class="p">$</span> ls projets/</div>
 				<div class="grid">
 					{#each projects as p}
@@ -67,6 +68,7 @@
 			</section>
 
 			<section class="sec" id="outils">
+				<h2 class="visually-hidden">Outils</h2>
 				<div class="cmd"><span class="p">$</span> ls outils/ <span class="hash"># des trucs que je bricole et que j'utilise</span></div>
 				<div class="tools">
 					{#each tools as t}
@@ -80,6 +82,7 @@
 			</section>
 
 			<section class="sec" id="livres">
+				<h2 class="visually-hidden">Livres</h2>
 				<div class="cmd"><span class="p">$</span> cat livres/* <span class="hash"># ce que j'ai écrit</span></div>
 				<div class="books">
 					{#each data.books as b}
@@ -98,6 +101,7 @@
 			</section>
 
 			<section class="sec contact" id="contact">
+				<h2 class="visually-hidden">Contact</h2>
 				<div class="cmd"><span class="p">$</span> contact --me</div>
 				<div class="crow"><span class="ckey">github</span> <a href="https://github.com/kdelfour" target="_blank" rel="noopener noreferrer">→ github.com/kdelfour</a></div>
 				<div class="crow"><span class="ckey">linkedin</span> <a href="https://linkedin.com/in/kevindelfour" target="_blank" rel="noopener noreferrer">→ in/kevindelfour</a></div>
