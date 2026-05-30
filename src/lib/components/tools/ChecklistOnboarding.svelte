@@ -677,7 +677,7 @@
 
 	.section-title {
 		font-family: var(--onb-font-ui);
-		font-size: 16px;
+		font-size: 1rem;
 		font-weight: 600;
 		color: var(--onb-primary);
 		margin: 0 0 16px 0;
@@ -701,7 +701,7 @@
 
 	.field-label {
 		font-family: var(--onb-font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--onb-secondary);
 	}
@@ -709,7 +709,7 @@
 	.field-input,
 	.field-textarea {
 		font-family: var(--onb-font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: var(--onb-primary);
 		background: rgba(255, 255, 255, 0.03);
 		border: 1px solid var(--onb-border);
@@ -749,7 +749,7 @@
 
 	.phase-name {
 		font-family: var(--onb-font-ui);
-		font-size: 16px;
+		font-size: 1rem;
 		font-weight: 600;
 		color: var(--onb-primary);
 		margin: 0;
@@ -757,12 +757,12 @@
 
 	.phase-score {
 		font-family: var(--font-mono, monospace);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 700;
 	}
 
 	.phase-description {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--onb-secondary);
 		margin: 0 0 10px 0;
 		line-height: 1.4;
@@ -783,7 +783,7 @@
 
 	.phase-remaining {
 		font-family: var(--onb-font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--onb-tertiary);
 		margin-top: 6px;
 		display: inline-block;
@@ -859,7 +859,7 @@
 	.checkpoint-label {
 		flex: 1;
 		font-family: var(--onb-font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: var(--onb-primary);
 		line-height: 1.3;
 	}
@@ -874,7 +874,7 @@
 		border: none;
 		color: var(--onb-tertiary);
 		cursor: pointer;
-		font-size: 13px;
+		font-size: 0.8125rem;
 		padding: 2px 4px;
 		line-height: 1;
 		transition: color 0.2s ease;
@@ -912,7 +912,7 @@
 
 	.onb-btn {
 		font-family: var(--onb-font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		padding: 10px 20px;
 		border-radius: 8px;
@@ -943,7 +943,7 @@
 	}
 
 	.onb-btn--add {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		padding: 8px 16px;
 		background: transparent;
 		color: var(--onb-accent);
@@ -1025,20 +1025,20 @@
 
 	.score-number {
 		font-family: var(--onb-font-ui);
-		font-size: 28px;
+		font-size: 1.75rem;
 		font-weight: 700;
 		line-height: 1;
 	}
 
 	.score-count {
 		font-family: var(--font-mono, monospace);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--onb-tertiary);
 	}
 
 	.score-level {
 		font-family: var(--onb-font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		text-align: center;
 	}
@@ -1046,7 +1046,7 @@
 	/* Phase scores */
 	.result-title {
 		font-family: var(--onb-font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--onb-secondary);
 		text-transform: uppercase;
@@ -1073,13 +1073,13 @@
 
 	.mini-score-name {
 		font-family: var(--onb-font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--onb-secondary);
 	}
 
 	.mini-score-value {
 		font-family: var(--font-mono, monospace);
-		font-size: 12px;
+		font-size: 0.75rem;
 		font-weight: 600;
 		color: var(--onb-primary);
 	}
@@ -1112,13 +1112,13 @@
 
 	.deadline-label {
 		font-family: var(--onb-font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--onb-secondary);
 	}
 
 	.deadline-value {
 		font-family: var(--font-mono, monospace);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--onb-primary);
 	}
@@ -1143,7 +1143,7 @@
 
 	.remaining-item {
 		font-family: var(--onb-font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--onb-secondary);
 		padding-left: 14px;
 		position: relative;
@@ -1163,7 +1163,7 @@
 
 	.remaining-more {
 		font-family: var(--onb-font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--onb-tertiary);
 		font-style: italic;
 		padding-left: 14px;
@@ -1185,13 +1185,13 @@
 
 	.context-label {
 		font-family: var(--onb-font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--onb-tertiary);
 	}
 
 	.context-value {
 		font-family: var(--onb-font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--onb-primary);
 	}

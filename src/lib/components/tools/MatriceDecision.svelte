@@ -388,13 +388,13 @@
 
 	.form-group label {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 	}
 
 	.form-hint {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--secondary);
 		margin: 0 0 8px 0;
 		font-style: italic;
@@ -402,7 +402,7 @@
 
 	input[type='text'] {
 		font-family: var(--font-body);
-		font-size: 15px;
+		font-size: 0.9375rem;
 		padding: 10px 12px;
 		border: 1px solid var(--border);
 		border-radius: var(--radius);
@@ -429,7 +429,7 @@
 
 	.section-card legend {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 		padding: 0 8px;
@@ -455,13 +455,13 @@
 
 	.weight-label {
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 	}
 
 	.weight-select {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		padding: 6px 8px;
 		border: 1px solid var(--border);
 		border-radius: var(--radius);
@@ -480,7 +480,7 @@
 		border-radius: var(--radius);
 		color: var(--secondary);
 		cursor: pointer;
-		font-size: 16px;
+		font-size: 1rem;
 		flex-shrink: 0;
 		transition: var(--transition);
 	}
@@ -493,12 +493,12 @@
 	.remove-btn--small {
 		width: 22px;
 		height: 22px;
-		font-size: 14px;
+		font-size: 0.875rem;
 	}
 
 	.add-btn {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 500;
 		color: var(--accent);
 		background: none;
@@ -517,7 +517,7 @@
 	.add-btn--inline {
 		width: auto;
 		padding: 4px 12px;
-		font-size: 13px;
+		font-size: 0.8125rem;
 	}
 
 	/* Matrix */
@@ -544,7 +544,7 @@
 	.matrix-table {
 		width: 100%;
 		border-collapse: collapse;
-		font-size: 14px;
+		font-size: 0.875rem;
 	}
 
 	.matrix-table th,
@@ -562,14 +562,14 @@
 
 	.th-criterion {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		min-width: 100px;
 	}
 
 	.th-weight {
 		display: block;
-		font-size: 11px;
+		font-size: 0.6875rem;
 		font-weight: 400;
 		color: var(--secondary);
 	}
@@ -591,7 +591,7 @@
 	}
 
 	.option-name-input {
-		font-size: 14px;
+		font-size: 0.875rem;
 		padding: 6px 8px;
 	}
 
@@ -630,7 +630,7 @@
 
 	.score-value {
 		font-family: var(--font-mono);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 		margin-left: 4px;
 	}
@@ -669,13 +669,13 @@
 
 	.mobile-card-name {
 		flex: 1;
-		font-size: 15px;
+		font-size: 0.9375rem;
 		font-weight: 600;
 	}
 
 	.mobile-card-score {
 		font-family: var(--font-mono);
-		font-size: 18px;
+		font-size: 1.125rem;
 		font-weight: 700;
 		flex-shrink: 0;
 	}
@@ -700,13 +700,13 @@
 
 	.mobile-criterion-name {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--primary);
 	}
 
 	.mobile-criterion-weight {
-		font-size: 11px;
+		font-size: 0.6875rem;
 		color: var(--secondary);
 	}
 
@@ -724,7 +724,7 @@
 	/* Close results warning */
 	.close-results-warning {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		line-height: 1.5;
 		color: #f59e0b;
 		background: rgba(245, 158, 11, 0.08);
@@ -745,7 +745,7 @@
 
 	.result-title {
 		font-family: var(--font-heading);
-		font-size: 16px;
+		font-size: 1rem;
 		font-weight: 600;
 		margin: 0 0 12px 0;
 	}
@@ -764,13 +764,13 @@
 
 	.result-rank {
 		font-family: var(--font-mono);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--secondary);
 		min-width: 20px;
 	}
 
 	.result-name {
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 500;
 		min-width: 80px;
 		flex-shrink: 0;
@@ -798,7 +798,7 @@
 
 	.result-pct {
 		font-family: var(--font-mono);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		min-width: 40px;
 		text-align: right;
@@ -818,7 +818,7 @@
 
 	.tool-btn {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		padding: 10px 20px;
 		border-radius: var(--radius);
@@ -850,7 +850,7 @@
 
 	@media (max-width: 768px) {
 		.matrix-table {
-			font-size: 13px;
+			font-size: 0.8125rem;
 		}
 
 		.score-slider {
@@ -863,7 +863,7 @@
 
 		.result-name {
 			min-width: 60px;
-			font-size: 13px;
+			font-size: 0.8125rem;
 		}
 	}
 

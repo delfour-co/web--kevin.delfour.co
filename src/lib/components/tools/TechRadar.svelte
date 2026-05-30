@@ -532,7 +532,7 @@
 	.add-input {
 		flex: 1;
 		font-family: var(--font-body);
-		font-size: 14px;
+		font-size: 0.875rem;
 		padding: 10px 12px;
 		border: 1px solid var(--border);
 		border-radius: var(--radius);
@@ -554,7 +554,7 @@
 	.add-select {
 		flex: 1;
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		padding: 8px 10px;
 		border: 1px solid var(--border);
 		border-radius: var(--radius);
@@ -571,7 +571,7 @@
 
 	.filter-pill {
 		font-family: var(--font-ui);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		font-weight: 500;
 		padding: 4px 12px;
 		border: 1px solid var(--border);
@@ -625,14 +625,14 @@
 
 	.ring-name {
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		font-weight: 700;
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
 	}
 
 	.ring-desc {
-		font-size: 11px;
+		font-size: 0.6875rem;
 		color: var(--tertiary);
 	}
 
@@ -659,7 +659,7 @@
 
 	.blip-name {
 		flex: 1;
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--primary);
 	}
 
@@ -672,7 +672,7 @@
 
 	.blip-select {
 		font-family: var(--font-ui);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		padding: 2px 6px;
 		border: 1px solid var(--border);
 		border-radius: 4px;
@@ -691,7 +691,7 @@
 		border-radius: 4px;
 		color: var(--tertiary);
 		cursor: pointer;
-		font-size: 14px;
+		font-size: 0.875rem;
 	}
 
 	.blip-remove:hover {
@@ -707,7 +707,7 @@
 
 	.tool-btn {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		padding: 10px 20px;
 		border-radius: var(--radius);
@@ -773,7 +773,7 @@
 	/* SVG text styles */
 	.ring-label-svg {
 		font-family: var(--font-ui, 'Space Grotesk', system-ui);
-		font-size: 9px;
+		font-size: 0.5625rem;
 		font-weight: 700;
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
@@ -782,7 +782,7 @@
 
 	.quadrant-label-svg {
 		font-family: var(--font-ui, 'Space Grotesk', system-ui);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		font-weight: 600;
 		fill: rgba(255, 255, 255, 0.3);
 		pointer-events: none;
@@ -804,7 +804,7 @@
 
 	.blip-label-svg {
 		font-family: var(--font-ui, 'Space Grotesk', system-ui);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		font-weight: 500;
 		pointer-events: none;
 	}
@@ -833,14 +833,14 @@
 
 	.legend-name {
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		font-weight: 600;
 		color: var(--secondary);
 	}
 
 	.legend-count {
 		font-family: var(--font-ui);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		color: var(--tertiary);
 		background: rgba(255, 255, 255, 0.05);
 		padding: 1px 6px;
@@ -869,7 +869,7 @@
 		}
 
 		.filter-pill {
-			font-size: 10px;
+			font-size: 0.625rem;
 			padding: 3px 8px;
 		}
 

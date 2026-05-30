@@ -706,14 +706,14 @@
 
 	.section-card legend {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 		padding: 0 8px;
 	}
 
 	.section-hint {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--secondary);
 		margin: 0;
 		font-style: italic;
@@ -730,13 +730,13 @@
 	.form-group label,
 	.form-label {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 	}
 
 	.form-hint {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--secondary);
 		margin: 0 0 4px 0;
 		font-style: italic;
@@ -745,7 +745,7 @@
 	.optional {
 		font-weight: 400;
 		color: var(--secondary);
-		font-size: 12px;
+		font-size: 0.75rem;
 	}
 
 	.form-row--two {
@@ -758,7 +758,7 @@
 	select,
 	textarea {
 		font-family: var(--font-body);
-		font-size: 15px;
+		font-size: 0.9375rem;
 		padding: 10px 12px;
 		border: 1px solid var(--border);
 		border-radius: var(--radius);
@@ -796,20 +796,20 @@
 
 	.slider-name {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 	}
 
 	.slider-value {
 		font-family: var(--font-mono);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 700;
 		color: var(--accent);
 	}
 
 	.slider-hint {
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 		margin: 0 0 6px 0;
 		font-style: italic;
@@ -878,7 +878,7 @@
 		justify-content: space-between;
 		padding: 2px 0 0;
 		font-family: var(--font-mono);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		color: var(--tertiary);
 	}
 
@@ -911,7 +911,7 @@
 
 	.item-remove {
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 		background: none;
 		border: 1px solid var(--border);
@@ -929,7 +929,7 @@
 
 	.add-btn {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 500;
 		color: var(--accent);
 		background: none;
@@ -963,7 +963,7 @@
 		align-items: center;
 		gap: 4px;
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 500;
 		color: var(--accent);
 		background: var(--accent-light);
@@ -977,7 +977,7 @@
 		border: none;
 		color: var(--secondary);
 		cursor: pointer;
-		font-size: 14px;
+		font-size: 0.875rem;
 		padding: 0 2px;
 		line-height: 1;
 		transition: var(--transition);
@@ -998,7 +998,7 @@
 
 	.tags-add-btn {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		padding: 8px 16px;
 		border-radius: var(--radius);
@@ -1039,7 +1039,7 @@
 	.action-owner,
 	.action-deadline {
 		font-family: var(--font-body);
-		font-size: 14px;
+		font-size: 0.875rem;
 		padding: 8px 10px;
 		border: 1px solid var(--border);
 		border-radius: var(--radius);
@@ -1062,7 +1062,7 @@
 
 	.result-title {
 		font-family: var(--font-heading);
-		font-size: 20px;
+		font-size: 1.25rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin-bottom: var(--content-gap);
@@ -1079,14 +1079,14 @@
 
 	.result-name {
 		font-family: var(--font-heading);
-		font-size: 18px;
+		font-size: 1.125rem;
 		font-weight: 600;
 		color: var(--primary);
 	}
 
 	.result-poste {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--secondary);
 	}
 
@@ -1104,7 +1104,7 @@
 	.overall-level-label {
 		display: block;
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 		margin-bottom: 4px;
 		text-transform: uppercase;
@@ -1114,7 +1114,7 @@
 	.overall-level-value {
 		display: block;
 		font-family: var(--font-heading);
-		font-size: 22px;
+		font-size: 1.375rem;
 		font-weight: 700;
 		transition: color 0.3s ease;
 	}
@@ -1122,7 +1122,7 @@
 	.overall-level-score {
 		display: block;
 		font-family: var(--font-mono);
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: var(--secondary);
 		margin-top: 2px;
 	}
@@ -1165,7 +1165,7 @@
 
 	:global(.radar-label) {
 		font-family: var(--font-ui);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		fill: var(--secondary);
 	}
 
@@ -1185,13 +1185,13 @@
 
 	.summary-label {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: var(--secondary);
 	}
 
 	.summary-value {
 		font-family: var(--font-mono);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 	}
@@ -1209,7 +1209,7 @@
 
 	.dev-plan-title {
 		font-family: var(--font-heading);
-		font-size: 16px;
+		font-size: 1rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin-bottom: 12px;
@@ -1224,7 +1224,7 @@
 
 	.dev-plan-tag {
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		font-weight: 500;
 		color: var(--accent);
 		background: var(--accent-light);
@@ -1243,7 +1243,7 @@
 
 	.tool-btn {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		padding: 10px 20px;
 		border-radius: var(--radius);

@@ -450,7 +450,7 @@
 
 	.glass-card legend {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 		padding: 0 8px;
@@ -467,7 +467,7 @@
 
 	.input-group label {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 500;
 		color: var(--secondary);
 		display: block;
@@ -482,7 +482,7 @@
 
 	.input-row input[type='number'] {
 		font-family: var(--font-body);
-		font-size: 15px;
+		font-size: 0.9375rem;
 		padding: 8px 12px;
 		border: 1px solid rgba(255, 255, 255, 0.08);
 		border-radius: var(--radius);
@@ -500,13 +500,13 @@
 
 	.input-unit {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--secondary);
 	}
 
 	/* Slider groups */
 	.form-hint {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--secondary);
 		margin: 0 0 12px 0;
 		font-style: italic;
@@ -535,20 +535,20 @@
 
 	.slider-name {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 	}
 
 	.slider-desc {
 		font-family: var(--font-ui);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		color: var(--secondary);
 	}
 
 	.slider-value {
 		font-family: var(--font-mono);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 700;
 		flex-shrink: 0;
 		margin-left: 12px;
@@ -614,7 +614,7 @@
 	/* Deduction total */
 	.deduction-total {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: var(--secondary);
 		padding-top: 8px;
 		border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -640,7 +640,7 @@
 
 	.result-title {
 		font-family: var(--font-heading);
-		font-size: 20px;
+		font-size: 1.25rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin-bottom: var(--content-gap);
@@ -671,7 +671,7 @@
 
 	.metric-label {
 		font-family: var(--font-ui);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		font-weight: 500;
 		color: var(--secondary);
 		text-transform: uppercase;
@@ -680,14 +680,14 @@
 
 	.metric-value {
 		font-family: var(--font-mono);
-		font-size: 24px;
+		font-size: 1.5rem;
 		font-weight: 700;
 		color: var(--primary);
 		line-height: 1;
 	}
 
 	.metric-unit {
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 400;
 		color: var(--secondary);
 		margin-left: 2px;
@@ -695,7 +695,7 @@
 
 	.metric-pct {
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--accent);
 		font-weight: 500;
 	}
@@ -709,7 +709,7 @@
 		display: flex;
 		justify-content: space-between;
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 		margin-bottom: 6px;
 	}
@@ -765,7 +765,7 @@
 
 	.legend-text {
 		font-family: var(--font-ui);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		color: var(--secondary);
 	}
 
@@ -775,14 +775,14 @@
 		border: 1px solid rgb(var(--accent3-rgb) / 0.2);
 		border-radius: var(--radius);
 		padding: 12px;
-		font-size: 14px;
+		font-size: 0.875rem;
 		line-height: 1.6;
 		color: var(--accent3);
 		margin-bottom: var(--content-gap);
 	}
 
 	.result-note {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		line-height: 1.5;
 		color: var(--secondary);
 		font-style: italic;
@@ -797,7 +797,7 @@
 
 	.tool-btn {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		padding: 10px 20px;
 		border-radius: var(--radius);

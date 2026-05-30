@@ -621,7 +621,7 @@
 
 	.tab-btn {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		padding: 10px 20px;
 		background: none;
@@ -648,14 +648,14 @@
 
 	.section-title {
 		font-family: var(--font-heading);
-		font-size: 16px;
+		font-size: 1rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin: 0 0 4px 0;
 	}
 
 	.section-hint {
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 		margin: 0 0 12px 0;
 		font-style: italic;
@@ -670,7 +670,7 @@
 
 	.input-field {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		padding: 8px 12px;
 		border: 1px solid var(--border);
 		border-radius: var(--radius);
@@ -711,7 +711,7 @@
 		border: 1px solid var(--border);
 		border-radius: var(--radius);
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 	}
 
 	.member-name {
@@ -721,7 +721,7 @@
 	}
 
 	.member-role {
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 		background: var(--accent-light);
 		padding: 2px 8px;
@@ -733,7 +733,7 @@
 		border: none;
 		color: var(--secondary);
 		cursor: pointer;
-		font-size: 14px;
+		font-size: 0.875rem;
 		padding: 2px 6px;
 		border-radius: 4px;
 		font-family: var(--font-mono);
@@ -752,7 +752,7 @@
 
 	.domain-title {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--accent);
 		margin: 0 0 6px 0;
@@ -769,7 +769,7 @@
 		align-items: center;
 		gap: 4px;
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		padding: 4px 10px;
 		border: 1px solid var(--border);
 		border-radius: 20px;
@@ -782,7 +782,7 @@
 		border: none;
 		color: var(--secondary);
 		cursor: pointer;
-		font-size: 11px;
+		font-size: 0.6875rem;
 		font-family: var(--font-mono);
 		padding: 0 2px;
 		transition: var(--transition);
@@ -809,7 +809,7 @@
 
 	.eval-member-name {
 		font-family: var(--font-heading);
-		font-size: 16px;
+		font-size: 1rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin: 0 0 12px 0;
@@ -820,7 +820,7 @@
 
 	.eval-member-role {
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		font-weight: 400;
 		color: var(--secondary);
 	}
@@ -831,7 +831,7 @@
 
 	.eval-domain-title {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--accent);
 		margin: 0 0 6px 0;
@@ -846,7 +846,7 @@
 
 	.eval-skill-name {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--primary);
 		min-width: 120px;
 		flex-shrink: 0;
@@ -865,7 +865,7 @@
 		background: var(--theme);
 		color: var(--secondary);
 		font-family: var(--font-mono);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		cursor: pointer;
 		transition: var(--transition);
@@ -887,7 +887,7 @@
 
 	.eval-level-label {
 		font-family: var(--font-ui);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		color: var(--secondary);
 		min-width: 70px;
 	}
@@ -906,7 +906,7 @@
 
 	.result-title {
 		font-family: var(--font-heading);
-		font-size: 20px;
+		font-size: 1.25rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin-bottom: var(--content-gap);
@@ -920,7 +920,7 @@
 
 	.result-subtitle {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin-bottom: 10px;
@@ -936,7 +936,7 @@
 	.heatmap {
 		border-collapse: collapse;
 		font-family: var(--font-ui);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		width: 100%;
 		min-width: max-content;
 	}
@@ -962,7 +962,7 @@
 	}
 
 	.heatmap-col-text {
-		font-size: 10px;
+		font-size: 0.625rem;
 	}
 
 	.heatmap-row-header {
@@ -978,7 +978,7 @@
 		height: 28px;
 		border-radius: 4px;
 		font-family: var(--font-mono);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		font-weight: 700;
 		color: rgba(255, 255, 255, 0.9);
 		transition: background 0.2s ease;
@@ -996,7 +996,7 @@
 		align-items: center;
 		gap: 8px;
 		padding: 3px 0;
-		font-size: 12px;
+		font-size: 0.75rem;
 	}
 
 	.coverage-skill {
@@ -1007,7 +1007,7 @@
 
 	.coverage-avg {
 		font-family: var(--font-mono);
-		font-size: 12px;
+		font-size: 0.75rem;
 		font-weight: 600;
 		color: var(--accent);
 		min-width: 32px;
@@ -1016,7 +1016,7 @@
 
 	.coverage-referents {
 		font-family: var(--font-mono);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		color: var(--secondary);
 		min-width: 40px;
 		text-align: right;
@@ -1029,7 +1029,7 @@
 
 	/* Gaps */
 	.gaps-hint {
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 		margin: 0 0 10px 0;
 		font-style: italic;
@@ -1048,7 +1048,7 @@
 		display: flex;
 		align-items: center;
 		gap: 8px;
-		font-size: 12px;
+		font-size: 0.75rem;
 		padding: 4px 8px;
 		border-left: 3px solid #f97316;
 		background: rgba(249, 115, 22, 0.05);
@@ -1064,13 +1064,13 @@
 
 	.gap-domain {
 		font-family: var(--font-ui);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		color: var(--secondary);
 	}
 
 	.gap-avg {
 		font-family: var(--font-mono);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		color: var(--secondary);
 	}
 
@@ -1112,13 +1112,13 @@
 
 	:global(.radar-label) {
 		font-family: var(--font-ui);
-		font-size: 8px;
+		font-size: 0.5rem;
 		fill: var(--secondary);
 	}
 
 	.empty-state {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--secondary);
 		font-style: italic;
 		margin: 12px 0;
@@ -1134,7 +1134,7 @@
 
 	.tool-btn {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		padding: 10px 20px;
 		border-radius: var(--radius);
@@ -1170,7 +1170,7 @@
 	}
 
 	.tool-btn--small {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		padding: 8px 14px;
 		min-height: 40px;
 		background: var(--accent);

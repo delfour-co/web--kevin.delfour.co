@@ -31,7 +31,7 @@
 
 	.breadcrumb {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--secondary);
 		margin-bottom: var(--gap);
 		display: flex;

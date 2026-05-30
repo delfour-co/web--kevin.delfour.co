@@ -475,14 +475,14 @@
 
 	.section-card legend {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 		padding: 0 8px;
 	}
 
 	.form-hint {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--secondary);
 		margin: 0 0 12px 0;
 		font-style: italic;
@@ -508,7 +508,7 @@
 
 	.item-number {
 		font-family: var(--font-mono);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 		background: var(--border);
 		width: 24px;
@@ -523,7 +523,7 @@
 	.item-name-input {
 		flex: 1;
 		font-family: var(--font-body);
-		font-size: 15px;
+		font-size: 0.9375rem;
 		padding: 8px 10px;
 		border: 1px solid var(--border);
 		border-radius: var(--radius);
@@ -554,7 +554,7 @@
 
 	.field-group label {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--primary);
 	}
@@ -562,12 +562,12 @@
 	.field-hint {
 		font-weight: 400;
 		color: var(--secondary);
-		font-size: 11px;
+		font-size: 0.6875rem;
 	}
 
 	.field-select {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		padding: 8px 10px;
 		border: 1px solid var(--border);
 		border-radius: var(--radius);
@@ -614,7 +614,7 @@
 
 	.score-value {
 		font-family: var(--font-mono);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 		min-width: 28px;
 		text-align: right;
@@ -632,7 +632,7 @@
 		border-radius: var(--radius);
 		color: var(--secondary);
 		cursor: pointer;
-		font-size: 16px;
+		font-size: 1rem;
 		flex-shrink: 0;
 		transition: var(--transition);
 	}
@@ -645,7 +645,7 @@
 	/* Add button */
 	.add-btn {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 500;
 		color: var(--accent);
 		background: none;
@@ -671,13 +671,13 @@
 
 	.result-title {
 		font-family: var(--font-heading);
-		font-size: 15px;
+		font-size: 0.9375rem;
 		font-weight: 600;
 		margin: 0 0 12px 0;
 	}
 
 	.panel-hint {
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 		margin: 0 0 10px 0;
 		font-style: italic;
@@ -698,7 +698,7 @@
 
 	.result-rank {
 		font-family: var(--font-mono);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 		min-width: 20px;
 		flex-shrink: 0;
@@ -714,7 +714,7 @@
 	}
 
 	.result-name {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 500;
 		white-space: nowrap;
 		overflow: hidden;
@@ -723,7 +723,7 @@
 
 	.result-type-badge {
 		font-family: var(--font-ui);
-		font-size: 10px;
+		font-size: 0.625rem;
 		color: var(--type-color);
 		opacity: 0.8;
 	}
@@ -746,7 +746,7 @@
 
 	.result-score {
 		font-family: var(--font-mono);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 700;
 		min-width: 32px;
 		text-align: right;
@@ -755,7 +755,7 @@
 
 	.quick-win-badge {
 		font-family: var(--font-ui);
-		font-size: 9px;
+		font-size: 0.5625rem;
 		font-weight: 700;
 		color: #10b981;
 		border: 1px solid rgba(16, 185, 129, 0.4);
@@ -781,7 +781,7 @@
 		justify-content: space-between;
 		align-items: center;
 		gap: 8px;
-		font-size: 13px;
+		font-size: 0.8125rem;
 	}
 
 	.quick-win-name {
@@ -790,7 +790,7 @@
 
 	.quick-win-detail {
 		font-family: var(--font-mono);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		color: var(--secondary);
 		flex-shrink: 0;
 	}
@@ -812,7 +812,7 @@
 		display: flex;
 		align-items: center;
 		gap: 6px;
-		font-size: 13px;
+		font-size: 0.8125rem;
 		min-width: 100px;
 		flex-shrink: 0;
 	}
@@ -841,7 +841,7 @@
 
 	.type-dist-count {
 		font-family: var(--font-mono);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		color: var(--secondary);
 		min-width: 55px;
 		text-align: right;
@@ -874,19 +874,19 @@
 
 	.top5-rank {
 		font-family: var(--font-mono);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 	}
 
 	.top5-name {
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 500;
 		flex: 1;
 	}
 
 	.top5-score {
 		font-family: var(--font-mono);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 700;
 	}
 
@@ -894,7 +894,7 @@
 		display: flex;
 		gap: 12px;
 		font-family: var(--font-mono);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		color: var(--secondary);
 		padding-left: 20px;
 	}
@@ -908,7 +908,7 @@
 
 	.tool-btn {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		padding: 10px 20px;
 		border-radius: var(--radius);

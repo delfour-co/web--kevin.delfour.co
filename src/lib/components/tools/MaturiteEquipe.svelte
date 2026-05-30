@@ -350,7 +350,7 @@
 
 	.slider-name {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 	}
@@ -363,20 +363,20 @@
 
 	.slider-value {
 		font-family: var(--font-mono);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 700;
 		color: var(--accent);
 	}
 
 	.slider-level {
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		font-weight: 600;
 		transition: color 0.2s ease;
 	}
 
 	.slider-hint {
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 		margin: 0 0 6px 0;
 	}
@@ -451,7 +451,7 @@
 
 	.result-title {
 		font-family: var(--font-heading);
-		font-size: 20px;
+		font-size: 1.25rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin-bottom: var(--content-gap);
@@ -495,7 +495,7 @@
 
 	:global(.radar-label) {
 		font-family: var(--font-ui);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		fill: var(--secondary);
 	}
 
@@ -516,13 +516,13 @@
 
 	.summary-label {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: var(--secondary);
 	}
 
 	.summary-value {
 		font-family: var(--font-mono);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 	}
@@ -533,7 +533,7 @@
 
 	.summary-level {
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		font-weight: 600;
 		margin-left: 6px;
 	}
@@ -546,7 +546,7 @@
 
 	.suggestions-title {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin-bottom: 12px;
@@ -565,7 +565,7 @@
 		justify-content: space-between;
 		align-items: baseline;
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin-bottom: 4px;
@@ -573,12 +573,12 @@
 
 	.suggestion-score {
 		font-family: var(--font-mono);
-		font-size: 12px;
+		font-size: 0.75rem;
 		font-weight: 600;
 	}
 
 	.suggestion-text {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		line-height: 1.6;
 		color: var(--secondary);
 		margin: 0;
@@ -594,7 +594,7 @@
 
 	.tool-btn {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		padding: 10px 20px;
 		border-radius: var(--radius);

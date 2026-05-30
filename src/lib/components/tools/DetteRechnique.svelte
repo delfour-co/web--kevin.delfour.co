@@ -514,20 +514,20 @@
 	}
 
 	.dt-zone-name {
-		font-size: 16px;
+		font-size: 1rem;
 		font-weight: 600;
 		color: var(--dt-primary);
 	}
 
 	.dt-zone-score {
 		font-family: 'JetBrains Mono', 'Fira Code', monospace;
-		font-size: 16px;
+		font-size: 1rem;
 		font-weight: 700;
 		margin-left: 12px;
 	}
 
 	.dt-zone-desc {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--dt-secondary);
 		grid-column: 1;
 	}
@@ -559,7 +559,7 @@
 	}
 
 	.dt-slider-name {
-		font-size: 12px;
+		font-size: 0.75rem;
 		font-weight: 500;
 		color: var(--dt-secondary);
 		text-transform: uppercase;
@@ -568,7 +568,7 @@
 
 	.dt-slider-value {
 		font-family: 'JetBrains Mono', 'Fira Code', monospace;
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--dt-accent);
 	}
@@ -588,7 +588,7 @@
 	}
 
 	.dt-slider-bound {
-		font-size: 11px;
+		font-size: 0.6875rem;
 		color: var(--dt-secondary);
 		white-space: nowrap;
 		min-width: fit-content;
@@ -700,7 +700,7 @@
 	}
 
 	.dt-zone-hint {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		line-height: 1.6;
 		color: var(--dt-secondary);
 		font-style: italic;
@@ -723,7 +723,7 @@
 
 	.dt-btn {
 		font-family: var(--dt-font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		padding: 10px 20px;
 		border-radius: 8px;
@@ -770,7 +770,7 @@
 	}
 
 	.dt-score-header {
-		font-size: 12px;
+		font-size: 0.75rem;
 		font-weight: 500;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
@@ -779,20 +779,20 @@
 	}
 
 	.dt-score-big {
-		font-size: 56px;
+		font-size: 3.5rem;
 		font-weight: 700;
 		line-height: 1;
 		font-family: 'JetBrains Mono', 'Fira Code', monospace;
 	}
 
 	.dt-score-max {
-		font-size: 18px;
+		font-size: 1.125rem;
 		color: var(--dt-secondary);
 		margin-bottom: 4px;
 	}
 
 	.dt-score-label {
-		font-size: 18px;
+		font-size: 1.125rem;
 		font-weight: 600;
 		margin-bottom: 16px;
 	}
@@ -813,7 +813,7 @@
 
 	/* Card titles */
 	.dt-card-title {
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
@@ -840,7 +840,7 @@
 
 	.dt-matrix-label {
 		position: absolute;
-		font-size: 10px;
+		font-size: 0.625rem;
 		font-weight: 600;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
@@ -859,7 +859,7 @@
 
 	.dt-matrix-quadrant {
 		position: absolute;
-		font-size: 9px;
+		font-size: 0.5625rem;
 		color: rgba(255, 255, 255, 0.2);
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
@@ -910,7 +910,7 @@
 	}
 
 	.dt-matrix-dot-label {
-		font-size: 9px;
+		font-size: 0.5625rem;
 		font-weight: 700;
 		color: var(--theme);
 		text-transform: uppercase;
@@ -934,7 +934,7 @@
 
 	.dt-priority-rank {
 		font-family: 'JetBrains Mono', 'Fira Code', monospace;
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 700;
 		color: var(--dt-accent);
 		min-width: 24px;
@@ -948,18 +948,18 @@
 	}
 
 	.dt-priority-name {
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--dt-primary);
 	}
 
 	.dt-priority-meta {
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--dt-secondary);
 	}
 
 	.dt-priority-quadrant {
-		font-size: 11px;
+		font-size: 0.6875rem;
 		font-weight: 600;
 	}
 
@@ -977,7 +977,7 @@
 	}
 
 	.dt-summary-name {
-		font-size: 12px;
+		font-size: 0.75rem;
 		font-weight: 500;
 		color: var(--dt-secondary);
 		min-width: 90px;
@@ -1001,7 +1001,7 @@
 
 	.dt-summary-value {
 		font-family: 'JetBrains Mono', 'Fira Code', monospace;
-		font-size: 12px;
+		font-size: 0.75rem;
 		font-weight: 600;
 		color: var(--dt-primary);
 		min-width: 20px;
@@ -1034,7 +1034,7 @@
 		}
 
 		.dt-score-big {
-			font-size: 42px;
+			font-size: 2.625rem;
 		}
 	}
 </style>

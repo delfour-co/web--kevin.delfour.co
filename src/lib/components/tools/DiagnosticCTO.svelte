@@ -368,7 +368,7 @@
 
 	.slider-name {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 	}
@@ -381,7 +381,7 @@
 
 	.maturity-badge {
 		font-family: var(--font-ui);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		font-weight: 600;
 		padding: 1px 8px;
 		border: 1px solid;
@@ -392,13 +392,13 @@
 
 	.slider-value {
 		font-family: var(--font-mono);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 700;
 		color: var(--accent);
 	}
 
 	.slider-hint {
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 		margin: 0 0 6px 0;
 	}
@@ -475,7 +475,7 @@
 	.overall-maturity-label {
 		display: block;
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 		margin-bottom: 4px;
 		text-transform: uppercase;
@@ -485,7 +485,7 @@
 	.overall-maturity-value {
 		display: block;
 		font-family: var(--font-heading);
-		font-size: 22px;
+		font-size: 1.375rem;
 		font-weight: 700;
 		transition: color 0.3s ease;
 	}
@@ -493,7 +493,7 @@
 	.overall-maturity-score {
 		display: block;
 		font-family: var(--font-mono);
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: var(--secondary);
 		margin-top: 2px;
 	}
@@ -510,7 +510,7 @@
 
 	.result-title {
 		font-family: var(--font-heading);
-		font-size: 20px;
+		font-size: 1.25rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin-bottom: var(--content-gap);
@@ -554,7 +554,7 @@
 
 	:global(.radar-label) {
 		font-family: var(--font-ui);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		fill: var(--secondary);
 	}
 
@@ -574,13 +574,13 @@
 
 	.summary-label {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: var(--secondary);
 	}
 
 	.summary-value {
 		font-family: var(--font-mono);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 	}
@@ -598,7 +598,7 @@
 
 	.guidance-title {
 		font-family: var(--font-heading);
-		font-size: 16px;
+		font-size: 1rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin-bottom: 12px;
@@ -624,20 +624,20 @@
 
 	.guidance-axis-name {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 	}
 
 	.guidance-axis-level {
 		font-family: var(--font-mono);
-		font-size: 12px;
+		font-size: 0.75rem;
 		font-weight: 600;
 		transition: color 0.3s ease;
 	}
 
 	.guidance-text {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		line-height: 1.6;
 		color: var(--secondary);
 		margin: 0;
@@ -653,7 +653,7 @@
 
 	.tool-btn {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		padding: 10px 20px;
 		border-radius: var(--radius);

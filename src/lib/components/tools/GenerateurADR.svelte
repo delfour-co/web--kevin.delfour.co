@@ -252,13 +252,13 @@
 
 	.form-group label {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 	}
 
 	.form-hint {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--secondary);
 		margin: 0 0 4px 0;
 		font-style: italic;
@@ -275,7 +275,7 @@
 	select,
 	textarea {
 		font-family: var(--font-body);
-		font-size: 15px;
+		font-size: 0.9375rem;
 		padding: 10px 12px;
 		border: 1px solid var(--border);
 		border-radius: var(--radius);
@@ -309,7 +309,7 @@
 
 	.options-section legend {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 		padding: 0 8px;
@@ -332,7 +332,7 @@
 
 	.option-number {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 700;
 		color: var(--accent);
 		text-transform: uppercase;
@@ -341,7 +341,7 @@
 
 	.option-remove {
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 		background: none;
 		border: 1px solid var(--border);
@@ -358,7 +358,7 @@
 
 	.add-option-btn {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 500;
 		color: var(--accent);
 		background: none;
@@ -384,7 +384,7 @@
 
 	.tool-btn {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		padding: 10px 20px;
 		border-radius: var(--radius);

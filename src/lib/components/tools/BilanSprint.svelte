@@ -828,7 +828,7 @@
 
 	.section-title {
 		font-family: var(--font-heading);
-		font-size: 18px;
+		font-size: 1.125rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin: 0;
@@ -837,7 +837,7 @@
 	}
 
 	.section-hint {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--tertiary);
 		margin: 0;
 		font-style: italic;
@@ -863,7 +863,7 @@
 
 	.field-label {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--secondary);
 	}
@@ -872,7 +872,7 @@
 	.field-select,
 	.field-textarea {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: var(--primary);
 		background: var(--accent-light);
 		border: 1px solid var(--border);
@@ -916,7 +916,7 @@
 
 	.delivery-completion-label {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--secondary);
 		white-space: nowrap;
@@ -951,7 +951,7 @@
 
 	.delivery-completion-pct {
 		font-family: var(--font-mono);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--accent);
 		min-width: 44px;
@@ -1004,7 +1004,7 @@
 
 	.retro-quadrant-title {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin: 0;
@@ -1013,7 +1013,7 @@
 
 	.retro-quadrant-count {
 		font-family: var(--font-mono);
-		font-size: 12px;
+		font-size: 0.75rem;
 		font-weight: 600;
 		color: var(--tertiary);
 	}
@@ -1026,7 +1026,7 @@
 
 	.retro-input {
 		flex: 1;
-		font-size: 13px !important;
+		font-size: 0.8125rem !important;
 		padding: 6px 10px !important;
 	}
 
@@ -1048,7 +1048,7 @@
 
 	.retro-item-text {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--primary);
 		flex: 1;
 	}
@@ -1058,7 +1058,7 @@
 		border: none;
 		color: var(--tertiary);
 		cursor: pointer;
-		font-size: 12px;
+		font-size: 0.75rem;
 		padding: 2px;
 		line-height: 1;
 		transition: var(--transition);
@@ -1102,7 +1102,7 @@
 
 	.tool-btn--add {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		padding: 8px 16px;
 		border-radius: var(--radius);
@@ -1155,7 +1155,7 @@
 
 	.action-prio {
 		font-family: var(--font-ui);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		font-weight: 700;
 		padding: 2px 6px;
 		border-radius: 3px;
@@ -1181,7 +1181,7 @@
 
 	.action-text {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: var(--primary);
 	}
 
@@ -1193,14 +1193,14 @@
 
 	.action-owner {
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		font-weight: 600;
 		color: var(--accent);
 	}
 
 	.action-deadline {
 		font-family: var(--font-mono);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--tertiary);
 	}
 
@@ -1209,7 +1209,7 @@
 		border: none;
 		color: var(--tertiary);
 		cursor: pointer;
-		font-size: 14px;
+		font-size: 0.875rem;
 		padding: 4px;
 		line-height: 1;
 		transition: var(--transition);
@@ -1229,7 +1229,7 @@
 
 	.metrique-label {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--secondary);
 	}
 
@@ -1241,7 +1241,7 @@
 
 	.metrique-value {
 		font-family: var(--font-mono);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--accent);
 		text-align: right;
@@ -1257,7 +1257,7 @@
 
 	.tool-btn {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		padding: 10px 20px;
 		border-radius: var(--radius);
@@ -1302,7 +1302,7 @@
 
 	.result-title {
 		font-family: var(--font-heading);
-		font-size: 20px;
+		font-size: 1.25rem;
 		font-weight: 600;
 		color: var(--primary);
 	}
@@ -1327,7 +1327,7 @@
 
 	.result-trend-label {
 		font-family: var(--font-ui);
-		font-size: 15px;
+		font-size: 0.9375rem;
 		font-weight: 700;
 	}
 
@@ -1339,7 +1339,7 @@
 
 	.result-section-title {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin-bottom: 8px;
@@ -1354,7 +1354,7 @@
 
 	.result-big-value {
 		font-family: var(--font-mono);
-		font-size: 36px;
+		font-size: 2.25rem;
 		font-weight: 700;
 		color: var(--accent);
 		line-height: 1;
@@ -1362,7 +1362,7 @@
 
 	.result-big-unit {
 		font-family: var(--font-mono);
-		font-size: 16px;
+		font-size: 1rem;
 		color: var(--secondary);
 	}
 
@@ -1371,7 +1371,7 @@
 		flex-direction: column;
 		gap: 2px;
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--tertiary);
 	}
 
@@ -1413,14 +1413,14 @@
 
 	.result-retro-label {
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 		flex: 1;
 	}
 
 	.result-retro-count {
 		font-family: var(--font-mono);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--primary);
 	}
@@ -1440,13 +1440,13 @@
 		align-items: center;
 		justify-content: center;
 		border-radius: 3px;
-		font-size: 10px;
+		font-size: 0.625rem;
 		flex-shrink: 0;
 	}
 
 	.result-action-text {
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 		flex: 1;
 		overflow: hidden;
@@ -1456,7 +1456,7 @@
 
 	.result-action-owner {
 		font-family: var(--font-ui);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		font-weight: 600;
 		color: var(--accent);
 		flex-shrink: 0;
@@ -1477,13 +1477,13 @@
 
 	.result-context-label {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--tertiary);
 	}
 
 	.result-context-value {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--primary);
 	}

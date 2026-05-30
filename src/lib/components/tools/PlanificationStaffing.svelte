@@ -744,7 +744,7 @@
 
 	.section-title {
 		font-family: var(--font-heading);
-		font-size: 18px;
+		font-size: 1.125rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin: 0 0 8px 0;
@@ -752,7 +752,7 @@
 
 	.section-badge {
 		font-family: var(--font-mono);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--accent);
 		padding: 2px 10px;
@@ -762,7 +762,7 @@
 	}
 
 	.section-hint {
-		font-size: 12px;
+		font-size: 0.75rem;
 		line-height: 1.5;
 		color: var(--secondary);
 		margin: 0 0 12px 0;
@@ -811,7 +811,7 @@
 
 	.mini-label {
 		font-family: var(--font-ui);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		color: var(--secondary);
 		display: flex;
 		flex-direction: column;
@@ -821,7 +821,7 @@
 	/* Inputs */
 	.input {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		padding: 6px 10px;
 		border: 1px solid var(--border);
 		border-radius: var(--radius);
@@ -869,7 +869,7 @@
 
 	.field-label {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 	}
@@ -892,13 +892,13 @@
 
 	.param-value {
 		font-family: var(--font-mono);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 700;
 		color: var(--accent);
 	}
 
 	.param-hint {
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 		margin: 6px 0 0 0;
 		font-style: italic;
@@ -967,7 +967,7 @@
 		display: flex;
 		justify-content: space-between;
 		font-family: var(--font-ui);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		color: var(--secondary);
 		margin-top: 4px;
 	}
@@ -975,7 +975,7 @@
 	/* Buttons */
 	.btn-add {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--accent);
 		background: transparent;
@@ -1026,7 +1026,7 @@
 
 	.tool-btn {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		padding: 10px 20px;
 		border-radius: var(--radius);
@@ -1068,7 +1068,7 @@
 
 	.result-title {
 		font-family: var(--font-heading);
-		font-size: 20px;
+		font-size: 1.25rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin-bottom: var(--content-gap);
@@ -1091,7 +1091,7 @@
 		align-items: center;
 		gap: 6px;
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 	}
 
@@ -1123,13 +1123,13 @@
 
 	:global(.chart-tick-label) {
 		font-family: var(--font-mono);
-		font-size: 10px;
+		font-size: 0.625rem;
 		fill: var(--secondary);
 	}
 
 	:global(.chart-month-label) {
 		font-family: var(--font-ui);
-		font-size: 9px;
+		font-size: 0.5625rem;
 		fill: var(--secondary);
 	}
 
@@ -1165,20 +1165,20 @@
 
 	.result-section-title {
 		font-family: var(--font-heading);
-		font-size: 15px;
+		font-size: 0.9375rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin-bottom: 8px;
 	}
 
 	.result-ok {
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: var(--accent);
 		margin: 0;
 	}
 
 	.result-hint {
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 		margin: 0 0 8px 0;
 	}
@@ -1201,13 +1201,13 @@
 
 	.deficit-month {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--primary);
 	}
 
 	.deficit-value {
 		font-family: var(--font-mono);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: #ef4444;
 	}
@@ -1236,7 +1236,7 @@
 
 	.hiring-action {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--primary);
 	}
 
@@ -1246,7 +1246,7 @@
 
 	.hiring-detail {
 		font-family: var(--font-mono);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 	}
 
@@ -1260,14 +1260,14 @@
 
 	.attrition-value {
 		font-family: var(--font-mono);
-		font-size: 24px;
+		font-size: 1.5rem;
 		font-weight: 700;
 		color: var(--accent);
 	}
 
 	.attrition-label {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: var(--secondary);
 	}
 
@@ -1277,7 +1277,7 @@
 		background: rgba(0, 0, 0, 0.08);
 		border-radius: var(--radius);
 		font-family: var(--font-ui);
-		font-size: 15px;
+		font-size: 0.9375rem;
 		line-height: 1.6;
 		color: var(--primary);
 		text-align: center;

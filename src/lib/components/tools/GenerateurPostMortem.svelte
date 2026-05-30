@@ -732,7 +732,7 @@
 
 	.section-card legend {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--accent);
 		padding: 0 8px;
@@ -754,13 +754,13 @@
 
 	.form-group label {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 	}
 
 	.form-hint {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--secondary);
 		margin: 0 0 12px 0;
 		font-style: italic;
@@ -769,7 +769,7 @@
 	.optional {
 		font-weight: 400;
 		color: var(--tertiary);
-		font-size: 12px;
+		font-size: 0.75rem;
 	}
 
 	.form-row--two {
@@ -800,7 +800,7 @@
 	select,
 	textarea {
 		font-family: var(--font-body);
-		font-size: 15px;
+		font-size: 0.9375rem;
 		padding: 10px 12px;
 		border: 1px solid var(--border);
 		border-radius: var(--radius);
@@ -844,7 +844,7 @@
 
 	.entry-number {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 700;
 		color: var(--accent);
 		text-transform: uppercase;
@@ -853,7 +853,7 @@
 
 	.entry-remove {
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 		background: none;
 		border: 1px solid var(--border);
@@ -870,7 +870,7 @@
 
 	.add-btn {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 500;
 		color: var(--accent);
 		background: none;
@@ -896,7 +896,7 @@
 
 	.tool-btn {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		padding: 10px 20px;
 		border-radius: var(--radius);
@@ -937,7 +937,7 @@
 
 	.panel-title {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 700;
 		color: var(--primary);
 		text-transform: uppercase;
@@ -947,7 +947,7 @@
 
 	.panel-subtitle {
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		font-weight: 600;
 		color: var(--secondary);
 		text-transform: uppercase;
@@ -957,7 +957,7 @@
 
 	.panel-incident-title {
 		font-family: var(--font-ui);
-		font-size: 15px;
+		font-size: 0.9375rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin: 0;
@@ -965,7 +965,7 @@
 	}
 
 	.panel-meta {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--secondary);
 		margin: 0;
 	}
@@ -979,7 +979,7 @@
 
 	.severity-badge {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 700;
 		padding: 4px 12px;
 		border-radius: 999px;
@@ -989,7 +989,7 @@
 
 	.severity-label {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--secondary);
 	}
 
@@ -1008,7 +1008,7 @@
 
 	.completeness-label {
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
@@ -1016,7 +1016,7 @@
 
 	.completeness-value {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 700;
 		color: var(--accent);
 	}
@@ -1089,13 +1089,13 @@
 
 	.timeline-dot-time {
 		font-family: var(--font-mono);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		color: var(--accent);
 		font-weight: 600;
 	}
 
 	.timeline-dot-text {
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 		line-height: 1.4;
 		overflow: hidden;
@@ -1131,14 +1131,14 @@
 
 	.summary-count {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 700;
 		color: var(--primary);
 	}
 
 	.summary-label {
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 	}
 

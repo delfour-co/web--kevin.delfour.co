@@ -538,7 +538,7 @@
 
 	.section-title {
 		font-family: var(--font-heading);
-		font-size: 18px;
+		font-size: 1.125rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin: 0 0 var(--content-gap) 0;
@@ -554,7 +554,7 @@
 	.field label {
 		display: block;
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--secondary);
 		margin-bottom: 4px;
@@ -570,7 +570,7 @@
 		width: 100%;
 		padding: 8px 12px;
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: var(--primary);
 		background: var(--theme);
 		border: 1px solid var(--border);
@@ -619,14 +619,14 @@
 
 	.criterion-name {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 	}
 
 	.criterion-score {
 		font-family: var(--font-mono);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--accent);
 	}
 
@@ -638,7 +638,7 @@
 		border: 1px solid var(--border);
 		background: transparent;
 		color: var(--secondary);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		cursor: pointer;
 		display: flex;
@@ -653,7 +653,7 @@
 	}
 
 	.hint-text {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		line-height: 1.5;
 		color: var(--secondary);
 		font-style: italic;
@@ -679,7 +679,7 @@
 
 	.slider-bound {
 		font-family: var(--font-mono);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--tertiary);
 		min-width: 14px;
 		text-align: center;
@@ -753,14 +753,14 @@
 
 	.weight-label {
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--tertiary);
 		margin-right: 2px;
 	}
 
 	.weight-btn {
 		font-family: var(--font-ui);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		font-weight: 600;
 		padding: 4px 10px;
 		border-radius: var(--radius);
@@ -800,7 +800,7 @@
 
 	.result-title {
 		font-family: var(--font-heading);
-		font-size: 20px;
+		font-size: 1.25rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin-bottom: var(--content-gap);
@@ -816,7 +816,7 @@
 
 	.score-number {
 		font-family: var(--font-heading);
-		font-size: 48px;
+		font-size: 3rem;
 		font-weight: 700;
 		line-height: 1;
 	}
@@ -829,13 +829,13 @@
 
 	.score-max {
 		font-family: var(--font-mono);
-		font-size: 16px;
+		font-size: 1rem;
 		color: var(--tertiary);
 	}
 
 	.score-level {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 	}
 
@@ -857,7 +857,7 @@
 
 	.result-solution {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: var(--secondary);
 		margin-bottom: var(--content-gap);
 	}
@@ -886,13 +886,13 @@
 
 	.bar-label {
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 	}
 
 	.bar-score {
 		font-family: var(--font-mono);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--primary);
 	}
 
@@ -929,7 +929,7 @@
 
 	.result-section-title {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin-bottom: 6px;
@@ -946,7 +946,7 @@
 
 	.result-list li {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--secondary);
 		display: flex;
 		justify-content: space-between;
@@ -969,14 +969,14 @@
 
 	.result-pct {
 		font-family: var(--font-mono);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--tertiary);
 		flex-shrink: 0;
 	}
 
 	/* Verdict */
 	.result-verdict {
-		font-size: 14px;
+		font-size: 0.875rem;
 		line-height: 1.6;
 		color: var(--secondary);
 		font-style: italic;
@@ -993,7 +993,7 @@
 
 	.tool-btn {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		padding: 10px 20px;
 		border-radius: var(--radius);

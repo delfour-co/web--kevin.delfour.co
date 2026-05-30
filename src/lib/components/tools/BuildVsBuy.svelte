@@ -301,7 +301,7 @@
 	}
 
 	.slider-hint {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--secondary);
 		margin: 0 0 4px 0;
 		font-style: italic;
@@ -316,14 +316,14 @@
 
 	.slider-name {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 	}
 
 	.slider-value {
 		font-family: var(--font-mono);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 700;
 		color: var(--accent);
 	}
@@ -336,7 +336,7 @@
 
 	.slider-bound {
 		font-family: var(--font-ui);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		color: var(--secondary);
 		white-space: nowrap;
 		min-width: fit-content;
@@ -413,7 +413,7 @@
 
 	.result-title {
 		font-family: var(--font-heading);
-		font-size: 20px;
+		font-size: 1.25rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin-bottom: var(--content-gap);
@@ -434,7 +434,7 @@
 
 	.bar-label {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 		min-width: 90px;
@@ -465,7 +465,7 @@
 
 	.bar-percent {
 		font-family: var(--font-mono);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 		min-width: 42px;
@@ -473,7 +473,7 @@
 	}
 
 	.result-tendency {
-		font-size: 16px;
+		font-size: 1rem;
 		line-height: 1.6;
 		color: var(--content);
 		margin-bottom: 12px;
@@ -484,7 +484,7 @@
 	}
 
 	.result-nuance {
-		font-size: 14px;
+		font-size: 0.875rem;
 		line-height: 1.6;
 		color: var(--secondary);
 		font-style: italic;
@@ -500,7 +500,7 @@
 
 	.tool-btn {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		padding: 10px 20px;
 		border-radius: var(--radius);

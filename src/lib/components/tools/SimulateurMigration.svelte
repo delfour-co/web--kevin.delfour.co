@@ -595,7 +595,7 @@
 
 	.glass-card legend {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 		padding: 0 8px;
@@ -615,13 +615,13 @@
 
 	.form-group label {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 	}
 
 	.form-hint {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--secondary);
 		margin: 0 0 12px 0;
 		font-style: italic;
@@ -645,7 +645,7 @@
 	select,
 	textarea {
 		font-family: var(--font-body);
-		font-size: 15px;
+		font-size: 0.9375rem;
 		padding: 10px 12px;
 		border: 1px solid var(--border);
 		border-radius: var(--radius);
@@ -687,7 +687,7 @@
 
 	.phase-number {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 700;
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
@@ -711,7 +711,7 @@
 
 	.risk-number {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 700;
 		color: var(--accent3);
 		text-transform: uppercase;
@@ -730,7 +730,7 @@
 		border-radius: var(--radius);
 		color: var(--secondary);
 		cursor: pointer;
-		font-size: 16px;
+		font-size: 1rem;
 		flex-shrink: 0;
 		transition: var(--transition);
 	}
@@ -743,7 +743,7 @@
 	/* Add button */
 	.add-btn {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 500;
 		color: var(--accent);
 		background: none;
@@ -771,7 +771,7 @@
 		align-items: center;
 		gap: 8px;
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: var(--secondary);
 		cursor: pointer;
 	}
@@ -813,7 +813,7 @@
 
 	.checklist-label {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: var(--primary);
 	}
 
@@ -829,7 +829,7 @@
 
 	.result-title {
 		font-family: var(--font-heading, var(--font-ui));
-		font-size: 20px;
+		font-size: 1.25rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin-bottom: var(--content-gap);
@@ -849,7 +849,7 @@
 	.go-nogo-label {
 		display: block;
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 		margin-bottom: 4px;
 		text-transform: uppercase;
@@ -859,7 +859,7 @@
 	.go-nogo-value {
 		display: block;
 		font-family: var(--font-heading, var(--font-ui));
-		font-size: 24px;
+		font-size: 1.5rem;
 		font-weight: 700;
 		transition: color 0.3s ease;
 	}
@@ -867,7 +867,7 @@
 	.go-nogo-score {
 		display: block;
 		font-family: var(--font-mono, monospace);
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: var(--secondary);
 		margin-top: 2px;
 	}
@@ -881,7 +881,7 @@
 
 	.result-section-title {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin-bottom: 10px;
@@ -910,7 +910,7 @@
 
 	.timeline-segment-label {
 		font-family: var(--font-ui);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		font-weight: 600;
 		color: var(--theme);
 		white-space: nowrap;
@@ -926,7 +926,7 @@
 		display: flex;
 		align-items: center;
 		gap: 6px;
-		font-size: 12px;
+		font-size: 0.75rem;
 	}
 
 	.timeline-legend-dot {
@@ -943,13 +943,13 @@
 
 	.timeline-legend-days {
 		font-family: var(--font-mono, monospace);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		color: var(--primary);
 	}
 
 	.timeline-total {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--secondary);
 		margin-top: 4px;
 		padding-top: 4px;
@@ -969,7 +969,7 @@
 
 	.risk-matrix-y-label {
 		font-family: var(--font-ui);
-		font-size: 10px;
+		font-size: 0.625rem;
 		color: var(--secondary);
 		writing-mode: vertical-rl;
 		text-orientation: mixed;
@@ -1008,7 +1008,7 @@
 
 	.matrix-y-labels span {
 		font-family: var(--font-ui);
-		font-size: 10px;
+		font-size: 0.625rem;
 		color: var(--secondary);
 		text-align: right;
 		padding-right: 6px;
@@ -1032,7 +1032,7 @@
 
 	.matrix-cell-count {
 		font-family: var(--font-mono, monospace);
-		font-size: 16px;
+		font-size: 1rem;
 		font-weight: 700;
 		color: var(--primary);
 	}
@@ -1045,14 +1045,14 @@
 
 	.matrix-x-labels span {
 		font-family: var(--font-ui);
-		font-size: 10px;
+		font-size: 0.625rem;
 		color: var(--secondary);
 		text-align: center;
 	}
 
 	.risk-matrix-x-label {
 		font-family: var(--font-ui);
-		font-size: 10px;
+		font-size: 0.625rem;
 		color: var(--secondary);
 		text-align: center;
 		margin-top: 4px;
@@ -1080,7 +1080,7 @@
 		display: flex;
 		justify-content: space-between;
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--secondary);
 	}
 
@@ -1099,7 +1099,7 @@
 
 	.pill {
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		padding: 3px 10px;
 		border-radius: 12px;
 		background: var(--surface);
@@ -1109,7 +1109,7 @@
 
 	.badge {
 		font-family: var(--font-ui);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		font-weight: 600;
 		padding: 3px 10px;
 		border-radius: 12px;
@@ -1128,7 +1128,7 @@
 	}
 
 	.empty-hint {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--secondary);
 		font-style: italic;
 		margin: 0;
@@ -1144,7 +1144,7 @@
 
 	.tool-btn {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		padding: 10px 20px;
 		border-radius: var(--radius);

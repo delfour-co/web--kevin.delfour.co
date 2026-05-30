@@ -413,7 +413,7 @@
 
 	.layer-name {
 		font-family: var(--audit-font-ui);
-		font-size: 16px;
+		font-size: 1rem;
 		font-weight: 600;
 		color: var(--audit-primary);
 		margin: 0;
@@ -421,12 +421,12 @@
 
 	.layer-score {
 		font-family: var(--font-mono, monospace);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 700;
 	}
 
 	.layer-description {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--audit-secondary);
 		margin: 0 0 10px 0;
 		line-height: 1.4;
@@ -514,7 +514,7 @@
 	.checkpoint-label {
 		flex: 1;
 		font-family: var(--audit-font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: var(--audit-primary);
 		line-height: 1.3;
 	}
@@ -527,7 +527,7 @@
 	.criticality-badge {
 		flex-shrink: 0;
 		font-family: var(--audit-font-ui);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		font-weight: 600;
 		padding: 2px 8px;
 		border-radius: 10px;
@@ -616,20 +616,20 @@
 
 	.score-number {
 		font-family: var(--audit-font-ui);
-		font-size: 28px;
+		font-size: 1.75rem;
 		font-weight: 700;
 		line-height: 1;
 	}
 
 	.score-count {
 		font-family: var(--font-mono, monospace);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--audit-tertiary);
 	}
 
 	.score-level {
 		font-family: var(--audit-font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		text-align: center;
 	}
@@ -637,7 +637,7 @@
 	/* Layer scores */
 	.result-title {
 		font-family: var(--audit-font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--audit-secondary);
 		text-transform: uppercase;
@@ -664,13 +664,13 @@
 
 	.mini-score-name {
 		font-family: var(--audit-font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--audit-secondary);
 	}
 
 	.mini-score-value {
 		font-family: var(--font-mono, monospace);
-		font-size: 12px;
+		font-size: 0.75rem;
 		font-weight: 600;
 		color: var(--audit-primary);
 	}
@@ -690,7 +690,7 @@
 
 	/* Priorities */
 	.priorities-hint {
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--audit-tertiary);
 		margin: 0 0 10px 0;
 		line-height: 1.4;
@@ -707,7 +707,7 @@
 
 	.priority-item {
 		font-family: var(--audit-font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--audit-critique);
 		padding-left: 14px;
 		position: relative;
@@ -734,7 +734,7 @@
 
 	.audit-btn {
 		font-family: var(--audit-font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		padding: 10px 20px;
 		border-radius: 8px;
@@ -786,7 +786,7 @@
 		}
 
 		.criticality-badge {
-			font-size: 10px;
+			font-size: 0.625rem;
 			padding: 2px 6px;
 		}
 

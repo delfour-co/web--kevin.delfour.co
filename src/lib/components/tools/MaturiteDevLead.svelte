@@ -453,7 +453,7 @@
 
 	.section-title {
 		font-family: var(--font-heading);
-		font-size: 18px;
+		font-size: 1.125rem;
 		font-weight: 600;
 		color: var(--primary);
 		padding-bottom: 8px;
@@ -479,7 +479,7 @@
 
 	.field-label {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--secondary);
 	}
@@ -487,7 +487,7 @@
 	.field-input,
 	.field-select {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: var(--primary);
 		background: var(--accent-light);
 		border: 1px solid var(--border);
@@ -532,26 +532,26 @@
 
 	.slider-name {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 	}
 
 	.slider-value {
 		font-family: var(--font-mono);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 700;
 		color: var(--accent);
 	}
 
 	.slider-description {
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 		margin: 0 0 6px 0;
 	}
 
 	.slider-hint {
-		font-size: 11px;
+		font-size: 0.6875rem;
 		color: var(--tertiary);
 		margin: 6px 0 0 0;
 		font-style: italic;
@@ -628,7 +628,7 @@
 
 	.result-title {
 		font-family: var(--font-heading);
-		font-size: 20px;
+		font-size: 1.25rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin-bottom: var(--content-gap);
@@ -648,7 +648,7 @@
 	.overall-maturity-label {
 		display: block;
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--secondary);
 		margin-bottom: 4px;
 		text-transform: uppercase;
@@ -658,7 +658,7 @@
 	.overall-maturity-value {
 		display: block;
 		font-family: var(--font-heading);
-		font-size: 22px;
+		font-size: 1.375rem;
 		font-weight: 700;
 		transition: color 0.3s ease;
 	}
@@ -666,7 +666,7 @@
 	.overall-maturity-score {
 		display: block;
 		font-family: var(--font-mono);
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: var(--secondary);
 		margin-top: 2px;
 	}
@@ -709,7 +709,7 @@
 
 	:global(.radar-label) {
 		font-family: var(--font-ui);
-		font-size: 9px;
+		font-size: 0.5625rem;
 		fill: var(--secondary);
 	}
 
@@ -729,7 +729,7 @@
 
 	.summary-section-title {
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		font-weight: 600;
 		color: var(--tertiary);
 		text-transform: uppercase;
@@ -745,13 +745,13 @@
 
 	.summary-label {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: var(--secondary);
 	}
 
 	.summary-value {
 		font-family: var(--font-mono);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 	}
 
@@ -771,14 +771,14 @@
 
 	.recommendation-title {
 		font-family: var(--font-heading);
-		font-size: 16px;
+		font-size: 1rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin-bottom: 8px;
 	}
 
 	.recommendation-text {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		line-height: 1.7;
 		color: var(--secondary);
 		margin: 0;
@@ -794,7 +794,7 @@
 
 	.tool-btn {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		padding: 10px 20px;
 		border-radius: var(--radius);

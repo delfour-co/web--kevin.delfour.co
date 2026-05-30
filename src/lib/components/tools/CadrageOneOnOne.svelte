@@ -562,7 +562,7 @@
 
 	.section-title {
 		font-family: var(--font-heading);
-		font-size: 18px;
+		font-size: 1.125rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin: 0;
@@ -571,7 +571,7 @@
 	}
 
 	.section-subtitle {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--secondary);
 		margin: 4px 0 0 0;
 		line-height: 1.4;
@@ -592,7 +592,7 @@
 
 	.field-label {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--secondary);
 	}
@@ -601,7 +601,7 @@
 	.field-select,
 	.field-textarea {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: var(--primary);
 		background: var(--accent-light);
 		border: 1px solid var(--border);
@@ -649,7 +649,7 @@
 
 	.theme-category-title {
 		font-family: var(--font-ui);
-		font-size: 15px;
+		font-size: 0.9375rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin: 0;
@@ -657,13 +657,13 @@
 
 	.theme-category-count {
 		font-family: var(--font-mono);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--accent);
 	}
 
 	.theme-hint {
-		font-size: 12px;
+		font-size: 0.75rem;
 		line-height: 1.5;
 		color: var(--tertiary);
 		margin: 0 0 10px 0;
@@ -694,7 +694,7 @@
 
 	.theme-item-label {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: var(--primary);
 	}
 
@@ -725,7 +725,7 @@
 
 	.tool-btn--add {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		padding: 8px 16px;
 		border-radius: var(--radius);
@@ -773,7 +773,7 @@
 
 	.action-text {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		color: var(--primary);
 	}
 
@@ -785,7 +785,7 @@
 
 	.action-owner {
 		font-family: var(--font-ui);
-		font-size: 12px;
+		font-size: 0.75rem;
 		font-weight: 600;
 		color: var(--secondary);
 	}
@@ -796,7 +796,7 @@
 
 	.action-deadline {
 		font-family: var(--font-mono);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--tertiary);
 	}
 
@@ -805,7 +805,7 @@
 		border: none;
 		color: var(--tertiary);
 		cursor: pointer;
-		font-size: 14px;
+		font-size: 0.875rem;
 		padding: 4px;
 		line-height: 1;
 		transition: var(--transition);
@@ -825,7 +825,7 @@
 
 	.tool-btn {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		padding: 10px 20px;
 		border-radius: var(--radius);
@@ -867,7 +867,7 @@
 
 	.result-title {
 		font-family: var(--font-heading);
-		font-size: 20px;
+		font-size: 1.25rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin-bottom: var(--content-gap);
@@ -883,7 +883,7 @@
 
 	.prep-label {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--secondary);
 		white-space: nowrap;
@@ -907,7 +907,7 @@
 
 	.prep-pct {
 		font-family: var(--font-mono);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--accent);
 		min-width: 40px;
@@ -931,13 +931,13 @@
 
 	.category-row-label {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--secondary);
 	}
 
 	.category-row-count {
 		font-family: var(--font-mono);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: var(--primary);
 		text-align: right;
 	}
@@ -965,7 +965,7 @@
 
 	.result-actions-title {
 		font-family: var(--font-ui);
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
 		margin-bottom: 8px;
@@ -981,7 +981,7 @@
 
 	.result-action-text {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--secondary);
 		flex: 1;
 		overflow: hidden;
@@ -991,7 +991,7 @@
 
 	.result-action-owner {
 		font-family: var(--font-ui);
-		font-size: 11px;
+		font-size: 0.6875rem;
 		font-weight: 600;
 		color: var(--secondary);
 		flex-shrink: 0;
@@ -1012,13 +1012,13 @@
 
 	.result-context-label {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		color: var(--tertiary);
 	}
 
 	.result-context-value {
 		font-family: var(--font-ui);
-		font-size: 13px;
+		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--primary);
 	}
