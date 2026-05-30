@@ -40,7 +40,6 @@
 			<li><strong>Des repères structurants</strong> sur le rôle du CTO, la gouvernance technique, la culture d'équipe</li>
 			<li><strong>Des ressources complètes</strong> : <a href="/livres/">livres</a> disponibles gratuitement en ligne</li>
 			<li><strong>Des <a href="/outils/">outils</a> d'aide à la décision</strong> pour les arbitrages du quotidien</li>
-			<li><strong>Des <a href="/articles/">réflexions</a></strong> basées sur l'expérience de terrain, sans posture de donneur de leçons</li>
 		</ul>
 
 		<h2>Ligne morale</h2>
