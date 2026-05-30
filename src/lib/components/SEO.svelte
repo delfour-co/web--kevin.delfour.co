@@ -15,7 +15,7 @@
 
 	const SITE_NAME = 'Kevin Delfour';
 	const SITE_URL = 'https://kevin.delfour.co';
-	const DEFAULT_DESCRIPTION = 'CTO · 17 ans de terrain. Je donne des repères. Pas des leçons.';
+	const DEFAULT_DESCRIPTION = 'Kevin Delfour — Lead Tech (+ management), 17 ans de terrain, Lyon. Mon lieu : projets, outils, livres.';
 	const DEFAULT_IMAGE = `${SITE_URL}/images/kevin-delfour.png`;
 
 	let {
@@ -38,7 +38,7 @@
 		'@type': 'Person',
 		name: SITE_NAME,
 		url: SITE_URL,
-		jobTitle: 'CTO',
+		jobTitle: 'Lead Tech',
 		sameAs: [
 			'https://github.com/kdelfour',
 			'https://linkedin.com/in/kevindelfour'

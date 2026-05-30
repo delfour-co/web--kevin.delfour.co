@@ -6,7 +6,7 @@
 
 <SEO
 	title="Livres"
-	description="Livres complets disponibles gratuitement en ligne. Des guides structurés pour donner des repères aux CTO et à la jeunesse tech."
+	description="Les livres que j'ai (co-)écrits, disponibles gratuitement en ligne."
 	url="https://kevin.delfour.co/livres/"
 />
 
