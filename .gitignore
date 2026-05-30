@@ -55,3 +55,6 @@ vite.config.ts.timestamp-*
 
 # Others
 _resources
+
+# Compagnon visuel brainstorming
+.superpowers/
