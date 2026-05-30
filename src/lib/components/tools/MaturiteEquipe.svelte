@@ -55,9 +55,9 @@
 
 	function getLevel(score: number): { label: string; color: string } {
 		if (score <= 3) return { label: 'Émergent', color: '#f97316' };
-		if (score <= 6) return { label: 'Structuré', color: '#8b5cf6' };
-		if (score <= 8) return { label: 'Performant', color: '#06b6d4' };
-		return { label: 'Autonome', color: '#ec4899' };
+		if (score <= 6) return { label: 'Structuré', color: 'var(--accent2)' };
+		if (score <= 8) return { label: 'Performant', color: 'var(--accent)' };
+		return { label: 'Autonome', color: 'var(--accent3)' };
 	}
 
 	let scores = $state<Record<string, number>>(

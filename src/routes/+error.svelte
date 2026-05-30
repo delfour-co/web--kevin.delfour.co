@@ -93,8 +93,8 @@
 		width: 200%;
 		height: 60%;
 		background:
-			linear-gradient(90deg, rgba(6, 182, 212, 0.05) 1px, transparent 1px),
-			linear-gradient(0deg, rgba(6, 182, 212, 0.05) 1px, transparent 1px);
+			linear-gradient(90deg, rgb(var(--accent-rgb) / 0.05) 1px, transparent 1px),
+			linear-gradient(0deg, rgb(var(--accent-rgb) / 0.05) 1px, transparent 1px);
 		background-size: 60px 60px;
 		transform: perspective(500px) rotateX(60deg);
 		transform-origin: bottom center;
@@ -107,7 +107,7 @@
 		left: 0;
 		width: 100%;
 		height: 2px;
-		background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.3), transparent);
+		background: linear-gradient(90deg, transparent, rgb(var(--accent-rgb) / 0.3), transparent);
 		animation: scan 4s ease-in-out infinite;
 	}
 
@@ -140,7 +140,7 @@
 		font-size: 7rem;
 		font-weight: 700;
 		color: var(--accent);
-		text-shadow: 0 0 30px rgba(6, 182, 212, 0.5), 0 0 60px rgba(6, 182, 212, 0.2);
+		text-shadow: 0 0 30px rgb(var(--accent-rgb) / 0.5), 0 0 60px rgb(var(--accent-rgb) / 0.2);
 		line-height: 1;
 	}
 
@@ -159,7 +159,7 @@
 		width: 100%;
 		height: 100%;
 		color: var(--accent);
-		filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.4));
+		filter: drop-shadow(0 0 15px rgb(var(--accent-rgb) / 0.4));
 		animation: disc-spin 10s linear infinite;
 	}
 
@@ -170,7 +170,7 @@
 		font-size: 7rem;
 		font-weight: 700;
 		color: var(--accent);
-		text-shadow: 0 0 30px rgba(6, 182, 212, 0.5), 0 0 60px rgba(6, 182, 212, 0.2);
+		text-shadow: 0 0 30px rgb(var(--accent-rgb) / 0.5), 0 0 60px rgb(var(--accent-rgb) / 0.2);
 		line-height: 1;
 	}
 
@@ -187,7 +187,7 @@
 		letter-spacing: 0.15em;
 		color: var(--accent);
 		margin: 0 0 12px;
-		text-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+		text-shadow: 0 0 20px rgb(var(--accent-rgb) / 0.4);
 	}
 
 	.error-message {
@@ -228,9 +228,9 @@
 
 	.btn-grid:hover {
 		background: var(--accent);
-		color: #000;
+		color: var(--theme);
 		text-decoration: none;
-		box-shadow: 0 0 20px rgba(6, 182, 212, 0.4), inset 0 0 20px rgba(6, 182, 212, 0.1);
+		box-shadow: 0 0 20px rgb(var(--accent-rgb) / 0.4), inset 0 0 20px rgb(var(--accent-rgb) / 0.1);
 	}
 
 	.btn-grid--secondary {
@@ -240,13 +240,13 @@
 
 	.btn-grid--secondary:hover {
 		border-color: var(--accent);
-		background: rgba(6, 182, 212, 0.1);
+		background: rgb(var(--accent-rgb) / 0.1);
 		color: var(--accent);
 	}
 
 	/* Suggestions */
 	.error-suggestions {
-		border-top: 1px solid rgba(6, 182, 212, 0.15);
+		border-top: 1px solid rgb(var(--accent-rgb) / 0.15);
 		padding-top: calc(var(--gap) * 1.5);
 		max-width: 320px;
 		margin: 0 auto;

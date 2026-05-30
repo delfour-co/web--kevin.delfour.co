@@ -33,8 +33,8 @@
 
 	const typeColors: Record<ItemType, string> = {
 		'dette-technique': '#f59e0b',
-		feature: '#06b6d4',
-		infrastructure: '#8b5cf6',
+		feature: 'var(--accent)',
+		infrastructure: 'var(--accent2)',
 		refactoring: '#10b981',
 		'sécurité': '#ef4444'
 	};
@@ -117,8 +117,8 @@
 
 	function getBarColor(score: number): string {
 		const ratio = score / maxScore;
-		if (ratio >= 0.66) return '#06b6d4';
-		if (ratio >= 0.33) return '#8b5cf6';
+		if (ratio >= 0.66) return 'var(--accent)';
+		if (ratio >= 0.33) return 'var(--accent2)';
 		return '#ef4444';
 	}
 

@@ -226,9 +226,9 @@
 	});
 
 	const segmentColors = [
-		'#06b6d4', // cyan
-		'#8b5cf6', // violet
-		'#ec4899', // pink
+		'var(--accent)', // cyan
+		'var(--accent2)', // violet
+		'var(--accent3)', // pink
 		'#f59e0b', // amber
 		'#10b981', // emerald
 		'#6366f1'  // indigo
@@ -493,9 +493,9 @@
 	}
 
 	.input-row input[type='number']:focus {
-		outline: 2px solid #06b6d4;
+		outline: 2px solid var(--accent);
 		outline-offset: 1px;
-		border-color: #06b6d4;
+		border-color: var(--accent);
 	}
 
 	.input-unit {
@@ -570,7 +570,7 @@
 	}
 
 	.slider:focus-visible {
-		outline: 2px solid #06b6d4;
+		outline: 2px solid var(--accent);
 		outline-offset: 4px;
 	}
 
@@ -584,7 +584,7 @@
 		width: 20px;
 		height: 20px;
 		border-radius: 50%;
-		background: var(--slider-color, #06b6d4);
+		background: var(--slider-color, var(--accent));
 		border: 2px solid rgba(0, 0, 0, 0.3);
 		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 		cursor: pointer;
@@ -599,7 +599,7 @@
 		width: 20px;
 		height: 20px;
 		border-radius: 50%;
-		background: var(--slider-color, #06b6d4);
+		background: var(--slider-color, var(--accent));
 		border: 2px solid rgba(0, 0, 0, 0.3);
 		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 		cursor: pointer;
@@ -625,7 +625,7 @@
 	}
 
 	.deduction-total--warning strong {
-		color: #ec4899;
+		color: var(--accent3);
 	}
 
 	/* Result panel */
@@ -665,8 +665,8 @@
 	}
 
 	.metric-card--accent {
-		border-color: rgba(6, 182, 212, 0.3);
-		background: rgba(6, 182, 212, 0.05);
+		border-color: rgb(var(--accent-rgb) / 0.3);
+		background: rgb(var(--accent-rgb) / 0.05);
 	}
 
 	.metric-label {
@@ -696,7 +696,7 @@
 	.metric-pct {
 		font-family: var(--font-ui);
 		font-size: 12px;
-		color: #06b6d4;
+		color: var(--accent);
 		font-weight: 500;
 	}
 
@@ -771,13 +771,13 @@
 
 	/* Warning */
 	.result-warning {
-		background: rgba(236, 72, 153, 0.08);
-		border: 1px solid rgba(236, 72, 153, 0.2);
+		background: rgb(var(--accent3-rgb) / 0.08);
+		border: 1px solid rgb(var(--accent3-rgb) / 0.2);
 		border-radius: var(--radius);
 		padding: 12px;
 		font-size: 14px;
 		line-height: 1.6;
-		color: #ec4899;
+		color: var(--accent3);
 		margin-bottom: var(--content-gap);
 	}
 
@@ -808,12 +808,12 @@
 	}
 
 	.tool-btn--primary {
-		background: #06b6d4;
-		color: #fff;
+		background: var(--accent);
+		color: var(--theme);
 	}
 
 	.tool-btn--primary:hover {
-		background: #0891b2;
+		background: var(--accent-hover);
 	}
 
 	.tool-btn--secondary {

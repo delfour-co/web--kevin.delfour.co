@@ -637,11 +637,11 @@
 
 <style>
 	.onb-container {
-		--onb-accent: #06b6d4;
-		--onb-success: #8b5cf6;
+		--onb-accent: var(--accent);
+		--onb-success: var(--accent2);
 		--onb-muted: #a1a1aa;
 		--onb-warning: #f59e0b;
-		--onb-danger: #ec4899;
+		--onb-danger: var(--accent3);
 		--onb-surface: rgba(255, 255, 255, 0.05);
 		--onb-border: rgba(255, 255, 255, 0.08);
 		--onb-primary: #e4e4e7;
@@ -722,7 +722,7 @@
 	.field-textarea:focus {
 		outline: none;
 		border-color: var(--onb-accent);
-		box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.15);
+		box-shadow: 0 0 0 2px rgb(var(--accent-rgb) / 0.15);
 	}
 
 	.field-input::placeholder,
@@ -924,11 +924,11 @@
 
 	.onb-btn--primary {
 		background: var(--onb-accent);
-		color: #000;
+		color: var(--theme);
 	}
 
 	.onb-btn--primary:hover {
-		background: #22d3ee;
+		background: var(--accent-hover);
 	}
 
 	.onb-btn--secondary {
@@ -954,7 +954,7 @@
 
 	.onb-btn--add:hover:not(:disabled) {
 		background: var(--onb-accent);
-		color: #000;
+		color: var(--theme);
 	}
 
 	.onb-btn--add:disabled {

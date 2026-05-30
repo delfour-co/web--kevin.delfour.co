@@ -593,9 +593,9 @@
 		max-width: 100%;
 		--eval-0: rgba(100, 100, 120, 0.25);
 		--eval-1: rgba(249, 115, 22, 0.5);
-		--eval-2: rgba(139, 92, 246, 0.5);
-		--eval-3: rgba(6, 182, 212, 0.5);
-		--eval-4: rgba(236, 72, 153, 0.55);
+		--eval-2: rgb(var(--accent2-rgb) / 0.5);
+		--eval-3: rgb(var(--accent-rgb) / 0.5);
+		--eval-4: rgb(var(--accent3-rgb) / 0.55);
 	}
 
 	.tool-layout {

@@ -361,10 +361,10 @@
 
 <style>
 	.audit-container {
-		--audit-accent: #06b6d4;
-		--audit-accent2: #8b5cf6;
-		--audit-accent3: #ec4899;
-		--audit-critique: #ec4899;
+		--audit-accent: var(--accent);
+		--audit-accent2: var(--accent2);
+		--audit-accent3: var(--accent3);
+		--audit-critique: var(--accent3);
 		--audit-important: #f59e0b;
 		--audit-recommande: #a1a1aa;
 		--audit-surface: rgba(255, 255, 255, 0.05);
@@ -537,8 +537,8 @@
 
 	.criticality--critique {
 		color: var(--audit-critique);
-		background: rgba(236, 72, 153, 0.12);
-		border: 1px solid rgba(236, 72, 153, 0.2);
+		background: rgb(var(--accent3-rgb) / 0.12);
+		border: 1px solid rgb(var(--accent3-rgb) / 0.2);
 	}
 
 	.criticality--important {
@@ -746,11 +746,11 @@
 
 	.audit-btn--primary {
 		background: var(--audit-accent);
-		color: #000;
+		color: var(--theme);
 	}
 
 	.audit-btn--primary:hover {
-		background: #22d3ee;
+		background: var(--accent-hover);
 	}
 
 	.audit-btn--secondary {

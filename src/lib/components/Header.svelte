@@ -269,12 +269,12 @@
 	.nav-links a.active {
 		color: var(--accent);
 		font-weight: 600;
-		text-shadow: 0 0 12px rgba(6, 182, 212, 0.4);
+		text-shadow: 0 0 12px rgb(var(--accent-rgb) / 0.4);
 	}
 
 	.nav-links a.active::after {
 		width: 80%;
-		box-shadow: 0 0 8px rgba(6, 182, 212, 0.6), 0 0 16px rgba(6, 182, 212, 0.3);
+		box-shadow: 0 0 8px rgb(var(--accent-rgb) / 0.6), 0 0 16px rgb(var(--accent-rgb) / 0.3);
 	}
 
 	/* Mobile overlay — outside header stacking context */

@@ -187,7 +187,7 @@
 		display: inline-block;
 		padding: 10px 20px;
 		background: var(--accent);
-		color: #000;
+		color: var(--theme);
 		border-radius: var(--radius);
 		text-decoration: none;
 		font-weight: 600;

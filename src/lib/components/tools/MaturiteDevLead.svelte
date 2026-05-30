@@ -78,8 +78,8 @@
 	function getMaturityLevel(avg: number): MaturityLevel {
 		if (avg < 2.0) return { label: 'Trop t\u00f4t', color: '#ef4444' };
 		if (avg < 3.0) return { label: 'En construction', color: '#f59e0b' };
-		if (avg < 3.8) return { label: 'Potentiel identifi\u00e9', color: '#8b5cf6' };
-		return { label: 'Pr\u00eat pour la transition', color: '#06b6d4' };
+		if (avg < 3.8) return { label: 'Potentiel identifi\u00e9', color: 'var(--accent2)' };
+		return { label: 'Pr\u00eat pour la transition', color: 'var(--accent)' };
 	}
 
 	function getRecommendation(level: MaturityLevel, contexte: string): string {

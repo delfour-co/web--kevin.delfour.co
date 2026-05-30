@@ -90,7 +90,7 @@
 		background: linear-gradient(90deg, var(--accent), var(--accent2));
 		border-radius: 2px;
 		transition: width 0.3s ease;
-		box-shadow: 0 0 8px rgba(6, 182, 212, 0.4);
+		box-shadow: 0 0 8px rgb(var(--accent-rgb) / 0.4);
 	}
 
 	.progress-text {
@@ -131,7 +131,7 @@
 	.nav-btn--primary {
 		background: var(--accent);
 		border-color: var(--accent);
-		color: #000;
+		color: var(--theme);
 	}
 
 	.nav-btn--primary:hover {

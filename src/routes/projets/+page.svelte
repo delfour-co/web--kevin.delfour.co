@@ -281,7 +281,7 @@
 		font-size: 11px;
 		padding: 2px 10px;
 		background: var(--accent);
-		color: #000;
+		color: var(--theme);
 		border-radius: 9999px;
 		font-weight: 600;
 	}

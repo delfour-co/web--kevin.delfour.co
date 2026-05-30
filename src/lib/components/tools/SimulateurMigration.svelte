@@ -113,7 +113,7 @@
 			? { label: 'Go', color: '#22c55e', level: 'green' }
 			: readinessScore >= 50
 				? { label: 'Attention', color: '#f59e0b', level: 'orange' }
-				: { label: 'No-go', color: '#ec4899', level: 'red' }
+				: { label: 'No-go', color: 'var(--accent3)', level: 'red' }
 	);
 
 	// Risk matrix: 3x3 grid [probability][impact] -> count
@@ -266,26 +266,26 @@
 
 	// --- Risk color helpers ---
 	function probColor(p: Probability): string {
-		if (p === 'Forte') return '#ec4899';
+		if (p === 'Forte') return 'var(--accent3)';
 		if (p === 'Moyenne') return '#f59e0b';
-		return '#06b6d4';
+		return 'var(--accent)';
 	}
 
 	function impactColor(i: Impact): string {
-		if (i === 'Fort') return '#ec4899';
+		if (i === 'Fort') return 'var(--accent3)';
 		if (i === 'Moyen') return '#f59e0b';
 		return '#22c55e';
 	}
 
 	function matrixCellColor(prob: number, impact: number): string {
 		const severity = prob + impact; // 0-4
-		if (severity >= 3) return 'rgba(236, 72, 153, 0.25)';
+		if (severity >= 3) return 'rgb(var(--accent3-rgb) / 0.25)';
 		if (severity >= 2) return 'rgba(245, 158, 11, 0.2)';
-		return 'rgba(6, 182, 212, 0.12)';
+		return 'rgb(var(--accent-rgb) / 0.12)';
 	}
 
 	// Phase bar colors
-	const phaseColors = ['#06b6d4', '#8b5cf6', '#ec4899', '#f59e0b', '#22c55e', '#6366f1', '#14b8a6', '#f43f5e'];
+	const phaseColors = ['var(--accent)', 'var(--accent2)', 'var(--accent3)', '#f59e0b', '#22c55e', '#6366f1', '#14b8a6', '#f43f5e'];
 
 	$effect(() => {
 		save();
@@ -563,9 +563,6 @@
 
 <style>
 	.tool-container {
-		--accent: #06b6d4;
-		--accent2: #8b5cf6;
-		--accent3: #ec4899;
 		--surface: rgba(255, 255, 255, 0.05);
 		--border: rgba(255, 255, 255, 0.08);
 		--primary: #e4e4e7;
@@ -750,7 +747,7 @@
 		font-weight: 500;
 		color: var(--accent);
 		background: none;
-		border: 1px dashed rgba(6, 182, 212, 0.3);
+		border: 1px dashed rgb(var(--accent-rgb) / 0.3);
 		border-radius: var(--radius);
 		padding: 10px;
 		width: 100%;
@@ -759,7 +756,7 @@
 	}
 
 	.add-btn:hover {
-		background: rgba(6, 182, 212, 0.08);
+		background: rgb(var(--accent-rgb) / 0.08);
 	}
 
 	/* Checkbox rows */
@@ -915,7 +912,7 @@
 		font-family: var(--font-ui);
 		font-size: 11px;
 		font-weight: 600;
-		color: #000;
+		color: var(--theme);
 		white-space: nowrap;
 	}
 
@@ -1119,9 +1116,9 @@
 	}
 
 	.badge--accent {
-		background: rgba(6, 182, 212, 0.15);
-		color: #06b6d4;
-		border: 1px solid rgba(6, 182, 212, 0.3);
+		background: rgb(var(--accent-rgb) / 0.15);
+		color: var(--accent);
+		border: 1px solid rgb(var(--accent-rgb) / 0.3);
 	}
 
 	.badge--green {
@@ -1159,7 +1156,7 @@
 
 	.tool-btn--primary {
 		background: var(--accent);
-		color: #000;
+		color: var(--theme);
 	}
 
 	.tool-btn--primary:hover {

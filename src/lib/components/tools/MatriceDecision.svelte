@@ -641,7 +641,7 @@
 	}
 
 	.total-pct--best {
-		color: #06b6d4;
+		color: var(--accent);
 	}
 
 	/* Mobile card view */
@@ -786,14 +786,14 @@
 
 	.result-bar-fill {
 		height: 100%;
-		background: #8b5cf6;
+		background: var(--accent2);
 		border-radius: 4px;
 		transition: width 0.3s ease;
 		min-width: 2px;
 	}
 
 	.result-bar-fill--best {
-		background: #06b6d4;
+		background: var(--accent);
 	}
 
 	.result-pct {
@@ -806,7 +806,7 @@
 	}
 
 	.result-pct--best {
-		color: #06b6d4;
+		color: var(--accent);
 	}
 
 	/* Actions */

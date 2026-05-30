@@ -26,8 +26,8 @@
 	};
 
 	const ringColors: Record<Ring, string> = {
-		'Adopter': '#06b6d4',
-		'Expérimenter': '#8b5cf6',
+		'Adopter': 'var(--accent)',
+		'Expérimenter': 'var(--accent2)',
 		'Évaluer': '#f59e0b',
 		'Mettre en pause': '#ef4444'
 	};
@@ -345,7 +345,7 @@
 				>
 					<defs>
 						<radialGradient id="radarGlow" cx="50%" cy="50%" r="50%">
-							<stop offset="0%" stop-color="rgba(6,182,212,0.08)" />
+							<stop offset="0%" stop-color="rgb(var(--accent-rgb) / 0.08)" />
 							<stop offset="100%" stop-color="transparent" />
 						</radialGradient>
 						<clipPath id="radarClip">
@@ -397,7 +397,7 @@
 					<line
 						x1={CENTER} y1={CENTER}
 						x2={CENTER + MAX_RADIUS} y2={CENTER}
-						stroke="rgba(6,182,212,0.4)" stroke-width="1.5"
+						stroke="rgb(var(--accent-rgb) / 0.4)" stroke-width="1.5"
 						class="sweep-line"
 						clip-path="url(#radarClip)"
 					/>
@@ -405,7 +405,7 @@
 					<!-- Sweep trail -->
 					<path
 						d="M {CENTER},{CENTER} L {CENTER + MAX_RADIUS},{CENTER} A {MAX_RADIUS},{MAX_RADIUS} 0 0,0 {CENTER + MAX_RADIUS * Math.cos(Math.PI/6)},{CENTER - MAX_RADIUS * Math.sin(Math.PI/6)} Z"
-						fill="rgba(6,182,212,0.04)"
+						fill="rgb(var(--accent-rgb) / 0.04)"
 						class="sweep-trail"
 						clip-path="url(#radarClip)"
 					/>
@@ -590,7 +590,7 @@
 	.filter-pill--active {
 		background: var(--accent);
 		border-color: var(--accent);
-		color: #000;
+		color: var(--theme);
 		font-weight: 600;
 	}
 
@@ -719,11 +719,11 @@
 
 	.tool-btn--primary {
 		background: var(--accent);
-		color: #000;
+		color: var(--theme);
 	}
 
 	.tool-btn--primary:hover {
-		box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+		box-shadow: 0 0 20px rgb(var(--accent-rgb) / 0.3);
 	}
 
 	.tool-btn--secondary {

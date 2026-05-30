@@ -31,12 +31,12 @@
 		right: 0;
 		height: 2px;
 		z-index: 49;
-		background: rgba(6, 182, 212, 0.08);
+		background: rgb(var(--accent-rgb) / 0.08);
 	}
 
 	.scroll-progress-bar {
 		height: 100%;
-		background: linear-gradient(90deg, rgba(6, 182, 212, 0.1), rgba(6, 182, 212, 0.4), var(--accent));
+		background: linear-gradient(90deg, rgb(var(--accent-rgb) / 0.1), rgb(var(--accent-rgb) / 0.4), var(--accent));
 		transition: width 0.1s linear;
 		position: relative;
 	}
@@ -52,9 +52,9 @@
 		border-radius: 50%;
 		background: #fff;
 		box-shadow:
-			0 0 6px 2px rgba(6, 182, 212, 0.9),
-			0 0 16px 4px rgba(6, 182, 212, 0.5),
-			0 0 30px 8px rgba(6, 182, 212, 0.2);
+			0 0 6px 2px rgb(var(--accent-rgb) / 0.9),
+			0 0 16px 4px rgb(var(--accent-rgb) / 0.5),
+			0 0 30px 8px rgb(var(--accent-rgb) / 0.2);
 	}
 
 	@media (max-width: 768px) {

@@ -440,9 +440,9 @@
 <style>
 	.dt-container {
 		--dt-bg: #000;
-		--dt-accent: #06b6d4;
-		--dt-accent2: #8b5cf6;
-		--dt-accent3: #ec4899;
+		--dt-accent: var(--accent);
+		--dt-accent2: var(--accent2);
+		--dt-accent3: var(--accent3);
 		--dt-warning: #f59e0b;
 		--dt-danger: #ef4444;
 		--dt-surface: rgba(255, 255, 255, 0.05);
@@ -628,7 +628,7 @@
 		border-radius: 50%;
 		background: var(--dt-accent);
 		border: 2px solid var(--dt-bg);
-		box-shadow: 0 0 8px rgba(6, 182, 212, 0.3);
+		box-shadow: 0 0 8px rgb(var(--accent-rgb) / 0.3);
 		cursor: pointer;
 	}
 
@@ -638,7 +638,7 @@
 		border-radius: 50%;
 		background: var(--dt-accent);
 		border: 2px solid var(--dt-bg);
-		box-shadow: 0 0 8px rgba(6, 182, 212, 0.3);
+		box-shadow: 0 0 8px rgb(var(--accent-rgb) / 0.3);
 		cursor: pointer;
 	}
 
@@ -650,7 +650,7 @@
 		border-radius: 50%;
 		background: var(--dt-accent2);
 		border: 2px solid var(--dt-bg);
-		box-shadow: 0 0 8px rgba(139, 92, 246, 0.3);
+		box-shadow: 0 0 8px rgb(var(--accent2-rgb) / 0.3);
 		cursor: pointer;
 	}
 
@@ -660,7 +660,7 @@
 		border-radius: 50%;
 		background: var(--dt-accent2);
 		border: 2px solid var(--dt-bg);
-		box-shadow: 0 0 8px rgba(139, 92, 246, 0.3);
+		box-shadow: 0 0 8px rgb(var(--accent2-rgb) / 0.3);
 		cursor: pointer;
 	}
 
@@ -672,7 +672,7 @@
 		border-radius: 50%;
 		background: var(--dt-accent3);
 		border: 2px solid var(--dt-bg);
-		box-shadow: 0 0 8px rgba(236, 72, 153, 0.3);
+		box-shadow: 0 0 8px rgb(var(--accent3-rgb) / 0.3);
 		cursor: pointer;
 	}
 
@@ -682,7 +682,7 @@
 		border-radius: 50%;
 		background: var(--dt-accent3);
 		border: 2px solid var(--dt-bg);
-		box-shadow: 0 0 8px rgba(236, 72, 153, 0.3);
+		box-shadow: 0 0 8px rgb(var(--accent3-rgb) / 0.3);
 		cursor: pointer;
 	}
 
@@ -735,12 +735,12 @@
 
 	.dt-btn--primary {
 		background: var(--dt-accent);
-		color: #000;
+		color: var(--theme);
 	}
 
 	.dt-btn--primary:hover {
-		background: #22d3ee;
-		box-shadow: 0 0 16px rgba(6, 182, 212, 0.3);
+		background: var(--accent-hover);
+		box-shadow: 0 0 16px rgb(var(--accent-rgb) / 0.3);
 	}
 
 	.dt-btn--secondary {
@@ -912,7 +912,7 @@
 	.dt-matrix-dot-label {
 		font-size: 9px;
 		font-weight: 700;
-		color: #000;
+		color: var(--theme);
 		text-transform: uppercase;
 	}
 

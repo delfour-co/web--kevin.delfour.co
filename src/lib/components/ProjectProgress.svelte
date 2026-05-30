@@ -54,7 +54,7 @@
 
 	.progress-fill {
 		height: 100%;
-		background: linear-gradient(90deg, var(--accent), rgba(6, 182, 212, 0.6));
+		background: linear-gradient(90deg, var(--accent), rgb(var(--accent-rgb) / 0.6));
 		border-radius: 2px;
 		transition: width 0.5s ease;
 	}
@@ -89,13 +89,13 @@
 	.progress-step--done .step-marker {
 		background: var(--accent);
 		border-color: var(--accent);
-		color: #000;
+		color: var(--theme);
 	}
 
 	.progress-step--current .step-marker {
 		border-color: var(--accent);
-		background: rgba(6, 182, 212, 0.15);
-		box-shadow: 0 0 12px rgba(6, 182, 212, 0.4), 0 0 4px rgba(6, 182, 212, 0.2);
+		background: rgb(var(--accent-rgb) / 0.15);
+		box-shadow: 0 0 12px rgb(var(--accent-rgb) / 0.4), 0 0 4px rgb(var(--accent-rgb) / 0.2);
 	}
 
 	.step-pulse {

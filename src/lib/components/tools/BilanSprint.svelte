@@ -802,9 +802,9 @@
 <style>
 	.tool-container {
 		max-width: 100%;
-		--retro-green: #06b6d4;
+		--retro-green: var(--accent);
 		--retro-red: #ef4444;
-		--retro-violet: #8b5cf6;
+		--retro-violet: var(--accent2);
 		--retro-amber: #f59e0b;
 	}
 
@@ -1177,7 +1177,7 @@
 	}
 
 	.action-prio--basse {
-		background: rgba(6, 182, 212, 0.15);
+		background: rgb(var(--accent-rgb) / 0.15);
 		color: var(--retro-green);
 	}
 
