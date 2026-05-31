@@ -22,6 +22,8 @@
 		return p === '' ? 'lieu' : p;
 	});
 	const isHome = $derived(page.url.pathname === '/');
+	// Le bac-à-sable D-Brain OS (/labs) n'utilise pas la fenêtre terminal.
+	const bare = $derived(page.url.pathname.startsWith('/labs'));
 
 	function toggleAccessibility(e: MouseEvent) {
 		e.stopPropagation();
@@ -29,6 +31,9 @@
 	}
 </script>
 
+{#if bare}
+	{@render children()}
+{:else}
 <a href="#main-content" class="skip-link">Aller au contenu</a>
 
 <div class="win">
@@ -89,6 +94,7 @@
 </div>
 
 <AccessibilityPanel />
+{/if}
 
 <style>
 	.win {
