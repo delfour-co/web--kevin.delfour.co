@@ -236,7 +236,7 @@
 
 <div class="tool-container">
 	<div class="tool-layout">
-		<div class="tool-sliders">
+		<div class="tool-panel tool-sliders">
 			{#each axes as axis}
 				{@const maturity = getAxisMaturity(scores[axis.id])}
 				<div class="slider-group">
@@ -254,7 +254,7 @@
 						max="10"
 						step="1"
 						value={scores[axis.id]}
-						class="slider"
+						class="tool-slider"
 						aria-label="{axis.name} : {scores[axis.id]} sur 10 — {maturity.label}"
 						oninput={(e) => {
 							scores[axis.id] = parseInt(e.currentTarget.value, 10);
@@ -278,6 +278,9 @@
 				<span class="overall-maturity-label">Niveau global</span>
 				<span class="overall-maturity-value" style="color: {overallMaturity.color}">{overallMaturity.label}</span>
 				<span class="overall-maturity-score">{average}/10</span>
+				<div class="tool-scorebar overall-maturity-bar" aria-hidden="true">
+					<span style="width: {average * 10}%; background: {overallMaturity.color}"></span>
+				</div>
 			</div>
 
 			<div class="radar-container">
@@ -344,14 +347,11 @@
 <style>
 	.tool-container {
 		max-width: 100%;
+		min-width: 0;
 	}
 
-	.tool-layout {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: calc(var(--gap) * 2);
-		align-items: start;
-	}
+	/* Layout contenu + résultats : fourni par .tool-layout (app.css),
+	   colonnes en minmax(0, …) qui ne débordent jamais et passent en pile < 760px. */
 
 	.tool-sliders {
 		display: flex;
@@ -359,10 +359,15 @@
 		gap: var(--content-gap);
 	}
 
+	.slider-group {
+		min-width: 0;
+	}
+
 	.slider-label {
 		display: flex;
 		justify-content: space-between;
 		align-items: baseline;
+		gap: 8px;
 		margin-bottom: 2px;
 	}
 
@@ -371,12 +376,14 @@
 		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
+		min-width: 0;
 	}
 
 	.slider-meta {
 		display: flex;
 		align-items: baseline;
 		gap: 8px;
+		flex-shrink: 0;
 	}
 
 	.maturity-badge {
@@ -403,10 +410,11 @@
 		margin: 0 0 6px 0;
 	}
 
-	.slider {
+	/* Range : base partagée (.tool-slider, app.css) ; on garde le pouce
+	   et la piste sur mesure cohérents avec les tokens du thème. */
+	.tool-slider {
 		-webkit-appearance: none;
 		appearance: none;
-		width: 100%;
 		height: 6px;
 		border-radius: 3px;
 		background: var(--border);
@@ -414,20 +422,20 @@
 		transition: var(--transition);
 	}
 
-	.slider:hover {
+	.tool-slider:hover {
 		background: var(--tertiary);
 	}
 
-	.slider:focus-visible {
+	.tool-slider:focus-visible {
 		outline: 2px solid var(--accent);
 		outline-offset: 4px;
 	}
 
-	.slider:focus:not(:focus-visible) {
+	.tool-slider:focus:not(:focus-visible) {
 		outline: none;
 	}
 
-	.slider::-webkit-slider-thumb {
+	.tool-slider::-webkit-slider-thumb {
 		-webkit-appearance: none;
 		appearance: none;
 		width: 22px;
@@ -440,12 +448,12 @@
 		transition: var(--transition);
 	}
 
-	.slider::-webkit-slider-thumb:hover {
+	.tool-slider::-webkit-slider-thumb:hover {
 		background: var(--accent-hover);
 		transform: scale(1.15);
 	}
 
-	.slider::-moz-range-thumb {
+	.tool-slider::-moz-range-thumb {
 		width: 22px;
 		height: 22px;
 		border-radius: 50%;
@@ -455,7 +463,7 @@
 		cursor: pointer;
 	}
 
-	.slider::-moz-range-track {
+	.tool-slider::-moz-range-track {
 		height: 6px;
 		border-radius: 3px;
 		background: var(--border);
@@ -468,8 +476,16 @@
 		border: 1px solid;
 		border-radius: var(--radius);
 		margin-bottom: var(--content-gap);
-		background: rgba(0, 0, 0, 0.2);
+		background: var(--surface);
 		transition: border-color 0.3s ease;
+	}
+
+	.overall-maturity-bar {
+		margin-top: 10px;
+	}
+
+	.overall-maturity-bar > span {
+		transition: width 0.3s ease, background 0.3s ease;
 	}
 
 	.overall-maturity-label {
@@ -498,12 +514,8 @@
 		margin-top: 2px;
 	}
 
-	/* Result */
+	/* Panneau de résultats : look partagé (.tool-result, app.css) + sticky. */
 	.tool-result {
-		padding: var(--gap);
-		background: var(--accent-light);
-		border: 1px solid var(--accent-border);
-		border-radius: var(--radius);
 		position: sticky;
 		top: calc(var(--header-height) + var(--gap));
 	}
@@ -569,6 +581,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: baseline;
+		gap: 8px;
 		padding: 4px 0;
 	}
 
@@ -576,6 +589,7 @@
 		font-family: var(--font-ui);
 		font-size: 0.875rem;
 		color: var(--secondary);
+		min-width: 0;
 	}
 
 	.summary-value {
@@ -583,6 +597,8 @@
 		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
+		text-align: right;
+		min-width: 0;
 	}
 
 	.summary-value--accent {
@@ -607,8 +623,10 @@
 	.guidance-card {
 		padding: 12px;
 		border-radius: var(--radius);
-		background: rgba(0, 0, 0, 0.15);
+		border: 1px solid var(--border);
+		background: var(--theme);
 		margin-bottom: 10px;
+		min-width: 0;
 	}
 
 	.guidance-card:last-child {
@@ -619,6 +637,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: baseline;
+		gap: 8px;
 		margin-bottom: 8px;
 	}
 
@@ -627,12 +646,15 @@
 		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
+		min-width: 0;
 	}
 
 	.guidance-axis-level {
 		font-family: var(--font-mono);
 		font-size: 0.75rem;
 		font-weight: 600;
+		white-space: nowrap;
+		flex-shrink: 0;
 		transition: color 0.3s ease;
 	}
 
@@ -665,7 +687,7 @@
 
 	.tool-btn--primary {
 		background: var(--accent);
-		color: #fff;
+		color: var(--theme);
 	}
 
 	.tool-btn--primary:hover {
@@ -683,11 +705,8 @@
 		color: var(--primary);
 	}
 
-	@media (max-width: 768px) {
-		.tool-layout {
-			grid-template-columns: 1fr;
-		}
-
+	/* .tool-layout passe en pile sous 760px (primitive app.css). */
+	@media (max-width: 760px) {
 		.tool-result {
 			position: static;
 		}

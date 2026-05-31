@@ -236,7 +236,7 @@
 	<!-- LEFT: List & Controls -->
 	<div class="tool-left">
 		<!-- Add form -->
-		<div class="add-form glass-card">
+		<div class="add-form tool-panel">
 			<h3 class="form-title">Ajouter une technologie</h3>
 			<div class="add-row">
 				<input
@@ -294,6 +294,8 @@
 							<div
 								class="blip-item"
 								class:blip-item--hovered={hoveredBlip === b.id}
+								role="group"
+								aria-label="{b.name} — {b.ring}"
 								onmouseenter={() => hoveredBlip = b.id}
 								onmouseleave={() => hoveredBlip = null}
 							>
@@ -335,7 +337,7 @@
 
 	<!-- RIGHT: Radar -->
 	<div class="tool-right">
-		<div class="radar-panel glass-card">
+		<div class="radar-panel tool-result">
 			<div class="radar-container">
 				<svg
 					viewBox="0 0 {SVG_SIZE} {SVG_SIZE}"
@@ -372,16 +374,16 @@
 						<circle
 							cx={CENTER} cy={CENTER} r={MAX_RADIUS * frac}
 							fill="none"
-							stroke="rgba(255,255,255,0.03)"
+							class="radar-grid-faint"
 							stroke-width="0.5"
 						/>
 					{/each}
 
 					<!-- Crosshairs -->
 					<line x1={CENTER - MAX_RADIUS} y1={CENTER} x2={CENTER + MAX_RADIUS} y2={CENTER}
-						stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+						class="radar-grid" stroke-width="1" />
 					<line x1={CENTER} y1={CENTER - MAX_RADIUS} x2={CENTER} y2={CENTER + MAX_RADIUS}
-						stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+						class="radar-grid" stroke-width="1" />
 
 					<!-- Diagonal guidelines -->
 					{#each [Math.PI/4, Math.PI*3/4, Math.PI*5/4, Math.PI*7/4] as angle}
@@ -389,7 +391,7 @@
 							x1={CENTER} y1={CENTER}
 							x2={CENTER + MAX_RADIUS * Math.cos(angle)}
 							y2={CENTER - MAX_RADIUS * Math.sin(angle)}
-							stroke="rgba(255,255,255,0.03)" stroke-width="0.5"
+							class="radar-grid-faint" stroke-width="0.5"
 						/>
 					{/each}
 
@@ -454,7 +456,7 @@
 								cx={b.x} cy={b.y}
 								r={isHovered ? BLIP_RADIUS + 2 : BLIP_RADIUS}
 								fill={ringColors[b.ring]}
-								stroke="rgba(0,0,0,0.6)"
+								style="stroke: var(--surface)"
 								stroke-width="1.5"
 								class="blip-dot-svg"
 							/>
@@ -468,12 +470,12 @@
 									width={textWidth}
 									height="22"
 									rx="4"
-									fill="rgba(0,0,0,0.9)"
+									style="fill: var(--surface)"
 									stroke={ringColors[b.ring]}
 									stroke-width="1"
 									stroke-opacity="0.6"
 								/>
-								<text x={labelX + 2} y={b.y + 3} class="blip-label-svg" fill="#e4e4e7">{b.name}</text>
+								<text x={labelX + 2} y={b.y + 3} class="blip-label-svg">{b.name}</text>
 							{/if}
 						</g>
 					{/each}
@@ -497,7 +499,7 @@
 <style>
 	.tool-layout {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 		gap: calc(var(--gap) * 1.5);
 		align-items: start;
 	}
@@ -507,6 +509,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--gap);
+		min-width: 0;
 	}
 
 	.add-form {
@@ -647,7 +650,7 @@
 
 	.blip-item:hover,
 	.blip-item--hovered {
-		background: rgba(255, 255, 255, 0.04);
+		background: var(--surface-hover);
 	}
 
 	.blip-dot {
@@ -695,8 +698,8 @@
 	}
 
 	.blip-remove:hover {
-		color: #ef4444;
-		border-color: #ef4444;
+		color: var(--error);
+		border-color: var(--error);
 	}
 
 	.tool-actions {
@@ -741,6 +744,7 @@
 	.tool-right {
 		position: sticky;
 		top: calc(var(--gap) * 2 + 60px);
+		min-width: 0;
 	}
 
 	.radar-panel {
@@ -754,6 +758,7 @@
 
 	.radar-svg {
 		width: 100%;
+		max-width: 100%;
 		height: auto;
 		display: block;
 	}
@@ -770,9 +775,20 @@
 		to { transform: rotate(360deg); }
 	}
 
+	/* SVG grid lines — suivent le thème */
+	.radar-grid {
+		stroke: var(--border);
+		stroke-opacity: 0.8;
+	}
+
+	.radar-grid-faint {
+		stroke: var(--border);
+		stroke-opacity: 0.4;
+	}
+
 	/* SVG text styles */
 	.ring-label-svg {
-		font-family: var(--font-ui, 'Space Grotesk', system-ui);
+		font-family: var(--font-ui);
 		font-size: 0.5625rem;
 		font-weight: 700;
 		text-transform: uppercase;
@@ -781,10 +797,10 @@
 	}
 
 	.quadrant-label-svg {
-		font-family: var(--font-ui, 'Space Grotesk', system-ui);
+		font-family: var(--font-ui);
 		font-size: 0.6875rem;
 		font-weight: 600;
-		fill: rgba(255, 255, 255, 0.3);
+		fill: var(--tertiary);
 		pointer-events: none;
 	}
 
@@ -803,9 +819,10 @@
 	}
 
 	.blip-label-svg {
-		font-family: var(--font-ui, 'Space Grotesk', system-ui);
+		font-family: var(--font-ui);
 		font-size: 0.6875rem;
 		font-weight: 500;
+		fill: var(--content);
 		pointer-events: none;
 	}
 
@@ -842,13 +859,14 @@
 		font-family: var(--font-ui);
 		font-size: 0.6875rem;
 		color: var(--tertiary);
-		background: rgba(255, 255, 255, 0.05);
+		background: var(--theme);
+		border: 1px solid var(--border);
 		padding: 1px 6px;
 		border-radius: 9999px;
 	}
 
 	/* Responsive */
-	@media (max-width: 900px) {
+	@media (max-width: 760px) {
 		.tool-layout {
 			grid-template-columns: 1fr;
 		}

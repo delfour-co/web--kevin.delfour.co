@@ -140,92 +140,103 @@
 </script>
 
 <div class="tool-container">
-	<div class="adr-form">
-		<div class="form-row form-row--two">
-			<div class="form-group">
-				<label for="adr-title">Titre de la décision</label>
-				<p class="form-hint">Un ADR (Architecture Decision Record) est une trace écrite d’une décision technique importante.</p>
-				<input id="adr-title" type="text" bind:value={title} placeholder="Ex: Adopter PostgreSQL comme base principale" />
-			</div>
-			<div class="form-group form-group--small">
-				<label for="adr-date">Date</label>
-				<input id="adr-date" type="date" bind:value={date} />
-			</div>
-		</div>
-
-		<div class="form-row form-row--two">
-			<div class="form-group">
-				<label for="adr-status">Statut</label>
-				<p class="form-hint">L’état actuel de cette décision dans son cycle de vie.</p>
-				<select id="adr-status" bind:value={status}>
-					{#each STATUS_OPTIONS as s}
-						<option value={s}>{s}</option>
-					{/each}
-				</select>
-			</div>
-			<div class="form-group">
-				<label for="adr-participants">Participants</label>
-				<p class="form-hint">Les personnes impliquées dans cette décision.</p>
-				<input id="adr-participants" type="text" bind:value={participants} placeholder="Ex: CTO, Lead Dev, Architecte" />
-			</div>
-		</div>
-
-		<div class="form-group">
-			<label for="adr-context">Contexte</label>
-			<p class="form-hint">Décris la situation qui amène cette décision. Quel problème résoudre ? Quelles contraintes ?</p>
-			<textarea id="adr-context" bind:value={context} rows="4" placeholder="Nous devons choisir une base de données pour le nouveau service de paiement..."></textarea>
-		</div>
-
-		<fieldset class="options-section">
-			<legend>Options considérées</legend>
-			<p class="form-hint">Au moins 2 options. Pour chacune, identifie les avantages et inconvénients.</p>
-
-			{#each options as opt, i}
-				<div class="option-card">
-					<div class="option-header">
-						<span class="option-number">Option {i + 1}</span>
-						{#if options.length > 2}
-							<button class="option-remove" onclick={() => removeOption(i)} aria-label="Supprimer l'option {i + 1}">Supprimer</button>
-						{/if}
-					</div>
-					<div class="form-group">
-						<label for="opt-name-{i}">Nom</label>
-						<input id="opt-name-{i}" type="text" bind:value={opt.name} placeholder="Ex: PostgreSQL" />
-					</div>
-					<div class="form-row form-row--two">
-						<div class="form-group">
-							<label for="opt-pros-{i}">Avantages</label>
-							<textarea id="opt-pros-{i}" bind:value={opt.pros} rows="2" placeholder="Maturité, communauté, extensions..."></textarea>
-						</div>
-						<div class="form-group">
-							<label for="opt-cons-{i}">Inconvénients</label>
-							<textarea id="opt-cons-{i}" bind:value={opt.cons} rows="2" placeholder="Courbe d'apprentissage, coût ops..."></textarea>
-						</div>
-					</div>
+	<div class="tool-layout tool-layout--wide">
+		<!-- Formulaire -->
+		<div class="tool-panel adr-form">
+			<div class="form-row form-row--two">
+				<div class="form-group">
+					<label for="adr-title">Titre de la décision</label>
+					<p class="form-hint">Un ADR (Architecture Decision Record) est une trace écrite d’une décision technique importante.</p>
+					<input id="adr-title" type="text" bind:value={title} placeholder="Ex: Adopter PostgreSQL comme base principale" />
 				</div>
-			{/each}
+				<div class="form-group form-group--small">
+					<label for="adr-date">Date</label>
+					<input id="adr-date" type="date" bind:value={date} />
+				</div>
+			</div>
 
-			<button class="add-option-btn" onclick={addOption}>+ Ajouter une option</button>
-		</fieldset>
+			<div class="form-row form-row--two">
+				<div class="form-group">
+					<label for="adr-status">Statut</label>
+					<p class="form-hint">L’état actuel de cette décision dans son cycle de vie.</p>
+					<select id="adr-status" bind:value={status}>
+						{#each STATUS_OPTIONS as s}
+							<option value={s}>{s}</option>
+						{/each}
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="adr-participants">Participants</label>
+					<p class="form-hint">Les personnes impliquées dans cette décision.</p>
+					<input id="adr-participants" type="text" bind:value={participants} placeholder="Ex: CTO, Lead Dev, Architecte" />
+				</div>
+			</div>
 
-		<div class="form-group">
-			<label for="adr-decision">Décision</label>
-			<p class="form-hint">Quelle option a été retenue et pourquoi ?</p>
-			<textarea id="adr-decision" bind:value={decision} rows="4" placeholder="Nous avons décidé d'adopter PostgreSQL parce que..."></textarea>
+			<div class="form-group">
+				<label for="adr-context">Contexte</label>
+				<p class="form-hint">Décris la situation qui amène cette décision. Quel problème résoudre ? Quelles contraintes ?</p>
+				<textarea id="adr-context" bind:value={context} rows="4" placeholder="Nous devons choisir une base de données pour le nouveau service de paiement..."></textarea>
+			</div>
+
+			<fieldset class="options-section">
+				<legend>Options considérées</legend>
+				<p class="form-hint">Au moins 2 options. Pour chacune, identifie les avantages et inconvénients.</p>
+
+				{#each options as opt, i}
+					<div class="option-card">
+						<div class="option-header">
+							<span class="option-number">Option {i + 1}</span>
+							{#if options.length > 2}
+								<button class="option-remove" onclick={() => removeOption(i)} aria-label="Supprimer l'option {i + 1}">Supprimer</button>
+							{/if}
+						</div>
+						<div class="form-group">
+							<label for="opt-name-{i}">Nom</label>
+							<input id="opt-name-{i}" type="text" bind:value={opt.name} placeholder="Ex: PostgreSQL" />
+						</div>
+						<div class="form-row form-row--two">
+							<div class="form-group">
+								<label for="opt-pros-{i}">Avantages</label>
+								<textarea id="opt-pros-{i}" bind:value={opt.pros} rows="2" placeholder="Maturité, communauté, extensions..."></textarea>
+							</div>
+							<div class="form-group">
+								<label for="opt-cons-{i}">Inconvénients</label>
+								<textarea id="opt-cons-{i}" bind:value={opt.cons} rows="2" placeholder="Courbe d'apprentissage, coût ops..."></textarea>
+							</div>
+						</div>
+					</div>
+				{/each}
+
+				<button class="add-option-btn" onclick={addOption}>+ Ajouter une option</button>
+			</fieldset>
+
+			<div class="form-group">
+				<label for="adr-decision">Décision</label>
+				<p class="form-hint">Quelle option a été retenue et pourquoi ?</p>
+				<textarea id="adr-decision" bind:value={decision} rows="4" placeholder="Nous avons décidé d'adopter PostgreSQL parce que..."></textarea>
+			</div>
+
+			<div class="form-group">
+				<label for="adr-consequences">Conséquences</label>
+				<p class="form-hint">Quels impacts positifs et négatifs cette décision entraîne-t-elle ?</p>
+				<textarea id="adr-consequences" bind:value={consequences} rows="4" placeholder="L'équipe devra monter en compétence sur PostgreSQL..."></textarea>
+			</div>
 		</div>
 
-		<div class="form-group">
-			<label for="adr-consequences">Conséquences</label>
-			<p class="form-hint">Quels impacts positifs et négatifs cette décision entraîne-t-elle ?</p>
-			<textarea id="adr-consequences" bind:value={consequences} rows="4" placeholder="L'équipe devra monter en compétence sur PostgreSQL..."></textarea>
-		</div>
+		<!-- Aperçu du document généré -->
+		<aside class="tool-result adr-result">
+			<h2 class="panel-title">Aperçu</h2>
+			<p class="form-hint">Le document Markdown se met à jour au fil de ta saisie.</p>
 
-		<div class="tool-actions">
-			<button class="tool-btn tool-btn--primary" onclick={handleExport}>
-				{copyFeedback ? 'Copié dans le presse-papier' : 'Copier le document (format texte)'}
-			</button>
-			<button class="tool-btn tool-btn--secondary" onclick={handleReset}>Réinitialiser</button>
-		</div>
+			<pre class="adr-output">{generateMarkdown()}</pre>
+
+			<div class="tool-actions">
+				<button class="tool-btn tool-btn--primary" onclick={handleExport}>
+					{copyFeedback ? 'Copié dans le presse-papier' : 'Copier le document (format texte)'}
+				</button>
+				<button class="tool-btn tool-btn--secondary" onclick={handleReset}>Réinitialiser</button>
+			</div>
+		</aside>
 	</div>
 </div>
 
@@ -240,10 +251,52 @@
 		gap: var(--content-gap);
 	}
 
+	/* Panneau d'aperçu (résultat généré) */
+	.adr-result {
+		position: sticky;
+		top: calc(var(--header-height) + var(--gap));
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	.panel-title {
+		font-family: var(--font-ui);
+		font-size: 0.875rem;
+		font-weight: 700;
+		color: var(--primary);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		margin: 0;
+	}
+
+	/* Bloc de sortie monospace : ne déborde jamais de la fenêtre. */
+	.adr-output {
+		margin: 0;
+		padding: 14px 16px;
+		background: var(--code-block-bg);
+		border: 1px solid var(--border);
+		border-radius: 8px;
+		color: var(--content);
+		font-family: var(--font-mono);
+		font-size: 0.8125rem;
+		line-height: 1.6;
+		white-space: pre-wrap;
+		word-break: break-word;
+		overflow-wrap: anywhere;
+		overflow-x: auto;
+		min-width: 0;
+		max-width: 100%;
+		box-sizing: border-box;
+		max-height: 60vh;
+		overflow-y: auto;
+	}
+
 	.form-group {
 		display: flex;
 		flex-direction: column;
 		gap: 4px;
+		min-width: 0;
 	}
 
 	.form-group--small {
@@ -266,7 +319,7 @@
 
 	.form-row--two {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 		gap: var(--gap);
 	}
 
@@ -352,8 +405,8 @@
 	}
 
 	.option-remove:hover {
-		color: #c0392b;
-		border-color: #c0392b;
+		color: var(--error);
+		border-color: var(--error);
 	}
 
 	.add-option-btn {
@@ -396,7 +449,7 @@
 
 	.tool-btn--primary {
 		background: var(--accent);
-		color: #fff;
+		color: var(--theme);
 	}
 
 	.tool-btn--primary:hover {
@@ -412,6 +465,13 @@
 	.tool-btn--secondary:hover {
 		border-color: var(--tertiary);
 		color: var(--primary);
+	}
+
+	@media (max-width: 760px) {
+		.adr-result {
+			position: static;
+			top: auto;
+		}
 	}
 
 	@media (max-width: 600px) {

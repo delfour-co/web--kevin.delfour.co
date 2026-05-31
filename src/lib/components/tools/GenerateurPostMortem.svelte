@@ -315,7 +315,7 @@
 		<!-- Form -->
 		<div class="postmortem-form">
 			<!-- Metadata -->
-			<fieldset class="section-card glass-card">
+			<fieldset class="tool-panel section-card">
 				<legend>Informations générales</legend>
 				<p class="form-hint">Un post-mortem (retour d’expérience après incident) aide à comprendre ce qui s’est passé sans chercher de coupable.</p>
 
@@ -376,7 +376,7 @@
 			</fieldset>
 
 			<!-- Timeline -->
-			<fieldset class="section-card glass-card">
+			<fieldset class="tool-panel section-card">
 				<legend>Chronologie</legend>
 				<p class="form-hint">
 					Reconstitue la séquence des événements. L'ordre exact compte plus que la
@@ -419,7 +419,7 @@
 			</fieldset>
 
 			<!-- Impact -->
-			<fieldset class="section-card glass-card">
+			<fieldset class="tool-panel section-card">
 				<legend>Impact</legend>
 				<p class="form-hint">
 					Quantifier l'impact aide à calibrer l'effort de remédiation. Même une
@@ -469,7 +469,7 @@
 			</fieldset>
 
 			<!-- Root cause -->
-			<fieldset class="section-card glass-card">
+			<fieldset class="tool-panel section-card">
 				<legend>Analyse des causes</legend>
 				<p class="form-hint">
 					Distinguer la cause immédiate (ce qui a déclenché l’incident) et la cause profonde (ce qui a permis que ça arrive), c'est ce qui permet de corriger
@@ -510,7 +510,7 @@
 			</fieldset>
 
 			<!-- Actions -->
-			<fieldset class="section-card glass-card">
+			<fieldset class="tool-panel section-card">
 				<legend>Actions correctives</legend>
 				<p class="form-hint">
 					Des actions à mener concrètes, avec un responsable et un horizon. Ce qui n'est pas
@@ -574,7 +574,7 @@
 			</fieldset>
 
 			<!-- Lessons learned -->
-			<fieldset class="section-card glass-card">
+			<fieldset class="tool-panel section-card">
 				<legend>Enseignements</legend>
 				<p class="form-hint">
 					Ce qui a bien fonctionné, ce qui a manqué, ce qu'on ferait différemment. La
@@ -604,7 +604,7 @@
 		</div>
 
 		<!-- Results panel (sticky) -->
-		<aside class="results-panel glass-card">
+		<aside class="tool-result results-panel">
 			<h2 class="panel-title">Aperçu</h2>
 
 			<!-- Severity badge -->
@@ -702,36 +702,26 @@
 <style>
 	.tool-container {
 		max-width: 100%;
+		min-width: 0;
 	}
 
-	.tool-layout {
-		display: grid;
-		grid-template-columns: 1fr 320px;
-		gap: var(--gap);
-		align-items: start;
-	}
+	/* Layout fourni par la primitive .tool-layout (app.css) : la grille
+	   passe en une colonne ≤760px et n'occasionne jamais de débordement. */
 
 	.postmortem-form {
 		display: flex;
 		flex-direction: column;
 		gap: var(--content-gap);
+		min-width: 0;
 	}
 
-	/* Glass card */
-	.glass-card {
-		background: var(--surface, rgba(255, 255, 255, 0.05));
-		border: 1px solid var(--border);
-		border-radius: var(--radius);
-		padding: var(--gap);
-	}
-
-	/* Section card (fieldset) */
+	/* Section card (fieldset) — repose sur la primitive .tool-panel. */
 	.section-card {
 		margin: 0;
 	}
 
 	.section-card legend {
-		font-family: var(--font-ui);
+		font-family: var(--font-mono);
 		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--accent);
@@ -746,6 +736,7 @@
 		flex-direction: column;
 		gap: 4px;
 		margin-bottom: 12px;
+		min-width: 0;
 	}
 
 	.form-group:last-child {
@@ -753,10 +744,10 @@
 	}
 
 	.form-group label {
-		font-family: var(--font-ui);
+		font-family: var(--font-mono);
 		font-size: 0.875rem;
 		font-weight: 600;
-		color: var(--primary);
+		color: var(--content);
 	}
 
 	.form-hint {
@@ -774,19 +765,19 @@
 
 	.form-row--two {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 		gap: var(--gap);
 	}
 
 	.form-row--three {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
 		gap: var(--gap);
 	}
 
 	.form-row--timeline {
 		display: grid;
-		grid-template-columns: 120px 1fr;
+		grid-template-columns: 120px minmax(0, 1fr);
 		gap: var(--gap);
 	}
 
@@ -799,15 +790,16 @@
 	input[type='time'],
 	select,
 	textarea {
-		font-family: var(--font-body);
+		font-family: var(--font-mono);
 		font-size: 0.9375rem;
 		padding: 10px 12px;
 		border: 1px solid var(--border);
 		border-radius: var(--radius);
 		background: var(--theme);
-		color: var(--primary);
+		color: var(--content);
 		transition: var(--transition);
 		width: 100%;
+		max-width: 100%;
 		box-sizing: border-box;
 	}
 
@@ -828,10 +820,11 @@
 	.timeline-entry,
 	.action-entry {
 		border: 1px solid var(--border);
-		border-radius: var(--radius);
+		border-radius: 8px;
 		padding: var(--gap);
 		margin-bottom: 12px;
-		background: var(--code-bg, var(--entry));
+		background: var(--code-block-bg);
+		min-width: 0;
 	}
 
 	.timeline-entry-header,
@@ -839,11 +832,13 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		gap: 8px;
+		flex-wrap: wrap;
 		margin-bottom: 12px;
 	}
 
 	.entry-number {
-		font-family: var(--font-ui);
+		font-family: var(--font-mono);
 		font-size: 0.8125rem;
 		font-weight: 700;
 		color: var(--accent);
@@ -852,7 +847,7 @@
 	}
 
 	.entry-remove {
-		font-family: var(--font-ui);
+		font-family: var(--font-mono);
 		font-size: 0.75rem;
 		color: var(--secondary);
 		background: none;
@@ -869,7 +864,7 @@
 	}
 
 	.add-btn {
-		font-family: var(--font-ui);
+		font-family: var(--font-mono);
 		font-size: 0.875rem;
 		font-weight: 500;
 		color: var(--accent);
@@ -878,6 +873,8 @@
 		border-radius: var(--radius);
 		padding: 10px;
 		width: 100%;
+		max-width: 100%;
+		box-sizing: border-box;
 		cursor: pointer;
 		transition: var(--transition);
 	}
@@ -895,7 +892,7 @@
 	}
 
 	.tool-btn {
-		font-family: var(--font-ui);
+		font-family: var(--font-mono);
 		font-size: 0.875rem;
 		font-weight: 600;
 		padding: 10px 20px;
@@ -908,7 +905,7 @@
 
 	.tool-btn--primary {
 		background: var(--accent);
-		color: #fff;
+		color: var(--theme);
 	}
 
 	.tool-btn--primary:hover {
@@ -923,30 +920,31 @@
 
 	.tool-btn--secondary:hover {
 		border-color: var(--tertiary);
-		color: var(--primary);
+		color: var(--content);
 	}
 
-	/* Results panel */
+	/* Results panel — surface/bordure fournies par la primitive .tool-result. */
 	.results-panel {
 		position: sticky;
 		top: calc(var(--header-height) + var(--gap));
 		display: flex;
 		flex-direction: column;
 		gap: 16px;
+		min-width: 0;
 	}
 
 	.panel-title {
-		font-family: var(--font-ui);
+		font-family: var(--font-mono);
 		font-size: 0.875rem;
 		font-weight: 700;
-		color: var(--primary);
+		color: var(--content);
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
 		margin: 0;
 	}
 
 	.panel-subtitle {
-		font-family: var(--font-ui);
+		font-family: var(--font-mono);
 		font-size: 0.75rem;
 		font-weight: 600;
 		color: var(--secondary);
@@ -956,12 +954,13 @@
 	}
 
 	.panel-incident-title {
-		font-family: var(--font-ui);
+		font-family: var(--font-mono);
 		font-size: 0.9375rem;
 		font-weight: 600;
-		color: var(--primary);
+		color: var(--content);
 		margin: 0;
 		line-height: 1.4;
+		overflow-wrap: anywhere;
 	}
 
 	.panel-meta {
@@ -978,7 +977,7 @@
 	}
 
 	.severity-badge {
-		font-family: var(--font-ui);
+		font-family: var(--font-mono);
 		font-size: 0.8125rem;
 		font-weight: 700;
 		padding: 4px 12px;
@@ -988,7 +987,7 @@
 	}
 
 	.severity-label {
-		font-family: var(--font-ui);
+		font-family: var(--font-mono);
 		font-size: 0.8125rem;
 		color: var(--secondary);
 	}
@@ -1007,7 +1006,7 @@
 	}
 
 	.completeness-label {
-		font-family: var(--font-ui);
+		font-family: var(--font-mono);
 		font-size: 0.75rem;
 		color: var(--secondary);
 		text-transform: uppercase;
@@ -1015,7 +1014,7 @@
 	}
 
 	.completeness-value {
-		font-family: var(--font-ui);
+		font-family: var(--font-mono);
 		font-size: 0.8125rem;
 		font-weight: 700;
 		color: var(--accent);
@@ -1049,6 +1048,7 @@
 	.timeline-dot-row {
 		display: flex;
 		gap: 10px;
+		min-width: 0;
 	}
 
 	.timeline-dot-col {
@@ -1130,14 +1130,14 @@
 	}
 
 	.summary-count {
-		font-family: var(--font-ui);
+		font-family: var(--font-mono);
 		font-size: 0.875rem;
 		font-weight: 700;
-		color: var(--primary);
+		color: var(--content);
 	}
 
 	.summary-label {
-		font-family: var(--font-ui);
+		font-family: var(--font-mono);
 		font-size: 0.75rem;
 		color: var(--secondary);
 	}
@@ -1161,12 +1161,9 @@
 		background: var(--secondary);
 	}
 
-	/* Responsive */
-	@media (max-width: 900px) {
-		.tool-layout {
-			grid-template-columns: 1fr;
-		}
-
+	/* Responsive — la grille .tool-layout passe en une colonne ≤760px
+	   (primitive app.css) ; on désactive le sticky du panneau au même seuil. */
+	@media (max-width: 760px) {
 		.results-panel {
 			position: static;
 			order: -1;

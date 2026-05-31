@@ -381,7 +381,7 @@
 	<div class="tool-layout">
 		<div class="tool-form">
 			<!-- Contexte -->
-			<section class="form-section">
+			<section class="tool-panel form-section">
 				<h2 class="section-title">Contexte</h2>
 
 				<div class="field-row">
@@ -431,7 +431,7 @@
 			</section>
 
 			<!-- Bilan delivery -->
-			<section class="form-section">
+			<section class="tool-panel form-section">
 				<h2 class="section-title">Bilan de livraison</h2>
 
 				<div class="field-row field-row--4">
@@ -479,21 +479,20 @@
 
 				<div class="delivery-completion">
 					<span class="delivery-completion-label">Taux d'avancement</span>
-					<div class="delivery-bar-track">
-						<div
-							class="delivery-bar-fill"
+					<div class="tool-scorebar delivery-bar-track">
+						<span
 							class:delivery-bar--good={tauxCompletion >= 70}
 							class:delivery-bar--mid={tauxCompletion >= 45 && tauxCompletion < 70}
 							class:delivery-bar--low={tauxCompletion < 45}
 							style="width: {Math.min(tauxCompletion, 100)}%"
-						></div>
+						></span>
 					</div>
 					<span class="delivery-completion-pct">{tauxCompletion} %</span>
 				</div>
 			</section>
 
 			<!-- Retrospective -->
-			<section class="form-section">
+			<section class="tool-panel form-section">
 				<h2 class="section-title" title="Temps de bilan collectif pour identifier ce qui a fonctionne et ce qui peut etre ameliore">Retrospective (bilan d'equipe)</h2>
 
 				<div class="retro-grid">
@@ -544,7 +543,7 @@
 			</section>
 
 			<!-- Actions -->
-			<section class="form-section">
+			<section class="tool-panel form-section">
 				<h2 class="section-title">Actions</h2>
 
 				<div class="actions-add">
@@ -619,7 +618,7 @@
 			</section>
 
 			<!-- Metriques qualite -->
-			<section class="form-section">
+			<section class="tool-panel form-section">
 				<h2 class="section-title">Indicateurs de qualite</h2>
 				<p class="section-hint">Evaluation subjective de l'equipe sur ce cycle. Un repere, pas un verdict.</p>
 
@@ -629,7 +628,7 @@
 						<input
 							id="bs-m-{metrique.id}"
 							type="range"
-							class="metrique-slider"
+							class="metrique-slider tool-slider"
 							min="1"
 							max="5"
 							step="1"
@@ -800,15 +799,15 @@
 <style>
 	.tool-container {
 		max-width: 100%;
-		--retro-green: var(--accent);
-		--retro-red: #ef4444;
+		--retro-green: var(--success);
+		--retro-red: var(--error);
 		--retro-violet: var(--accent2);
-		--retro-amber: #f59e0b;
+		--retro-amber: var(--warning);
 	}
 
 	.tool-layout {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 		gap: calc(var(--gap) * 2);
 		align-items: start;
 	}
@@ -817,13 +816,15 @@
 		display: flex;
 		flex-direction: column;
 		gap: calc(var(--gap) * 1.5);
+		min-width: 0;
 	}
 
-	/* Sections */
+	/* Sections — surface fournie par .tool-panel */
 	.form-section {
 		display: flex;
 		flex-direction: column;
 		gap: var(--content-gap);
+		min-width: 0;
 	}
 
 	.section-title {
@@ -849,16 +850,17 @@
 		display: flex;
 		flex-direction: column;
 		gap: 4px;
+		min-width: 0;
 	}
 
 	.field-row {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 		gap: var(--content-gap);
 	}
 
 	.field-row--4 {
-		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
 	}
 
 	.field-label {
@@ -879,6 +881,9 @@
 		border-radius: var(--radius);
 		padding: 8px 12px;
 		transition: var(--transition);
+		width: 100%;
+		min-width: 0;
+		box-sizing: border-box;
 	}
 
 	.field-input:focus,
@@ -922,31 +927,26 @@
 		white-space: nowrap;
 	}
 
+	/* Track : primitive .tool-scorebar ; on étire simplement dans la ligne. */
 	.delivery-bar-track {
 		flex: 1;
-		height: 8px;
-		background: var(--border);
-		border-radius: 4px;
-		overflow: hidden;
-	}
-
-	.delivery-bar-fill {
-		height: 100%;
-		border-radius: 4px;
-		transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 		min-width: 0;
 	}
 
-	.delivery-bar--good {
-		background: var(--retro-green);
+	.delivery-bar-track > span {
+		transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 	}
 
-	.delivery-bar--mid {
-		background: var(--retro-amber);
+	.delivery-bar-track > span.delivery-bar--good {
+		background: var(--success);
 	}
 
-	.delivery-bar--low {
-		background: var(--retro-red);
+	.delivery-bar-track > span.delivery-bar--mid {
+		background: var(--warning);
+	}
+
+	.delivery-bar-track > span.delivery-bar--low {
+		background: var(--error);
 	}
 
 	.delivery-completion-pct {
@@ -961,7 +961,7 @@
 	/* Retro grid */
 	.retro-grid {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 		gap: var(--content-gap);
 	}
 
@@ -970,6 +970,7 @@
 		border-radius: var(--radius);
 		background: var(--accent-light);
 		border: 1px solid var(--border);
+		min-width: 0;
 	}
 
 	.retro-quadrant--green {
@@ -1026,6 +1027,7 @@
 
 	.retro-input {
 		flex: 1;
+		min-width: 0;
 		font-size: 0.8125rem !important;
 		padding: 6px 10px !important;
 	}
@@ -1051,6 +1053,8 @@
 		font-size: 0.8125rem;
 		color: var(--primary);
 		flex: 1;
+		min-width: 0;
+		overflow-wrap: anywhere;
 	}
 
 	.retro-item-remove {
@@ -1084,6 +1088,7 @@
 
 	.actions-add-desc {
 		flex: 1;
+		min-width: 0;
 	}
 
 	.actions-add-owner {
@@ -1098,6 +1103,7 @@
 
 	.actions-add-deadline {
 		flex: 1;
+		min-width: 0;
 	}
 
 	.tool-btn--add {
@@ -1142,6 +1148,7 @@
 
 	.action-content {
 		flex: 1;
+		min-width: 0;
 		display: flex;
 		flex-direction: column;
 		gap: 2px;
@@ -1165,17 +1172,17 @@
 	}
 
 	.action-prio--haute {
-		background: rgba(239, 68, 68, 0.15);
+		background: color-mix(in srgb, var(--error) 15%, transparent);
 		color: var(--retro-red);
 	}
 
 	.action-prio--moyenne {
-		background: rgba(245, 158, 11, 0.15);
+		background: color-mix(in srgb, var(--warning) 15%, transparent);
 		color: var(--retro-amber);
 	}
 
 	.action-prio--basse {
-		background: rgb(var(--accent-rgb) / 0.15);
+		background: color-mix(in srgb, var(--success) 15%, transparent);
 		color: var(--retro-green);
 	}
 
@@ -1183,6 +1190,8 @@
 		font-family: var(--font-ui);
 		font-size: 0.875rem;
 		color: var(--primary);
+		min-width: 0;
+		overflow-wrap: anywhere;
 	}
 
 	.action-meta {
@@ -1222,7 +1231,7 @@
 	/* Metriques sliders */
 	.metrique-row {
 		display: grid;
-		grid-template-columns: 180px 1fr 40px;
+		grid-template-columns: 180px minmax(0, 1fr) 40px;
 		align-items: center;
 		gap: 12px;
 	}
@@ -1233,9 +1242,8 @@
 		color: var(--secondary);
 	}
 
+	/* Largeur + accent-color fournis par .tool-slider. */
 	.metrique-slider {
-		width: 100%;
-		accent-color: var(--accent);
 		cursor: pointer;
 	}
 
@@ -1489,7 +1497,7 @@
 	}
 
 	/* Responsive */
-	@media (max-width: 768px) {
+	@media (max-width: 760px) {
 		.tool-layout {
 			grid-template-columns: 1fr;
 		}
@@ -1505,7 +1513,7 @@
 		}
 
 		.field-row--4 {
-			grid-template-columns: 1fr 1fr;
+			grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 		}
 
 		.retro-grid {
@@ -1513,7 +1521,7 @@
 		}
 
 		.metrique-row {
-			grid-template-columns: 1fr 1fr 40px;
+			grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 40px;
 		}
 
 		.metrique-label {

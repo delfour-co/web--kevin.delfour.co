@@ -202,94 +202,80 @@
 	});
 </script>
 
-<div class="tool-container">
-	<div class="tool-layout">
-		<div class="tool-sliders">
-			{#each criteria as criterion}
-				<div class="slider-group">
-					<div class="slider-label">
-						<span class="slider-name" title={criterion.description}>{criterion.name}</span>
-						<span class="slider-value">{scores[criterion.id]}/10</span>
+<div class="tool-layout">
+	<div class="tool-panel tool-sliders">
+		{#each criteria as criterion}
+			<div class="slider-group">
+				<div class="slider-label">
+					<span class="slider-name" title={criterion.description}>{criterion.name}</span>
+					<span class="slider-value">{scores[criterion.id]}/10</span>
+				</div>
+				<p class="slider-hint">{criterion.description}</p>
+				<div class="slider-row">
+					<span class="slider-bound">{criterion.min}</span>
+					<input
+						type="range"
+						min="0"
+						max="10"
+						step="1"
+						value={scores[criterion.id]}
+						class="tool-slider"
+						aria-label={criterion.name}
+						oninput={(e) => handleSliderInput(criterion.id, parseInt(e.currentTarget.value, 10))}
+					/>
+					<span class="slider-bound">{criterion.max}</span>
+				</div>
+			</div>
+		{/each}
+
+		<div class="tool-actions">
+			<button class="tool-btn tool-btn--primary" onclick={handleExport}>
+				{copyFeedback ? 'Copié dans le presse-papier' : 'Copier le bilan (format texte)'}
+			</button>
+			<button class="tool-btn tool-btn--secondary" onclick={handleReset}>
+				Réinitialiser
+			</button>
+		</div>
+	</div>
+
+	<div class="tool-result" aria-live="polite" aria-atomic="true">
+		<div class="result-title">Résultat</div>
+
+		<div class="result-bars">
+			{#each computed.results as r}
+				<div class="bar-group">
+					<span class="bar-label">{r.label}</span>
+					<div class="tool-scorebar bar-track">
+						<span
+							class:bar-fill--secondary={r.label !== computed.dominant.label}
+							style="width: {r.pct}%"
+						></span>
 					</div>
-					<p class="slider-hint">{criterion.description}</p>
-					<div class="slider-row">
-						<span class="slider-bound">{criterion.min}</span>
-						<input
-							type="range"
-							min="0"
-							max="10"
-							step="1"
-							value={scores[criterion.id]}
-							class="slider"
-							aria-label={criterion.name}
-							oninput={(e) => handleSliderInput(criterion.id, parseInt(e.currentTarget.value, 10))}
-						/>
-						<span class="slider-bound">{criterion.max}</span>
-					</div>
+					<span class="bar-percent">{r.pct}&nbsp;%</span>
 				</div>
 			{/each}
-
-			<div class="tool-actions">
-				<button class="tool-btn tool-btn--primary" onclick={handleExport}>
-					{copyFeedback ? 'Copié dans le presse-papier' : 'Copier le bilan (format texte)'}
-				</button>
-				<button class="tool-btn tool-btn--secondary" onclick={handleReset}>
-					Réinitialiser
-				</button>
-			</div>
 		</div>
 
-		<div class="tool-result" aria-live="polite" aria-atomic="true">
-			<div class="result-title">Résultat</div>
+		<div class="result-tendency">
+			{#if computed.isClose}
+				Les scores sont proches — la décision mérite une analyse plus approfondie.
+			{:else}
+				Ce scoring suggère une tendance vers <strong>{computed.dominant.label}</strong>.
+			{/if}
+		</div>
 
-			<div class="result-bars">
-				{#each computed.results as r}
-					<div class="bar-group">
-						<span class="bar-label">{r.label}</span>
-						<div class="bar-track">
-							<div
-								class="bar-fill"
-								class:bar-fill--dominant={r.label === computed.dominant.label}
-								class:bar-fill--secondary={r.label !== computed.dominant.label}
-								style="width: {r.pct}%"
-							></div>
-						</div>
-						<span class="bar-percent">{r.pct}&nbsp;%</span>
-					</div>
-				{/each}
-			</div>
-
-			<div class="result-tendency">
-				{#if computed.isClose}
-					Les scores sont proches — la décision mérite une analyse plus approfondie.
-				{:else}
-					Ce scoring suggère une tendance vers <strong>{computed.dominant.label}</strong>.
-				{/if}
-			</div>
-
-			<div class="result-nuance">
-				{#if computed.isClose}
-					{CLOSE_SCORE_NUANCE}
-				{:else}
-					{contextualTexts[computed.dominant.label] || ''}
-				{/if}
-			</div>
+		<div class="result-nuance">
+			{#if computed.isClose}
+				{CLOSE_SCORE_NUANCE}
+			{:else}
+				{contextualTexts[computed.dominant.label] || ''}
+			{/if}
 		</div>
 	</div>
 </div>
 
 <style>
-	.tool-container {
-		max-width: 100%;
-	}
-
-	.tool-layout {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: calc(var(--gap) * 2);
-		align-items: start;
-	}
-
+	/* Colonne des curseurs (panneau de contenu partagé .tool-panel). */
 	.tool-sliders {
 		display: flex;
 		flex-direction: column;
@@ -297,7 +283,7 @@
 	}
 
 	.slider-group {
-		/* individual slider group */
+		min-width: 0;
 	}
 
 	.slider-hint {
@@ -311,6 +297,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: baseline;
+		gap: 8px;
 		margin-bottom: 4px;
 	}
 
@@ -319,6 +306,7 @@
 		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
+		min-width: 0;
 	}
 
 	.slider-value {
@@ -326,6 +314,7 @@
 		font-size: 0.875rem;
 		font-weight: 700;
 		color: var(--accent);
+		flex-shrink: 0;
 	}
 
 	.slider-row {
@@ -339,74 +328,11 @@
 		font-size: 0.6875rem;
 		color: var(--secondary);
 		white-space: nowrap;
-		min-width: fit-content;
 		flex-shrink: 0;
 	}
 
-	.slider {
-		-webkit-appearance: none;
-		appearance: none;
-		width: 100%;
-		height: 6px;
-		border-radius: 3px;
-		background: var(--border);
-		cursor: pointer;
-		transition: var(--transition);
-	}
-
-	.slider:hover {
-		background: var(--tertiary);
-	}
-
-	.slider:focus-visible {
-		outline: 2px solid var(--accent);
-		outline-offset: 4px;
-	}
-
-	.slider:focus:not(:focus-visible) {
-		outline: none;
-	}
-
-	.slider::-webkit-slider-thumb {
-		-webkit-appearance: none;
-		appearance: none;
-		width: 22px;
-		height: 22px;
-		border-radius: 50%;
-		background: var(--accent);
-		border: 2px solid var(--theme);
-		box-shadow: var(--shadow-sm);
-		cursor: pointer;
-		transition: var(--transition);
-	}
-
-	.slider::-webkit-slider-thumb:hover {
-		background: var(--accent-hover);
-		transform: scale(1.15);
-	}
-
-	.slider::-moz-range-thumb {
-		width: 22px;
-		height: 22px;
-		border-radius: 50%;
-		background: var(--accent);
-		border: 2px solid var(--theme);
-		box-shadow: var(--shadow-sm);
-		cursor: pointer;
-	}
-
-	.slider::-moz-range-track {
-		height: 6px;
-		border-radius: 3px;
-		background: var(--border);
-	}
-
-	/* Result */
+	/* Panneau de résultats : sticky en plus du look partagé .tool-result. */
 	.tool-result {
-		padding: var(--gap);
-		background: var(--accent-light);
-		border: 1px solid var(--accent-border);
-		border-radius: var(--radius);
 		position: sticky;
 		top: calc(var(--header-height) + var(--gap));
 	}
@@ -430,6 +356,7 @@
 		display: flex;
 		align-items: center;
 		gap: 12px;
+		min-width: 0;
 	}
 
 	.bar-label {
@@ -438,27 +365,23 @@
 		font-weight: 600;
 		color: var(--primary);
 		min-width: 90px;
+		flex-shrink: 0;
 	}
 
+	/* Track : barre de score partagée (.tool-scorebar) + dimensions locales. */
 	.bar-track {
 		flex: 1;
+		min-width: 0;
 		height: 24px;
-		background: var(--border);
 		border-radius: 4px;
-		overflow: hidden;
 	}
 
-	.bar-fill {
-		height: 100%;
-		border-radius: 4px;
-		transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
+	.tool-scorebar > span {
+		transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease;
 		min-width: 2px;
 	}
 
-	.bar-fill--dominant {
-		background: var(--accent);
-	}
-
+	/* Option non dominante : remplissage neutre plutôt que l'accent. */
 	.bar-fill--secondary {
 		background: var(--secondary);
 	}
@@ -470,6 +393,7 @@
 		color: var(--primary);
 		min-width: 42px;
 		text-align: right;
+		flex-shrink: 0;
 	}
 
 	.result-tendency {
@@ -512,7 +436,7 @@
 
 	.tool-btn--primary {
 		background: var(--accent);
-		color: #fff;
+		color: var(--theme);
 	}
 
 	.tool-btn--primary:hover {
@@ -530,11 +454,7 @@
 		color: var(--primary);
 	}
 
-	@media (max-width: 768px) {
-		.tool-layout {
-			grid-template-columns: 1fr;
-		}
-
+	@media (max-width: 760px) {
 		.tool-result {
 			position: static;
 		}

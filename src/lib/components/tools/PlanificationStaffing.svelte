@@ -388,12 +388,11 @@
 	});
 </script>
 
-<div class="tool-container">
-	<div class="tool-layout">
-		<!-- LEFT: Form -->
-		<div class="tool-form">
+<div class="tool-layout">
+	<!-- LEFT: Form -->
+	<div class="tool-form">
 			<!-- Equipe actuelle -->
-			<section class="glass-card">
+			<section class="tool-panel section-card">
 				<div class="section-header">
 					<h2 class="section-title">Equipe actuelle</h2>
 					<span class="section-badge">{teamSize} membre{teamSize > 1 ? 's' : ''}</span>
@@ -450,7 +449,7 @@
 			</section>
 
 			<!-- Roadmap & Charge -->
-			<section class="glass-card">
+			<section class="tool-panel section-card">
 				<div class="section-header">
 					<h2 class="section-title">Roadmap et charge</h2>
 				</div>
@@ -527,7 +526,7 @@
 			</section>
 
 			<!-- Parametres -->
-			<section class="glass-card">
+			<section class="tool-panel section-card">
 				<h2 class="section-title">Parametres</h2>
 
 				<div class="param-group">
@@ -550,7 +549,7 @@
 					<input
 						id="attrition-rate"
 						type="range"
-						class="slider"
+						class="slider tool-slider"
 						min="0"
 						max="30"
 						step="1"
@@ -571,7 +570,7 @@
 					<input
 						id="capacity-person"
 						type="range"
-						class="slider"
+						class="slider tool-slider"
 						min="60"
 						max="100"
 						step="5"
@@ -605,6 +604,7 @@
 					<span class="legend-item"><span class="legend-swatch legend-swatch--capacity"></span>Capacite</span>
 					<span class="legend-item"><span class="legend-swatch legend-swatch--demand"></span>Charge</span>
 				</div>
+				<div class="chart-scroll" style="overflow-x:auto">
 				<svg viewBox="0 0 {CHART_W} {CHART_H}" class="chart-svg" aria-label="Timeline capacite vs charge">
 					<!-- Y axis ticks -->
 					{#each yTicks as tick}
@@ -652,6 +652,7 @@
 						</text>
 					{/each}
 				</svg>
+				</div>
 			</div>
 
 			<!-- Gap analysis -->
@@ -707,17 +708,12 @@
 			</div>
 		</div>
 	</div>
-</div>
 
 <style>
-	.tool-container {
-		max-width: 100%;
-	}
-
 	.tool-layout {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: calc(var(--gap) * 2);
+		grid-template-columns: minmax(0, 1fr) minmax(0, 360px);
+		gap: 18px;
 		align-items: start;
 	}
 
@@ -725,14 +721,12 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--content-gap);
+		min-width: 0;
 	}
 
-	/* Glass card */
-	.glass-card {
-		padding: var(--gap);
-		background: var(--accent-light);
-		border: 1px solid var(--accent-border);
-		border-radius: var(--radius);
+	/* Carte de section (sur .tool-panel) */
+	.section-card {
+		min-width: 0;
 	}
 
 	.section-header {
@@ -788,13 +782,11 @@
 		flex-direction: column;
 		align-items: stretch;
 		padding: 10px;
-		background: rgba(0, 0, 0, 0.08);
+		background: var(--surface-hover);
+		border: 1px solid var(--border);
 		border-radius: var(--radius);
 		position: relative;
-	}
-
-	:global([data-theme='dark']) .item-row--project {
-		background: rgba(255, 255, 255, 0.04);
+		min-width: 0;
 	}
 
 	.item-row--project .btn-icon--remove {
@@ -807,6 +799,7 @@
 		display: flex;
 		gap: 10px;
 		flex-wrap: wrap;
+		min-width: 0;
 	}
 
 	.mini-label {
@@ -829,6 +822,8 @@
 		color: var(--primary);
 		transition: var(--transition);
 		min-height: 36px;
+		max-width: 100%;
+		box-sizing: border-box;
 	}
 
 	.input:focus {
@@ -1007,8 +1002,8 @@
 	}
 
 	.btn-icon:hover:not(:disabled) {
-		color: #ef4444;
-		background: rgba(239, 68, 68, 0.1);
+		color: var(--error);
+		background: var(--surface-hover);
 	}
 
 	.btn-icon:disabled {
@@ -1056,12 +1051,8 @@
 		color: var(--primary);
 	}
 
-	/* Result panel */
+	/* Panneau de résultats — surface/bordure/forme fournies par .tool-result. */
 	.tool-result {
-		padding: var(--gap);
-		background: var(--accent-light);
-		border: 1px solid var(--accent-border);
-		border-radius: var(--radius);
 		position: sticky;
 		top: calc(var(--header-height) + var(--gap));
 	}
@@ -1077,6 +1068,16 @@
 	/* Chart */
 	.chart-container {
 		margin-bottom: var(--content-gap);
+		min-width: 0;
+	}
+
+	/* Le graphique défile horizontalement dans la fenêtre si besoin. */
+	.chart-scroll {
+		min-width: 0;
+	}
+
+	.chart-scroll .chart-svg {
+		min-width: 320px;
 	}
 
 	.chart-legend {
@@ -1134,7 +1135,8 @@
 	}
 
 	.chart-deficit-bg {
-		fill: rgba(239, 68, 68, 0.08);
+		fill: var(--error);
+		opacity: 0.08;
 	}
 
 	.chart-bar {
@@ -1152,7 +1154,7 @@
 	}
 
 	.chart-bar--deficit {
-		fill: #ef4444;
+		fill: var(--error);
 		opacity: 0.8;
 	}
 
@@ -1194,9 +1196,12 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: baseline;
+		gap: 8px;
 		padding: 4px 8px;
-		background: rgba(239, 68, 68, 0.06);
+		background: var(--surface-hover);
+		border: 1px solid var(--border);
 		border-radius: 4px;
+		min-width: 0;
 	}
 
 	.deficit-month {
@@ -1209,7 +1214,8 @@
 		font-family: var(--font-mono);
 		font-size: 0.8125rem;
 		font-weight: 600;
-		color: #ef4444;
+		color: var(--error);
+		text-align: right;
 	}
 
 	/* Hiring list */
@@ -1224,14 +1230,12 @@
 		justify-content: space-between;
 		align-items: baseline;
 		padding: 6px 8px;
-		background: rgba(0, 0, 0, 0.06);
+		background: var(--surface-hover);
+		border: 1px solid var(--border);
 		border-radius: 4px;
 		flex-wrap: wrap;
 		gap: 4px;
-	}
-
-	:global([data-theme='dark']) .hiring-row {
-		background: rgba(255, 255, 255, 0.04);
+		min-width: 0;
 	}
 
 	.hiring-action {
@@ -1274,7 +1278,7 @@
 	/* Summary box */
 	.result-summary-box {
 		padding: 14px;
-		background: rgba(0, 0, 0, 0.08);
+		background: var(--accent-light);
 		border-radius: var(--radius);
 		font-family: var(--font-ui);
 		font-size: 0.9375rem;
@@ -1284,16 +1288,12 @@
 		border: 1px solid var(--accent-border);
 	}
 
-	:global([data-theme='dark']) .result-summary-box {
-		background: rgba(255, 255, 255, 0.04);
-	}
-
 	.result-summary-box strong {
 		color: var(--accent);
 	}
 
 	/* Responsive */
-	@media (max-width: 768px) {
+	@media (max-width: 760px) {
 		.tool-layout {
 			grid-template-columns: 1fr;
 		}

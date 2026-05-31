@@ -750,6 +750,96 @@ input[type='date']::-webkit-calendar-picker-indicator {
 }
 
 /* ===========================================
+   Tool primitives
+   Coquille + panneaux partagés des outils (rendu homogène,
+   layout responsive qui ne déborde jamais de la fenêtre).
+   =========================================== */
+
+/* Layout contenu + résultats (ex. grille d'évaluation + panneau de score). */
+.tool-layout {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
+	gap: 18px;
+	align-items: start;
+}
+.tool-layout--wide {
+	grid-template-columns: minmax(0, 1fr) minmax(0, 400px);
+}
+
+/* Panneau générique (carte de contenu). */
+.tool-panel {
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: 10px;
+	padding: 18px 20px;
+	min-width: 0;
+}
+
+/* Panneau de résultats (accentué). */
+.tool-result {
+	background: var(--surface);
+	border: 1px solid var(--accent-border);
+	border-radius: 10px;
+	padding: 18px 20px;
+	min-width: 0;
+}
+
+/* Barre de score (track + remplissage). */
+.tool-scorebar {
+	height: 6px;
+	border-radius: 999px;
+	background: var(--border);
+	overflow: hidden;
+}
+.tool-scorebar > span {
+	display: block;
+	height: 100%;
+	border-radius: 999px;
+	background: linear-gradient(90deg, var(--accent), rgb(var(--accent-rgb) / 0.6));
+}
+
+/* Pastilles de pondération / segments (faible / moyen / critique…). */
+.tool-segments {
+	display: inline-flex;
+	gap: 4px;
+	flex-wrap: wrap;
+}
+.tool-seg {
+	font-family: var(--font-ui);
+	font-size: 0.72rem;
+	padding: 3px 11px;
+	border-radius: 999px;
+	border: 1px solid var(--border);
+	background: var(--theme);
+	color: var(--secondary);
+	cursor: pointer;
+	transition: var(--transition);
+}
+.tool-seg:hover {
+	border-color: var(--accent-border);
+	color: var(--accent);
+}
+.tool-seg[aria-pressed='true'],
+.tool-seg.is-active {
+	background: var(--accent);
+	border-color: var(--accent);
+	color: var(--theme);
+}
+
+/* Range/slider cohérent avec les tokens. */
+input[type='range'].tool-slider {
+	width: 100%;
+	accent-color: var(--accent);
+}
+
+@media (max-width: 760px) {
+	.tool-layout,
+	.tool-layout--wide {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* ===========================================
    Content (article prose)
    =========================================== */
 

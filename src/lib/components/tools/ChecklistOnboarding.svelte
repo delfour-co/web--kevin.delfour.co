@@ -349,10 +349,10 @@
 </script>
 
 <div class="onb-container">
-	<div class="onb-layout">
+	<div class="tool-layout">
 		<div class="onb-form">
 			<!-- Profil -->
-			<section class="glass-card">
+			<section class="tool-panel">
 				<h2 class="section-title">Profil</h2>
 				<div class="field-row">
 					<div class="field-group">
@@ -403,7 +403,7 @@
 			{#each phases as phase}
 				{@const stats = phaseStats.find((s) => s.id === phase.id)!}
 				{@const remaining = daysRemaining[phase.id]}
-				<section class="glass-card phase-card">
+				<section class="tool-panel phase-card">
 					<div class="phase-header">
 						<div class="phase-title-row">
 							<h2 class="phase-name">{phase.name}</h2>
@@ -415,11 +415,10 @@
 							</span>
 						</div>
 						<p class="phase-description">{phase.description}</p>
-						<div class="phase-progress-bar">
-							<div
-								class="phase-progress-fill"
+						<div class="tool-scorebar phase-progress-bar">
+							<span
 								style="width: {stats.pct}%; background: {stats.pct >= 80 ? 'var(--onb-success)' : stats.pct >= 50 ? 'var(--onb-accent)' : 'var(--onb-muted)'}"
-							></div>
+							></span>
 						</div>
 						{#if remaining !== undefined && remaining !== null && dateArrivee}
 							<span class="phase-remaining">
@@ -502,7 +501,7 @@
 
 		<!-- Result panel -->
 		<div class="onb-result" aria-live="polite" aria-atomic="true">
-			<div class="result-section">
+			<div class="tool-result">
 				<div class="score-global">
 					<div class="score-ring">
 						<svg viewBox="0 0 120 120" class="score-svg">
@@ -544,7 +543,7 @@
 				</div>
 			</div>
 
-			<div class="result-section">
+			<div class="tool-result">
 				<h3 class="result-title">Progression par phase</h3>
 				<div class="phase-scores">
 					{#each phaseStats as ps}
@@ -553,11 +552,10 @@
 								<span class="mini-score-name">{ps.name.split(' — ')[1] || ps.name}</span>
 								<span class="mini-score-value">{ps.done}/{ps.total}</span>
 							</div>
-							<div class="mini-progress">
-								<div
-									class="mini-progress-fill"
+							<div class="tool-scorebar mini-progress">
+								<span
 									style="width: {ps.pct}%; background: {ps.pct >= 80 ? 'var(--onb-success)' : ps.pct >= 50 ? 'var(--onb-accent)' : 'var(--onb-muted)'}"
-								></div>
+								></span>
 							</div>
 						</div>
 					{/each}
@@ -565,7 +563,7 @@
 			</div>
 
 			{#if dateArrivee}
-				<div class="result-section">
+				<div class="tool-result">
 					<h3 class="result-title">Echeances</h3>
 					<div class="deadlines-list">
 						{#each phases as phase}
@@ -594,7 +592,7 @@
 			{/if}
 
 			{#if uncheckedItems.length > 0}
-				<div class="result-section">
+				<div class="tool-result">
 					<h3 class="result-title result-title--alert">
 						Restant ({uncheckedItems.length})
 					</h3>
@@ -610,7 +608,7 @@
 			{/if}
 
 			{#if nom || poste || buddy}
-				<div class="result-section result-context">
+				<div class="tool-result result-context">
 					{#if nom}
 						<div class="context-row">
 							<span class="context-label">Nouveau</span>
@@ -637,52 +635,31 @@
 
 <style>
 	.onb-container {
+		/* Tokens de couleur des barres (inline) remappés sur le design system
+		   pour suivre le thème actif au lieu d'une « île sombre » figée. */
 		--onb-accent: var(--accent);
-		--onb-success: var(--accent2);
-		--onb-muted: #a1a1aa;
-		--onb-warning: #f59e0b;
-		--onb-danger: var(--accent3);
-		--onb-surface: rgba(255, 255, 255, 0.05);
-		--onb-border: rgba(255, 255, 255, 0.08);
-		--onb-primary: #e4e4e7;
-		--onb-secondary: #a1a1aa;
-		--onb-tertiary: #71717a;
-		--onb-font-ui: 'Space Grotesk', var(--font-ui), system-ui, sans-serif;
+		--onb-success: var(--success);
+		--onb-muted: var(--tertiary);
 
 		max-width: 100%;
-		color: var(--onb-primary);
-	}
-
-	.onb-layout {
-		display: grid;
-		grid-template-columns: 1fr 360px;
-		gap: calc(var(--gap) * 2);
-		align-items: start;
+		color: var(--content);
 	}
 
 	.onb-form {
 		display: flex;
 		flex-direction: column;
 		gap: var(--gap);
-	}
-
-	/* Glass card */
-	.glass-card {
-		background: var(--onb-surface);
-		border: 1px solid var(--onb-border);
-		border-radius: 12px;
-		padding: 24px;
-		backdrop-filter: blur(8px);
+		min-width: 0;
 	}
 
 	.section-title {
-		font-family: var(--onb-font-ui);
+		font-family: var(--font-heading);
 		font-size: 1rem;
 		font-weight: 600;
-		color: var(--onb-primary);
+		color: var(--primary);
 		margin: 0 0 16px 0;
 		padding-bottom: 8px;
-		border-bottom: 1px solid var(--onb-border);
+		border-bottom: 1px solid var(--border);
 	}
 
 	/* Fields */
@@ -700,20 +677,20 @@
 	}
 
 	.field-label {
-		font-family: var(--onb-font-ui);
+		font-family: var(--font-ui);
 		font-size: 0.8125rem;
 		font-weight: 600;
-		color: var(--onb-secondary);
+		color: var(--secondary);
 	}
 
 	.field-input,
 	.field-textarea {
-		font-family: var(--onb-font-ui);
+		font-family: var(--font-ui);
 		font-size: 0.875rem;
-		color: var(--onb-primary);
-		background: rgba(255, 255, 255, 0.03);
-		border: 1px solid var(--onb-border);
-		border-radius: 8px;
+		color: var(--primary);
+		background: var(--theme);
+		border: 1px solid var(--border);
+		border-radius: var(--radius-sm);
 		padding: 8px 12px;
 		transition: border-color 0.2s ease;
 	}
@@ -721,13 +698,13 @@
 	.field-input:focus,
 	.field-textarea:focus {
 		outline: none;
-		border-color: var(--onb-accent);
-		box-shadow: 0 0 0 2px rgb(var(--accent-rgb) / 0.15);
+		border-color: var(--accent);
+		box-shadow: 0 0 0 2px var(--accent-light);
 	}
 
 	.field-input::placeholder,
 	.field-textarea::placeholder {
-		color: var(--onb-tertiary);
+		color: var(--tertiary);
 	}
 
 	.field-textarea {
@@ -748,43 +725,39 @@
 	}
 
 	.phase-name {
-		font-family: var(--onb-font-ui);
+		font-family: var(--font-heading);
 		font-size: 1rem;
 		font-weight: 600;
-		color: var(--onb-primary);
+		color: var(--primary);
 		margin: 0;
+		min-width: 0;
 	}
 
 	.phase-score {
-		font-family: var(--font-mono, monospace);
+		font-family: var(--font-mono);
 		font-size: 0.875rem;
 		font-weight: 700;
 	}
 
 	.phase-description {
 		font-size: 0.8125rem;
-		color: var(--onb-secondary);
+		color: var(--secondary);
 		margin: 0 0 10px 0;
 		line-height: 1.4;
 	}
 
 	.phase-progress-bar {
 		height: 3px;
-		background: var(--onb-border);
-		border-radius: 2px;
-		overflow: hidden;
 	}
 
-	.phase-progress-fill {
-		height: 100%;
-		border-radius: 2px;
+	.phase-progress-bar > span {
 		transition: width 0.4s ease, background 0.4s ease;
 	}
 
 	.phase-remaining {
-		font-family: var(--onb-font-ui);
+		font-family: var(--font-ui);
 		font-size: 0.75rem;
-		color: var(--onb-tertiary);
+		color: var(--tertiary);
 		margin-top: 6px;
 		display: inline-block;
 	}
@@ -809,7 +782,7 @@
 	}
 
 	.checkpoint:hover {
-		background: rgba(255, 255, 255, 0.03);
+		background: var(--surface-hover);
 	}
 
 	.checkpoint--checked {
@@ -827,17 +800,18 @@
 		flex-shrink: 0;
 		width: 20px;
 		height: 20px;
-		border: 2px solid var(--onb-tertiary);
-		border-radius: 4px;
+		border: 2px solid var(--tertiary);
+		border-radius: var(--radius-sm);
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		transition: all 0.2s ease;
+		accent-color: var(--accent);
 	}
 
 	.checkpoint-input:checked + .checkpoint-checkmark {
-		background: var(--onb-accent);
-		border-color: var(--onb-accent);
+		background: var(--accent);
+		border-color: var(--accent);
 	}
 
 	.checkpoint-input:checked + .checkpoint-checkmark::after {
@@ -845,34 +819,35 @@
 		display: block;
 		width: 5px;
 		height: 9px;
-		border: solid #000;
+		border: solid var(--theme);
 		border-width: 0 2px 2px 0;
 		transform: rotate(45deg);
 		margin-top: -2px;
 	}
 
 	.checkpoint-input:focus-visible + .checkpoint-checkmark {
-		outline: 2px solid var(--onb-accent);
+		outline: 2px solid var(--accent);
 		outline-offset: 2px;
 	}
 
 	.checkpoint-label {
 		flex: 1;
-		font-family: var(--onb-font-ui);
+		min-width: 0;
+		font-family: var(--font-ui);
 		font-size: 0.875rem;
-		color: var(--onb-primary);
+		color: var(--primary);
 		line-height: 1.3;
 	}
 
 	.checkpoint--checked .checkpoint-label {
 		text-decoration: line-through;
-		text-decoration-color: var(--onb-tertiary);
+		text-decoration-color: var(--tertiary);
 	}
 
 	.checkpoint-remove {
 		background: none;
 		border: none;
-		color: var(--onb-tertiary);
+		color: var(--tertiary);
 		cursor: pointer;
 		font-size: 0.8125rem;
 		padding: 2px 4px;
@@ -882,7 +857,7 @@
 	}
 
 	.checkpoint-remove:hover {
-		color: var(--onb-danger);
+		color: var(--accent3);
 	}
 
 	/* Add item */
@@ -911,11 +886,11 @@
 	}
 
 	.onb-btn {
-		font-family: var(--onb-font-ui);
+		font-family: var(--font-ui);
 		font-size: 0.875rem;
 		font-weight: 600;
 		padding: 10px 20px;
-		border-radius: 8px;
+		border-radius: var(--radius);
 		cursor: pointer;
 		transition: all 0.2s ease;
 		border: none;
@@ -923,7 +898,7 @@
 	}
 
 	.onb-btn--primary {
-		background: var(--onb-accent);
+		background: var(--accent);
 		color: var(--theme);
 	}
 
@@ -932,28 +907,29 @@
 	}
 
 	.onb-btn--secondary {
-		background: transparent;
-		color: var(--onb-secondary);
-		border: 1px solid var(--onb-border);
+		background: var(--surface);
+		color: var(--secondary);
+		border: 1px solid var(--border);
 	}
 
 	.onb-btn--secondary:hover {
-		border-color: var(--onb-tertiary);
-		color: var(--onb-primary);
+		border-color: var(--accent-border);
+		background: var(--surface-hover);
+		color: var(--accent);
 	}
 
 	.onb-btn--add {
 		font-size: 0.8125rem;
 		padding: 8px 16px;
 		background: transparent;
-		color: var(--onb-accent);
-		border: 1px solid var(--onb-accent);
+		color: var(--accent);
+		border: 1px solid var(--accent-border);
 		min-height: auto;
 		white-space: nowrap;
 	}
 
 	.onb-btn--add:hover:not(:disabled) {
-		background: var(--onb-accent);
+		background: var(--accent);
 		color: var(--theme);
 	}
 
@@ -969,14 +945,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 20px;
-	}
-
-	.result-section {
-		background: var(--onb-surface);
-		border: 1px solid var(--onb-border);
-		border-radius: 12px;
-		padding: 20px;
-		backdrop-filter: blur(8px);
+		min-width: 0;
 	}
 
 	/* Score ring */
@@ -1001,7 +970,7 @@
 
 	.score-ring-bg {
 		fill: none;
-		stroke: var(--onb-border);
+		stroke: var(--border);
 		stroke-width: 8;
 	}
 
@@ -1024,20 +993,20 @@
 	}
 
 	.score-number {
-		font-family: var(--onb-font-ui);
+		font-family: var(--font-heading);
 		font-size: 1.75rem;
 		font-weight: 700;
 		line-height: 1;
 	}
 
 	.score-count {
-		font-family: var(--font-mono, monospace);
+		font-family: var(--font-mono);
 		font-size: 0.75rem;
-		color: var(--onb-tertiary);
+		color: var(--tertiary);
 	}
 
 	.score-level {
-		font-family: var(--onb-font-ui);
+		font-family: var(--font-ui);
 		font-size: 0.875rem;
 		font-weight: 600;
 		text-align: center;
@@ -1045,17 +1014,17 @@
 
 	/* Phase scores */
 	.result-title {
-		font-family: var(--onb-font-ui);
+		font-family: var(--font-ui);
 		font-size: 0.8125rem;
 		font-weight: 600;
-		color: var(--onb-secondary);
+		color: var(--secondary);
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
 		margin: 0 0 14px 0;
 	}
 
 	.result-title--alert {
-		color: var(--onb-warning);
+		color: var(--warning);
 	}
 
 	.phase-scores {
@@ -1072,28 +1041,24 @@
 	}
 
 	.mini-score-name {
-		font-family: var(--onb-font-ui);
+		font-family: var(--font-ui);
 		font-size: 0.75rem;
-		color: var(--onb-secondary);
+		color: var(--secondary);
+		min-width: 0;
 	}
 
 	.mini-score-value {
-		font-family: var(--font-mono, monospace);
+		font-family: var(--font-mono);
 		font-size: 0.75rem;
 		font-weight: 600;
-		color: var(--onb-primary);
+		color: var(--primary);
 	}
 
 	.mini-progress {
 		height: 4px;
-		background: var(--onb-border);
-		border-radius: 2px;
-		overflow: hidden;
 	}
 
-	.mini-progress-fill {
-		height: 100%;
-		border-radius: 2px;
+	.mini-progress > span {
 		transition: width 0.4s ease, background 0.4s ease;
 	}
 
@@ -1111,24 +1076,25 @@
 	}
 
 	.deadline-label {
-		font-family: var(--onb-font-ui);
+		font-family: var(--font-ui);
 		font-size: 0.8125rem;
-		color: var(--onb-secondary);
+		color: var(--secondary);
+		min-width: 0;
 	}
 
 	.deadline-value {
-		font-family: var(--font-mono, monospace);
+		font-family: var(--font-mono);
 		font-size: 0.8125rem;
 		font-weight: 600;
-		color: var(--onb-primary);
+		color: var(--primary);
 	}
 
 	.deadline--overdue {
-		color: var(--onb-danger);
+		color: var(--accent3);
 	}
 
 	.deadline--soon {
-		color: var(--onb-warning);
+		color: var(--warning);
 	}
 
 	/* Remaining items */
@@ -1142,9 +1108,9 @@
 	}
 
 	.remaining-item {
-		font-family: var(--onb-font-ui);
+		font-family: var(--font-ui);
 		font-size: 0.8125rem;
-		color: var(--onb-secondary);
+		color: var(--secondary);
 		padding-left: 14px;
 		position: relative;
 		line-height: 1.4;
@@ -1158,13 +1124,13 @@
 		width: 6px;
 		height: 6px;
 		border-radius: 50%;
-		background: var(--onb-warning);
+		background: var(--warning);
 	}
 
 	.remaining-more {
-		font-family: var(--onb-font-ui);
+		font-family: var(--font-ui);
 		font-size: 0.75rem;
-		color: var(--onb-tertiary);
+		color: var(--tertiary);
 		font-style: italic;
 		padding-left: 14px;
 	}
@@ -1184,31 +1150,29 @@
 	}
 
 	.context-label {
-		font-family: var(--onb-font-ui);
+		font-family: var(--font-ui);
 		font-size: 0.8125rem;
-		color: var(--onb-tertiary);
+		color: var(--tertiary);
 	}
 
 	.context-value {
-		font-family: var(--onb-font-ui);
+		font-family: var(--font-ui);
 		font-size: 0.8125rem;
 		font-weight: 600;
-		color: var(--onb-primary);
+		color: var(--primary);
+		min-width: 0;
 	}
 
 	/* Responsive */
-	@media (max-width: 900px) {
-		.onb-layout {
-			grid-template-columns: 1fr;
-		}
-
+	@media (max-width: 760px) {
 		.onb-result {
 			position: static;
 		}
 	}
 
 	@media (max-width: 600px) {
-		.glass-card {
+		.tool-panel,
+		.tool-result {
 			padding: 16px;
 		}
 

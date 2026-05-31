@@ -257,22 +257,22 @@
 </script>
 
 <div class="audit-container">
-	<div class="audit-layout">
+	<div class="audit-layout tool-layout tool-layout--wide">
 		<div class="audit-layers">
 			{#each layers as layer}
 				{@const ls = layerScores.find((s) => s.id === layer.id)!}
-				<section class="glass-card layer-card">
+				<section class="tool-panel layer-card">
 					<div class="layer-header">
 						<div class="layer-title-row">
 							<h2 class="layer-name">{layer.name}</h2>
 							<span class="layer-score" style="color: {ls.score >= 80 ? 'var(--audit-accent2)' : ls.score >= 50 ? 'var(--audit-accent)' : 'var(--audit-critique)'}">{ls.score}%</span>
 						</div>
 						<p class="layer-description">{layer.description}</p>
-						<div class="layer-progress-bar">
-							<div
+						<div class="layer-progress-bar tool-scorebar">
+							<span
 								class="layer-progress-fill"
 								style="width: {ls.score}%; background: {ls.score >= 80 ? 'var(--audit-accent2)' : ls.score >= 50 ? 'var(--audit-accent)' : 'var(--audit-critique)'}"
-							></div>
+							></span>
 						</div>
 					</div>
 					<div class="checkpoints">
@@ -302,7 +302,7 @@
 		</div>
 
 		<div class="audit-result" aria-live="polite" aria-atomic="true">
-			<div class="result-section">
+			<div class="result-section tool-result">
 				<div class="score-global">
 					<div class="score-ring" style="--score-pct: {globalScore}; --score-color: {securityLevel.color}">
 						<svg viewBox="0 0 120 120" class="score-svg">
@@ -324,7 +324,7 @@
 				</div>
 			</div>
 
-			<div class="result-section">
+			<div class="result-section tool-result">
 				<h3 class="result-title">Score par couche</h3>
 				<div class="layer-scores">
 					{#each layerScores as ls}
@@ -333,11 +333,11 @@
 								<span class="mini-score-name">{ls.name}</span>
 								<span class="mini-score-value">{ls.score}%</span>
 							</div>
-							<div class="mini-progress">
-								<div
+							<div class="mini-progress tool-scorebar">
+								<span
 									class="mini-progress-fill"
 									style="width: {ls.score}%; background: {ls.score >= 80 ? 'var(--audit-accent2)' : ls.score >= 50 ? 'var(--audit-accent)' : 'var(--audit-critique)'}"
-								></div>
+								></span>
 							</div>
 						</div>
 					{/each}
@@ -345,7 +345,7 @@
 			</div>
 
 			{#if uncheckedCritical.length > 0}
-				<div class="result-section">
+				<div class="result-section tool-result">
 					<h3 class="result-title result-title--alert">Priorit\u00e9s imm\u00e9diates</h3>
 					<p class="priorities-hint">Points critiques non coch\u00e9s \u2014 ce que j'observe souvent comme premi\u00e8res failles.</p>
 					<ul class="priorities-list">
@@ -361,43 +361,26 @@
 
 <style>
 	.audit-container {
+		/* Niveaux de risque mappés sur les tokens de thème (suivent le thème actif, Light inclus). */
 		--audit-accent: var(--accent);
-		--audit-accent2: var(--accent2);
-		--audit-accent3: var(--accent3);
-		--audit-critique: var(--accent3);
-		--audit-important: #f59e0b;
-		--audit-recommande: #a1a1aa;
-		--audit-surface: rgba(255, 255, 255, 0.05);
-		--audit-border: rgba(255, 255, 255, 0.08);
-		--audit-primary: #e4e4e7;
-		--audit-secondary: #a1a1aa;
-		--audit-tertiary: #71717a;
-		--audit-font-ui: 'Space Grotesk', var(--font-ui), system-ui, sans-serif;
+		--audit-accent2: var(--success);
+		--audit-critique: var(--error);
+		--audit-important: var(--warning);
+		--audit-recommande: var(--secondary);
 
 		max-width: 100%;
-		color: var(--audit-primary);
-	}
-
-	.audit-layout {
-		display: grid;
-		grid-template-columns: 1fr 360px;
-		gap: calc(var(--gap) * 2);
-		align-items: start;
+		color: var(--content);
 	}
 
 	.audit-layers {
 		display: flex;
 		flex-direction: column;
 		gap: var(--gap);
+		min-width: 0;
 	}
 
-	/* Glass card */
-	.glass-card {
-		background: var(--audit-surface);
-		border: 1px solid var(--audit-border);
-		border-radius: 12px;
-		padding: 24px;
-		backdrop-filter: blur(8px);
+	.layer-card {
+		padding: 20px 22px;
 	}
 
 	.layer-header {
@@ -408,40 +391,38 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: baseline;
+		gap: 10px;
 		margin-bottom: 4px;
 	}
 
 	.layer-name {
-		font-family: var(--audit-font-ui);
+		font-family: var(--font-ui);
 		font-size: 1rem;
 		font-weight: 600;
-		color: var(--audit-primary);
+		color: var(--primary);
 		margin: 0;
+		min-width: 0;
 	}
 
 	.layer-score {
-		font-family: var(--font-mono, monospace);
+		font-family: var(--font-mono);
 		font-size: 0.875rem;
 		font-weight: 700;
+		flex-shrink: 0;
 	}
 
 	.layer-description {
 		font-size: 0.8125rem;
-		color: var(--audit-secondary);
+		color: var(--secondary);
 		margin: 0 0 10px 0;
 		line-height: 1.4;
 	}
 
 	.layer-progress-bar {
-		height: 3px;
-		background: var(--audit-border);
-		border-radius: 2px;
-		overflow: hidden;
+		height: 4px;
 	}
 
 	.layer-progress-fill {
-		height: 100%;
-		border-radius: 2px;
 		transition: width 0.4s ease, background 0.4s ease;
 	}
 
@@ -461,10 +442,11 @@
 		cursor: pointer;
 		transition: background 0.2s ease;
 		user-select: none;
+		min-width: 0;
 	}
 
 	.checkpoint:hover {
-		background: rgba(255, 255, 255, 0.03);
+		background: var(--surface-hover);
 	}
 
 	.checkpoint--checked {
@@ -482,7 +464,7 @@
 		flex-shrink: 0;
 		width: 20px;
 		height: 20px;
-		border: 2px solid var(--audit-tertiary);
+		border: 2px solid var(--tertiary);
 		border-radius: 4px;
 		display: flex;
 		align-items: center;
@@ -491,8 +473,8 @@
 	}
 
 	.checkpoint-input:checked + .checkpoint-checkmark {
-		background: var(--audit-accent);
-		border-color: var(--audit-accent);
+		background: var(--accent);
+		border-color: var(--accent);
 	}
 
 	.checkpoint-input:checked + .checkpoint-checkmark::after {
@@ -500,33 +482,34 @@
 		display: block;
 		width: 5px;
 		height: 9px;
-		border: solid #000;
+		border: solid var(--theme);
 		border-width: 0 2px 2px 0;
 		transform: rotate(45deg);
 		margin-top: -2px;
 	}
 
 	.checkpoint-input:focus-visible + .checkpoint-checkmark {
-		outline: 2px solid var(--audit-accent);
+		outline: 2px solid var(--accent);
 		outline-offset: 2px;
 	}
 
 	.checkpoint-label {
 		flex: 1;
-		font-family: var(--audit-font-ui);
+		min-width: 0;
+		font-family: var(--font-ui);
 		font-size: 0.875rem;
-		color: var(--audit-primary);
+		color: var(--content);
 		line-height: 1.3;
 	}
 
 	.checkpoint--checked .checkpoint-label {
 		text-decoration: line-through;
-		text-decoration-color: var(--audit-tertiary);
+		text-decoration-color: var(--tertiary);
 	}
 
 	.criticality-badge {
 		flex-shrink: 0;
-		font-family: var(--audit-font-ui);
+		font-family: var(--font-ui);
 		font-size: 0.6875rem;
 		font-weight: 600;
 		padding: 2px 8px;
@@ -537,20 +520,17 @@
 
 	.criticality--critique {
 		color: var(--audit-critique);
-		background: rgb(var(--accent3-rgb) / 0.12);
-		border: 1px solid rgb(var(--accent3-rgb) / 0.2);
+		border: 1px solid var(--audit-critique);
 	}
 
 	.criticality--important {
 		color: var(--audit-important);
-		background: rgba(245, 158, 11, 0.12);
-		border: 1px solid rgba(245, 158, 11, 0.2);
+		border: 1px solid var(--audit-important);
 	}
 
 	.criticality--recommandé {
 		color: var(--audit-recommande);
-		background: rgba(161, 161, 170, 0.1);
-		border: 1px solid rgba(161, 161, 170, 0.15);
+		border: 1px solid var(--border);
 	}
 
 	/* Result panel */
@@ -559,15 +539,12 @@
 		top: calc(var(--header-height, 60px) + var(--gap, 16px));
 		display: flex;
 		flex-direction: column;
-		gap: 20px;
+		gap: var(--gap);
+		min-width: 0;
 	}
 
 	.result-section {
-		background: var(--audit-surface);
-		border: 1px solid var(--audit-border);
-		border-radius: 12px;
-		padding: 20px;
-		backdrop-filter: blur(8px);
+		padding: 18px 20px;
 	}
 
 	/* Score ring */
@@ -592,7 +569,7 @@
 
 	.score-ring-bg {
 		fill: none;
-		stroke: var(--audit-border);
+		stroke: var(--border);
 		stroke-width: 8;
 	}
 
@@ -615,20 +592,20 @@
 	}
 
 	.score-number {
-		font-family: var(--audit-font-ui);
+		font-family: var(--font-ui);
 		font-size: 1.75rem;
 		font-weight: 700;
 		line-height: 1;
 	}
 
 	.score-count {
-		font-family: var(--font-mono, monospace);
+		font-family: var(--font-mono);
 		font-size: 0.75rem;
-		color: var(--audit-tertiary);
+		color: var(--tertiary);
 	}
 
 	.score-level {
-		font-family: var(--audit-font-ui);
+		font-family: var(--font-ui);
 		font-size: 0.875rem;
 		font-weight: 600;
 		text-align: center;
@@ -636,10 +613,10 @@
 
 	/* Layer scores */
 	.result-title {
-		font-family: var(--audit-font-ui);
+		font-family: var(--font-ui);
 		font-size: 0.8125rem;
 		font-weight: 600;
-		color: var(--audit-secondary);
+		color: var(--secondary);
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
 		margin: 0 0 14px 0;
@@ -655,43 +632,45 @@
 		gap: 10px;
 	}
 
+	.mini-score {
+		min-width: 0;
+	}
+
 	.mini-score-header {
 		display: flex;
 		justify-content: space-between;
 		align-items: baseline;
+		gap: 8px;
 		margin-bottom: 4px;
 	}
 
 	.mini-score-name {
-		font-family: var(--audit-font-ui);
+		font-family: var(--font-ui);
 		font-size: 0.75rem;
-		color: var(--audit-secondary);
+		color: var(--secondary);
+		min-width: 0;
 	}
 
 	.mini-score-value {
-		font-family: var(--font-mono, monospace);
+		font-family: var(--font-mono);
 		font-size: 0.75rem;
 		font-weight: 600;
-		color: var(--audit-primary);
+		color: var(--primary);
+		flex-shrink: 0;
 	}
 
 	.mini-progress {
 		height: 4px;
-		background: var(--audit-border);
-		border-radius: 2px;
-		overflow: hidden;
 	}
 
 	.mini-progress-fill {
-		height: 100%;
-		border-radius: 2px;
 		transition: width 0.4s ease, background 0.4s ease;
 	}
 
 	/* Priorities */
 	.priorities-hint {
 		font-size: 0.75rem;
-		color: var(--audit-tertiary);
+		color: var(--tertiary);
 		margin: 0 0 10px 0;
 		line-height: 1.4;
 	}
@@ -706,7 +685,7 @@
 	}
 
 	.priority-item {
-		font-family: var(--audit-font-ui);
+		font-family: var(--font-ui);
 		font-size: 0.8125rem;
 		color: var(--audit-critique);
 		padding-left: 14px;
@@ -733,7 +712,7 @@
 	}
 
 	.audit-btn {
-		font-family: var(--audit-font-ui);
+		font-family: var(--font-ui);
 		font-size: 0.875rem;
 		font-weight: 600;
 		padding: 10px 20px;
@@ -745,7 +724,7 @@
 	}
 
 	.audit-btn--primary {
-		background: var(--audit-accent);
+		background: var(--accent);
 		color: var(--theme);
 	}
 
@@ -755,28 +734,24 @@
 
 	.audit-btn--secondary {
 		background: transparent;
-		color: var(--audit-secondary);
-		border: 1px solid var(--audit-border);
+		color: var(--secondary);
+		border: 1px solid var(--border);
 	}
 
 	.audit-btn--secondary:hover {
-		border-color: var(--audit-tertiary);
-		color: var(--audit-primary);
+		border-color: var(--tertiary);
+		color: var(--primary);
 	}
 
 	/* Responsive */
-	@media (max-width: 900px) {
-		.audit-layout {
-			grid-template-columns: 1fr;
-		}
-
+	@media (max-width: 760px) {
 		.audit-result {
 			position: static;
 		}
 	}
 
 	@media (max-width: 600px) {
-		.glass-card {
+		.layer-card {
 			padding: 16px;
 		}
 

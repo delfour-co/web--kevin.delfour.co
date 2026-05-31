@@ -247,10 +247,10 @@
 </script>
 
 <div class="dt-container">
-	<div class="dt-layout">
+	<div class="tool-layout tool-layout--wide dt-layout">
 		<div class="dt-zones">
 			{#each zones as zone}
-				<div class="glass-card dt-zone-card">
+				<div class="tool-panel dt-zone-card">
 					<button
 						class="dt-zone-header"
 						onclick={() => toggleZone(zone.id)}
@@ -281,7 +281,7 @@
 								max="10"
 								step="1"
 								value={scores[zone.id]}
-								class="dt-slider dt-slider--score"
+								class="tool-slider dt-slider dt-slider--score"
 								aria-label="{zone.name} — niveau de dette"
 								oninput={(e) => handleScoreInput(zone.id, parseInt(e.currentTarget.value, 10))}
 							/>
@@ -307,7 +307,7 @@
 											max="5"
 											step="1"
 											value={impacts[zone.id]}
-											class="dt-slider dt-slider--impact"
+											class="tool-slider dt-slider dt-slider--impact"
 											aria-label="{zone.name} — impact"
 											oninput={(e) => handleImpactInput(zone.id, parseInt(e.currentTarget.value, 10))}
 										/>
@@ -328,7 +328,7 @@
 											max="5"
 											step="1"
 											value={efforts[zone.id]}
-											class="dt-slider dt-slider--effort"
+											class="tool-slider dt-slider dt-slider--effort"
 											aria-label="{zone.name} — effort"
 											oninput={(e) => handleEffortInput(zone.id, parseInt(e.currentTarget.value, 10))}
 										/>
@@ -352,12 +352,12 @@
 		</div>
 
 		<div class="dt-results" aria-live="polite" aria-atomic="true">
-			<div class="glass-card dt-score-card">
+			<div class="tool-result dt-score-card">
 				<div class="dt-score-header">Score global</div>
 				<div class="dt-score-big" style="color: {debtLevel.color}">{overallScore}</div>
 				<div class="dt-score-max">/10</div>
 				<div class="dt-score-label" style="color: {debtLevel.color}">{debtLevel.label}</div>
-				<div class="dt-score-bar-track">
+				<div class="tool-scorebar dt-score-bar-track">
 					<div
 						class="dt-score-bar-fill"
 						style="width: {overallScore * 10}%; background: {debtLevel.color}"
@@ -365,7 +365,7 @@
 				</div>
 			</div>
 
-			<div class="glass-card dt-matrix-card">
+			<div class="tool-panel dt-matrix-card">
 				<div class="dt-card-title">Matrice impact / effort</div>
 				<div class="dt-matrix">
 					<div class="dt-matrix-grid">
@@ -398,7 +398,7 @@
 				</div>
 			</div>
 
-			<div class="glass-card dt-priorities-card">
+			<div class="tool-panel dt-priorities-card">
 				<div class="dt-card-title">Top 3 priorités</div>
 				<ol class="dt-priorities-list">
 					{#each top3 as item, i}
@@ -418,12 +418,12 @@
 				</ol>
 			</div>
 
-			<div class="glass-card dt-zones-summary">
+			<div class="tool-panel dt-zones-summary">
 				<div class="dt-card-title">Vue d'ensemble</div>
 				{#each zones as zone}
 					<div class="dt-summary-row">
 						<span class="dt-summary-name">{zone.name}</span>
-						<div class="dt-summary-bar-track">
+						<div class="tool-scorebar dt-summary-bar-track">
 							<div
 								class="dt-summary-bar-fill"
 								style="width: {scores[zone.id] * 10}%; background: {scores[zone.id] <= 3 ? 'var(--dt-accent)' : scores[zone.id] <= 5 ? 'var(--dt-accent2)' : scores[zone.id] <= 7 ? 'var(--dt-warning)' : 'var(--dt-danger)'}"
@@ -439,40 +439,22 @@
 
 <style>
 	.dt-container {
-		--dt-bg: #000;
 		--dt-accent: var(--accent);
 		--dt-accent2: var(--accent2);
 		--dt-accent3: var(--accent3);
+		/* alias thème pour les choix de couleur pilotés par le template */
+		--dt-secondary: var(--secondary);
+		/* couleurs sémantiques d'état (alerte / critique), stables entre thèmes */
 		--dt-warning: #f59e0b;
 		--dt-danger: #ef4444;
-		--dt-surface: rgba(255, 255, 255, 0.05);
-		--dt-border: rgba(255, 255, 255, 0.08);
-		--dt-primary: #e4e4e7;
-		--dt-secondary: #a1a1aa;
-		--dt-font-ui: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-		--dt-radius: 12px;
 		--dt-gap: 16px;
 
-		background: var(--dt-bg);
-		border-radius: var(--dt-radius);
-		padding: calc(var(--dt-gap) * 1.5);
-		color: var(--dt-primary);
-		font-family: var(--dt-font-ui);
-	}
-
-	.glass-card {
-		background: var(--dt-surface);
-		border: 1px solid var(--dt-border);
-		border-radius: var(--dt-radius);
-		padding: var(--dt-gap);
-		backdrop-filter: blur(8px);
+		color: var(--content);
+		font-family: var(--font-ui);
 	}
 
 	.dt-layout {
-		display: grid;
-		grid-template-columns: 1fr 380px;
 		gap: calc(var(--dt-gap) * 2);
-		align-items: start;
 	}
 
 	/* Zones column */
@@ -480,6 +462,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--dt-gap);
+		min-width: 0;
 	}
 
 	.dt-zone-card {
@@ -487,7 +470,7 @@
 	}
 
 	.dt-zone-card:hover {
-		border-color: rgba(255, 255, 255, 0.15);
+		border-color: var(--border-hover);
 	}
 
 	.dt-zone-header {
@@ -516,11 +499,11 @@
 	.dt-zone-name {
 		font-size: 1rem;
 		font-weight: 600;
-		color: var(--dt-primary);
+		color: var(--primary);
 	}
 
 	.dt-zone-score {
-		font-family: 'JetBrains Mono', 'Fira Code', monospace;
+		font-family: var(--font-mono);
 		font-size: 1rem;
 		font-weight: 700;
 		margin-left: 12px;
@@ -528,7 +511,7 @@
 
 	.dt-zone-desc {
 		font-size: 0.8125rem;
-		color: var(--dt-secondary);
+		color: var(--secondary);
 		grid-column: 1;
 	}
 
@@ -536,7 +519,7 @@
 		grid-column: 2;
 		grid-row: 1 / 3;
 		align-self: center;
-		color: var(--dt-secondary);
+		color: var(--secondary);
 		transition: transform 0.2s ease;
 		display: flex;
 		align-items: center;
@@ -561,13 +544,13 @@
 	.dt-slider-name {
 		font-size: 0.75rem;
 		font-weight: 500;
-		color: var(--dt-secondary);
+		color: var(--secondary);
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
 	}
 
 	.dt-slider-value {
-		font-family: 'JetBrains Mono', 'Fira Code', monospace;
+		font-family: var(--font-mono);
 		font-size: 0.8125rem;
 		font-weight: 600;
 		color: var(--dt-accent);
@@ -589,26 +572,25 @@
 
 	.dt-slider-bound {
 		font-size: 0.6875rem;
-		color: var(--dt-secondary);
+		color: var(--secondary);
 		white-space: nowrap;
 		min-width: fit-content;
 		flex-shrink: 0;
 	}
 
-	/* Sliders */
+	/* Sliders — base track/handle on top of the shared .tool-slider primitive */
 	.dt-slider {
 		-webkit-appearance: none;
 		appearance: none;
-		width: 100%;
 		height: 6px;
 		border-radius: 3px;
-		background: var(--dt-border);
+		background: var(--border);
 		cursor: pointer;
 		transition: background 0.2s ease;
 	}
 
 	.dt-slider:hover {
-		background: rgba(255, 255, 255, 0.12);
+		background: var(--border-hover);
 	}
 
 	.dt-slider:focus-visible {
@@ -627,7 +609,7 @@
 		height: 20px;
 		border-radius: 50%;
 		background: var(--dt-accent);
-		border: 2px solid var(--dt-bg);
+		border: 2px solid var(--theme);
 		box-shadow: 0 0 8px rgb(var(--accent-rgb) / 0.3);
 		cursor: pointer;
 	}
@@ -637,7 +619,7 @@
 		height: 20px;
 		border-radius: 50%;
 		background: var(--dt-accent);
-		border: 2px solid var(--dt-bg);
+		border: 2px solid var(--theme);
 		box-shadow: 0 0 8px rgb(var(--accent-rgb) / 0.3);
 		cursor: pointer;
 	}
@@ -649,7 +631,7 @@
 		height: 18px;
 		border-radius: 50%;
 		background: var(--dt-accent2);
-		border: 2px solid var(--dt-bg);
+		border: 2px solid var(--theme);
 		box-shadow: 0 0 8px rgb(var(--accent2-rgb) / 0.3);
 		cursor: pointer;
 	}
@@ -659,7 +641,7 @@
 		height: 18px;
 		border-radius: 50%;
 		background: var(--dt-accent2);
-		border: 2px solid var(--dt-bg);
+		border: 2px solid var(--theme);
 		box-shadow: 0 0 8px rgb(var(--accent2-rgb) / 0.3);
 		cursor: pointer;
 	}
@@ -671,7 +653,7 @@
 		height: 18px;
 		border-radius: 50%;
 		background: var(--dt-accent3);
-		border: 2px solid var(--dt-bg);
+		border: 2px solid var(--theme);
 		box-shadow: 0 0 8px rgb(var(--accent3-rgb) / 0.3);
 		cursor: pointer;
 	}
@@ -681,7 +663,7 @@
 		height: 18px;
 		border-radius: 50%;
 		background: var(--dt-accent3);
-		border: 2px solid var(--dt-bg);
+		border: 2px solid var(--theme);
 		box-shadow: 0 0 8px rgb(var(--accent3-rgb) / 0.3);
 		cursor: pointer;
 	}
@@ -689,20 +671,20 @@
 	.dt-slider::-moz-range-track {
 		height: 6px;
 		border-radius: 3px;
-		background: var(--dt-border);
+		background: var(--border);
 	}
 
 	/* Zone details */
 	.dt-zone-details {
 		margin-top: 12px;
 		padding-top: 12px;
-		border-top: 1px solid var(--dt-border);
+		border-top: 1px solid var(--border);
 	}
 
 	.dt-zone-hint {
 		font-size: 0.8125rem;
 		line-height: 1.6;
-		color: var(--dt-secondary);
+		color: var(--secondary);
 		font-style: italic;
 		margin: 0 0 16px 0;
 	}
@@ -722,7 +704,7 @@
 	}
 
 	.dt-btn {
-		font-family: var(--dt-font-ui);
+		font-family: var(--font-ui);
 		font-size: 0.875rem;
 		font-weight: 600;
 		padding: 10px 20px;
@@ -745,13 +727,13 @@
 
 	.dt-btn--secondary {
 		background: transparent;
-		color: var(--dt-secondary);
-		border: 1px solid var(--dt-border);
+		color: var(--secondary);
+		border: 1px solid var(--border);
 	}
 
 	.dt-btn--secondary:hover {
-		border-color: rgba(255, 255, 255, 0.2);
-		color: var(--dt-primary);
+		border-color: var(--border-hover);
+		color: var(--primary);
 	}
 
 	/* Results column */
@@ -761,6 +743,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--dt-gap);
+		min-width: 0;
 	}
 
 	/* Score card */
@@ -774,7 +757,7 @@
 		font-weight: 500;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
-		color: var(--dt-secondary);
+		color: var(--secondary);
 		margin-bottom: 8px;
 	}
 
@@ -782,12 +765,12 @@
 		font-size: 3.5rem;
 		font-weight: 700;
 		line-height: 1;
-		font-family: 'JetBrains Mono', 'Fira Code', monospace;
+		font-family: var(--font-mono);
 	}
 
 	.dt-score-max {
 		font-size: 1.125rem;
-		color: var(--dt-secondary);
+		color: var(--secondary);
 		margin-bottom: 4px;
 	}
 
@@ -799,15 +782,11 @@
 
 	.dt-score-bar-track {
 		width: 100%;
-		height: 6px;
-		background: var(--dt-border);
-		border-radius: 3px;
-		overflow: hidden;
 	}
 
 	.dt-score-bar-fill {
 		height: 100%;
-		border-radius: 3px;
+		border-radius: 999px;
 		transition: width 0.3s ease, background 0.3s ease;
 	}
 
@@ -817,7 +796,7 @@
 		font-weight: 600;
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
-		color: var(--dt-secondary);
+		color: var(--secondary);
 		margin-bottom: 12px;
 	}
 
@@ -831,10 +810,10 @@
 		width: 100%;
 		aspect-ratio: 1;
 		background:
-			linear-gradient(to right, var(--dt-border) 1px, transparent 1px),
-			linear-gradient(to bottom, var(--dt-border) 1px, transparent 1px);
+			linear-gradient(to right, var(--border) 1px, transparent 1px),
+			linear-gradient(to bottom, var(--border) 1px, transparent 1px);
 		background-size: 50% 50%;
-		border: 1px solid var(--dt-border);
+		border: 1px solid var(--border);
 		border-radius: 4px;
 	}
 
@@ -844,7 +823,7 @@
 		font-weight: 600;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
-		color: var(--dt-secondary);
+		color: var(--secondary);
 	}
 
 	.dt-matrix-label--y {
@@ -860,7 +839,7 @@
 	.dt-matrix-quadrant {
 		position: absolute;
 		font-size: 0.5625rem;
-		color: rgba(255, 255, 255, 0.2);
+		color: var(--tertiary);
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
 		pointer-events: none;
@@ -933,7 +912,7 @@
 	}
 
 	.dt-priority-rank {
-		font-family: 'JetBrains Mono', 'Fira Code', monospace;
+		font-family: var(--font-mono);
 		font-size: 0.875rem;
 		font-weight: 700;
 		color: var(--dt-accent);
@@ -950,12 +929,12 @@
 	.dt-priority-name {
 		font-size: 0.875rem;
 		font-weight: 600;
-		color: var(--dt-primary);
+		color: var(--primary);
 	}
 
 	.dt-priority-meta {
 		font-size: 0.75rem;
-		color: var(--dt-secondary);
+		color: var(--secondary);
 	}
 
 	.dt-priority-quadrant {
@@ -979,51 +958,40 @@
 	.dt-summary-name {
 		font-size: 0.75rem;
 		font-weight: 500;
-		color: var(--dt-secondary);
+		color: var(--secondary);
 		min-width: 90px;
 		flex-shrink: 0;
 	}
 
 	.dt-summary-bar-track {
 		flex: 1;
-		height: 6px;
-		background: var(--dt-border);
-		border-radius: 3px;
-		overflow: hidden;
+		min-width: 0;
 	}
 
 	.dt-summary-bar-fill {
 		height: 100%;
-		border-radius: 3px;
+		border-radius: 999px;
 		transition: width 0.3s ease, background 0.3s ease;
 		min-width: 2px;
 	}
 
 	.dt-summary-value {
-		font-family: 'JetBrains Mono', 'Fira Code', monospace;
+		font-family: var(--font-mono);
 		font-size: 0.75rem;
 		font-weight: 600;
-		color: var(--dt-primary);
+		color: var(--primary);
 		min-width: 20px;
 		text-align: right;
 	}
 
-	/* Responsive */
-	@media (max-width: 900px) {
-		.dt-layout {
-			grid-template-columns: 1fr;
-		}
-
+	/* Responsive — la grille principale s'effondre via .tool-layout (≤760px). */
+	@media (max-width: 760px) {
 		.dt-results {
 			position: static;
 		}
 	}
 
 	@media (max-width: 600px) {
-		.dt-container {
-			padding: var(--dt-gap);
-		}
-
 		.dt-actions {
 			flex-direction: column;
 		}

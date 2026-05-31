@@ -297,11 +297,11 @@
 </script>
 
 <div class="tool-container">
-	<div class="tool-layout">
+	<div class="tool-layout tool-layout--wide">
 		<!-- Left: form -->
 		<div class="tool-form">
 			<!-- Metadata -->
-			<fieldset class="glass-card">
+			<fieldset class="tool-panel">
 				<legend>Migration</legend>
 				<div class="form-group">
 					<label for="mig-titre">Titre de la migration</label>
@@ -324,7 +324,7 @@
 			</fieldset>
 
 			<!-- Phases -->
-			<fieldset class="glass-card">
+			<fieldset class="tool-panel">
 				<legend>Phases</legend>
 				<p class="form-hint">Decoupe la migration en etapes successives. Chaque phase a sa propre strategie et sa duree estimee.</p>
 
@@ -372,7 +372,7 @@
 			</fieldset>
 
 			<!-- Risks -->
-			<fieldset class="glass-card">
+			<fieldset class="tool-panel">
 				<legend>Risques</legend>
 				<p class="form-hint">Identifie ce qui pourrait mal tourner et comment s'en premunir.</p>
 
@@ -417,7 +417,7 @@
 			</fieldset>
 
 			<!-- Checklist -->
-			<fieldset class="glass-card">
+			<fieldset class="tool-panel">
 				<legend>Checklist avant migration</legend>
 				<p class="form-hint">Les points essentiels a verifier avant de lancer la migration. Plus tu en coches, plus tu es pret.</p>
 
@@ -530,11 +530,11 @@
 			<!-- Readiness -->
 			<div class="result-section">
 				<div class="result-section-title">Niveau de preparation</div>
-				<div class="readiness-bar-track">
-					<div
+				<div class="tool-scorebar readiness-bar-track">
+					<span
 						class="readiness-bar-fill"
 						style="width: {readinessScore}%; background: {goNoGo.color}"
-					></div>
+					></span>
 				</div>
 				<div class="readiness-detail">
 					<span>{checklist.filter((c) => c.checked).length} / {checklist.length} vérifiés</span>
@@ -563,37 +563,26 @@
 
 <style>
 	.tool-container {
-		--surface: rgba(255, 255, 255, 0.05);
-		--border: rgba(255, 255, 255, 0.08);
-		--primary: #e4e4e7;
-		--secondary: #a1a1aa;
-		--font-ui: 'Space Grotesk', var(--font-ui, system-ui);
 		max-width: 100%;
 	}
 
 	.tool-layout {
-		display: grid;
-		grid-template-columns: 1fr 380px;
 		gap: calc(var(--gap) * 2);
-		align-items: start;
 	}
 
 	.tool-form {
 		display: flex;
 		flex-direction: column;
 		gap: var(--content-gap);
+		min-width: 0;
 	}
 
-	/* Glass card */
-	.glass-card {
-		background: var(--surface);
-		border: 1px solid var(--border);
-		border-radius: var(--radius);
-		padding: var(--gap);
+	/* Panneau — surface fournie par .tool-panel */
+	.tool-panel {
 		margin: 0;
 	}
 
-	.glass-card legend {
+	.tool-panel legend {
 		font-family: var(--font-ui);
 		font-size: 0.875rem;
 		font-weight: 600;
@@ -607,6 +596,7 @@
 		flex-direction: column;
 		gap: 4px;
 		margin-bottom: 12px;
+		min-width: 0;
 	}
 
 	.form-group:last-child {
@@ -629,13 +619,13 @@
 
 	.form-row--two {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 		gap: var(--gap);
 	}
 
 	.form-row--three {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
 		gap: var(--gap);
 	}
 
@@ -644,15 +634,17 @@
 	input[type='number'],
 	select,
 	textarea {
-		font-family: var(--font-body);
+		font-family: var(--font-ui);
 		font-size: 0.9375rem;
 		padding: 10px 12px;
 		border: 1px solid var(--border);
 		border-radius: var(--radius);
-		background: rgba(0, 0, 0, 0.3);
+		background: var(--accent-light);
 		color: var(--primary);
 		transition: var(--transition);
 		width: 100%;
+		max-width: 100%;
+		min-width: 0;
 		box-sizing: border-box;
 	}
 
@@ -671,11 +663,12 @@
 
 	/* Phase card */
 	.phase-card {
-		background: rgba(0, 0, 0, 0.2);
+		background: var(--theme);
 		border: 1px solid var(--border);
 		border-radius: var(--radius);
 		padding: var(--gap);
 		margin-bottom: 12px;
+		min-width: 0;
 	}
 
 	.phase-header {
@@ -695,11 +688,12 @@
 
 	/* Risk card */
 	.risk-card {
-		background: rgba(0, 0, 0, 0.2);
+		background: var(--theme);
 		border: 1px solid var(--border);
 		border-radius: var(--radius);
 		padding: var(--gap);
 		margin-bottom: 12px;
+		min-width: 0;
 	}
 
 	.risk-header {
@@ -736,8 +730,8 @@
 	}
 
 	.remove-btn:hover {
-		color: #c0392b;
-		border-color: #c0392b;
+		color: var(--error);
+		border-color: var(--error);
 	}
 
 	/* Add button */
@@ -795,13 +789,14 @@
 		gap: 10px;
 		padding: 8px 12px;
 		border-radius: var(--radius);
-		background: rgba(0, 0, 0, 0.2);
+		background: var(--theme);
+		border: 1px solid var(--border);
 		cursor: pointer;
 		transition: var(--transition);
 	}
 
 	.checklist-item:hover {
-		background: rgba(0, 0, 0, 0.3);
+		border-color: var(--accent-border);
 	}
 
 	.checklist-item input[type='checkbox'] {
@@ -817,12 +812,8 @@
 		color: var(--primary);
 	}
 
-	/* Result panel */
+	/* Result panel — surface + accent-border fournis par .tool-result */
 	.tool-result {
-		padding: var(--gap);
-		background: var(--surface);
-		border: 1px solid var(--border);
-		border-radius: var(--radius);
 		position: sticky;
 		top: calc(var(--header-height, 60px) + var(--gap));
 	}
@@ -842,7 +833,7 @@
 		border: 1px solid;
 		border-radius: var(--radius);
 		margin-bottom: var(--content-gap);
-		background: rgba(0, 0, 0, 0.2);
+		background: var(--theme);
 		transition: border-color 0.3s ease;
 	}
 
@@ -939,12 +930,17 @@
 	.timeline-legend-name {
 		color: var(--secondary);
 		flex: 1;
+		min-width: 0;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
 	}
 
 	.timeline-legend-days {
 		font-family: var(--font-mono, monospace);
 		font-size: 0.6875rem;
 		color: var(--primary);
+		flex-shrink: 0;
 	}
 
 	.timeline-total {
@@ -1060,18 +1056,13 @@
 		letter-spacing: 0.05em;
 	}
 
-	/* Readiness bar */
+	/* Readiness bar — track via .tool-scorebar */
 	.readiness-bar-track {
 		height: 8px;
-		background: rgba(255, 255, 255, 0.06);
-		border-radius: 4px;
-		overflow: hidden;
 		margin-bottom: 6px;
 	}
 
 	.readiness-bar-fill {
-		height: 100%;
-		border-radius: 4px;
 		transition: width 0.3s ease, background 0.3s ease;
 		min-width: 2px;
 	}
@@ -1122,9 +1113,9 @@
 	}
 
 	.badge--green {
-		background: rgba(34, 197, 94, 0.15);
-		color: #22c55e;
-		border: 1px solid rgba(34, 197, 94, 0.3);
+		background: color-mix(in srgb, var(--success) 15%, transparent);
+		color: var(--success);
+		border: 1px solid color-mix(in srgb, var(--success) 30%, transparent);
 	}
 
 	.empty-hint {
@@ -1160,7 +1151,7 @@
 	}
 
 	.tool-btn--primary:hover {
-		filter: brightness(1.15);
+		background: var(--accent-hover);
 	}
 
 	.tool-btn--secondary {
@@ -1170,26 +1161,23 @@
 	}
 
 	.tool-btn--secondary:hover {
-		border-color: rgba(255, 255, 255, 0.2);
+		border-color: var(--tertiary);
 		color: var(--primary);
 	}
 
-	/* Responsive */
-	@media (max-width: 900px) {
-		.tool-layout {
-			grid-template-columns: 1fr;
-		}
-
+	/* Responsive — .tool-layout collapse à ≤760px (primitive) */
+	@media (max-width: 760px) {
 		.tool-result {
 			position: static;
 		}
-	}
 
-	@media (max-width: 600px) {
 		.form-row--two,
 		.form-row--three {
 			grid-template-columns: 1fr;
 		}
+	}
+
+	@media (max-width: 600px) {
 
 		.checkbox-row {
 			flex-direction: column;

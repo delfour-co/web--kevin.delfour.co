@@ -334,7 +334,7 @@
 	<div class="tool-layout">
 		<div class="tool-form">
 			<!-- Contexte -->
-			<section class="glass-card">
+			<section class="tool-panel">
 				<h2 class="section-title">Contexte</h2>
 				<div class="context-fields">
 					<div class="field">
@@ -376,7 +376,7 @@
 			</section>
 
 			<!-- Grille d'évaluation -->
-			<section class="glass-card">
+			<section class="tool-panel">
 				<h2 class="section-title" title="SaaS : logiciel en ligne, accessible par abonnement">Grille d'évaluation</h2>
 				{#each criteria as criterion}
 					<div class="criterion-group">
@@ -408,7 +408,7 @@
 									max="5"
 									step="1"
 									value={scores[criterion.id]}
-									class="slider"
+									class="slider tool-slider"
 									aria-label="Score pour {criterion.name}"
 									oninput={(e) => handleScoreInput(criterion.id, parseInt(e.currentTarget.value, 10))}
 								/>
@@ -416,17 +416,19 @@
 							</div>
 							<div class="weight-selector">
 								<span class="weight-label">Poids :</span>
-								{#each [1, 2, 3] as w}
-									<button
-										class="weight-btn"
-										class:weight-btn--active={weights[criterion.id] === w}
-										onclick={() => handleWeightChange(criterion.id, w)}
-										aria-label="Poids {weightLabels[w]} pour {criterion.name}"
-										aria-pressed={weights[criterion.id] === w}
-									>
-										{weightLabels[w]}
-									</button>
-								{/each}
+								<div class="tool-segments">
+									{#each [1, 2, 3] as w}
+										<button
+											class="tool-seg"
+											class:is-active={weights[criterion.id] === w}
+											onclick={() => handleWeightChange(criterion.id, w)}
+											aria-label="Poids {weightLabels[w]} pour {criterion.name}"
+											aria-pressed={weights[criterion.id] === w}
+										>
+											{weightLabels[w]}
+										</button>
+									{/each}
+								</div>
 							</div>
 						</div>
 					</div>
@@ -469,14 +471,14 @@
 							<span class="bar-label">{d.name}</span>
 							<span class="bar-score">{d.weighted}/{d.maxWeighted}</span>
 						</div>
-						<div class="bar-track">
-							<div
+						<div class="tool-scorebar">
+							<span
 								class="bar-fill"
 								class:bar-fill--high={d.pct >= 70}
 								class:bar-fill--mid={d.pct >= 40 && d.pct < 70}
 								class:bar-fill--low={d.pct < 40}
 								style="width: {d.pct}%"
-							></div>
+							></span>
 						</div>
 					</div>
 				{/each}
@@ -515,25 +517,15 @@
 		max-width: 100%;
 	}
 
-	.tool-layout {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: calc(var(--gap) * 2);
-		align-items: start;
-	}
+	/* Layout (.tool-layout) et surfaces (.tool-panel, .tool-result) viennent
+	   des primitives partagées d'app.css : grille responsive avec minmax(0, …)
+	   et min-width: 0 sur les colonnes — ne déborde jamais de la fenêtre. */
 
 	.tool-form {
 		display: flex;
 		flex-direction: column;
 		gap: calc(var(--gap) * 1.5);
-	}
-
-	/* Glass card */
-	.glass-card {
-		padding: var(--gap);
-		background: var(--accent-light);
-		border: 1px solid var(--accent-border);
-		border-radius: var(--radius);
+		min-width: 0;
 	}
 
 	.section-title {
@@ -615,6 +607,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 2px;
+		min-width: 0;
 	}
 
 	.criterion-name {
@@ -687,68 +680,16 @@
 	}
 
 	.slider {
-		-webkit-appearance: none;
-		appearance: none;
-		width: 100%;
-		height: 6px;
-		border-radius: 3px;
-		background: var(--border);
-		cursor: pointer;
-		transition: var(--transition);
+		flex: 1;
+		min-width: 0;
 	}
 
-	.slider:hover {
-		background: var(--tertiary);
-	}
-
-	.slider:focus-visible {
-		outline: 2px solid var(--accent);
-		outline-offset: 4px;
-	}
-
-	.slider:focus:not(:focus-visible) {
-		outline: none;
-	}
-
-	.slider::-webkit-slider-thumb {
-		-webkit-appearance: none;
-		appearance: none;
-		width: 22px;
-		height: 22px;
-		border-radius: 50%;
-		background: var(--accent);
-		border: 2px solid var(--theme);
-		box-shadow: var(--shadow-sm);
-		cursor: pointer;
-		transition: var(--transition);
-	}
-
-	.slider::-webkit-slider-thumb:hover {
-		background: var(--accent-hover);
-		transform: scale(1.15);
-	}
-
-	.slider::-moz-range-thumb {
-		width: 22px;
-		height: 22px;
-		border-radius: 50%;
-		background: var(--accent);
-		border: 2px solid var(--theme);
-		box-shadow: var(--shadow-sm);
-		cursor: pointer;
-	}
-
-	.slider::-moz-range-track {
-		height: 6px;
-		border-radius: 3px;
-		background: var(--border);
-	}
-
-	/* Weight selector */
+	/* Weight selector — segments partagés (.tool-segments / .tool-seg) */
 	.weight-selector {
 		display: flex;
 		align-items: center;
-		gap: 6px;
+		gap: 8px;
+		flex-wrap: wrap;
 	}
 
 	.weight-label {
@@ -758,42 +699,9 @@
 		margin-right: 2px;
 	}
 
-	.weight-btn {
-		font-family: var(--font-ui);
-		font-size: 0.6875rem;
-		font-weight: 600;
-		padding: 4px 10px;
-		border-radius: var(--radius);
-		border: 1px solid var(--border);
-		background: transparent;
-		color: var(--secondary);
-		cursor: pointer;
-		transition: var(--transition);
-		min-height: 28px;
-	}
-
-	.weight-btn:hover {
-		border-color: var(--accent);
-		color: var(--accent);
-	}
-
-	.weight-btn--active {
-		background: var(--accent);
-		color: #fff;
-		border-color: var(--accent);
-	}
-
-	.weight-btn--active:hover {
-		background: var(--accent-hover);
-		color: #fff;
-	}
-
-	/* Result panel */
+	/* Result panel — surface partagée (.tool-result) ; on garde seulement le
+	   comportement sticky propre à cet outil. */
 	.tool-result {
-		padding: var(--gap);
-		background: var(--accent-light);
-		border: 1px solid var(--accent-border);
-		border-radius: var(--radius);
 		position: sticky;
 		top: calc(var(--header-height) + var(--gap));
 	}
@@ -840,7 +748,7 @@
 	}
 
 	.level--avoid {
-		color: #dc2626;
+		color: var(--error);
 	}
 
 	.level--acceptable {
@@ -848,11 +756,11 @@
 	}
 
 	.level--recommended {
-		color: #16a34a;
+		color: var(--success);
 	}
 
 	.level--excellent {
-		color: #059669;
+		color: var(--success);
 	}
 
 	.result-solution {
@@ -882,36 +790,33 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: baseline;
+		gap: 8px;
 	}
 
 	.bar-label {
 		font-family: var(--font-ui);
 		font-size: 0.75rem;
 		color: var(--secondary);
+		min-width: 0;
+		word-break: break-word;
 	}
 
 	.bar-score {
 		font-family: var(--font-mono);
 		font-size: 0.75rem;
 		color: var(--primary);
+		flex-shrink: 0;
 	}
 
-	.bar-track {
-		height: 8px;
-		background: var(--border);
-		border-radius: 4px;
-		overflow: hidden;
-	}
-
+	/* La piste utilise la primitive partagée .tool-scorebar ; on ne pilote ici
+	   que la largeur (style inline) et la teinte selon le niveau. */
 	.bar-fill {
-		height: 100%;
-		border-radius: 4px;
 		transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 		min-width: 2px;
 	}
 
 	.bar-fill--high {
-		background: #16a34a;
+		background: var(--success);
 	}
 
 	.bar-fill--mid {
@@ -919,7 +824,7 @@
 	}
 
 	.bar-fill--low {
-		background: #dc2626;
+		background: var(--error);
 	}
 
 	/* Result sections */
@@ -955,14 +860,14 @@
 
 	.result-list--strengths li::before {
 		content: '+ ';
-		color: #16a34a;
+		color: var(--success);
 		font-weight: 700;
 		margin-right: 4px;
 	}
 
 	.result-list--weaknesses li::before {
 		content: '- ';
-		color: #dc2626;
+		color: var(--error);
 		font-weight: 700;
 		margin-right: 4px;
 	}
@@ -1005,7 +910,7 @@
 
 	.tool-btn--primary {
 		background: var(--accent);
-		color: #fff;
+		color: var(--theme);
 	}
 
 	.tool-btn--primary:hover {
@@ -1023,21 +928,15 @@
 		color: var(--primary);
 	}
 
-	@media (max-width: 768px) {
-		.tool-layout {
-			grid-template-columns: 1fr;
-		}
-
+	/* À 760px la primitive .tool-layout repasse en une seule colonne :
+	   on désactive alors le comportement collant du panneau de résultats. */
+	@media (max-width: 760px) {
 		.tool-result {
 			position: static;
 		}
 	}
 
 	@media (max-width: 600px) {
-		.weight-selector {
-			flex-wrap: wrap;
-		}
-
 		.tool-actions {
 			flex-direction: column;
 		}

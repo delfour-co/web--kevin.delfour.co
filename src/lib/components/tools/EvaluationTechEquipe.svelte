@@ -333,7 +333,7 @@
 
 			{#if activeTab === 'config'}
 				<!-- Members section -->
-				<section class="config-section">
+				<section class="tool-panel config-section">
 					<h3 class="section-title">Membres de l'equipe</h3>
 					<p class="section-hint">Ce que j'observe souvent : commencer par les roles reels, pas les titres officiels.</p>
 
@@ -373,7 +373,7 @@
 				</section>
 
 				<!-- Skills section -->
-				<section class="config-section">
+				<section class="tool-panel config-section">
 					<h3 class="section-title">Competences</h3>
 					<p class="section-hint">Ce que j'observe souvent : une grille trop large dilue l'analyse. 12 a 20 competences suffisent generalement.</p>
 
@@ -426,7 +426,7 @@
 					<p class="empty-state">Ajoute d'abord des membres dans l'onglet Configuration.</p>
 				{:else}
 					{#each members as member}
-						<section class="eval-member">
+						<section class="tool-panel eval-member">
 							<h3 class="eval-member-name">
 								{member.name}
 								<span class="eval-member-role">{roleLabels[member.role]}</span>
@@ -439,11 +439,12 @@
 										{@const currentScore = scores[member.id]?.[skill] ?? 0}
 										<div class="eval-row">
 											<span class="eval-skill-name">{skill}</span>
-											<div class="eval-score-buttons">
+											<div class="tool-segments eval-score-buttons">
 												{#each [0, 1, 2, 3, 4] as val}
 													<button
-														class="score-btn"
-														class:score-btn--active={currentScore === val}
+														class="tool-seg score-btn"
+														class:is-active={currentScore === val}
+														aria-pressed={currentScore === val}
 														style="--btn-color: {getScoreColor(val)}"
 														onclick={() => setScore(member.id, skill, val)}
 														aria-label="{skill} : {val} — {levelDescriptions[val]}"
@@ -600,7 +601,7 @@
 
 	.tool-layout {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 		gap: calc(var(--gap) * 2);
 		align-items: start;
 	}
@@ -609,6 +610,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--content-gap);
+		min-width: 0;
 	}
 
 	/* Tabs */
@@ -641,9 +643,9 @@
 		border-bottom-color: var(--accent);
 	}
 
-	/* Config sections */
+	/* Config sections — surface fournie par .tool-panel */
 	.config-section {
-		margin-bottom: var(--content-gap);
+		min-width: 0;
 	}
 
 	.section-title {
@@ -716,8 +718,10 @@
 
 	.member-name {
 		flex: 1;
+		min-width: 0;
+		overflow-wrap: anywhere;
 		font-weight: 600;
-		color: var(--primary);
+		color: var(--content);
 	}
 
 	.member-role {
@@ -741,8 +745,8 @@
 	}
 
 	.remove-btn:hover {
-		color: #f97316;
-		background: rgba(249, 115, 22, 0.1);
+		color: var(--warning);
+		background: var(--surface-hover);
 	}
 
 	/* Skills / domains */
@@ -789,22 +793,16 @@
 	}
 
 	.skill-tag-remove:hover {
-		color: #f97316;
+		color: var(--warning);
 	}
 
 	.config-cta {
 		margin-top: 8px;
 	}
 
-	/* Evaluation */
+	/* Evaluation — surface fournie par .tool-panel */
 	.eval-member {
-		margin-bottom: calc(var(--content-gap) * 1.5);
-		padding-bottom: var(--content-gap);
-		border-bottom: 1px solid var(--border);
-	}
-
-	.eval-member:last-of-type {
-		border-bottom: none;
+		min-width: 0;
 	}
 
 	.eval-member-name {
@@ -842,44 +840,42 @@
 		align-items: center;
 		gap: 10px;
 		padding: 4px 0;
+		flex-wrap: wrap;
+		min-width: 0;
 	}
 
 	.eval-skill-name {
 		font-family: var(--font-ui);
 		font-size: 0.8125rem;
-		color: var(--primary);
-		min-width: 120px;
-		flex-shrink: 0;
+		color: var(--content);
+		flex: 1 1 120px;
+		min-width: 0;
 	}
 
+	/* Sélecteur de niveau : segments partagés (.tool-segments / .tool-seg),
+	   couleur du niveau via --btn-color. */
 	.eval-score-buttons {
-		display: flex;
-		gap: 4px;
+		flex-shrink: 0;
 	}
 
 	.score-btn {
 		width: 32px;
 		height: 32px;
-		border-radius: 6px;
-		border: 1px solid var(--border);
-		background: var(--theme);
-		color: var(--secondary);
+		padding: 0;
 		font-family: var(--font-mono);
 		font-size: 0.8125rem;
 		font-weight: 600;
-		cursor: pointer;
-		transition: var(--transition);
-		display: flex;
+		display: inline-flex;
 		align-items: center;
 		justify-content: center;
 	}
 
 	.score-btn:hover {
 		border-color: var(--btn-color);
-		color: var(--primary);
+		color: var(--content);
 	}
 
-	.score-btn--active {
+	.score-btn.is-active {
 		background: var(--btn-color);
 		border-color: var(--btn-color);
 		color: #fff;
@@ -889,19 +885,17 @@
 		font-family: var(--font-ui);
 		font-size: 0.6875rem;
 		color: var(--secondary);
-		min-width: 70px;
+		flex: 0 1 auto;
+		min-width: 0;
 	}
 
-	/* Result panel */
+	/* Result panel — primitive .tool-result + position collante propre au split. */
 	.tool-result {
-		padding: var(--gap);
-		background: var(--accent-light);
-		border: 1px solid var(--accent-border);
-		border-radius: var(--radius);
 		position: sticky;
 		top: calc(var(--header-height) + var(--gap));
 		max-height: calc(100vh - var(--header-height) - calc(var(--gap) * 2));
 		overflow-y: auto;
+		min-width: 0;
 	}
 
 	.result-title {
@@ -926,9 +920,10 @@
 		margin-bottom: 10px;
 	}
 
-	/* Heatmap */
+	/* Heatmap — table large confinée dans un conteneur défilable. */
 	.heatmap-wrapper {
 		overflow-x: auto;
+		max-width: 100%;
 		margin-bottom: var(--content-gap);
 		-webkit-overflow-scrolling: touch;
 	}
@@ -1001,8 +996,10 @@
 
 	.coverage-skill {
 		flex: 1;
+		min-width: 0;
+		overflow-wrap: anywhere;
 		font-family: var(--font-ui);
-		color: var(--primary);
+		color: var(--content);
 	}
 
 	.coverage-avg {
@@ -1023,7 +1020,7 @@
 	}
 
 	.coverage-referents--danger {
-		color: #f97316;
+		color: var(--warning);
 		font-weight: 600;
 	}
 
@@ -1050,16 +1047,18 @@
 		gap: 8px;
 		font-size: 0.75rem;
 		padding: 4px 8px;
-		border-left: 3px solid #f97316;
-		background: rgba(249, 115, 22, 0.05);
+		border-left: 3px solid var(--warning);
+		background: var(--surface-hover);
 		border-radius: 0 4px 4px 0;
 	}
 
 	.gap-skill {
 		font-family: var(--font-ui);
 		font-weight: 600;
-		color: var(--primary);
+		color: var(--content);
 		flex: 1;
+		min-width: 0;
+		overflow-wrap: anywhere;
 	}
 
 	.gap-domain {
@@ -1181,7 +1180,7 @@
 		background: var(--accent-hover);
 	}
 
-	@media (max-width: 900px) {
+	@media (max-width: 760px) {
 		.tool-layout {
 			grid-template-columns: 1fr;
 		}
@@ -1210,12 +1209,8 @@
 			width: 100%;
 		}
 
-		.eval-row {
-			flex-wrap: wrap;
-		}
-
 		.eval-skill-name {
-			min-width: 100%;
+			flex-basis: 100%;
 		}
 	}
 </style>

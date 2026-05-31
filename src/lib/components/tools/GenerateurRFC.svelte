@@ -179,8 +179,8 @@
 	});
 </script>
 
-<div class="tool-container">
-	<div class="rfc-form">
+<div class="tool-layout tool-layout--wide">
+	<div class="tool-panel rfc-form">
 		<!-- Metadata -->
 		<div class="form-row form-row--three">
 			<div class="form-group">
@@ -289,23 +289,74 @@
 			<button class="tool-btn tool-btn--secondary" onclick={handleReset}>Réinitialiser</button>
 		</div>
 	</div>
+
+	<!-- Aperçu du document généré -->
+	<aside class="tool-result rfc-output">
+		<h2 class="output-title">Aperçu</h2>
+		<p class="output-hint">Le document Markdown se met à jour à chaque saisie.</p>
+		<pre class="output-code">{generateMarkdown()}</pre>
+	</aside>
 </div>
 
 <style>
-	.tool-container {
-		max-width: 100%;
-	}
-
 	.rfc-form {
 		display: flex;
 		flex-direction: column;
 		gap: var(--content-gap);
+		min-width: 0;
+	}
+
+	/* Panneau d'aperçu (document généré) */
+	.rfc-output {
+		position: sticky;
+		top: calc(var(--header-height) + var(--gap));
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		min-width: 0;
+	}
+
+	.output-title {
+		font-family: var(--font-ui);
+		font-size: 0.875rem;
+		font-weight: 700;
+		color: var(--primary);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		margin: 0;
+	}
+
+	.output-hint {
+		font-size: 0.8125rem;
+		color: var(--secondary);
+		margin: 0;
+		font-style: italic;
+	}
+
+	.output-code {
+		background: var(--code-block-bg);
+		border: 1px solid var(--border);
+		border-radius: 8px;
+		padding: 12px 14px;
+		margin: 0;
+		font-family: var(--font-mono);
+		font-size: 0.8125rem;
+		line-height: 1.6;
+		color: var(--content);
+		white-space: pre-wrap;
+		overflow-x: auto;
+		overflow-wrap: anywhere;
+		max-width: 100%;
+		box-sizing: border-box;
+		max-height: 60vh;
+		overflow-y: auto;
 	}
 
 	.form-group {
 		display: flex;
 		flex-direction: column;
 		gap: 4px;
+		min-width: 0;
 	}
 
 	.form-group label {
@@ -324,13 +375,13 @@
 
 	.form-row--two {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 		gap: var(--gap);
 	}
 
 	.form-row--three {
 		display: grid;
-		grid-template-columns: 2fr 1fr 1fr;
+		grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);
 		gap: var(--gap);
 	}
 
@@ -347,6 +398,7 @@
 		color: var(--primary);
 		transition: var(--transition);
 		width: 100%;
+		max-width: 100%;
 		box-sizing: border-box;
 	}
 
@@ -474,6 +526,12 @@
 	.tool-btn--secondary:hover {
 		border-color: var(--tertiary);
 		color: var(--primary);
+	}
+
+	@media (max-width: 760px) {
+		.rfc-output {
+			position: static;
+		}
 	}
 
 	@media (max-width: 600px) {

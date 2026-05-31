@@ -204,7 +204,7 @@
 	</div>
 
 	<!-- Criteria -->
-	<fieldset class="section-card">
+	<fieldset class="tool-panel section-card">
 		<legend>Critères</legend>
 		<p class="form-hint">Definis les criteres qui comptent pour ta decision. Le poids determine l'importance de chaque critere : 1 = secondaire, 3 = important, 5 = decisif.</p>
 
@@ -244,7 +244,7 @@
 
 		<!-- Desktop: table view -->
 		{#if !isMobile}
-			<div class="matrix-table-wrapper">
+			<div class="table-wrap">
 				<table class="matrix-table">
 					<thead>
 						<tr>
@@ -280,7 +280,7 @@
 											max="10"
 											step="1"
 											bind:value={opt.scores[c.id]}
-											class="score-slider"
+											class="tool-slider score-slider"
 											aria-label="{opt.name} - {c.name}"
 										/>
 										<span class="score-value">{opt.scores[c.id]}</span>
@@ -299,7 +299,7 @@
 			<div class="mobile-cards">
 				{#each options as opt, oi}
 					{@const r = results.find((r) => r.option.id === opt.id)}
-					<div class="mobile-card glass-card">
+					<div class="tool-panel mobile-card">
 						<div class="mobile-card-header">
 							<input type="text" bind:value={opt.name} placeholder="Option" class="mobile-card-name" />
 							<span class="mobile-card-score" class:total-pct--best={r === results[0]}>{r?.pct ?? 0}%</span>
@@ -323,7 +323,7 @@
 											max="10"
 											step="1"
 											bind:value={opt.scores[c.id]}
-											class="score-slider score-slider--mobile"
+											class="tool-slider score-slider score-slider--mobile"
 											aria-label="{opt.name} - {c.name}"
 										/>
 										<span class="score-value">{opt.scores[c.id]}</span>
@@ -339,7 +339,7 @@
 
 	<!-- Result panel with bar chart -->
 	{#if options.length > 0}
-		<div class="result-panel" aria-live="polite">
+		<div class="tool-result result-panel" aria-live="polite">
 			<h3 class="result-title">Classement</h3>
 
 			{#if closeResults}
@@ -353,12 +353,11 @@
 					<div class="result-bar-row">
 						<span class="result-rank">{i + 1}.</span>
 						<span class="result-name">{r.option.name || '—'}</span>
-						<div class="result-bar-track">
-							<div
-								class="result-bar-fill"
-								class:result-bar-fill--best={i === 0}
+						<div class="tool-scorebar result-bar-track">
+							<span
+								class:result-bar-fill--other={i !== 0}
 								style="width: {r.pct}%"
-							></div>
+							></span>
 						</div>
 						<span class="result-pct" class:result-pct--best={i === 0}>{r.pct}%</span>
 					</div>
@@ -378,6 +377,7 @@
 <style>
 	.tool-container {
 		max-width: 100%;
+		min-width: 0;
 	}
 
 	.form-group {
@@ -419,11 +419,8 @@
 		border-color: var(--accent);
 	}
 
-	/* Section card */
+	/* Section card (panneau partagé .tool-panel) */
 	.section-card {
-		border: 1px solid var(--border);
-		border-radius: var(--radius);
-		padding: var(--gap);
 		margin: 0 0 var(--gap) 0;
 	}
 
@@ -445,12 +442,14 @@
 
 	.criterion-name {
 		flex: 1;
+		min-width: 0;
 	}
 
 	.weight-group {
 		display: flex;
 		align-items: center;
 		gap: 4px;
+		flex-shrink: 0;
 	}
 
 	.weight-label {
@@ -486,8 +485,8 @@
 	}
 
 	.remove-btn:hover {
-		color: #c0392b;
-		border-color: #c0392b;
+		color: var(--accent);
+		border-color: var(--accent-border);
 	}
 
 	.remove-btn--small {
@@ -523,12 +522,15 @@
 	/* Matrix */
 	.matrix-section {
 		margin-bottom: var(--gap);
+		min-width: 0;
 	}
 
 	.matrix-header {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		gap: 12px;
+		flex-wrap: wrap;
 		margin-bottom: 12px;
 	}
 
@@ -537,8 +539,13 @@
 		margin: 0;
 	}
 
-	.matrix-table-wrapper {
+	/* Conteneur de défilement horizontal — la table peut déborder sans
+	   élargir la fenêtre terminal. */
+	.table-wrap {
 		overflow-x: auto;
+		border: 1px solid var(--border);
+		border-radius: 10px;
+		background: var(--surface);
 	}
 
 	.matrix-table {
@@ -553,6 +560,15 @@
 		border-bottom: 1px solid var(--border);
 		text-align: center;
 		vertical-align: middle;
+	}
+
+	.matrix-table tbody tr:last-child td {
+		border-bottom: none;
+	}
+
+	.matrix-table th {
+		background: var(--surface-hover);
+		color: var(--primary);
 	}
 
 	.th-option {
@@ -599,33 +615,9 @@
 		min-width: 100px;
 	}
 
-	.score-slider {
-		-webkit-appearance: none;
-		appearance: none;
+	/* Largeur fixe en cellule de table (gagne sur .tool-slider à 100 %). */
+	input[type='range'].score-slider {
 		width: 80px;
-		height: 4px;
-		border-radius: 2px;
-		background: var(--border);
-		cursor: pointer;
-	}
-
-	.score-slider::-webkit-slider-thumb {
-		-webkit-appearance: none;
-		width: 16px;
-		height: 16px;
-		border-radius: 50%;
-		background: var(--accent);
-		border: 2px solid var(--theme);
-		cursor: pointer;
-	}
-
-	.score-slider::-moz-range-thumb {
-		width: 16px;
-		height: 16px;
-		border-radius: 50%;
-		background: var(--accent);
-		border: 2px solid var(--theme);
-		cursor: pointer;
 	}
 
 	.score-value {
@@ -652,10 +644,7 @@
 	}
 
 	.mobile-card {
-		border: 1px solid rgba(255, 255, 255, 0.08);
-		border-radius: var(--radius);
 		padding: 16px;
-		background: rgba(255, 255, 255, 0.05);
 	}
 
 	.mobile-card-header {
@@ -669,6 +658,7 @@
 
 	.mobile-card-name {
 		flex: 1;
+		min-width: 0;
 		font-size: 0.9375rem;
 		font-weight: 600;
 	}
@@ -678,6 +668,11 @@
 		font-size: 1.125rem;
 		font-weight: 700;
 		flex-shrink: 0;
+		color: var(--secondary);
+	}
+
+	.mobile-card-score.total-pct--best {
+		color: var(--accent);
 	}
 
 	.mobile-card-criteria {
@@ -716,9 +711,10 @@
 		gap: 8px;
 	}
 
-	.score-slider--mobile {
+	input[type='range'].score-slider--mobile {
 		flex: 1;
 		width: 100%;
+		min-width: 0;
 	}
 
 	/* Close results warning */
@@ -726,20 +722,16 @@
 		font-family: var(--font-ui);
 		font-size: 0.8125rem;
 		line-height: 1.5;
-		color: #f59e0b;
-		background: rgba(245, 158, 11, 0.08);
-		border: 1px solid rgba(245, 158, 11, 0.25);
+		color: var(--accent);
+		background: var(--accent-light);
+		border: 1px solid var(--accent-border);
 		border-radius: var(--radius);
 		padding: 10px 14px;
 		margin-bottom: 14px;
 	}
 
-	/* Result panel */
+	/* Result panel (panneau partagé .tool-result) */
 	.result-panel {
-		padding: var(--gap);
-		background: var(--accent-light);
-		border: 1px solid var(--accent-border);
-		border-radius: var(--radius);
 		margin-bottom: var(--gap);
 	}
 
@@ -748,6 +740,7 @@
 		font-size: 1rem;
 		font-weight: 600;
 		margin: 0 0 12px 0;
+		color: var(--primary);
 	}
 
 	.result-chart {
@@ -778,22 +771,20 @@
 
 	.result-bar-track {
 		flex: 1;
+		min-width: 0;
 		height: 22px;
-		background: var(--border);
 		border-radius: 4px;
-		overflow: hidden;
 	}
 
-	.result-bar-fill {
-		height: 100%;
-		background: var(--accent2);
-		border-radius: 4px;
+	.result-bar-track > span {
 		transition: width 0.3s ease;
 		min-width: 2px;
+		border-radius: 4px;
 	}
 
-	.result-bar-fill--best {
-		background: var(--accent);
+	/* Options autres que la meilleure : remplissage secondaire (accent2). */
+	.result-bar-track > span.result-bar-fill--other {
+		background: var(--accent2);
 	}
 
 	.result-pct {
@@ -830,7 +821,7 @@
 
 	.tool-btn--primary {
 		background: var(--accent);
-		color: #fff;
+		color: var(--theme);
 	}
 
 	.tool-btn--primary:hover {
@@ -848,12 +839,12 @@
 		color: var(--primary);
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 760px) {
 		.matrix-table {
 			font-size: 0.8125rem;
 		}
 
-		.score-slider {
+		input[type='range'].score-slider {
 			width: 60px;
 		}
 

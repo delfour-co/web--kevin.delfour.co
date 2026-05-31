@@ -233,17 +233,6 @@
 		box-shadow: 0 0 20px rgb(var(--accent-rgb) / 0.4), inset 0 0 20px rgb(var(--accent-rgb) / 0.1);
 	}
 
-	.btn-grid--secondary {
-		border-color: var(--border);
-		color: var(--secondary);
-	}
-
-	.btn-grid--secondary:hover {
-		border-color: var(--accent);
-		background: rgb(var(--accent-rgb) / 0.1);
-		color: var(--accent);
-	}
-
 	/* Suggestions */
 	.error-suggestions {
 		border-top: 1px solid rgb(var(--accent-rgb) / 0.15);

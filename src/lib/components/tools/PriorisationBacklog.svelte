@@ -224,14 +224,14 @@
 <div class="tool-layout" class:tool-layout--mobile={isMobile}>
 	<!-- LEFT: Form -->
 	<div class="tool-form">
-		<fieldset class="section-card">
+		<fieldset class="tool-panel section-card">
 			<legend>Items du backlog</legend>
 			<p class="form-hint">
 				Chaque item est note selon 4 axes. Le score est calcule ainsi : (Impact x Confiance x Urgence) / Effort. Plus le score est eleve, plus l'item merite d'etre traite en premier.
 			</p>
 
 			{#each items as item, i}
-				<div class="item-card glass-card">
+				<div class="item-card">
 					<div class="item-header">
 						<span class="item-number">{i + 1}</span>
 						<input
@@ -268,7 +268,7 @@
 									max="5"
 									step="1"
 									bind:value={item.impact}
-									class="score-slider"
+									class="score-slider tool-slider"
 								/>
 								<span class="score-value">{item.impact}/5</span>
 							</div>
@@ -284,7 +284,7 @@
 									max="5"
 									step="1"
 									bind:value={item.confiance}
-									class="score-slider"
+									class="score-slider tool-slider"
 								/>
 								<span class="score-value">{item.confiance}/5</span>
 							</div>
@@ -300,7 +300,7 @@
 									max="5"
 									step="1"
 									bind:value={item.urgence}
-									class="score-slider"
+									class="score-slider tool-slider"
 								/>
 								<span class="score-value">{item.urgence}/5</span>
 							</div>
@@ -316,7 +316,7 @@
 									max="5"
 									step="1"
 									bind:value={item.effort}
-									class="score-slider"
+									class="score-slider tool-slider"
 								/>
 								<span class="score-value">{item.effort}/5</span>
 							</div>
@@ -340,7 +340,7 @@
 	<div class="tool-results" class:tool-results--mobile={isMobile}>
 		<div class="results-sticky">
 			<!-- Ranked list -->
-			<div class="result-panel" aria-live="polite">
+			<div class="tool-result result-panel" aria-live="polite">
 				<h3 class="result-title">Classement</h3>
 				<div class="result-chart">
 					{#each scoredItems as r, i}
@@ -350,11 +350,11 @@
 								<span class="result-name">{r.item.nom || '\u2014'}</span>
 								<span class="result-type-badge" style="--type-color: {typeColors[r.item.type]}">{typeLabels[r.item.type]}</span>
 							</div>
-							<div class="result-bar-track">
-								<div
+							<div class="tool-scorebar result-bar-track">
+								<span
 									class="result-bar-fill"
 									style="width: {maxScore > 0 ? (r.score / maxScore) * 100 : 0}%; background: {getBarColor(r.score)}"
-								></div>
+								></span>
 							</div>
 							<span class="result-score" style="color: {getBarColor(r.score)}">{r.score}</span>
 							{#if r.isQuickWin}
@@ -367,7 +367,7 @@
 
 			<!-- Quick wins -->
 			{#if quickWins.length > 0}
-				<div class="result-panel quick-wins-panel">
+				<div class="tool-result result-panel quick-wins-panel">
 					<h3 class="result-title">Gains rapides</h3>
 					<p class="panel-hint">Items a fort impact avec peu d'effort — a traiter en priorite</p>
 					<div class="quick-wins-list">
@@ -383,7 +383,7 @@
 
 			<!-- Distribution by type -->
 			{#if typeDistribution.length > 0}
-				<div class="result-panel">
+				<div class="tool-result result-panel">
 					<h3 class="result-title">Distribution par type</h3>
 					<div class="type-distribution">
 						{#each typeDistribution as d}
@@ -392,11 +392,11 @@
 									<span class="type-dot" style="background: {typeColors[d.type]}"></span>
 									<span>{typeLabels[d.type]}</span>
 								</div>
-								<div class="type-dist-bar-track">
-									<div
+								<div class="tool-scorebar type-dist-bar-track">
+									<span
 										class="type-dist-bar-fill"
 										style="width: {d.pct}%; background: {typeColors[d.type]}"
-									></div>
+									></span>
 								</div>
 								<span class="type-dist-count">{d.count} ({d.pct}%)</span>
 							</div>
@@ -407,7 +407,7 @@
 
 			<!-- Top 5 breakdown -->
 			{#if top5.length > 0}
-				<div class="result-panel">
+				<div class="tool-result result-panel">
 					<h3 class="result-title">Top {Math.min(5, top5.length)} — detail</h3>
 					<div class="top5-list">
 						{#each top5 as r, i}
@@ -436,8 +436,8 @@
 	/* Layout */
 	.tool-layout {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: calc(var(--gap) * 2);
+		grid-template-columns: minmax(0, 1fr) minmax(0, 360px);
+		gap: 18px;
 		align-items: start;
 	}
 
@@ -459,17 +459,15 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--gap);
+		min-width: 0;
 	}
 
 	.tool-results--mobile .results-sticky {
 		position: static;
 	}
 
-	/* Section card */
+	/* Section card (fieldset sur .tool-panel) */
 	.section-card {
-		border: 1px solid var(--border);
-		border-radius: var(--radius);
-		padding: var(--gap);
 		margin: 0 0 var(--gap) 0;
 	}
 
@@ -494,7 +492,8 @@
 		border-radius: var(--radius);
 		padding: 16px;
 		margin-bottom: 12px;
-		background: rgba(255, 255, 255, 0.02);
+		background: var(--surface-hover);
+		min-width: 0;
 	}
 
 	.item-header {
@@ -638,8 +637,8 @@
 	}
 
 	.remove-btn:hover {
-		color: #c0392b;
-		border-color: #c0392b;
+		color: var(--error);
+		border-color: var(--error);
 	}
 
 	/* Add button */
@@ -661,12 +660,9 @@
 		background: var(--accent-light);
 	}
 
-	/* Result panels */
+	/* Result panels — surface/bordure/padding fournis par .tool-result */
 	.result-panel {
-		padding: var(--gap);
-		background: var(--accent-light);
-		border: 1px solid var(--accent-border);
-		border-radius: var(--radius);
+		min-width: 0;
 	}
 
 	.result-title {
@@ -728,18 +724,14 @@
 		opacity: 0.8;
 	}
 
+	/* .tool-scorebar fournit fond/overflow/forme — on ajuste juste la taille. */
 	.result-bar-track {
 		flex: 1;
-		height: 18px;
-		background: var(--border);
-		border-radius: 4px;
-		overflow: hidden;
+		height: 16px;
 		min-width: 40px;
 	}
 
 	.result-bar-fill {
-		height: 100%;
-		border-radius: 4px;
 		transition: width 0.3s ease;
 		min-width: 2px;
 	}
@@ -757,8 +749,8 @@
 		font-family: var(--font-ui);
 		font-size: 0.5625rem;
 		font-weight: 700;
-		color: #10b981;
-		border: 1px solid rgba(16, 185, 129, 0.4);
+		color: var(--success);
+		border: 1px solid var(--success);
 		border-radius: 3px;
 		padding: 1px 4px;
 		flex-shrink: 0;
@@ -766,8 +758,7 @@
 
 	/* Quick wins panel */
 	.quick-wins-panel {
-		border-color: rgba(16, 185, 129, 0.3);
-		background: rgba(16, 185, 129, 0.05);
+		border-color: var(--success);
 	}
 
 	.quick-wins-list {
@@ -824,17 +815,14 @@
 		flex-shrink: 0;
 	}
 
+	/* .tool-scorebar fournit fond/overflow/forme — on ajuste juste la taille. */
 	.type-dist-bar-track {
 		flex: 1;
-		height: 14px;
-		background: var(--border);
-		border-radius: 3px;
-		overflow: hidden;
+		height: 12px;
+		min-width: 30px;
 	}
 
 	.type-dist-bar-fill {
-		height: 100%;
-		border-radius: 3px;
 		transition: width 0.3s ease;
 		min-width: 2px;
 	}

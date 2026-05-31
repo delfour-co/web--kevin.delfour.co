@@ -229,7 +229,7 @@
 						max="10"
 						step="1"
 						value={scores[axis.id]}
-						class="slider"
+						class="slider tool-slider"
 						aria-label="{axis.name} : {scores[axis.id]} sur 10 — {level.label}"
 						oninput={(e) => {
 							scores[axis.id] = parseInt(e.currentTarget.value, 10);
@@ -324,21 +324,15 @@
 		max-width: 100%;
 	}
 
-	.tool-layout {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: calc(var(--gap) * 2);
-		align-items: start;
-	}
+	/* Layout (.tool-layout) et surfaces (.tool-result) viennent des primitives
+	   partagées d'app.css : grille responsive avec minmax(0, …) + min-width: 0
+	   sur les colonnes — ne déborde jamais de la fenêtre. */
 
 	.tool-sliders {
 		display: flex;
 		flex-direction: column;
 		gap: var(--content-gap);
-	}
-
-	.slider-group {
-		/* individual */
+		min-width: 0;
 	}
 
 	.slider-label {
@@ -439,12 +433,9 @@
 		background: var(--border);
 	}
 
-	/* Result */
+	/* Result panel — surface partagée (.tool-result) ; on garde seulement le
+	   comportement sticky propre à cet outil. */
 	.tool-result {
-		padding: var(--gap);
-		background: var(--accent-light);
-		border: 1px solid var(--accent-border);
-		border-radius: var(--radius);
 		position: sticky;
 		top: calc(var(--header-height) + var(--gap));
 	}
@@ -460,11 +451,13 @@
 	/* Radar */
 	.radar-container {
 		margin-bottom: var(--content-gap);
+		min-width: 0;
 	}
 
 	.radar-svg {
 		width: 100%;
 		max-width: 300px;
+		height: auto;
 		margin: 0 auto;
 		display: block;
 	}
@@ -624,11 +617,7 @@
 		color: var(--primary);
 	}
 
-	@media (max-width: 768px) {
-		.tool-layout {
-			grid-template-columns: 1fr;
-		}
-
+	@media (max-width: 760px) {
 		.tool-result {
 			position: static;
 		}

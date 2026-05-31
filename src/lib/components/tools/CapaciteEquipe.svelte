@@ -240,7 +240,7 @@
 		<!-- Left: inputs -->
 		<div class="tool-inputs">
 			<!-- Team parameters -->
-			<fieldset class="glass-card">
+			<fieldset class="tool-panel">
 				<legend>Paramètres de l'équipe</legend>
 
 				<div class="input-group">
@@ -302,7 +302,7 @@
 			</fieldset>
 
 			<!-- Deductions -->
-			<fieldset class="glass-card">
+			<fieldset class="tool-panel">
 				<legend>Déductions (% du temps)</legend>
 				<p class="form-hint">Ajuste chaque curseur selon la réalité observée dans ton équipe.</p>
 
@@ -321,7 +321,7 @@
 							max="100"
 							step="1"
 							bind:value={deduction.value}
-							class="slider"
+							class="tool-slider slider"
 							style="--slider-color: {segmentColors[i]}"
 							aria-label="{deduction.label} ({deduction.value}%)"
 						/>
@@ -428,7 +428,7 @@
 
 	.tool-layout {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 		gap: calc(var(--gap) * 2);
 		align-items: start;
 	}
@@ -437,18 +437,16 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--gap);
+		min-width: 0;
 	}
 
-	/* Glass card */
-	.glass-card {
-		background: rgba(255, 255, 255, 0.03);
-		border: 1px solid rgba(255, 255, 255, 0.08);
-		border-radius: var(--radius);
-		padding: var(--gap);
+	/* Panneau (fieldset) — surface fournie par .tool-panel */
+	.tool-panel {
 		margin: 0;
+		min-width: 0;
 	}
 
-	.glass-card legend {
+	.tool-panel legend {
 		font-family: var(--font-ui);
 		font-size: 0.875rem;
 		font-weight: 600;
@@ -459,6 +457,7 @@
 	/* Input groups */
 	.input-group {
 		margin-bottom: 16px;
+		min-width: 0;
 	}
 
 	.input-group:last-of-type {
@@ -478,17 +477,20 @@
 		display: flex;
 		align-items: center;
 		gap: 8px;
+		min-width: 0;
 	}
 
 	.input-row input[type='number'] {
 		font-family: var(--font-body);
 		font-size: 0.9375rem;
 		padding: 8px 12px;
-		border: 1px solid rgba(255, 255, 255, 0.08);
+		border: 1px solid var(--border);
 		border-radius: var(--radius);
-		background: rgba(255, 255, 255, 0.05);
+		background: var(--accent-light);
 		color: var(--primary);
 		width: 100px;
+		max-width: 100%;
+		box-sizing: border-box;
 		transition: var(--transition);
 	}
 
@@ -514,6 +516,7 @@
 
 	.slider-group {
 		margin-bottom: 16px;
+		min-width: 0;
 	}
 
 	.slider-group:last-of-type {
@@ -524,6 +527,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-start;
+		gap: 12px;
 		margin-bottom: 6px;
 	}
 
@@ -531,6 +535,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1px;
+		min-width: 0;
 	}
 
 	.slider-name {
@@ -554,61 +559,12 @@
 		margin-left: 12px;
 	}
 
-	.slider {
-		-webkit-appearance: none;
-		appearance: none;
-		width: 100%;
-		height: 6px;
-		border-radius: 3px;
-		background: rgba(255, 255, 255, 0.08);
+	/* Couleur du curseur (track/thumb) basée sur .tool-slider d'app.css. */
+	input[type='range'].slider {
+		max-width: 100%;
+		box-sizing: border-box;
+		accent-color: var(--slider-color, var(--accent));
 		cursor: pointer;
-		transition: var(--transition);
-	}
-
-	.slider:hover {
-		background: rgba(255, 255, 255, 0.12);
-	}
-
-	.slider:focus-visible {
-		outline: 2px solid var(--accent);
-		outline-offset: 4px;
-	}
-
-	.slider:focus:not(:focus-visible) {
-		outline: none;
-	}
-
-	.slider::-webkit-slider-thumb {
-		-webkit-appearance: none;
-		appearance: none;
-		width: 20px;
-		height: 20px;
-		border-radius: 50%;
-		background: var(--slider-color, var(--accent));
-		border: 2px solid rgba(0, 0, 0, 0.3);
-		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-		cursor: pointer;
-		transition: var(--transition);
-	}
-
-	.slider::-webkit-slider-thumb:hover {
-		transform: scale(1.15);
-	}
-
-	.slider::-moz-range-thumb {
-		width: 20px;
-		height: 20px;
-		border-radius: 50%;
-		background: var(--slider-color, var(--accent));
-		border: 2px solid rgba(0, 0, 0, 0.3);
-		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-		cursor: pointer;
-	}
-
-	.slider::-moz-range-track {
-		height: 6px;
-		border-radius: 3px;
-		background: rgba(255, 255, 255, 0.08);
 	}
 
 	/* Deduction total */
@@ -617,7 +573,7 @@
 		font-size: 0.875rem;
 		color: var(--secondary);
 		padding-top: 8px;
-		border-top: 1px solid rgba(255, 255, 255, 0.08);
+		border-top: 1px solid var(--border);
 	}
 
 	.deduction-total strong {
@@ -628,12 +584,8 @@
 		color: var(--accent3);
 	}
 
-	/* Result panel */
+	/* Result panel — surface/bordure fournies par .tool-result */
 	.tool-result {
-		padding: var(--gap);
-		background: rgba(255, 255, 255, 0.03);
-		border: 1px solid rgba(255, 255, 255, 0.08);
-		border-radius: var(--radius);
 		position: sticky;
 		top: calc(var(--header-height) + var(--gap));
 	}
@@ -649,24 +601,25 @@
 	/* Metrics grid */
 	.metrics-grid {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 		gap: 12px;
 		margin-bottom: var(--content-gap);
 	}
 
 	.metric-card {
-		background: rgba(255, 255, 255, 0.03);
-		border: 1px solid rgba(255, 255, 255, 0.06);
+		background: var(--surface);
+		border: 1px solid var(--border);
 		border-radius: var(--radius);
 		padding: 12px;
 		display: flex;
 		flex-direction: column;
 		gap: 4px;
+		min-width: 0;
 	}
 
 	.metric-card--accent {
-		border-color: rgb(var(--accent-rgb) / 0.3);
-		background: rgb(var(--accent-rgb) / 0.05);
+		border-color: var(--accent-border);
+		background: var(--accent-light);
 	}
 
 	.metric-label {
@@ -703,6 +656,7 @@
 	/* Stacked bar */
 	.stacked-bar-section {
 		margin-bottom: var(--content-gap);
+		min-width: 0;
 	}
 
 	.stacked-bar-labels {
@@ -716,12 +670,12 @@
 
 	.stacked-bar-track {
 		height: 32px;
-		background: rgba(255, 255, 255, 0.03);
+		background: var(--surface);
 		border-radius: 6px;
 		overflow: hidden;
 		display: flex;
 		flex-direction: row-reverse;
-		border: 1px solid rgba(255, 255, 255, 0.06);
+		border: 1px solid var(--border);
 	}
 
 	.stacked-bar-segment {
@@ -733,7 +687,7 @@
 
 	.stacked-bar-real {
 		height: 100%;
-		background: rgba(255, 255, 255, 0.15);
+		background: var(--surface-hover);
 		transition: width 0.3s ease;
 		flex-shrink: 0;
 	}
@@ -749,6 +703,7 @@
 		display: flex;
 		align-items: center;
 		gap: 4px;
+		min-width: 0;
 	}
 
 	.legend-dot {
@@ -759,8 +714,8 @@
 	}
 
 	.legend-dot--real {
-		background: rgba(255, 255, 255, 0.15);
-		border: 1px solid rgba(255, 255, 255, 0.3);
+		background: var(--surface-hover);
+		border: 1px solid var(--border);
 	}
 
 	.legend-text {
@@ -819,15 +774,15 @@
 	.tool-btn--secondary {
 		background: transparent;
 		color: var(--secondary);
-		border: 1px solid rgba(255, 255, 255, 0.08);
+		border: 1px solid var(--border);
 	}
 
 	.tool-btn--secondary:hover {
-		border-color: rgba(255, 255, 255, 0.2);
+		border-color: var(--accent-border);
 		color: var(--primary);
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 760px) {
 		.tool-layout {
 			grid-template-columns: 1fr;
 		}
@@ -837,7 +792,7 @@
 		}
 
 		.metrics-grid {
-			grid-template-columns: 1fr 1fr;
+			grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 		}
 	}
 

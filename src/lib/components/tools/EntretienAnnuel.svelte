@@ -390,7 +390,7 @@
 	<div class="tool-layout">
 		<div class="tool-form">
 			<!-- Profil -->
-			<fieldset class="section-card">
+			<fieldset class="section-card tool-panel">
 				<legend>Profil</legend>
 
 				<div class="form-row form-row--two">
@@ -421,7 +421,7 @@
 			</fieldset>
 
 			<!-- Bilan technique -->
-			<fieldset class="section-card">
+			<fieldset class="section-card tool-panel">
 				<legend>Bilan technique</legend>
 				<p class="section-hint">Ce que j'observe souvent : un bilan technique utile ne cherche pas la precision absolue. Il pose un repere de depart pour la discussion.</p>
 
@@ -438,7 +438,7 @@
 							max="5"
 							step="1"
 							value={scores[axis.id]}
-							class="slider"
+							class="slider tool-slider"
 							aria-label="{axis.name} : {scores[axis.id]} sur 5"
 							oninput={(e) => {
 								scores[axis.id] = parseInt(e.currentTarget.value, 10);
@@ -456,7 +456,7 @@
 			</fieldset>
 
 			<!-- Points marquants -->
-			<fieldset class="section-card">
+			<fieldset class="section-card tool-panel">
 				<legend>Points marquants</legend>
 
 				<div class="form-group">
@@ -478,7 +478,7 @@
 			</fieldset>
 
 			<!-- Objectifs precedents -->
-			<fieldset class="section-card">
+			<fieldset class="section-card tool-panel">
 				<legend>Objectifs de la periode precedente</legend>
 
 				{#each objectifsPrecedents as obj, i}
@@ -501,7 +501,7 @@
 			</fieldset>
 
 			<!-- Nouveaux objectifs -->
-			<fieldset class="section-card">
+			<fieldset class="section-card tool-panel">
 				<legend>Nouveaux objectifs</legend>
 				<p class="section-hint">Ce que j'observe souvent : 3 a 5 objectifs clairs valent mieux que 10 vagues. Chaque objectif devrait pouvoir etre evalue en fin de periode.</p>
 
@@ -525,7 +525,7 @@
 			</fieldset>
 
 			<!-- Plan de developpement -->
-			<fieldset class="section-card">
+			<fieldset class="section-card tool-panel">
 				<legend>Plan de developpement</legend>
 
 				<div class="form-group">
@@ -678,11 +678,12 @@
 <style>
 	.tool-container {
 		max-width: 100%;
+		min-width: 0;
 	}
 
 	.tool-layout {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 		gap: calc(var(--gap) * 2);
 		align-items: start;
 	}
@@ -691,17 +692,16 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--content-gap);
+		min-width: 0;
 	}
 
-	/* Section cards */
+	/* Section cards — surface fournie par .tool-panel */
 	.section-card {
-		border: 1px solid var(--border);
-		border-radius: var(--radius);
-		padding: var(--gap);
 		margin: 0;
 		display: flex;
 		flex-direction: column;
 		gap: var(--content-gap);
+		min-width: 0;
 	}
 
 	.section-card legend {
@@ -725,6 +725,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 4px;
+		min-width: 0;
 	}
 
 	.form-group label,
@@ -750,7 +751,7 @@
 
 	.form-row--two {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 		gap: var(--gap);
 	}
 
@@ -766,6 +767,8 @@
 		color: var(--primary);
 		transition: var(--transition);
 		width: 100%;
+		max-width: 100%;
+		min-width: 0;
 		box-sizing: border-box;
 	}
 
@@ -888,16 +891,19 @@
 		align-items: center;
 		gap: 8px;
 		margin-bottom: 8px;
+		min-width: 0;
 	}
 
 	.list-item-content {
 		display: flex;
 		gap: 8px;
 		flex: 1;
+		min-width: 0;
 	}
 
 	.list-item-input {
 		flex: 1;
+		min-width: 0;
 	}
 
 	.list-item-select {
@@ -923,8 +929,8 @@
 	}
 
 	.item-remove:hover {
-		color: #c0392b;
-		border-color: #c0392b;
+		color: var(--accent3);
+		border-color: var(--accent3-border);
 	}
 
 	.add-btn {
@@ -950,6 +956,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 8px;
+		min-width: 0;
 	}
 
 	.tags-list {
@@ -984,16 +991,18 @@
 	}
 
 	.tag-remove:hover {
-		color: #c0392b;
+		color: var(--accent3);
 	}
 
 	.tags-add {
 		display: flex;
 		gap: 8px;
+		min-width: 0;
 	}
 
 	.tags-add input {
 		flex: 1;
+		min-width: 0;
 	}
 
 	.tags-add-btn {
@@ -1012,7 +1021,7 @@
 
 	.tags-add-btn:hover:not(:disabled) {
 		background: var(--accent);
-		color: #fff;
+		color: var(--theme);
 	}
 
 	.tags-add-btn:disabled {
@@ -1026,13 +1035,15 @@
 		align-items: center;
 		gap: 8px;
 		margin-bottom: 8px;
+		min-width: 0;
 	}
 
 	.action-fields {
 		display: grid;
-		grid-template-columns: 1fr 150px 120px;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 150px) minmax(0, 120px);
 		gap: 8px;
 		flex: 1;
+		min-width: 0;
 	}
 
 	.action-input,
@@ -1047,15 +1058,13 @@
 		color: var(--primary);
 		transition: var(--transition);
 		width: 100%;
+		max-width: 100%;
+		min-width: 0;
 		box-sizing: border-box;
 	}
 
-	/* Result panel */
+	/* Result panel — surface + bordure fournies par .tool-result (app.css) */
 	.tool-result {
-		padding: var(--gap);
-		background: var(--accent-light);
-		border: 1px solid var(--accent-border);
-		border-radius: var(--radius);
 		position: sticky;
 		top: calc(var(--header-height) + var(--gap));
 	}
@@ -1097,7 +1106,7 @@
 		border: 1px solid;
 		border-radius: var(--radius);
 		margin-bottom: var(--content-gap);
-		background: rgba(0, 0, 0, 0.2);
+		background: var(--theme);
 		transition: border-color 0.3s ease;
 	}
 
@@ -1255,7 +1264,7 @@
 
 	.tool-btn--primary {
 		background: var(--accent);
-		color: #fff;
+		color: var(--theme);
 	}
 
 	.tool-btn--primary:hover {
@@ -1273,7 +1282,7 @@
 		color: var(--primary);
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 760px) {
 		.tool-layout {
 			grid-template-columns: 1fr;
 		}

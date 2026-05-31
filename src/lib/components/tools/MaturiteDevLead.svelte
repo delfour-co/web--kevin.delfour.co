@@ -292,7 +292,7 @@
 
 <div class="tool-container">
 	<div class="tool-layout">
-		<div class="tool-form">
+		<div class="tool-panel tool-form">
 			<!-- Profil section -->
 			<div class="section-title">Profil</div>
 
@@ -341,7 +341,7 @@
 						max="5"
 						step="1"
 						value={scores[axis.id]}
-						class="slider"
+						class="slider tool-slider"
 						aria-label="{axis.name} : {scores[axis.id]} sur 5"
 						oninput={(e) => {
 							scores[axis.id] = parseInt(e.currentTarget.value, 10);
@@ -438,9 +438,10 @@
 		max-width: 100%;
 	}
 
+	/* Layout content + results : columns that never overflow the terminal window. */
 	.tool-layout {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 		gap: calc(var(--gap) * 2);
 		align-items: start;
 	}
@@ -449,6 +450,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--content-gap);
+		min-width: 0;
 	}
 
 	.section-title {
@@ -495,6 +497,9 @@
 		padding: 8px 12px;
 		transition: var(--transition);
 		min-height: 40px;
+		width: 100%;
+		max-width: 100%;
+		box-sizing: border-box;
 	}
 
 	.field-input:focus,
@@ -527,6 +532,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: baseline;
+		gap: 12px;
 		margin-bottom: 2px;
 	}
 
@@ -535,6 +541,8 @@
 		font-size: 0.875rem;
 		font-weight: 600;
 		color: var(--primary);
+		min-width: 0;
+		overflow-wrap: anywhere;
 	}
 
 	.slider-value {
@@ -542,6 +550,7 @@
 		font-size: 0.875rem;
 		font-weight: 700;
 		color: var(--accent);
+		white-space: nowrap;
 	}
 
 	.slider-description {
@@ -616,12 +625,9 @@
 		background: var(--border);
 	}
 
-	/* Result panel */
+	/* Result panel (s'appuie sur la primitive .tool-result : surface + bord accentué). */
 	.tool-result {
-		padding: var(--gap);
-		background: var(--accent-light);
-		border: 1px solid var(--accent-border);
-		border-radius: var(--radius);
+		min-width: 0;
 		position: sticky;
 		top: calc(var(--header-height) + var(--gap));
 	}
@@ -641,7 +647,7 @@
 		border: 1px solid;
 		border-radius: var(--radius);
 		margin-bottom: var(--content-gap);
-		background: rgba(0, 0, 0, 0.2);
+		background: var(--theme);
 		transition: border-color 0.3s ease;
 	}
 
@@ -740,6 +746,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: baseline;
+		gap: 12px;
 		padding: 2px 0;
 	}
 
@@ -747,12 +754,15 @@
 		font-family: var(--font-ui);
 		font-size: 0.875rem;
 		color: var(--secondary);
+		min-width: 0;
+		overflow-wrap: anywhere;
 	}
 
 	.summary-value {
 		font-family: var(--font-mono);
 		font-size: 0.875rem;
 		font-weight: 600;
+		white-space: nowrap;
 	}
 
 	.summary-value--strong {
@@ -824,7 +834,7 @@
 		color: var(--primary);
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 760px) {
 		.tool-layout {
 			grid-template-columns: 1fr;
 		}
