@@ -581,6 +581,175 @@ input[type='date']::-webkit-calendar-picker-indicator {
 }
 
 /* ===========================================
+   Terminal page primitives
+   Langage visuel partagé par les pages dans la fenêtre
+   (projets, outils, pages projet…). Source de vérité unique
+   pour que toutes les pages aient le même rendu « terminal ».
+   =========================================== */
+
+.term-page {
+	padding: 26px 26px 30px;
+}
+
+.term-cmd {
+	color: var(--tertiary);
+	font-size: 0.75rem;
+	margin-bottom: 12px;
+}
+.term-cmd .p {
+	color: var(--accent);
+}
+.term-cmd .hash {
+	color: var(--tertiary);
+}
+
+.term-head {
+	margin-bottom: 28px;
+}
+
+.term-crumb {
+	font-size: 0.75rem;
+	color: var(--tertiary);
+	margin-bottom: 18px;
+}
+.term-crumb .p {
+	color: var(--accent);
+}
+.term-crumb a {
+	color: var(--secondary);
+}
+.term-crumb a:hover {
+	color: var(--accent);
+}
+
+.term-lead {
+	color: var(--content);
+	font-size: 0.875rem;
+	max-width: 640px;
+	margin: 0;
+	line-height: calc(1.6 * var(--a11y-line-height-mult));
+}
+
+.term-note {
+	color: var(--tertiary);
+	font-size: 0.75rem;
+	font-style: italic;
+	margin: 10px 0 0;
+}
+
+.term-sec {
+	margin-bottom: 30px;
+}
+
+.term-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+	gap: 12px;
+}
+
+.term-card {
+	display: block;
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	padding: 15px 17px;
+	background: var(--surface);
+	text-decoration: none;
+	transition: var(--transition);
+}
+.term-card:hover {
+	border-color: var(--accent);
+	transform: translateY(-2px);
+	text-decoration: none;
+	box-shadow: var(--accent-glow);
+}
+.term-card--static {
+	cursor: default;
+}
+.term-card--static:hover {
+	border-color: var(--border);
+	transform: none;
+	box-shadow: none;
+}
+
+.term-name {
+	color: var(--accent);
+	font-weight: 600;
+	font-size: 0.875rem;
+}
+.term-name::before {
+	content: './';
+	color: var(--tertiary);
+}
+
+.term-card-title {
+	color: var(--accent);
+	font-weight: 600;
+	font-size: 0.875rem;
+	font-family: var(--font-heading);
+	margin: 0 0 6px;
+}
+
+.term-card-text {
+	color: var(--content);
+	font-size: 0.78rem;
+	line-height: calc(1.55 * var(--a11y-line-height-mult));
+	margin: 0;
+}
+
+.term-chips {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 7px;
+}
+
+.term-chip {
+	color: var(--tertiary);
+	border: 1px solid var(--border);
+	border-radius: 999px;
+	padding: 2px 9px;
+	font-size: 0.66rem;
+	letter-spacing: 0.03em;
+	white-space: nowrap;
+}
+.term-chip--accent {
+	color: var(--accent);
+	border-color: var(--accent-border);
+	background: var(--accent-light);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	font-size: 0.6rem;
+}
+.term-chip--muted {
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	font-size: 0.6rem;
+}
+
+.term-foot {
+	padding-top: 18px;
+	margin-top: 6px;
+	border-top: 1px solid var(--border);
+}
+.term-back {
+	display: inline-block;
+	font-size: 0.78rem;
+	color: var(--secondary);
+}
+.term-back:hover {
+	color: var(--accent);
+}
+
+@media (max-width: 760px) {
+	.term-page {
+		padding: 20px 16px 24px;
+	}
+	.term-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* ===========================================
    Content (article prose)
    =========================================== */
 
@@ -751,14 +920,6 @@ input[type='date']::-webkit-calendar-picker-indicator {
 	border: none;
 	border-top: 1px solid var(--border);
 	margin: 2em 0;
-}
-
-/* ===========================================
-   Layout — Main container
-   =========================================== */
-
-main {
-	min-height: calc(100vh - var(--header-height) - 200px);
 }
 
 /* ===========================================

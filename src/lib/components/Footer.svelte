@@ -52,13 +52,14 @@
 <style>
 	.footer {
 		border-top: 1px solid var(--border);
-		padding: calc(var(--gap) * 2) var(--gap);
-		margin-top: calc(var(--gap) * 3);
+		padding: calc(var(--gap) * 1.25) calc(var(--gap) * 1.1);
+		margin-top: 0;
+		background: var(--surface);
 	}
 
 	.footer-content {
-		max-width: var(--home-width);
-		margin: 0 auto;
+		max-width: none;
+		margin: 0;
 	}
 
 	.footer-columns {

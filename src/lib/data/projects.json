@@ -1,0 +1,733 @@
+[
+	{
+		"slug": "asteroids",
+		"name": "Neon Asteroids",
+		"type": "game",
+		"lang": "Dart",
+		"private": false,
+		"visible": true,
+		"hasPage": true,
+		"status": "En cours",
+		"statusNote": "Test fermé · Google Play",
+		"tagline": "Arcade shooter néon. Pilote ton vaisseau à travers des vagues d'astéroïdes, esquive les UFOs, collecte les power-ups.",
+		"desc": "Arcade shooter néon : vagues progressives, UFOs, power-ups, combos. Flutter + Flame.",
+		"seoDescription": "Arcade shooter néon avec Flutter et Flame. Vagues progressives, UFOs, power-ups, combos. En test fermé sur Google Play.",
+		"repoUrl": "https://github.com/delfour-co/asteroids",
+		"icon": "/images/apps/asteroids/icon.webp",
+		"heroImage": "/images/apps/asteroids/presentation.webp",
+		"sections": [
+			{
+				"kind": "text",
+				"cmd": "cat concept.md",
+				"title": "Le concept",
+				"paragraphs": [
+					"Un jeu d'arcade classique revisité avec une esthétique néon. Le gameplay reprend les fondamentaux d'Asteroids — piloter, tirer, survivre — avec des mécaniques modernes : vagues progressives, ennemis variés, power-ups et un système de combos."
+				]
+			},
+			{
+				"kind": "features",
+				"cmd": "ls features/",
+				"title": "Caractéristiques",
+				"items": [
+					{ "title": "Vagues progressives", "desc": "Difficulté croissante avec des astéroïdes de plus en plus nombreux et rapides." },
+					{ "title": "UFOs ennemis", "desc": "Scout dès la vague 3, Hunter dès la vague 6. Chacun avec son comportement propre." },
+					{ "title": "Power-ups", "desc": "Bouclier, multi-shot et slow-motion pour survivre aux vagues les plus intenses." },
+					{ "title": "Combos & scores", "desc": "Système de combos avec popups de score. Leaderboard local top 10." },
+					{ "title": "Easter eggs", "desc": "Débris spatiaux à repérer : Starlink, ISS/MIR, Tesla Roadster." },
+					{ "title": "Effets visuels", "desc": "Screen shake, flash, nébuleuse Antennae en arrière-plan. Esthétique néon complète." }
+				]
+			},
+			{
+				"kind": "chips",
+				"cmd": "cat stack.md",
+				"title": "Stack technique",
+				"items": ["Flutter 3.41", "Flame 1.35", "Dart 3.11", "Android"]
+			},
+			{
+				"kind": "gallery",
+				"cmd": "ls captures/",
+				"title": "Captures d'écran",
+				"shots": [
+					{ "src": "/images/apps/asteroids/asteroids_01.png", "alt": "Écran titre Neon Asteroids" },
+					{ "src": "/images/apps/asteroids/asteroids_02.png", "alt": "Gameplay — vagues d'astéroïdes" },
+					{ "src": "/images/apps/asteroids/asteroids_03.png", "alt": "Power-ups et effets néon" },
+					{ "src": "/images/apps/asteroids/asteroids_04.png", "alt": "UFO Scout et Hunter" },
+					{ "src": "/images/apps/asteroids/asteroids_05.png", "alt": "Combo system et score" },
+					{ "src": "/images/apps/asteroids/asteroids_06.png", "alt": "Shield et multi-shot" },
+					{ "src": "/images/apps/asteroids/asteroids_07.png", "alt": "Vagues avancées" },
+					{ "src": "/images/apps/asteroids/asteroids_08.png", "alt": "Leaderboard local" },
+					{ "src": "/images/apps/asteroids/asteroids_09.png", "alt": "Galaxy background" }
+				]
+			}
+		]
+	},
+	{
+		"slug": "notch",
+		"name": "Notch",
+		"type": "mobile",
+		"lang": "Dart",
+		"private": true,
+		"visible": true,
+		"hasPage": true,
+		"status": "En cours",
+		"statusNote": "Test fermé · Google Play",
+		"tagline": "Messagerie SMS chiffrée par Enigma. Pas de serveur. Pas d'internet. Juste des rotors et des SMS.",
+		"desc": "Messagerie SMS chiffrée avec la mécanique d'Enigma. Pas de serveur, pas d'internet.",
+		"seoDescription": "Messagerie SMS chiffrée par Enigma. Pas de serveur, pas d'internet. Juste des rotors et des SMS. En test fermé sur Google Play.",
+		"problem": "Comprendre Enigma de l'intérieur, et en faire un vrai canal de messages illisibles pour qui les intercepte.",
+		"how": "Reproduction fidèle de l'Enigma M3/M4 (rotors, double stepping, reflectors), messages échangés par SMS avec une clé partagée. Projet éducatif et ludique — Flutter.",
+		"icon": "/images/apps/notch/icon.webp",
+		"heroImage": "/images/apps/notch/presentation.webp",
+		"sections": [
+			{
+				"kind": "text",
+				"cmd": "cat concept.md",
+				"title": "Le concept",
+				"paragraphs": [
+					"Les opérateurs allemands pendant la Seconde Guerre mondiale utilisaient la radio — un canal ouvert — pour transmettre des messages chiffrés par Enigma. Le SMS fonctionne exactement de la même manière : un canal \"en clair\" qui transporte du texte chiffré.",
+					"Notch reproduit fidèlement le mécanisme de chiffrement de la machine Enigma et l'utilise pour échanger des messages par SMS. Le nom fait référence à l'encoche (<em>notch</em>) des rotors — le minuscule détail mécanique qui déclenche la rotation et rend tout le système possible."
+				],
+				"callout": "<strong>Projet éducatif et ludique.</strong> Enigma a été cassée en 1940 par les équipes de Bletchley Park. Cette app n'est pas une solution de sécurité — c'est une façon interactive de comprendre comment fonctionnait l'un des systèmes cryptographiques les plus célèbres de l'histoire."
+			},
+			{
+				"kind": "steps",
+				"cmd": "cat fonctionnement.md",
+				"title": "Comment ça fonctionne",
+				"items": [
+					{ "title": "Rencontre en personne", "desc": "Tu scannes un QR code avec ton contact pour partager une configuration Enigma : rotors, positions, plugboard." },
+					{ "title": "Tape ton message", "desc": "L'app le chiffre avec Enigma et l'envoie par SMS. Le texte envoyé est illisible pour quiconque l'intercepte." },
+					{ "title": "Réception automatique", "desc": "Ton contact reçoit le SMS, l'app le déchiffre et affiche le message en clair. Pas de serveur. Pas de compte. Pas d'internet." }
+				]
+			},
+			{
+				"kind": "features",
+				"cmd": "ls features/",
+				"title": "Caractéristiques",
+				"items": [
+					{ "title": "Moteur Enigma fidèle", "desc": "Classic M3 (3 rotors, 26 caractères) et Pro M4 (4 rotors, 95 caractères). Double stepping conforme à l'original." },
+					{ "title": "Visualiseur animé", "desc": "Le signal trace son chemin à travers les rotors en temps réel. Animation séquentielle avec glow." },
+					{ "title": "Mode Turing", "desc": "Cryptanalyse pédagogique : analyse de fréquences, crib-dragging, cassage pas à pas. Comprendre comment Bletchley Park a vaincu Enigma." },
+					{ "title": "Rotation automatique des clés", "desc": "Une méta-Enigma dérive de nouvelles configurations tous les 50 messages (Classic) ou 20 (Pro). Sans aucun échange." },
+					{ "title": "745 tests", "desc": "Tests unitaires et d'intégration. Vecteurs historiques, symétrie, double stepping, protocole SMS NTH:2." },
+					{ "title": "Quêtes et badges", "desc": "Dates historiques, événements saisonniers, badges militaires. Un système de quêtes qui rend hommage à l'histoire d'Enigma." }
+				]
+			},
+			{
+				"kind": "versions",
+				"cmd": "cat versions.md",
+				"title": "Deux versions",
+				"items": [
+					{ "name": "Classic", "price": "Gratuit", "desc": "Fidèle à l'Enigma M3 historique. 5 rotors, 3 slots, réflecteurs B/C originaux. Keyspace ~2⁶⁷. Visualiseur complet et mode Turing inclus." },
+					{ "name": "Pro", "price": "4,99€", "desc": "10 rotors dont 5 customs, 4 slots (Enigma M4), réflecteur custom, 95 caractères, rotation tous les 20 messages. Keyspace ~2⁹⁰+. Thèmes visuels exclusifs.", "featured": true }
+				]
+			},
+			{
+				"kind": "chips",
+				"cmd": "cat stack.md",
+				"title": "Stack technique",
+				"items": ["Flutter", "Dart", "Kotlin", "SMS natif", "QR Code", "NFC", "PBKDF2", "Android"]
+			},
+			{
+				"kind": "gallery",
+				"cmd": "ls captures/",
+				"title": "Captures d'écran",
+				"shots": [
+					{ "src": "/images/apps/notch/notch_001.png", "alt": "Écran d'accueil Notch" },
+					{ "src": "/images/apps/notch/notch_002.png", "alt": "Configuration Enigma" },
+					{ "src": "/images/apps/notch/notch_003.png", "alt": "Visualiseur Enigma animé" },
+					{ "src": "/images/apps/notch/notch_004.png", "alt": "Chat chiffré SMS" },
+					{ "src": "/images/apps/notch/notch_005.png", "alt": "Échange de clés QR" },
+					{ "src": "/images/apps/notch/notch_006.png", "alt": "Mode Turing — cryptanalyse" },
+					{ "src": "/images/apps/notch/notch_007.png", "alt": "Thèmes et skins" },
+					{ "src": "/images/apps/notch/notch_008.png", "alt": "Quêtes et badges" }
+				]
+			}
+		]
+	},
+	{
+		"slug": "githero",
+		"name": "Git Hero",
+		"type": "mobile",
+		"lang": "Dart",
+		"private": true,
+		"visible": true,
+		"hasPage": true,
+		"status": "En cours",
+		"tagline": "L'histoire vit dans les commits. Des livres-jeux interactifs où les branches git sont vos choix.",
+		"desc": "Livres-jeux interactifs où chaque livre est un dépôt git : les branches sont les choix.",
+		"seoDescription": "L'histoire vit dans les commits. Des livres-jeux interactifs où les branches git sont vos choix.",
+		"problem": "Et si la structure d'un dépôt git racontait une histoire dont on est le héros ?",
+		"how": "La narration vit dans des commits vides, les branches sont les chemins, le lecteur navigue l'arbre git. Flutter + PocketBase, lecture hors-ligne.",
+		"icon": "/images/apps/githero/icon.png",
+		"heroLinks": [
+			{ "label": "Tester la démo →", "href": "http://githero.demo.delfour.co/" },
+			{ "label": "Voir sur GitHub →", "href": "https://github.com/delfour-co/githero" }
+		],
+		"sections": [
+			{
+				"kind": "text",
+				"cmd": "cat concept.md",
+				"title": "Le concept",
+				"paragraphs": [
+					"Des livres-jeux interactifs où les branches git sont vos choix. Chaque commit est un fragment narratif, chaque branche un embranchement de l'histoire. Aux points de divergence, le lecteur explore les chemins — chaque route mène à une fin différente."
+				]
+			},
+			{
+				"kind": "features",
+				"cmd": "ls features/",
+				"title": "Comment ça marche",
+				"items": [
+					{ "title": "Catalogue", "desc": "Parcourez le catalogue et découvrez les détails de chaque histoire." },
+					{ "title": "Lecture par commits", "desc": "Chaque commit est un fragment narratif. Avancez dans le récit étape par étape." },
+					{ "title": "Branches = choix", "desc": "Aux points de divergence, explorez les branches — chaque chemin mène à une fin différente." },
+					{ "title": "Git graph", "desc": "Visualisez votre progression comme un git graph. Repérez les branches inexplorées." }
+				]
+			},
+			{
+				"kind": "features",
+				"cmd": "ls catalogue/",
+				"title": "Au catalogue",
+				"items": [
+					{ "title": "Le Signal", "desc": "Un développeur reçoit un commit qu'il n'a jamais écrit. Le SHA est impossible." },
+					{ "title": "La Faille", "desc": "Une IA de code review commence à laisser des commentaires étranges sur les pull requests." },
+					{ "title": "Comment planter sa startup", "desc": "Tu viens de lever 500 000 €. Tu as un pitch deck en béton, un logo qui claque, et absolument aucune idée de ce que tu fais." },
+					{ "title": "Le CTO qui savait tout", "desc": "Tu viens d'être promu CTO. Tu étais le meilleur développeur de l'équipe, donc logiquement, tu seras le meilleur manager technique." }
+				]
+			},
+			{
+				"kind": "gallery",
+				"cmd": "ls captures/",
+				"title": "Captures d'écran",
+				"shots": [
+					{ "src": "/images/apps/githero/git-hero_008.png", "alt": "Bibliothèque — liste des livres-jeux" },
+					{ "src": "/images/apps/githero/git-hero_007.png", "alt": "Fiche livre — Le Signal, thriller dev" },
+					{ "src": "/images/apps/githero/git-hero_001.png", "alt": "Écran de connexion — $ git login" },
+					{ "src": "/images/apps/githero/git-hero_002.png", "alt": "Inscription — $ git init --user" },
+					{ "src": "/images/apps/githero/git-hero_003.png", "alt": "Carte du livre — $ git log --graph" },
+					{ "src": "/images/apps/githero/git-hero_004.png", "alt": "Lecture d'un commit sur une branche" },
+					{ "src": "/images/apps/githero/git-hero_005.png", "alt": "Choix de branche — $ git checkout" },
+					{ "src": "/images/apps/githero/git-hero_006.png", "alt": "Divergence détectée — choix multiples" }
+				]
+			},
+			{
+				"kind": "chips",
+				"cmd": "cat stack.md",
+				"title": "Stack technique",
+				"items": ["Dart", "Flutter", "Git"]
+			}
+		]
+	},
+	{
+		"slug": "claude-pulse",
+		"name": "Claude Pulse",
+		"type": "cli",
+		"lang": "JavaScript",
+		"private": false,
+		"visible": true,
+		"hasPage": true,
+		"status": "En cours",
+		"statusNote": "Desktop",
+		"tagline": "Monitore tes agents Claude Code en temps réel depuis le bureau. Support multi-profils, suivi live et notifications desktop.",
+		"desc": "Monitore tes agents Claude Code en temps réel : multi-profils, suivi live, notifications desktop.",
+		"seoDescription": "Monitore tes agents Claude Code en temps réel depuis le bureau. Multi-profils, suivi live, notifications desktop.",
+		"repoUrl": "https://github.com/delfour-co/claude-pulse",
+		"iconText": "CP",
+		"sections": [
+			{
+				"kind": "text",
+				"cmd": "cat concept.md",
+				"title": "Le concept",
+				"paragraphs": [
+					"Quand on lance plusieurs agents Claude Code en parallèle, on perd vite la visibilité sur ce qui tourne, où ça en est, et ce qui attend une action. Claude Pulse centralise le suivi de tous les agents actifs dans une app desktop, avec des notifications pour ne rien rater."
+				]
+			},
+			{
+				"kind": "features",
+				"cmd": "ls features/",
+				"title": "Fonctionnalités",
+				"items": [
+					{ "title": "Suivi temps réel", "desc": "Visualise l'état de chaque agent Claude Code en cours d'exécution." },
+					{ "title": "Multi-profils", "desc": "Gère plusieurs profils de travail et bascule entre eux." },
+					{ "title": "Notifications desktop", "desc": "Alertes natives quand un agent termine, échoue ou attend une action." }
+				]
+			},
+			{
+				"kind": "chips",
+				"cmd": "cat stack.md",
+				"title": "Stack technique",
+				"items": ["JavaScript", "Electron", "Desktop"]
+			},
+			{
+				"kind": "links",
+				"cmd": "ls liens/",
+				"title": "Liens",
+				"items": [
+					{ "label": "Voir sur GitHub →", "href": "https://github.com/delfour-co/claude-pulse" },
+					{ "label": "PPA Ubuntu →", "href": "https://launchpad.net/~delfour-co/+archive/ubuntu/claude-pulse" },
+					{ "label": "COPR Fedora →", "href": "https://copr.fedorainfracloud.org/coprs/kdelfour/claude-pulse/" },
+					{ "label": "AUR Arch Linux →", "href": "https://aur.archlinux.org/packages/gnome-shell-extension-claude-pulse" }
+				]
+			}
+		]
+	},
+	{
+		"slug": "open-event-orchestrator",
+		"name": "Open Event Orchestrator",
+		"type": "web",
+		"lang": "TypeScript",
+		"private": false,
+		"visible": true,
+		"hasPage": true,
+		"status": "En cours",
+		"tagline": "Le control plane open source pour les événements. Conférences, meetups, communautés — tout au même endroit.",
+		"desc": "Control plane open source pour événements : CFP, planning, billetterie, CRM, sponsoring, budget.",
+		"seoDescription": "Plateforme open source de gestion d'événements. CFP, planning, billetterie, CRM, sponsoring, budget. 4 538 tests unitaires, 533 tests E2E.",
+		"repoUrl": "https://github.com/delfour-co/open-event-orchestrator",
+		"icon": "/images/apps/oeo/icon.webp",
+		"heroImage": "/images/apps/oeo-social.png",
+		"heroLinks": [
+			{ "label": "Voir sur GitHub →", "href": "https://github.com/delfour-co/open-event-orchestrator" }
+		],
+		"sections": [
+			{
+				"kind": "text",
+				"cmd": "cat concept.md",
+				"title": "Le concept",
+				"paragraphs": [
+					"Organiser un événement tech implique de jongler entre une dizaine d'outils : un pour le CFP, un pour le planning, un pour la billetterie, un pour le CRM, un pour les sponsors. Open Event Orchestrator consolide tout cela dans une plateforme unique, auto-hébergeable et open source."
+				]
+			},
+			{
+				"kind": "features",
+				"cmd": "ls features/",
+				"title": "Fonctionnalités",
+				"items": [
+					{ "title": "Call for Papers", "desc": "Gestion des soumissions speakers avec système de review et notifications." },
+					{ "title": "Planning", "desc": "Création de programme avec drag-and-drop. Gestion des salles, créneaux et conflits." },
+					{ "title": "Billetterie", "desc": "Vente de billets et check-in avec QR codes. Scanner PWA avec support offline." },
+					{ "title": "CRM", "desc": "Suivi de la communauté à travers les événements. Historique des participations." },
+					{ "title": "Sponsoring", "desc": "Gestion des sponsors et packages. Portail dédié avec accès personnalisé." },
+					{ "title": "Budget", "desc": "Suivi des dépenses, revenus et factures. Vision consolidée par événement." },
+					{ "title": "PWA Participant", "desc": "Application mobile pour les participants : agenda personnel, notifications, plan." },
+					{ "title": "Intégrations", "desc": "Slack, Discord, webhooks. API headless pour s'intégrer à l'existant." }
+				]
+			},
+			{
+				"kind": "stats",
+				"cmd": "cat qualite.md",
+				"title": "Qualité",
+				"items": [
+					{ "value": "4 538", "label": "Tests unitaires" },
+					{ "value": "533", "label": "Tests E2E" },
+					{ "value": "98%", "label": "Couverture" }
+				]
+			},
+			{
+				"kind": "rows",
+				"cmd": "cat stack.md",
+				"title": "Stack technique",
+				"items": [
+					{ "label": "Frontend", "values": ["SvelteKit", "TypeScript", "Tailwind CSS", "shadcn-svelte"] },
+					{ "label": "Backend", "values": ["PocketBase", "SQLite"] },
+					{ "label": "Tests", "values": ["Vitest", "Playwright"] },
+					{ "label": "Qualité", "values": ["Biome", "GitHub Actions"] }
+				]
+			},
+			{
+				"kind": "text",
+				"cmd": "cat architecture.md",
+				"title": "Architecture",
+				"paragraphs": [
+					"Clean Architecture avec organisation par feature. Conventional Commits. CI/CD via GitHub Actions. Le projet est conçu pour être auto-hébergé — PocketBase embarque sa propre base SQLite, pas besoin d'infrastructure externe."
+				]
+			}
+		]
+	},
+	{
+		"slug": "arcane-craft",
+		"name": "Arcane Craft",
+		"type": "game",
+		"lang": "Dart",
+		"private": true,
+		"visible": true,
+		"hasPage": true,
+		"status": "En cours",
+		"statusNote": "En développement",
+		"tagline": "Action-RPG top-down où tu fabriques tes propres sorts. Structure Zelda 2D : overworld, donjons procéduraux, puzzles élémentaires, boss.",
+		"desc": "Action-RPG top-down où l'on fabrique ses propres sorts dans une grille 3×3.",
+		"seoDescription": "Action-RPG mobile top-down avec craft de sorts dans une grille 3×3. Donjons procéduraux, puzzles élémentaires, boss. Flutter + Flame.",
+		"problem": "Je voulais un RPG mobile où la magie se bricole vraiment, au lieu de se débloquer dans un menu.",
+		"how": "Structure Zelda 2D — overworld, donjons procéduraux, puzzles élémentaires, boss — avec un moteur de craft de sorts maison. 100% offline (Flutter + Flame, Hive).",
+		"icon": "/images/apps/arcane-craft/app_icon.png",
+		"heroImage": "/images/apps/arcane-craft/forging.png",
+		"sections": [
+			{
+				"kind": "text",
+				"cmd": "cat concept.md",
+				"title": "Le concept",
+				"paragraphs": [
+					"Le joueur place des runes élémentaires dans une grille de craft 3×3. La position dans la grille affecte la puissance. Les interactions entre éléments sont gérées par un système de tags data-driven : pas de recettes codées en dur, mais des principes logiques que le joueur apprend et applique."
+				]
+			},
+			{
+				"kind": "features",
+				"cmd": "cat gameplay.md",
+				"title": "Mécaniques",
+				"items": [
+					{ "title": "Craft de sorts 3×3", "desc": "8 éléments — Feu, Eau, Glace, Foudre, Terre, Vent, Lumière, Ombre. La position de chaque rune dans la grille modifie le résultat." },
+					{ "title": "Donjons procéduraux", "desc": "100 étages générés, avec puzzles élémentaires et boss. Progression verticale à travers les niveaux." },
+					{ "title": "Progression en 5 paliers", "desc": "De 2 éléments à 8. Sorts combinés, chaînés et réactifs se débloquent progressivement." },
+					{ "title": "Overworld Zelda 2D", "desc": "Exploration top-down avec zones à découvrir, PNJs et accès aux donjons." },
+					{ "title": "Système de tags", "desc": "Interactions élémentaires définies en JSON. Data-driven, extensible, logique à découvrir." },
+					{ "title": "100% offline", "desc": "Zéro serveur, zéro connexion. Persistance locale avec Hive." }
+				]
+			},
+			{
+				"kind": "chips",
+				"cmd": "cat stack.md",
+				"title": "Stack technique",
+				"items": ["Flutter 3.41+", "Flame 1.35+", "Dart 3.7+", "Hive", "Provider", "Android"]
+			}
+		]
+	},
+	{
+		"slug": "repolens",
+		"name": "RepoLens",
+		"type": "cli",
+		"lang": "Rust",
+		"private": false,
+		"visible": true,
+		"hasPage": true,
+		"status": "En cours",
+		"statusNote": "CLI",
+		"tagline": "Audite tes dépôts GitHub pour les bonnes pratiques, la sécurité et la compliance. Génère un plan de corrections et les applique.",
+		"desc": "CLI d'audit de dépôts GitHub : bonnes pratiques, sécurité, compliance.",
+		"seoDescription": "CLI d'audit de dépôts GitHub. Bonnes pratiques, sécurité, compliance. Génère un plan de corrections applicable automatiquement.",
+		"repoUrl": "https://github.com/delfour-co/repolens",
+		"icon": "/images/apps/repolens/icon.webp",
+		"heroImage": "/images/apps/repolens-social.png",
+		"heroLinks": [
+			{ "label": "crates.io →", "href": "https://crates.io/crates/repolens" },
+			{ "label": "Voir sur GitHub →", "href": "https://github.com/delfour-co/repolens" }
+		],
+		"sections": [
+			{
+				"kind": "text",
+				"cmd": "cat concept.md",
+				"title": "Le concept",
+				"paragraphs": [
+					"Un dépôt GitHub bien configuré protège contre les failles, facilite les contributions et rassure les utilisateurs. RepoLens inspecte un dépôt, identifie les écarts par rapport aux bonnes pratiques et propose un plan de corrections concret — applicable automatiquement ou en mode interactif avec prévisualisation des diffs."
+				]
+			},
+			{
+				"kind": "features",
+				"cmd": "ls checks/",
+				"title": "Ce que RepoLens vérifie",
+				"items": [
+					{ "title": "Secrets exposés", "desc": "Détection de credentials, tokens et clés dans le code et la configuration." },
+					{ "title": "Fichiers requis", "desc": "README, LICENSE, CONTRIBUTING, SECURITY, CODE_OF_CONDUCT, CODEOWNERS." },
+					{ "title": "GitHub Actions", "desc": "Validation des workflows et des Actions utilisées. Détection des versions non-pinées." },
+					{ "title": "Licences", "desc": "Vérification de compliance des licences à travers l'arbre de dépendances." },
+					{ "title": "Bonnes pratiques", "desc": "Branch protection, topics, description, templates d'issues et de PR." },
+					{ "title": "Règles custom", "desc": "Patterns regex et commandes shell personnalisées pour des vérifications métier." }
+				]
+			},
+			{
+				"kind": "commands",
+				"cmd": "cat workflow.md",
+				"title": "Workflow",
+				"items": [
+					{ "cmd": "repolens init", "desc": "Initialise la configuration. Presets disponibles : opensource, enterprise, strict." },
+					{ "cmd": "repolens plan", "desc": "Génère un plan d'audit détaillé avec les corrections à appliquer." },
+					{ "cmd": "repolens apply", "desc": "Applique les corrections. Mode dry-run, interactif avec diff, ou auto-accept." },
+					{ "cmd": "repolens report", "desc": "Génère un rapport. Formats : terminal, JSON, SARIF, Markdown, HTML." }
+				]
+			},
+			{
+				"kind": "rows",
+				"cmd": "cat distribution.md",
+				"title": "Distribution",
+				"items": [
+					{ "label": "macOS / Linux", "values": ["Homebrew"] },
+					{ "label": "Windows", "values": ["Scoop"] },
+					{ "label": "Arch Linux", "values": ["AUR"] },
+					{ "label": "Conteneur", "values": ["Docker", "GHCR"] },
+					{ "label": "Rust", "values": ["Cargo"] },
+					{ "label": "Binaires", "values": ["Linux x86/ARM", "macOS Intel/Apple Silicon", "Windows"] }
+				]
+			},
+			{
+				"kind": "chips",
+				"cmd": "cat stack.md",
+				"title": "Stack technique",
+				"items": ["Rust", "Cargo", "TOML", "JSON Schema", "SARIF", "GitHub Actions"]
+			}
+		]
+	},
+	{
+		"slug": "deus",
+		"name": "deus",
+		"type": "game",
+		"lang": "Dart",
+		"private": true,
+		"visible": true,
+		"hasPage": false,
+		"status": "En cours",
+		"desc": "God-game, hommage à Populous.",
+		"problem": "Retrouver le plaisir des god-games : façonner un monde et guider un peuple sans le contrôler directement.",
+		"how": "Prototype Flutter + Flame — terrain modelable, une divinité qui agit par influence plutôt que par ordre."
+	},
+	{
+		"slug": "neon-echappement",
+		"name": "neon-echappement",
+		"type": "game",
+		"lang": "Dart",
+		"private": true,
+		"visible": true,
+		"hasPage": false,
+		"status": "En cours",
+		"desc": "Prototype de jeu d'arcade, direction artistique néon.",
+		"problem": "Un bac à sable pour tester une esthétique néon et des mécaniques d'arcade nerveuses.",
+		"how": "Prototype Flutter — encore au stade exploratoire."
+	},
+	{
+		"slug": "tachikoma",
+		"name": "tachikoma",
+		"type": "mobile",
+		"lang": "Dart",
+		"private": true,
+		"visible": true,
+		"hasPage": false,
+		"status": "En cours",
+		"desc": "Speech-to-text avec traitement vocal par IA.",
+		"problem": "Dicter et obtenir un texte propre, sans dépendre d'un service cloud lourd.",
+		"how": "App Flutter qui capte la voix et la transforme en texte via un pipeline de traitement IA."
+	},
+	{
+		"slug": "cavalio",
+		"name": "cavalio",
+		"type": "mobile",
+		"lang": "Dart",
+		"private": true,
+		"visible": true,
+		"hasPage": false,
+		"status": "En cours",
+		"desc": "Gestion des demi-pensions équestres.",
+		"problem": "Organiser les demi-pensions d'un centre équestre (chevaux partagés, plannings, cavaliers) sans tableur bricolé.",
+		"how": "Application mobile Flutter + web app SvelteKit, sur un backend PocketBase."
+	},
+	{
+		"slug": "dark-ink",
+		"name": "dark-ink",
+		"type": "mobile",
+		"lang": "Dart",
+		"private": true,
+		"visible": true,
+		"hasPage": false,
+		"status": "En cours",
+		"desc": "Atelier d'écriture mobile, focus-first et versionné automatiquement.",
+		"problem": "Les outils d'écriture sont surchargés ; un auteur veut écrire sans distraction et garder tout son historique, sans jamais voir la technique.",
+		"how": "Flutter, Markdown comme source de vérité, versioning invisible par snapshots (dart_snapshot_store), 100% local et hors-ligne."
+	},
+	{
+		"slug": "trademind",
+		"name": "trademind",
+		"type": "cli",
+		"lang": "Dart",
+		"private": true,
+		"visible": true,
+		"hasPage": false,
+		"status": "En cours",
+		"desc": "Aide à la décision pour le trading crypto (Binance) — pas un bot spéculatif.",
+		"problem": "Trader en réduisant l'émotionnel : structurer ses trades au lieu de réagir à chaud.",
+		"how": "Analyse de marché temps réel (WebSocket Binance, RSI/EMA/MACD), stratégies configurables, gestion du risque et paper trading ; chaque signal devient un ordre à valider à la main. Flutter."
+	},
+	{
+		"slug": "claudettes",
+		"name": "claudettes",
+		"type": "cli",
+		"lang": "Rust",
+		"private": true,
+		"visible": true,
+		"hasPage": false,
+		"status": "En cours",
+		"desc": "Daemon Rust qui transforme tes issues GitHub en Pull Requests, en autonomie.",
+		"problem": "Automatiser le cycle issue → analyse → implémentation → revue → PR → corrections sur ses propres dépôts, avec un abonnement Claude Code plutôt qu'une API.",
+		"how": "Pipeline à 7 rôles (triager → … → pr-author), boucle de corrections sur les revues humaines, budgets et circuit-breakers, un worktree git par issue. TUI ratatui."
+	},
+	{
+		"slug": "guardians",
+		"name": "guardians",
+		"type": "cli",
+		"lang": "Rust",
+		"private": true,
+		"visible": true,
+		"hasPage": false,
+		"status": "En cours",
+		"desc": "Daemon DevSecOps local pour Debian, Ubuntu et Fedora.",
+		"problem": "Savoir quelles CVE menacent vraiment une machine donnée — pas juste une liste brute — et y remédier de façon contrôlée et traçable.",
+		"how": "Inventaire des paquets, sources CVE par distribution, qualification selon l'exposition réelle de l'hôte, remédiations contrôlées et journal d'audit append-only. 100% Rust."
+	},
+	{
+		"slug": "hinotes",
+		"name": "hinotes",
+		"type": "cli",
+		"lang": "Rust",
+		"private": true,
+		"visible": true,
+		"hasPage": false,
+		"status": "En cours",
+		"desc": "Transcription et résumé en local pour l'enregistreur HiDock P1, 100% Rust.",
+		"problem": "Récupérer ses enregistrements vocaux et en tirer des notes exploitables, sans envoyer l'audio dans le cloud.",
+		"how": "Pipeline .wav → .md (Whisper + Sherpa + Ollama en local), protocole USB du HiDock, daemon systemd. Tout reste sur la machine."
+	},
+	{
+		"slug": "dashboard",
+		"name": "dashboard",
+		"type": "cli",
+		"lang": "Dart",
+		"private": true,
+		"visible": true,
+		"hasPage": false,
+		"status": "En cours",
+		"desc": "Tableau de bord santé des projets mobiles delfour-co.",
+		"problem": "Suivre d'un coup d'œil l'état CI/CD, les releases et les déploiements en attente de tous les dépôts.",
+		"how": "App Flutter qui agrège l'API GitHub (workflows, versions, issues `deploy`) en une seule vue, par catégorie."
+	},
+	{
+		"slug": "cli-lotto-statistics",
+		"name": "cli-lotto-statistics",
+		"type": "cli",
+		"lang": "Python",
+		"private": true,
+		"visible": true,
+		"hasPage": false,
+		"status": "En cours",
+		"desc": "Démonstration technique : prédiction de loterie quantique + deep learning + stats.",
+		"problem": "Prétexte ludique pour mêler informatique quantique, deep learning et statistiques classiques sur un même problème.",
+		"how": "Pipeline Python (Qiskit, PyTorch) — assumé comme projet de recherche/éducatif : la loterie reste du pur hasard."
+	},
+	{
+		"slug": "tui--survey-builder",
+		"name": "tui--survey-builder",
+		"type": "cli",
+		"lang": "Rust",
+		"private": false,
+		"visible": true,
+		"hasPage": false,
+		"status": "En cours",
+		"desc": "Outil d'audit de projets en questionnaires structurés, avec recommandations auto. TUI dans le navigateur (Ratzilla/WASM).",
+		"repoUrl": "https://github.com/delfour-co/tui--survey-builder"
+	},
+	{
+		"slug": "stoat_github_notify",
+		"name": "stoat_github_notify",
+		"type": "cli",
+		"lang": "TypeScript",
+		"private": false,
+		"visible": true,
+		"hasPage": false,
+		"status": "En cours",
+		"desc": "GitHub Action légère qui publie les événements CI / release / déploiement dans des canaux Stoat.",
+		"repoUrl": "https://github.com/systm-d/stoat_github_notify"
+	},
+	{
+		"slug": "d4-dark-ds",
+		"name": "d4-dark-ds",
+		"type": "lib",
+		"lang": "Dart",
+		"private": true,
+		"visible": true,
+		"hasPage": false,
+		"status": "En cours",
+		"desc": "Design system sombre TRON partagé par les apps Flutter delfour-co.",
+		"problem": "Garder une identité visuelle cohérente (dark, néon cyan) entre toutes mes apps mobiles, sans réinventer les composants.",
+		"how": "Lib Flutter : couleurs, espacements, glow, typo JetBrains Mono et 17 composants prêts à l'emploi, testés."
+	},
+	{
+		"slug": "dart-agent-graph",
+		"name": "dart-agent-graph",
+		"type": "lib",
+		"lang": "Dart",
+		"private": true,
+		"visible": true,
+		"hasPage": false,
+		"status": "En cours",
+		"desc": "Orchestration de graphes d'agents pour Dart/Flutter, inspirée de LangGraph.",
+		"problem": "Construire des workflows IA multi-étapes (branches, cycles, reprise) en Dart, sans s'attacher à un fournisseur de LLM.",
+		"how": "Exécution de graphes dirigés : routage conditionnel, streaming, checkpointing, human-in-the-loop, parallélisme, sous-graphes, tool calling."
+	},
+	{
+		"slug": "dart_slide",
+		"name": "dart_slide",
+		"type": "lib",
+		"lang": "Dart",
+		"private": true,
+		"visible": true,
+		"hasPage": false,
+		"status": "En cours",
+		"desc": "Librairie Flutter pour construire des présentations interactives à partir de Markdown.",
+		"problem": "Faire des slides riches (reveals, transitions, widgets custom, mode présentateur) en Dart, depuis du simple Markdown.",
+		"how": "Moteur de rendu Markdown → deck, primitives de reveal/transition, decks d'exemple servant de documentation vivante. Publié sur pub.dev."
+	},
+	{
+		"slug": "dart_snapshot_store",
+		"name": "dart_snapshot_store",
+		"type": "lib",
+		"lang": "Dart",
+		"private": false,
+		"visible": true,
+		"hasPage": false,
+		"status": "En cours",
+		"desc": "Store de snapshots content-addressable pour apps Dart/Flutter local-first : la puissance de versioning de git, sans sa complexité.",
+		"repoUrl": "https://github.com/systm-d/dart_snapshot_store"
+	},
+	{
+		"slug": "workspace--gk",
+		"name": "workspace--gk",
+		"type": "web",
+		"lang": "Rust",
+		"private": false,
+		"visible": true,
+		"hasPage": false,
+		"status": "En cours",
+		"desc": "Alternative auto-hébergeable à Google Workspace : tu pilotes tes services e-mail en conversant avec une IA. 100% Rust.",
+		"repoUrl": "https://github.com/delfour-co/workspace--gk"
+	},
+	{
+		"slug": "web--welovegreenit.com",
+		"name": "web--welovegreenit.com",
+		"type": "web",
+		"lang": "HTML",
+		"private": false,
+		"visible": true,
+		"hasPage": false,
+		"status": "En cours",
+		"desc": "Portail francophone du numérique responsable : agrégateur d'articles et ressources Green IT. Site statique éco-conçu (Hugo).",
+		"repoUrl": "https://github.com/delfour-co/web--welovegreenit.com"
+	},
+	{
+		"slug": "workshop--motive_mappers",
+		"name": "workshop--motive_mappers",
+		"type": "web",
+		"lang": "TeX",
+		"private": false,
+		"visible": true,
+		"hasPage": false,
+		"status": "En cours",
+		"desc": "Extension papier des Moving Motivators de Jurgen Appelo : un atelier pour comprendre les motivations d'une équipe.",
+		"repoUrl": "https://github.com/delfour-co/workshop--motive_mappers"
+	},
+	{
+		"slug": "webapp--majikku-shisutemu",
+		"name": "webapp--majikku-shisutemu",
+		"type": "web",
+		"lang": "SCSS",
+		"private": false,
+		"visible": true,
+		"hasPage": false,
+		"status": "En cours",
+		"desc": "Webapp front (Nuxt 3) — bac à sable d'interface.",
+		"repoUrl": "https://github.com/delfour-co/webapp--majikku-shisutemu"
+	}
+]
