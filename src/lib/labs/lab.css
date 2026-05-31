@@ -1,0 +1,355 @@
+/* ---------------------------------------------------------------------------
+   Lab de composants D-Brain OS — styles partagés (globaux).
+   Importé par LabShell et la page index. `--lab-accent` tinte le châssis ;
+   chaque story peut le surcharger en inline (ex. couleur du cluster courant).
+   --------------------------------------------------------------------------- */
+
+.lab {
+	--lab-accent: #00e5ff;
+	--lab-bg: #05070d;
+	--lab-fg: #eaf7ff;
+	--lab-dim: #7c8ea3;
+	--lab-dimmer: #56697d;
+	--lab-line: rgba(0, 229, 255, 0.18);
+	min-height: 100dvh;
+	background: var(--lab-bg);
+	color: var(--lab-fg);
+	font-family: 'JetBrains Mono', ui-monospace, monospace;
+	display: flex;
+	flex-direction: column;
+}
+
+/* --- Barre supérieure ----------------------------------------------------- */
+.lab-bar {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	padding: 14px 22px;
+	border-bottom: 1px solid var(--lab-line);
+}
+.lab-brand {
+	font-weight: 700;
+	letter-spacing: 0.18em;
+	color: var(--lab-accent);
+	text-shadow: 0 0 16px color-mix(in srgb, var(--lab-accent) 50%, transparent);
+	text-decoration: none;
+}
+.lab-brand:hover {
+	text-decoration: none;
+	filter: brightness(1.15);
+}
+.lab-bar-sub {
+	color: var(--lab-dim);
+	font-size: 0.72rem;
+	letter-spacing: 0.1em;
+}
+.lab-bar-status {
+	margin-left: auto;
+	font-size: 0.72rem;
+	color: var(--lab-dim);
+	display: flex;
+	align-items: center;
+	gap: 7px;
+}
+.lab-bar-status i {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	box-shadow: 0 0 10px currentColor;
+}
+
+/* --- Corps : scène + panneau --------------------------------------------- */
+.lab-main {
+	flex: 1;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 300px;
+	grid-template-rows: 1fr;
+	min-height: 0;
+}
+.lab-main.no-panel {
+	grid-template-columns: minmax(0, 1fr);
+}
+
+.lab-stage {
+	position: relative;
+	min-width: 0;
+	min-height: 0;
+}
+.lab-stage .cube {
+	width: 100%;
+	height: 100%;
+}
+.lab-caption {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 26px;
+	text-align: center;
+	color: var(--lab-dim);
+	font-size: 0.74rem;
+	letter-spacing: 0.04em;
+	margin: 0;
+}
+
+/* Coins « réticule » de la scène */
+.lab-corner {
+	position: absolute;
+	width: 22px;
+	height: 22px;
+	border: 1px solid color-mix(in srgb, var(--lab-accent) 30%, transparent);
+	pointer-events: none;
+}
+.lab-corner.tl {
+	top: 26px;
+	left: 26px;
+	border-right: 0;
+	border-bottom: 0;
+}
+.lab-corner.tr {
+	top: 26px;
+	right: 26px;
+	border-left: 0;
+	border-bottom: 0;
+}
+.lab-corner.bl {
+	bottom: 26px;
+	left: 26px;
+	border-right: 0;
+	border-top: 0;
+}
+.lab-corner.br {
+	bottom: 26px;
+	right: 26px;
+	border-left: 0;
+	border-top: 0;
+}
+
+/* --- Panneau de contrôles ------------------------------------------------- */
+.lab-panel {
+	border-left: 1px solid var(--lab-line);
+	background: rgba(8, 11, 18, 0.6);
+	padding: 22px 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 26px;
+	overflow-y: auto;
+}
+.lab-grp-h {
+	display: block;
+	font-size: 0.66rem;
+	letter-spacing: 0.16em;
+	color: var(--lab-accent);
+	opacity: 0.8;
+	margin-bottom: 11px;
+}
+.lab-btns {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 7px;
+}
+.lab-btn {
+	font-family: inherit;
+	font-size: 0.72rem;
+	letter-spacing: 0.05em;
+	color: var(--lab-dim);
+	background: rgba(13, 17, 28, 0.8);
+	border: 1px solid var(--lab-line);
+	border-radius: 6px;
+	padding: 7px 12px;
+	cursor: pointer;
+	transition: all 0.18s ease;
+}
+.lab-btn:hover {
+	color: var(--lab-fg);
+	border-color: color-mix(in srgb, var(--lab-accent) 50%, transparent);
+}
+.lab-btn.on {
+	color: var(--lab-bg);
+	background: var(--lab-accent);
+	border-color: var(--lab-accent);
+	box-shadow: 0 0 18px color-mix(in srgb, var(--lab-accent) 40%, transparent);
+}
+
+/* Chips couleur (le cluster porte sa couleur via --c) */
+.lab-chip {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+.lab-chip .dot {
+	width: 9px;
+	height: 9px;
+	border-radius: 2px;
+	box-shadow: 0 0 8px var(--c);
+}
+.lab-chip.on {
+	color: var(--lab-bg);
+	background: var(--c);
+	border-color: var(--c);
+	box-shadow: 0 0 18px color-mix(in srgb, var(--c) 50%, transparent);
+}
+.lab-chip.on .dot {
+	background: var(--lab-bg) !important;
+	box-shadow: none;
+}
+
+/* Slider (contrôle numérique) */
+.lab-slider {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	font-size: 0.72rem;
+	color: var(--lab-dim);
+}
+.lab-slider input[type='range'] {
+	width: 100%;
+	accent-color: var(--lab-accent);
+}
+
+/* Readout (liste clé/valeur) */
+.lab-readout dl {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+.lab-readout dl > div {
+	display: flex;
+	justify-content: space-between;
+	font-size: 0.72rem;
+	border-bottom: 1px dashed rgba(124, 142, 163, 0.18);
+	padding-bottom: 5px;
+}
+.lab-readout dt {
+	color: var(--lab-dim);
+}
+.lab-readout dd {
+	margin: 0;
+	color: var(--lab-fg);
+}
+
+.lab-note {
+	margin: auto 0 0;
+	color: var(--lab-dimmer);
+	font-size: 0.68rem;
+	line-height: 1.6;
+}
+.lab-note code {
+	color: var(--lab-dim);
+}
+
+/* --- Page index (catalogue) ---------------------------------------------- */
+.lab-catalog {
+	flex: 1;
+	min-height: 0;
+	overflow-y: auto;
+	padding: 30px 26px 60px;
+	max-width: 1100px;
+	width: 100%;
+	margin: 0 auto;
+}
+.lab-intro {
+	color: var(--lab-dim);
+	font-size: 0.8rem;
+	line-height: 1.7;
+	margin: 0 0 32px;
+	max-width: 64ch;
+}
+.lab-intro code {
+	color: var(--lab-accent);
+}
+.lab-group {
+	margin-bottom: 34px;
+}
+.lab-group-h {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	font-size: 0.7rem;
+	letter-spacing: 0.16em;
+	color: var(--lab-accent);
+	margin: 0 0 14px;
+	text-transform: uppercase;
+}
+.lab-group-h::after {
+	content: '';
+	flex: 1;
+	height: 1px;
+	background: var(--lab-line);
+}
+.lab-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	gap: 14px;
+}
+.lab-card {
+	display: flex;
+	flex-direction: column;
+	gap: 9px;
+	padding: 16px 18px;
+	border: 1px solid var(--lab-line);
+	border-radius: 10px;
+	background: rgba(8, 11, 18, 0.6);
+	text-decoration: none;
+	color: inherit;
+	transition: all 0.18s ease;
+}
+.lab-card:hover {
+	text-decoration: none;
+	border-color: color-mix(in srgb, var(--lab-accent) 55%, transparent);
+	background: rgba(12, 18, 30, 0.9);
+	transform: translateY(-2px);
+}
+.lab-card-top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+}
+.lab-card-title {
+	font-size: 0.92rem;
+	color: var(--lab-fg);
+}
+.lab-card-blurb {
+	font-size: 0.74rem;
+	color: var(--lab-dim);
+	line-height: 1.6;
+	margin: 0;
+}
+.lab-card-go {
+	font-size: 0.72rem;
+	color: var(--lab-accent);
+	letter-spacing: 0.05em;
+}
+.lab-status {
+	font-size: 0.6rem;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	padding: 3px 8px;
+	border-radius: 999px;
+	border: 1px solid currentColor;
+}
+.lab-status.stable {
+	color: #39ff88;
+}
+.lab-status.wip {
+	color: #ffb020;
+}
+.lab-status.idea {
+	color: var(--lab-dimmer);
+}
+
+/* --- Responsive ----------------------------------------------------------- */
+@media (max-width: 760px) {
+	.lab-main {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto;
+	}
+	.lab-stage {
+		min-height: 56vh;
+	}
+	.lab-panel {
+		border-left: 0;
+		border-top: 1px solid var(--lab-line);
+	}
+}
