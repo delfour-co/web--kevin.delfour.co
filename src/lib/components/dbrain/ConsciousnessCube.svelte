@@ -4,8 +4,10 @@
 
 	let {
 		activity = 'idle',
-		color = '#00E5FF'
-	}: { activity?: CubeActivity; color?: string } = $props();
+		color = '#00E5FF',
+		zoom = 1,
+		cubeScale = undefined
+	}: { activity?: CubeActivity; color?: string; zoom?: number; cubeScale?: number } = $props();
 
 	let host: HTMLDivElement;
 	let canvas: HTMLCanvasElement;
@@ -22,7 +24,7 @@
 			try {
 				const { createCubeScene } = await import('$lib/dbrain/cube');
 				if (!alive) return;
-				controller = createCubeScene(canvas, { color });
+				controller = createCubeScene(canvas, { color, zoom, cubeScale });
 				controller.setActivity(activity);
 				controller.resize();
 

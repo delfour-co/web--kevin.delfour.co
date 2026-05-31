@@ -10,6 +10,8 @@ import * as THREE from 'three';
 import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
 
 export type CubeActivity = 'idle' | 'exploration' | 'response';
@@ -26,7 +28,18 @@ export interface CubeController {
 
 interface CubeOptions {
 	color?: string;
+	/**
+	 * Fond du canvas. Couleur réelle (`'#05070d'`) → rendu OPAQUE sur cette couleur.
+	 * `'transparent'` ou omis → fond réellement transparent (le cube flotte). Défaut transparent.
+	 */
 	background?: string;
+	/** Recule la caméra (>1 = cube plus petit, plus d'air autour). Défaut 1. */
+	zoom?: number;
+	/**
+	 * Grossit le cube SANS toucher au socle (le socle reste une base discrète).
+	 * 1 = neutre ; >1 = cube plus imposant. Défaut 1.22.
+	 */
+	cubeScale?: number;
 }
 
 interface Preset {
@@ -187,18 +200,33 @@ function makeCircuitTexture(): THREE.Texture {
 
 export function createCubeScene(canvas: HTMLCanvasElement, opts: CubeOptions = {}): CubeController {
 	const initial = opts.color ?? '#00E5FF';
+	// Fond transparent par défaut ; une vraie couleur dans `background` reste opaque.
+	const bg = opts.background ?? 'transparent';
+	const transparentBg = bg === 'transparent';
 	const renderer = new THREE.WebGLRenderer({
 		canvas,
 		antialias: true,
+		alpha: true,
+		premultipliedAlpha: false,
 		powerPreference: 'high-performance'
 	});
-	// Opaque, accordé au fond de la page → bloom OK, pas de boîte visible.
-	renderer.setClearColor(new THREE.Color(opts.background ?? '#05070d'), 1);
+	if (transparentBg) {
+		renderer.setClearColor(0x000000, 0);
+		renderer.setClearAlpha(0);
+	} else {
+		renderer.setClearColor(new THREE.Color(bg), 1);
+	}
 
+	const zoom = opts.zoom ?? 1;
+	// Le cube grossit (group), le socle (ringGroup) reste à sa taille → cube plus imposant.
+	const cubeScale = opts.cubeScale ?? 1.22;
+	// Caméra basse / rasante → le socle se projette en ellipse écrasée (pas un cercle).
+	const CAM_Y = 2.4;
+	const CAM_Z = 7.9;
 	const scene = new THREE.Scene();
 	const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
 	const camTarget = new THREE.Vector3(0, -0.5, 0);
-	camera.position.set(0, 3.6, 7.4);
+	camera.position.set(0, CAM_Y * zoom, CAM_Z * zoom);
 	camera.lookAt(camTarget);
 
 	// Monde : porte l'inclinaison commune au cube ET au socle.
@@ -209,10 +237,61 @@ export function createCubeScene(canvas: HTMLCanvasElement, opts: CubeOptions = {
 	worldGroup.add(group);
 
 	// Post-processing : bloom (le glow néon des circuits / traces / nœuds).
-	const composer = new EffectComposer(renderer);
-	composer.addPass(new RenderPass(scene, camera));
+	//
+	// Fond transparent + UnrealBloomPass : l'étape de composite du bloom ne préserve
+	// pas l'alpha → naïvement on obtient une « boîte noire ». Parade canonique :
+	//   1. bloomComposer rend la scène et n'en garde QUE le glow flouté (hors écran).
+	//   2. finalComposer rerend la scène de base (alpha vrai), puis un ShaderPass
+	//      additionne base.rgb + bloom.rgb en gardant alpha = base.a → les pixels vides
+	//      restent à alpha 0 (transparents), le cube/socle/glow gardent leur alpha.
+	//   3. OutputPass applique le color space / tone mapping en fin de chaîne.
+	const rtParams: THREE.RenderTargetOptions = {
+		type: THREE.HalfFloatType,
+		format: THREE.RGBAFormat,
+		colorSpace: THREE.NoColorSpace
+	};
+	const bloomRT = new THREE.WebGLRenderTarget(1, 1, rtParams);
+	const bloomComposer = new EffectComposer(renderer, bloomRT);
+	bloomComposer.renderToScreen = false;
+	bloomComposer.addPass(new RenderPass(scene, camera));
 	const bloom = new UnrealBloomPass(new THREE.Vector2(1, 1), 0.35, 0.4, 0.5);
-	composer.addPass(bloom);
+	bloomComposer.addPass(bloom);
+
+	const combineShader = {
+		uniforms: {
+			tDiffuse: { value: null as THREE.Texture | null },
+			uBloom: { value: bloomComposer.renderTarget2.texture }
+		},
+		vertexShader: `
+			varying vec2 vUv;
+			void main() {
+				vUv = uv;
+				gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+			}
+		`,
+		fragmentShader: `
+			uniform sampler2D tDiffuse;
+			uniform sampler2D uBloom;
+			varying vec2 vUv;
+			void main() {
+				vec4 base = texture2D(tDiffuse, vUv);
+				vec3 glow = texture2D(uBloom, vUv).rgb;
+				// Glow additif ; alpha = celui de la base → les pixels vides restent à 0.
+				gl_FragColor = vec4(base.rgb + glow, base.a);
+			}
+		`
+	};
+
+	const finalRT = new THREE.WebGLRenderTarget(1, 1, rtParams);
+	const composer = new EffectComposer(renderer, finalRT);
+	composer.addPass(new RenderPass(scene, camera));
+	// ShaderMaterial opaque (transparent=false) → blending désactivé → écrit
+	// gl_FragColor TEL QUEL (alpha compris) dans le write buffer fraîchement vidé.
+	// Surtout PAS transparent:true ici (ça prémultiplierait le rgb par l'alpha).
+	const combinePass = new ShaderPass(combineShader, 'tDiffuse');
+	composer.addPass(combinePass);
+	const outputPass = new OutputPass();
+	composer.addPass(outputPass);
 
 	const targetColor = new THREE.Color(initial);
 	const curColor = targetColor.clone();
@@ -333,8 +412,11 @@ export function createCubeScene(canvas: HTMLCanvasElement, opts: CubeOptions = {
 		for (let y = 0; y < N; y++) {
 			for (let z = 0; z < N; z++) {
 				if (x === 1 && y === 1 && z === 1) continue; // centre laissé vide pour l'atome
-				// La coque circuit EST le sous-cube. renderOrder 0 : rendue AVANT les
-				// anneaux → écrit la profondeur → les anneaux derrière sont occultés.
+				// La coque circuit EST le sous-cube. renderOrder 0 (défaut) : rendue
+				// APRÈS le socle (SOCLE_ORDER = -1). La face translucide (depthWrite)
+				// se mélange par-dessus les anneaux qui passent derrière elle → ceux-ci
+				// sont estompés « à travers le verre » ; le core box opaque, lui, les
+				// occulte franchement via depthTest.
 				const mesh = new THREE.Mesh(faceGeo, faceMat);
 				const base = new THREE.Vector3(x * step - off, y * step - off, z * step - off);
 				mesh.position.copy(base);
@@ -499,6 +581,23 @@ export function createCubeScene(canvas: HTMLCanvasElement, opts: CubeOptions = {
 	}
 
 	// --- Anneaux orbitaux (plateforme holographique inclinée autour du cube) ---
+	//
+	// SOCLE_ORDER = -1 : le socle (anneaux, cadran, réticule, graduations, nœuds —
+	// tout en blanc, alpha-blend, depthTest:true, depthWrite:false) est rendu AVANT
+	// les faces translucides du cube (renderOrder 0). Pourquoi : avec l'ancien ordre
+	// (socle APRÈS, renderOrder 1), un anneau passant dans le volume du cube — donc
+	// derrière une face proche mais devant la face lointaine — était peint PAR-DESSUS
+	// la face proche (la file transparente trie d'abord par renderOrder) et claquait
+	// en blanc plein, puis bloomait. En rendant le socle d'abord :
+	//   • un anneau derrière une partie opaque (core box, écrite en passe opaque) est
+	//     rejeté par son depthTest → occulté ;
+	//   • un anneau qui traverse le cube est peint, puis la face translucide
+	//     (uAlpha 0.85, depthTest:true) se mélange PAR-DESSUS → l'anneau est estompé
+	//     « à travers le verre » (et, étant atténué dès la passe de base, ne dépasse
+	//     plus le seuil de bloom) ;
+	//   • un anneau réellement DEVANT le cube (segments bas, hors silhouette, sans
+	//     face devant eux) reste net.
+	const SOCLE_ORDER = -1;
 	const ringGroup = new THREE.Group();
 	ringGroup.rotation.x = -Math.PI / 2; // plan horizontal — même repère que le cube
 	ringGroup.position.y = -1.9; // plateforme sous le cube
@@ -515,7 +614,7 @@ export function createCubeScene(canvas: HTMLCanvasElement, opts: CubeOptions = {
 	});
 	const poolGeo = new THREE.PlaneGeometry(5.5, 5.5);
 	const pool = new THREE.Mesh(poolGeo, poolMat);
-	pool.renderOrder = 0; // sous les anneaux
+	pool.renderOrder = SOCLE_ORDER - 1; // reste sous les anneaux du socle
 	ringGroup.add(pool);
 
 	const arcGeo = (r: number, seg: number, span: number): THREE.BufferGeometry => {
@@ -558,9 +657,7 @@ export function createCubeScene(canvas: HTMLCanvasElement, opts: CubeOptions = {
 	const ringC = new THREE.Mesh(geoRingC, mRingC);
 	const sweep = new THREE.Line(geoSweep, mSweep);
 	ringGroup.add(ringA, ringB, ringC, sweep);
-	// renderOrder 1 : rendus APRÈS le verre (renderOrder 0) → la profondeur du
-	// verre les rejette quand ils passent derrière le cube (occultation).
-	for (const o of [ringA, ringB, ringC, sweep]) o.renderOrder = 1;
+	for (const o of [ringA, ringB, ringC, sweep]) o.renderOrder = SOCLE_ORDER;
 
 	// Axes radiaux tous les 60° — dépassent le socle et se fondent vers la pointe
 	// (alpha par sommet : plein sur le socle, → 0 au-delà du bord).
@@ -594,7 +691,7 @@ export function createCubeScene(canvas: HTMLCanvasElement, opts: CubeOptions = {
 		depthWrite: false
 	});
 	const axes = new THREE.LineSegments(axisGeo, mAxes);
-	axes.renderOrder = 1;
+	axes.renderOrder = SOCLE_ORDER;
 	ringGroup.add(axes);
 
 	// Cadran : degrés 0 → 360 imprimés à plat sur le socle.
@@ -608,7 +705,7 @@ export function createCubeScene(canvas: HTMLCanvasElement, opts: CubeOptions = {
 	});
 	const dialGeo = new THREE.PlaneGeometry(7.0, 7.0);
 	const dial = new THREE.Mesh(dialGeo, dialMat);
-	dial.renderOrder = 1;
+	dial.renderOrder = SOCLE_ORDER;
 	ringGroup.add(dial);
 
 	// --- Instrumentation « sci-fi » du socle (tout en blanc constant) ---------
@@ -618,7 +715,7 @@ export function createCubeScene(canvas: HTMLCanvasElement, opts: CubeOptions = {
 	const mRingD = mkTorusMat(0.45);
 	ringMats.push(mRingD);
 	const ringD = new THREE.Mesh(geoRingD, mRingD);
-	ringD.renderOrder = 1;
+	ringD.renderOrder = SOCLE_ORDER;
 	ringGroup.add(ringD);
 
 	// Bande de graduations fines : un tick tous les 5°, long tous les 30°.
@@ -636,7 +733,7 @@ export function createCubeScene(canvas: HTMLCanvasElement, opts: CubeOptions = {
 	const mGrad = mkRingMat(0.4);
 	ringMats.push(mGrad);
 	const grad = new THREE.LineSegments(gradGeo, mGrad);
-	grad.renderOrder = 1;
+	grad.renderOrder = SOCLE_ORDER;
 	ringGroup.add(grad);
 
 	// Réticule rotatif : 4 arcs « caliper » avec pattes radiales (contre-sens du cadran).
@@ -666,7 +763,7 @@ export function createCubeScene(canvas: HTMLCanvasElement, opts: CubeOptions = {
 	const mReticle = mkRingMat(0.55);
 	ringMats.push(mReticle);
 	const reticle = new THREE.LineSegments(reticleGeo, mReticle);
-	reticle.renderOrder = 1;
+	reticle.renderOrder = SOCLE_ORDER;
 	ringGroup.add(reticle);
 
 	// Nœuds de jonction (pads PCB) aux croisements axes × anneaux — petits points lumineux.
@@ -689,7 +786,7 @@ export function createCubeScene(canvas: HTMLCanvasElement, opts: CubeOptions = {
 		sizeAttenuation: true
 	});
 	const socleNodes = new THREE.Points(nodeGeo, mNodes);
-	socleNodes.renderOrder = 1;
+	socleNodes.renderOrder = SOCLE_ORDER;
 	ringGroup.add(socleNodes);
 
 	// État animé interpolé.
@@ -706,6 +803,10 @@ export function createCubeScene(canvas: HTMLCanvasElement, opts: CubeOptions = {
 	let yRot = 0;
 
 	function render(): void {
+		// 1. Glow flouté hors écran. 2. Lie le résultat (readBuffer après ping-pong)
+		//    au combine shader. 3. Composite base + glow → écran, alpha préservé.
+		bloomComposer.render();
+		combinePass.uniforms.uBloom.value = bloomComposer.readBuffer.texture;
 		composer.render();
 	}
 
@@ -727,7 +828,8 @@ export function createCubeScene(canvas: HTMLCanvasElement, opts: CubeOptions = {
 		group.rotation.y = yRot; // rotation propre du cube (toupie) ; inclinaison fixe (worldGroup à 0)
 
 		const pulse = Math.sin(t * 3.2) * 0.04 * T.core.cur * (T.scale.tgt > 1.0 ? 1 : 0.15);
-		group.scale.setScalar(T.scale.cur * (1 + Math.sin(t * 1.0) * 0.02 + pulse));
+		// cubeScale agrandit le cube sans toucher au socle (ringGroup).
+		group.scale.setScalar(cubeScale * T.scale.cur * (1 + Math.sin(t * 1.0) * 0.02 + pulse));
 
 		for (const sc of subs) {
 			// Les sous-cubes dérivent vers l'extérieur en suivant une onde « scan »
@@ -851,14 +953,18 @@ export function createCubeScene(canvas: HTMLCanvasElement, opts: CubeOptions = {
 		const dpr = Math.min(window.devicePixelRatio || 1, 2);
 		renderer.setPixelRatio(dpr);
 		renderer.setSize(w, h, false);
+		bloomComposer.setPixelRatio(dpr);
+		bloomComposer.setSize(w, h);
 		composer.setPixelRatio(dpr);
 		composer.setSize(w, h);
 		bloom.setSize(w, h);
+		// renderTarget2 du bloom a pu être recréé par setSize → relier la nouvelle texture.
+		combinePass.uniforms.uBloom.value = bloomComposer.renderTarget2.texture;
 		const aspect = w / h;
 		camera.aspect = aspect;
 		// Vue en légère plongée (3/4) ; recule sur les formats étroits.
 		const k = 1 / Math.min(1, aspect);
-		camera.position.set(0, 3.6 * k, 7.4 * k);
+		camera.position.set(0, CAM_Y * k * zoom, CAM_Z * k * zoom);
 		camera.lookAt(camTarget);
 		camera.updateProjectionMatrix();
 		if (!running) renderOnce();
@@ -900,6 +1006,12 @@ export function createCubeScene(canvas: HTMLCanvasElement, opts: CubeOptions = {
 		poolGeo.dispose();
 		poolMat.dispose();
 		for (const m of ringMats) m.dispose();
+		// Post-processing : composers (libèrent leurs renderTarget1/2, dont bloomRT/finalRT)
+		// + passes (non libérées par EffectComposer.dispose).
+		bloom.dispose();
+		combinePass.dispose();
+		outputPass.dispose();
+		bloomComposer.dispose();
 		composer.dispose();
 		renderer.dispose();
 	}
