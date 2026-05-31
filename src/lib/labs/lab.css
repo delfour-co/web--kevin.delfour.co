@@ -11,12 +11,37 @@
 	--lab-dim: #7c8ea3;
 	--lab-dimmer: #56697d;
 	--lab-line: rgba(0, 229, 255, 0.18);
-	min-height: 100dvh;
+	/* L'écran ne scrolle pas : il tient dans le viewport, ce sont les fenêtres
+	   internes (arbre, listing, colonnes) qui scrollent. */
+	height: 100dvh;
+	overflow: hidden;
 	background: var(--lab-bg);
 	color: var(--lab-fg);
 	font-family: 'JetBrains Mono', ui-monospace, monospace;
 	display: flex;
 	flex-direction: column;
+	/* Scrollbar fine, accordée au thème (Firefox). */
+	scrollbar-width: thin;
+	scrollbar-color: color-mix(in srgb, var(--lab-accent) 35%, transparent) transparent;
+}
+
+/* Scrollbar des fenêtres internes (WebKit/Blink), alignée sur le style D-Brain. */
+.lab *::-webkit-scrollbar {
+	width: 9px;
+	height: 9px;
+}
+.lab *::-webkit-scrollbar-track {
+	background: transparent;
+}
+.lab *::-webkit-scrollbar-thumb {
+	background: color-mix(in srgb, var(--lab-accent) 30%, #16202e);
+	border-radius: 6px;
+	border: 2px solid transparent;
+	background-clip: padding-box;
+}
+.lab *::-webkit-scrollbar-thumb:hover {
+	background: color-mix(in srgb, var(--lab-accent) 55%, #16202e);
+	background-clip: padding-box;
 }
 
 /* --- Barre supérieure ----------------------------------------------------- */
