@@ -45,7 +45,7 @@
 
 <SEO
 	title="Rechercher"
-	description="Rechercher un article ou un outil sur kevin.delfour.co"
+	description="Rechercher dans les pages, les outils et les chapitres de livres de kevin.delfour.co"
 	url="https://kevin.delfour.co/search/"
 	noindex={true}
 />
@@ -65,7 +65,7 @@
 				type="search"
 				bind:value={query}
 				oninput={handleInput}
-				placeholder="Rechercher un article, un outil…"
+				placeholder="Rechercher une page, un outil, un chapitre…"
 				class="search-input"
 				aria-label="Rechercher"
 			/>
@@ -76,7 +76,7 @@
 		{:else if query && results.length === 0}
 			<p class="search-status">Aucun résultat pour "{query}".</p>
 		{:else if !query}
-			<p class="search-hint">Tape un mot-clé pour chercher dans les articles et outils.</p>
+			<p class="search-hint">Tapez un mot-clé pour chercher dans tout le site.</p>
 		{/if}
 
 		{#if results.length > 0}

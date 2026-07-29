@@ -35,7 +35,7 @@
 		<h1>{data.chapter.title}</h1>
 	</header>
 
-	<div class="post-content" data-pagefind-body>
+	<div class="post-content">
 		<Component />
 	</div>
 

@@ -1,4 +1,6 @@
 import { getAllBooks } from '$lib/books';
+import { tools } from '$lib/data/tools';
+import { visibleProjects } from '$lib/data/projects';
 
 const SITE_URL = 'https://kevin.delfour.co';
 
@@ -9,41 +11,49 @@ export function GET() {
 
 	const staticPages = [
 		{ path: '/', priority: '1.0' },
+		{ path: '/leadership/', priority: '0.9' },
+		{ path: '/cv/', priority: '0.9' },
+		{ path: '/a-propos/', priority: '0.8' },
 		{ path: '/livres/', priority: '0.8' },
 		{ path: '/outils/', priority: '0.8' },
-		{ path: '/projets/', priority: '0.7' },
-		{ path: '/a-propos/', priority: '0.7' },
+		{ path: '/conferences/', priority: '0.7' },
+		{ path: '/communaute/', priority: '0.7' },
+		{ path: '/projets/', priority: '0.6' },
 		{ path: '/contact/', priority: '0.6' },
-		{ path: '/benevolat/', priority: '0.5' },
 		{ path: '/search/', priority: '0.4' }
 	];
 
 	const urls: string[] = [];
 
-	for (const page of staticPages) {
+	const push = (path: string, priority: string, changefreq = 'monthly') => {
 		urls.push(`
 	<url>
-		<loc>${SITE_URL}${page.path}</loc>
-		<priority>${page.priority}</priority>
-		<changefreq>weekly</changefreq>
+		<loc>${SITE_URL}${path}</loc>
+		<priority>${priority}</priority>
+		<changefreq>${changefreq}</changefreq>
 	</url>`);
+	};
+
+	for (const page of staticPages) {
+		push(page.path, page.priority, 'weekly');
+	}
+
+	// Les 21 outils — chacun est une page à part entière.
+	for (const tool of tools) {
+		push(tool.url, '0.7');
+	}
+
+	// Pages projet détaillées (les projets sans page ne sont pas des URLs du site).
+	for (const project of visibleProjects) {
+		if (project.hasPage) {
+			push(`/projets/${project.slug}/`, '0.5');
+		}
 	}
 
 	for (const book of books) {
-		urls.push(`
-	<url>
-		<loc>${SITE_URL}/livres/${book.slug}/</loc>
-		<priority>0.7</priority>
-		<changefreq>monthly</changefreq>
-	</url>`);
-
+		push(`/livres/${book.slug}/`, '0.7');
 		for (const chapter of book.chapters) {
-			urls.push(`
-	<url>
-		<loc>${SITE_URL}/livres/${book.slug}/${chapter.slug}/</loc>
-		<priority>0.6</priority>
-		<changefreq>monthly</changefreq>
-	</url>`);
+			push(`/livres/${book.slug}/${chapter.slug}/`, '0.6');
 		}
 	}
 
