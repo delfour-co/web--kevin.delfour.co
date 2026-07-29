@@ -5,7 +5,7 @@
 </script>
 
 <nav class="term-crumb" aria-label="Fil d'Ariane">
-	<span class="p">$</span> cd <a href="/projets/">~/projets</a>/{project.slug}
+	<a href="/projets/">Projets</a> / {project.name}
 </nav>
 
 <header class="proj-hero">

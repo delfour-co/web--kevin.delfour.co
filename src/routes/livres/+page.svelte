@@ -6,16 +6,19 @@
 
 <SEO
 	title="Livres"
-	description="Les livres que j'ai (co-)écrits, disponibles gratuitement en ligne."
+	description="J'écris pour transmettre ce que le terrain m'a appris. Deux livres complets, gratuits, en ligne : « Être ou ne pas être CTO » et « En Quête d'Expérience »."
 	url="https://kevin.delfour.co/livres/"
+	breadcrumbs={[{ label: 'Livres' }]}
 />
 
 <div class="page-container">
 	<header class="page-header">
-		<span class="badge">Livres gratuits</span>
-		<h1>Livres</h1>
+		<span class="kicker">Écrits</span>
+		<h1>J’écris pour transmettre ce que le terrain m’a appris</h1>
 		<p class="page-description">
-			Des livres complets, en accès libre. Des repères structurés, pas des leçons.
+			Deux livres complets, gratuits, en ligne. L’un s’adresse à celles et ceux qui prennent des
+			responsabilités d’organisation, l’autre à celles et ceux qui construisent leur carrière
+			d’ingénieur.
 		</p>
 	</header>
 

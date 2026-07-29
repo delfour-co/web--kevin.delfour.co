@@ -7,23 +7,26 @@
 
 <SEO
 	title="Projets"
-	description="Tout ce que je construis : jeux, apps mobiles, outils CLI, librairies et plateformes web. Dépôts publics et privés des orgs delfour-co, exec-d et systm-d."
+	description="Je dirige des organisations d'ingénierie et je continue de livrer du code. Jeux, apps mobiles, outils CLI, librairies et plateformes web."
 	url="https://kevin.delfour.co/projets/"
+	breadcrumbs={[{ label: 'Projets' }]}
 />
 
 <div class="term-page">
 	<header class="term-head">
-		<div class="term-cmd"><span class="p">$</span> ls projets/ <span class="hash"># tout ce que je construis</span></div>
-		<h1 class="visually-hidden">Projets</h1>
+		<div class="term-cmd">Côté code</div>
+		<h1>Je dirige, et je continue de livrer</h1>
 		<p class="term-lead">
-			Jeux, apps mobiles, outils, librairies, plateformes. Publics quand ils peuvent l'être,
-			<span class="priv-inline">privés</span> quand ils ne le sont pas encore — pour ceux-là, je dis le problème adressé et comment.
+			Rester hands-on n’est pas une posture : c’est la façon la plus honnête de comprendre ce que
+			vivent mes équipes. Jeux, apps mobiles, outils, librairies, plateformes. Publics quand ils
+			peuvent l’être, <span class="priv-inline">privés</span> quand ils ne le sont pas encore — pour
+			ceux-là, je dis le problème adressé et comment.
 		</p>
 	</header>
 
 	{#each groups as group}
 		<section class="term-sec">
-			<div class="term-cmd"><span class="p">$</span> ls {group.type}/</div>
+			<div class="term-cmd">{group.label}</div>
 			<h2 class="visually-hidden">{group.label}</h2>
 			<div class="term-grid">
 				{#each group.items as p}
