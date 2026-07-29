@@ -68,6 +68,8 @@ export interface Project {
 	problem?: string;
 	how?: string;
 	repoUrl?: string;
+	/** Site public du projet (landing, distribution). Prioritaire sur repoUrl pour la carte. */
+	siteUrl?: string;
 	seoDescription?: string;
 	icon?: string;
 	iconText?: string;
@@ -99,10 +101,10 @@ export function detailSlugs(): string[] {
 	return projects.filter((p) => p.visible && p.hasPage).map((p) => p.slug);
 }
 
-/** Destination d'une carte projet : page de détail, sinon dépôt public, sinon rien. */
+/** Destination d'une carte projet : page de détail, sinon site public, sinon dépôt, sinon rien. */
 export function cardHref(p: Project): string | null {
 	if (p.hasPage) return `/projets/${p.slug}/`;
-	return p.repoUrl ?? null;
+	return p.siteUrl ?? p.repoUrl ?? null;
 }
 
 export interface ProjectGroup {

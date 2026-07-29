@@ -11,9 +11,11 @@
 
 	const navItems = [
 		{ label: 'Leadership', href: '/leadership/' },
+		{ label: 'Projets', href: '/projets/' },
 		{ label: 'Livres', href: '/livres/' },
 		{ label: 'Conférences', href: '/conferences/' },
-		{ label: 'Communauté', href: '/communaute/' },
+		// Communauté est en pied de page, comme Outils et Projets : les engagements
+		// sont en pause depuis 2026, la page reste accessible sans occuper la nav.
 		{ label: 'À propos', href: '/a-propos/' },
 		{ label: 'CV', href: '/cv/' },
 		{ label: 'Contact', href: '/contact/' }

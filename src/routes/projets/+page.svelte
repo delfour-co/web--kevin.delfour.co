@@ -7,7 +7,7 @@
 
 <SEO
 	title="Projets"
-	description="Je dirige des organisations d'ingénierie et je continue de livrer du code. Jeux, apps mobiles, outils CLI, librairies et plateformes web."
+	description="Je mène des organisations d'ingénierie et je continue de livrer du code. Apps mobiles, outils CLI et librairies, tous publics."
 	url="https://kevin.delfour.co/projets/"
 	breadcrumbs={[{ label: 'Projets' }]}
 />
@@ -15,12 +15,11 @@
 <div class="term-page">
 	<header class="term-head">
 		<div class="term-cmd">Côté code</div>
-		<h1>Je dirige, et je continue de livrer</h1>
+		<h1>J’emmène des équipes, et je continue de livrer</h1>
 		<p class="term-lead">
 			Rester hands-on n’est pas une posture : c’est la façon la plus honnête de comprendre ce que
-			vivent mes équipes. Jeux, apps mobiles, outils, librairies, plateformes. Publics quand ils
-			peuvent l’être, <span class="priv-inline">privés</span> quand ils ne le sont pas encore — pour
-			ceux-là, je dis le problème adressé et comment.
+			vivent mes équipes. Apps mobiles, outils en ligne de commande, librairies — tout ce qui est
+			ici est public, le code se lit.
 		</p>
 	</header>
 
@@ -67,10 +66,6 @@
 </div>
 
 <style>
-	.priv-inline {
-		color: var(--accent2);
-	}
-
 	.proj-top {
 		display: flex;
 		align-items: center;
