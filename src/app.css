@@ -748,7 +748,11 @@ a.card:hover {
 	border: 1px solid var(--border);
 	border-radius: 999px;
 	padding: 3px 10px;
-	white-space: nowrap;
+	/* Surtout pas de white-space: nowrap — une puce plus large que sa colonne pousse
+	   toute la page en défilement horizontal sur mobile. Les libellés courts tiennent
+	   sur une ligne d'eux-mêmes ; seuls les trop longs se replient. */
+	max-width: 100%;
+	overflow-wrap: anywhere;
 }
 .tag--accent {
 	color: var(--accent);
