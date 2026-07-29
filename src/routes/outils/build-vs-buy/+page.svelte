@@ -6,14 +6,13 @@
 
 <SEO
 	title="Build vs Buy vs Partner"
-	description="Évalue ta situation avec 5 critères pour identifier la tendance la plus adaptée entre construire, acheter ou s'associer."
+	description="Évaluez la situation sur 5 critères pour dégager la tendance entre construire, acheter ou s'associer."
 	url="https://kevin.delfour.co/outils/build-vs-buy/"
 />
 
 <ToolShell
 	title="Build vs Buy vs Partner"
-	description="Évalue ta situation avec 5 critères pour identifier la tendance la plus adaptée entre construire, acheter ou t'associer. Ce n'est qu'un repère — pas une réponse définitive."
-	command="./build-vs-buy"
+	description="Évaluez la situation sur 5 critères pour dégager la tendance entre construire, acheter ou s'associer. Ce n'est qu'un repère — pas une réponse définitive."
 >
 	<BuildVsBuy />
 </ToolShell>

@@ -26,9 +26,9 @@
 	] as const;
 
 	const metriquesConfig = [
-		{ id: 'collaboration', label: 'Collaboration equipe' },
-		{ id: 'specs', label: 'Clarte des specifications' },
-		{ id: 'technique', label: 'Qualite technique' },
+		{ id: 'collaboration', label: 'Collaboration équipe' },
+		{ id: 'specs', label: 'Clarté des spécifications' },
+		{ id: 'technique', label: 'Qualité technique' },
 		{ id: 'communication', label: 'Communication avec le produit' },
 		{ id: 'velocite', label: 'Rythme de livraison ressenti' }
 	];
@@ -109,7 +109,7 @@
 
 		if (score >= 70) return { label: 'Sprint sain', color: 'var(--retro-green)', level: 'sain' };
 		if (score >= 45) return { label: 'Sprint sous tension', color: 'var(--retro-amber)', level: 'tension' };
-		return { label: 'Sprint en difficulte', color: 'var(--retro-red)', level: 'difficulte' };
+		return { label: 'Sprint en difficulté', color: 'var(--retro-red)', level: 'difficulte' };
 	});
 
 	// Radar chart (pentagon for 5 metriques)
@@ -386,7 +386,7 @@
 
 				<div class="field-row">
 					<div class="field-group">
-						<label class="field-label" for="bs-nom" title="Sprint : cycle de travail, generalement de 2 semaines">Numero / nom du cycle (sprint)</label>
+						<label class="field-label" for="bs-nom" title="Sprint : cycle de travail, généralement de 2 semaines">Numéro / nom du cycle (sprint)</label>
 						<input
 							id="bs-nom"
 							type="text"
@@ -408,12 +408,12 @@
 				</div>
 
 				<div class="field-group">
-					<label class="field-label" for="bs-equipe">Equipe</label>
+					<label class="field-label" for="bs-equipe">Équipe</label>
 					<input
 						id="bs-equipe"
 						type="text"
 						class="field-input"
-						placeholder="Nom de l'equipe"
+						placeholder="Nom de l'équipe"
 						bind:value={equipe}
 					/>
 				</div>
@@ -436,7 +436,7 @@
 
 				<div class="field-row field-row--4">
 					<div class="field-group">
-						<label class="field-label" for="bs-prevues" title="Nombre de recits utilisateur (user stories) prevus pour ce cycle">Taches prevues</label>
+						<label class="field-label" for="bs-prevues" title="Nombre de recits utilisateur (user stories) prévus pour ce cycle">Tâches prévues</label>
 						<input
 							id="bs-prevues"
 							type="number"
@@ -446,7 +446,7 @@
 						/>
 					</div>
 					<div class="field-group">
-						<label class="field-label" for="bs-livrees">Taches livrees</label>
+						<label class="field-label" for="bs-livrees">Tâches livrées</label>
 						<input
 							id="bs-livrees"
 							type="number"
@@ -456,7 +456,7 @@
 						/>
 					</div>
 					<div class="field-group">
-						<label class="field-label" for="bs-reportees">Taches reportees</label>
+						<label class="field-label" for="bs-reportees">Tâches reportées</label>
 						<input
 							id="bs-reportees"
 							type="number"
@@ -493,7 +493,7 @@
 
 			<!-- Retrospective -->
 			<section class="tool-panel form-section">
-				<h2 class="section-title" title="Temps de bilan collectif pour identifier ce qui a fonctionne et ce qui peut etre ameliore">Retrospective (bilan d'equipe)</h2>
+				<h2 class="section-title" title="Temps de bilan collectif pour identifier ce qui a fonctionne et ce qui peut être amélioré">Rétrospective (bilan d'équipe)</h2>
 
 				<div class="retro-grid">
 					{#each quadrants as quadrant}
@@ -619,8 +619,8 @@
 
 			<!-- Metriques qualite -->
 			<section class="tool-panel form-section">
-				<h2 class="section-title">Indicateurs de qualite</h2>
-				<p class="section-hint">Evaluation subjective de l'equipe sur ce cycle. Un repere, pas un verdict.</p>
+				<h2 class="section-title">Indicateurs de qualité</h2>
+				<p class="section-hint">Évaluation subjective de l'équipe sur ce cycle. Un repère, pas un verdict.</p>
 
 				{#each metriquesConfig as metrique}
 					<div class="metrique-row">
@@ -652,7 +652,7 @@
 
 		<!-- Result panel (sticky) -->
 		<div class="tool-result" aria-live="polite" aria-atomic="true">
-			<div class="result-title">Resultats</div>
+			<div class="result-title">Résultats</div>
 
 			<!-- Trend -->
 			<div class="result-trend" style="border-color: {trend.color}">
@@ -668,7 +668,7 @@
 					<span class="result-big-unit">%</span>
 				</div>
 				<div class="result-delivery-details">
-					<span>{storiesLivrees}/{storiesPrevues} taches</span>
+					<span>{storiesLivrees}/{storiesPrevues} tâches</span>
 					{#if storiesReportees > 0}
 						<span>{storiesReportees} reportee{storiesReportees > 1 ? 's' : ''}</span>
 					{/if}
@@ -786,7 +786,7 @@
 					{/if}
 					{#if equipe}
 						<div class="result-context-row">
-							<span class="result-context-label">Equipe</span>
+							<span class="result-context-label">Équipe</span>
 							<span class="result-context-value">{equipe}</span>
 						</div>
 					{/if}

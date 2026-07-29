@@ -12,8 +12,7 @@
 
 <ToolShell
 	title="Générateur de RFC"
-	description="Structure une Request for Comments technique avec un formulaire guidé. Chaque section est accompagnée de repères pour t'aider à formaliser ta réflexion."
-	command="./generateur-rfc"
+	description="Structurez une Request for Comments technique avec un formulaire guidé. Chaque section est accompagnée de repères pour aider à formaliser la réflexion."
 >
 	<GenerateurRFC />
 </ToolShell>

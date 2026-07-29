@@ -12,8 +12,7 @@
 
 <ToolShell
 	title="Audit sécurité express"
-	description="Passe en revue ta posture sécurité sur 6 couches. Ce n'est pas un audit formel — c'est un premier repère pour identifier les angles morts les plus exposés."
-	command="./audit-securite-express"
+	description="Passez en revue votre posture sécurité sur 6 couches. Ce n'est pas un audit formel — c'est un premier repère pour identifier les angles morts les plus exposés."
 >
 	<AuditSecurite />
 </ToolShell>

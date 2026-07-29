@@ -18,7 +18,7 @@
 		"sections": [
 			{
 				"kind": "text",
-				"cmd": "cat concept.md",
+				"cmd": "Concept",
 				"title": "Le concept",
 				"paragraphs": [
 					"Un jeu d'arcade classique revisité avec une esthétique néon. Le gameplay reprend les fondamentaux d'Asteroids — piloter, tirer, survivre — avec des mécaniques modernes : vagues progressives, ennemis variés, power-ups et un système de combos."
@@ -26,7 +26,7 @@
 			},
 			{
 				"kind": "features",
-				"cmd": "ls features/",
+				"cmd": "Fonctionnalités",
 				"title": "Caractéristiques",
 				"items": [
 					{ "title": "Vagues progressives", "desc": "Difficulté croissante avec des astéroïdes de plus en plus nombreux et rapides." },
@@ -39,13 +39,13 @@
 			},
 			{
 				"kind": "chips",
-				"cmd": "cat stack.md",
+				"cmd": "Stack technique",
 				"title": "Stack technique",
 				"items": ["Flutter 3.41", "Flame 1.35", "Dart 3.11", "Android"]
 			},
 			{
 				"kind": "gallery",
-				"cmd": "ls captures/",
+				"cmd": "Captures",
 				"title": "Captures d'écran",
 				"shots": [
 					{ "src": "/images/apps/asteroids/asteroids_01.png", "alt": "Écran titre Neon Asteroids" },
@@ -81,7 +81,7 @@
 		"sections": [
 			{
 				"kind": "text",
-				"cmd": "cat concept.md",
+				"cmd": "Concept",
 				"title": "Le concept",
 				"paragraphs": [
 					"Les opérateurs allemands pendant la Seconde Guerre mondiale utilisaient la radio — un canal ouvert — pour transmettre des messages chiffrés par Enigma. Le SMS fonctionne exactement de la même manière : un canal \"en clair\" qui transporte du texte chiffré.",
@@ -91,7 +91,7 @@
 			},
 			{
 				"kind": "steps",
-				"cmd": "cat fonctionnement.md",
+				"cmd": "Fonctionnement",
 				"title": "Comment ça fonctionne",
 				"items": [
 					{ "title": "Rencontre en personne", "desc": "Tu scannes un QR code avec ton contact pour partager une configuration Enigma : rotors, positions, plugboard." },
@@ -101,7 +101,7 @@
 			},
 			{
 				"kind": "features",
-				"cmd": "ls features/",
+				"cmd": "Fonctionnalités",
 				"title": "Caractéristiques",
 				"items": [
 					{ "title": "Moteur Enigma fidèle", "desc": "Classic M3 (3 rotors, 26 caractères) et Pro M4 (4 rotors, 95 caractères). Double stepping conforme à l'original." },
@@ -114,7 +114,7 @@
 			},
 			{
 				"kind": "versions",
-				"cmd": "cat versions.md",
+				"cmd": "Versions",
 				"title": "Deux versions",
 				"items": [
 					{ "name": "Classic", "price": "Gratuit", "desc": "Fidèle à l'Enigma M3 historique. 5 rotors, 3 slots, réflecteurs B/C originaux. Keyspace ~2⁶⁷. Visualiseur complet et mode Turing inclus." },
@@ -123,13 +123,13 @@
 			},
 			{
 				"kind": "chips",
-				"cmd": "cat stack.md",
+				"cmd": "Stack technique",
 				"title": "Stack technique",
 				"items": ["Flutter", "Dart", "Kotlin", "SMS natif", "QR Code", "NFC", "PBKDF2", "Android"]
 			},
 			{
 				"kind": "gallery",
-				"cmd": "ls captures/",
+				"cmd": "Captures",
 				"title": "Captures d'écran",
 				"shots": [
 					{ "src": "/images/apps/notch/notch_001.png", "alt": "Écran d'accueil Notch" },
@@ -166,7 +166,7 @@
 		"sections": [
 			{
 				"kind": "text",
-				"cmd": "cat concept.md",
+				"cmd": "Concept",
 				"title": "Le concept",
 				"paragraphs": [
 					"Des livres-jeux interactifs où les branches git sont vos choix. Chaque commit est un fragment narratif, chaque branche un embranchement de l'histoire. Aux points de divergence, le lecteur explore les chemins — chaque route mène à une fin différente."
@@ -174,7 +174,7 @@
 			},
 			{
 				"kind": "features",
-				"cmd": "ls features/",
+				"cmd": "Fonctionnalités",
 				"title": "Comment ça marche",
 				"items": [
 					{ "title": "Catalogue", "desc": "Parcourez le catalogue et découvrez les détails de chaque histoire." },
@@ -185,7 +185,7 @@
 			},
 			{
 				"kind": "features",
-				"cmd": "ls catalogue/",
+				"cmd": "Catalogue",
 				"title": "Au catalogue",
 				"items": [
 					{ "title": "Le Signal", "desc": "Un développeur reçoit un commit qu'il n'a jamais écrit. Le SHA est impossible." },
@@ -196,7 +196,7 @@
 			},
 			{
 				"kind": "gallery",
-				"cmd": "ls captures/",
+				"cmd": "Captures",
 				"title": "Captures d'écran",
 				"shots": [
 					{ "src": "/images/apps/githero/git-hero_008.png", "alt": "Bibliothèque — liste des livres-jeux" },
@@ -211,7 +211,7 @@
 			},
 			{
 				"kind": "chips",
-				"cmd": "cat stack.md",
+				"cmd": "Stack technique",
 				"title": "Stack technique",
 				"items": ["Dart", "Flutter", "Git"]
 			}
@@ -235,7 +235,7 @@
 		"sections": [
 			{
 				"kind": "text",
-				"cmd": "cat concept.md",
+				"cmd": "Concept",
 				"title": "Le concept",
 				"paragraphs": [
 					"Quand on lance plusieurs agents Claude Code en parallèle, on perd vite la visibilité sur ce qui tourne, où ça en est, et ce qui attend une action. Claude Pulse centralise le suivi de tous les agents actifs dans une app desktop, avec des notifications pour ne rien rater."
@@ -243,7 +243,7 @@
 			},
 			{
 				"kind": "features",
-				"cmd": "ls features/",
+				"cmd": "Fonctionnalités",
 				"title": "Fonctionnalités",
 				"items": [
 					{ "title": "Suivi temps réel", "desc": "Visualise l'état de chaque agent Claude Code en cours d'exécution." },
@@ -253,13 +253,13 @@
 			},
 			{
 				"kind": "chips",
-				"cmd": "cat stack.md",
+				"cmd": "Stack technique",
 				"title": "Stack technique",
 				"items": ["JavaScript", "Electron", "Desktop"]
 			},
 			{
 				"kind": "links",
-				"cmd": "ls liens/",
+				"cmd": "Liens",
 				"title": "Liens",
 				"items": [
 					{ "label": "Voir sur GitHub →", "href": "https://github.com/delfour-co/claude-pulse" },
@@ -291,7 +291,7 @@
 		"sections": [
 			{
 				"kind": "text",
-				"cmd": "cat concept.md",
+				"cmd": "Concept",
 				"title": "Le concept",
 				"paragraphs": [
 					"Organiser un événement tech implique de jongler entre une dizaine d'outils : un pour le CFP, un pour le planning, un pour la billetterie, un pour le CRM, un pour les sponsors. Open Event Orchestrator consolide tout cela dans une plateforme unique, auto-hébergeable et open source."
@@ -299,7 +299,7 @@
 			},
 			{
 				"kind": "features",
-				"cmd": "ls features/",
+				"cmd": "Fonctionnalités",
 				"title": "Fonctionnalités",
 				"items": [
 					{ "title": "Call for Papers", "desc": "Gestion des soumissions speakers avec système de review et notifications." },
@@ -314,7 +314,7 @@
 			},
 			{
 				"kind": "stats",
-				"cmd": "cat qualite.md",
+				"cmd": "Qualité",
 				"title": "Qualité",
 				"items": [
 					{ "value": "4 538", "label": "Tests unitaires" },
@@ -324,7 +324,7 @@
 			},
 			{
 				"kind": "rows",
-				"cmd": "cat stack.md",
+				"cmd": "Stack technique",
 				"title": "Stack technique",
 				"items": [
 					{ "label": "Frontend", "values": ["SvelteKit", "TypeScript", "Tailwind CSS", "shadcn-svelte"] },
@@ -335,7 +335,7 @@
 			},
 			{
 				"kind": "text",
-				"cmd": "cat architecture.md",
+				"cmd": "Architecture",
 				"title": "Architecture",
 				"paragraphs": [
 					"Clean Architecture avec organisation par feature. Conventional Commits. CI/CD via GitHub Actions. Le projet est conçu pour être auto-hébergé — PocketBase embarque sa propre base SQLite, pas besoin d'infrastructure externe."
@@ -363,7 +363,7 @@
 		"sections": [
 			{
 				"kind": "text",
-				"cmd": "cat concept.md",
+				"cmd": "Concept",
 				"title": "Le concept",
 				"paragraphs": [
 					"Le joueur place des runes élémentaires dans une grille de craft 3×3. La position dans la grille affecte la puissance. Les interactions entre éléments sont gérées par un système de tags data-driven : pas de recettes codées en dur, mais des principes logiques que le joueur apprend et applique."
@@ -371,7 +371,7 @@
 			},
 			{
 				"kind": "features",
-				"cmd": "cat gameplay.md",
+				"cmd": "Gameplay",
 				"title": "Mécaniques",
 				"items": [
 					{ "title": "Craft de sorts 3×3", "desc": "8 éléments — Feu, Eau, Glace, Foudre, Terre, Vent, Lumière, Ombre. La position de chaque rune dans la grille modifie le résultat." },
@@ -384,7 +384,7 @@
 			},
 			{
 				"kind": "chips",
-				"cmd": "cat stack.md",
+				"cmd": "Stack technique",
 				"title": "Stack technique",
 				"items": ["Flutter 3.41+", "Flame 1.35+", "Dart 3.7+", "Hive", "Provider", "Android"]
 			}
@@ -413,7 +413,7 @@
 		"sections": [
 			{
 				"kind": "text",
-				"cmd": "cat concept.md",
+				"cmd": "Concept",
 				"title": "Le concept",
 				"paragraphs": [
 					"Un dépôt GitHub bien configuré protège contre les failles, facilite les contributions et rassure les utilisateurs. RepoLens inspecte un dépôt, identifie les écarts par rapport aux bonnes pratiques et propose un plan de corrections concret — applicable automatiquement ou en mode interactif avec prévisualisation des diffs."
@@ -421,7 +421,7 @@
 			},
 			{
 				"kind": "features",
-				"cmd": "ls checks/",
+				"cmd": "Contrôles",
 				"title": "Ce que RepoLens vérifie",
 				"items": [
 					{ "title": "Secrets exposés", "desc": "Détection de credentials, tokens et clés dans le code et la configuration." },
@@ -434,7 +434,7 @@
 			},
 			{
 				"kind": "commands",
-				"cmd": "cat workflow.md",
+				"cmd": "Workflow",
 				"title": "Workflow",
 				"items": [
 					{ "cmd": "repolens init", "desc": "Initialise la configuration. Presets disponibles : opensource, enterprise, strict." },
@@ -445,7 +445,7 @@
 			},
 			{
 				"kind": "rows",
-				"cmd": "cat distribution.md",
+				"cmd": "Distribution",
 				"title": "Distribution",
 				"items": [
 					{ "label": "macOS / Linux", "values": ["Homebrew"] },
@@ -458,7 +458,7 @@
 			},
 			{
 				"kind": "chips",
-				"cmd": "cat stack.md",
+				"cmd": "Stack technique",
 				"title": "Stack technique",
 				"items": ["Rust", "Cargo", "TOML", "JSON Schema", "SARIF", "GitHub Actions"]
 			}

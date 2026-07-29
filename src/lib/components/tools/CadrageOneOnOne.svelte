@@ -44,13 +44,13 @@
 		return [
 			{
 				id: 'bien-etre',
-				label: 'Bien-etre',
+				label: 'Bien-être',
 				hint: "Ce que j'observe souvent : les signaux faibles sur le bien-\u00eatre sont ceux qu'on capte le moins en r\u00e9union d'\u00e9quipe. L'entretien individuel est parfois le seul espace o\u00f9 ils \u00e9mergent.",
 				items: [
 					{ id: 'be-charge', label: 'Charge de travail', checked: false },
 					{ id: 'be-motivation', label: 'Motivation', checked: false },
 					{ id: 'be-equilibre', label: 'Equilibre pro/perso', checked: false },
-					{ id: 'be-relation', label: "Relation avec l'equipe", checked: false }
+					{ id: 'be-relation', label: "Relation avec l'équipe", checked: false }
 				]
 			},
 			{
@@ -59,30 +59,30 @@
 				hint: "Ce que j'observe souvent : la progression se discute rarement spontan\u00e9ment. Sans cadre explicite, elle reste implicite \u2014 et les frustrations s'accumulent en silence.",
 				items: [
 					{ id: 'pr-objectifs', label: 'Objectifs en cours', checked: false },
-					{ id: 'pr-competences', label: 'Competences a developper', checked: false },
+					{ id: 'pr-competences', label: 'Compétences a développer', checked: false },
 					{ id: 'pr-feedback', label: 'Retours re\u00e7us/donn\u00e9s', checked: false },
-					{ id: 'pr-carriere', label: 'Prochaine etape de carriere', checked: false }
+					{ id: 'pr-carriere', label: 'Prochaine étape de carriere', checked: false }
 				]
 			},
 			{
 				id: 'operationnel',
-				label: 'Operationnel',
+				label: 'Opérationnel',
 				hint: "Ce que j'observe souvent : les blocages op\u00e9rationnels sont souvent les plus faciles \u00e0 d\u00e9bloquer \u2014 \u00e0 condition de les nommer. L'entretien individuel sert aussi \u00e0 \u00e7a.",
 				items: [
 					{ id: 'op-blocages', label: 'Blocages actuels', checked: false },
 					{ id: 'op-support', label: 'Besoin de support', checked: false },
 					{ id: 'op-projets', label: 'Projets en cours', checked: false },
-					{ id: 'op-processus', label: 'Processus a ameliorer', checked: false }
+					{ id: 'op-processus', label: 'Processus a améliorer', checked: false }
 				]
 			},
 			{
 				id: 'alignement',
 				label: 'Alignement',
-				hint: "Ce que j'observe souvent : le desalignement sur la vision ou les priorites ne se voit pas tout de suite. Il se revele quand les decisions divergent sans explication.",
+				hint: "Ce que j'observe souvent : le désalignement sur la vision ou les priorités ne se voit pas tout de suite. Il se revele quand les décisions divergent sans explication.",
 				items: [
 					{ id: 'al-vision', label: 'Vision produit/tech', checked: false },
-					{ id: 'al-priorites', label: "Priorites de l'equipe", checked: false },
-					{ id: 'al-decisions', label: 'Decisions a prendre', checked: false },
+					{ id: 'al-priorites', label: "Priorités de l'équipe", checked: false },
+					{ id: 'al-decisions', label: 'Décisions a prendre', checked: false },
 					{ id: 'al-feedbacks', label: 'Retours \u00e0 remonter', checked: false }
 				]
 			}
@@ -313,8 +313,8 @@
 		<div class="tool-form">
 			<!-- Preparation -->
 			<section class="form-section">
-				<h2 class="section-title">Pr\u00e9paration</h2>
-				<p class="section-subtitle">Cadrage de l\u2019entretien individuel (1:1) avec un collaborateur.</p>
+				<h2 class="section-title">Préparation</h2>
+				<p class="section-subtitle">Cadrage de l’entretien individuel (1:1) avec un collaborateur.</p>
 
 				<div class="field-group">
 					<label class="field-label" for="oo-nom">Nom du collaborateur</label>
@@ -322,7 +322,7 @@
 						id="oo-nom"
 						type="text"
 						class="field-input"
-						placeholder="Prenom ou initiales"
+						placeholder="Prénom ou initiales"
 						bind:value={nom}
 					/>
 				</div>
@@ -338,7 +338,7 @@
 					</div>
 
 					<div class="field-group">
-						<label class="field-label" for="oo-frequence">Frequence actuelle</label>
+						<label class="field-label" for="oo-frequence">Fréquence actuelle</label>
 						<select id="oo-frequence" class="field-select" bind:value={frequence}>
 							{#each frequences as freq}
 								<option value={freq.value}>{freq.label}</option>
@@ -348,12 +348,12 @@
 				</div>
 
 				<div class="field-group">
-					<label class="field-label" for="oo-derniere-action">Derniere action notable</label>
+					<label class="field-label" for="oo-derniere-action">Dernière action notable</label>
 					<textarea
 						id="oo-derniere-action"
 						class="field-textarea"
 						rows="2"
-						placeholder="Ce qui s'est pass\u00e9 depuis le dernier entretien..."
+						placeholder="Ce qui s'est passé depuis le dernier entretien..."
 						bind:value={derniereAction}
 					></textarea>
 				</div>
@@ -361,7 +361,7 @@
 
 			<!-- Themes -->
 			<section class="form-section">
-				<h2 class="section-title">Themes a aborder</h2>
+				<h2 class="section-title">Thèmes a aborder</h2>
 
 				{#each themes as category}
 					<div class="theme-category">
@@ -462,7 +462,7 @@
 			<!-- Buttons -->
 			<div class="tool-actions">
 				<button class="tool-btn tool-btn--primary" onclick={handleExport}>
-					{copyFeedback ? 'Copi\u00e9 dans le presse-papier' : 'Copier le bilan (format texte)'}
+					{copyFeedback ? 'Copié dans le presse-papier' : 'Copier le bilan (format texte)'}
 				</button>
 				<button class="tool-btn tool-btn--secondary" onclick={handleReset}>
 					Reinitialiser
@@ -475,7 +475,7 @@
 			<div class="result-title">Bilan rapide</div>
 
 			<div class="prep-indicator">
-				<span class="prep-label">Preparation</span>
+				<span class="prep-label">Préparation</span>
 				<div class="tool-scorebar prep-bar-track">
 					<span style="width: {preparationPct}%"></span>
 				</div>

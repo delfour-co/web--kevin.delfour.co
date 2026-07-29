@@ -6,14 +6,13 @@
 
 <SEO
 	title="Calculateur capacité équipe"
-	description="Estime la capacité réelle de ton équipe vs la capacité théorique. Visualise l'impact des cérémonies, support et absences."
+	description="Estimez la capacité réelle d'une équipe face à sa capacité théorique. Visualisez l'impact des cérémonies, du support et des absences."
 	url="https://kevin.delfour.co/outils/calculateur-capacite-equipe/"
 />
 
 <ToolShell
 	title="Calculateur capacité équipe"
-	description="Estime la capacité réelle de ton équipe en tenant compte des cérémonies, du support, des absences et du temps non productif. Un repère pour dimensionner tes sprints."
-	command="./calculateur-capacite-equipe"
+	description="Estimez la capacité réelle d'une équipe en tenant compte des cérémonies, du support, des absences et du temps non productif. Un repère pour dimensionner les sprints."
 >
 	<CapaciteEquipe />
 </ToolShell>

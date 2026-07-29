@@ -12,21 +12,21 @@
 	const axes = [
 		{
 			id: 'qualite',
-			name: 'Qualite du code',
-			label: 'Qualite',
-			hint: "Ce que j'observe souvent : la qualite ne se mesure pas qu'aux bugs. Lisibilite, tests, nommage, dette maitrisee."
+			name: 'Qualité du code',
+			label: 'Qualité',
+			hint: "Ce que j'observe souvent : la qualité ne se mesure pas qu'aux bugs. Lisibilite, tests, nommage, dette maitrisee."
 		},
 		{
 			id: 'autonomie',
 			name: 'Autonomie technique',
 			label: 'Autonomie',
-			hint: "Ce que j'observe souvent : l'autonomie n'est pas l'absence de questions. C'est la capacite a cadrer un probleme avant de demander de l'aide."
+			hint: "Ce que j'observe souvent : l'autonomie n'est pas l'absence de questions. C'est la capacité a cadrer un probleme avant de demander de l'aide."
 		},
 		{
 			id: 'contribution',
 			name: "Contribution a l'equipe",
 			label: 'Contribution',
-			hint: "Ce que j'observe souvent : les revues de code constructives, le partage de connaissances, l'aide aux collegues en difficulte."
+			hint: "Ce que j'observe souvent : les revues de code constructives, le partage de connaissances, l'aide aux collegues en difficulté."
 		},
 		{
 			id: 'engagements',
@@ -36,15 +36,15 @@
 		},
 		{
 			id: 'progression',
-			name: 'Progression sur la periode',
+			name: 'Progression sur la période',
 			label: 'Progression',
-			hint: "Ce que j'observe souvent : la progression visible n'est pas toujours technique. Maturite dans les echanges, meilleure gestion des priorites."
+			hint: "Ce que j'observe souvent : la progression visible n'est pas toujours technique. Maturite dans les echanges, meilleure gestion des priorités."
 		},
 		{
 			id: 'initiative',
 			name: 'Initiative et proactivite',
 			label: 'Initiative',
-			hint: "Ce que j'observe souvent : proposer une amelioration sans attendre qu'on la demande. Identifier un risque et le remonter."
+			hint: "Ce que j'observe souvent : proposer une amélioration sans attendre qu'on la demande. Identifier un risque et le remonter."
 		}
 	];
 
@@ -396,17 +396,17 @@
 				<div class="form-row form-row--two">
 					<div class="form-group">
 						<label for="ea-nom">Nom du collaborateur</label>
-						<input id="ea-nom" type="text" bind:value={nom} placeholder="Prenom Nom" />
+						<input id="ea-nom" type="text" bind:value={nom} placeholder="Prénom Nom" />
 					</div>
 					<div class="form-group">
 						<label for="ea-poste">Poste actuel</label>
-						<input id="ea-poste" type="text" bind:value={poste} placeholder="Developpeur backend senior" />
+						<input id="ea-poste" type="text" bind:value={poste} placeholder="Développeur backend senior" />
 					</div>
 				</div>
 
 				<div class="form-row form-row--two">
 					<div class="form-group">
-						<label for="ea-anciennete">Anciennete</label>
+						<label for="ea-anciennete">Ancienneté</label>
 						<select id="ea-anciennete" bind:value={anciennete}>
 							{#each ANCIENNETE_OPTIONS as opt}
 								<option value={opt}>{opt}</option>
@@ -414,7 +414,7 @@
 						</select>
 					</div>
 					<div class="form-group">
-						<label for="ea-periode">Periode evaluee</label>
+						<label for="ea-periode">Période evaluee</label>
 						<input id="ea-periode" type="text" bind:value={periode} placeholder="2025" />
 					</div>
 				</div>
@@ -423,7 +423,7 @@
 			<!-- Bilan technique -->
 			<fieldset class="section-card tool-panel">
 				<legend>Bilan technique</legend>
-				<p class="section-hint">Ce que j'observe souvent : un bilan technique utile ne cherche pas la precision absolue. Il pose un repere de depart pour la discussion.</p>
+				<p class="section-hint">Ce que j'observe souvent : un bilan technique utile ne cherche pas la precision absolue. Il pose un repère de depart pour la discussion.</p>
 
 				{#each axes as axis}
 					<div class="slider-group">
@@ -460,15 +460,15 @@
 				<legend>Points marquants</legend>
 
 				<div class="form-group">
-					<label for="ea-realisations">Realisations cles</label>
+					<label for="ea-realisations">Realisations clés</label>
 					<p class="form-hint">Ce que j'observe souvent : les realisations les plus significatives ne sont pas toujours les plus visibles. Pense aux contributions silencieuses.</p>
-					<textarea id="ea-realisations" bind:value={realisations} rows="3" placeholder="Migration du service de paiement, accompagnement d'un junior, reduction de 40% du temps d'integration continue..."></textarea>
+					<textarea id="ea-realisations" bind:value={realisations} rows="3" placeholder="Migration du service de paiement, accompagnement d'un junior, reduction de 40% du temps d'intégration continue..."></textarea>
 				</div>
 
 				<div class="form-group">
 					<label for="ea-difficultes">Difficultes rencontrees</label>
-					<p class="form-hint">Ce que j'observe souvent : nommer les difficultes sans les minimiser permet d'identifier les vrais leviers de progression.</p>
-					<textarea id="ea-difficultes" bind:value={difficultes} rows="3" placeholder="Difficulte a prioriser entre feature et dette, contexte d'equipe tendu au T2..."></textarea>
+					<p class="form-hint">Ce que j'observe souvent : nommer les difficultés sans les minimiser permet d'identifier les vrais leviers de progression.</p>
+					<textarea id="ea-difficultes" bind:value={difficultes} rows="3" placeholder="Difficulté a prioriser entre feature et dette, contexte d'équipe tendu au T2..."></textarea>
 				</div>
 
 				<div class="form-group">
@@ -479,7 +479,7 @@
 
 			<!-- Objectifs precedents -->
 			<fieldset class="section-card tool-panel">
-				<legend>Objectifs de la periode precedente</legend>
+				<legend>Objectifs de la période precedente</legend>
 
 				{#each objectifsPrecedents as obj, i}
 					<div class="list-item">
@@ -503,7 +503,7 @@
 			<!-- Nouveaux objectifs -->
 			<fieldset class="section-card tool-panel">
 				<legend>Nouveaux objectifs</legend>
-				<p class="section-hint">Ce que j'observe souvent : 3 a 5 objectifs clairs valent mieux que 10 vagues. Chaque objectif devrait pouvoir etre evalue en fin de periode.</p>
+				<p class="section-hint">Ce que j'observe souvent : 3 a 5 objectifs clairs valent mieux que 10 vagues. Chaque objectif devrait pouvoir être evalue en fin de période.</p>
 
 				{#each nouveauxObjectifs as obj, i}
 					<div class="list-item">
@@ -526,10 +526,10 @@
 
 			<!-- Plan de developpement -->
 			<fieldset class="section-card tool-panel">
-				<legend>Plan de developpement</legend>
+				<legend>Plan de développement</legend>
 
 				<div class="form-group">
-					<label for="ea-new-competence">Competences a developper</label>
+					<label for="ea-new-competence">Compétences a développer</label>
 					<div class="tags-input">
 						<div class="tags-list">
 							{#each competences as comp, i}
@@ -655,7 +655,7 @@
 
 			{#if competences.length > 0 || actionsDevSummary > 0}
 				<div class="dev-plan-summary">
-					<div class="dev-plan-title">Plan de developpement</div>
+					<div class="dev-plan-title">Plan de développement</div>
 					{#if competences.length > 0}
 						<div class="dev-plan-tags">
 							{#each competences as comp}

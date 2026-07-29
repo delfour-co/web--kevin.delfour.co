@@ -6,14 +6,13 @@
 
 <SEO
 	title="Simulateur de migration"
-	description="Planifie ta migration technique : phases, risques, checklist pre-migration, timeline. Export plan complet."
+	description="Planifiez une migration technique : phases, risques, checklist pré-migration, timeline. Export du plan complet."
 	url="https://kevin.delfour.co/outils/simulateur-migration/"
 />
 
 <ToolShell
 	title="Simulateur de migration"
-	description="Structure ta migration technique : découpe en phases, identifie les risques, vérifie ta checklist pre-migration. Un cadre pour ne rien oublier."
-	command="./simulateur-migration"
+	description="Structurez une migration technique : découpage en phases, identification des risques, checklist pré-migration. Un cadre pour ne rien oublier."
 >
 	<SimulateurMigration />
 </ToolShell>

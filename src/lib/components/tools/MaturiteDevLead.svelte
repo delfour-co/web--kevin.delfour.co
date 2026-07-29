@@ -298,7 +298,7 @@
 
 			<div class="profil-fields">
 				<div class="field-group">
-					<label class="field-label" for="mdl-nom">Nom du d\u00e9veloppeur</label>
+					<label class="field-label" for="mdl-nom">Nom du développeur</label>
 					<input
 						id="mdl-nom"
 						type="text"
@@ -308,7 +308,7 @@
 					/>
 				</div>
 				<div class="field-group">
-					<label class="field-label" for="mdl-anciennete">Anciennet\u00e9 dans l'\u00e9quipe</label>
+					<label class="field-label" for="mdl-anciennete">Ancienneté dans l'équipe</label>
 					<select id="mdl-anciennete" class="field-select" bind:value={anciennete}>
 						{#each ancienneteOptions as opt}
 							<option value={opt.value}>{opt.label}</option>
@@ -326,7 +326,7 @@
 			</div>
 
 			<!-- Axes section -->
-			<div class="section-title section-title--axes">\u00c9valuation</div>
+			<div class="section-title section-title--axes">Évaluation</div>
 
 			{#each axes as axis}
 				<div class="slider-group">
@@ -353,17 +353,17 @@
 
 			<div class="tool-actions">
 				<button class="tool-btn tool-btn--primary" onclick={handleExport}>
-					{copyFeedback ? 'Copi\u00e9 dans le presse-papier' : 'Copier le bilan (format texte)'}
+					{copyFeedback ? 'Copié dans le presse-papier' : 'Copier le bilan (format texte)'}
 				</button>
-				<button class="tool-btn tool-btn--secondary" onclick={handleReset}>R\u00e9initialiser</button>
+				<button class="tool-btn tool-btn--secondary" onclick={handleReset}>Réinitialiser</button>
 			</div>
 		</div>
 
 		<div class="tool-result" aria-live="polite" aria-atomic="true">
-			<div class="result-title">R\u00e9sultats</div>
+			<div class="result-title">Résultats</div>
 
 			<div class="overall-maturity" style="border-color: {maturityLevel.color}">
-				<span class="overall-maturity-label">Niveau de maturit\u00e9</span>
+				<span class="overall-maturity-label">Niveau de maturité</span>
 				<span class="overall-maturity-value" style="color: {maturityLevel.color}"
 					>{maturityLevel.label}</span
 				>
@@ -415,7 +415,7 @@
 				</div>
 
 				<div class="summary-section">
-					<div class="summary-section-title">Axes de d\u00e9veloppement</div>
+					<div class="summary-section-title">Axes de développement</div>
 					{#each bottomTwo as axis}
 						<div class="summary-row">
 							<span class="summary-label">{axis.name}</span>

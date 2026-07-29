@@ -52,11 +52,11 @@
 
 	let checklist = $state<ChecklistItem[]>([
 		{ id: 'chk-1', label: 'Tests de verification prets', checked: false },
-		{ id: 'chk-2', label: 'Procedure de retour arriere documentee', checked: false },
-		{ id: 'chk-3', label: 'Equipe informee du plan', checked: false },
+		{ id: 'chk-2', label: 'Procedure de retour arrière documentée', checked: false },
+		{ id: 'chk-3', label: 'Équipe informée du plan', checked: false },
 		{ id: 'chk-4', label: 'Surveillance et alertes en place', checked: false },
-		{ id: 'chk-5', label: 'Sauvegarde des donnees faite', checked: false },
-		{ id: 'chk-6', label: 'Activations progressives configurees', checked: false },
+		{ id: 'chk-5', label: 'Sauvegarde des données faite', checked: false },
+		{ id: 'chk-6', label: 'Activations progressives configurées', checked: false },
 		{ id: 'chk-7', label: 'Environnement de pre-production valide', checked: false }
 	]);
 
@@ -183,11 +183,11 @@
 		];
 		checklist = [
 			{ id: 'chk-1', label: 'Tests de verification prets', checked: false },
-			{ id: 'chk-2', label: 'Procedure de retour arriere documentee', checked: false },
-			{ id: 'chk-3', label: 'Equipe informee du plan', checked: false },
+			{ id: 'chk-2', label: 'Procedure de retour arrière documentée', checked: false },
+			{ id: 'chk-3', label: 'Équipe informée du plan', checked: false },
 			{ id: 'chk-4', label: 'Surveillance et alertes en place', checked: false },
-			{ id: 'chk-5', label: 'Sauvegarde des donnees faite', checked: false },
-			{ id: 'chk-6', label: 'Activations progressives configurees', checked: false },
+			{ id: 'chk-5', label: 'Sauvegarde des données faite', checked: false },
+			{ id: 'chk-6', label: 'Activations progressives configurées', checked: false },
 			{ id: 'chk-7', label: 'Environnement de pre-production valide', checked: false }
 		];
 		try {
@@ -326,7 +326,7 @@
 			<!-- Phases -->
 			<fieldset class="tool-panel">
 				<legend>Phases</legend>
-				<p class="form-hint">Decoupe la migration en etapes successives. Chaque phase a sa propre strategie et sa duree estimee.</p>
+				<p class="form-hint">Decoupe la migration en étapes successives. Chaque phase a sa propre stratégie et sa duree estimee.</p>
 
 				{#each phases as phase, i}
 					<div class="phase-card">
@@ -346,7 +346,7 @@
 								<input id="phase-duree-{i}" type="number" min="1" bind:value={phase.duree} />
 							</div>
 							<div class="form-group">
-								<label for="phase-strategie-{i}">Strategie</label>
+								<label for="phase-strategie-{i}">Stratégie</label>
 								<select id="phase-strategie-{i}" bind:value={phase.strategie} title="Big bang : tout migrer d'un coup. Progressive : par petits morceaux. Strangler fig : remplacer piece par piece en parallele. Blue-green : deux systemes en parallele, bascule instantanee.">
 									<option value="Big bang">Big bang (tout d'un coup)</option>
 									<option value="Progressive">Progressive (par morceaux)</option>
@@ -358,11 +358,11 @@
 						<div class="checkbox-row">
 							<label class="checkbox-label" title="Les feature flags permettent d'activer ou desactiver une fonctionnalite sans redeployer le code.">
 								<input type="checkbox" bind:checked={phase.featureFlags} />
-								<span>Activation progressive necessaire</span>
+								<span>Activation progressive nécessaire</span>
 							</label>
 							<label class="checkbox-label" title="Possibilite de revenir a l'etat precedent en cas de probleme.">
 								<input type="checkbox" bind:checked={phase.rollback} />
-								<span>Retour arriere possible</span>
+								<span>Retour arrière possible</span>
 							</label>
 						</div>
 					</div>
@@ -408,7 +408,7 @@
 						</div>
 						<div class="form-group">
 							<label for="risk-mit-{i}">Comment s'en premunir</label>
-							<textarea id="risk-mit-{i}" bind:value={risk.mitigation} rows="2" placeholder="Ex: Faire un test complet sur un environnement de pre-production avant la migration reelle"></textarea>
+							<textarea id="risk-mit-{i}" bind:value={risk.mitigation} rows="2" placeholder="Ex: Faire un test complet sur un environnement de pre-production avant la migration réelle"></textarea>
 						</div>
 					</div>
 				{/each}
@@ -529,7 +529,7 @@
 
 			<!-- Readiness -->
 			<div class="result-section">
-				<div class="result-section-title">Niveau de preparation</div>
+				<div class="result-section-title">Niveau de préparation</div>
 				<div class="tool-scorebar readiness-bar-track">
 					<span
 						class="readiness-bar-fill"
@@ -553,7 +553,7 @@
 						<span class="badge badge--accent">Activation progressive</span>
 					{/if}
 					{#if phases.every((p) => p.rollback)}
-						<span class="badge badge--green">Retour arriere OK</span>
+						<span class="badge badge--green">Retour arrière OK</span>
 					{/if}
 				</div>
 			</div>

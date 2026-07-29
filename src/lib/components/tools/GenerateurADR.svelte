@@ -146,7 +146,7 @@
 			<div class="form-row form-row--two">
 				<div class="form-group">
 					<label for="adr-title">Titre de la décision</label>
-					<p class="form-hint">Un ADR (Architecture Decision Record) est une trace écrite d’une décision technique importante.</p>
+					<p class="form-hint">Un ADR (Architecture Décision Record) est une trace écrite d’une décision technique importante.</p>
 					<input id="adr-title" type="text" bind:value={title} placeholder="Ex: Adopter PostgreSQL comme base principale" />
 				</div>
 				<div class="form-group form-group--small">

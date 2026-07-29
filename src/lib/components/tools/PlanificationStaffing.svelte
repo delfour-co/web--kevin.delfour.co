@@ -394,10 +394,10 @@
 			<!-- Equipe actuelle -->
 			<section class="tool-panel section-card">
 				<div class="section-header">
-					<h2 class="section-title">Equipe actuelle</h2>
+					<h2 class="section-title">Équipe actuelle</h2>
 					<span class="section-badge">{teamSize} membre{teamSize > 1 ? 's' : ''}</span>
 				</div>
-				<p class="section-hint">Ce que j'observe souvent : les projections de staffing qui ignorent les departs sous-estiment systematiquement les besoins reels.</p>
+				<p class="section-hint">Ce que j'observe souvent : les projections de staffing qui ignorent les departs sous-estiment systématiquement les besoins réels.</p>
 
 				<div class="items-list">
 					{#each team as member, i}
@@ -428,7 +428,7 @@
 								class="input input--select input--risk"
 								bind:value={member.attritionRisk}
 								aria-label="Risque de depart"
-								title="Quelle probabilite que cette personne quitte l'equipe sur la periode ?"
+								title="Quelle probabilite que cette personne quitte l'équipe sur la période ?"
 							>
 								<option value="faible">Risque faible</option>
 								<option value="moyen">Risque moyen</option>
@@ -453,7 +453,7 @@
 				<div class="section-header">
 					<h2 class="section-title">Roadmap et charge</h2>
 				</div>
-				<p class="section-hint">Ce que j'observe souvent : la charge reelle depasse presque toujours la charge planifiee. Prevois une marge.</p>
+				<p class="section-hint">Ce que j'observe souvent : la charge réelle depasse presque toujours la charge planifiée. Prevois une marge.</p>
 
 				<div class="field-row">
 					<label class="field-label" for="horizon">Horizon de planification</label>
@@ -506,7 +506,7 @@
 										max="20"
 										step="0.5"
 										bind:value={project.fte}
-										aria-label="Nombre de personnes necessaires (en equivalent temps plein)"
+										aria-label="Nombre de personnes nécessaires (en equivalent temps plein)"
 										title="En equivalent temps plein. Ex : 0.5 = une personne a mi-temps, 2 = deux personnes a plein temps."
 									/>
 								</label>
@@ -545,7 +545,7 @@
 						<label class="field-label" for="attrition-rate">Taux de departs annuel estime</label>
 						<span class="param-value">{attritionRate}%</span>
 					</div>
-					<p class="param-hint">Pourcentage de l'equipe susceptible de partir sur un an. En tech, la moyenne se situe entre 10% et 20%.</p>
+					<p class="param-hint">Pourcentage de l'équipe susceptible de partir sur un an. En tech, la moyenne se situe entre 10% et 20%.</p>
 					<input
 						id="attrition-rate"
 						type="range"
@@ -563,10 +563,10 @@
 
 				<div class="param-group">
 					<div class="param-header">
-						<label class="field-label" for="capacity-person">Temps reel consacre aux projets</label>
+						<label class="field-label" for="capacity-person">Temps réel consacre aux projets</label>
 						<span class="param-value">{capacityPerPerson}%</span>
 					</div>
-					<p class="param-hint">Part du temps effectivement passee sur les projets. Le reste part en reunions, support, veille, ceremonies agile, etc. 80% est une estimation courante.</p>
+					<p class="param-hint">Part du temps effectivement passée sur les projets. Le reste part en reunions, support, veille, ceremonies agile, etc. 80% est une estimation courante.</p>
 					<input
 						id="capacity-person"
 						type="range"
@@ -596,16 +596,16 @@
 
 		<!-- RIGHT: Results (sticky) -->
 		<div class="tool-result" aria-live="polite" aria-atomic="true">
-			<div class="result-title">Resultats</div>
+			<div class="result-title">Résultats</div>
 
 			<!-- SVG Timeline Chart -->
 			<div class="chart-container">
 				<div class="chart-legend">
-					<span class="legend-item"><span class="legend-swatch legend-swatch--capacity"></span>Capacite</span>
+					<span class="legend-item"><span class="legend-swatch legend-swatch--capacity"></span>Capacité</span>
 					<span class="legend-item"><span class="legend-swatch legend-swatch--demand"></span>Charge</span>
 				</div>
 				<div class="chart-scroll" style="overflow-x:auto">
-				<svg viewBox="0 0 {CHART_W} {CHART_H}" class="chart-svg" aria-label="Timeline capacite vs charge">
+				<svg viewBox="0 0 {CHART_W} {CHART_H}" class="chart-svg" aria-label="Timeline capacité vs charge">
 					<!-- Y axis ticks -->
 					{#each yTicks as tick}
 						<line x1={CHART_PAD_LEFT} y1={tick.y} x2={CHART_W - CHART_PAD_RIGHT} y2={tick.y} class="chart-grid-line" />
@@ -659,7 +659,7 @@
 			<div class="result-section">
 				<div class="result-section-title">Analyse des ecarts</div>
 				{#if deficitMonths.length === 0}
-					<p class="result-ok">La capacite couvre la charge sur l'ensemble de la periode.</p>
+					<p class="result-ok">La capacité couvre la charge sur l'ensemble de la période.</p>
 				{:else}
 					<div class="deficit-list">
 						{#each deficitMonths as d}
@@ -676,7 +676,7 @@
 			{#if hiringRecommendations.length > 0}
 				<div class="result-section">
 					<div class="result-section-title">Plan de recrutement</div>
-					<p class="result-hint">En tenant compte d'un delai de recrutement de {recruitmentDelay} mois :</p>
+					<p class="result-hint">En tenant compte d'un délai de recrutement de {recruitmentDelay} mois :</p>
 					<div class="hiring-list">
 						{#each hiringRecommendations as rec}
 							<div class="hiring-row">

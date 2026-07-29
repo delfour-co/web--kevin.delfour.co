@@ -13,7 +13,6 @@
 <ToolShell
 	title="Checklist onboarding dev"
 	description="Un cadre 30/60/90 jours pour structurer l'arrivée d'un nouveau développeur. Adaptable à chaque contexte."
-	command="./checklist-onboarding"
 >
 	<ChecklistOnboarding />
 </ToolShell>

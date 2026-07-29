@@ -32,7 +32,7 @@
 					{ id: 's1-email', label: 'Acces email et outils configures' },
 					{ id: 's1-poste', label: 'Poste de travail pret (ou installation a distance)' },
 					{ id: 's1-repo', label: 'Acces au repo et environnement de dev' },
-					{ id: 's1-equipe', label: "Presentation a l'equipe" },
+					{ id: 's1-equipe', label: "Presentation a l'équipe" },
 					{ id: 's1-docs', label: "Documentation d'accueil partagee" },
 					{ id: 's1-cafe', label: 'Premier cafe/call informel avec le manager' }
 				]
@@ -40,16 +40,16 @@
 			{
 				id: 'j1-30',
 				name: 'J1-J30 — Decouverte',
-				description: "Comprendre le contexte, poser ses premieres questions, livrer une premiere contribution rapide.",
+				description: "Comprendre le contexte, poser ses premières questions, livrer une première contribution rapide.",
 				dayStart: 1,
 				dayEnd: 30,
 				items: [
 					{ id: 'j30-archi', label: "Tour d'horizon de l'architecture" },
-					{ id: 'j30-ticket', label: 'Premier ticket integre (premiere contribution)' },
+					{ id: 'j30-ticket', label: 'Premier ticket integre (première contribution)' },
 					{ id: 'j30-review', label: 'Participer a une revue de code' },
 					{ id: 'j30-deploy', label: 'Comprendre le processus de deploiement' },
 					{ id: 'j30-buddy', label: 'Identifier son referent technique (parrain)' },
-					{ id: 'j30-adr', label: 'Lire les decisions techniques documentees (ADR)' },
+					{ id: 'j30-adr', label: 'Lire les décisions techniques documentées (ADR)' },
 					{ id: 'j30-1on1', label: 'Premier 1:1 avec le manager' },
 					{ id: 'j30-roadmap', label: 'Comprendre la roadmap produit' }
 				]
@@ -57,14 +57,14 @@
 			{
 				id: 'j30-60',
 				name: 'J30-J60 — Autonomie',
-				description: "Monter en autonomie progressive : livrer, contribuer, s'integrer aux rituels d'equipe.",
+				description: "Monter en autonomie progressive : livrer, contribuer, s'integrer aux rituels d'équipe.",
 				dayStart: 30,
 				dayEnd: 60,
 				items: [
 					{ id: 'j60-ticket', label: 'Capable de livrer un ticket seul' },
 					{ id: 'j60-review', label: 'Faire une revue de code a un pair' },
 					{ id: 'j60-rituels', label: 'Participer activement aux rituels' },
-					{ id: 'j60-amelioration', label: "Identifier un sujet d'amelioration" },
+					{ id: 'j60-amelioration', label: "Identifier un sujet d'amélioration" },
 					{ id: 'j60-feedback', label: 'Retours informels recueillis aupres des collegues' },
 					{ id: 'j60-1on1', label: 'Deuxieme 1:1 structure' }
 				]
@@ -72,14 +72,14 @@
 			{
 				id: 'j60-90',
 				name: 'J60-J90 — Contribution',
-				description: "Devenir un membre actif de l'equipe : livrer, proposer, transmettre.",
+				description: "Devenir un membre actif de l'équipe : livrer, proposer, transmettre.",
 				dayStart: 60,
 				dayEnd: 90,
 				items: [
 					{ id: 'j90-feature', label: 'Livrer une fonctionnalite complete' },
-					{ id: 'j90-proposition', label: 'Proposer une amelioration technique' },
-					{ id: 'j90-aide', label: "Aider un autre membre de l'equipe" },
-					{ id: 'j90-bilan', label: "Bilan de periode d'essai prepare" },
+					{ id: 'j90-proposition', label: 'Proposer une amélioration technique' },
+					{ id: 'j90-aide', label: "Aider un autre membre de l'équipe" },
+					{ id: 'j90-bilan', label: "Bilan de période d'essai prepare" },
 					{ id: 'j90-objectifs', label: 'Objectifs a 6 mois definis' },
 					{ id: 'j90-feedback', label: 'Retour formel du manager' }
 				]
@@ -361,7 +361,7 @@
 							id="onb-nom"
 							type="text"
 							class="field-input"
-							placeholder="Prenom ou initiales"
+							placeholder="Prénom ou initiales"
 							bind:value={nom}
 						/>
 					</div>

@@ -13,7 +13,6 @@
 <ToolShell
 	title="Entretien annuel tech"
 	description="Un cadre pour structurer l'évaluation annuelle d'un développeur. Bilan technique, objectifs, plan de développement."
-	command="./entretien-annuel-tech"
 >
 	<EntretienAnnuel />
 </ToolShell>

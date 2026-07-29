@@ -12,8 +12,7 @@
 
 <ToolShell
 	title="Matrice de décision technique"
-	description="Compare des options techniques avec un scoring multicritères pondéré. Définis tes critères, ajuste les poids, note chaque option — le classement se calcule en temps réel."
-	command="./matrice-decision-technique"
+	description="Comparez des options techniques par scoring multicritères pondéré. Définissez les critères, ajustez les poids, notez chaque option — le classement se calcule en temps réel."
 >
 	<MatriceDecision />
 </ToolShell>

@@ -28,7 +28,7 @@
 		feature: 'Fonctionnalite',
 		infrastructure: 'Infrastructure',
 		refactoring: 'Remise en forme du code',
-		'sécurité': 'Securite'
+		'sécurité': 'Sécurité'
 	};
 
 	const typeColors: Record<ItemType, string> = {
@@ -227,7 +227,7 @@
 		<fieldset class="tool-panel section-card">
 			<legend>Items du backlog</legend>
 			<p class="form-hint">
-				Chaque item est note selon 4 axes. Le score est calcule ainsi : (Impact x Confiance x Urgence) / Effort. Plus le score est eleve, plus l'item merite d'etre traite en premier.
+				Chaque item est note selon 4 axes. Le score est calcule ainsi : (Impact x Confiance x Urgence) / Effort. Plus le score est eleve, plus l'item merite d'être traite en premier.
 			</p>
 
 			{#each items as item, i}
@@ -347,7 +347,7 @@
 						<div class="result-bar-row">
 							<span class="result-rank">{i + 1}.</span>
 							<div class="result-info">
-								<span class="result-name">{r.item.nom || '\u2014'}</span>
+								<span class="result-name">{r.item.nom || '—'}</span>
 								<span class="result-type-badge" style="--type-color: {typeColors[r.item.type]}">{typeLabels[r.item.type]}</span>
 							</div>
 							<div class="tool-scorebar result-bar-track">
@@ -369,11 +369,11 @@
 			{#if quickWins.length > 0}
 				<div class="tool-result result-panel quick-wins-panel">
 					<h3 class="result-title">Gains rapides</h3>
-					<p class="panel-hint">Items a fort impact avec peu d'effort — a traiter en priorite</p>
+					<p class="panel-hint">Items a fort impact avec peu d'effort — a traiter en priorité</p>
 					<div class="quick-wins-list">
 						{#each quickWins as qw}
 							<div class="quick-win-item">
-								<span class="quick-win-name">{qw.item.nom || '\u2014'}</span>
+								<span class="quick-win-name">{qw.item.nom || '—'}</span>
 								<span class="quick-win-detail">Score {qw.score} / Effort {effortLabels[qw.item.effort]}</span>
 							</div>
 						{/each}
@@ -414,7 +414,7 @@
 							<div class="top5-item">
 								<div class="top5-header">
 									<span class="top5-rank">{i + 1}.</span>
-									<span class="top5-name">{r.item.nom || '\u2014'}</span>
+									<span class="top5-name">{r.item.nom || '—'}</span>
 									<span class="top5-score" style="color: {getBarColor(r.score)}">{r.score}</span>
 								</div>
 								<div class="top5-breakdown">
