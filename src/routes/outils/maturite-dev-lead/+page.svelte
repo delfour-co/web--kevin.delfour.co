@@ -13,7 +13,6 @@
 <ToolShell
 	title="Maturité dev &rarr; lead"
 	description="Évalue la maturité d'un développeur pour une transition vers un rôle de tech lead. 8 axes d'observation, pas un jugement — des repères."
-	command="./maturite-dev-lead"
 >
 	<MaturiteDevLead />
 </ToolShell>

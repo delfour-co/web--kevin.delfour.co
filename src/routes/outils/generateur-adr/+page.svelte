@@ -6,14 +6,13 @@
 
 <SEO
 	title="Générateur d'ADR"
-	description="Produis un Architecture Decision Record structuré à partir d'un formulaire guidé. Export Markdown."
+	description="Produis un Architecture Décision Record structuré à partir d'un formulaire guidé. Export Markdown."
 	url="https://kevin.delfour.co/outils/generateur-adr/"
 />
 
 <ToolShell
 	title="Générateur d'ADR"
-	description="Produis un Architecture Decision Record structuré à partir d'un formulaire guidé. Remplis les champs, exporte en Markdown — prêt pour ton repo."
-	command="./generateur-adr"
+	description="Produisez un Architecture Décision Record structuré à partir d'un formulaire guidé. Remplissez les champs, exportez en Markdown — prêt pour le dépôt."
 >
 	<GenerateurADR />
 </ToolShell>

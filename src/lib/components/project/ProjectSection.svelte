@@ -5,7 +5,7 @@
 </script>
 
 <section class="term-sec">
-	<div class="term-cmd"><span class="p">$</span> {cmd}</div>
+	<div class="term-cmd">{cmd}</div>
 	<h2 class="visually-hidden">{title}</h2>
 	{@render children()}
 </section>

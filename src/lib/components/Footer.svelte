@@ -1,182 +1,95 @@
 <script lang="ts">
-	const year = new Date().getFullYear();
+	import { CONTACT } from '$lib/data/profile';
 
-	function scrollToTop() {
-		window.scrollTo({ top: 0, behavior: 'smooth' });
-	}
+	const year = new Date().getFullYear();
 </script>
 
-<footer class="footer">
-	<div class="footer-content">
+<footer class="footer" data-pagefind-ignore>
+	<div class="shell footer-inner">
 		<nav class="footer-columns" aria-label="Navigation pied de page">
 			<div class="footer-column">
-				<h3>Explorer</h3>
-					<a href="/livres/">Livres</a>
-				<a href="/projets/">Projets</a>
+				<h2>Parcours</h2>
+				<a href="/leadership/">Leadership</a>
+				<a href="/cv/">CV</a>
+				<a href="/conferences/">Conférences</a>
+				<a href="/communaute/">Communauté</a>
 			</div>
 
 			<div class="footer-column">
-				<h3>Découvrir</h3>
-				<a href="/outils/">Outils</a>
-				<a href="/a-propos/">À propos</a>
+				<h2>Ressources</h2>
+				<a href="/livres/">Livres</a>
+				<a href="/outils/">Boîte à outils</a>
+				<a href="/projets/">Projets</a>
 				<a href="/search/">Rechercher</a>
 			</div>
 
 			<div class="footer-column">
-				<h3>Suivre</h3>
-				<a href="https://github.com/kdelfour" rel="noopener noreferrer" target="_blank" class="footer-social-link">
-					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-					GitHub
-				</a>
-				<a href="https://linkedin.com/in/kevindelfour" rel="noopener noreferrer" target="_blank" class="footer-social-link">
-					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-					LinkedIn
-				</a>
+				<h2>Me joindre</h2>
+				<a href="mailto:{CONTACT.email}">{CONTACT.email}</a>
+				<a href={CONTACT.linkedin} rel="noopener noreferrer" target="_blank">LinkedIn</a>
+				<a href={CONTACT.github} rel="noopener noreferrer" target="_blank">GitHub</a>
 			</div>
 		</nav>
 
 		<div class="footer-bottom">
 			<span>&copy; {year} Kevin Delfour</span>
-			<span class="footer-easter">
-				<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h9l3 3v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M14 2v4h4"/><rect x="8" y="12" width="8" height="6" rx="1"/></svg>
-				If the site doesn't load, remove the cartridge, blow on it and reinsert.
-			</span>
+			<span>Lyon, France</span>
 		</div>
 	</div>
 </footer>
 
-<button class="back-to-top" onclick={scrollToTop} aria-label="Retour en haut" title="Retour en haut">
-	<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
-</button>
-
 <style>
 	.footer {
 		border-top: 1px solid var(--border);
-		padding: calc(var(--gap) * 1.25) calc(var(--gap) * 1.1);
-		margin-top: 0;
 		background: var(--surface);
+		margin-top: auto;
 	}
 
-	.footer-content {
-		max-width: none;
-		margin: 0;
+	.footer-inner {
+		padding-block: clamp(36px, 5vw, 52px) 28px;
 	}
 
 	.footer-columns {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: var(--gap);
-		margin-bottom: calc(var(--gap) * 2);
+		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+		gap: 32px;
+		margin-bottom: 40px;
 	}
 
 	.footer-column {
 		display: flex;
 		flex-direction: column;
-		gap: 8px;
+		gap: 10px;
+		align-items: flex-start;
 	}
 
-	.footer-column h3 {
-		font-family: var(--font-ui);
-		font-size: 0.75rem;
-		font-weight: 700;
+	.footer-column h2 {
+		font-family: var(--font-mono);
+		font-size: var(--text-xs);
+		font-weight: 500;
 		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		color: var(--accent);
-		margin: 0 0 4px 0;
+		letter-spacing: var(--tracking-label);
+		color: var(--tertiary);
+		margin: 0 0 4px;
 	}
 
 	.footer-column a {
-		font-family: var(--font-ui);
-		font-size: 0.875rem;
+		font-size: var(--text-sm);
 		color: var(--secondary);
-		text-decoration: none;
-		transition: var(--transition);
+		word-break: break-word;
 	}
-
 	.footer-column a:hover {
 		color: var(--accent);
 	}
 
-	.footer-social-link {
-		display: flex;
-		align-items: center;
-		gap: 6px;
-	}
-
-	.footer-social-link svg {
-		flex-shrink: 0;
-	}
-
 	.footer-bottom {
-		padding-top: var(--gap);
-		border-top: 1px solid var(--border);
-		font-family: var(--font-ui);
-		font-size: 0.8125rem;
-		color: var(--tertiary);
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		align-items: center;
-		gap: 8px;
-	}
-
-	.footer-easter {
-		display: flex;
-		align-items: center;
-		gap: 6px;
-		font-size: 0.8125rem;
+		gap: 12px;
+		padding-top: 24px;
+		border-top: 1px solid var(--border);
+		font-size: var(--text-xs);
 		color: var(--tertiary);
-	}
-
-	.back-to-top {
-		position: fixed;
-		bottom: 24px;
-		right: 24px;
-		width: 40px;
-		height: 40px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background: var(--surface);
-		border: 1px solid var(--border);
-		border-radius: 50%;
-		color: var(--secondary);
-		cursor: pointer;
-		backdrop-filter: blur(8px);
-		transition: var(--transition);
-		z-index: 30;
-	}
-
-	.back-to-top:hover {
-		background: var(--accent-light);
-		color: var(--accent);
-		border-color: var(--accent-border);
-		box-shadow: var(--accent-glow);
-	}
-
-	@media (max-width: 600px) {
-		.footer {
-			padding: calc(var(--gap) * 1.5) var(--gap);
-			margin-top: calc(var(--gap) * 2);
-		}
-
-		.footer-columns {
-			grid-template-columns: repeat(3, 1fr);
-			gap: calc(var(--gap) * 0.5);
-			margin-bottom: calc(var(--gap) * 1.5);
-		}
-
-		.footer-column {
-			gap: 6px;
-		}
-
-		.footer-column h3 {
-			font-size: 0.65rem;
-			margin-bottom: 2px;
-		}
-
-		.footer-column a {
-			font-size: 0.8125rem;
-		}
 	}
 </style>

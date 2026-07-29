@@ -295,9 +295,9 @@
 
 			<div class="audit-actions">
 				<button class="audit-btn audit-btn--primary" onclick={handleExport}>
-					{copyFeedback ? 'Copi\u00e9 dans le presse-papier' : 'Copier le bilan (format texte)'}
+					{copyFeedback ? 'Copié dans le presse-papier' : 'Copier le bilan (format texte)'}
 				</button>
-				<button class="audit-btn audit-btn--secondary" onclick={handleReset}>R\u00e9initialiser</button>
+				<button class="audit-btn audit-btn--secondary" onclick={handleReset}>Réinitialiser</button>
 			</div>
 		</div>
 
@@ -346,8 +346,8 @@
 
 			{#if uncheckedCritical.length > 0}
 				<div class="result-section tool-result">
-					<h3 class="result-title result-title--alert">Priorit\u00e9s imm\u00e9diates</h3>
-					<p class="priorities-hint">Points critiques non coch\u00e9s \u2014 ce que j'observe souvent comme premi\u00e8res failles.</p>
+					<h3 class="result-title result-title--alert">Priorités immédiates</h3>
+					<p class="priorities-hint">Points critiques non cochés — ce que j'observe souvent comme premières failles.</p>
 					<ul class="priorities-list">
 						{#each uncheckedCritical as cp}
 							<li class="priority-item">{cp.label}</li>

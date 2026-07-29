@@ -5,15 +5,14 @@
 </script>
 
 <SEO
-	title="Evaluation tech equipe"
-	description="Cartographie les competences techniques de ton equipe. Identifie les forces, les gaps et les bus factors."
+	title="Évaluation tech équipe"
+	description="Cartographiez les compétences techniques d'une équipe : forces, manques et bus factor."
 	url="https://kevin.delfour.co/outils/evaluation-tech-equipe/"
 />
 
 <ToolShell
-	title="Evaluation tech equipe"
-	description="Cartographie les competences techniques de ton equipe. Identifie les forces, les gaps et le bus factor par competence."
-	command="./evaluation-tech-equipe"
+	title="Évaluation tech équipe"
+	description="Cartographiez les compétences techniques d'une équipe : forces, manques et bus factor par compétence."
 >
 	<EvaluationTechEquipe />
 </ToolShell>

@@ -55,6 +55,10 @@ vite.config.ts.timestamp-*
 
 # Others
 _resources
+# Sources d'images non optimisées : les dérivés servis sont dans static/.
+resources/
+# Le projet s'installe avec npm (npm ci en CI) ; un lockfile pnpm ferait diverger les versions.
+pnpm-lock.yaml
 
 # Compagnon visuel brainstorming
 .superpowers/

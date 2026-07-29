@@ -6,14 +6,13 @@
 
 <SEO
 	title="Évaluation dette technique"
-	description="Quantifie et priorise ta dette technique sur 6 axes. Matrice impact/effort pour identifier les quick wins."
+	description="Quantifiez et priorisez la dette technique sur 6 axes. Matrice impact/effort pour repérer les gains rapides."
 	url="https://kevin.delfour.co/outils/evaluation-dette-technique/"
 />
 
 <ToolShell
 	title="Évaluation dette technique"
-	description="Quantifie et priorise ta dette technique sur 6 axes. La matrice impact/effort aide à identifier les quick wins — là où l'effort est faible et l'impact fort."
-	command="./evaluation-dette-technique"
+	description="Quantifiez et priorisez la dette technique sur 6 axes. La matrice impact/effort fait ressortir les gains rapides — là où l'effort est faible et l'impact fort."
 >
 	<DetteRechnique />
 </ToolShell>

@@ -13,7 +13,6 @@
 <ToolShell
 	title="Évaluation SaaS"
 	description="Évalue une solution SaaS sur 8 critères pondérés. Un cadre pour objectiver la décision."
-	command="./evaluation-saas"
 >
 	<EvaluationSaaS />
 </ToolShell>

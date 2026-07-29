@@ -1,30 +1,33 @@
 <script lang="ts">
 	import SEO from '$lib/components/SEO.svelte';
 	import { toolCategories } from '$lib/data/tools';
-
-	const slug = (label: string) =>
-		label.toLowerCase().replace(/&/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 </script>
 
 <SEO
-	title="Outils"
-	description="Des outils interactifs pour structurer tes décisions techniques. Pas des réponses toutes faites — des cadres de réflexion."
+	title="Boîte à outils"
+	description="Vingt et un outils que j'ai construits pour mes propres besoins de manager : cadrer un 1:1, planifier un staffing, mesurer la maturité d'une équipe, documenter une décision."
 	url="https://kevin.delfour.co/outils/"
+	breadcrumbs={[{ label: 'Boîte à outils' }]}
 />
 
 <div class="term-page">
 	<header class="term-head">
-		<div class="term-cmd"><span class="p">$</span> ls outils/ <span class="hash"># des cadres pour décider, pas des réponses</span></div>
-		<h1 class="visually-hidden">Outils</h1>
+		<div class="term-cmd">Boîte à outils</div>
+		<h1>La boîte à outils du leader d’ingénierie</h1>
 		<p class="term-lead">
-			Des outils interactifs pour structurer tes décisions techniques. Pas des réponses toutes faites — des cadres de réflexion.
+			Vingt et un outils que j’ai construits pour mes propres besoins : cadrer un 1:1, planifier un
+			staffing, mesurer la maturité d’une équipe, arbitrer une dette, documenter une décision. Faits
+			main, utilisés en vrai, en accès libre.
 		</p>
-		<p class="term-note">Tout tourne dans ton navigateur — rien n'est envoyé à un serveur, tes données restent chez toi.</p>
+		<p class="term-note">
+			Tout tourne dans votre navigateur — rien n’est envoyé à un serveur, vos données restent chez
+			vous.
+		</p>
 	</header>
 
 	{#each toolCategories as category}
 		<section class="term-sec">
-			<div class="term-cmd"><span class="p">$</span> ls {slug(category.label)}/</div>
+			<div class="term-cmd">{category.label}</div>
 			<h2 class="visually-hidden">{category.label}</h2>
 			<div class="term-grid">
 				{#each category.tools as tool}
@@ -43,9 +46,35 @@
 			</div>
 		</section>
 	{/each}
+
+	<section class="term-sec">
+		<div class="case-card">
+			<h2>Ces outils viennent d’une pratique</h2>
+			<p>
+				Chacun est né d’un problème que j’avais à résoudre en menant une équipe. Les convictions
+				qu’ils traduisent sont détaillées sur la page Leadership.
+			</p>
+			<div class="btn-row">
+				<a class="btn btn--primary" href="/leadership/">Mes convictions</a>
+				<a class="btn btn--secondary" href="/cv/">Mon parcours</a>
+			</div>
+		</div>
+	</section>
 </div>
 
 <style>
+	.case-card h2 {
+		font-size: var(--text-xl);
+		margin-bottom: 12px;
+	}
+	.case-card p {
+		color: var(--secondary);
+		max-width: 62ch;
+	}
+	.case-card .btn-row {
+		margin-top: 24px;
+	}
+
 	.tool-card {
 		display: flex;
 		gap: 13px;

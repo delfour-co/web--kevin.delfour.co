@@ -1,68 +1,49 @@
 # kevin.delfour.co
 
-Site personnel de Kevin Delfour, CTO avec 17 ans d'expérience.
+Site personnel de Kevin Delfour, Engineering Leader — 17 ans d'expérience, Lyon.
 
-> Donner des repères. Pas des leçons.
-
----
-
-## Vue d'ensemble
-
-Ce site existe pour donner des repères :
-- aux **CTO et leaders tech** qui portent des responsabilités réelles,
-- à celles et ceux qui **cherchent leur place dans la tech**, sans se raconter d'histoires.
+> Construire des organisations d'ingénierie où les gens et les produits s'épanouissent.
 
 **URL :** https://kevin.delfour.co
 
 ---
 
+## Vue d'ensemble
+
+Le site est l'extension web du CV exécutif de Kevin. Il s'adresse d'abord aux CEO,
+CTO, fondateurs et recruteurs de postes de direction d'ingénierie, et répond à une
+question : pourquoi lui confier une organisation d'ingénierie ?
+
+On y trouve ses convictions de leader et les pratiques associées, son parcours,
+ses interventions, ses engagements communautaires, ses livres gratuits et une
+boîte à outils de management d'ingénierie en accès libre.
+
+---
+
 ## Stack technique
 
-- **Framework :** SvelteKit (Svelte 5) avec adapter-static
+- **Framework :** SvelteKit (Svelte 5, runes) avec adapter-static
 - **Langage :** TypeScript
 - **Contenu :** Markdown via mdsvex
-- **Recherche :** Pagefind
+- **Recherche :** Pagefind (indexation post-build)
 - **Hébergement :** GitHub Pages
-- **Déploiement :** Automatique sur push vers `main` via GitHub Actions
+- **Déploiement :** automatique sur push vers `main` via GitHub Actions
 
 ---
 
 ## Installation
 
-### Prérequis
-
-- Node.js 22+
-- npm
-
-### Setup local
+Prérequis : Node.js 22+ et npm.
 
 ```bash
-# Cloner le repo
-git clone [URL_DU_REPO]
-cd web--kevin.delfour.co
-
-# Installer les dépendances
 npm install
-
-# Lancer le serveur de développement
-npm run dev
-
-# Accéder au site
-# http://localhost:5173
+npm run dev        # http://localhost:5173
 ```
 
-### Build production
-
 ```bash
-npm run build
-```
-
-Les fichiers générés sont dans le dossier `build/`.
-
-### Preview
-
-```bash
-npm run preview
+npm run build      # génère build/ puis indexe avec Pagefind
+npm run preview    # sert le build local
+npm run check      # svelte-check (types et accessibilité)
 ```
 
 ---
@@ -72,16 +53,21 @@ npm run preview
 ```
 .
 ├── src/
-│   ├── routes/              # Pages (file-based routing)
-│   ├── content/             # Contenus markdown (articles, livres)
-│   ├── lib/                 # Composants, données, utilitaires
-│   ├── app.css              # Styles globaux
+│   ├── routes/              # Pages (routage par fichiers)
+│   ├── content/livres/      # Chapitres des livres (markdown)
+│   ├── lib/
+│   │   ├── components/      # Composants partagés (SEO, Footer, panneau a11y…)
+│   │   └── data/            # Données du site
+│   │       ├── profile.ts   # Faits canoniques (identité, chiffres, parcours)
+│   │       ├── leadership.ts# Les cinq piliers du hub Leadership
+│   │       ├── tools.ts     # Les 21 outils
+│   │       └── projects.json# Les projets
+│   ├── app.css              # Design system (tokens, primitives)
 │   └── app.html             # Template HTML racine
-├── static/                  # Assets statiques (images, favicons)
-├── svelte.config.js         # Configuration SvelteKit
-├── vite.config.ts           # Configuration Vite
-├── LIGNE_EDITORIALE.md      # Ligne éditoriale (référence absolue)
-├── CLAUDE.md                # Context pour assistants IA
+├── static/
+│   ├── fonts/               # Polices auto-hébergées (Inter, Space Grotesk, JetBrains Mono)
+│   └── cv/                  # CV en PDF
+├── CLAUDE.md                # Contexte, identité et règles de contribution
 └── README.md                # Ce fichier
 ```
 
@@ -89,28 +75,20 @@ npm run preview
 
 ## Contribuer
 
-### Avant toute contribution
-
-**Lecture obligatoire :**
-1. `LIGNE_EDITORIALE.md` — Ligne éditoriale complète (non négociable)
-2. `CLAUDE.md` — Context et règles de contribution
+Lecture préalable : [`CLAUDE.md`](./CLAUDE.md) — positionnement, identité, ton et
+règles de design.
 
 ### Règles non négociables
 
-- Respecter le ton : calme, sobre, lucide, non prescriptif
-- Pas de jargon UX/marketing
-- Pas d'injonctions ("Il faut", "Tu dois")
-- Pas de promesses de résultats
-- Pas d'alourdissement du site
-
-**Règle d'or :** Avant toute modification, se demander :
-
-> Est-ce que cette modification aide quelqu'un à se repérer
-> sans lui dire quoi faire ?
-
-Si la réponse est non → ne pas faire.
+- **Les faits viennent de `src/lib/data/profile.ts`.** Toute affirmation publiée
+  doit y être adossée. Aucun chiffre en dur dans une page.
+- **Ton** : première personne, humble, concret. Pas de buzzword, pas de promesse
+  exagérée, pas d'auto-dépréciation.
+- **Identité** : Kevin est Engineering Leader. Ni « CTO » ni « Lead Tech » pour le
+  présenter (voir les exceptions dans `CLAUDE.md`).
+- **Design** : les composants consomment les tokens CSS, jamais de couleur codée
+  en dur. Le panneau d'accessibilité doit continuer de fonctionner.
 
 ---
 
-**Maintenu par Kevin Delfour**
-CTO basé à Lyon — 17 ans d'expérience
+**Maintenu par Kevin Delfour** — Engineering Leader, Lyon.

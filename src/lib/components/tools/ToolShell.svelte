@@ -4,13 +4,11 @@
 	let {
 		title,
 		description,
-		command,
-		note = "Tout tourne dans ton navigateur — rien n'est envoyé à un serveur, tes données restent chez toi.",
+		note = "Tout tourne dans votre navigateur — rien n'est envoyé à un serveur, vos données restent chez vous.",
 		children
 	}: {
 		title: string;
 		description?: string;
-		command?: string;
 		note?: string | null;
 		children: Snippet;
 	} = $props();
@@ -18,8 +16,8 @@
 
 <div class="term-page">
 	<header class="term-head">
-		<div class="term-cmd"><span class="p">$</span> {command ?? title}</div>
-		<h1 class="visually-hidden">{title}</h1>
+		<div class="term-cmd">Boîte à outils</div>
+		<h1>{title}</h1>
 		{#if description}<p class="term-lead">{description}</p>{/if}
 		{#if note}<p class="term-note">{note}</p>{/if}
 	</header>

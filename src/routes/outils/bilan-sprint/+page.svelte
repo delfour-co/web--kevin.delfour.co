@@ -6,14 +6,13 @@
 
 <SEO
 	title="Bilan de sprint"
-	description="Structure ton bilan de sprint : delivery, retrospective, metriques qualite, actions. Export complet."
+	description="Structurez un bilan de sprint : delivery, rétrospective, métriques qualité, actions. Export complet."
 	url="https://kevin.delfour.co/outils/bilan-sprint/"
 />
 
 <ToolShell
 	title="Bilan de sprint"
-	description="Un cadre pour structurer le bilan de sprint. Delivery, retro, qualite et actions — oriente amelioration continue."
-	command="./bilan-sprint"
+	description="Un cadre pour structurer le bilan de sprint. Delivery, retro, qualité et actions — orienté amélioration continue."
 >
 	<BilanSprint />
 </ToolShell>

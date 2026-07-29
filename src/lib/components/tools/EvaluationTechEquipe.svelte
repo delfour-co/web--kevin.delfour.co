@@ -327,15 +327,15 @@
 					class:tab-btn--active={activeTab === 'eval'}
 					onclick={() => (activeTab = 'eval')}
 				>
-					Evaluation
+					Évaluation
 				</button>
 			</div>
 
 			{#if activeTab === 'config'}
 				<!-- Members section -->
 				<section class="tool-panel config-section">
-					<h3 class="section-title">Membres de l'equipe</h3>
-					<p class="section-hint">Ce que j'observe souvent : commencer par les roles reels, pas les titres officiels.</p>
+					<h3 class="section-title">Membres de l'équipe</h3>
+					<p class="section-hint">Ce que j'observe souvent : commencer par les roles réels, pas les titres officiels.</p>
 
 					<div class="add-row">
 						<input
@@ -374,8 +374,8 @@
 
 				<!-- Skills section -->
 				<section class="tool-panel config-section">
-					<h3 class="section-title">Competences</h3>
-					<p class="section-hint">Ce que j'observe souvent : une grille trop large dilue l'analyse. 12 a 20 competences suffisent generalement.</p>
+					<h3 class="section-title">Compétences</h3>
+					<p class="section-hint">Ce que j'observe souvent : une grille trop large dilue l'analyse. 12 a 20 compétences suffisent généralement.</p>
 
 					{#each domains as domain}
 						<div class="domain-block">
@@ -404,7 +404,7 @@
 						<input
 							type="text"
 							class="input-field input-field--grow"
-							placeholder="Nouvelle competence"
+							placeholder="Nouvelle compétence"
 							bind:value={newSkillName}
 							onkeydown={(e) => { if (e.key === 'Enter') addSkill(); }}
 						/>
@@ -415,7 +415,7 @@
 				{#if members.length > 0 && allSkillNames.length > 0}
 					<div class="config-cta">
 						<button class="tool-btn tool-btn--primary" onclick={() => (activeTab = 'eval')}>
-							Passer a l'evaluation
+							Passer a l'évaluation
 						</button>
 					</div>
 				{/if}
@@ -466,7 +466,7 @@
 
 			<div class="tool-actions">
 				<button class="tool-btn tool-btn--primary" onclick={handleExport} disabled={members.length === 0}>
-					{copyFeedback ? 'Copi\u00e9 dans le presse-papier' : 'Copier le bilan (format texte)'}
+					{copyFeedback ? 'Copié dans le presse-papier' : 'Copier le bilan (format texte)'}
 				</button>
 				<button class="tool-btn tool-btn--secondary" onclick={handleReset}>Reinitialiser</button>
 			</div>
@@ -475,11 +475,11 @@
 		<!-- Right panel: Results (sticky) -->
 		<div class="tool-result" aria-live="polite" aria-atomic="true">
 			{#if members.length === 0 || allSkillNames.length === 0}
-				<div class="result-title">Resultats</div>
-				<p class="empty-state">Configure ton equipe et tes competences pour voir les resultats.</p>
+				<div class="result-title">Résultats</div>
+				<p class="empty-state">Configure ton équipe et tes compétences pour voir les résultats.</p>
 			{:else}
 				<!-- Heatmap matrix -->
-				<div class="result-title">Matrice des competences</div>
+				<div class="result-title">Matrice des compétences</div>
 				<div class="heatmap-wrapper">
 					<table class="heatmap">
 						<thead>
@@ -514,7 +514,7 @@
 
 				<!-- Team coverage -->
 				<div class="result-section">
-					<div class="result-subtitle">Couverture equipe</div>
+					<div class="result-subtitle">Couverture équipe</div>
 					<div class="coverage-list">
 						{#each teamCoverage as c}
 							<div class="coverage-row">
@@ -532,7 +532,7 @@
 				{#if gaps.length > 0}
 					<div class="result-section">
 						<div class="result-subtitle">Gaps identifies</div>
-						<p class="gaps-hint">Ce que j'observe souvent : un gap n'est pas un echec. C'est un angle mort a rendre visible.</p>
+						<p class="gaps-hint">Ce que j'observe souvent : un gap n'est pas un échec. C'est un angle mort a rendre visible.</p>
 						<ul class="gaps-list">
 							{#each gaps as gap}
 								<li class="gap-item">

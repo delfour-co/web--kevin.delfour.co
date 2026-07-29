@@ -15,7 +15,8 @@
 
 	const SITE_NAME = 'Kevin Delfour';
 	const SITE_URL = 'https://kevin.delfour.co';
-	const DEFAULT_DESCRIPTION = 'Kevin Delfour — Lead Tech (+ management), 17 ans de terrain, Lyon. Mon lieu : projets, outils, livres.';
+	const DEFAULT_DESCRIPTION =
+		"Kevin Delfour — Engineering Leader, 17 ans d'expérience, Lyon. Je construis des organisations d'ingénierie où les gens et les produits s'épanouissent.";
 	const DEFAULT_IMAGE = `${SITE_URL}/images/kevin-delfour.png`;
 
 	let {
@@ -32,17 +33,33 @@
 		breadcrumbs = []
 	}: Props = $props();
 
-	let fullTitle = $derived(title ? `${title} — ${SITE_NAME}` : SITE_NAME);
+	let fullTitle = $derived(title ? `${title} — ${SITE_NAME}` : `${SITE_NAME} — Engineering Leader, Lyon`);
 
 	const personSchema = {
 		'@type': 'Person',
 		name: SITE_NAME,
 		url: SITE_URL,
-		jobTitle: 'Lead Tech',
-		sameAs: [
-			'https://github.com/kdelfour',
-			'https://linkedin.com/in/kevindelfour'
-		]
+		jobTitle: 'Engineering Leader',
+		description:
+			"Engineering Leader, 17 ans d'expérience. Construction d'organisations d'ingénierie, recrutement, coaching, stratégie technique et adoption de l'IA.",
+		email: 'mailto:delfour.k@gmail.com',
+		address: {
+			'@type': 'PostalAddress',
+			addressLocality: 'Lyon',
+			addressCountry: 'FR'
+		},
+		knowsAbout: [
+			'Engineering Management',
+			'Engineering Leadership',
+			'Hiring',
+			'Career Ladders',
+			'Organizational Design',
+			'Technical Strategy',
+			'Engineering Culture',
+			'AI in Engineering'
+		],
+		knowsLanguage: ['fr', 'en'],
+		sameAs: ['https://github.com/kdelfour', 'https://linkedin.com/in/kevindelfour']
 	};
 
 	let jsonLdSchemas = $derived(() => {

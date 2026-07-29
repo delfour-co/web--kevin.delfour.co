@@ -6,14 +6,13 @@
 
 <SEO
 	title="Cadrage 1:1"
-	description="Structure tes entretiens 1:1 avec un cadre de reflexion. Preparation, themes, actions."
+	description="Cadrez vos entretiens 1:1 : préparation, thèmes, actions."
 	url="https://kevin.delfour.co/outils/cadrage-one-on-one/"
 />
 
 <ToolShell
 	title="Cadrage 1:1"
-	description="Un cadre pour preparer et structurer tes entretiens individuels. Pas un script — des reperes."
-	command="./cadrage-one-on-one"
+	description="Un cadre pour préparer et structurer vos entretiens individuels. Pas un script — des repères."
 >
 	<CadrageOneOnOne />
 </ToolShell>

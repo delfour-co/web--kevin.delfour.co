@@ -6,14 +6,13 @@
 
 <SEO
 	title="Évaluation maturité équipe"
-	description="Diagnostique la maturité de ton équipe tech sur 6 axes : autonomie, qualité, delivery, communication, apprentissage, collaboration."
+	description="Diagnostiquez la maturité d'une équipe sur 6 axes : autonomie, qualité, delivery, communication, apprentissage, collaboration."
 	url="https://kevin.delfour.co/outils/maturite-equipe/"
 />
 
 <ToolShell
 	title="Évaluation maturité équipe"
-	description="Évalue la maturité de ton équipe technique sur 6 axes. Un repère pour identifier les dynamiques à renforcer — pas un jugement."
-	command="./maturite-equipe"
+	description="Évaluez la maturité d'une équipe technique sur 6 axes. Un repère pour identifier les dynamiques à renforcer — pas un jugement."
 >
 	<MaturiteEquipe />
 </ToolShell>

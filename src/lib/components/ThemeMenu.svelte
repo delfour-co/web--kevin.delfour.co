@@ -1,101 +1,84 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 
-	type Theme = { id: string; label: string };
+	type Theme = 'dark' | 'light';
 
-	const THEMES: Theme[] = [
-		{ id: 'slate', label: 'Slate' },
-		{ id: 'dracula', label: 'Dracula' },
-		{ id: 'catppuccin', label: 'Catppuccin' },
-		{ id: 'gruvbox', label: 'Gruvbox' },
-		{ id: 'nord', label: 'Nord' },
-		{ id: 'solarized', label: 'Solarized' },
-		{ id: 'light', label: 'Light' },
-		{ id: 'crt', label: 'CRT vert' },
-		{ id: 'amber', label: 'Amber' }
-	];
+	function read(): Theme {
+		if (!browser) return 'dark';
+		return document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+	}
 
-	let open = $state(false);
-	let current = $state(browser ? document.documentElement.getAttribute('data-theme') || 'slate' : 'slate');
+	let current = $state<Theme>(read());
 
-	function choose(id: string) {
-		current = id;
-		document.documentElement.setAttribute('data-theme', id);
+	function toggle() {
+		current = current === 'dark' ? 'light' : 'dark';
+		document.documentElement.setAttribute('data-theme', current);
+		document
+			.querySelector('meta[name="theme-color"]')
+			?.setAttribute('content', current === 'light' ? '#ffffff' : '#0c0e12');
 		try {
-			localStorage.setItem('theme', id);
-		} catch (e) {}
-		open = false;
+			localStorage.setItem('theme', current);
+		} catch (e) {
+			// stockage indisponible : le thème reste valable pour la session
+		}
 	}
 </script>
 
-<div class="theme-menu">
-	<button
-		class="theme-trigger"
-		onclick={() => (open = !open)}
-		aria-haspopup="listbox"
-		aria-expanded={open}
-		aria-label="Choisir un thème"
-		title="Thème"
-	>
-		<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18 4.5 4.5 0 0 0 0-9 4.5 4.5 0 0 1 0-9Z"/></svg>
-	</button>
-
-	{#if open}
-		<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-		<ul class="theme-list" role="listbox" tabindex="-1">
-			{#each THEMES as t}
-				<li>
-					<button
-						class="theme-option"
-						class:active={current === t.id}
-						role="option"
-						aria-selected={current === t.id}
-						onclick={() => choose(t.id)}
-					>
-						<span class="swatch" data-swatch={t.id}></span>
-						{t.label}
-					</button>
-				</li>
-			{/each}
-		</ul>
+<button
+	class="theme-trigger"
+	onclick={toggle}
+	aria-label={current === 'dark' ? 'Passer au thème clair' : 'Passer au thème sombre'}
+	title={current === 'dark' ? 'Thème clair' : 'Thème sombre'}
+>
+	{#if current === 'dark'}
+		<svg
+			width="18"
+			height="18"
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="1.8"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			aria-hidden="true"
+		>
+			<circle cx="12" cy="12" r="4" />
+			<path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+		</svg>
+	{:else}
+		<svg
+			width="18"
+			height="18"
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="1.8"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			aria-hidden="true"
+		>
+			<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
+		</svg>
 	{/if}
-</div>
+</button>
 
 <style>
-	.theme-menu { position: relative; }
 	.theme-trigger {
-		display: flex; align-items: center; justify-content: center;
-		width: 40px; height: 40px; padding: 0; border: none; background: none;
-		color: var(--secondary); cursor: pointer; border-radius: var(--radius-sm);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 38px;
+		height: 38px;
+		padding: 0;
+		border: none;
+		background: none;
+		color: var(--secondary);
+		cursor: pointer;
+		border-radius: var(--radius-sm);
 		transition: var(--transition);
 	}
-	.theme-trigger:hover { background: var(--accent-light); color: var(--accent); }
-	.theme-list {
-		position: absolute; top: 48px; right: 0; z-index: 60;
-		margin: 0; padding: 6px; list-style: none;
-		background: var(--surface); border: 1px solid var(--border);
-		border-radius: var(--radius-sm); box-shadow: var(--shadow-lg);
-		min-width: 180px;
+	.theme-trigger:hover {
+		background: var(--surface-hover);
+		color: var(--primary);
 	}
-	.theme-option {
-		display: flex; align-items: center; gap: 10px; width: 100%;
-		padding: 7px 10px; border: none; background: none; cursor: pointer;
-		font-family: var(--font-ui); font-size: 0.8125rem; color: var(--content);
-		border-radius: var(--radius-sm); text-align: left;
-	}
-	.theme-option:hover { background: var(--surface-hover); color: var(--accent); }
-	.theme-option.active { color: var(--accent); }
-	.swatch {
-		width: 14px; height: 14px; border-radius: 4px; flex-shrink: 0;
-		border: 1px solid var(--border);
-	}
-	.swatch[data-swatch='slate'] { background: #2dd4bf; }
-	.swatch[data-swatch='dracula'] { background: #ff79c6; }
-	.swatch[data-swatch='catppuccin'] { background: #cba6f7; }
-	.swatch[data-swatch='gruvbox'] { background: #b8bb26; }
-	.swatch[data-swatch='nord'] { background: #88c0d0; }
-	.swatch[data-swatch='solarized'] { background: #2aa198; }
-	.swatch[data-swatch='light'] { background: #fdf6e3; }
-	.swatch[data-swatch='crt'] { background: #33ff77; }
-	.swatch[data-swatch='amber'] { background: #ffb000; }
 </style>

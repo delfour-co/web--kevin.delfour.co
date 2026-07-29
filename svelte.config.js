@@ -47,7 +47,9 @@ const config = {
 		adapter: adapter({
 			pages: 'build',
 			assets: 'build',
-			fallback: undefined,
+			// GitHub Pages sert 404.html pour toute URL inconnue : c'est ce qui
+			// permet à +error.svelte de s'afficher au lieu de la page par défaut.
+			fallback: '404.html',
 			precompress: true,
 			strict: true
 		}),
