@@ -1,6 +1,16 @@
 <script lang="ts">
 	import SEO from '$lib/components/SEO.svelte';
-	import { CONTACT, SPEAKING_TOPICS } from '$lib/data/profile';
+	import { CONTACT, COMMUNITY_STATUS, SPEAKING_TOPICS, TALKS } from '$lib/data/profile';
+
+	const monthFormat = new Intl.DateTimeFormat('fr-FR', { month: 'long', year: 'numeric' });
+
+	/** Accepte `2024`, `2024-08` et `2024-08-29` — on n’affiche jamais plus précis que la donnée. */
+	const dateLabel = (date: string) => {
+		if (/^\d{4}$/.test(date)) return date;
+		// Midi pour éviter qu’un décalage de fuseau ne fasse basculer le mois.
+		const label = monthFormat.format(new Date(`${date.slice(0, 7)}-01T12:00:00`));
+		return label.charAt(0).toUpperCase() + label.slice(1);
+	};
 </script>
 
 <SEO
@@ -37,23 +47,51 @@
 
 	<section class="section">
 		<div class="section-head">
-			<h2>Rendez-vous que j’anime</h2>
+			<h2>Interventions passées</h2>
+		</div>
+		<div class="timeline">
+			{#each TALKS as talk}
+				<article class="timeline-item">
+					<time class="timeline-date" datetime={talk.date}>
+						{dateLabel(talk.date)} · {talk.type} · {talk.location}
+					</time>
+					<h3 class="timeline-title">{talk.title}</h3>
+					<p class="timeline-org">{talk.event}</p>
+					{#if talk.withWhom}
+						<p class="talk-with">{talk.withWhom}</p>
+					{/if}
+					{#if talk.summary}
+						<p class="timeline-body">{talk.summary}</p>
+					{/if}
+					{#if talk.url}
+						<a class="talk-link" href={talk.url} rel="noopener noreferrer" target="_blank">
+							{talk.urlLabel ?? 'En savoir plus'}
+						</a>
+					{/if}
+				</article>
+			{/each}
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="section-head">
+			<h2>Rendez-vous que j’ai animés</h2>
 			<p>
-				Au-delà des interventions ponctuelles, j’organise et j’anime des rendez-vous réguliers de la
-				communauté tech lyonnaise.
+				Au-delà des interventions ponctuelles, j’ai organisé et animé des rendez-vous réguliers de
+				la communauté tech lyonnaise. {COMMUNITY_STATUS}
 			</p>
 		</div>
 		<ul class="recurring">
 			<li>
 				<strong>CTO de Lyon</strong> — échanges entre pairs qui portent des responsabilités
-				d’organisation. Co-créateur depuis 2023.
+				d’organisation. Co-créateur, 2023 – 2025.
 			</li>
 			<li>
 				<strong>Tech’Work &amp; Tech &amp; Wine</strong> — événements tech lyonnais avec Cloud
-				Alpes. Organisateur depuis 2023.
+				Alpes. Organisateur, 2023 – 2025.
 			</li>
 			<li>
-				<strong>Club tech4tech — Digital League</strong> — animation mensuelle depuis 2022.
+				<strong>Club tech4tech — Digital League</strong> — animation mensuelle, 2022 – 2025.
 			</li>
 		</ul>
 		<a class="section-link" href="/communaute/">Le détail des engagements</a>
@@ -77,6 +115,17 @@
 </div>
 
 <style>
+	.talk-with {
+		font-size: var(--text-sm);
+		color: var(--tertiary);
+		margin: 0 0 12px;
+		max-width: 68ch;
+	}
+	.talk-link {
+		font-family: var(--font-mono);
+		font-size: var(--text-xs);
+	}
+
 	.recurring {
 		margin: 0;
 		padding: 0;

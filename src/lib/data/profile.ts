@@ -13,7 +13,7 @@ export const IDENTITY = {
 	/** Message central du site. */
 	tagline:
 		"Je construis des organisations d'ingénierie où les gens et les produits s'épanouissent.",
-	subline: 'La technologie compte. Les gens sont le multiplicateur.'
+	subline: 'La technologie compte. Elle ne fait rien toute seule.'
 } as const;
 
 export const CONTACT = {
@@ -33,9 +33,8 @@ export type Stat = { value: string; label: string };
 export const SNAPSHOT: Stat[] = [
 	{ value: '17 ans', label: "d'expérience en ingénierie logicielle" },
 	{ value: '30+', label: 'ingénieurs recrutés, des centaines d’entretiens menés' },
-	{ value: '~30', label: "ingénieurs dans la plus grande organisation dirigée" },
+	{ value: '~30', label: "ingénieurs dans la plus grande organisation que j'ai menée" },
 	{ value: '0 → 12', label: 'consultants — agence d’ingénierie créée de zéro' },
-	{ value: '400 → 700 K€', label: 'de chiffre d’affaires annuel sur cette même agence' },
 	{ value: '1 brevet', label: 'déposé, et une startup deep-tech co-fondée' }
 ];
 
@@ -57,7 +56,7 @@ export const EXPERIENCE: Experience[] = [
 		title: 'Lead Backend Engineer',
 		org: 'Second Brain',
 		impact:
-			"Je dirige l'ingénierie backend d'une plateforme IA B2B internationale : adoption de l'IA, expérience développeur et exigence d'ingénierie à l'échelle de l'organisation — sans lâcher le clavier. 40+ pull requests revues et 20+ entretiens techniques sur le premier mois.",
+			"Je mène l'ingénierie backend d'une plateforme IA B2B internationale : adoption de l'IA, expérience développeur et exigence d'ingénierie à l'échelle de l'organisation — sans lâcher le clavier. 40+ pull requests revues et 20+ entretiens techniques sur le premier mois.",
 		scope: [
 			'12 ingénieurs (4 Tech Leads, 1 PO)',
 			'Adoption de l’IA',
@@ -91,7 +90,7 @@ export const EXPERIENCE: Experience[] = [
 		title: 'Associate Director — Strategy & Operations',
 		org: 'MAX Digital Services',
 		impact:
-			"J'ai créé et fait grandir l'agence d'ingénierie lyonnaise de 0 à 12 consultants, porté le chiffre d'affaires annuel de 400 à 700 K€, recruté plus de 30 ingénieurs et construit les career ladders ainsi que les cadres de recrutement et de rémunération.",
+			"J'ai créé et fait grandir l'agence d'ingénierie lyonnaise de 0 à 12 consultants, recruté plus de 30 ingénieurs et construit les career ladders ainsi que les cadres de recrutement et de rémunération.",
 		scope: [
 			'Comité exécutif',
 			'Recrutement',
@@ -105,7 +104,7 @@ export const EXPERIENCE: Experience[] = [
 		title: 'Chief Technology Officer',
 		org: 'Hiveo',
 		impact:
-			"J'ai dirigé l'ingénierie pendant une acquisition internationale, à la tête d'une organisation d'environ 30 ingénieurs, en définissant la stratégie technique, la gouvernance et les indicateurs d'ingénierie.",
+			"J'ai mené l'ingénierie pendant une acquisition internationale, pour une organisation d'environ 30 ingénieurs, en définissant la stratégie technique, la gouvernance et les indicateurs d'ingénierie.",
 		scope: [
 			'~30 ingénieurs',
 			'Direction exécutive',
@@ -174,36 +173,44 @@ export const SKILLS = {
 export type Engagement = {
 	title: string;
 	role: string;
-	since: string;
+	/** Période d’activité. Tous ces engagements sont en pause, cf. COMMUNITY_STATUS. */
+	period: string;
 	description: string;
 };
+
+/**
+ * Statut courant des engagements communautaires et du mentorat.
+ * Affiché partout où ces engagements sont listés, pour qu’une période close
+ * ne se lise pas comme un abandon silencieux.
+ */
+export const COMMUNITY_STATUS = 'Ces engagements sont en pause depuis 2026.';
 
 export const COMMUNITY: Engagement[] = [
 	{
 		title: 'CTO de Lyon',
 		role: 'Co-créateur',
-		since: '2023',
+		period: '2023 – 2025',
 		description:
 			"Un espace d'échange indépendant et bénévole entre CTO et leaders tech lyonnais — des gens qui portent des responsabilités d'organisation et qui ont besoin de pairs pour en parler franchement."
 	},
 	{
 		title: 'Tech’Work & Tech & Wine',
 		role: 'Organisateur bénévole',
-		since: '2023',
+		period: '2023 – 2025',
 		description:
 			"Organisation d'événements tech à Lyon avec Maxime Deroullers (Cloud Alpes). Des rendez-vous authentiques, loin des conférences corporate."
 	},
 	{
 		title: 'Digital League — club tech4tech',
 		role: 'Animateur',
-		since: '2022',
+		period: '2022 – 2025',
 		description:
 			"Animation mensuelle du club tech4tech de Digital League et organisation d'événements pour la communauté tech locale."
 	},
 	{
 		title: 'Eden School',
 		role: 'Parrain',
-		since: '2018',
+		period: '2018 – 2025',
 		description:
 			"Parrainage d'enfants de l'école Eden School. Un engagement pour l'éducation et l'accompagnement d'enfants en difficulté."
 	}
@@ -215,7 +222,7 @@ export const SPEAKING_TOPICS: SpeakingTopic[] = [
 	{
 		title: 'Engineering leadership',
 		description:
-			"Ce que diriger des ingénieurs veut dire concrètement, au-delà des frameworks : arbitrer, protéger, décider, et assumer."
+			"Ce que mener des ingénieurs veut dire concrètement, au-delà des frameworks : arbitrer, protéger, décider, et assumer."
 	},
 	{
 		title: "L'IA pour les ingénieurs",
@@ -241,5 +248,88 @@ export const SPEAKING_TOPICS: SpeakingTopic[] = [
 		title: 'L’agilité au-delà de Scrum',
 		description:
 			"Ce qui reste des méthodes quand on enlève les cérémonies, et ce qu'on gagne à les enlever."
+	}
+];
+
+export type Talk = {
+	/**
+	 * `2024`, `2024-08` ou `2024-08-29` — on met la précision dont on dispose,
+	 * jamais une date inventée. Le tri lexicographique reste correct.
+	 */
+	date: string;
+	event: string;
+	title: string;
+	location: string;
+	/** Conférence · Meetup · Table ronde · Podcast · Interne */
+	type: string;
+	/** Co-intervenants ou animateur, quand ce n’était pas une intervention solo. */
+	withWhom?: string;
+	/** Une phrase à la première personne. Pas le résumé marketing de l’événement. */
+	summary?: string;
+	/**
+	 * Page de session, rediffusion ou podcast — pas de dépôt de slides : les decks
+	 * sont destinés à être réenregistrés en podcasts, seuls liens à publier ensuite.
+	 */
+	url?: string;
+	/** Libellé du lien. Défaut : « En savoir plus ». */
+	urlLabel?: string;
+};
+
+/**
+ * Interventions passées, de la plus récente à la plus ancienne.
+ * Liste non exhaustive : d’anciennes interventions restent à dater.
+ */
+export const TALKS: Talk[] = [
+	{
+		date: '2026-06-18',
+		event: 'Tech’Work Lyon 2026',
+		title: 'Devons-nous sacrifier la qualité avec l’IA ?',
+		location: 'Lyon',
+		type: 'Conférence',
+		summary:
+			'Ce que « qualité » veut encore dire quand une IA sait régénérer, refactorer et tester en masse — et la part que l’ego du développeur joue dans la réponse.',
+		url: 'https://techwork.events/sessions/cmn2z82un005t01prv9hvn0y9/',
+		urlLabel: 'Voir la session'
+	},
+	{
+		date: '2025-03-20',
+		event: 'Max Lyon, MAX Digital Services',
+		title: 'L’IA en dev — booster vos devs, éviter les embûches',
+		location: 'Lyon',
+		type: 'Meetup'
+	},
+	{
+		date: '2025-02-20',
+		event: 'Max Lyon, MAX Digital Services',
+		title: 'Vue vs React Battle — que le match commence !',
+		location: 'Lyon',
+		type: 'Meetup',
+		withWhom: 'Avec Ibrahim Yatim, développeur React et React Native'
+	},
+	{
+		date: '2025-01-23',
+		event: 'Max Lyon, MAX Digital Services',
+		title: 'La théorie de l’évolution de Darwin appliquée au développement de produit IT',
+		location: 'Lyon',
+		type: 'Meetup',
+		summary:
+			'Une analogie tenue jusqu’au bout : ce que la sélection, la variation et l’adaptation disent de la façon dont un produit IT évolue — ou meurt.'
+	},
+	{
+		date: '2024-08-29',
+		event: 'Digital Summ’r 2024',
+		title: 'La qualité, sans déshabiller le produit pour habiller la tech’ (et inversement)',
+		location: 'Charbonnières-les-Bains',
+		type: 'Conférence',
+		withWhom: 'Avec Xavier Barry, CTO de pHack-Man'
+	},
+	{
+		date: '2024-08-29',
+		event: 'Digital Summ’r 2024',
+		title: 'L’envers du décor des entreprises libérées !',
+		location: 'Charbonnières-les-Bains',
+		type: 'Table ronde',
+		withWhom:
+			'Animée par Aliocha Iordanoff (Sémawé), avec Hicham Ben Hassin (Algosecure), Jean-Luc Vecchio et Pascal Charrier (Efalia)'
 	}
 ];

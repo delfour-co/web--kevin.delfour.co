@@ -8,6 +8,7 @@
 		EXPERIENCE,
 		SKILLS,
 		COMMUNITY,
+		COMMUNITY_STATUS,
 		SPEAKING_TOPICS
 	} from '$lib/data/profile';
 </script>
@@ -26,8 +27,8 @@
 		<p class="role">{IDENTITY.targetRoles}</p>
 		<p class="lead">
 			Engineering Leader, dix-sept ans d’expérience à construire des logiciels, des équipes
-			d’ingénierie et des organisations techniques. J’ai dirigé des équipes du démarrage au passage
-			à l’échelle, recruté plus de trente ingénieurs, piloté des organisations allant jusqu’à une
+			d’ingénierie et des organisations techniques. J’ai mené des équipes du démarrage au passage
+			à l’échelle, recruté plus de trente ingénieurs, porté des organisations allant jusqu’à une
 			trentaine de personnes, et construit des cadres de carrière, des processus et des stratégies
 			techniques — en restant profondément hands-on.
 		</p>
@@ -109,13 +110,13 @@
 	<section class="section">
 		<div class="section-head">
 			<h2>Communauté</h2>
-			<p>Co-fondateur de CTO de Lyon, mentor de Tech Leads et de CTO.</p>
+			<p>Co-créateur de CTO de Lyon, mentor de Tech Leads et de CTO. {COMMUNITY_STATUS}</p>
 		</div>
 		<ul class="plain-list">
 			{#each COMMUNITY as item}
 				<li>
 					<strong>{item.role}</strong> — {item.title}
-					<span class="muted">depuis {item.since}</span>
+					<span class="muted">{item.period}</span>
 				</li>
 			{/each}
 		</ul>
@@ -240,8 +241,7 @@
 			padding: 0;
 		}
 		:global(.stat-grid) {
-			background: none;
-			gap: 0;
+			gap: 8px;
 		}
 		:global(.stat) {
 			border: 1px solid #bbb;
