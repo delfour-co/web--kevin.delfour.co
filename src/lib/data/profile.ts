@@ -61,7 +61,12 @@ export const EXPERIENCE: Experience[] = [
 			'12 ingénieurs (4 Tech Leads, 1 PO)',
 			'Adoption de l’IA',
 			'Recrutement',
-			'Python · FastAPI · PostgreSQL · AWS · Kubernetes · Terraform'
+			'Python',
+			'FastAPI',
+			'PostgreSQL',
+			'AWS',
+			'Kubernetes',
+			'Terraform'
 		]
 	},
 	{
@@ -83,7 +88,15 @@ export const EXPERIENCE: Experience[] = [
 		org: 'JOBO Interim',
 		impact:
 			"J'ai transformé un prototype Airtable/n8n en plateforme IA cloud-native, en concevant l'architecture et en introduisant une automatisation qui a ramené des processus métier de plusieurs jours à quelques minutes.",
-		scope: ['Architecture', 'Stratégie IA', 'Product engineering', 'Python · TypeScript · Azure · Terraform']
+		scope: [
+			'Architecture',
+			'Stratégie IA',
+			'Product engineering',
+			'Python',
+			'TypeScript',
+			'Azure',
+			'Terraform'
+		]
 	},
 	{
 		period: 'Janv. 2023 – avr. 2025',
