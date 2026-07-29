@@ -31,7 +31,18 @@ postes **Engineering Manager · Senior EM · Head of Engineering · VP Engineeri
 **Message central :**
 
 > Je construis des organisations d'ingénierie où les gens et les produits
-> s'épanouissent. La technologie compte. Les gens sont le multiplicateur.
+> s'épanouissent. La technologie compte. Elle ne fait rien toute seule.
+
+Ne pas réduire les gens à une fonction instrumentale (« les gens sont le
+multiplicateur », « les gens sont la ressource ») : Kevin s'y refuse.
+
+**Vocabulaire du leadership.** Kevin ne « dirige » pas et ne « pilote » pas des
+gens : il emmène, il donne une direction, il ne donne pas d'ordres. Écrire
+« mener », « emmener », « porter », « accompagner ». Proscrire « diriger »,
+« piloter », « encadrer », « à la tête de » appliqués à des personnes. Restent
+légitimes : les emplois techniques (« graphes dirigés », « développement piloté
+par les tests », « données pilotées par un JSON ») et « direction » au sens du
+poste visé (« rôles de direction d'ingénierie », « comité de direction »).
 
 ## Faits canoniques
 
@@ -60,7 +71,8 @@ un chiffre change, il change dans `profile.ts` — jamais en dur dans une page.
 - **À propos** (`/a-propos/`) — quel leader il est, pas une biographie chronologique.
 - **CV** (`/cv/`) — miroir web du CV exécutif, imprimable, avec le PDF en téléchargement.
 - **Contact** (`/contact/`) — mise en relation professionnelle.
-- **Boîte à outils** (`/outils/`) et **Projets** (`/projets/`) — hors navigation principale, accessibles par le pied de page et les renvois contextuels.
+- **Projets** (`/projets/`) — la preuve du hands-on. Données dans `src/lib/data/projects.json`.
+- **Boîte à outils** (`/outils/`) — hors navigation principale, accessible par le pied de page et les renvois contextuels.
 
 **Pas de section articles** tant qu'il n'y a pas d'articles : Kevin écrit ses
 livres et contribue à l'open source. Ne pas créer de route `/articles/` vide. Le
