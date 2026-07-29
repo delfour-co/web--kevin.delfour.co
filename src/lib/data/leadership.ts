@@ -104,7 +104,7 @@ export const PILLARS: Pillar[] = [
 		title: 'L’IA dans l’ingénierie',
 		themes: ['Adoption de l’IA', 'Expérience développeur', 'Exigence d’ingénierie'],
 		conviction:
-			"L'IA ne remplace pas le jugement d'ingénierie, elle en augmente le débit — et elle rend donc les mauvaises décisions plus rapides aussi. Ce qui compte n'est pas l'outil mais ce qu'on met autour : revue, tests, traçabilité des décisions. C'est ce que je pilote aujourd'hui sur une plateforme IA B2B en production.",
+			"L'IA ne remplace pas le jugement d'ingénierie, elle en augmente le débit — et elle rend donc les mauvaises décisions plus rapides aussi. Ce qui compte n'est pas l'outil mais ce qu'on met autour : revue, tests, traçabilité des décisions. C'est ce qu'on met en place aujourd'hui, avec mon équipe, sur une plateforme IA B2B en production.",
 		practices: [
 			"Adoption de l'IA menée à l'échelle d'une organisation d'ingénierie, pas au niveau d'un poste isolé.",
 			"Automatisation par IA introduite sur des processus métier réels, avec un gain mesuré en ordres de grandeur.",

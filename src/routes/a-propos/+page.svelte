@@ -5,7 +5,7 @@
 
 <SEO
 	title="À propos"
-	description="Ce qui a façonné ma manière de diriger une organisation d'ingénierie, le type de leader que je suis, et ce que je change concrètement dans une équipe."
+	description="Ce qui a façonné ma manière de mener une organisation d'ingénierie, le type de leader que je suis, et ce que je change concrètement dans une équipe."
 	url="https://kevin.delfour.co/a-propos/"
 	breadcrumbs={[{ label: 'À propos' }]}
 />
@@ -16,7 +16,7 @@
 		<h1>Quel leader je suis, et pourquoi</h1>
 		<p class="lead">
 			Pas une biographie chronologique — le parcours est sur la page CV. Ici, ce qui a façonné ma
-			façon de diriger, et ce que ça donne au quotidien.
+			façon de mener, et ce que ça donne au quotidien.
 		</p>
 	</div>
 
@@ -32,7 +32,7 @@
 		</p>
 		<p>
 			Le vrai basculement est venu quand j’ai commencé à répondre de l’ingénierie plutôt qu’à en
-			produire. Diriger pendant une acquisition internationale, avec une trentaine d’ingénieurs et
+			produire. Mener l’ingénierie pendant une acquisition internationale, avec une trentaine d’ingénieurs et
 			une organisation qui change de propriétaire, ne laisse pas de place à l’improvisation : il
 			faut des décisions écrites, des indicateurs partagés, et des gens à qui on a dit la vérité.
 			Ensuite j’ai construit une agence d’ingénierie de zéro à douze consultants, et j’ai découvert
@@ -60,7 +60,7 @@
 			en réunion ? On ne construit rien de solide là où les gens ont peur de se tromper.
 		</p>
 
-		<h3>Les gens sont le multiplicateur</h3>
+		<h3>L’équipe passe avant l’architecture</h3>
 		<p>
 			La technologie compte, et je ne l’ai jamais lâchée. Mais la meilleure architecture du monde ne
 			survit pas à une équipe qui se délite, alors qu’une bonne équipe rattrape une architecture
@@ -77,7 +77,7 @@
 			non écrite se rejoue tous les six mois.
 		</p>
 		<p>
-			Je garde les mains dans le code, parce qu’on ne dirige bien que ce qu’on comprend, et parce
+			Je garde les mains dans le code, parce qu’on ne mène bien que ce qu’on comprend, et parce
 			que relire le travail de son équipe reste la façon la plus honnête de savoir où elle en est.
 			Et je dis les choses : sur un projet qui s’arrête, sur un recrutement qui ne se fera pas, sur
 			une estimation à laquelle je ne crois pas.
@@ -100,7 +100,7 @@
 				assumé.
 			</li>
 			<li>
-				Une adoption de l’IA pilotée à l’échelle de l’organisation, avec la revue et la traçabilité
+				Une adoption de l’IA menée à l’échelle de l’organisation, avec la revue et la traçabilité
 				qui doivent l’accompagner.
 			</li>
 		</ul>

@@ -51,7 +51,7 @@
 		<div class="case-card">
 			<h2>Ces outils viennent d’une pratique</h2>
 			<p>
-				Chacun est né d’un problème que j’avais à résoudre en dirigeant une équipe. Les convictions
+				Chacun est né d’un problème que j’avais à résoudre en menant une équipe. Les convictions
 				qu’ils traduisent sont détaillées sur la page Leadership.
 			</p>
 			<div class="btn-row">

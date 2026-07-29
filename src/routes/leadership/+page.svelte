@@ -13,7 +13,7 @@
 <div class="page">
 	<div class="page-hero">
 		<span class="kicker">Leadership</span>
-		<h1>Diriger une organisation d’ingénierie est un métier</h1>
+		<h1>Mener une organisation d’ingénierie est un métier</h1>
 		<p class="lead">
 			Voici ce que dix-sept ans de terrain m’ont appris, et les pratiques que j’en ai tirées. Pas
 			de théorie que je n’aie pas éprouvée — et, pour chaque sujet, les outils que j’utilise et les
