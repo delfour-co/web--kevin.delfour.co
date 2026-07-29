@@ -1,23 +1,45 @@
 <!doctype html>
-<html lang="fr" data-theme="slate">
+<html lang="fr" data-theme="dark">
 	<head>
 		<script>
+			// Applique le thème avant peinture (anti-FOUC). Les anciennes valeurs
+			// (slate, dracula, gruvbox…) retombent sur « dark ».
 			(function () {
 				try {
-					var t = localStorage.getItem('theme');
-					if (t) document.documentElement.setAttribute('data-theme', t);
+					var stored = localStorage.getItem('theme');
+					var t = stored === 'light' || stored === 'dark' ? stored : null;
+					if (!t) {
+						t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+					}
+					document.documentElement.setAttribute('data-theme', t);
+					var m = document.querySelector('meta[name="theme-color"]');
+					if (m) m.setAttribute('content', t === 'light' ? '#ffffff' : '#0c0e12');
 				} catch (e) {}
 			})();
 		</script>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="theme-color" content="#0d1117" />
+		<meta name="theme-color" content="#0c0e12" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-		<meta name="apple-mobile-web-app-title" content="k.d.co" />
+		<meta name="apple-mobile-web-app-title" content="Kevin Delfour" />
 		<link rel="manifest" href="/site.webmanifest" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 		<link rel="sitemap" href="/sitemap.xml" />
+		<link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href="/fonts/inter-latin.woff2"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href="/fonts/space-grotesk-latin.woff2"
+			crossorigin="anonymous"
+		/>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
