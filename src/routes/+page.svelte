@@ -1,6 +1,6 @@
 <script lang="ts">
 	import SEO from '$lib/components/SEO.svelte';
-	import { IDENTITY, CONTACT, SNAPSHOT } from '$lib/data/profile';
+	import { IDENTITY, CONTACT } from '$lib/data/profile';
 	import { PILLARS } from '$lib/data/leadership';
 
 	let { data } = $props();
@@ -13,26 +13,45 @@
 
 <div class="page">
 	<section class="hero">
-		<span class="kicker">{IDENTITY.role} · {IDENTITY.location}</span>
-		<h1>{IDENTITY.name}</h1>
-		<p class="role">{IDENTITY.targetRoles}</p>
-		<p class="tagline">{IDENTITY.tagline}</p>
-		<p class="subline">{IDENTITY.subline}</p>
-		<div class="btn-row">
-			<a class="btn btn--primary" href="/cv/">Voir mon parcours</a>
-			<a class="btn btn--secondary" href="/contact/">Échanger</a>
+		<figure class="portrait">
+			<picture>
+				<source srcset="/images/kevin-delfour-portrait.webp" type="image/webp" />
+				<img
+					src="/images/kevin-delfour-portrait.jpg"
+					alt="Portrait de Kevin Delfour"
+					width="560"
+					height="560"
+					fetchpriority="high"
+				/>
+			</picture>
+		</figure>
+		<div class="hero-text">
+			<span class="kicker">{IDENTITY.role} · {IDENTITY.location}</span>
+			<h1>{IDENTITY.name}</h1>
+			<p class="role">{IDENTITY.targetRoles}</p>
+			<p class="tagline">{IDENTITY.tagline}</p>
+			<p class="subline">{IDENTITY.subline}</p>
+			<div class="btn-row">
+				<a class="btn btn--primary" href="/cv/">Voir mon parcours</a>
+				<a class="btn btn--secondary" href="/contact/">Échanger</a>
+			</div>
 		</div>
 	</section>
 
 	<section class="section">
-		<h2 class="visually-hidden">Chiffres clés</h2>
-		<div class="stat-grid">
-			{#each SNAPSHOT as stat}
-				<div class="stat">
-					<span class="stat-value">{stat.value}</span>
-					<span class="stat-label">{stat.label}</span>
-				</div>
-			{/each}
+		<h2 class="visually-hidden">En quelques mots</h2>
+		<div class="intro">
+			<p>
+				17 ans d’ingénierie logicielle. J’ai mené une organisation d’une trentaine d’ingénieurs,
+				recruté plus de 30 personnes au fil de centaines d’entretiens, monté une agence
+				d’ingénierie de 0 à 12 consultants, et co-fondé une startup deep-tech dont je suis reparti
+				avec un brevet.
+			</p>
+			<p>
+				Ce que ces contextes ont en commun, ce n’est presque jamais la technologie. C’est d’avoir dû
+				trancher sans information complète, puis l’assumer devant des gens dont le travail dépendait
+				de la décision. C’est le métier que j’ai appris, et celui que je cherche à continuer.
+			</p>
 		</div>
 	</section>
 
@@ -72,7 +91,7 @@
 			<a class="card" href="/leadership/#ia-dans-l-ingenierie">
 				<h3 class="card-title">L’IA sans esbroufe</h3>
 				<p class="card-text">
-					Je pilote l’adoption de l’IA sur une plateforme B2B en production. Elle augmente le débit
+					J’emmène mon équipe vers l’IA sur une plateforme B2B en production. Elle augmente le débit
 					du jugement d’ingénierie — donc elle rend la revue et la traçabilité plus importantes, pas
 					moins.
 				</p>
@@ -85,16 +104,14 @@
 			<h2>Ce que je crois</h2>
 			<p>Cinq piliers, adossés à des postes précis et à des contraintes précises.</p>
 		</div>
-		<ul class="pillars">
+		<div class="card-grid card-grid--2">
 			{#each PILLARS as pillar}
-				<li>
-					<a href="/leadership/#{pillar.id}">
-						<span class="pillar-title">{pillar.title}</span>
-						<span class="pillar-themes">{pillar.themes.join(' · ')}</span>
-					</a>
-				</li>
+				<a class="card" href="/leadership/#{pillar.id}">
+					<h3 class="card-title">{pillar.title}</h3>
+					<p class="card-text">{pillar.themes.join(' · ')}</p>
+				</a>
 			{/each}
-		</ul>
+		</div>
 		<a class="section-link" href="/leadership/">Le détail de chaque pilier</a>
 	</section>
 
@@ -136,10 +153,61 @@
 
 <style>
 	.hero {
-		max-width: 68ch;
+		display: grid;
+		grid-template-columns: auto minmax(0, 1fr);
+		align-items: center;
+		gap: clamp(28px, 5vw, 64px);
 		padding-block: clamp(24px, 5vw, 48px) 0;
 		margin-bottom: var(--space-section);
 	}
+	.hero-text {
+		max-width: 68ch;
+	}
+	.portrait {
+		margin: 0;
+		width: clamp(168px, 24vw, 260px);
+	}
+	.portrait img {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: var(--radius-lg);
+		border: 1px solid var(--border);
+		/* L'anneau d'accent tient la photo en thème clair, où le fond quasi noir
+		   du portrait ne se fond plus dans la page. */
+		box-shadow: var(--accent-glow), var(--shadow-card);
+	}
+
+	/* Deux colonnes plutôt qu'un bloc contraint à 68ch : le texte occupe la largeur
+	   disponible sans que les lignes dépassent la longueur lisible. */
+	.intro {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: clamp(24px, 4vw, 56px);
+	}
+	.intro p {
+		font-size: var(--text-lg);
+		color: var(--secondary);
+		margin-bottom: 0;
+	}
+	.intro p:first-child {
+		color: var(--content);
+	}
+
+	/* Sous 760px le portrait garde sa place en tête et se réduit. */
+	@media (max-width: 760px) {
+		.hero {
+			grid-template-columns: 1fr;
+			justify-items: start;
+		}
+		.portrait {
+			width: clamp(120px, 34vw, 168px);
+		}
+		.intro {
+			grid-template-columns: 1fr;
+		}
+	}
+
 	.hero h1 {
 		font-size: var(--text-display);
 		margin-bottom: 12px;
@@ -162,42 +230,6 @@
 		font-size: var(--text-lg);
 		color: var(--secondary);
 		margin-bottom: 32px;
-	}
-
-	.pillars {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-		gap: 1px;
-		background: var(--border);
-		border: 1px solid var(--border);
-		border-radius: var(--radius-lg);
-		overflow: hidden;
-		margin: 0;
-		padding: 0;
-		list-style: none;
-	}
-	.pillars a {
-		display: block;
-		background: var(--surface);
-		padding: 20px 22px;
-		height: 100%;
-	}
-	.pillars a:hover {
-		background: var(--surface-hover);
-		text-decoration: none;
-	}
-	.pillar-title {
-		display: block;
-		font-family: var(--font-heading);
-		font-weight: 600;
-		color: var(--primary);
-		letter-spacing: var(--tracking-tight);
-		margin-bottom: 6px;
-	}
-	.pillar-themes {
-		display: block;
-		font-size: var(--text-xs);
-		color: var(--tertiary);
 	}
 
 	.books {

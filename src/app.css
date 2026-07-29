@@ -638,17 +638,18 @@ a.card:hover {
 
 /* Chiffres clés — « Leadership Snapshot ». Statique, sans compteur animé.
    Colonnes fixes plutôt qu'auto-fit : six tuiles doivent tomber en 3×2, pas en 5+1. */
+/* Tuiles autonomes, sur le modèle de .card : chacune porte sa bordure et
+   l'espacement est un vrai gap. Une rangée incomplète ne laisse donc voir que le
+   fond de page, jamais un bloc plein. */
 .stat-grid {
 	display: grid;
 	grid-template-columns: repeat(3, minmax(0, 1fr));
-	gap: 1px;
-	background: var(--border);
-	border: 1px solid var(--border);
-	border-radius: var(--radius-lg);
-	overflow: hidden;
+	gap: 16px;
 }
 .stat {
 	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
 	padding: 22px 24px;
 }
 .stat-value {
