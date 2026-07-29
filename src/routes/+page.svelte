@@ -15,12 +15,12 @@
 	<section class="hero">
 		<figure class="portrait">
 			<picture>
-				<source srcset="/images/kevin-delfour-portrait.webp" type="image/webp" />
+				<source srcset="/images/kevin-delfour-decoupe.webp" type="image/webp" />
 				<img
-					src="/images/kevin-delfour-portrait.jpg"
+					src="/images/kevin-delfour-decoupe.png"
 					alt="Portrait de Kevin Delfour"
-					width="560"
-					height="560"
+					width="500"
+					height="500"
 					fetchpriority="high"
 				/>
 			</picture>
@@ -171,11 +171,11 @@
 		display: block;
 		width: 100%;
 		height: auto;
-		border-radius: var(--radius-lg);
-		border: 1px solid var(--border);
-		/* L'anneau d'accent tient la photo en thème clair, où le fond quasi noir
-		   du portrait ne se fond plus dans la page. */
-		box-shadow: var(--accent-glow), var(--shadow-card);
+		/* Détourée : ni cadre ni ombre, qui dessineraient le carré transparent au
+		   lieu du sujet. La découpe tranche la veste net en bas — on l'estompe dans
+		   la page plutôt que de laisser une coupe horizontale visible. */
+		-webkit-mask-image: linear-gradient(to bottom, #000 68%, transparent 97%);
+		mask-image: linear-gradient(to bottom, #000 68%, transparent 97%);
 	}
 
 	/* Deux colonnes plutôt qu'un bloc contraint à 68ch : le texte occupe la largeur
