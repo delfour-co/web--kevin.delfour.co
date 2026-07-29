@@ -81,7 +81,11 @@ jour où des articles existent, l'entrée de nav « Livres » devient « Écrits
 ## Design system
 
 - **Esthétique :** sobre, épurée, très lisible. Registre Linear / Stripe / Vercel.
-  Pas de métaphore terminal, pas de néon, pas d'effets décoratifs.
+  Pas de métaphore terminal, pas de néon. Le parti pris « aucun effet décoratif »
+  datait de la refonte, quand il fallait d'abord assainir le contenu : il ne
+  tient plus. Une intention visuelle est bienvenue tant qu'elle reste sobre,
+  qu'elle sert la lecture et qu'elle ne dégrade aucun contraste sous le seuil
+  AA (4,5:1) — les décors se retirent en `data-contrast='high'`.
 - **Thèmes :** deux seulement — sombre (défaut) et clair, bascule dans l'en-tête,
   persistée en `localStorage`, appliquée avant peinture (anti-FOUC dans `app.html`).
 - **Typographie :** Space Grotesk (titres), Inter (corps et interface), JetBrains

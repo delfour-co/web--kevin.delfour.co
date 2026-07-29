@@ -11,30 +11,18 @@
 	url="https://kevin.delfour.co/"
 />
 
+<div class="ghost" aria-hidden="true"></div>
+
 <div class="page">
 	<section class="hero">
-		<figure class="portrait">
-			<picture>
-				<source srcset="/images/kevin-delfour-decoupe.webp" type="image/webp" />
-				<img
-					src="/images/kevin-delfour-decoupe.png"
-					alt="Portrait de Kevin Delfour"
-					width="500"
-					height="500"
-					fetchpriority="high"
-				/>
-			</picture>
-		</figure>
-		<div class="hero-text">
-			<span class="kicker">{IDENTITY.role} · {IDENTITY.location}</span>
-			<h1>{IDENTITY.name}</h1>
-			<p class="role">{IDENTITY.targetRoles}</p>
-			<p class="tagline">{IDENTITY.tagline}</p>
-			<p class="subline">{IDENTITY.subline}</p>
-			<div class="btn-row">
-				<a class="btn btn--primary" href="/cv/">Voir mon parcours</a>
-				<a class="btn btn--secondary" href="/contact/">Échanger</a>
-			</div>
+		<span class="kicker">{IDENTITY.role} · {IDENTITY.location}</span>
+		<h1>{IDENTITY.name}</h1>
+		<p class="role">{IDENTITY.targetRoles}</p>
+		<p class="tagline">{IDENTITY.tagline}</p>
+		<p class="subline">{IDENTITY.subline}</p>
+		<div class="btn-row">
+			<a class="btn btn--primary" href="/cv/">Voir mon parcours</a>
+			<a class="btn btn--secondary" href="/contact/">Échanger</a>
 		</div>
 	</section>
 
@@ -153,29 +141,53 @@
 
 <style>
 	.hero {
-		display: grid;
-		grid-template-columns: auto minmax(0, 1fr);
-		align-items: center;
-		gap: clamp(28px, 5vw, 64px);
+		max-width: 68ch;
 		padding-block: clamp(24px, 5vw, 48px) 0;
 		margin-bottom: var(--space-section);
 	}
-	.hero-text {
-		max-width: 68ch;
+
+	/* Portrait en filigrane, fixe derrière toute la page. Purement décoratif :
+	   aria-hidden, non cliquable, et sous les plans du header (50) et du lien
+	   d'évitement (200). Le contenu repasse au-dessus via .page. */
+	.ghost {
+		position: fixed;
+		inset: 0;
+		z-index: 0;
+		pointer-events: none;
+		background-image: url('/images/kevin-delfour-decoupe.webp');
+		background-repeat: no-repeat;
+		/* Le bord gauche de l'image est calé sur le bord droit de la colonne de
+		   contenu (moitié de --home-width depuis le centre), moins 40px qui tombent
+		   dans le padding. Le visage reste donc toujours hors du texte : seuls
+		   l'épaule et le bord de la tête débordent dans la marge. Passer par le
+		   token a11y fait suivre le réglage de largeur du panneau d'accessibilité. */
+		background-position: left calc(50% + var(--home-width-a11y) / 2 - 40px) bottom;
+		background-size: auto min(86vh, 820px);
+		opacity: 0.1;
+		filter: grayscale(1);
 	}
-	.portrait {
-		margin: 0;
-		width: clamp(168px, 24vw, 260px);
+	.page {
+		position: relative;
+		z-index: 1;
 	}
-	.portrait img {
-		display: block;
-		width: 100%;
-		height: auto;
-		/* Détourée : ni cadre ni ombre, qui dessineraient le carré transparent au
-		   lieu du sujet. La découpe tranche la veste net en bas — on l'estompe dans
-		   la page plutôt que de laisser une coupe horizontale visible. */
-		-webkit-mask-image: linear-gradient(to bottom, #000 68%, transparent 97%);
-		mask-image: linear-gradient(to bottom, #000 68%, transparent 97%);
+	/* Sur blanc le sujet ne peut qu'assombrir, et un léger assombrissement du blanc
+	   se voit bien moins qu'un léger éclaircissement du noir : il faut monter. 0.12
+	   est le plafond — au-delà, le texte secondaire passe sous le seuil AA. */
+	:global(html[data-theme='light']) .ghost {
+		opacity: 0.12;
+	}
+	/* Le panneau d'accessibilité prime : en contraste élevé, rien derrière le texte. */
+	:global(html[data-contrast='high']) .ghost {
+		display: none;
+	}
+	/* Le filigrane vit dans la marge droite : sans marge, pas de filigrane. Sous
+	   1040px — le point de rupture de la mise en page — la colonne occupe toute la
+	   largeur, l'image sortirait du champ de toute façon. On l'enlève, ce qui évite
+	   aussi de la télécharger sur mobile. */
+	@media (max-width: 1040px) {
+		.ghost {
+			display: none;
+		}
 	}
 
 	/* Deux colonnes plutôt qu'un bloc contraint à 68ch : le texte occupe la largeur
@@ -194,15 +206,8 @@
 		color: var(--content);
 	}
 
-	/* Sous 760px le portrait garde sa place en tête et se réduit. */
+	/* Sous 760px, les deux paragraphes de présentation repassent l'un sous l'autre. */
 	@media (max-width: 760px) {
-		.hero {
-			grid-template-columns: 1fr;
-			justify-items: start;
-		}
-		.portrait {
-			width: clamp(120px, 34vw, 168px);
-		}
 		.intro {
 			grid-template-columns: 1fr;
 		}
